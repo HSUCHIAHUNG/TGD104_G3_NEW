@@ -489,6 +489,11 @@ footer .footer_inner hr {
   /* background-color: #1DC7D3; */
   /* align-items: flex-start; */
 }
+.banner_container #swiper .swiper-slide button {
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+}
 .banner_container #swiper .swiper-slide .content_h1 {
   text-align: left;
 }
@@ -809,6 +814,25 @@ footer .footer_inner hr {
 }
 /* ------------index_banner end------------- */
 /* ------------about start------------- */
+/* 字體使用(嘉宏) */
+.content_h1 {
+  color: #585858;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.content_span {
+  color: #FF7426;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.content_p {
+  color: #585858;
+  font-size: 22px;
+  font-weight: bold;
+}
+
 /* ------------aboutbanner start------------- */
 .about_banner {
   height: 850px;
@@ -821,7 +845,7 @@ footer .footer_inner hr {
 .about_banner::before {
   content: "";
   position: absolute;
-  width: 650px;
+  width: auto;
   height: 650px;
   background-image: url(../../image/index/index_learning_bg.png);
   background-repeat: no-repeat;
@@ -868,6 +892,7 @@ footer .footer_inner hr {
   margin: 0 auto;
   flex-wrap: wrap-reverse;
   justify-content: center;
+  align-items: center;
 }
 .about_story1 .about_story1_container .about_story1_left {
   background-image: url(../../image/about/story1_02.png);
@@ -879,12 +904,19 @@ footer .footer_inner hr {
   background-size: contain;
   background-position: bottom;
 }
+.about_story1 .about_story1_container .content_h1 {
+  font-size: 28px;
+}
+.about_story1 .about_story1_container .content_span {
+  font-size: 28px;
+}
 .about_story1 .about_story1_container .about_story1_right {
   width: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  height: 700px;
 }
 .about_story1 .about_story1_container .about_story1_right .about_story1_right_img {
   background-image: url(../../image/about/story1_01.png);
@@ -897,6 +929,161 @@ footer .footer_inner hr {
   margin: 0 auto;
 }
 
+/* ------------aboutstory2 start------------- */
+.about_story2 {
+  display: flex;
+  align-items: center;
+  background-color: #FDF8EE;
+}
+.about_story2 .about_story2_container {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.about_story2 .about_story2_container .about_story2_left {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  justify-content: space-around;
+  align-items: center;
+}
+.about_story2 .about_story2_container .about_story2_left .content_h1 {
+  font-size: 28px;
+}
+.about_story2 .about_story2_container .about_story2_left .content_span {
+  font-size: 28px;
+}
+.about_story2 .about_story2_container .about_story2_left .about_story2_left_img {
+  min-width: 350px;
+  height: 380px;
+  width: auto;
+  background-image: url(../../image/about/story2_01.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  margin: 0 auto;
+}
+.about_story2 .about_story2_container .about_story2_right {
+  min-width: 450px;
+  width: auto;
+  height: 550px;
+  background-image: url(../../image/about/story2_02.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+/* ------------aboutstory2 end------------- */
+/* ------------aboutstory3 start------------- */
+.about_story3 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.about_story3 .about_story3_container {
+  position: relative;
+  max-width: 1320px;
+  width: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.about_story3 .about_story3_container::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  background-image: url(../../image/index/index_learning_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain, 70px 70px;
+  right: -350px;
+  top: -145px;
+}
+.about_story3 .about_story3_container .about_story3_left_img {
+  width: auto;
+  min-width: 550px;
+  height: 550px;
+  background-image: url(/image/about/story3_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.about_story3 .about_story3_container .about_story3_right {
+  width: auto;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.about_story3 .about_story3_container .about_story3_right .content_h1 {
+  font-size: 28px;
+  padding: 50px;
+}
+.about_story3 .about_story3_container .about_story3_right .content_span {
+  font-size: 28px;
+}
+
+/* ------------aboutstory3 end------------- */
+/* ------------about_rwd start------------- */
+@media screen and (max-width: 768px) {
+  /* ------------about_rwd_banner start------------- */
+  .about_banner .about_banner_container .about_banner_left {
+    min-width: auto;
+    width: 90%;
+  }
+  .about_banner .about_banner_container .about_banner_right {
+    background-position: center;
+    min-width: auto;
+    width: 90%;
+    height: 350px;
+  }
+  /* ------------about_rwd_banner end------------- */
+  /* ------------about_rwd_story1 start------------- */
+  .about_story1 .about_story1_container .about_story1_left {
+    background-position: center;
+    height: 400px;
+    min-width: auto;
+    width: 90%;
+  }
+  .about_story1 .about_story1_container .about_story1_right {
+    min-width: auto;
+    width: 90%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+  }
+  .about_story1 .about_story1_container .about_story1_right .about_story1_right_img {
+    height: 400px;
+    min-width: auto;
+    width: 90%;
+  }
+  /* ------------about_rwd_story1 end------------- */
+  /* ------------about_rwd_story2 start------------- */
+  .about_story2 .about_story2_container .about_story2_left {
+    min-width: auto;
+    width: 90%;
+  }
+  .about_story2 .about_story2_container .about_story2_left .about_story2_left_img {
+    height: 400px;
+    min-width: auto;
+    width: 90%;
+  }
+  .about_story2 .about_story2_container .about_story2_right {
+    height: 400px;
+    min-width: auto;
+    width: 90%;
+  }
+  /* ------------about_rwd_story2 end------------- */
+}
+/* ------------about_rwd end------------- */
 /* banner */
 .travel_banner {
   width: 100%;
@@ -1297,8 +1484,6 @@ footer .footer_inner hr {
   margin: 60px 50px 0;
 }
 
-<<<<<<< HEAD
-=======
 .learning_content {
   max-width: 100%;
   height: 850px;
@@ -1525,5 +1710,4 @@ footer .footer_inner hr {
   float: left;
 }
 
->>>>>>> yu
 /*# sourceMappingURL=style.css.map */
