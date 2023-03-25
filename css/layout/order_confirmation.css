@@ -3,8 +3,6 @@
 }
 table tr{
     border-radius: 5px;
-    /* display: flex;
-    align-items: center; */
 }
 
 .table_bottom tr:last-child{
@@ -26,14 +24,9 @@ td:last-child{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     vertical-align: center;
-
 }
 
 td img{
     width: 139px;
     display: block;
-}
-
-.list-content{
-    
 }

@@ -1,8 +1,57 @@
-//卡片圓角-小敏
+//卡片圓角
 $card_borderR: 15px;
-//卡片陰影-小敏
+//卡片陰影
 $card_box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
 
+<<<<<<< HEAD
+=======
+
+//container
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+//多款btn
+// @mixin btn_solid($dark_blue, $text_gray, $color: $dark_blue){
+//     background-color: $dark_blue;
+//     border: 0;
+//     color: #fff;
+//     font-size: 17px;
+//     &:hover {
+//         background-color: #bce6eb;
+//         color: $dark_blue;
+//         border: 3px solid $dark_blue;
+//     }
+// }
+
+// @mixin btn_outline($dark_blue, $text_gray, $color: $dark_blue){
+//     border: 3px solid $dark_blue;
+//     background-color: $text_gray;
+//     color: $color;
+//     font-weight: 600;
+//     font-size: 17px;
+//     &:hover {
+//         background-color: $light_blue;
+//         color: $text_gray;
+//     }
+// }
+
+// .btn {
+//     width: 180px;
+//     height: 50px;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     &_outline_primary{
+//         @include btn_outline($dark_blue, $text_gray)
+//     }
+//     // &_solid_primary{
+//     //     @include btn
+//     // }
+// }
+
+//以上是變數和共用的
+>>>>>>> yu
 //---------------------
 
 .consultant_card{

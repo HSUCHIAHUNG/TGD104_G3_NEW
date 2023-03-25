@@ -5,187 +5,206 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陪你學習</title>
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./tgd104-sass/css/style.css" />
     <link rel="stylesheet" href="js/owl/owl.carousel.min.css">
     <link rel="stylesheet" href="js/owl/owl.theme.default.min.css">
-    <link rel="stylesheet" href="./tgd104-sass/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
 </head>
 <body>
+
     <!-- header -->
     <header>
         <div class="header_container">
             <i id="h_bar" class="fa-solid fa-bars"></i>
             <img src="image/logo_header.png" alt="" />
             <div class="h_icon">
-              <a href="#"><i class="fa-solid fa-user"></i></a>
-              <a href="#"><i class="fa-solid fa-user-tie"></i></a>
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <a href="#"><i class="fa-solid fa-user-tie"></i></a>
             </div>
         </div>
     </header>     
     <!-- header end -->
 
-    <div class="main">
-        <div class="learning_content bg_yellow">
-            <div class="container_learning container">
-                <div class="learning_container_learning_word">
-                    <h1><span>陪你</span>學習。</h1>
-                    <br>
-                    <p>針對各個年齡層為您選擇最適合的陪你<br>提供活到老學到老 終身學習服務</p>
-                    <br>
-                    <p>我們包含英文.數學.樂器.寫程式<br>想得到的都替你安排!</p>
+    <!-- banner -->
+    <div class="learning_content bg_yellow">
+        <div class="container_learning container">
+            <div>
+                <h1><span>陪你</span>學習。</h1>
+                <br>
+                <p>針對各個年齡層為您選擇最適合的陪你<br>提供活到老學到老 終身學習服務</p>
+                <br>
+                <p>我們包含英文.數學.樂器.寫程式<br>想得到的都替你安排!</p>
+            </div>
+            <img src="image/learning/learning_people.png" alt="">
+        </div>
+
+        <div class="container_learning_bottom container">
+            <img src="image/learning/learning_people2.png" alt="">
+            <div class="lesson_tip">
+                <P><span>01</span> 選擇課程</P>
+                <P><span>02</span> 選擇老師</P>
+                <P><span>03</span> 選擇時間</P>
+                <P><span>04</span> 成功陪你學習</P>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+
+        <div class="learning_main">
+            <h2 class="hot_learning">豐富多元課程</h2>
+            <div class="owl-carousel owl-theme learning_carousel">
+                <div class="item"><h4><img src="image/learning/teacher_001.png" alt=""></h4></div>
+                <div class="item"><h4><img src="image/learning/teacher_002.png" alt=""></h4></div>
+                <div class="item"><h4><img src="image/learning/teacher_003.png" alt=""></h4></div>
+                <div class="item"><h4><img src="image/learning/teacher_004.png" alt=""></h4></div>
+                <div class="item"><h4><img src="image/learning/teacher_005.png" alt=""></h4></div>
+            </div>
+
+
+            <h2 class="hot_learning">熱門陪你學習</h2>
+            <div class="owl-carousel owl-theme learning_icon">
+                <div class="item">
+                    <h4>
+                        <img src="image/learning/book.png" alt="">
+                        <div class="content_p">陪你讀英文</div>
+                        <div>熱門顧問: 陳品魚</div>
+                    </h4>
                 </div>
-                <div class="learning_people">
-                    <img src="image/learning/learning_people.png" alt="">
+                <div class="item">
+                    <h4>
+                        <img src="image/learning/calculator.png" alt="">
+                        <div class="content_p">陪你微積分</div>
+                        <div>熱門顧問: 陳娟配</div>
+                    </h4>
                 </div>
-
-            </div>
-            <div class="container_learning_bottom">
-                <div>
-                    <img src="image/learning/learning_people2.png" alt="">
+                <div class="item">
+                    <h4>
+                        <img src="image/learning/coding.png" alt="">
+                        <div class="content_p">陪你寫JavaScript</div>
+                        <div>熱門顧問: 徐嘉紅</div>
+                    </h4>
                 </div>
-                <div class="learning_container_learning_word lesson_tip">
-                    <P><span>01</span> 選擇課程</P>
-                    <P><span>02</span> 選擇老師</P>
-                    <P><span>03</span> 選擇時間</P>
-                    <P><span>04</span> 成功陪你學習</P>
+                <div class="item">
+                    <h4>
+                        <img src="image/learning/color-palette.png" alt="">
+                        <div class="content_p">陪你繪畫</div>
+                        <div>熱門顧問: 孫一敏</div>
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>
+                        <img src="image/learning/guitar.png" alt="">
+                        <div class="content_p">陪你烏克麗麗</div>
+                        <div>熱門顧問: 裴大尼</div>
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>
+                        <img src="image/learning/study.png" alt="">
+                        <div class="content_p">陪你讀書</div>
+                        <div>熱門顧問: 倪小培</div>
+                    </h4>
+                </div>
+            </div>
+            <h2 class="learning_more"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></h2>
+        </div>
+
+
+
+
+    <!-- 學員心得 -->
+    <h2 class="student_share_word">學員心得分享</h2>
+    <div class="student_share">
+
+        <div class="student_share_img">
+            <img class="share01" src="image/learning/learning_float01.png" alt="">
+            <img class="share02" src="image/learning/learning_float02.png" alt="">
+        </div>
+        <div class="feelings">
+
+            <div class="learning_wrapper">
+                <div class="box box_1">
+                    <div class="card front">
+                        <img src="image/learning/student001.png" alt="">
+                        <p>台北 陳同學</p>
+                        <h5>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptatibus.
+                        </h5>
+                    </div>
+                </div>
+                <div class="box box_2">
+                    <div class="card front">
+                        <img src="image/learning/student002.png" alt="">
+                        <p>新竹 林同學</p>
+                        <h5>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptatibus.
+                        </h5>
+                    </div>
+                </div>
+                <div class="box box_3">
+                    <div class="card front">
+                        <img src="image/learning/student003.png" alt="">
+                        <p>高雄 李同學</p>
+                        <h5>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptatibus.
+                        </h5>
+                    </div>
                 </div>
             </div>
         </div>
-
-        
     </div>
-
-    <h2 class="hot_learning">豐富多元課程</h2>
-    <div class="owl-carousel owl-theme learning_carousel">
-        <div class="item"><h4><img src="image/learning/teacher_001.png" alt=""></h4></div>
-        <div class="item"><h4><img src="image/learning/teacher_002.png" alt=""></h4></div>
-        <div class="item"><h4><img src="image/learning/teacher_003.png" alt=""></h4></div>
-        <div class="item"><h4><img src="image/learning/teacher_004.png" alt=""></h4></div>
-        <div class="item"><h4><img src="image/learning/teacher_005.png" alt=""></h4></div>
-    </div>
-    <br>
-
-    <h2 class="hot_learning">熱門陪你學習</h2>
-    <div class="owl-carousel owl-theme learning_icon">
-        <div class="item">
-            <h4>
-                <img src="image/learning/book.png" alt="">
-                <div class="content_p">陪你讀英文</div>
-                <div>熱門顧問: 陳品魚</div>
-            </h4>
-        </div>
-        <div class="item">
-            <h4>
-                <img src="image/learning/calculator.png" alt="">
-                <div class="content_p">陪你微積分</div>
-                <div>熱門顧問: 陳娟配</div>
-            </h4>
-        </div>
-        <div class="item">
-            <h4>
-                <img src="image/learning/coding.png" alt="">
-                <div class="content_p">陪你寫JavaScript</div>
-                <div>熱門顧問: 徐嘉紅</div>
-            </h4>
-        </div>
-        <div class="item">
-            <h4>
-                <img src="image/learning/color-palette.png" alt="">
-                <div class="content_p">陪你繪畫</div>
-                <div>熱門顧問: 孫一敏</div>
-            </h4>
-        </div>
-        <div class="item">
-            <h4>
-                <img src="image/learning/guitar.png" alt="">
-                <div class="content_p">陪你烏克麗麗</div>
-                <div>熱門顧問: 裴大尼</div>
-            </h4>
-        </div>
-        <div class="item">
-            <h4>
-                <img src="image/learning/study.png" alt="">
-                <div class="content_p">陪你讀書</div>
-                <div>熱門顧問: 倪小培</div>
-            </h4>
-        </div>
-    </div>
-    <h2 class="hot_learning"><button class="btn_solid_secondary btn">更多陪你學習</button></h2>
-
-    <h2 class="hot_learning">學員心得分享</h2>
-    <div class="hot_lesson">
-        <div class="learning_wrapper">
-        <div class="box box_1">
-            <div class="card front">
-                <img src="image/learning/student001.png" alt="">
-                <p>台北 陳同學</p>
-                <i class="fa-solid fa-arrows-rotate"></i>
-            </div>
-            <div class="card back">
-            </div>
-        </div>
-        <div class="box box_2">
-            <div class="card front">
-                <img src="image/learning/student002.png" alt="">
-                <p>新竹 林同學</p>
-                <i class="fa-solid fa-arrows-rotate"></i>
-            </div>
-            <div class="card back">
-            </div>
-        </div>
-        <div class="box box_3">
-            <div class="card front">
-                <img src="image/learning/student003.png" alt="">
-                <p>高雄 李同學</p>
-                <i class="fa-solid fa-arrows-rotate"></i>
-            </div>
-            <div class="card back">
-            </div>
-        </div>
-    </div>
-    
-    </div>
-
-
+    <!-- 學員心得 end -->
 
     <!-- footer -->
     <footer>
-      <div class="footer_inner">
-        <div class="footer_content">
-          <div>
-            <a href="index.html">
-              <img src="image/logo_footer.png" alt="陪你" />
-            </a>
-          </div>
-          <div class="footer_content_word">
-            <div>
-              <p class="title">聯絡我們</p>
-              <p>服務專線：(02)2712-0589</p>
-              <p>服務信箱：accompanyyou@gmail.com</p>
-              <p>營業時間：週一 ~ 週五 8：00 ~ 17：00</p>
+        <div class="footer_inner">
+
+            <div class="footer_content container">
+                <div>
+                    <a href="index.html">
+                    <img src="image/logo_footer.png" alt="陪你" />
+                    </a>
+                </div>
+                <div class="footer_content_word">
+                    <div>
+                    <p class="title">聯絡我們</p>
+                    <p>服務專線：(02)2712-0589</p>
+                    <p>服務信箱：accompanyyou@gmail.com</p>
+                    <p>營業時間：週一 ~ 週五 8：00 ~ 17：00</p>
+                    </div>
+                    <div>
+                    <p class="title">關於我們</p>
+                    <p>找不到人陪你? 陪你陪你，讓你不再孤單!</p>
+                    <p>陪你旅行 不孤單的旅行，就從有陪你開始</p>
+                    <p>陪你學習 讓學習散撥至各地</p>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p class="title">關於我們</p>
-              <p>找不到人陪你? 陪你陪你，讓你不再孤單!</p>
-              <p>陪你旅行 不孤單的旅行，就從有陪你開始</p>
-              <p>陪你學習 讓學習散撥至各地</p>
+
+            <div class="footer_socialmedia">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-line"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
-          </div>
+
+            <hr/>
+
+            <p class="tibame">
+            本網站為緯育TibaMe前端工程師班第82期學員專題作品，本平台僅供學習、展示之用。<br/>
+            2023© All rights reserved
+            </p>
         </div>
-        <div class="footer_socialmedia">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-line"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-        <hr />
-        <p class="tibame">
-          本網站為緯育TibaMe前端工程師班第82期學員專題作品，本平台僅供學習、展示之用。<br />2023
-          © All rights reserved
-        </p>
-      </div>
     </footer>
     <!-- footer end -->
+
 
     <script src="./js/jquery-3.6.3.js"></script>
     <script src="./js/owl/jquery.min.js"></script>
@@ -252,11 +271,11 @@
 
 
 
-        $(document).ready(function () {
-            $('.box').click(function(event){
-	            $(this).toggleClass("flipped");
-            });
-        });
+        // $(document).ready(function () {
+        //     $('.box').click(function(event){
+	    //         $(this).toggleClass("flipped");
+        //     });
+        // });
     </script>
 </body>
 </html>
