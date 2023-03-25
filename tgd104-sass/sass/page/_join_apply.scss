@@ -1,0 +1,103 @@
+/* join_apply */
+
+.join_apply{
+    padding: 50px 0 80px;
+    h1{
+        font-size: $fs28;
+        font-weight: 500;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-bottom: 50px;
+        &:after{
+            content: '';
+            width: 150px;
+            display: block;
+            margin: -18px auto;
+            height: 15px;
+            background-color: $dark_blue;
+        }
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    h2{
+        font-size: $fs22;
+        font-weight: 500;
+        margin-left: 70px;
+        display: inline-block;
+        width: 170px;
+        text-align: center;
+        &::after{
+            content: '';
+                width: 170px;
+                display: block;
+                height: 10px;
+                background-color: $dark_blue;
+                margin-top: 5px;
+        }
+    }
+    .personal_information{
+        border-top: 3px solid $white;
+        height: 500px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        padding-top: 30px;
+
+        .input_wrapper{
+            .input{
+                border-radius: 8px;
+                width: 100%;
+                width: 450px;
+                height: 50px;
+                border: 1px solid $dark_blue;;
+                outline: none;
+                padding-left: 10px;
+            }
+    
+            .input-focus {
+                border-radius: 8px;
+                width: 100%;
+                width: 450px;
+                height: 50px;
+                background-color: $light_blue;
+                /* border: 3px solid #79CBD4; */
+                outline: none;
+            }
+        }
+        
+        .other_wrapper{
+            display: flex;
+            align-items: baseline;
+            h3{
+                
+            }
+            .date{
+                width: 450px;
+                border-radius: 8px;
+                height: 50px;
+                border: 1px solid #79CBD4;
+                outline: none;
+            }
+            .region{
+                width: 450px;
+                border-radius: 8px;
+                height: 50px;
+                border: 1px solid #79CBD4;
+                outline: none;
+            }
+        }
+
+
+    }
+    button{
+        display: block;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+}
