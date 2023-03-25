@@ -50,14 +50,6 @@ $breakpoint_428: 428px;
             /* background-color: #1DC7D3; */
             /* align-items: flex-start; */
 
-            button{
-                @include btn_base();            
-            }
-
-            button{
-                // @include outline_btn ();
-            }
-
             .content_h1{
                 text-align: left;
             }
