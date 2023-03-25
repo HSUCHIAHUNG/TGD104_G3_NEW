@@ -21,20 +21,21 @@
 @import 'sass/layout/title';
 @import 'sass/layout/body';
 @import 'sass/layout/consultant_card';
-@import 'sass/layout/_message_board';
-@import 'sass/layout/_order_confirmation';
+@import 'sass/layout/message_board';
+@import 'sass/layout/order_confirmation';
 @import 'sass/layout/checkout';
 @import 'sass/layout/order_success';
 
-
 // page
 @import 'sass/page/index';
+@import 'sass/page/about';
+
 @import 'sass/page/product';
 @import 'sass/page/travel';
 @import 'sass/page/travel_map';
-@import 'sass/page/learning';
-@import 'sass/page/about';
 
+@import 'sass/page/learning';
+@import 'sass/page/learning_choose';
 
 // plugin
 
@@ -77,6 +78,8 @@
 // .banner {
 //    @include layout(1920px);
 // }
+
+
 
 
 // .card {
