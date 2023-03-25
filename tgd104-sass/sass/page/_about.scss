@@ -239,6 +239,53 @@
 }
 /* ------------aboutstory3 end------------- */
 
+/* ------------aboutstory4 start------------- */
+.about_story4{
+	display: flex;
+    align-items: center;
+    background-color: #FDF8EE;
+    
+
+    .about_story4_container{
+        position: relative;
+        max-width: 1320px;
+        width: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .about_story4_left_img{
+            width: auto;
+            min-width: 550px;
+            height: 366px;
+            background-image: url(/image/about/story4_01.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .about_story4{
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .content_h1{
+                font-size: 28px;
+                padding: 50px;
+            }
+    
+            .content_span{
+                font-size: 28px;
+            }
+        }
+    }
+}
+/* ------------aboutstory4 end------------- */
+
 
 /* ------------about_rwd start------------- */
 @include m768(){

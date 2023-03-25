@@ -454,6 +454,18 @@ footer .footer_inner hr {
   margin-left: 30px;
 }
 
+/* consultant_gallary start */
+.consultant_gallary .consultant_gallary_main img {
+  border: 3px solid #79CBD4;
+  border-radius: 10px;
+}
+.consultant_gallary .consultant_gallary_small img {
+  border: 3px solid #79CBD4;
+  border-radius: 10px;
+  width: 160px;
+}
+
+/* consultant_gallary end */
 /* ------------Swiper_Banner_start------------- */
 .banner_container {
   height: 850px;
@@ -1032,6 +1044,47 @@ footer .footer_inner hr {
 }
 
 /* ------------aboutstory3 end------------- */
+/* ------------aboutstory4 start------------- */
+.about_story4 {
+  display: flex;
+  align-items: center;
+  background-color: #FDF8EE;
+}
+.about_story4 .about_story4_container {
+  position: relative;
+  max-width: 1320px;
+  width: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.about_story4 .about_story4_container .about_story4_left_img {
+  width: auto;
+  min-width: 550px;
+  height: 366px;
+  background-image: url(/image/about/story4_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.about_story4 .about_story4_container .about_story4 {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about_story4 .about_story4_container .about_story4 .content_h1 {
+  font-size: 28px;
+  padding: 50px;
+}
+.about_story4 .about_story4_container .about_story4 .content_span {
+  font-size: 28px;
+}
+
+/* ------------aboutstory4 end------------- */
 /* ------------about_rwd start------------- */
 @media screen and (max-width: 768px) {
   /* ------------about_rwd_banner start------------- */

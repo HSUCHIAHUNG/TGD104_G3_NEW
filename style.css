@@ -1,27 +1,27 @@
 /* -----------------------base-------------------------- */
-@import url("./css/base/reset.css");
+/* @import url("./css/base/reset.css");
 @import url("./css/base/general.css");
 @import url("./css/base/btn.css");
 @import url("./css/base/font.css");
 @import url("./css/base/form.css");
-@import url("./css/base/color.css"); 
+@import url("./css/base/color.css");  */
 
 
 /* -----------------------layout-------------------------- */
 /* @import url("./css/layout/header.css");  */
-@import url("./css/layout/checkout.css");
+/* @import url("./css/layout/checkout.css");
 @import url("./css/layout/footer.css");
-@import url("./css/layout/order_success.css");
-@import url("./css/layout/Gallery.css");
+@import url("./css/layout/order_success.css"); */
+/* @import url("./css/layout/Gallery.css"); */
 /* @import url("./css/layout/consultant_card.css"); */
 /* @import url("./css/layout/message_board.css"); */
 /* @import url("./css/layout/order_confirmation.css"); */
 
 /* -----------------------page-------------------------- */
 /* @import url("./css/page/travel.css"); */
-/* @import url("./css/page/travel_map.css"); */
+/* @import url("./css/page/travel_map.css");
 @import url("./css/page/travel_game.css");
-@import url("./css/page/learning.css");
+@import url("./css/page/learning.css"); */
 /* @import url("./css/page/index.css"); */
 /* @import url("./css/page/about.css"); */
 
