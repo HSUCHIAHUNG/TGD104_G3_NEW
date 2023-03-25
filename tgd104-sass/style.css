@@ -235,56 +235,19 @@ header .header_container .h_icon i {
 }
 
 /* header end */
-/* footer */
-footer {
-  background-color: #FAEECD;
+body {
+  font-family: "Oswald", "Noto Sans TC";
+  font-size: 16px;
+  letter-spacing: 1.8px;
+  line-height: 1.6;
+  color: #585858;
 }
-footer .footer_inner {
-  padding: 60px 100px 70px 100px;
+
+.container {
   max-width: 1320px;
   margin: 0 auto;
 }
-footer .footer_inner .footer_content {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-footer .footer_inner .footer_content div {
-  margin: 20px;
-}
-footer .footer_inner .footer_content .footer_content_word {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-footer .footer_inner .footer_content .footer_content_word p {
-  line-height: 1.6;
-}
-footer .footer_inner .footer_socialmedia,
-footer .footer_inner .tibame {
-  text-align: center;
-}
-footer .footer_inner .footer_socialmedia i,
-footer .footer_inner .tibame i {
-  color: #ff7d33;
-  font-size: 32px;
-  margin: 5px;
-}
-footer .footer_inner hr {
-  border: 1px solid #585858;
-  margin: 15px 0;
-}
 
-@media screen and (max-width: 970px) {
-  .footer_content div {
-    text-align: center;
-  }
-  .footer_content div .footer_inner {
-    padding: 20px;
-  }
-}
 .consultant_card {
   width: 275px;
   height: 345px;
@@ -293,15 +256,18 @@ footer .footer_inner hr {
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
   position: relative;
 }
+
 .consultant_card input {
   width: 35px;
   height: 35px;
   margin-left: 10px;
 }
+
 .consultant_card input:hover {
   cursor: pointer;
 }
-.consultant_card a img {
+
+.consultant_card img {
   display: block;
   width: 100%;
   width: 185px;
@@ -310,17 +276,20 @@ footer .footer_inner hr {
   margin-bottom: 5px;
   border-radius: 15px;
 }
-.consultant_card h1 {
+
+.consultant_card ul li h1 {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
 }
-.consultant_card h2 {
+
+.consultant_card ul li h2 {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
 }
-.consultant_card i {
+
+.consultant_card ul li i {
   font-size: 28px;
   color: #fafafa;
   margin-top: 10px;
@@ -329,42 +298,9 @@ footer .footer_inner hr {
   position: absolute;
   right: 0;
 }
-.consultant_card i:hover {
-  cursor: pointer;
-}
 
-.messageboard {
-  background-color: #bcecee;
-  padding: 20px 20px 10px 20px;
-  max-width: 80%;
-  width: 800px;
-  border: 5px solid #79cbd4;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 20px;
-}
-.messageboard .messageboard_inner {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.messageboard .messageboard_inner img {
-  display: block;
-  border-radius: 50%;
-  width: 50px;
-}
-.messageboard .messageboard_inner .star_account {
-  margin-left: 20px;
-}
-.messageboard .messageboard_inner .fa-star:nth-child(1),
-.messageboard .messageboard_inner .fa-star:nth-child(2),
-.messageboard .messageboard_inner .fa-star:nth-child(3),
-.messageboard .messageboard_inner .fa-star:nth-child(4) {
-  color: #79cbd4;
-}
-.messageboard .messageboard_time {
-  margin-top: 10px;
-  float: right;
+.consultant_card ul li i:hover {
+  cursor: pointer;
 }
 
 .checkout_list {
@@ -1176,7 +1112,6 @@ footer .footer_inner hr {
   letter-spacing: 5px;
   text-align: center;
   margin-bottom: 40px;
-  color: #eee;
 }
 .travel_map_wrapper .container .travel_map img {
   display: block;
@@ -1261,6 +1196,4 @@ footer .footer_inner hr {
 }
 .travel_map_wrapper .container .travel_map button {
   margin: 60px 50px 0;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
