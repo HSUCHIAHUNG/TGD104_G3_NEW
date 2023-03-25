@@ -1,0 +1,59 @@
+.consultant_card{
+    width: 275px;
+    height: 345px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(180deg, #79cbd4 0%, #79cbd4 12%, #FFFFFF 12%, #FFFFFF 88%, #79cbd4 88%, #79cbd4 100%);
+    border-radius: 15px;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* *{
+    outline: 1px solid red;
+} */
+
+.consultant_card input{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+/* .consultant_card input::after{
+    content: '';
+    width: 35px;
+    height: 35px;
+    display: block;
+    background-color: #fff;
+} */
+
+
+.consultant_card img{
+    display: block;
+    width: 100%;
+    width: 185px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.consultant_card h1{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.consultant_card h2{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.consultant_card i{
+    font-size: 30px;
+    color: #fff;
+    margin-top: 10px;
+    margin-right: 8px;
+    display: block;
+    text-align: right;
+}

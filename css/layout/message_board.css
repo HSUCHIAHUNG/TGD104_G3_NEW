@@ -1,0 +1,41 @@
+.messageboard{
+    background-color: #DCECEE;
+    padding: 20px 20px 10px 20px;
+    max-width: 80%;
+    width: 800px;
+    border: 5px solid #79cbd4;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+
+.messageboard_inner img{
+    display: block;
+    border-radius: 50%;
+    width: 50px;
+}
+
+.messageboard_inner{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.star_account{
+    margin-left: 20px;
+}
+
+
+.messageboard_time{
+    margin-top: 10px;
+    float: right;
+}
+
+
+.fa-star:nth-child(1),
+.fa-star:nth-child(2),
+.fa-star:nth-child(3),
+.fa-star:nth-child(4){
+    color: #79cbd4;
+}

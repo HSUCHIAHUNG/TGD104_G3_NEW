@@ -1,0 +1,235 @@
+*{
+    /* outline: 1px solid red; */
+}
+
+/* ------------aboutbanner start------------- */
+.about_banner{
+    height: 850px;
+    background-color: #FDF8EE;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about_banner::before{
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background-image: url(../../image/index/index_learning_bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: -150px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.about_banner_container{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+
+.about_banner_left{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about_banner_right{
+    width: auto;
+    min-width: 550px;
+    height: 500px;
+    background-image: url(../../image/about/about_banner_people.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+/* ------------aboutbanner end------------- */
+
+/* ------------aboutstory1 start------------- */
+.about_story1{
+    display: flex;
+    align-items: center;
+}
+
+.about_story1_container{
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.about_story1_left{
+    background-image: url(../../image/about/story1_02.png);
+    margin: 0 auto;
+    width: auto;
+    min-width: 550px;
+    height: 380px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
+.about_story1_right{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about_story1_right_img{
+    background-image: url(../../image/about/story1_01.png);
+    width: auto;
+    min-width: 650px;
+    height: 380px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    margin: 0 auto;
+}
+/* ------------aboutstory1 end------------- */
+
+/* ------------aboutstory2 start------------- */
+.about_story2{
+    display: flex;
+    align-items: center;
+    background-color: #FDF8EE;
+}
+
+.about_story2_container{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about_story2_left{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_story2_left_img{
+    min-width: 350px;
+    height: 380px;
+    width: auto;
+    background-image: url(../../image/about/story2_01.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+.about_story2_right{
+    min-width: 450px;
+    width: auto;
+    height: 550px;
+    background-image: url(../../image/about/story2_02.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+
+
+/* ------------aboutstory2 end------------- */
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .about_banner{
+
+    }
+
+    .about_banner::before{
+
+    }
+
+    .about_banner_container{
+
+    }
+
+    .about_banner_left{
+        min-width: auto;
+        width: 90%;
+    }
+
+    .about_banner_right{
+        background-position: center;
+        min-width: auto;
+        width: 90%;
+        height: 350px;
+    }
+
+    .about_story1{
+
+    }
+    
+    .about_story1_container{
+
+    }
+    
+    .about_story1_left{
+        background-position: center;
+        height: 400px;
+        min-width: auto;
+        width: 90%;
+    }
+    
+    .about_story1_right{
+        min-width: auto;
+        width: 90%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        box-sizing: border-box;
+    }
+
+    .about_story1_right_img{
+        height: 400px;
+        min-width: auto;
+        width: 90%;
+    }
+
+    .about_story2{
+ 
+    }
+    
+    .about_story2_container{
+   
+    }
+    
+    .about_story2_left{
+        min-width: auto;
+        width: 90%;
+    }
+    
+    .about_story2_left_img{
+        height: 400px;
+        min-width: auto;
+        width: 90%;
+    }
+    
+    .about_story2_right{
+        height: 400px;
+        min-width: auto;
+        width: 90%;
+    }
+
+}

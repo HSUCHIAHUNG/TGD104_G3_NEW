@@ -1,0 +1,283 @@
+.learning_content{
+    max-width: 100%;
+    height: 850px;
+}
+
+.learning_content .container_learning{
+    max-width: 1320px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+
+.container_learning h1{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.container_learning p{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.learning_people img{
+    width: 850px;
+    max-width: 80%;
+}
+
+
+
+.lesson_tip p{
+    font-size: 32px;
+}
+
+
+
+.lesson_tip{
+    margin-left: 80px;
+}
+
+
+.hot_lesson{
+    background-image: url("../../image/learning/learning_bgi2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hot_lesson div{
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.hot_learning{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.btn_solid_secondary{
+    margin-bottom: 100px;
+}
+
+.hot_learning:after,
+.hot_learning_2:after{
+    content: '';
+    width: 216px;
+    display: block;
+    margin: -18px auto;
+    height: 15px;
+    background-color: #ff7d33;
+}
+
+
+.hot_lesson ul{
+    flex-grow: 1;
+    cursor: pointer;
+
+
+}
+
+.hot_lesson li:first-child{
+    line-height: 100px;
+    text-align: center;
+    font-size: 28px;
+    border-radius: 5px;
+
+}
+
+.hot_lesson li{
+    background-color: #faeecd;
+    margin: 10px;
+    box-shadow: 5px 10px 10px 1px rgba(0,0,0,0.1);
+}
+
+
+.hot_lesson img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
+.learning_container_learning_word span{
+    font-size: 48px;
+    color: #ff7d33;
+    margin-left: 20px;
+}
+
+
+
+.container_learning_bottom{
+    max-width: 1320px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: end;
+    padding-top: 80px;
+    margin: 0 auto;
+    align-items: end;
+}
+
+.fa-solid{
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+/* 輪播 */
+
+
+.owl-carousel{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.item h4{
+    padding: 10px;
+    background-color: #faeecd;
+    border-radius: 20px;
+}
+
+.item h4 img{
+
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.owl-nav{
+    display: none;
+}
+
+
+.owl-stage-outer{
+    margin-bottom: 60px;
+    margin-top: 80px;
+}
+
+
+
+.learning_icon{
+    max-width: 1320px;
+    margin: 0 auto;
+    /* background-color: #333; */
+}
+
+
+.learning_icon .item h4{
+    padding: 10px;
+    background-color: #faeecd;
+    border-radius: 20px;
+
+    
+}
+
+.learning_icon .item h4 img{
+
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.owl-nav{
+    display: none;
+}
+
+
+.learning_icon .owl-item img{
+    width: 50%;
+    display: inline-block;
+
+}
+
+.learning_icon div{
+    text-align: center;
+
+}
+
+/* 輪播 end */
+
+.box{
+	margin: 50px auto;
+    width: 239px;
+    height: 334px;
+    position: relative;
+    transform-style: preserve-3d;/*3D效果 */
+    transition: 1s ease;
+}
+.card{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+  /*表示隱藏被旋轉div元素的背面，這樣旋轉之後，第一張卡片是背面朝螢幕方向，看不到，第二張卡片旋轉之後則是正面朝像螢幕，即形成了旋轉的效果。 */
+	border-radius: 20px;
+}
+.front,
+.back{
+	background-color: #faeecd;
+    background-size: cover;
+    box-shadow: 5px 10px 10px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 30px;
+}
+.back{
+	transform: rotateY(180deg);
+
+}
+.flipped{
+	transform: rotateY(180deg);/*繞著Y軸旋轉*/
+      }
+
+.front img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.learning_wrapper{
+    position: relative;
+    width: 520px;
+    height: 800px;
+}
+
+.learning_wrapper .box_1{
+    position: absolute;
+    z-index: 3;
+}
+
+.learning_wrapper .box_2{
+    position: absolute;
+    top: 40px;
+    left: 300px;
+    z-index: 1;
+}
+
+.learning_wrapper .box_3{
+    position: absolute;
+    top: 300px;
+    left: 130px;
+    z-index: 2;
+}
+
+
+.card p{
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.fa-arrows-rotate{
+    position: absolute;
+    top: 290px;
+    right: 20px;
+    font-size: 30px;
+    color: #585858;
+}
+
+.back{
+    padding: 30px;
+}
+
+/* 翻牌 end */

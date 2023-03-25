@@ -1,0 +1,36 @@
+.order_success {
+  position: relative;
+  background: #79cbd4;
+  border-radius: 0.4em;
+  width: 350px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order_success:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 29px solid transparent;
+  border-right-color: #79cbd4;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -14.5px;
+  margin-left: -29px;
+}
+.order_success img {
+  width: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 30px;
+}
+
+.order_success .order_content {
+  margin-right: 40px;
+  color: #fafafa;
+}
