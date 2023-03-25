@@ -197,6 +197,74 @@ a {
   transition: all 0.3s ease;
 }
 
+.top_box {
+  height: 200px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #f5f5f5;
+}
+.top_box .avatar {
+  border-radius: 50%;
+  background-image: url("/Users/pss940909/Desktop/local G3/image/avatar.jpg");
+  background-position: -50px -20px;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  vertical-align: middle;
+  margin-top: 25px;
+  position: relative;
+}
+.top_box .avatar a {
+  color: #585858;
+}
+.top_box .avatar i {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+}
+.top_box .avatar i:hover {
+  color: #79cbd4;
+}
+.top_box p {
+  margin: 10px auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.aside_nav {
+  margin-top: 25px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.aside_nav li {
+  line-height: 65px;
+}
+.aside_nav li:hover {
+  border-left: 5px solid #79cbd4;
+}
+.aside_nav li:hover a {
+  color: #79cbd4;
+}
+.aside_nav li:hover a i, .aside_nav li:hover a span {
+  color: #79cbd4;
+}
+.aside_nav li a {
+  cursor: pointer;
+  line-height: 65px;
+  display: block;
+  text-align: center;
+  color: #585858;
+  font-weight: 500;
+}
+.aside_nav li a i {
+  margin-right: 7px;
+}
+
 /* header */
 header {
   background-color: #FAEECD;
@@ -473,6 +541,25 @@ footer .footer_inner hr {
 }
 
 /* consultant_gallary end */
+body {
+  background-color: #f5f5f5;
+}
+
+.member_row {
+  display: flex;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  justify-content: space-between;
+}
+.member_row .aside_bar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.member_row .main {
+  width: 75%;
+}
+
 /* ------------Swiper_Banner_start------------- */
 .banner_container {
   height: 850px;
@@ -1144,55 +1231,46 @@ footer .footer_inner hr {
   /* ------------about_rwd_story2 end------------- */
 }
 /* ------------about_rwd end------------- */
-/* banner */
+/* travel_banner */
 .travel_banner {
   width: 100%;
   height: 850px;
   padding-top: 60px;
+  background-color: #FDF8EE;
 }
-
 .travel_banner .container {
   display: flex;
 }
-
-.travel_banner .left_block {
+.travel_banner .container .left_block {
   flex-grow: 1;
 }
-
-.travel_banner .left_block h1 {
+.travel_banner .container .left_block h1 {
   color: #ff7d33;
   display: inline-block;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 600;
-  /* letter-spacing: 0px; */
 }
-
-.travel_banner .left_block span {
+.travel_banner .container .left_block span {
   color: #585858;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 600;
   display: inline-block;
-  /* letter-spacing: 0px; */
 }
-
-.travel_banner .left_block h2 {
+.travel_banner .container .left_block h2 {
   font-size: 20px;
   padding-top: 60px;
   font-weight: 600;
   line-height: 3;
 }
-
-.travel_banner .left_block img {
+.travel_banner .container .left_block img {
   display: block;
   margin-top: 125px;
   width: 100%;
 }
-
-.travel_banner .right_block {
+.travel_banner .container .right_block {
   align-self: end;
 }
-
-.travel_banner .right_block img {
+.travel_banner .container .right_block img {
   display: block;
   width: 100%;
 }
@@ -1206,17 +1284,15 @@ footer .footer_inner hr {
   height: 890px;
   padding-top: 78px;
 }
-
 .travel_member .container h1 {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 3px;
   text-align: center;
   color: #585858;
   margin-bottom: 136px;
 }
-
-.travel_member .container h1::after {
+.travel_member .container h1:after {
   content: "";
   width: 247px;
   display: block;
@@ -1224,50 +1300,49 @@ footer .footer_inner hr {
   height: 15px;
   background-color: #79cbd4;
 }
-
-.travel_member .autoplay {
+.travel_member .container .autoplay {
   /* display: flex; */
   /* justify-content: space-between; */
 }
-
-.travel_member .card {
+.travel_member .container .autoplay .card {
   /* width: 350px; */
   /* width: 100%; */
   /* height: 380px; */
-  background: linear-gradient(180deg, #FFFFFF 40.63%, #79CBD4 40.63%);
-  border: 1px solid #E9E9E9;
-  border-radius: 5px;
+  background: linear-gradient(180deg, #fafafa 40.63%, #79cbd4 40.63%);
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-radius: 15px;
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
   text-align: center;
   margin: 0 50px 5px;
 }
-
-.travel_member .card i {
+.travel_member .container .autoplay .card i {
   color: #ebc43a;
-  font-size: 20px;
+  font-size: 22px;
   display: inline-block;
   vertical-align: baseline;
 }
-
-.travel_member .card p {
+.travel_member .container .autoplay .card p {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
   display: inline-block;
   margin: 15px 0 15px 5px;
 }
-
-.travel_member .card img {
+.travel_member .container .autoplay .card img {
   display: block;
   margin: 0 auto;
   width: 60%;
   border-radius: 50%;
 }
-
-.travel_member .card h2 {
-  font-size: 18px;
+.travel_member .container .autoplay .card h2 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 2px;
   margin: 20px 0 10px;
 }
-
-.travel_member .card h3 {
-  font-size: 28px;
+.travel_member .container .autoplay .card h3 {
+  font-size: 24px;
   margin-bottom: 20px;
   color: #ff7d33;
   font-weight: 500;
@@ -1279,18 +1354,17 @@ footer .footer_inner hr {
   width: 100%;
   height: 800px;
   padding-top: 60px;
+  background-color: #FDF8EE;
 }
-
 .travel_star .container h1 {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 3px;
   text-align: center;
   color: #585858;
   margin-bottom: 136px;
 }
-
-.travel_star .container h1::after {
+.travel_star .container h1:after {
   content: "";
   width: 212px;
   display: block;
@@ -1298,26 +1372,23 @@ footer .footer_inner hr {
   height: 15px;
   background-color: #79cbd4;
 }
-
-.travel_star .travel_comment_wrapper {
+.travel_star .container .travel_comment_wrapper {
   display: flex;
   justify-content: space-between;
 }
-
-.travel_star .travel_comments {
+.travel_star .container .travel_comment_wrapper .travel_comments {
   flex-grow: 0;
   margin: 0 20px;
   width: 100%;
 }
-
-.travel_star .travel_comments .travel_comment {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_comment {
+  background-color: #79cbd4;
   width: 100%;
   padding: 30px;
   border-radius: 5px;
   position: relative;
 }
-
-.travel_star .travel_comments .travel_comment::after {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_comment:after {
   content: "";
   width: 0;
   height: 0;
@@ -1331,63 +1402,58 @@ footer .footer_inner hr {
   bottom: -40px;
   left: 10%;
 }
-
-.travel_star .travel_comments .travel_comment h2 {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_comment h2 {
   font-size: 18px;
   color: #ff7d33;
 }
-
-.travel_star .travel_comments .travel_comment p {
-  font-size: 16px;
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_comment p {
   margin: 25px 0 50px 0;
+  font-weight: 500;
 }
-
-.travel_star .travel_comments .travel_comment h3 {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_comment h3 {
   font-size: 18px;
+  color: #fafafa;
   text-align: right;
 }
-
-.travel_star .travel_comments .travel_consultant_wrapper {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_consultant_wrapper {
   display: flex;
   margin-top: 40px;
 }
-
-.travel_star .travel_comments .travel_consultant_wrapper img {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_consultant_wrapper img {
   display: block;
   width: 100%;
   width: 100px;
   max-height: 100px;
   border-radius: 50%;
 }
-
-.travel_star .travel_comments .travel_consultant_wrapper .travel_consultant {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_consultant_wrapper .travel_consultant {
   flex-grow: 1;
   margin-left: 40px;
   align-self: center;
 }
-
-.travel_star .travel_comments .travel_consultant_wrapper .travel_consultant h4 {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_consultant_wrapper .travel_consultant h4 {
   display: inline-block;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
+  letter-spacing: 2px;
 }
-
-.travel_star .travel_comments .travel_consultant_wrapper .travel_consultant i {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_consultant_wrapper .travel_consultant i {
   color: #ebc43a;
   font-size: 20px;
   display: inline-block;
   vertical-align: baseline;
   margin-left: 10px;
 }
-
-.travel_star .travel_comments .travel_consultant_wrapper .travel_consultant p {
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_consultant_wrapper .travel_consultant p {
   display: inline-block;
   margin-left: 5px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
-
-.travel_star .travel_comments .travel_consultant_wrapper .travel_consultant h5 {
-  color: #25a3b0;
-  font-size: 28px;
+.travel_star .container .travel_comment_wrapper .travel_comments .travel_consultant_wrapper .travel_consultant h5 {
+  color: #ff7d33;
+  font-size: 26px;
   font-weight: 500;
 }
 
@@ -1398,40 +1464,33 @@ footer .footer_inner hr {
   width: 100%;
   padding-top: 100px;
 }
-
 .travel_button .container {
   display: flex;
   justify-content: center;
 }
-
-.travel_button .travel_button_hike {
+.travel_button .container .travel_button_hike {
   width: 100%;
   text-align: center;
 }
-
-.travel_button .travel_button_bike {
-  width: 100%;
-  text-align: center;
-}
-
-.travel_button .travel_button_swim {
-  width: 100%;
-  text-align: center;
-}
-
-.travel_button .travel_button_hike img {
+.travel_button .container .travel_button_hike img {
   height: 130px;
   display: block;
   margin: 0 auto;
 }
-
-.travel_button .travel_button_bike img {
+.travel_button .container .travel_button_bike {
+  width: 100%;
+  text-align: center;
+}
+.travel_button .container .travel_button_bike img {
   height: 130px;
   display: block;
   margin: 0 auto;
 }
-
-.travel_button .travel_button_swim img {
+.travel_button .container .travel_button_swim {
+  width: 100%;
+  text-align: center;
+}
+.travel_button .container .travel_button_swim img {
   height: 130px;
   display: block;
   margin: 0 auto;
@@ -1541,6 +1600,79 @@ footer .footer_inner hr {
 }
 .travel_map_wrapper .container .travel_map button {
   margin: 60px 50px 0;
+}
+
+/* *{
+    outline: 1px solid red;
+} */
+/* travel_game*/
+.travel_game_wrapper {
+  background-image: url("../../image/travel/travel_game_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 590px;
+  width: 100%;
+  margin-top: 100px;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment {
+  width: 40%;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 15px solid #79cbd4;
+  background-color: #fff;
+  position: relative;
+  top: -50px;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 30px;
+  border-style: solid;
+  border-top-color: #79cbd4;
+  border-right-color: #79cbd4;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  position: absolute;
+  bottom: -60px;
+  left: 65%;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment h1 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  /* 水平置中 */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  /* 垂直置中 */
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment .left_arrow {
+  color: #585858;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment .left_arrow:hover {
+  color: #ff7d33;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment .left_arrow i {
+  font-size: 40px;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment .right_arrow {
+  color: #585858;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment .right_arrow:hover {
+  color: #ff7d33;
+}
+.travel_game_wrapper .travel_game_container .travel_game_comment .right_arrow i {
+  font-size: 40px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
 }
 
 .learning_content {
@@ -1768,6 +1900,99 @@ footer .footer_inner hr {
   font-weight: bold;
   background-color: #fffaf3;
   float: left;
+}
+
+/* join_apply */
+.join_apply {
+  padding: 50px 0 80px;
+}
+.join_apply h1 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
+}
+.join_apply h1:after {
+  content: "";
+  width: 150px;
+  display: block;
+  margin: -18px auto;
+  height: 15px;
+  background-color: #79cbd4;
+}
+.join_apply img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  width: 200px;
+  margin-bottom: 20px;
+}
+.join_apply h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 70px;
+  display: inline-block;
+  width: 170px;
+  text-align: center;
+}
+.join_apply h2::after {
+  content: "";
+  width: 170px;
+  display: block;
+  height: 10px;
+  background-color: #79cbd4;
+  margin-top: 5px;
+}
+.join_apply .personal_information {
+  border-top: 3px solid #eee;
+  height: 500px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding-top: 30px;
+}
+.join_apply .personal_information .input_wrapper .input {
+  border-radius: 8px;
+  width: 100%;
+  width: 450px;
+  height: 50px;
+  border: 1px solid #79cbd4;
+  outline: none;
+  padding-left: 10px;
+}
+.join_apply .personal_information .input_wrapper .input-focus {
+  border-radius: 8px;
+  width: 100%;
+  width: 450px;
+  height: 50px;
+  background-color: #bcecee;
+  /* border: 3px solid #79CBD4; */
+  outline: none;
+}
+.join_apply .personal_information .other_wrapper {
+  display: flex;
+  align-items: baseline;
+}
+.join_apply .personal_information .other_wrapper .date {
+  width: 450px;
+  border-radius: 8px;
+  height: 50px;
+  border: 1px solid #79CBD4;
+  outline: none;
+}
+.join_apply .personal_information .other_wrapper .region {
+  width: 450px;
+  border-radius: 8px;
+  height: 50px;
+  border: 1px solid #79CBD4;
+  outline: none;
+}
+.join_apply button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

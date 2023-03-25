@@ -238,6 +238,7 @@ header .header_container .h_icon i {
 /* footer */
 footer {
   background-color: #FAEECD;
+<<<<<<< HEAD
 }
 footer .footer_inner {
   padding: 60px 100px 70px 100px;
@@ -286,10 +287,55 @@ footer .footer_inner hr {
   }
 }
 .container {
+=======
+}
+footer .footer_inner {
+  padding: 60px 100px 70px 100px;
+>>>>>>> swim
   max-width: 1320px;
   margin: 0 auto;
 }
+footer .footer_inner .footer_content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer .footer_inner .footer_content div {
+  margin: 20px;
+}
+footer .footer_inner .footer_content .footer_content_word {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer .footer_inner .footer_content .footer_content_word p {
+  line-height: 1.6;
+}
+footer .footer_inner .footer_socialmedia,
+footer .footer_inner .tibame {
+  text-align: center;
+}
+footer .footer_inner .footer_socialmedia i,
+footer .footer_inner .tibame i {
+  color: #ff7d33;
+  font-size: 32px;
+  margin: 5px;
+}
+footer .footer_inner hr {
+  border: 1px solid #585858;
+  margin: 15px 0;
+}
 
+@media screen and (max-width: 970px) {
+  .footer_content div {
+    text-align: center;
+  }
+  .footer_content div .footer_inner {
+    padding: 20px;
+  }
+}
 .consultant_card {
   width: 275px;
   height: 345px;
@@ -372,6 +418,7 @@ footer .footer_inner hr {
   float: right;
 }
 
+<<<<<<< HEAD
 .table_bottom {
   border-collapse: collapse;
 }
@@ -401,6 +448,8 @@ footer .footer_inner hr {
   background-color: #79cbd4;
 }
 
+=======
+>>>>>>> swim
 .checkout_list {
   background-color: #79cbd4;
   width: 70%;
