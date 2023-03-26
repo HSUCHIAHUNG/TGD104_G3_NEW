@@ -86,7 +86,7 @@ a {
   font-weight: 600;
 }
 .btn_blue:hover {
-  background-color: #bcecee;
+  background-color: #DCECEE;
   color: #79cbd4;
   border: 3px solid #79cbd4;
 }
@@ -133,7 +133,7 @@ a {
   font-size: 17px;
 }
 .outline_btn_blue:hover {
-  background-color: #bcecee;
+  background-color: #DCECEE;
   color: #79cbd4;
 }
 
@@ -166,7 +166,7 @@ a {
   padding: 10px 12px;
 }
 .input_text:focus {
-  background-color: #bcecee;
+  background-color: #DCECEE;
   border: 3px solid #79cbd4;
   outline: 0px;
   transition: all 0.3s ease;
@@ -191,7 +191,7 @@ a {
   /* ---下拉箭頭樣式End--- */
 }
 .input_select:focus {
-  background-color: #bcecee;
+  background-color: #DCECEE;
   border: 3px solid #79cbd4;
   outline: 0;
   transition: all 0.3s ease;
@@ -414,7 +414,7 @@ footer .footer_inner hr {
 }
 
 .messageboard {
-  background-color: #bcecee;
+  background-color: #DCECEE;
   padding: 20px 20px 10px 20px;
   max-width: 80%;
   width: 800px;
@@ -1967,7 +1967,7 @@ body {
   width: 100%;
   width: 450px;
   height: 50px;
-  background-color: #bcecee;
+  background-color: #DCECEE;
   /* border: 3px solid #79CBD4; */
   outline: none;
 }
