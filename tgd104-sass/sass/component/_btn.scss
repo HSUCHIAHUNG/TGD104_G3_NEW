@@ -44,24 +44,24 @@
 // solid btn -----------------------------------------
 .btn_blue{
    @include btn_base();
-   @include solid_btn($dark_blue,$light_blue,$white)
+   @include solid_btn($dark_blue,$light_blue,$clear_white)
 }
 
 .btn_orange{
    @include btn_base();
-   @include solid_btn($dark_orange, $light_orange , $white )
+   @include solid_btn($dark_orange, $light_orange , $clear_white )
 }
 
 .btn_yellow{
    @include btn_base();
-   @include nav_btn($dark_blue,$dark_yellow ,$white)
+   @include nav_btn($dark_blue,$dark_yellow ,$clear_white)
 }
 
 // outline btn -----------------------------------------
 
 .outline_btn_blue{
    @include btn_base();
-   @include outline_btn($dark_blue,$light_blue , $white )
+   @include outline_btn($dark_blue,$light_blue , $clear_white )
 }
 .outline_btn_orange{
    @include btn_base();

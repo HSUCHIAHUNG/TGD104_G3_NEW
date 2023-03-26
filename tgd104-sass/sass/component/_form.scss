@@ -9,6 +9,8 @@
 .input_label{
    letter-spacing: 0.5px;
    font-size: 14px;
+   display: block;
+   text-align: left;
 }
 
 .input_text{
@@ -24,7 +26,6 @@
 
 .input_select{
    @include input_base();
-   margin-top: 5px;
    padding: 10px 25px 10px 15px;
    color: $gray;
    /* ---下拉箭頭樣式--- */
