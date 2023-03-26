@@ -25,6 +25,11 @@ const routes = [
     name: 'member',
     component: () => import(/* webpackChunkName: "about" */ '../views/MemberCenter.vue')
   },
+  {
+    path: '/Backend',
+    name: 'Backend',
+    component: () => import(/* webpackChunkName: "about" */ '../views/BackendCenter.vue')
+  },
 ]
 
 const router = createRouter({
