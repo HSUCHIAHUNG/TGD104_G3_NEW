@@ -11,6 +11,7 @@
 import BarChart from '../components/BarChart.vue'
 import LineChart from '../components/LineChart.vue'
 import PieChart from '../components/PieChart.vue'
+
 // @ is an alias to /src
 
 
@@ -19,7 +20,8 @@ export default {
   components: {
     BarChart,
     LineChart,
-    PieChart
+    PieChart,
+   
   }
 }
 </script>
