@@ -314,6 +314,7 @@ export default {
           });
       });
     },
+    // 關閉燈箱
     closeSignIn() {
       document.getElementById("signin_lightbox").classList.add("none");
     },

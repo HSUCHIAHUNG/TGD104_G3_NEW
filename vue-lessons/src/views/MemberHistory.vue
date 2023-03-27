@@ -38,6 +38,9 @@
             </li>
           </ul>
         </div>
+        <div class="order_list">
+          <history-order-sum></history-order-sum>
+        </div>
       </div>
     </div>
     <!-- <VFooter></VFooter> -->
@@ -49,6 +52,7 @@
 //  import VFooter from '@/components/VFooter.vue'
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
+import HistoryOrderSum from "../components/HistoryOrderSum.vue";
 
 export default {
   name: "MemberFav",
@@ -62,6 +66,7 @@ export default {
     // VFooter,
     Avatar,
     SideNav,
+    HistoryOrderSum,
   },
 };
 </script>
