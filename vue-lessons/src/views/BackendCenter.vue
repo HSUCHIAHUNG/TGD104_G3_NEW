@@ -55,8 +55,8 @@ import SalesManagement from './backendCenter/SalesManagement.vue'
 .BackendContainer{
    display: flex;
    background-color: #FDF8EE;
-   
    .BackendNav{
+      border-radius: 0 10px 10px 0;
       background-color: #FAEECD;
       display: flex;
       flex-direction: column;
@@ -68,8 +68,9 @@ import SalesManagement from './backendCenter/SalesManagement.vue'
 
       h1{
          font-size: 40px;
+         font-weight: b;
          color: #FF7426;
-         padding: 30px;
+         padding: 30px 30px 30px 0px;
       }
       
          a {
@@ -85,7 +86,7 @@ import SalesManagement from './backendCenter/SalesManagement.vue'
             bottom: 0;
             color: #f5f5f5;
             background-color: #FF7426;
-
+            border-radius: 0 0 10px 0;
             i {
                padding-bottom: 8px;
             }

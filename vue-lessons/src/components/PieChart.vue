@@ -1,6 +1,7 @@
 <template>
-   <div>
+   <div class="PieCharcontainer">
      <canvas id="myChart3" class="PieChar"></canvas>
+     <canvas id="myChart4" class="PieChar"></canvas>
    </div>
  </template>
  
@@ -10,7 +11,7 @@
    name: 'DoughnutChart',
    mounted(){
      const ctx = document.getElementById('myChart3');
- 
+     const ctx2 = document.getElementById('myChart4'); 
      new Chart(ctx, {
        type: 'doughnut',
        data: {
@@ -24,7 +25,41 @@
            ],
            hoverOffset: 4,
          }]
-       }
+       },
+       options: {
+          plugins: {
+            legend: {
+              labels: {
+                fontSize: 10
+            },
+          },
+        },
+      },
+     });
+
+     new Chart(ctx2, {
+       type: 'doughnut',
+       data: {
+         labels: ['學習', '旅行'],
+         datasets: [{
+           label: '3月份銷售概況(訂單數)',
+           data: [10, 20],
+           backgroundColor: [
+             'rgb(255, 99, 132)',
+             'rgb(54, 162, 235)',
+           ],
+           hoverOffset: 4,
+         }]
+       },
+       options: {
+          plugins: {
+            legend: {
+              labels: {
+                fontSize: 10
+            },
+          },
+        },
+      },
      });
    }
  }
@@ -32,17 +67,32 @@
  
  <!-- Add "scoped" attribute to limit CSS to this component only -->
  <!-- 因為本身帶有inline style的樣式 所以要用!important才能夠蓋過去 -->
- <style scoped>
- #myChart3 {
-  width: 400px!important;
-  height: 400px !important;
-}
+<style scoped>
+  .PieCharcontainer{
+    display: flex;
+    justify-content: space-between;
+  }
 
-@media screen and (max-width:768px) {
-   #myChart3 {
-  width: 300px!important;
-  height: 300px !important;
-   }
-}
- </style>
+  #myChart3 {
+    width: 500px!important;
+    height: 500px !important;
+  }
+
+  #myChart4 {
+    width: 500px!important;
+    height: 500px !important;
+  }
+
+  @media screen and (max-width:768px) {
+    #myChart3 {
+      width: 300px!important;
+      height: 300px !important;
+    }
+
+    #myChart4 {
+      width: 300px!important;
+      height: 300px !important;
+    }
+  }
+</style>
  
