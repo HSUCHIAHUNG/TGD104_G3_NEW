@@ -5,7 +5,7 @@
      <line-chart></line-chart>
      <pie-chart></pie-chart>
    </div>
- </template>
+</template>
 
 <script>
 import BarChart from '../components/BarChart.vue'

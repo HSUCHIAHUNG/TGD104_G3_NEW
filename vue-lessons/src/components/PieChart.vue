@@ -1,6 +1,6 @@
 <template>
    <div>
-     <canvas id="myChart3"></canvas>
+     <canvas id="myChart3" class="PieChar"></canvas>
    </div>
  </template>
  
@@ -34,8 +34,8 @@
  <!-- 因為本身帶有inline style的樣式 所以要用!important才能夠蓋過去 -->
  <style scoped>
  #myChart3 {
-  width: 500px!important;
-  height: 500px !important;
+  width: 400px!important;
+  height: 400px !important;
 }
 
 @media screen and (max-width:768px) {
