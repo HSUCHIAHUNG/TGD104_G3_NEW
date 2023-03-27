@@ -1,3 +1,4 @@
+// order_sum
 .order {
   border: 3px solid $text_gray;
   border-radius: 10px;
@@ -34,6 +35,14 @@
         p {
           i {
             margin-right: 5px;
+          }
+        }
+        // order_item_details
+        .order_content_details {
+          margin-top: 5px;
+          i {
+            width: 30px;
+            text-align: center;
           }
         }
       }

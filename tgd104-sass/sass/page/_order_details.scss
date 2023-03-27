@@ -1,0 +1,82 @@
+// views/OrderDetails.vue
+.member_row {
+  .order_main {
+    width: 75%;
+
+    .order_area {
+      width: 98%;
+      background-color: $clear_white;
+      border-radius: 5px;
+      padding: 35px;
+      margin-bottom: 35px;
+    }
+  }
+  .order_header {
+    h1 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      text-align: left;
+      border-bottom: 1px solid $bg_gray;
+    }
+  }
+  .message_header {
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      text-align: left;
+      border-bottom: 1px solid $bg_gray;
+    }
+    textarea {
+      width: 100%;
+      border: 1px solid $dark_blue;
+      margin: 0 auto;
+      border-radius: 5px;
+      padding: 20px;
+      font-size: 16px;
+    }
+    button {
+      align-self: end;
+      margin-top: 20px;
+    }
+  }
+}
+
+.consultant_info {
+  border: 3px solid $text_gray;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s;
+  width: 98%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  &:hover {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+  .consultant_info_left {
+    display: flex;
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    h3 {
+      color: $dark_blue;
+      font-weight: 500;
+      margin-left: 20px;
+    }
+  }
+  button {
+    align-self: end;
+  }
+}

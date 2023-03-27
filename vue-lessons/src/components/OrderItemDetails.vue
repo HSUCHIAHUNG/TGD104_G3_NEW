@@ -7,7 +7,18 @@
           <div class="order_summary">
             <h2>陪你學習</h2>
             <span>音樂</span> | <span>吉他</span>
-            <p><i class="fa-solid fa-hashtag"></i>訂單編號：#22PN262616758</p>
+            <ul class="order_content_details">
+              <li>
+                <i class="fa-solid fa-hashtag"></i>訂單編號：#22PN262616758
+              </li>
+              <li><i class="fa-solid fa-dollar-sign"></i>行程價格：1,500</li>
+              <li>
+                <i class="fa-regular fa-calendar"></i>行程日期：2023.03.26
+              </li>
+              <li>
+                <i class="fa-solid fa-cart-shopping"></i>訂購日期：2023.02.27
+              </li>
+            </ul>
           </div>
         </div>
         <div class="order_right">
@@ -15,8 +26,6 @@
             Mar
             <span>26</span>
           </div>
-          <p>$1,500</p>
-          <button type="button" class="btn_blue">查看更多</button>
         </div>
       </div>
     </div>
@@ -25,7 +34,7 @@
 
 <script>
 export default {
-  name: "OrderSum",
+  name: "OrderItemDetails",
   data() {
     return {};
   },
