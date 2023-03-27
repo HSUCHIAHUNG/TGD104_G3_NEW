@@ -1,56 +1,47 @@
 //base
-@import 'sass/base/reset';
-@import 'sass/base/color';
-@import 'sass/base/var';
-@import 'sass/base/font';
-@import 'sass/mixin/mixin';
-
-
+@import "sass/base/reset";
+@import "sass/base/color";
+@import "sass/base/var";
+@import "sass/base/font";
+@import "sass/mixin/mixin";
 
 // @use "sass:math";
 // component
-@import 'sass/component/btn';
-@import 'sass/component/form';
-@import 'sass/component/avatar';
-@import 'sass/component/sidenav';
-@import 'sass/component/account_main';
-
+@import "sass/component/btn";
+@import "sass/component/form";
+@import "sass/component/avatar";
+@import "sass/component/sidenav";
+@import "sass/component/account_main";
+@import "sass/component/passwordchange";
+@import "sass/component/order";
 
 //layout
-@import 'sass/layout/header';
-@import 'sass/layout/nav';
-@import 'sass/layout/login';
-@import 'sass/layout/footer';
-@import 'sass/layout/title';
-@import 'sass/layout/body';
-@import 'sass/layout/consultant_card';
-@import 'sass/layout/message_board';
-@import 'sass/layout/order_confirmation';
-@import 'sass/layout/checkout';
-@import 'sass/layout/order_success';
-@import 'sass/layout/Gallery';
-@import 'sass/layout/member';
+@import "sass/layout/header";
+@import "sass/layout/nav";
+@import "sass/layout/login";
+@import "sass/layout/footer";
+@import "sass/layout/title";
+@import "sass/layout/body";
+@import "sass/layout/consultant_card";
+@import "sass/layout/message_board";
+@import "sass/layout/order_confirmation";
+@import "sass/layout/checkout";
+@import "sass/layout/order_success";
+@import "sass/layout/Gallery";
+@import "sass/layout/member";
+@import "sass/layout/member_lighthouse";
 
-
-// page 
+// page
 // @import 'sass/page/index';
-// @import 'sass/page/about';          
+// @import 'sass/page/about';
 // @import 'sass/page/product';
 // @import 'sass/page/travel';
 // @import 'sass/page/travel_map';
 // @import 'sass/page/travel_game';
-
 // @import 'sass/page/learning';
 // @import 'sass/page/learning_choose';
-
 // @import 'sass/page/join_apply';
-
 // plugin
-
-
-
-
-
 
 // if else
 
@@ -87,19 +78,6 @@
 //    @include layout(1920px);
 // }
 
-
-
-
 // .card {
 // @include card(1200px)
 // }
-
-
-
-
-
-
-
-
-
-

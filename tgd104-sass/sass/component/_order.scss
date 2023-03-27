@@ -1,0 +1,63 @@
+.order {
+  border: 3px solid $text_gray;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s;
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+  .order_content {
+    display: flex;
+    justify-content: space-between;
+    .order_left {
+      width: 60%;
+      display: flex;
+      .category {
+        background-image: url(../../../image/member/music.png);
+        background-size: cover;
+        border-radius: 10px;
+        width: 180px;
+        height: 180px;
+        border: 3px solid $text-gray;
+        margin-right: 20px;
+      }
+      .order_summary {
+        p {
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .order_right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .date {
+        background-color: $bg_gray;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        font-weight: 600;
+        color: $dark_blue;
+        border-radius: 5px;
+        align-self: end;
+        font-size: 18px;
+      }
+      p {
+        margin-top: 40px;
+        text-align: right;
+        color: $dark_blue;
+        font-weight: 600;
+      }
+    }
+  }
+}

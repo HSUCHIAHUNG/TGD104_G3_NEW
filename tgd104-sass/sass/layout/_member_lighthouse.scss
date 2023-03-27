@@ -1,0 +1,157 @@
+.none {
+  display: none;
+}
+// 會員登入
+#member_lightbox {
+  /*   border: 1px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  z-index: 2;
+  article {
+    background-color: white;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ddd;
+    padding: 40px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .title_img {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 100px;
+      }
+    }
+
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: 24px;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        font-weight: 600;
+        position: relative;
+        &::after {
+          content: ""; // 增加偽元素
+          position: absolute;
+          bottom: 5px; // 控制偽元素的位置
+          left: 0;
+          width: 100%;
+          height: 8px;
+          background-color: $dark_blue;
+          z-index: -10;
+          width: 98px;
+        }
+      }
+      label,
+      input,
+      .btns {
+        width: 80%;
+        margin: 0 auto;
+      }
+      a {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 500;
+        text-decoration: underline;
+        &:hover {
+          color: $dark_blue;
+        }
+      }
+      .btns {
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-around;
+        button {
+          width: 160px;
+        }
+      }
+    }
+  }
+}
+
+// 顧問登入
+#consultant_lightbox {
+  /*   border: 1px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  z-index: 2;
+  article {
+    background-color: white;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ddd;
+    padding: 40px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .title_img {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 100px;
+      }
+    }
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: 24px;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        font-weight: 600;
+        position: relative;
+        &::after {
+          content: ""; // 增加偽元素
+          position: absolute;
+          bottom: 5px; // 控制偽元素的位置
+          left: 0;
+          width: 100%;
+          height: 8px;
+          background-color: $dark_blue;
+          z-index: -10;
+          width: 98px;
+        }
+      }
+      label,
+      input,
+      .btns {
+        width: 80%;
+        margin: 0 auto;
+      }
+      a {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 500;
+        text-decoration: underline;
+        &:hover {
+          color: $dark_blue;
+        }
+      }
+      .btns {
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-around;
+        button {
+          width: 160px;
+        }
+      }
+    }
+  }
+}
