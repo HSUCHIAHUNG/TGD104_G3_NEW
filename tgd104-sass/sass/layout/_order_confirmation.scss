@@ -28,6 +28,19 @@
 }
 
 
+//   /* ----------螢幕小於970px時---------- */
+@media screen and (max-width: 1200px) {
+
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+  }
+
+
 
 
 
