@@ -1,6 +1,6 @@
 
 <template>
-    <div class="MemberContainer">
+    <div class="ConsultantManagement">
         <searchbar></searchbar>
         <table>
             <tr>
@@ -27,9 +27,6 @@
     import searchbar from '../../components/BackecdSearch.vue'
 
     export default {
-       
-        
- 
         data(){
             
             return {
@@ -67,7 +64,7 @@
 <style lang="scss">
     // @import '../../../../tgd104-sass/new_style.scss';
 
-    .MemberContainer {
+    .ConsultantManagement {
         display: flex;
         width: 100%;
         flex-direction: column;
