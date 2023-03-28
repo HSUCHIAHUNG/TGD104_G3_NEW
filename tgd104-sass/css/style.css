@@ -81,7 +81,7 @@ a {
   border-radius: 5px;
   background-color: #79cbd4;
   border: 0;
-  color: #eee;
+  color: #fff;
   font-size: 17px;
   font-weight: 600;
 }
@@ -97,7 +97,7 @@ a {
   border-radius: 5px;
   background-color: #ff7d33;
   border: 0;
-  color: #eee;
+  color: #fff;
   font-size: 17px;
   font-weight: 600;
 }
@@ -113,13 +113,13 @@ a {
   border-radius: 5px;
   background-color: #79cbd4;
   border: 0;
-  color: #eee;
+  color: #fff;
   font-size: 17px;
   font-weight: 600;
 }
 .btn_yellow:hover {
   background-color: #ebc43a;
-  color: #eee;
+  color: #fff;
 }
 
 .outline_btn_blue {
@@ -127,7 +127,7 @@ a {
   height: 50px;
   border-radius: 5px;
   border: 3px solid #79cbd4;
-  background-color: #eee;
+  background-color: #fff;
   color: #79cbd4;
   font-weight: 600;
   font-size: 17px;
@@ -155,6 +155,8 @@ a {
 .input_label {
   letter-spacing: 0.5px;
   font-size: 14px;
+  display: block;
+  text-align: left;
 }
 
 .input_text {
@@ -178,7 +180,6 @@ a {
   border-radius: 5px;
   font-size: 15px;
   transition: all 0.3s ease;
-  margin-top: 5px;
   padding: 10px 25px 10px 15px;
   color: #585858;
   /* ---下拉箭頭樣式--- */
@@ -205,7 +206,7 @@ a {
 }
 .top_box .avatar {
   border-radius: 50%;
-  background-image: url("/Users/pss940909/Desktop/local G3/image/avatar.jpg");
+  background-image: url("../../../image/member/avatar.jpg");
   background-position: -50px -20px;
   background-repeat: no-repeat;
   width: 120px;
