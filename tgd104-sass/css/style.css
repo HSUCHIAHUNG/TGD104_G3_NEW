@@ -354,17 +354,13 @@ footer .footer_inner hr {
     padding: 20px;
   }
 }
-.container {
-  max-width: 1320px;
-  margin: 0 auto;
-}
-
 .consultant_card {
   width: 275px;
   height: 345px;
   background: linear-gradient(180deg, #79cbd4 0%, #79cbd4 12%, #fafafa 12%, #fafafa 88%, #79cbd4 88%, #79cbd4 100%);
   border-radius: 15px;
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -634,6 +630,132 @@ body {
 .ordercontainer .orderbtn .outline_btn_orange {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+/* ATM */
+.atm_container .atm {
+  width: 500px;
+  margin: 50px auto;
+  border: 2px solid #79cbd4;
+  border-radius: 15px;
+}
+.atm_container .atm h1 {
+  font-size: 26px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #DCECEE;
+}
+.atm_container .atm .ttl_payment {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #DCECEE;
+}
+.atm_container .atm .ttl_payment h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.atm_container .atm .ttl_payment p {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(222, 68, 21);
+}
+.atm_container .atm .payment_deadline {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #DCECEE;
+}
+.atm_container .atm .payment_deadline h2 {
+  font-size: 20px;
+  font-weight: 500;
+  align-self: center;
+}
+.atm_container .atm .payment_deadline .time {
+  text-align: right;
+}
+.atm_container .atm .payment_deadline .time h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(222, 68, 21);
+}
+.atm_container .atm .payment_deadline .time p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.atm_container .atm .bank {
+  padding: 0 20px;
+  border-bottom: 1px solid #DCECEE;
+}
+.atm_container .atm .bank img {
+  display: block;
+  width: 100%;
+  width: 150px;
+}
+.atm_container .atm .bank .bank_account {
+  border-top: 1px solid #DCECEE;
+  padding: 10px 0;
+}
+.atm_container .atm .bank .bank_account h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.atm_container .atm .bank .bank_account p {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(222, 68, 21);
+}
+.atm_container .atm .bank .bank_no {
+  border-top: 1px solid #DCECEE;
+  padding: 10px 0;
+}
+.atm_container .atm .bank .bank_no h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.atm_container .atm .bank .bank_no p {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(222, 68, 21);
+}
+.atm_container .atm .directions {
+  padding: 10px 20px;
+}
+.atm_container .atm .directions h5 {
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+.atm_container .atm .directions .direction_1 {
+  padding-bottom: 20px;
+}
+.atm_container .atm .directions .direction_1 i {
+  display: inline;
+}
+.atm_container .atm .directions .direction_1 p {
+  display: inline;
+  padding-left: 10px;
+}
+.atm_container .atm .directions .direction_2 {
+  padding-bottom: 20px;
+}
+.atm_container .atm .directions .direction_2 i {
+  display: inline;
+}
+.atm_container .atm .directions .direction_2 p {
+  display: inline;
+  padding-left: 10px;
+}
+.atm_container .atm .directions .direction_3 {
+  padding-bottom: 20px;
+}
+.atm_container .atm .directions .direction_3 i {
+  display: inline;
+}
+.atm_container .atm .directions .direction_3 p {
+  display: inline;
+  padding-left: 10px;
 }
 
 /* ------------Swiper_Banner_start------------- */
@@ -1752,6 +1874,198 @@ body {
   bottom: 10px;
 }
 
+/* sel_travel_consultant_banner */
+.sel_travel_consultant_banner {
+  background-image: url("../../../image/join/sel_travel_consultant_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+  padding-top: 150px;
+}
+.sel_travel_consultant_banner .container h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.sel_travel_consultant_banner .container h1 span {
+  color: #ff7d33;
+}
+.sel_travel_consultant_banner .container h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.sel_travel_consultant_banner .container h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+.sel_travel_consultant_banner .container h3 span {
+  color: #ff7d33;
+}
+.sel_travel_consultant_banner .container h4 {
+  font-size: 32px;
+  font-weight: 600;
+  display: inline-block;
+}
+.sel_travel_consultant_banner .container h4 span {
+  color: #ff7d33;
+}
+.sel_travel_consultant_banner .container i {
+  font-size: 36px;
+  display: inline-block;
+  color: #ff7d33;
+  margin-left: 15px;
+  animation: bounce 0.8s infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* sel_travel_consultant */
+.sel_travel_consultant .self_or_random {
+  height: 60px;
+  background-color: #FAEECD;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.sel_travel_consultant .self_or_random .self {
+  display: block;
+  line-height: 60px;
+  width: 180px;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: #fff;
+  color: #ebc43a;
+}
+.sel_travel_consultant .self_or_random .random {
+  display: block;
+  line-height: 60px;
+  width: 180px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.sel_travel_consultant .self_or_random .random a {
+  display: block;
+  color: #585858;
+}
+.sel_travel_consultant .self_or_random .random a:hover {
+  color: #ebc43a;
+  background-color: #fff;
+}
+.sel_travel_consultant #app .self_consultant {
+  text-align: center;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_all {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  border-bottom: 8px solid #FAEECD;
+  background-color: #f5f5f5;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_unall {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  background-color: #f5f5f5;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_unall:hover {
+  cursor: pointer;
+  color: #ebc43a;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_boy {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  border-bottom: 8px solid #FAEECD;
+  background-color: #f5f5f5;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_unboy {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  background-color: #f5f5f5;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_unboy:hover {
+  cursor: pointer;
+  color: #ebc43a;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_girl {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  border-bottom: 8px solid #FAEECD;
+  background-color: #f5f5f5;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_ungirl {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  background-color: #f5f5f5;
+}
+.sel_travel_consultant #app .self_consultant .self_consultant_ungirl:hover {
+  cursor: pointer;
+  color: #ebc43a;
+}
+.sel_travel_consultant #app .container .all_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+.sel_travel_consultant #app .container .page_number {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sel_travel_consultant #app .container .page_number a {
+  color: #585858;
+  background-color: #fff;
+  font-size: 20px;
+  display: inline-block;
+  width: 30px;
+  line-height: 30px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid #79cbd4;
+}
+.sel_travel_consultant #app .container .page_number a:nth-child(1), .sel_travel_consultant #app .container .page_number a:nth-child(2) {
+  color: #fff;
+  background-color: #79cbd4;
+}
+
+.sel_travel_consultant_button {
+  text-align: center;
+}
+.sel_travel_consultant_button .container button {
+  margin: 70px 50px;
+}
+
 .learning_content {
   max-width: 100%;
   height: 850px;
@@ -2140,7 +2454,7 @@ body {
 .join_apply h2 {
   font-size: 22px;
   font-weight: 500;
-  margin-left: 70px;
+  margin-left: 220px;
   display: inline-block;
   width: 170px;
   text-align: center;
@@ -2149,58 +2463,329 @@ body {
   content: "";
   width: 170px;
   display: block;
-  height: 10px;
+  height: 5px;
   background-color: #79cbd4;
   margin-top: 5px;
 }
 .join_apply .personal_information {
-  border-top: 3px solid #eee;
-  height: 500px;
+  margin: 0 auto;
+  width: 78%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 35px 25px;
+}
+.join_apply .personal_information .input_row {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  padding-top: 30px;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
-.join_apply .personal_information .input_wrapper .input {
-  border-radius: 8px;
+.join_apply .personal_information .input_row .form_group {
+  width: 48%;
+}
+.join_apply .personal_information .input_row .form_group label {
+  text-indent: 2px;
+  margin-bottom: 5px;
+}
+.join_apply .personal_information .input_row .form_group input, .join_apply .personal_information .input_row .form_group select {
   width: 100%;
-  width: 450px;
-  height: 50px;
-  border: 1px solid #79cbd4;
-  outline: none;
-  padding-left: 10px;
+  margin-bottom: 5px;
 }
-.join_apply .personal_information .input_wrapper .input-focus {
-  border-radius: 8px;
-  width: 100%;
-  width: 450px;
-  height: 50px;
-  background-color: #DCECEE;
-  /* border: 3px solid #79CBD4; */
-  outline: none;
+.join_apply .personal_information .input_row .form_group .input_file {
+  font-size: 15px;
 }
-.join_apply .personal_information .other_wrapper {
+.join_apply .personal_information .input_row .form_group .input_file::file-selector-button {
+  font-weight: 500;
+  color: #fff;
+  background-color: #79cbd4;
+  width: 150px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.join_apply .personal_information .input_row .form_group .input_img {
+  font-size: 15px;
+}
+.join_apply .personal_information .input_row .form_group .input_img::file-selector-button {
+  font-weight: 500;
+  color: #fff;
+  background-color: #79cbd4;
+  width: 150px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.join_apply .personal_information .input_row #image_container {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
 }
-.join_apply .personal_information .other_wrapper .date {
-  width: 450px;
-  border-radius: 8px;
-  height: 50px;
-  border: 1px solid #79CBD4;
-  outline: none;
+.join_apply .personal_information .input_row #image_container .image {
+  border: 3px solid #79cbd4;
+  border-radius: 15px;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
 }
-.join_apply .personal_information .other_wrapper .region {
-  width: 450px;
-  border-radius: 8px;
-  height: 50px;
-  border: 1px solid #79CBD4;
-  outline: none;
+.join_apply .personal_information .input_row #image_container .image img {
+  display: block;
+  width: 100%;
 }
-.join_apply button {
+.join_apply .join_btn {
+  text-align: center;
+}
+.join_apply .join_btn button {
+  margin: 60px 50px 0;
+}
+
+/* join_ok */
+.join_ok_container img {
   display: block;
   margin: 0 auto;
+  width: 100%;
+  width: 240px;
   margin-top: 50px;
+}
+.join_ok_container .join_ok {
+  background-image: url("../../../image/join/join_ok.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 24%;
+  width: 1000px;
+  height: 280px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+.join_ok_container .join_ok .join_ok_text {
+  margin: 0 auto;
+  width: 550px;
+  height: 280px;
+  text-align: center;
+  background-color: #79cbd4;
+  border-radius: 15px;
+  display: flex;
+  /* 水平置中 */
+  justify-content: center;
+  /* 垂直置中 */
+  align-items: center;
+}
+.join_ok_container .join_ok .join_ok_text p {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 8px;
+  text-align: left;
+  line-height: 2.5;
+  color: #fafafa;
+}
+
+/* join_benefit */
+.join_benefit {
+  background-image: url("../../../image/join/join_benefit_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+}
+.join_benefit .container h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0;
+  letter-spacing: 2px;
+}
+.join_benefit .container h1 span {
+  color: #ff7d33;
+}
+.join_benefit .container .benefit_wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 1000px;
+}
+.join_benefit .container .benefit_wrapper .learn_benefit {
+  background-image: url("../../../image/join/join_benefit_board.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  width: 500px;
+  height: 400px;
+  flex-grow: 1;
+  margin: 0 50px;
+}
+.join_benefit .container .benefit_wrapper .learn_benefit h2 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 80px;
+}
+.join_benefit .container .benefit_wrapper .learn_benefit h2 span {
+  color: #ff7d33;
+}
+.join_benefit .container .benefit_wrapper .learn_benefit h3 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 3;
+  letter-spacing: 5px;
+}
+.join_benefit .container .benefit_wrapper .travel_benefit {
+  background-image: url("../../../image/join/join_benefit_board.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  width: 500px;
+  height: 400px;
+  flex-grow: 1;
+  margin: 0 50px;
+}
+.join_benefit .container .benefit_wrapper .travel_benefit h2 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 80px;
+}
+.join_benefit .container .benefit_wrapper .travel_benefit h2 span {
+  color: #ff7d33;
+}
+.join_benefit .container .benefit_wrapper .travel_benefit h3 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 3;
+  letter-spacing: 5px;
+}
+
+/* join_condition */
+.join_condition {
+  background-image: url("../../../image/join/join_condition_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+.join_condition #app .join_btn {
+  background-color: #FAEECD;
+  text-align: center;
+}
+.join_condition #app .join_btn .join_learn_select {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+  background-color: #FDF8EE;
+}
+.join_condition #app .join_btn .join_learn_unselect {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+  background-color: #FAEECD;
+}
+.join_condition #app .join_btn .join_learn_unselect:hover {
+  cursor: pointer;
+  background-color: #FDF8EE;
+}
+.join_condition #app .join_btn .join_travel_select {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+  background-color: #FDF8EE;
+}
+.join_condition #app .join_btn .join_travel_select:hover {
+  cursor: pointer;
+  background-color: #FDF8EE;
+}
+.join_condition #app .join_btn .join_travel_unselect {
+  color: #585858;
+  width: 140px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+  background-color: #FAEECD;
+}
+.join_condition #app .join_btn .join_travel_unselect:hover {
+  cursor: pointer;
+  background-color: #FDF8EE;
+}
+.join_condition #app .container {
+  padding-top: 30px;
+}
+.join_condition #app .container .learn_condition_wrapper {
+  width: 600px;
+  margin: 30px auto;
+  margin-bottom: 80px;
+  background: linear-gradient(180deg, #79cbd4 0%, #79cbd4 18.23%, #fff 18.24%);
+  border: 4px solid #79cbd4;
+  border-radius: 15px;
+}
+.join_condition #app .container .learn_condition_wrapper h4 {
+  font-size: 22px;
+  text-align: center;
+  line-height: 65px;
+}
+.join_condition #app .container .learn_condition_wrapper .learn_condition ul {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+.join_condition #app .container .learn_condition_wrapper .learn_condition ul li {
+  width: 170px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #FAEECD;
+  margin: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.join_condition #app .container .travel_condition_wrapper {
+  width: 600px;
+  margin: 30px auto;
+  margin-bottom: 80px;
+  background: linear-gradient(180deg, #79cbd4 0%, #79cbd4 18.23%, #fff 18.24%);
+  border: 4px solid #79cbd4;
+  border-radius: 15px;
+}
+.join_condition #app .container .travel_condition_wrapper h4 {
+  font-size: 22px;
+  text-align: center;
+  line-height: 65px;
+}
+.join_condition #app .container .travel_condition_wrapper .travel_condition ul {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+.join_condition #app .container .travel_condition_wrapper .travel_condition ul li {
+  width: 170px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #FAEECD;
+  margin: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.join_button {
+  text-align: center;
+}
+.join_button .container button {
+  margin: 20px 50px 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
