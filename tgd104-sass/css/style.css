@@ -2347,10 +2347,6 @@ body {
   margin: 40px auto;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 .learning_question,
 .learning_items,
 .learning_choose_content,
