@@ -1,4 +1,7 @@
 /* join_apply */
+// *{
+//     outline: 1px solid red;
+// }
 
 .join_apply{
     padding: 50px 0 80px;
@@ -28,7 +31,7 @@
     h2{
         font-size: $fs22;
         font-weight: 500;
-        margin-left: 70px;
+        margin-left: 220px;
         display: inline-block;
         width: 170px;
         text-align: center;
@@ -36,68 +39,85 @@
             content: '';
                 width: 170px;
                 display: block;
-                height: 10px;
+                height: 5px;
                 background-color: $dark_blue;
                 margin-top: 5px;
         }
     }
     .personal_information{
-        border-top: 3px solid $white;
-        height: 500px;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
-        padding-top: 30px;
-
-        .input_wrapper{
-            .input{
-                border-radius: 8px;
-                width: 100%;
-                width: 450px;
-                height: 50px;
-                border: 1px solid $dark_blue;;
-                outline: none;
-                padding-left: 10px;
-            }
-    
-            .input-focus {
-                border-radius: 8px;
-                width: 100%;
-                width: 450px;
-                height: 50px;
-                background-color: $light_blue;
-                /* border: 3px solid #79CBD4; */
-                outline: none;
-            }
-        }
-        
-        .other_wrapper{
-            display: flex;
-            align-items: baseline;
-            h3{
-                
-            }
-            .date{
-                width: 450px;
-                border-radius: 8px;
-                height: 50px;
-                border: 1px solid #79CBD4;
-                outline: none;
-            }
-            .region{
-                width: 450px;
-                border-radius: 8px;
-                height: 50px;
-                border: 1px solid #79CBD4;
-                outline: none;
-            }
-        }
-
-
-    }
-    button{
-        display: block;
         margin: 0 auto;
-        margin-top: 50px;
+        width: 78%;
+        background-color: $clear_white;
+        border-radius: 5px;
+        padding: 35px 25px;
+        .input_row {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            .form_group{
+               width: 48%;
+               label{
+                  text-indent: 2px;
+                  margin-bottom: 5px;
+               }
+               input, select{
+                  width: 100%;
+                  margin-bottom: 5px;
+               }
+               .input_file{
+                font-size: 15px;
+                &::file-selector-button {
+                    font-weight: 500;
+                    color: $clear_white;
+                    background-color: $dark_blue;
+                    width: 150px;
+                    height: 45px;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 15px;
+                }
+               }
+               .input_img{
+                font-size: 15px;
+                &::file-selector-button {
+                    font-weight: 500;
+                    color: $clear_white;
+                    background-color: $dark_blue;
+                    width: 150px;
+                    height: 45px;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 15px;
+                }                
+               }
+            }
+            #image_container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .image{
+                    border: 3px solid $dark_blue;
+                    border-radius: 15px;
+                    width: 130px;
+                    height: 130px;
+                    overflow: hidden;
+                    img{
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+          }
+    }
+    .join_btn{
+        text-align: center;
+        button{
+            margin: 60px 50px 0;
+        }
     }
 }
+
+
+

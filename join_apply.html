@@ -33,36 +33,131 @@
         <img src="./image/join/step1.png" alt="">
         <h2>基本資料</h2>
         <div class="personal_information" id="app">
-            <div v-for="(item, index) in items" :key="index" class="input_wrapper">
-                <input v-model="item.value" :type="item.type" :placeholder="item.placeholder" :class="{'input-focus': isFocused && focusedItemIndex === index, 'input': noFocused}" @focus="onFocus(index, $event.target)" @blur="onBlur" ref="inputElements">
-                <p v-if="!item.validated">請輸入{{item.placeholder}}</p>
-            </div>
-    
-            <!-- 性別: <select v-model="selectedGender" class="input_gender" required>
-                    <option v-for="gender in genders" :value="gender">{{gender}}</option>
-                </select><br> -->
+            <!-- <div class="main_content"> -->
+                <form action="">
 
-            <!-- <input type="radio" v-model="gender" value="男" class="input_gender"> 男
-            <input type="radio" v-model="gender" value="male" class="input_gender"> 女 -->
+                 <div class="input_row">
+                   <div class="form_group">
+                     <label for="" class="input_label">姓</label>
+                     <input type="text" class="input_text" placeholder="姓"/>
+                   </div>
+                   <div class="form_group">
+                     <label for="" class="input_label">名</label>
+                     <input type="text" class="input_text" placeholder="名" />
+                   </div>
+                 </div>
 
-            <div class="other_wrapper">
+                 <div class="input_row">
+                   <div class="form_group">
+                     <label for="" class="input_label">信箱(帳號)</label>
+                     <input type="text" class="input_text" placeholder="信箱(帳號)" />
+                   </div>
+                   <div class="form_group">
+                     <label for="" class="input_label">暱稱</label>
+                     <input type="text" class="input_text" placeholder="暱稱" />
+                   </div>
+                 </div>
 
-                <h3>生日:</h3> 
-                <input type="date" name="生日" class="date"><br>
-            
-            
+                 <div class="input_row">
+                   <div class="form_group">
+                     <label for="" class="input_label">身分證字號</label>
+                     <input type="text" class="input_text" placeholder="身分證字號" />
+                   </div>
+                   <div class="form_group">
+                    <label for="" class="input_label">個性</label>
+                    <input type="text" class="input_text" placeholder="個性" />
+                   </div>
+                 </div>
+
+                 <div class="input_row">
+                  <div class="form_group">
+                    <label for="" class="input_label">密碼</label>
+                    <input type="text" class="input_text" placeholder="密碼" />
+                  </div>
+                  <div class="form_group">
+                    <label for="" class="input_label">再次確認密碼</label>
+                    <input type="text" class="input_text" placeholder="再次確認密碼" />
+                  </div>
+                 </div>
                 
-                <h3>居住地區:</h3>
-                <select v-model="selectedRegion" class="region" required>
-                    <option v-for="region in regions" :value="region" p>{{region}}</option>
-                </select>
-            </div>
-            
+                 <div class="input_row">
+                   <div class="form_group">
+                     <label for="" class="input_label">電話號碼</label>
+                     <input type="text" class="input_text" placeholder="電話號碼" />
+                   </div>
+                   <div class="form_group">
+                     <label class="input_label" for="area">居住地區</label>
+                     <select name="area" id="area" class="input_select">
+                       <option value="">--請選擇--</option>
+                       <option value="北部">北部</option>
+                       <option value="中部">中部</option>
+                       <option value="南部">南部</option>
+                       <option value="東部">東部</option>
+                     </select>
+                   </div>
+                 </div>
+
+                 <div class="input_row">
+                   <div class="form_group">
+                     <label class="input_label" for="gender">性別</label>
+                     <select name="gender" id="gender" class="input_select">
+                       <option value="">--請選擇--</option>
+                       <option value="male">男性</option>
+                       <option value="female">女性</option>
+                     </select>
+                   </div>       
+                   <div class="form_group">
+                     <label class="input_label" for="birthday">生日</label>
+       
+                     <input
+                       type="date"
+                       id="birthday"
+                       name="trip-start"
+                       min="1900-01-01"
+                       max="2023-12-31"
+                       class="input_text"
+                     />
+                   </div>
+                 </div>
+
+                 <div class="input_row">
+                    <div class="form_group">
+                      <label class="input_label" for="goodPeopleImage">良民證上傳</label>
+                      <input type="file" id="goodPeopleImage" name="goodPeopleImage" class="input_file"/>
+                    </div>       
+                    <div class="form_group">
+                      <label class="input_label" for="IdImage">身分證上傳</label>
+                      <input type="file" id="IdImage" name="IdImage" class="input_file"/>
+                    </div>
+                 </div>
+                 <div class="input_row" id="app">
+                    <div class="form_group">
+                      <label class="input_label" for="theFile">生活照上傳(圖片寬&高請設定相同且檔案大小不得超過10mb)</label>
+                      <input type="file" ref="fileInput" @change="fileChange" class="input_img"/>
+                      <input type="file" ref="fileInput2" @change="fileChange2" class="input_img"/>
+                      <input type="file" ref="fileInput3" @change="fileChange3" class="input_img"/>
+                    </div>       
+                    <div class="form_group" id="image_container">
+                      <div class="image">
+                          <img ref="image1">
+                      </div>
+                      <div class="image">
+                        <img ref="image2">
+                      </div>
+                      <div class="image">
+                        <img ref="image3">
+                      </div>
+                    </div>
+                 </div>
+
+                </form>
 
         </div>
 
-        
-        <button class="btn_blue">下一步</button>
+        <div class="join_btn">
+            <button class="outline_btn_blue">回上一頁</button>
+            <button class="btn_blue">下一步</button>
+        </div>
     </div>
   
     <!-- footer -->
@@ -105,76 +200,45 @@
     <!-- footer end -->
 
 
-    <script src="./js/jquery-3.6.3.js"></script>
     <script src="./js/vue.global.js"></script>
 
     <script>
         const App = Vue.createApp({
-            data(){
-                return {
-                    items: [
-                        { value: '', type: 'text', placeholder: '姓', validated: true },
-                        { value: '', type: 'text', placeholder: '名', validated: true },
-                        { value: '', type: 'email', placeholder: '信箱 ( 帳號 )', validated: true },
-                        { value: '', type: 'text', placeholder: '暱稱', validated: true },
-                        { value: '', type: 'text', placeholder: '身分證號碼', validated: true },
-                        { value: '', type: 'text', placeholder: '個性', validated: true },
-                        { value: '', type: 'text', placeholder: '密碼', validated: true },
-                        { value: '', type: 'text', placeholder: '性別', validated: true },
-                        { value: '', type: 'text', placeholder: '再次確認密碼', validated: true },
-                        { value: '', type: 'text', placeholder: '電話', validated: true },
-                    ],
-                    // gender: '',
-                    // genders: ['男','女'],
-                    regions: ['北部','中部','南部','東部'],
-                    // selectedGender: '男',
-                    selectedRegion: '北部',
-                    isFocused: false,
-                    noFocused: true,
-                    focusedItemIndex: null,
-                    focusedInputElement: null,
-
-                }
-            },   
             methods: {
-                onFocus(index, element) {
-                    this.focusedItemIndex = index;
-                    this.focusedInputElement = element;
-                    for (let i = 0; i < this.items.length; i++) {
-                        if (this.focusedInputElement === this.$refs.inputElements[i]) {
-                            // 處理當前聚焦的元素
-                            this.isFocused = true;
-                            }
-                    }
+                fileChange() {
+                const file = this.$refs.fileInput.files[0]
+                const reader = new FileReader()
+                reader.readAsDataURL(file)
+                reader.addEventListener('load', () => {
+                    const image = this.$refs.image1
+                    image.src = reader.result
+                    image.style.maxWidth = '130px'
+                    image.style.maxHeight = '130px'
+                })
                 },
-                                
-                onBlur() {
-                    this.focusedItemIndex = null;
-                    this.focusedInputElement = null;
-
-                    //如果欄位空值顯示 請輸入 但每個都出現 且輸入字不會消失
-                    // for (let i = 0; i < this.items.length; i++) {
-                    // if (this.focusedInputElement === null) {
-                    //     // 處理當前聚焦的元素 
-                    //     this.items[i].validated = false;
-                    //     } else {
-                    //         this.items[i].validated = true;
-                    //     }
-                    // }
-
-                    //請輸入直接出現 但每個都出現 輸入字會消失
-                    // for (let i = 0; i < this.items.length; i++) {
-                    //     if (this.items[i].value === '') {
-                    //         this.items[i].validated = false;
-                    //     } else {
-                    //         this.items[i].validated = true;
-                    //     }
-                    // }
-
+                fileChange2() {
+                const file = this.$refs.fileInput2.files[0]
+                const reader = new FileReader()
+                reader.readAsDataURL(file)
+                reader.addEventListener('load', () => {
+                    const image = this.$refs.image2
+                    image.src = reader.result
+                    image.style.maxWidth = '130px'
+                    image.style.maxHeight = '130px'
+                })
                 },
-
-            },   
-
+                fileChange3() {
+                const file = this.$refs.fileInput3.files[0]
+                const reader = new FileReader()
+                reader.readAsDataURL(file)
+                reader.addEventListener('load', () => {
+                    const image = this.$refs.image3
+                    image.src = reader.result
+                    image.style.maxWidth = '130px'
+                    image.style.maxHeight = '130px'
+                })
+                },
+            },
 
         })
 

@@ -1,5 +1,6 @@
 /* consultant_gallary start */
 .consultant_gallary{
+    display: flex;
 
     .consultant_gallary_main{
 
@@ -10,7 +11,8 @@
     }
 
     .consultant_gallary_small{
-        
+        display: flex;
+        flex-direction: column;
         img{
             border: 3px solid #79CBD4;
             border-radius: 10px;

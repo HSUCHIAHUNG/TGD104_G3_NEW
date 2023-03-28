@@ -52,6 +52,45 @@ const routes = [
     name: "consultant",
     component: () => import("../views/Consultant.vue"),
   },
+  {
+    path: "/Backend",
+    name: "Backend",
+    component: () => import("../views/BackendCenter.vue"),
+    redirect: "/Backend/SalesManagement",
+    children: [
+      {
+        path: "SalesManagement",
+        neme: "SalesManagement",
+        component: () => import("../views/backendCenter/SalesManagement.vue"),
+      },
+      {
+        path: "MemberManagement",
+        neme: "MemberManagement",
+        component: () => import("../views/backendCenter/MemberManagement.vue"),
+      },
+      {
+        path: "OrderManagement",
+        neme: "OrderManagement",
+        component: () => import("../views/backendCenter/OrderManagement.vue"),
+      },
+      {
+        path: "ConsultantReview",
+        neme: "ConsultantReview",
+        component: () => import("../views/backendCenter/ConsultantReview.vue"),
+      },
+      {
+        path: "ConsultantManagement",
+        neme: "ConsultantManagement",
+        component: () =>
+          import("../views/backendCenter/ConsultantManagement.vue"),
+      },
+      {
+        path: "Exit",
+        neme: "Exit",
+        component: () => import("../views/backendCenter/Exit.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
