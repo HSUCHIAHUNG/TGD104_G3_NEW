@@ -561,6 +561,66 @@ body {
   width: 75%;
 }
 
+.ordercontainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+.ordercontainer .MemberWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.ordercontainer .MemberWrapper table {
+  margin: 20px auto 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+  table-layout: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #585858;
+  box-shadow: 1px 2px 10px #adadad;
+}
+.ordercontainer .MemberWrapper table tr:first-child {
+  background-color: #FF7426;
+  color: #fff;
+}
+.ordercontainer .MemberWrapper table tr th {
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+  padding: 10px 0px 5px 30px;
+}
+.ordercontainer .MemberWrapper table tr td {
+  padding: 15px 0px 5px 30px;
+  text-align: left;
+  background-color: #fff;
+}
+.ordercontainer .select_form_container {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+.ordercontainer .select_form_container .form_state .input_select {
+  background-color: #FAEECD;
+  border: none;
+  font-weight: bold;
+  padding: 10px 35px 10px 20px;
+  box-sizing: border-box;
+}
+.ordercontainer .select_form_container .SearchBar {
+  margin: 0;
+}
+.ordercontainer .orderbtn {
+  margin: 30px auto 0px auto;
+  display: flex;
+}
+.ordercontainer .orderbtn .outline_btn_orange {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 /* ------------Swiper_Banner_start------------- */
 .banner_container {
   height: 850px;
