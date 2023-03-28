@@ -1,11 +1,7 @@
 
 <template>
     <div class="MemberContainer">
-        <div class="SearchBar">
-            <input id="search-input" placeholder="請輸入身分證字號">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        
+        <searchbar></searchbar>
         <table>
             <tr>
                 <th>身分證字號</th>
@@ -28,12 +24,18 @@
 </template>
 
 <script>
+    import searchbar from '../../components/BackecdSearch.vue'
+
     export default {
+       
+        
+ 
         data(){
+            
             return {
                 items: [
                 { id: 'H124803062', name: '腳踝阿宏', birth: '1995/01/24',phone: '0989541162', mail:"h0989541162@gmail.com" },
-                { id: 'H124803062', name: '舞動小敏', birth: '1995/01/24',phone: '0989541162', mail:"h0989541162@gmail.com" },
+                { id: 'H124803062', name: '舞動小敏之腳踝90分', birth: '1995/01/24',phone: '0989541162', mail:"h0989541162@gmail.com" },
                 { id: 'H124803062', name: '口頭禪蝦怎麼辦的品諭', birth: '1995/01/24',phone: '0989541162', mail:"h0989541162@gmail.com" },
                 { id: 'H124803062', name: '怕被看腳踝的霈霈', birth: '1995/01/24',phone: '0989541162', mail:"h0989541162@gmail.com" },  
                 { id: 'H124803062', name: '炫炫', birth: '1995/01/24',phone: '0989541162', mail:"h0989541162@gmail.com" },
@@ -47,17 +49,23 @@
         },   
         
         methods: {
-    
+            
         },
 
         computed: {
        
         },
+
+        name: 'MemberManagement',
+        components: {
+            searchbar,
+        }
     }
 </script>
 
 
 <style lang="scss">
+    // @import '../../../../tgd104-sass/new_style.scss';
 
     .MemberContainer {
         display: flex;
@@ -97,42 +105,6 @@
             }
         }
     }
-
-    .SearchBar {
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-            width: fit-content;
-            margin: 20px 70px 20px 0px;
-            
-        input {
-            border-radius: 5px;
-            border: none;
-            background-color: #FAEECD;
-            padding: 10px 0px 10px 35px; // 预留图标位置的空间
-            box-sizing: border-box;
-            &::placeholder{
-                color: #9E9E9E;
-                text-align: center;
-                line-height: 35.33px;
-                font-weight: 500;
-                font-size: 13px;
-                padding-right: 35px;
-            }
-        }
-
-        i {
-            position: absolute;
-            top: 50%;
-            left: 7px;
-            transform: translateY(-50%);
-            color: #FF7426;
-            font-size: 18px;
-            font-weight: bold;
-        }
-    }
-  }
-
-  
+}
 
 </style>
