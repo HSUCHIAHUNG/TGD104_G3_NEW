@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>加入陪你_申請</title>
+    <title>加入陪你_學習</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -119,37 +119,6 @@
                      />
                    </div>
                  </div>
-
-                 <div class="input_row">
-                    <div class="form_group">
-                      <label class="input_label" for="goodPeopleImage">良民證上傳</label>
-                      <input type="file" id="goodPeopleImage" name="goodPeopleImage" class="input_file"/>
-                    </div>       
-                    <div class="form_group">
-                      <label class="input_label" for="IdImage">身分證上傳</label>
-                      <input type="file" id="IdImage" name="IdImage" class="input_file"/>
-                    </div>
-                 </div>
-                 <div class="input_row" id="app">
-                    <div class="form_group">
-                      <label class="input_label" for="theFile">生活照上傳(圖片寬&高請設定相同且檔案大小不得超過10mb)</label>
-                      <input type="file" ref="fileInput" @change="fileChange" class="input_img"/>
-                      <input type="file" ref="fileInput2" @change="fileChange2" class="input_img"/>
-                      <input type="file" ref="fileInput3" @change="fileChange3" class="input_img"/>
-                    </div>       
-                    <div class="form_group" id="image_container">
-                      <div class="image">
-                          <img ref="image1">
-                      </div>
-                      <div class="image">
-                        <img ref="image2">
-                      </div>
-                      <div class="image">
-                        <img ref="image3">
-                      </div>
-                    </div>
-                 </div>
-
                 </form>
 
         </div>
@@ -200,45 +169,17 @@
     <!-- footer end -->
 
 
+    <script src="./js/jquery-3.6.3.js"></script>
     <script src="./js/vue.global.js"></script>
 
     <script>
         const App = Vue.createApp({
+ 
             methods: {
-                fileChange() {
-                const file = this.$refs.fileInput.files[0]
-                const reader = new FileReader()
-                reader.readAsDataURL(file)
-                reader.addEventListener('load', () => {
-                    const image = this.$refs.image1
-                    image.src = reader.result
-                    image.style.maxWidth = '130px'
-                    image.style.maxHeight = '130px'
-                })
-                },
-                fileChange2() {
-                const file = this.$refs.fileInput2.files[0]
-                const reader = new FileReader()
-                reader.readAsDataURL(file)
-                reader.addEventListener('load', () => {
-                    const image = this.$refs.image2
-                    image.src = reader.result
-                    image.style.maxWidth = '130px'
-                    image.style.maxHeight = '130px'
-                })
-                },
-                fileChange3() {
-                const file = this.$refs.fileInput3.files[0]
-                const reader = new FileReader()
-                reader.readAsDataURL(file)
-                reader.addEventListener('load', () => {
-                    const image = this.$refs.image3
-                    image.src = reader.result
-                    image.style.maxWidth = '130px'
-                    image.style.maxHeight = '130px'
-                })
-                },
-            },
+
+
+            },   
+
 
         })
 
