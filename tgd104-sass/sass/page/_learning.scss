@@ -8,11 +8,11 @@
         flex-grow: 1;
         padding-top: 80px;
         h1{
-            font-size: 48px;
+            font-size: $fs40;
             font-weight: 600;
         }
         span{
-            font-size: 48px;
+            font-size: $fs40;
             color: $dark_orange;
             margin-left: 20px;
         }
@@ -38,9 +38,9 @@
         .lesson_tip{
             margin-left: 80px;
             p{
-                font-size: 32px;
+                font-size: $fs32;
                 span{
-                    font-size: 48px;
+                    font-size: $fs40;
                     color: $dark_orange;
                     margin-left: 20px;
                 }
@@ -56,7 +56,7 @@
     background-position: top;
     .hot_learning{
         text-align: center;
-        font-size: 36px;
+        font-size: $fs36;
         font-weight: 600;
         margin-top: 100px;
         margin-bottom: 40px;
@@ -218,6 +218,11 @@
             }
         }
     }
+}
+
+.student_share_img div{
+    text-align: center;
+    margin-top: 80px;
 }
 
 

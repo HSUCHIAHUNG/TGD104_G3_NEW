@@ -477,6 +477,14 @@ footer .footer_inner hr {
   background-color: #79cbd4;
 }
 
+@media screen and (max-width: 1200px) {
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
 .checkout_list {
   background-color: #79cbd4;
   width: 70%;
@@ -531,9 +539,16 @@ footer .footer_inner hr {
 }
 
 /* consultant_gallary start */
+.consultant_gallary {
+  display: flex;
+}
 .consultant_gallary .consultant_gallary_main img {
   border: 3px solid #79CBD4;
   border-radius: 10px;
+}
+.consultant_gallary .consultant_gallary_small {
+  display: flex;
+  flex-direction: column;
 }
 .consultant_gallary .consultant_gallary_small img {
   border: 3px solid #79CBD4;
@@ -1749,11 +1764,11 @@ body {
   padding-top: 80px;
 }
 .learning_content .container_learning h1 {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 600;
 }
 .learning_content .container_learning span {
-  font-size: 48px;
+  font-size: 40px;
   color: #ff7d33;
   margin-left: 20px;
 }
@@ -1783,7 +1798,7 @@ body {
   font-size: 32px;
 }
 .learning_content .container_learning_bottom .lesson_tip p span {
-  font-size: 48px;
+  font-size: 40px;
   color: #ff7d33;
   margin-left: 20px;
 }
@@ -1939,29 +1954,160 @@ body {
   font-size: 20px;
 }
 
-/* 學員心得 end */
-.choose_sidebar {
-  width: 120px;
-  float: left;
-  height: 280px;
+.student_share_img div {
   text-align: center;
-  line-height: 280px;
-  font-size: 15px;
-  color: #ffffff;
-  font-weight: bold;
-  background-color: #cecece;
+  margin-top: 80px;
 }
 
-.choose_content {
-  width: 240px;
-  height: 280px;
+/* 學員心得 end */
+.learning_choose_wrapper {
+  margin: 0 auto;
+  height: 800px;
+  width: 100%;
+  overflow: hidden;
+}
+.learning_choose_wrapper .learning_choose_side {
+  height: 800px;
+  width: 350px;
+  background-color: #FDF8EE;
+  float: left; /* 使用 float 讓這個 <div> 做水平靠左排列 */
+  overflow-y: auto;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.learning_choose_wrapper .learning_choose_side .learning_question {
+  width: 90%;
+  padding: 15px;
+  margin: 30px auto;
+  background-color: #ff7d33;
   text-align: center;
-  line-height: 280px;
-  font-size: 15px;
-  color: #f9c81e;
-  font-weight: bold;
-  background-color: #fffaf3;
-  float: left;
+  color: #ffffff;
+}
+.learning_choose_wrapper .learning_choose_side .learning_items {
+  width: 90%;
+  padding: 40px;
+  margin: 0 auto;
+  background-color: #FFE59D;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  color: #585858;
+}
+.learning_choose_wrapper .learning_choose_content {
+  height: 800px;
+  width: auto;
+  background-color: #FDF8EE;
+  overflow-y: auto;
+  margin: 20px;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 40px 200px;
+}
+.learning_choose_wrapper .learning_choose_content .learning_consultant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.learning_choose_wrapper .learning_choose_content .learning_consultant .consultant_card {
+  margin: 30px;
+}
+.learning_choose_wrapper .learning_choose_content .learning_second_items {
+  text-align: center;
+}
+.learning_choose_wrapper .learning_choose_content .learning_second_items button {
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  margin: 10px;
+  background-color: #FFE59D;
+  color: #585858;
+  font-size: 18px;
+  border: 1px solid #FFE59D;
+  font-weight: 600;
+  border-radius: 5px;
+}
+.learning_choose_wrapper .learning_choose_content .reserve {
+  text-align: center;
+}
+.learning_choose_wrapper .learning_choose_content .reserve button {
+  margin: 40px auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.learning_question,
+.learning_items,
+.learning_choose_content,
+.learning_choose_side {
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.consultant_gallary {
+  width: 50%;
+}
+
+.learning_checkout_list {
+  padding-top: 100px;
+  min-height: 600px;
+}
+.learning_checkout_list h2 {
+  width: 70%;
+  color: #585858;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.learning_checkout_list .checkout_total {
+  text-align: right;
+  margin-top: 25px;
+}
+.learning_checkout_list .button_choose {
+  text-align: center;
+  margin-top: 50px;
+}
+.learning_checkout_list .button_choose button {
+  margin: 10px;
+}
+.learning_checkout_list .img_wallet {
+  width: 70%;
+  text-align: right;
+  margin: 0 auto;
+}
+.learning_checkout_list .img_wallet img {
+  max-width: 126px;
+  width: 30%;
+}
+
+.learning_order {
+  width: 70%;
+  margin: 50px auto;
+  text-align: center;
+}
+.learning_order .table_bottom {
+  margin: 30px auto;
+}
+.learning_order .button_choose {
+  margin-top: 50px;
+}
+.learning_order .button_choose button {
+  margin: 10px;
+}
+
+.order_success {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 100px auto 50px auto;
+}
+
+.button_choose {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.button_choose button {
+  margin: 10px;
 }
 
 /* join_apply */
