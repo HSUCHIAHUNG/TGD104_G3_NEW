@@ -24,8 +24,7 @@
                 <span>5年經驗登山嚮導</span>
               </h3>
             </div>
-
-            <button type="button" class="btn_blue">查看顧問資料</button>
+            <a class="btn_blue">查看顧問資料</a>
           </div>
         </div>
         <div class="order_area">

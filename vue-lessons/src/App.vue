@@ -3,9 +3,10 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/chart">後台圖表</router-link> |
-    <router-link to="/member">會員中心</router-link>
+    <router-link to="/member">會員中心</router-link> |
+    <router-link to="/consultant">顧問中心</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">
