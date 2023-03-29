@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- main_content -->
-    <div class="main_content">
+    <div class="consultant_content">
       <form action="">
         <div class="input_row">
           <div class="form_group">
@@ -66,11 +66,25 @@
               class="input_text"
             />
           </div>
+          <div class="form_group files">
+            <div class="goodpeople">
+              <label for="" class="file_upload"
+                >良民證上傳<i class="fa-regular fa-image"></i
+              ></label>
+              <input type="file" class="upload" id="goodpeople" />
+            </div>
+            <div class="id_upload">
+              <label for="" class="file_upload"
+                >身分證上傳<i class="fa-regular fa-image"></i
+              ></label>
+              <input type="file" class="upload" id="id" />
+            </div>
+          </div>
         </div>
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
-        <button type="button" class="btn_blue">確定儲存</button>
+        <button type="button" class="btn_blue">送出審核</button>
       </div>
     </div>
     <!-- main_content end-->
@@ -87,5 +101,6 @@ export default {
 </script>
 
 <style lang="scss">
+// consultant_account
 @import "../../../tgd104-sass/new_style.scss";
 </style>

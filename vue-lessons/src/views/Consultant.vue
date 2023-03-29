@@ -19,7 +19,7 @@
                   :class="{ active: currentTab === 'tab1' }"
                   @click.prevent="
                     {
-                      (content = 'MemberSetting'), (currentTab = 'tab1');
+                      (content = 'ConsultantSetting'), (currentTab = 'tab1');
                     }
                   "
                   >基本資料</a
@@ -55,14 +55,14 @@ import VHeader from "@/components/VHeader.vue";
 //  import VFooter from '@/components/VFooter.vue'
 import CAvatar from "../components/CAvatar.vue";
 import CSideNav from "@/components/CSideNav.vue";
-import MemberSetting from "../components/MemberSetting.vue";
+import ConsultantSetting from "@/components/ConsultantSetting.vue";
 import PasswordChange from "../components/PasswordChange.vue";
 
 export default {
   name: "Member",
   data() {
     return {
-      content: "MemberSetting",
+      content: "ConsultantSetting",
       currentTab: "tab1",
     };
   },
@@ -71,7 +71,7 @@ export default {
     // VFooter,
     CAvatar,
     CSideNav,
-    MemberSetting,
+    ConsultantSetting,
     PasswordChange,
   },
 };
