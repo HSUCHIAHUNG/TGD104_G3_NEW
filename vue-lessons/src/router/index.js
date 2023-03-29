@@ -68,6 +68,16 @@ const routes = [
     component: () => import("../views/index.vue"),
   },
   {
+    path: "/travel",
+    name: "travel",
+    component: () => import("../views/Travel.vue"),
+  },
+  {
+    path: "/travelmap",
+    name: "travelmap",
+    component: () => import("../views/TravelMap.vue"),
+  },
+  {
     path: "/Backend",
     name: "Backend",
     component: () => import("../views/BackendCenter.vue"),
