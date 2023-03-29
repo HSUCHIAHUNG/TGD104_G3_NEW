@@ -52,58 +52,60 @@ import SalesManagement from './backendCenter/SalesManagement.vue'
 <style lang="scss">
 
 
-// .BackendContainer{
-//    display: flex;
-//    background-color: #FDF8EE;
-//    .BackendNav{
-//       border-radius: 0 10px 10px 0;
-//       background-color: #FAEECD;
-//       display: flex;
-//       flex-direction: column;
-//       // padding: 30px;
-//       box-sizing: border-box;
-//       max-width: 300px;
-//       width: 100%;
-//       position: relative;
+.BackendContainer{
+   display: flex;
+   background-color: #FDF8EE;
+   height: 100vh;
+   .BackendNav{
+      border-radius: 0 10px 10px 0;
+      background-color: #FAEECD;
+      display: flex;
+      flex-direction: column;
+      // padding: 30px;
+      box-sizing: border-box;
+      max-width: 300px;
+      width: 100%;
+      position: relative;
+      height: 100vh;
 
-//       h1{
-//          font-size: 40px;
-//          font-weight: b;
-//          color: #FF7426;
-//          padding: 30px 30px 30px 0px;
-//       }
+      h1{
+         font-size: 40px;
+         font-weight: b;
+         color: #FF7426;
+         padding: 30px 30px 30px 0px;
+      }
       
-//          a {
-//          font-weight: bold;
-//          color: #2c3e50;
-//          text-align: left;
-//          font-size: 22px;
-//          padding: 10px;
-//          padding: 10px 0px 10px 30px;
-//          width: 100%;
-//          &:last-child{
-//             position: absolute;
-//             bottom: 0;
-//             color: #f5f5f5;
-//             background-color: #FF7426;
-//             border-radius: 0 0 10px 0;
-//             i {
-//                padding-bottom: 8px;
-//             }
+         a {
+         font-weight: bold;
+         color: #2c3e50;
+         text-align: left;
+         font-size: 22px;
+         padding: 10px;
+         padding: 10px 0px 10px 30px;
+         width: 100%;
+         &:last-child{
+            position: absolute;
+            bottom: 0;
+            color: #f5f5f5;
+            background-color: #FF7426;
+            border-radius: 0 0 10px 0;
+            i {
+               padding-bottom: 8px;
+            }
 
-//          }
+         }
          
-//          span{
-//             padding-left: 20px;
-//          }
+         span{
+            padding-left: 20px;
+         }
 
-//          &.router-link-exact-active {
-//             color: #42b983;      
-//          }
-//       }
-//    }
+         &.router-link-exact-active {
+            color: #42b983;      
+         }
+      }
+   }
    
-// }
+}
 
 @import '../../../tgd104-sass/new_style.scss';
 </style>

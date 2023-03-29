@@ -1,35 +1,38 @@
 // font.css
 body {
-   font-family: "Oswald", "Noto Sans TC";
-   font-size: 16px;
-   line-height: 1.6;
-   color: $gray;
- }
+  font-family: "Oswald", "Noto Sans TC";
+  font-size: 16px;
+  line-height: 1.6;
+  color: $gray;
+}
 // general.css
- * {
-   box-sizing: border-box;
- }
- 
- .container {
-   max-width: 1320px;
-   margin: 0 auto;
- }
- 
- a {
-   text-decoration: none;
-   cursor: pointer;
- }
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+#app {
+  text-align: unset; /* 移除text-align屬性 */
+}
 // // 變數
 // /*變數*/
 // $body_fontSize : 14px; //數值
-// $bgc : #e1e1e1;  
+// $bgc : #e1e1e1;
 
 // // basic color
 // $fontColor : #333;
 // $white : #eee;
 // $margin : 30px 30px 10px 10px; //list
 
-// $titleFontSize : 40px; 
+// $titleFontSize : 40px;
 // //font family
 // $fontFamily : "Arial, Helvetica, sans-serif"; //字串
 
@@ -46,7 +49,6 @@ body {
 // $title : "h1";
 // $attr : "margin";
 // $url: "img";
-
 
 // //斷點
 
