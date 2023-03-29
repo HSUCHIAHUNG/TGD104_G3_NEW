@@ -1,0 +1,95 @@
+.main {
+  width: 85%;
+  background-color: $clear_white;
+  border-radius: 5px;
+  padding: 35px 25px;
+  .main_header {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    h1 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      text-align: left;
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 3px solid $text-gray;
+      box-sizing: border-box;
+      a {
+        display: block;
+        color: $gray;
+        width: 180px;
+        line-height: 65px;
+        text-align: center;
+        font-weight: 500;
+        &:hover {
+          border-bottom: 5px solid $dark_blue;
+        }
+        &.active {
+          color: $dark_blue;
+          border-bottom: 5px solid $dark_blue;
+        }
+      }
+    }
+  }
+  .consultant_content {
+    margin-top: 40px;
+    .input_row {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      .form_group {
+        width: 48%;
+        label {
+          text-indent: 2px;
+          margin-bottom: 5px;
+        }
+        input,
+        select {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+      }
+      .files {
+        display: flex;
+        align-items: center;
+        .goodpeople,
+        .id_upload {
+          width: 50%;
+          text-align: center;
+          padding-top: 20px;
+          label {
+            padding: 10px 20px 10px 20px;
+            background-color: $dark_blue;
+            color: $clear_white;
+            border-radius: 5px;
+            cursor: pointer;
+            i {
+              margin-left: 30px;
+            }
+          }
+        }
+      }
+      #goodpeople,
+      #id {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+    }
+    .btns {
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 30px;
+      button {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+    }
+  }
+}

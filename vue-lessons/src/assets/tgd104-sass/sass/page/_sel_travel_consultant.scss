@@ -1,0 +1,207 @@
+/* sel_travel_consultant_banner */
+
+// *{
+//     outline: 1px solid red;
+// } 
+
+.sel_travel_consultant_banner{
+    background-image: url('../../../image/join/sel_travel_consultant_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 750px;
+    padding-top: 150px;
+    .container{
+        h1{
+            font-size: $fs40;
+            font-weight: 600;
+            margin-bottom: 50px;
+            span{
+                color: $dark_orange;
+            }
+        }
+        h2{
+            font-size: $fs24;
+            font-weight: 500;
+        }
+        h3{
+            font-size: $fs24;
+            font-weight: 500;
+            margin-bottom: 50px;
+            span{
+                color: $dark_orange;
+            }
+        }
+        h4{
+            font-size: $fs32;
+            font-weight: 600;
+            display: inline-block;
+            span{
+                color: $dark_orange;
+            }
+        }
+        i{
+            font-size: $fs36;
+            display: inline-block;
+            color: $dark_orange;
+            margin-left: 15px;
+            animation: bounce 0.8s infinite;
+        }
+        @keyframes bounce {
+            0% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+            100% {
+              transform: translateY(0);
+            }
+        }
+    }
+    
+}
+
+/* sel_travel_consultant */
+.sel_travel_consultant{
+    .self_or_random{
+        height: 60px;
+        background-color: $ft_yellow;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        .self{
+            display: block;
+            line-height: 60px;
+            width: 180px;
+            font-size: $fs24;
+            font-weight: 500;
+            background-color: $clear_white;
+            color: $dark_yellow;
+        }
+        .random{
+            display: block;
+            line-height: 60px;
+            width: 180px;
+            font-size: $fs24;
+            font-weight: 500;
+            a{
+                display: block;
+                color: $gray;
+                &:hover{
+                    color: $dark_yellow;
+                    background-color: $clear_white;
+                }
+            }
+        }
+    }
+    #app{
+        .self_consultant{
+            text-align: center;
+            .self_consultant_all{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs22;
+                font-weight: 600;
+                border: none;
+                border-bottom: 8px solid $ft_yellow;
+                background-color: $bg_gray;
+            }
+            .self_consultant_unall{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs22;
+                font-weight: 600;
+                border: none;
+                background-color: $bg_gray;
+                &:hover{
+                    cursor: pointer;
+                    color: $dark_yellow;
+                }
+            }
+            .self_consultant_boy{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs22;
+                font-weight: 600;
+                border: none;
+                border-bottom: 8px solid $ft_yellow;
+                background-color: $bg_gray;
+            }
+            .self_consultant_unboy{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs22;
+                font-weight: 600;
+                border: none;
+                background-color: $bg_gray;
+                &:hover{
+                    cursor: pointer;
+                    color: $dark_yellow;
+                }
+            }
+            .self_consultant_girl{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs22;
+                font-weight: 600;
+                border: none;
+                border-bottom: 8px solid $ft_yellow;
+                background-color: $bg_gray;
+            }
+            .self_consultant_ungirl{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs22;
+                font-weight: 600;
+                border: none;
+                background-color: $bg_gray;
+                &:hover{
+                    cursor: pointer;
+                    color: $dark_yellow;
+                }
+            }
+        }
+        .container{
+            .all_wrapper{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin: 50px 0;
+            }
+            .page_number{
+                text-align: center;
+                margin-bottom: 30px;
+                a{
+                    color: $gray;
+                    background-color: $clear_white;
+                    font-size: $fs20;
+                    display: inline-block;
+                    width: 30px;
+                    line-height: 30px;
+                    margin: 0 5px;
+                    border-radius: 5px;
+                    border: 1px solid $dark_blue;
+                    &:nth-child(1),&:nth-child(2){
+                        color: $clear_white;
+                        background-color: $dark_blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sel_travel_consultant_button{
+    text-align: center;
+    .container{
+        button{
+            margin: 70px 50px;
+        }
+    }
+}

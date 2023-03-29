@@ -1,0 +1,16 @@
+.checkout_list{
+   background-color:$dark_blue;
+   width: 70%;
+   margin: 0 auto;
+   border-radius: 15px;
+}
+
+.checkout_method{
+   padding-top: 10px;
+   padding-bottom: 10px;
+   color:$text_gray;
+}
+
+.checkout_method:first-child{
+   border-bottom: 1px solid #ccc;
+}

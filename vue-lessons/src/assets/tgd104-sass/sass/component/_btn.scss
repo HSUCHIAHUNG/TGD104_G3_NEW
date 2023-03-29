@@ -1,0 +1,71 @@
+@mixin btn_base {
+   width: 180px;
+   height: 50px;
+   border-radius: 5px;
+}
+
+@mixin outline_btn ($dark,$light,$bg){
+   border:3px solid $dark;
+   background-color: $bg;
+   color: $dark;
+   font-weight: 600;
+   font-size: 17px;
+   &:hover{
+      background-color: $light;
+      color:$dark;
+   }
+}
+
+@mixin solid_btn ($dark,$light,$font_color){
+   background-color: $dark;
+   border: 0;
+   color: $font_color;
+   font-size: 17px;
+   font-weight: 600;
+   &:hover{
+      background-color: $light;
+      color: $dark;
+      border: 3px solid $dark;
+   }
+}
+
+@mixin nav_btn($dark,$light,$font_color){
+   background-color: $dark;
+   border: 0;
+   color: $font_color;
+   font-size: 17px;
+   font-weight: 600;
+   &:hover{
+      background-color: $light;
+      color: $font_color
+   }
+}
+
+// solid btn -----------------------------------------
+.btn_blue{
+   @include btn_base();
+   @include solid_btn($dark_blue,$light_blue,$clear_white)
+}
+
+.btn_orange{
+   @include btn_base();
+   @include solid_btn($dark_orange, $light_orange , $clear_white )
+}
+
+.btn_yellow{
+   @include btn_base();
+   @include nav_btn($dark_blue,$dark_yellow ,$clear_white)
+}
+
+// outline btn -----------------------------------------
+
+.outline_btn_blue{
+   @include btn_base();
+   @include outline_btn($dark_blue,$light_blue , $clear_white )
+}
+.outline_btn_orange{
+   @include btn_base();
+   @include outline_btn($dark_orange,$light_orange ,$clear_white )
+}
+
+

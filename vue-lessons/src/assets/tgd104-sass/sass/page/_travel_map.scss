@@ -1,0 +1,234 @@
+/* *{
+    outline: 1px solid red;
+} */
+
+.travel_map_wrapper{
+    width: 100%;
+    height: 1200px;
+    padding-top: 60px;
+    background-color: $green;
+    .container{
+        .travel_map{
+            position: relative;
+            text-align: center;
+            h1{
+                font-size: $fs28;
+                font-weight: 500;
+                letter-spacing: 5px;
+                text-align: center;
+                margin-bottom: 40px;
+                color: $white;
+            }
+            img{
+                display: block;
+                width: 100%;
+                width: 850px;
+                margin: 0 auto;
+            }
+            .travel_map_radio{
+                width: 100%;
+                text-align: center;
+                input{
+                    display: none;
+                }
+                .north{
+                    &:hover:after{
+                        background-color: $text_gray;
+                        transition: all .8s;
+                    }
+                }
+                .north::after{
+                    content: '北';
+                    display: block;
+                    width: 80px;
+                    line-height: 80px;
+                    background-color: $dark_yellow;
+                    border-radius: 50%;
+                    font-size: $fs28;
+                    font-weight: 600;
+                
+                    position: absolute;
+                    top: 5%;
+                    left: 65%;
+                }
+
+                .middle{
+                    &:hover:after{
+                        background-color: $text_gray;
+                        transition: all .8s;
+                    }
+                }
+                .middle::after{
+                    content: '中';
+                    display: block;
+                    width: 80px;
+                    line-height: 80px;
+                    background-color: $dark_yellow;
+                    border-radius: 50%;
+                    font-size: $fs28;
+                    font-weight: 600;
+                    
+                    position: absolute;
+                    top: 35%;
+                    left: 30%;
+                }
+
+                .south{
+                    &:hover:after{
+                        background-color: $text_gray;
+                        transition: all .8s;
+                    }
+                }
+                .south::after{
+                    content: '南';
+                    display: block;
+                    width: 80px;
+                    line-height: 80px;
+                    background-color: $dark_yellow;
+                    border-radius: 50%;
+                    font-size: $fs28;
+                    font-weight: 600;
+                    
+                    position: absolute;
+                    top: 75%;
+                    left: 32%;
+                }
+
+                .east{
+                    &:hover:after{
+                        background-color: $text_gray;
+                        transition: all .8s;
+                    }
+                }
+                .east::after{
+                    content: '東';
+                    display: block;
+                    width: 80px;
+                    line-height: 80px;
+                    background-color: $dark_yellow;
+                    border-radius: 50%;
+                    font-size: $fs28;
+                    font-weight: 600;
+                    
+                    position: absolute;
+                    top: 50%;
+                    left: 70%;
+                }
+                
+
+            }
+
+            button{
+                margin: 60px 50px 0;
+            }            
+            
+        }
+    }
+
+}
+
+// .travel_map_wrapper .container .travel_map{
+//     position: relative;
+//     text-align: center;
+// }
+
+// .travel_map_wrapper .container .travel_map h1{
+//     font-size: $fs28;
+//     font-weight: 500;
+//     letter-spacing: 5px;
+//     text-align: center;
+//     margin-bottom: 40px;
+// }
+
+// .travel_map_wrapper .container .travel_map img{
+//     display: block;
+//     width: 100%;
+//     width: 850px;
+//     margin: 0 auto;
+// }
+
+// .travel_map_wrapper .container .travel_map .travel_map_radio{
+//     width: 100%;
+//     text-align: center;
+// }
+
+// .travel_map_wrapper .container .travel_map .travel_map_radio input{
+//     display: none;
+// }
+
+
+// .travel_map_wrapper .container .travel_map .travel_map_radio .north::after{
+//     content: '北';
+//     display: block;
+//     width: 80px;
+//     line-height: 80px;
+//     background-color: $dark_yellow;
+//     border-radius: 50%;
+//     font-size: $fs28;
+//     font-weight: 600;
+
+//     position: absolute;
+//     top: 5%;
+//     left: 65%;
+// }
+
+
+// .travel_map_wrapper .container .travel_map .travel_map_radio .middle::after{
+//     content: '中';
+//     display: block;
+//     width: 80px;
+//     line-height: 80px;
+//     background-color: $dark_yellow;
+//     border-radius: 50%;
+//     font-size: $fs28;
+//     font-weight: 600;
+    
+//     position: absolute;
+//     top: 35%;
+//     left: 30%;
+// }
+
+// .travel_map_wrapper .container .travel_map .travel_map_radio .south::after{
+//     content: '南';
+//     display: block;
+//     width: 80px;
+//     line-height: 80px;
+//     background-color: $dark_yellow;
+//     border-radius: 50%;
+//     font-size: $fs28;
+//     font-weight: 600;
+    
+//     position: absolute;
+//     top: 75%;
+//     left: 32%;
+// }
+
+
+// .travel_map_wrapper .container .travel_map .travel_map_radio .east::after{
+//     content: '東';
+//     display: block;
+//     width: 80px;
+//     line-height: 80px;
+//     background-color: $dark_yellow;
+//     border-radius: 50%;
+//     font-size: $fs28;
+//     font-weight: 600;
+    
+//     position: absolute;
+//     top: 50%;
+//     left: 70%;
+// }
+
+
+
+// .travel_map_wrapper .container .travel_map .travel_map_radio .north:hover::after,
+// .travel_map_wrapper .container .travel_map .travel_map_radio .middle:hover::after,
+// .travel_map_wrapper .container .travel_map .travel_map_radio .south:hover::after,
+// .travel_map_wrapper .container .travel_map .travel_map_radio .east:hover::after{
+//     background-color: $text_gray;
+//     transition: all .8s;
+// }
+
+// .travel_map_wrapper .container .travel_map button{
+//     margin: 60px 50px 0;
+// }
