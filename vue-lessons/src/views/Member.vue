@@ -43,7 +43,7 @@
         </keep-alive>
       </div>
     </div>
-    <!-- <VFooter></VFooter> -->
+    <VFooter></VFooter>
   </div>
 </template>
 
@@ -54,6 +54,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import MemberSetting from "../components/MemberSetting.vue";
 import PasswordChange from "../components/PasswordChange.vue";
+import VFooter from "../components/VFooter.vue";
 
 export default {
   name: "Member",
@@ -65,7 +66,7 @@ export default {
   },
   components: {
     VHeader,
-    // VFooter,
+    VFooter,
     Avatar,
     SideNav,
     MemberSetting,
