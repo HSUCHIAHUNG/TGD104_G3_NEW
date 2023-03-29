@@ -2,6 +2,7 @@
 
 
     <div>
+        <VHeader></VHeader>
         <!-- banner start-->
         <div class="banner_container">
                   <swiper
@@ -105,10 +106,13 @@
         </section>
         <!-- join end -->
     </div>
+    <VFooter></VFooter>
 </template>
 
 <script>
 // Import Swiper Vue.js components
+import VHeader from "@/components/VHeader.vue";
+import VFooter from '@/components/VFooter.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
@@ -124,6 +128,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper';
 export default {
     name: "Index",
     components: {
+      VHeader,
+      VFooter,
       Swiper,
       SwiperSlide,
     },
@@ -136,5 +142,5 @@ export default {
 </script>
 
 <style lang="scss">
-    // @import "../assets/tgd104-sass/new_style.scss";
+    @import "../assets/tgd104-sass/new_style.scss";
 </style>

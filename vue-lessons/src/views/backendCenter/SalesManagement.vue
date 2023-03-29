@@ -18,9 +18,13 @@
                 <p>2023/04/07</p>
             </div>
         </div>
-        <line-chart></line-chart>
+        <div class="line_chart">
+            <line-chart></line-chart>
+        </div>
         <!-- <pie-chart></pie-chart> -->
-        <pie-chart></pie-chart>
+        <div class="pie_chart">
+            <pie-chart></pie-chart>
+        </div>
         <bar-chart></bar-chart>
     </div>
 </template>
@@ -37,56 +41,67 @@ import PieChart from '../../components/PieChart.vue'
 
 <style lang="scss">
 .SalesContainer{
-    // display: flex;
     margin: 25px auto;
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
 
     .memberdata_container{
         display: flex;
         justify-content: space-between;
         .memberdata{
             width: 28%;
-            height: 250px;
+            height: 150px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 1px 2px 10px  #adadad;
+            
 
             p{  
                 padding-top: 5px;
                 padding-bottom: 5px;
-                font-size: 28px;
+                font-size: 18px;
                 font-weight: bold;
             }
 
             h1{
-                font-size: 60px;
+                font-size: 30px;
                 font-weight: bold;
             }
 
             & p:last-child{
-                font-size: 26px;
+                font-size: 22px;
                 font-weight: bold;
             }
         }
     }
 
-    .LineChar{
+
+    .line_chart{
         margin-top: 30px;
-        height: 60vh !important;
-        width: 70vw !important;
         border-radius: 10px;
         background: #fff;
         box-shadow: 1px 2px 10px  #adadad;
+
+        .LineChar{
+            margin: 0 auto;
+            height: 50vh !important;
+            width: 55vw !important;
+        }
     }
-
-    .PieChar{
-
+    .pie_chart{
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
+        border-radius: 10px;
         background: #fff;
         box-shadow: 1px 2px 10px  #adadad;
-        margin-top: 30px;   
-        border-radius: 10px;
+        
+        .PieChar{
+        
     }
+    }
+    
 
     .BarChar{
         margin-top: 30px;

@@ -51,8 +51,9 @@
 
 // page
 @import "sass/page/order_details";
-// @import '../tgd104-sass/sass/page/index';
-// @import '../tgd104-sass/sass/page/about';
+// @import 'sass/page/order_details/index';
+@import 'sass/page/about';
+@import 'sass/page/index';
 // @import 'sass/page/product';
 @import 'sass/page/travel';
 @import 'sass/page/travel_map';

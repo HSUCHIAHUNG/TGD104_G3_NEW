@@ -1,5 +1,6 @@
 <template>
-        <!-- banner start-->
+    <!-- banner start-->
+    <VHeader></VHeader>
     <section class="about_banner">
         <div class="about_banner_container container">
             <div class="about_banner_left">
@@ -68,11 +69,18 @@
       </div>
     </section>
     <!-- story4 end -->
+    <VFooter></VFooter>
 </template>
 
 <script>
+import VHeader from "@/components/VHeader.vue";
+import VFooter from '@/components/VFooter.vue'
 export default {
-  name: "About",
+  name: "Respect",
+    components: {
+      VHeader,
+      VFooter,
+    },
   data() {
     return {};
   },
@@ -80,6 +88,6 @@ export default {
 </script>
 
 <style lang="scss">
-// @import "../assets/tgd104-sass/new_style.scss";
+@import "../assets/tgd104-sass/new_style.scss";
 
 </style>

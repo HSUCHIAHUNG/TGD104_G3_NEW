@@ -10,7 +10,7 @@
     <router-link to="/travel">陪你旅行</router-link> |
     <!-- <router-link to="/learning">陪你學習</router-link> | -->
     <router-link to="/Index">首頁</router-link> | 
-    <router-link to="/About">關於我們</router-link> 
+    <router-link to="/Respect">關於我們</router-link> 
 
 
   </nav>
