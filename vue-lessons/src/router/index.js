@@ -58,6 +58,11 @@ const routes = [
     component: () => import("../views/ConsultantBooking.vue"),
   },
   {
+    path: "/consultanthistory",
+    name: "consultanthistory",
+    component: () => import("../views/ConsultantHistory.vue"),
+  },
+  {
     path: "/learning",
     name: "learning",
     component: () => import("../views/Learning.vue"),

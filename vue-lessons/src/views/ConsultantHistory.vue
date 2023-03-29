@@ -40,7 +40,7 @@
             </ul>
           </div>
           <div class="order_list">
-            <c-order-sum></c-order-sum>
+            <c-history-order-sum></c-history-order-sum>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
 //  import VFooter from '@/components/VFooter.vue'
 import CAvatar from "@/components/CAvatar.vue";
 import CSideNav from "../components/CSideNav.vue";
-import COrderSum from "../components/COrderSum.vue";
+import CHistoryOrderSum from "../components/CHistoryOrderSum.vue";
 
 export default {
   name: "ConsultantBooking",
@@ -69,7 +69,7 @@ export default {
     // VFooter,
     CAvatar,
     CSideNav,
-    COrderSum,
+    CHistoryOrderSum,
   },
 };
 </script>
