@@ -4,8 +4,10 @@
     <router-link to="/about">About</router-link> | -->
     <router-link to="/chart">後台圖表</router-link> |
     <router-link to="/member">會員中心</router-link> |
-    <router-link to="/consultant">顧問中心</router-link>
-    <router-link to="/backend">後台管理</router-link>
+    <router-link to="/consultant">顧問中心</router-link> |
+    <router-link to="/backend">後台管理</router-link> |
+    <router-link to="/learning">陪你學習</router-link> |
+    <!-- <router-link to="/learning">陪你學習</router-link> | -->
   </nav>
   <router-view />
 </template>
