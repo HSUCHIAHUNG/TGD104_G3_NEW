@@ -78,5 +78,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../tgd104-sass/new_style.scss";
+@import "../assets/tgd104-sass/new_style.scss";
 </style>

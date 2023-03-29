@@ -1,0 +1,228 @@
+/* join_benefit */
+
+// *{
+//     outline: 1px solid red;
+// }
+.join_benefit{
+    background-image: url('../../../image/join/join_benefit_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-size: 100%;
+    height: 750px;
+    .container{
+        h1{
+            font-size: $fs32;
+            font-weight: 600;
+            text-align: center;
+            margin: 50px 0;
+            letter-spacing: 2px;
+            span{
+                color: $dark_orange;
+            }
+        }
+        .benefit_wrapper{
+            display: flex;
+            margin: 0 auto;
+            width: 1000px;
+            .learn_benefit{
+                background-image: url('../../../image/join/join_benefit_board.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: bottom;
+                width: 500px;
+                height: 400px;
+                flex-grow: 1;
+                margin: 0 50px;
+                h2{
+                    font-size: $fs28;
+                    font-weight: 500;
+                    text-align: center;
+                    letter-spacing: 3px;
+                    margin-bottom: 80px;
+                    span{
+                        color: $dark_orange;
+                    }
+                }
+                h3{
+                    text-align: center;
+                    font-size: $fs24;
+                    font-weight: 500;
+                    line-height: 3;
+                    letter-spacing: 5px;
+                }
+            }
+            .travel_benefit{
+                background-image: url('../../../image/join/join_benefit_board.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: bottom;
+                width: 500px;
+                height: 400px;
+                flex-grow: 1;
+                margin: 0 50px;
+                h2{
+                    font-size: $fs28;
+                    font-weight: 500;
+                    text-align: center;
+                    letter-spacing: 3px;
+                    margin-bottom: 80px;
+                    span{
+                        color: $dark_orange;
+                    }
+                }
+                h3{
+                    text-align: center;
+                    font-size: $fs24;
+                    font-weight: 500;
+                    line-height: 3;
+                    letter-spacing: 5px;
+                }
+            }
+        }
+        
+    }
+}
+
+
+/* join_condition */
+
+.join_condition{
+    background-image: url('../../../image/join/join_condition_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    #app{
+        .join_btn{
+            background-color: $ft_yellow;
+            text-align: center;
+            .join_learn_select{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs24;
+                font-weight: 600;
+                border: none;
+                background-color: $bg_yellow;
+            }
+            .join_learn_unselect {
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs24;
+                font-weight: 600;
+                border: none;
+                background-color: $ft_yellow;
+                &:hover{
+                    cursor: pointer;
+                    background-color: $bg_yellow;
+                }
+            }
+            .join_travel_select{
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs24;
+                font-weight: 600;
+                border: none;
+                background-color: $bg_yellow;
+                &:hover{
+                    cursor: pointer;
+                    background-color: $bg_yellow;
+                }
+            }
+            .join_travel_unselect {
+                color: $gray;
+                width: 140px;
+                height: 60px;
+                font-size: $fs24;
+                font-weight: 600;
+                border: none;
+                background-color: $ft_yellow;
+                &:hover{
+                    cursor: pointer;
+                    background-color: $bg_yellow;
+                }
+            }
+            
+        }
+        .container{
+            padding-top: 30px;
+            .learn_condition_wrapper{
+                width: 600px;
+                margin: 30px auto;
+                margin-bottom: 80px;
+                background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 18.23%, $clear_white 18.24%);
+                border: 4px solid $dark_blue;
+                border-radius: 15px;
+                h4{
+                    font-size: $fs22;
+                    text-align: center;
+                    line-height: 65px;
+                }
+                .learn_condition{
+                    ul{
+                        width: 500px;
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: space-evenly;
+                        flex-wrap: wrap;
+                        padding: 30px 0;
+                        li{
+                            width: 170px;
+                            line-height: 60px;
+                            text-align: center;
+                            background-color: $ft_yellow;
+                            margin: 20px;
+                            border-radius: 5px;
+                            font-size: $fs20;
+                        }
+                    }
+                }
+            }
+            .travel_condition_wrapper{
+                width: 600px;
+                margin: 30px auto;
+                margin-bottom: 80px;
+                background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 18.23%, $clear_white 18.24%);
+                border: 4px solid $dark_blue;
+                border-radius: 15px;
+                h4{
+                    font-size: $fs22;
+                    text-align: center;
+                    line-height: 65px;
+                }
+                .travel_condition{
+                    ul{
+                        width: 500px;
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: space-evenly;
+                        flex-wrap: wrap;
+                        padding: 30px 0;
+                        li{
+                            width: 170px;
+                            line-height: 60px;
+                            text-align: center;
+                            background-color: $ft_yellow;
+                            margin: 20px;
+                            border-radius: 5px;
+                            font-size: $fs20;
+                        }
+                    }
+                }
+            }
+        }
+        
+     
+    }    
+  
+}
+
+.join_button{
+    text-align: center;
+    .container{
+        button{
+            margin: 20px 50px 100px;
+        }
+    }
+}
