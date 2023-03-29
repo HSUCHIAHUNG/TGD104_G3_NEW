@@ -1,4 +1,19 @@
 <template>
+  <!-- header -->
+  <header>
+    <div class="header_container v_header">
+      <i id="h_bar" class="fa-solid fa-bars"></i>
+      <img src="../../../image/logo_header.png" alt="" />
+      <div class="h_icon">
+        <a href="" @click.prevent="memberLogin"><i class="fa-solid fa-user"></i></a>
+        <a href="" @click.prevent="consultantLogin"><i class="fa-solid fa-user-tie"></i></a>
+      </div>
+    </div>
+  </header>     
+    <!-- header end -->
+
+
+
   <div class="v_header">
     <a href="" @click.prevent="memberLogin"
       ><i class="fa-solid fa-user-large"></i

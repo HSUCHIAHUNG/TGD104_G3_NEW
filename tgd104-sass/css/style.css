@@ -74,6 +74,10 @@ a {
   cursor: pointer;
 }
 
+#app {
+  text-align: unset; /* 移除text-align屬性 */
+}
+
 /* 字體規範 */
 .btn_blue {
   width: 180px;
@@ -2347,10 +2351,6 @@ body {
   margin: 40px auto;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 .learning_question,
 .learning_items,
 .learning_choose_content,
@@ -2434,15 +2434,7 @@ body {
   text-align: center;
   font-weight: 600;
   letter-spacing: 3px;
-  margin-bottom: 50px;
-}
-.join_apply h1:after {
-  content: "";
-  width: 150px;
-  display: block;
-  margin: -18px auto;
-  height: 15px;
-  background-color: #79cbd4;
+  margin-bottom: 20px;
 }
 .join_apply img {
   display: block;
@@ -2786,6 +2778,102 @@ body {
 }
 .join_button .container button {
   margin: 20px 50px 100px;
+}
+
+/* join_learn */
+.join_learn {
+  padding: 50px 0 80px;
+}
+.join_learn h1 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.join_learn img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  width: 200px;
+  margin-bottom: 20px;
+}
+.join_learn .labels {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 78%;
+  margin-bottom: 30px;
+}
+.join_learn .labels .learn_label {
+  width: 300px;
+  height: 50px;
+  background-color: #79cbd4;
+  border-radius: 5px;
+  outline: 3px solid #79cbd4;
+}
+.join_learn .labels .learn_label p {
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+.join_learn .labels .travel_label {
+  width: 300px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  outline: 3px solid #79cbd4;
+}
+.join_learn .labels .travel_label p {
+  color: #79cbd4;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+.join_learn .learn_apply {
+  margin: 0 auto;
+  width: 78%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 35px 25px;
+}
+.join_learn .learn_apply .input_row {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.join_learn .learn_apply .input_row .form_group {
+  width: 48%;
+}
+.join_learn .learn_apply .input_row .form_group label {
+  text-indent: 2px;
+  margin-bottom: 5px;
+}
+.join_learn .learn_apply .input_row .form_group input, .join_learn .learn_apply .input_row .form_group select {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.join_learn .learn_apply h1 {
+  font-size: 14px;
+  font-weight: 400;
+}
+.join_learn .learn_apply #self_introduction {
+  width: 800px;
+  margin: 20px auto;
+}
+.join_learn .learn_apply .ck-editor__editable[role=textbox] {
+  /* editing area */
+  min-height: 200px;
+}
+.join_learn .join_learn_btn {
+  text-align: center;
+}
+.join_learn .join_learn_btn button {
+  margin: 60px 50px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
