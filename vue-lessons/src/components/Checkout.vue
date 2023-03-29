@@ -44,7 +44,7 @@
 
 <script>
     export default {
-        name: "VFooter",
+        name: "Checkout",
         data() {
             return {};
         },
