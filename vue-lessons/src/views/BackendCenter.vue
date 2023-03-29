@@ -33,22 +33,29 @@ import { RouterLink, RouterView } from 'vue-router';
          </a>
       </nav>
            <router-view/>
-   </div>
 
-
-     
-  
+   </div>     
 </template>
 
 <script>
 
 // import AccountSetting from '../components/AccountSetting.vue'
 import SalesManagement from './backendCenter/SalesManagement.vue'
+import Index from './index.vue'
 
+export default {
+  data() {
+    return {
 
+    };
+  },
+  components: {
+
+  },
+};
 
 </script>
-
+   
 <style lang="scss">
 
 

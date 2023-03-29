@@ -53,6 +53,11 @@ const routes = [
     component: () => import("../views/Consultant.vue"),
   },
   {
+    path: "/Index",
+    name: "Index",
+    component: () => import("../views/index.vue"),
+  },
+  {
     path: "/Backend",
     name: "Backend",
     component: () => import("../views/BackendCenter.vue"),
