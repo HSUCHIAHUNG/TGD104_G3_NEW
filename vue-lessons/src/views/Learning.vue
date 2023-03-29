@@ -14,11 +14,11 @@
                 <br>
                 <p>我們包含英文.數學.樂器.寫程式<br>想得到的都替你安排!</p>
             </div>
-            <img src="../../../image/learning/learning_people.png" alt="">
+            <img src="../assets/image/learning/learning_people.png" alt="">
         </div>
 
         <div class="container_learning_bottom container">
-            <img src="../../../image/learning/learning_people2.png" alt="">
+            <img src="../assets/image/learning/learning_people2.png" alt="">
             <div class="lesson_tip">
                 <P><span>01</span> 選擇課程</P>
                 <P><span>02</span> 選擇老師</P>
@@ -32,11 +32,11 @@
         <div class="learning_main">
             <h2 class="hot_learning">豐富多元課程</h2>
             <div class="owl-carousel owl-theme learning_carousel">
-                <div class="item"><h4><img src="../../../image/learning/teacher_001.png" alt=""></h4></div>
-                <div class="item"><h4><img src="../../../image/learning/teacher_002.png" alt=""></h4></div>
-                <div class="item"><h4><img src="../../../image/learning/teacher_003.png" alt=""></h4></div>
-                <div class="item"><h4><img src="../../../image/learning/teacher_004.png" alt=""></h4></div>
-                <div class="item"><h4><img src="../../../image/learning/teacher_005.png" alt=""></h4></div>
+                <div class="item"><h4><img src="../assets/image/learning/teacher_001.png" alt=""></h4></div>
+                <div class="item"><h4><img src="../assets/image/learning/teacher_002.png" alt=""></h4></div>
+                <div class="item"><h4><img src="../assets/image/learning/teacher_003.png" alt=""></h4></div>
+                <div class="item"><h4><img src="../assets/image/learning/teacher_004.png" alt=""></h4></div>
+                <div class="item"><h4><img src="../assets/image/learning/teacher_005.png" alt=""></h4></div>
             </div>
 
 
@@ -44,42 +44,42 @@
             <div class="owl-carousel owl-theme learning_icon">
                 <div class="item">
                     <h4>
-                        <img src="../../../image/learning/book.png" alt="">
+                        <img src="../assets/image/learning/book.png" alt="">
                         <div class="content_p">陪你讀英文</div>
                         <div>熱門顧問: 陳品魚</div>
                     </h4>
                 </div>
                 <div class="item">
                     <h4>
-                        <img src="../../../image/learning/calculator.png" alt="">
+                        <img src="../assets/image/learning/calculator.png" alt="">
                         <div class="content_p">陪你微積分</div>
                         <div>熱門顧問: 陳娟配</div>
                     </h4>
                 </div>
                 <div class="item">
                     <h4>
-                        <img src="../../../image/learning/coding.png" alt="">
+                        <img src="../assets/image/learning/coding.png" alt="">
                         <div class="content_p">陪你寫JavaScript</div>
                         <div>熱門顧問: 徐嘉紅</div>
                     </h4>
                 </div>
                 <div class="item">
                     <h4>
-                        <img src="../../../image/learning/color-palette.png" alt="">
+                        <img src="../assets/image/learning/color-palette.png" alt="">
                         <div class="content_p">陪你繪畫</div>
                         <div>熱門顧問: 孫一敏</div>
                     </h4>
                 </div>
                 <div class="item">
                     <h4>
-                        <img src="../../../image/learning/guitar.png" alt="">
+                        <img src="../assets/image/learning/guitar.png" alt="">
                         <div class="content_p">陪你烏克麗麗</div>
                         <div>熱門顧問: 裴大尼</div>
                     </h4>
                 </div>
                 <div class="item">
                     <h4>
-                        <img src="../../../image/learning/study.png" alt="">
+                        <img src="../assets/image/learning/study.png" alt="">
                         <div class="content_p">陪你讀書</div>
                         <div>熱門顧問: 倪小培</div>
                     </h4>
@@ -97,8 +97,8 @@
 
         <div class="student_share_img">
             <div>
-                <img class="share01" src="../../../image/learning/learning_float01.png" alt="">
-                <img class="share02" src="../../../image/learning/learning_float02.png" alt="">
+                <img class="share01" src="../assets/image/learning/learning_float01.png" alt="">
+                <img class="share02" src="../assets/image/learning/learning_float02.png" alt="">
             </div>
             <div><button class="btn_orange">提供更多想法!</button></div>
         </div>
@@ -107,7 +107,7 @@
             <div class="learning_wrapper">
                 <div class="box box_1">
                     <div class="card front">
-                        <img src="../../../image/learning/student001.png" alt="">
+                        <img src="../assets/image/learning/student001.png" alt="">
                         <p>台北 陳同學</p>
                         <h5>
                             第一次使用陪你的學習課程，體驗非常好! 下次再試試其他課程:)讚啦~~~~~~ 而且老師好溫柔! 
@@ -116,7 +116,7 @@
                 </div>
                 <div class="box box_2">
                     <div class="card front">
-                        <img src="../../../image/learning/student002.png" alt="">
+                        <img src="../assets/image/learning/student002.png" alt="">
                         <p>新竹 林同學</p>
                         <h5>
                             上課地點也很方便~~~~~~~~~~~~~~~~~讚讚讚讚讚讚讚讚讚*10000
@@ -125,7 +125,7 @@
                 </div>
                 <div class="box box_3">
                     <div class="card front">
-                        <img src="../../../image/learning/student003.png" alt="">
+                        <img src="../assets/image/learning/student003.png" alt="">
                         <p>高雄 李同學</p>
                         <h5>
                             顧問品質高!下課問問題也很細心解答! 預約方便~~
@@ -162,5 +162,5 @@
   
   
   <style lang="scss">
-  @import "../../../tgd104-sass/new_style.scss";
+@import "../assets/tgd104-sass/new_style.scss";
   </style>
