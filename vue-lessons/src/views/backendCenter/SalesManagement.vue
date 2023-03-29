@@ -3,7 +3,7 @@
     <div class="SalesContainer">
         <div class="memberdata_container">
             <div class="memberdata">
-                <p>累積會員人數</p>
+                <p>累積會員人</p>
                 <h1>735</h1>
                 <p>2023/04/07</p>
             </div>
