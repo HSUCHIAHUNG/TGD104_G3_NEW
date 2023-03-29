@@ -14,7 +14,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="/consultantbooking">
           <i class="fa-solid fa-calendar"></i>
           <span> 預約明細</span>
         </a>
