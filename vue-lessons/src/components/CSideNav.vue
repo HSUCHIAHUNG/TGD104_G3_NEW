@@ -8,7 +8,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="/consultantinfo">
           <i class="fa-solid fa-user-gear"></i>
           <span>顧問資料</span>
         </a>
