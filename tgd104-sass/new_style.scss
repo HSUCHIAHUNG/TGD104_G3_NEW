@@ -16,6 +16,7 @@
 @import "sass/component/passwordchange";
 @import "sass/component/order";
 @import "sass/component/order_message";
+// @import "sass/component/footer";
 
 //layout
 @import "sass/layout/header";
@@ -51,7 +52,7 @@
 
 // page
 @import "sass/page/order_details";
-// @import 'sass/page/index';
+@import 'sass/page/index';
 // @import 'sass/page/about';
 // @import 'sass/page/product';
 // @import 'sass/page/travel';

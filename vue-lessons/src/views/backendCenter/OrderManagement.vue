@@ -45,6 +45,7 @@
 
 <script>
     import searchbar from '../../components/BackecdSearch.vue'
+    
 
     export default {
         data(){ 
@@ -76,6 +77,7 @@
             searchbar,
         }
     }
+
 </script>
 
 <style lang="scss">

@@ -53,9 +53,15 @@ const routes = [
     component: () => import("../views/Consultant.vue"),
   },
   {
+<<<<<<< HEAD
     path: "/consultantbooking",
     name: "consultantbooking",
     component: () => import("../views/ConsultantBooking.vue"),
+=======
+    path: "/Index",
+    name: "Index",
+    component: () => import("../views/index.vue"),
+>>>>>>> 8cf99c12fdf8d3681b1fe5467c4015f983a50df0
   },
   {
     path: "/Backend",

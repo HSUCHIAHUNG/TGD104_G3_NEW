@@ -15,6 +15,10 @@ import { RouterLink, RouterView } from 'vue-router';
             <i class="fa-solid fa-address-book"></i>
             <span>會員管理</span>
          </router-link>
+         <router-link to="/backend/ConsultantManagement">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>顧問管理</span>
+         </router-link>
          <router-link to="/backend/OrderManagement">
             <i class="fa-solid fa-chart-line"></i>
             <span>訂單管理</span>
@@ -23,32 +27,35 @@ import { RouterLink, RouterView } from 'vue-router';
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>顧問審核</span>
          </router-link>
-         <router-link to="/backend/ConsultantManagement">
-            <i class="fa-solid fa-user-tie"></i>
-            <span>顧問管理</span>
-         </router-link>
          <a href="#">
             <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
             <span>登出</span>
          </a>
       </nav>
            <router-view/>
-   </div>
 
-
-     
-  
+   </div>     
 </template>
 
 <script>
 
 // import AccountSetting from '../components/AccountSetting.vue'
 import SalesManagement from './backendCenter/SalesManagement.vue'
+import Index from './index.vue'
 
+export default {
+  data() {
+    return {
 
+    };
+  },
+  components: {
+
+  },
+};
 
 </script>
-
+   
 <style lang="scss">
 
 
