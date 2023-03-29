@@ -11,15 +11,15 @@
         text-align: center;
         font-weight: 600;
         letter-spacing: 3px;
-        margin-bottom: 50px;
-        &:after{
-            content: '';
-            width: 150px;
-            display: block;
-            margin: -18px auto;
-            height: 15px;
-            background-color: $dark_blue;
-        }
+        margin-bottom: 20px;
+        // &:after{
+        //     content: '';
+        //     width: 150px;
+        //     display: block;
+        //     margin: -18px auto;
+        //     height: 15px;
+        //     background-color: $dark_blue;
+        // }
     }
     img{
         display: block;
@@ -109,7 +109,7 @@
                     }
                 }
             }
-          }
+        }
     }
     .join_btn{
         text-align: center;
