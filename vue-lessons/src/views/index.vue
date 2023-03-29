@@ -122,6 +122,7 @@ import 'swiper/css';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 
 export default {
+    name: "Index",
     components: {
       Swiper,
       SwiperSlide,
