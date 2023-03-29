@@ -11,6 +11,39 @@ $breakpoint_428: 428px;
   }
 }
 
+// 字體 
+
+@mixin content_h1(){
+    color: #585858;
+	font-size: 36px;
+	font-weight: bold;
+ }
+ 
+ .content_h1{
+    @include content_h1();
+ }
+
+ @mixin content_span(){
+    color: #FF7426;
+	font-size: 36px;
+	font-weight: bold;
+ }
+ 
+ .content_span{
+    @include content_span();
+ }
+
+ @mixin content_p(){
+    color: #585858;
+	font-size: 22px;
+	font-weight: bold;
+ }
+ 
+ .content_p{
+    @include content_p();
+ }
+
+ 
 // *{
 // 	/* outline: 3px solid red; */
 // }
@@ -21,7 +54,7 @@ $breakpoint_428: 428px;
     background-size: cover;
     background-position: bottom;
     /* margin-top: 70px; */
-    background-image: url(../../image/index/index_banner.png);
+    background-image: url(../../../image/index/index_banner.png);
     transition: all .6s;
     display: flex;
     align-items: center;
@@ -54,9 +87,9 @@ $breakpoint_428: 428px;
                 @include btn_base();            
             }
 
-            button{
-                // @include outline_btn ();
-            }
+            // button{
+            //     // @include outline_btn ();
+            // }
 
             .content_h1{
                 text-align: left;
@@ -75,7 +108,7 @@ $breakpoint_428: 428px;
             height: 400px;
             background-repeat: no-repeat;
             background-size: contain;
-            background-image: url(../../image/index/index_banner_icon02.png);
+            background-image: url(../../../image/index/index_banner.png);
         }
     }
 }
@@ -103,7 +136,7 @@ $breakpoint_428: 428px;
             width: 360px;
             height: 360px;
             background-image:
-             url(../../image/index/index_learning_bg.png);
+             url(../../../image/index/index_learning_bg.png);
             background-repeat: no-repeat;
             background-size: contain,70px 70px;
             right: -350px;
@@ -114,7 +147,7 @@ $breakpoint_428: 428px;
             width: auto;
             min-width: 550px;
             height: 380px;
-            background-image: url(../../image/index/index_learning_icon01.png);
+            background-image: url(../../../image/index/index_learning_icon01.png);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
@@ -139,7 +172,7 @@ $breakpoint_428: 428px;
                     right: 30px;
                     width: 70px;
                     height: 70px;
-                    background-image: url(../../image/index/index_learing_com_03.png);
+                    background-image: url(../../../image/index/index_learing_com_03.png);
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
@@ -166,7 +199,7 @@ $breakpoint_428: 428px;
         position: absolute;
         width: 80px;
         height: 80px;
-        background-image: url(../../image/index/index_learning_icon_ball.png);
+        background-image: url(../../../image/index/index_learning_icon_ball.png);
         background-repeat: no-repeat;
         background-size: contain;
         top: -20px;
@@ -202,7 +235,7 @@ $breakpoint_428: 428px;
         }
 
         .index_travel_img{
-            background-image: url(../../image/index/index_travel_bg.png);
+            background-image: url(../../../image/index/index_travel_bg.png);
             margin: 0 auto;
             width: auto;
             min-width: 550px;
@@ -223,7 +256,7 @@ $breakpoint_428: 428px;
 // /* ------------join start------------- */
 .index_join{
 	height: 700px;
-	background-image: url(../../image/index/index_join_bg.png);
+	background-image: url(../../../image/index/index_join_bg.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
@@ -257,7 +290,7 @@ $breakpoint_428: 428px;
                 content: "";
                 height: 300px;
                 width: 160px;
-                background-image: url(../../image/index/index_join_people03.png);
+                background-image: url(../../../image/index/index_join_people03.png);
                 background-repeat: no-repeat;
                 background-size: contain;
             }
@@ -349,7 +382,7 @@ $breakpoint_428: 428px;
         content: "";
         height: 300px;
         width: 160px;
-        background-image: url(../../image/index/index_join_people03.png);
+        background-image: url(../../../image/index/index_join_people03.png);
         background-repeat: no-repeat;
         background-size: contain;
     }

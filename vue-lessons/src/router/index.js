@@ -56,6 +56,9 @@ const routes = [
     path: "/learning",
     name: "learning",
     component: () => import("../views/Learning.vue"),
+    path: "/Index",
+    name: "Index",
+    component: () => import("../views/index.vue"),
   },
   {
     path: "/Backend",
