@@ -233,9 +233,6 @@
     <nav class="center_content">
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> | -->
-      <button class="btn_blue">
-        <router-link to="/chart">後台圖表</router-link>
-      </button>   
 
       <button class="btn_blue">
         <router-link to="/member" class="center_content_btn">會員中心</router-link>
