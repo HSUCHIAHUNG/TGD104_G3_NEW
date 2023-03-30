@@ -25,7 +25,9 @@
         <div class="pie_chart">
             <pie-chart></pie-chart>
         </div>
-        <bar-chart></bar-chart>
+        <div class="bar_chart">
+            <bar-chart></bar-chart>
+        </div>  
     </div>
 </template>
 
@@ -97,21 +99,28 @@ import PieChart from '../../components/PieChart.vue'
         background: #fff;
         box-shadow: 1px 2px 10px  #adadad;
         
-        .PieChar{
+            .PieChar{
+            
+        }
+    }
+    
+    .bar_chart{
+        margin-top: 30px;
+        border-radius: 10px;
+        width: 600px;
+        height: 300px;
+        background: #fff;
+        box-shadow: 1px 2px 10px  #adadad;
+
+        .BarChar{
+        margin-bottom: 10px;
+        // height: 40vh !important;
+        // width: 50vw !important;
         
     }
     }
-    
 
-    .BarChar{
-        margin-top: 30px;
-        margin-bottom: 10px;
-        height: 60vh !important;
-        width: 70vw !important;
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 1px 2px 10px  #adadad;
-    }
+    
 
 }
 
