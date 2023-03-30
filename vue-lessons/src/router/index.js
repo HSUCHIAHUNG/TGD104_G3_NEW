@@ -53,9 +53,19 @@ const routes = [
     component: () => import("../views/Consultant.vue"),
   },
   {
+    path: "/consultantinfo",
+    name: "consultantinfo",
+    component: () => import("../views/ConsultantInfo.vue"),
+  },
+  {
     path: "/consultantbooking",
     name: "consultantbooking",
     component: () => import("../views/ConsultantBooking.vue"),
+  },
+  {
+    path: "/consultanthistory",
+    name: "consultanthistory",
+    component: () => import("../views/ConsultantHistory.vue"),
   },
   {
     path: "/learning",

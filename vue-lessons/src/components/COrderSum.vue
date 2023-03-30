@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="order">
-      <div class="order_content">
+      <div class="c_order_content">
         <div class="order_left">
           <div class="category"></div>
           <div class="order_summary">
@@ -16,7 +16,7 @@
             <span>26</span>
           </div>
           <p>$1,500</p>
-          <a class="btn_blue" href="/orderdetails">查看更多</a>
+          <a class="btn_blue" href="#">查看更多</a>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "OrderSum",
+  name: "COrderSum",
   data() {
     return {};
   },

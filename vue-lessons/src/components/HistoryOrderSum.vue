@@ -11,7 +11,10 @@
             >
           </div>
           <div class="order_summary">
-            <h2>陪你學習</h2>
+            <h2>
+              陪你學習 |
+              <span>已完成</span>
+            </h2>
             <span>音樂</span> | <span>吉他</span>
             <p><i class="fa-solid fa-hashtag"></i>訂單編號：#22PN262616758</p>
           </div>

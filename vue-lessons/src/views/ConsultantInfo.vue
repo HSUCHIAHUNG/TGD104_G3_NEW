@@ -11,7 +11,7 @@
         <!------------ 主要區塊 ------------>
         <div class="main">
           <div class="main_header">
-            <h1>預約明細</h1>
+            <h1>顧問資料</h1>
             <ul class="tabs">
               <li>
                 <a
@@ -40,7 +40,7 @@
             </ul>
           </div>
           <div class="order_list">
-            <c-order-sum></c-order-sum>
+            <consultant-info-l></consultant-info-l>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
 //  import VFooter from '@/components/VFooter.vue'
 import CAvatar from "@/components/CAvatar.vue";
 import CSideNav from "../components/CSideNav.vue";
-import COrderSum from "../components/COrderSum.vue";
+import ConsultantInfoL from "@/components/ConsultantInfoL.vue";
 
 export default {
   name: "ConsultantBooking",
@@ -69,7 +69,7 @@ export default {
     // VFooter,
     CAvatar,
     CSideNav,
-    COrderSum,
+    ConsultantInfoL,
   },
 };
 </script>
