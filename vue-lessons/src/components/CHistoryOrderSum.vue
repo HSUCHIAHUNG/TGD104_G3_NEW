@@ -1,11 +1,17 @@
 <template>
   <div>
-    <div class="order">
+    <!-- 歷史訂單 -->
+    <div class="c_history_order">
       <div class="order_content">
         <div class="order_left">
-          <div class="category"></div>
+          <div class="order_title">
+            <div class="category"></div>
+          </div>
           <div class="order_summary">
-            <h2>陪你學習</h2>
+            <h2>
+              陪你學習 |
+              <span>已完成</span>
+            </h2>
             <span>音樂</span> | <span>吉他</span>
             <p><i class="fa-solid fa-hashtag"></i>訂單編號：#22PN262616758</p>
           </div>
@@ -16,7 +22,7 @@
             <span>26</span>
           </div>
           <p>$1,500</p>
-          <a class="btn_blue" href="/orderdetails">查看更多</a>
+          <button type="button" class="btn_blue">查看更多</button>
         </div>
       </div>
     </div>
@@ -25,13 +31,14 @@
 
 <script>
 export default {
-  name: "OrderSum",
+  name: "CHistoryOrderSum",
   data() {
     return {};
   },
+  methods: {},
 };
 </script>
 
 <style lang="scss">
-@import "../assets/tgd104-sass/new_style.scss";
+@import "../../../tgd104-sass/new_style.scss";
 </style>
