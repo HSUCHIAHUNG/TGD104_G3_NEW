@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VHeader></VHeader>
+    
     <div class="member_body">
       <div class="member_row container">
         <!-------------側邊navbar---------------->

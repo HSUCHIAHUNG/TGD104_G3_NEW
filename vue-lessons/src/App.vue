@@ -15,12 +15,12 @@
 
 
   <div class="v_header">
-    <a href="" @click.prevent="memberLogin"
+    <!-- <a href="" @click.prevent="memberLogin"
       ><i class="fa-solid fa-user-large"></i
     ></a>
     <a href="" @click.prevent="consultantLogin">
       <i class="fa-solid fa-user-tie"></i>
-    </a>
+    </a> -->
 
     <!-- 會員登入燈箱 -->
     <div id="member_lightbox" class="none">
