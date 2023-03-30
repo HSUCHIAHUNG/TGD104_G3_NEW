@@ -74,13 +74,13 @@
   }
 
   #myChart3 {
-    width: 500px!important;
-    height: 500px !important;
+    width: 300px!important;
+    height: 300px !important;
   }
 
   #myChart4 {
-    width: 500px!important;
-    height: 500px !important;
+    width: 300px!important;
+    height: 300px !important;
   }
 
   @media screen and (max-width:768px) {
