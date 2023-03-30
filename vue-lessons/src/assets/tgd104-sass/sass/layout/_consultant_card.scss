@@ -3,65 +3,129 @@ $card_borderR: 15px;
 //卡片陰影
 $card_box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
 
+// *{
+//     outline: 1px solid red;
+// }
 
 .consultant_card{
-    width: 275px;
-    height: 345px;
-    background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 12%, $text_gray 12%, $text_gray 88%, $dark_blue 88%, $dark_blue 100%);
-    border-radius: $card_borderR;
-    box-shadow: $card_box-shadow;
-    margin-bottom: 30px;
+    ul{
+        display: flex;
+        width: 1200px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 50px auto;
+        li{
+            width: 275px;
+            height: 345px;
+            background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 12%, $text_gray 12%, $text_gray 88%, $dark_blue 88%, $dark_blue 100%);
+            border-radius: $card_borderR;
+            box-shadow: $card_box-shadow;
+            margin-bottom: 30px;
+        
+            position: relative;
+            input{
+                width: 35px;
+                height: 35px;
+                margin-left: 10px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            img{
+                display: block;
+                width: 100%;
+                width: 185px;
+                margin: 0 auto;
+                margin-top: 10px;
+                margin-bottom: 5px;
+                border-radius: $card_borderR;
+            
+            }
+            h1{
+                text-align: center;
+                font-size: $fs18;
+                font-weight: 500;
+            }
+            h2{
+                text-align: center;
+                font-size: $fs18;
+                font-weight: 500;
+            }
+            i{
+                font-size: $fs28;
+                color: $text_gray;
+                margin-top: 10px;
+                margin-right: 8px;
+                display: inline-block;
+                // text-align: right;
+            
+                position: absolute;
+                right: 0;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
 
-    position: relative;
 }
 
-.consultant_card input{
-    width: 35px;
-    height: 35px;
-    margin-left: 10px;
-}
+// .consultant_card ul li{
+//     width: 275px;
+//     height: 345px;
+//     background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 12%, $text_gray 12%, $text_gray 88%, $dark_blue 88%, $dark_blue 100%);
+//     border-radius: $card_borderR;
+//     box-shadow: $card_box-shadow;
+//     margin-bottom: 30px;
 
-.consultant_card input:hover{
-    cursor: pointer;
-}
+//     position: relative;
+// }
 
-.consultant_card img{
-    display: block;
-    width: 100%;
-    width: 185px;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    border-radius: $card_borderR;
-}
+// .consultant_card input{
+//     width: 35px;
+//     height: 35px;
+//     margin-left: 10px;
+// }
 
-.consultant_card ul li h1{
-    text-align: center;
-    font-size: $fs18;
-    font-weight: 500;
-}
+// .consultant_card input:hover{
+//     cursor: pointer;
+// }
 
-.consultant_card ul li h2{
-    text-align: center;
-    font-size: $fs18;
-    font-weight: 500;
+// .consultant_card img{
+//     display: block;
+//     width: 100%;
+//     width: 185px;
+//     margin: 0 auto;
+//     margin-top: 10px;
+//     margin-bottom: 5px;
+//     border-radius: $card_borderR;
+// }
 
-    // 吃到learning h2 因此取消
-    // margin-top: 0;
-    // margin-bottom: 0; 
-}
-.consultant_card ul li i{
-    font-size: $fs28;
-    color: $text_gray;
-    margin-top: 10px;
-    margin-right: 8px;
-    display: inline-block;
-    // text-align: right;
+// .consultant_card ul li h1{
+//     text-align: center;
+//     font-size: $fs18;
+//     font-weight: 500;
+// }
 
-    position: absolute;
-    right: 0;
-}
+// .consultant_card ul li h2{
+//     text-align: center;
+//     font-size: $fs18;
+//     font-weight: 500;
+// }
 
-.consultant_card ul li i:hover{
-    cursor: pointer;
-}
+// .consultant_card ul li i{
+//     font-size: $fs28;
+//     color: $text_gray;
+//     margin-top: 10px;
+//     margin-right: 8px;
+//     display: inline-block;
+//     // text-align: right;
+
+//     position: absolute;
+//     right: 0;
+// }
+
+// .consultant_card ul li i:hover{
+//     cursor: pointer;
+// }

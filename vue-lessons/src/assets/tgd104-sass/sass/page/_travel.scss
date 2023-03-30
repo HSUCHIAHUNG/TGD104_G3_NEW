@@ -1,4 +1,8 @@
 /* travel_banner */
+
+// *{
+//     outline: 1px solid red;
+// }
 .travel_banner{
     width: 100%;
     height: 850px;
@@ -113,12 +117,9 @@
             }
         }
         .autoplay{
-            /* display: flex; */
-            /* justify-content: space-between; */
             .card{
-                /* width: 350px; */
-                /* width: 100%; */
-                /* height: 380px; */
+                width: 340px; 
+                height: 390px; 
                 background: linear-gradient(180deg, $text_gray 40.63%, $dark_blue 40.63%);
                 border-top: 1px solid $white;
                 border-left: 1px solid $white;
@@ -126,7 +127,7 @@
                 box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
             
                 text-align: center;
-                margin: 0 50px 5px;
+                margin: 0 auto;
                 i{
                     color: $dark_yellow;
                     font-size: $fs22;
