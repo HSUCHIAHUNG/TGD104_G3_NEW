@@ -24,6 +24,10 @@
                     <td>{{item.c_email}}</td>
                     <td>{{item.c_id}}</td>
                     <td>{{item.c_gender}}</td>
+                    <td><img :src='item.url' alt=""></td>
+                    <td><img :src="item.url" alt="logo"></td>
+
+
                 </tr>
                 <tr>
                     <th>電話號碼</th>
@@ -81,17 +85,16 @@
 
 <script>
     import searchbar from '../../components/BackecdSearch.vue'
-
     export default {
         data(){ 
             return {
                 items: [
                 { name: '舞動小敏', c_nickname: '敏敏',c_email: 'h0989541162@gmail.com', c_id: 'H124803065',
-                c_gender: '女',c_phone: '0989541162',c_birth: '1993/03/19',c_area: '冰島',c_personality: '怪人', },
+                c_gender: '女',c_phone: '0989541162',c_birth: '1993/03/19',c_area: '冰島',c_personality: '怪人',url:require('../../assets/image/consultant_card.png') },
                 { name: '舞動小敏', c_nickname: '敏敏',c_email: 'h0989541162@gmail.com', c_id: 'H124803065',
-                c_gender: '女',c_phone: '0989541162',c_birth: '1993/03/19',c_area: '冰島',c_personality: '怪人', },
+                c_gender: '女',c_phone: '0989541162',c_birth: '1993/03/19',c_area: '冰島',c_personality: '怪人',url:require('../../assets/image/consultant_card.png') },
                 { name: '舞動小敏', c_nickname: '敏敏',c_email: 'h0989541162@gmail.com', c_id: 'H124803065',
-                c_gender: '女',c_phone: '0989541162',c_birth: '1993/03/19',c_area: '冰島',c_personality: '怪人', },
+                c_gender: '女',c_phone: '0989541162',c_birth: '1993/03/19',c_area: '冰島',c_personality: '怪人',url:require('../../assets/image/consultant_card.png') },
                 
 
                 // { name: '舞動小敏', c_nickname: '敏敏',c_email: 'h0989541162@gmail.com', c_id: 'H124803065',c_gender: '女'},
@@ -111,7 +114,9 @@
         },
 
         computed: {
-       
+            imagePath() {
+                return `${this.items[1].url}`;
+                }
         },
 
         name: 'MemberManagement',
