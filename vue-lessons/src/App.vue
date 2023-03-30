@@ -7,6 +7,8 @@
     <router-link to="/consultant">顧問中心</router-link> |
     <router-link to="/backend">後台管理</router-link> |
     <router-link to="/learning">陪你學習</router-link> |
+    <router-link to="/LearningChoose">學習顧問</router-link> |
+    <router-link to="/LearningCheckout">學習付款方式</router-link> |
     <router-link to="/Index">首頁</router-link> 
 
   </nav>

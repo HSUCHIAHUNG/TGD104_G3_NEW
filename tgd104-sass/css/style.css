@@ -234,6 +234,10 @@ a {
 .top_box .avatar i:hover {
   color: #79cbd4;
 }
+.top_box .avatar.c-avatar {
+  background-image: url("../../../image/member/consultant_info.jpg");
+  background-position: center center;
+}
 .top_box p {
   margin: 10px auto;
   text-align: center;
@@ -557,7 +561,7 @@ footer .footer_inner hr {
 }
 
 /* consultant_gallary end */
-body {
+.member_body {
   background-color: #f5f5f5;
 }
 
@@ -762,6 +766,24 @@ body {
   padding-left: 10px;
 }
 
+.content_h1 {
+  color: #585858;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.content_span {
+  color: #FF7426;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.content_p {
+  color: #585858;
+  font-size: 22px;
+  font-weight: bold;
+}
+
 /* ------------Swiper_Banner_start------------- */
 .banner_container {
   height: 850px;
@@ -769,7 +791,7 @@ body {
   background-size: cover;
   background-position: bottom;
   /* margin-top: 70px; */
-  background-image: url(../../image/index/index_banner.png);
+  background-image: url(../../../image/index/index_banner.png);
   transition: all 0.6s;
   display: flex;
   align-items: center;
@@ -816,7 +838,7 @@ body {
   height: 400px;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url(../../image/index/index_banner_icon02.png);
+  background-image: url(../../../image/index/index_banner.png);
 }
 
 /* ------------Swiper_Banner_end------------- */
@@ -842,7 +864,7 @@ body {
   position: absolute;
   width: 360px;
   height: 360px;
-  background-image: url(../../image/index/index_learning_bg.png);
+  background-image: url(../../../image/index/index_learning_bg.png);
   background-repeat: no-repeat;
   background-size: contain, 70px 70px;
   right: -350px;
@@ -852,7 +874,7 @@ body {
   width: auto;
   min-width: 550px;
   height: 380px;
-  background-image: url(../../image/index/index_learning_icon01.png);
+  background-image: url(../../../image/index/index_learning_icon01.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -877,7 +899,7 @@ body {
   right: 30px;
   width: 70px;
   height: 70px;
-  background-image: url(../../image/index/index_learing_com_03.png);
+  background-image: url(../../../image/index/index_learing_com_03.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -898,7 +920,7 @@ body {
   position: absolute;
   width: 80px;
   height: 80px;
-  background-image: url(../../image/index/index_learning_icon_ball.png);
+  background-image: url(../../../image/index/index_learning_icon_ball.png);
   background-repeat: no-repeat;
   background-size: contain;
   top: -20px;
@@ -931,7 +953,7 @@ body {
   margin-bottom: 20px;
 }
 .index_travel .index_travel_container .index_travel_img {
-  background-image: url(../../image/index/index_travel_bg.png);
+  background-image: url(../../../image/index/index_travel_bg.png);
   margin: 0 auto;
   width: auto;
   min-width: 550px;
@@ -947,7 +969,7 @@ body {
 
 .index_join {
   height: 700px;
-  background-image: url(../../image/index/index_join_bg.png);
+  background-image: url(../../../image/index/index_join_bg.png);
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -979,7 +1001,7 @@ body {
   content: "";
   height: 300px;
   width: 160px;
-  background-image: url(../../image/index/index_join_people03.png);
+  background-image: url(../../../image/index/index_join_people03.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -1060,7 +1082,7 @@ body {
   content: "";
   height: 300px;
   width: 160px;
-  background-image: url(../../image/index/index_join_people03.png);
+  background-image: url(../../../image/index/index_join_people03.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -2122,15 +2144,15 @@ body {
 }
 
 .learning_main {
-  background-image: url("../../image/learning/learning_bgi2.png");
+  background-image: url("../../../image/learning/learning_bgi2.png");
   background-position: top;
 }
 .learning_main .hot_learning {
   text-align: center;
   font-size: 36px;
   font-weight: 600;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin-top: 140px;
+  margin-bottom: 75px;
 }
 .learning_main .hot_learning .item h4 {
   padding: 10px;
@@ -2283,6 +2305,9 @@ body {
   height: 800px;
   width: 100%;
   overflow: hidden;
+}
+.learning_choose_wrapper ::-webkit-scrollbar {
+  display: none;
 }
 .learning_choose_wrapper .learning_choose_side {
   height: 800px;
