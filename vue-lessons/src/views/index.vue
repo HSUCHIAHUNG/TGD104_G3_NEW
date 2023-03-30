@@ -2,7 +2,7 @@
 
 
     <div>
-        <VHeader></VHeader>
+        <!-- <VHeader></VHeader> -->
         <!-- banner start-->
         <div class="banner_container">
                   <swiper
@@ -87,7 +87,7 @@
                 <h1 class="content_h1"><span class="content_span">加入</span>陪你</h1> 
                 <ul class="index_join_content">
                     <li>
-                        <img src="../../../image/index/index_join_people02.png" alt="img">
+                        <img src="../assets/image/index/index_join_people02.png" alt="img">
                         <div class="join_box_text">
                             <a href="https://www.youtube.com/watch?v=CJd1Qiz8QDQ" target="_blank"><h1>學習</h1></a>                       
                             <p>時間彈性<br>累積經驗<br>高預約率</p> 

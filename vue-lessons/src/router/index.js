@@ -92,6 +92,8 @@ const routes = [
     path: "/Respect",
     name: "Respect",
     component: () => import("../views/Respect.vue"),
+  },
+  {
     path: "/seltravelconsultant",
     name: "seltravelconsultant",
     component: () => import("../views/SelTravelConsultant.vue"),

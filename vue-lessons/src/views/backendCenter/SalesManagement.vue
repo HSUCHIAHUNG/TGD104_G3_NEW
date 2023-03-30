@@ -18,13 +18,15 @@
                 <p>2023/04/07</p>
             </div>
         </div>
+
         <div class="line_chart">
             <line-chart></line-chart>
         </div>
-        <!-- <pie-chart></pie-chart> -->
+
         <div class="pie_chart">
             <pie-chart></pie-chart>
         </div>
+        
         <div class="bar_chart">
             <bar-chart></bar-chart>
         </div>  
@@ -78,29 +80,40 @@ import PieChart from '../../components/PieChart.vue'
         }
     }
 
-
     .line_chart{
         margin-top: 30px;
         border-radius: 10px;
+        width: 600px ; 
+        height: 300px ;
         background: #fff;
         box-shadow: 1px 2px 10px  #adadad;
 
         .LineChar{
+            width: 400px ; 
+            height: 300px ;
             margin: 0 auto;
-            height: 50vh !important;
-            width: 55vw !important;
         }
     }
+
     .pie_chart{
+        display: flex;
+
+        .PieCharcontainer1{
         width: 300px;
         height: 300px;
         margin-top: 30px;
         border-radius: 10px;
         background: #fff;
         box-shadow: 1px 2px 10px  #adadad;
-        
-            .PieChar{
-            
+        }
+
+        .PieCharcontainer2{
+            width: 300px;
+            height: 300px;
+            margin-top: 30px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 1px 2px 10px  #adadad;
         }
     }
     
@@ -114,14 +127,8 @@ import PieChart from '../../components/PieChart.vue'
 
         .BarChar{
         margin-bottom: 10px;
-        // height: 40vh !important;
-        // width: 50vw !important;
-        
+        }
     }
-    }
-
-    
-
 }
 
 

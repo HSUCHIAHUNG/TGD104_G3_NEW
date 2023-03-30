@@ -1,8 +1,12 @@
 <template>
-   <div class="PieCharcontainer">
+   <div class="PieCharcontainer1">
      <canvas id="myChart3" class="PieChar"></canvas>
+   </div>
+
+  <div class="PieCharcontainer2">
      <canvas id="myChart4" class="PieChar"></canvas>
    </div>
+
  </template>
  
  <script>
@@ -68,19 +72,14 @@
  <!-- Add "scoped" attribute to limit CSS to this component only -->
  <!-- 因為本身帶有inline style的樣式 所以要用!important才能夠蓋過去 -->
 <style scoped>
-  .PieCharcontainer{
-    display: flex;
-    justify-content: space-between;
-  }
+
 
   #myChart3 {
-    width: 300px!important;
-    height: 300px !important;
+
   }
 
   #myChart4 {
-    width: 300px!important;
-    height: 300px !important;
+
   }
 
   @media screen and (max-width:768px) {

@@ -62,7 +62,7 @@ export default {
 .BackendContainer{
    display: flex;
    background-color: #FDF8EE;
-   height: 100vh;
+   height: inherit !important;
    .BackendNav{
       border-radius: 0 10px 10px 0;
       background-color: #FAEECD;
@@ -73,7 +73,7 @@ export default {
       max-width: 300px;
       width: 100%;
       position: relative;
-      height: 100vh;
+      height: inherit !important;
 
       h1{
          font-size: 40px;

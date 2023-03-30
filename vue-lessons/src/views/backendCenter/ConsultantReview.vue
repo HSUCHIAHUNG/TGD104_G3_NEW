@@ -24,10 +24,6 @@
                     <td>{{item.c_email}}</td>
                     <td>{{item.c_id}}</td>
                     <td>{{item.c_gender}}</td>
-                    <td><img :src='item.url' alt=""></td>
-                    <td><img :src="item.url" alt="logo"></td>
-
-
                 </tr>
                 <tr>
                     <th>電話號碼</th>
