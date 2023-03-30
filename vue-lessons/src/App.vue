@@ -8,6 +8,7 @@
     <router-link to="/backend">後台管理</router-link> |
     <router-link to="/learning">陪你學習</router-link> |
     <router-link to="/travel">陪你旅行</router-link> |
+    <router-link to="/joinok">加入完成</router-link> |
     <!-- <router-link to="/learning">陪你學習</router-link> | -->
     <router-link to="/Index">首頁</router-link> 
 

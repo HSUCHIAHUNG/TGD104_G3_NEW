@@ -78,6 +78,16 @@ const routes = [
     component: () => import("../views/TravelMap.vue"),
   },
   {
+    path: "/seltravelconsultant",
+    name: "seltravelconsultant",
+    component: () => import("../views/SelTravelConsultant.vue"),
+  },
+  {
+    path: "/joinok",
+    name: "joinok",
+    component: () => import("../views/JoinOk.vue"),
+  },
+  {
     path: "/Backend",
     name: "Backend",
     component: () => import("../views/BackendCenter.vue"),
