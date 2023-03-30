@@ -1,4 +1,7 @@
 <template>
+<div>
+    <VHeader></VHeader>
+
     <main class="travel_map_wrapper">
         <div class="container">
             <div class="travel_map">
@@ -16,13 +19,18 @@
                 </div>
 
                 <a href="/Travel"><button class="travel_map_return outline_btn_orange">回上一頁</button></a>
-                <a href=""><button class="travel_map_next btn_orange">下一步</button></a>
+                <a href="/SelTravelConsultant"><button class="travel_map_next btn_orange">下一步</button></a>
             </div>
         </div>
     </main>
+
+    <VFooter></VFooter>
+</div>
 </template>
 
 <script>
+    import VHeader from "../components/VHeader.vue";
+    import VFooter from "../components/VFooter.vue";
 // import Slick from 'slick-carousel'
 
 export default {
@@ -32,6 +40,10 @@ export default {
    
     };
   },
+  components: {
+      VHeader,
+      VFooter,
+  },
 
   
 
@@ -40,4 +52,5 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+// @import "../../../tgd104-sass/new_style.scss";
 </style>
