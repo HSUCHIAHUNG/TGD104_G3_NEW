@@ -3,7 +3,6 @@
     <VHeader></VHeader>
 
 
-
         <!-- banner -->
         <div class="learning_content">
         <div class="container_learning container">
@@ -31,16 +30,157 @@
 
         <div class="learning_main">
             <h2 class="hot_learning">豐富多元課程</h2>
-            <div class="owl-carousel owl-theme learning_carousel">
+            <!-- <div class="owl-carousel owl-theme learning_carousel">
                 <div class="item"><h4><img src="../assets/image/learning/teacher_001.png" alt=""></h4></div>
                 <div class="item"><h4><img src="../assets/image/learning/teacher_002.png" alt=""></h4></div>
                 <div class="item"><h4><img src="../assets/image/learning/teacher_003.png" alt=""></h4></div>
                 <div class="item"><h4><img src="../assets/image/learning/teacher_004.png" alt=""></h4></div>
                 <div class="item"><h4><img src="../assets/image/learning/teacher_005.png" alt=""></h4></div>
-            </div>
+            </div> -->
+<!-- 輪播1 -->
+
+  <swiper
+    :slidesPerView="1"
+    :spaceBetween="10"
+            :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+            }"
+
+    :breakpoints="{
+      '@0.00': {
+        slidesPerView: 2,
+        spaceBetween: 5,
+      },
+      '@0.75': {
+        slidesPerView: 3,
+        spaceBetween: 5,
+      },
+      '@1.2': {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      '@1.50': {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+    }"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
+    <swiper-slide><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
+  </swiper>
+
+<!-- 輪播1 end -->
+
+<!-- 輪播2 -->
+
+<h2 class="hot_learning">熱門陪你學習</h2>
+
+<swiper
+    :slidesPerView="1"
+    :spaceBetween="10"
+            :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+            }"
+
+    :breakpoints="{
+      '@0.00': {
+        slidesPerView: 2,
+        spaceBetween: 5,
+      },
+      '@0.75': {
+        slidesPerView: 3,
+        spaceBetween: 5,
+      },
+      '@1.2': {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      '@1.50': {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+    }"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide>
+        <div class="item">
+            <h4>
+                <img src="../assets/image/learning/book.png" alt="">
+                <div class="content_p">陪你讀英文</div>
+                <div>熱門顧問: 陳品魚</div>
+            </h4>
+        </div>
+    </swiper-slide>
+    <swiper-slide>
+        <div class="item">
+            <h4>
+                <img src="../assets/image/learning/calculator.png" alt="">
+                <div class="content_p">陪你微積分</div>
+                <div>熱門顧問: 陳娟配</div>
+            </h4>
+        </div>
+    </swiper-slide>
+    <swiper-slide>
+        <div class="item">
+            <h4>
+                <img src="../assets/image/learning/coding.png" alt="">
+                <div class="content_p">陪你寫JavaScript</div>
+                <div>熱門顧問: 徐嘉紅</div>
+            </h4>
+        </div>
+    </swiper-slide>
+    <swiper-slide>
+        <div class="item">
+            <h4>
+                <img src="../assets/image/learning/color-palette.png" alt="">
+                <div class="content_p">陪你繪畫</div>
+                <div>熱門顧問: 孫一敏</div>
+            </h4>
+        </div>
+    </swiper-slide>
+    <swiper-slide>
+        <div class="item">
+            <h4>
+                <img src="../assets/image/learning/guitar.png" alt="">
+                <div class="content_p">陪你烏克麗麗</div>
+                <div>熱門顧問: 裴大尼</div>
+            </h4>
+        </div>
+    </swiper-slide>
+    <swiper-slide>
+        <div class="item">
+            <h4>
+                <img src="../assets/image/learning/study.png" alt="">
+                <div class="content_p">陪你讀書</div>
+                <div>熱門顧問: 倪小培</div>
+            </h4>
+        </div>
+    </swiper-slide>
+
+  </swiper>
+
+<!-- 輪播2 end -->
 
 
-            <h2 class="hot_learning">熱門陪你學習</h2>
+            <!-- <h2 class="hot_learning">熱門陪你學習</h2>
             <div class="owl-carousel owl-theme learning_icon">
                 <div class="item">
                     <h4>
@@ -84,7 +224,7 @@
                         <div>熱門顧問: 倪小培</div>
                     </h4>
                 </div>
-            </div>
+            </div> -->
             <h2 class="learning_more"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></h2>
         </div>
 
@@ -147,20 +287,87 @@
   <script>
     import VHeader from "../components/VHeader.vue";
     import VFooter from "../components/VFooter.vue";
+        // Import Swiper Vue.js components
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/pagination';
+
+// import './style.css';
+
+// import required modules
+import { Autoplay, Navigation } from 'swiper';
+
     
     export default {
         name: "Learning",
         data() {
-        return {};
+        return {
+            
+        };
         },
         components: {
         VHeader,
-        VFooter
+        VFooter,
+        Swiper,
+    SwiperSlide,
         },
+        setup() {
+    return {
+        modules: [Autoplay, Navigation],
     };
+  },
+    };
+
+
+
   </script>
+
+
+
   
   
   <style lang="scss">
-@import "../assets/tgd104-sass/new_style.scss";
+  @import "../assets/tgd104-sass/new_style.scss";
+
+    // html,
+    // body {
+    //   position: relative;
+    //   height: 100%;
+    // }
+
+    // body {
+    //   background: #eee;
+    //   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    //   font-size: 14px;
+    //   color: #000;
+    //   margin: 0;
+    //   padding: 0;
+    // }
+
+    .swiper {
+    max-width: 1200px;
+    width: 100%;
+    //   height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
   </style>

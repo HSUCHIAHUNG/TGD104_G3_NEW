@@ -3,6 +3,9 @@
     height: 800px;
     width:100%;
     overflow:hidden; 
+    ::-webkit-scrollbar {
+        display: none;
+      }
     .learning_choose_side {
         height: 800px;
         width:350px;
@@ -73,9 +76,9 @@
     }
 }
  
-::-webkit-scrollbar {
-    display: none;
-  }
+// ::-webkit-scrollbar {
+//     display: none;
+//   }
 
 
 .learning_question,
