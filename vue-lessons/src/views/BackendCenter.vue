@@ -80,6 +80,8 @@ export default {
          font-weight: b;
          color: #FF7426;
          padding: 30px 30px 30px 0px;
+        text-align: center;
+
       }
       
          a {

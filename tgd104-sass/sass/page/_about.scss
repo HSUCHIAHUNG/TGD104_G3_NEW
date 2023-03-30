@@ -1,22 +1,4 @@
 /* ------------about start------------- */
-/* 字體使用(嘉宏) */
-.content_h1{
-	color: #585858;
-	font-size: 36px;
-	font-weight: bold;
-}
-
-.content_span{
-	color: #FF7426;
-	font-size: 36px;
-	font-weight: bold;
-}
-
-.content_p{
-	color: #585858;
-	font-size: 22px;
-	font-weight: bold;
-}
 
 /* ------------aboutbanner start------------- */
 .about_banner{
@@ -31,7 +13,7 @@
         position: absolute;
         width: auto;
         height: 650px;
-        background-image: url(../../image/index/index_learning_bg.png);
+        background-image: url(../../../image/index/index_learning_bg.png);
         background-repeat: no-repeat;
         background-size: contain;
         right: -150px;
@@ -60,7 +42,7 @@
             width: auto;
             min-width: 550px;
             height: 500px;
-            background-image: url(../../image/about/about_banner_people.png);
+            background-image: url(../../../image/about/about_banner_people.png);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: right;
@@ -83,7 +65,7 @@
         align-items: center;
 
         .about_story1_left{
-            background-image: url(../../image/about/story1_02.png);
+            background-image: url(../../../image/about/story1_02.png);
             margin: 0 auto;
             width: auto;
             min-width: 550px;
@@ -110,7 +92,7 @@
             height: 700px;
 
             .about_story1_right_img{
-                background-image: url(../../image/about/story1_01.png);
+                background-image: url(../../../image/about/story1_01.png);
                 width: auto;
                 min-width: 650px;
                 height: 380px;
@@ -157,7 +139,7 @@
                 min-width: 350px;
                 height: 380px;
                 width: auto;
-                background-image: url(../../image/about/story2_01.png);
+                background-image: url(../../../image/about/story2_01.png);
                 background-repeat: no-repeat;
                 background-position: bottom;
                 background-size: contain;
@@ -169,7 +151,7 @@
             min-width: 450px;
             width: auto;
             height: 550px;
-            background-image: url(../../image/about/story2_02.png);
+            background-image: url(../../../image/about/story2_02.png);
             background-repeat: no-repeat;
             background-position: center bottom;
             background-size: contain;
@@ -201,7 +183,7 @@
             width: 360px;
             height: 360px;
             background-image:
-             url(../../image/index/index_learning_bg.png);
+             url(../../../image/index/index_learning_bg.png);
             background-repeat: no-repeat;
             background-size: contain,70px 70px;
             right: -350px;
@@ -212,7 +194,7 @@
             width: auto;
             min-width: 550px;
             height: 550px;
-            background-image: url(/image/about/story3_01.png);
+            background-image: url(../../../image/about/story3_01.png);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
@@ -260,7 +242,7 @@
             width: auto;
             min-width: 550px;
             height: 366px;
-            background-image: url(/image/about/story4_01.png);
+            background-image: url(../../../image/about/story4_01.png);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
@@ -292,9 +274,7 @@
 /* ------------about_rwd_banner start------------- */
     .about_banner{
 
-        &::before{
-
-        }
+        
 
         .about_banner_container{
 
