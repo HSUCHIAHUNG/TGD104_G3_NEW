@@ -5,7 +5,7 @@
             <div class="footer_content container">
                 <div>
                     <a href="index.html">
-                    <img src="../../../image/logo_footer.png" alt="陪你" />
+                    <img src="../assets/image/logo_footer.png" alt="陪你" />
                     </a>
                 </div>
                 <div class="footer_content_word">

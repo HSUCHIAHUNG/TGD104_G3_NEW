@@ -1,50 +1,50 @@
-/* footer */
+// /* footer */
 
-footer {
-    background-color: $ft_yellow;
+// footer {
+//     background-color: $ft_yellow;
 
-    .footer_inner {
-        padding: 60px 100px 70px 100px;
-        max-width: 1320px;
-        margin: 0 auto;
+//     .footer_inner {
+//         padding: 60px 100px 70px 100px;
+//         max-width: 1320px;
+//         margin: 0 auto;
 
-        .footer_content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-            div {
-                margin: 20px;
-            }
-            .footer_content_word {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                justify-content: center;
-                p {
-                    line-height: 1.6;
-                }
-            }
-        }
+//         .footer_content {
+//             display: flex;
+//             align-items: center;
+//             flex-wrap: wrap;
+//             justify-content: center;
+//             div {
+//                 margin: 20px;
+//             }
+//             .footer_content_word {
+//                 display: flex;
+//                 align-items: center;
+//                 flex-wrap: wrap;
+//                 justify-content: center;
+//                 p {
+//                     line-height: 1.6;
+//                 }
+//             }
+//         }
 
 
-        .footer_socialmedia,
-        .tibame {
-            text-align: center;
-            i {
-                color: $dark_orange;
-                font-size: $fs32;
-                margin: 5px;
-            }
-        }
+//         .footer_socialmedia,
+//         .tibame {
+//             text-align: center;
+//             i {
+//                 color: $dark_orange;
+//                 font-size: $fs32;
+//                 margin: 5px;
+//             }
+//         }
 
-        hr {
-            border: 1px solid $gray;
-            margin: 15px 0;
-        }
+//         hr {
+//             border: 1px solid $gray;
+//             margin: 15px 0;
+//         }
           
-    }
-}
+//     }
+// }
 
 
 
@@ -58,49 +58,49 @@ footer {
 
   
  
-//   .footer_content div {
-//     margin: 20px;
-//   }
+// //   .footer_content div {
+// //     margin: 20px;
+// //   }
   
-//   .footer_content_word {
-//     display: flex;
-//     align-items: center;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//   }
+// //   .footer_content_word {
+// //     display: flex;
+// //     align-items: center;
+// //     flex-wrap: wrap;
+// //     justify-content: center;
+// //   }
   
-//   .footer_content_word p {
-//     line-height: 1.6;
-//   }
+// //   .footer_content_word p {
+// //     line-height: 1.6;
+// //   }
   
-//   .footer_socialmedia i {
-//     color: #ff7426;
-//     font-size: 35px;
-//     margin: 5px;
-//   }
+// //   .footer_socialmedia i {
+// //     color: #ff7426;
+// //     font-size: 35px;
+// //     margin: 5px;
+// //   }
   
-//   hr {
-//     border: 1px solid #585858;
-//     margin: 15px 0;
-//   }
+// //   hr {
+// //     border: 1px solid #585858;
+// //     margin: 15px 0;
+// //   }
   
-//   .footer_socialmedia,
-//   .tibame {
-//     text-align: center;
-//   }
+// //   .footer_socialmedia,
+// //   .tibame {
+// //     text-align: center;
+// //   }
   
-//   /* footer end */
+// //   /* footer end */
   
-//   /* ===========================RWD======================== */
+// //   /* ===========================RWD======================== */
   
-//   /* ----------螢幕小於970px時---------- */
-  @media screen and (max-width: 970px) {
-    .footer_content div {
-      text-align: center;
-      .footer_inner {
-        padding: 20px;
-      }
-    }
+// //   /* ----------螢幕小於970px時---------- */
+//   @media screen and (max-width: 970px) {
+//     .footer_content div {
+//       text-align: center;
+//       .footer_inner {
+//         padding: 20px;
+//       }
+//     }
 
-  }
+//   }
   
