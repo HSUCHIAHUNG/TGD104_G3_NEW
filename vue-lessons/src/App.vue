@@ -269,15 +269,21 @@
   </div>
 
   <router-view />
+  <!-- <VFooter></VFooter> -->
 </template>
 
 
 <script>
+    import VFooter from "../src/components/VFooter.vue";
+
 export default {
   name: "VHeader",
   data() {
     return {};
   },
+  components: {
+      VFooter,
+    },
   methods: {
 
 

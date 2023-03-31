@@ -5,18 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./tgd104-sass/css/style.css">
+    <!-- <link rel="stylesheet" href="./tgd104-sass/css/style.css"> -->
 </head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .consultant_gallary{
+        max-width: 400px;
+        /* width: 80%; */
+        /* display: flex; */
+    }
+    .consultant_gallary_main img{
+        display: block;
+            border: 3px solid #79CBD4;
+            border-radius: 10px;
+            /* max-width: 400px; */
+            width: 100%;
+        }
+
+        .consultant_gallary_small{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+
+    .consultant_gallary_small img{
+
+        border: 3px solid #79CBD4;
+            border-radius: 10px;
+            /* width: 120px; */
+            width: 32%;
+    }
+    
+</style>
 <body>
     <div class="consultant_gallary">
+        <div class="consultant_gallary_main">
+            <img src="./image/consultant01.png" alt="">
+        </div>
         <div class="consultant_gallary_small">
             <img class="consultant_gallary_chenge" src="./image/consultant01.png" alt="">
             <img class="consultant_gallary_chenge" src="./image/consultant02.png" alt="">
             <img class="consultant_gallary_chenge" src="./image/consultant03.png" alt="">
         </div>
-        <div class="consultant_gallary_main">
-            <img src="./image/consultant01.png" alt="">
-        </div>
+
         
     </div>
 

@@ -1,0 +1,46 @@
+.option{
+    background-color: $light_blue;
+    padding: 20px 20px 10px 20px;
+    max-width: 80%;
+    width: 800px;
+    border: 5px solid $dark_blue;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+
+    img{
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .option_inner{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .option_inner img{
+            display: block;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+    }
+    .option_content{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        .option_content_inner{
+            width: 90%;
+        }
+        i{
+            margin-right: 5px;
+            font-size: $fs24;
+        }
+    }
+    .option_time{
+        margin-top: 10px;
+        float: right;
+    }
+}
+
