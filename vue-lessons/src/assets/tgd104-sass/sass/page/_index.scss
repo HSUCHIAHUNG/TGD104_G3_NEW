@@ -1,78 +1,33 @@
-//斷點變數
-$breakpoint_1200: 1200px;
-$breakpoint_992: 992px;
-$breakpoint_768: 768px;
-$breakpoint_428: 428px;
 
-// 斷點 @media screen
-@mixin m768(){
-  @media screen and (max-width: $breakpoint_768) {
-    @content;  
-  }
+
+ 
+*{
+	// outline: 3px solid red;
 }
-
-// 字體 
-
-@mixin content_h1(){
-    color: #585858;
-	font-size: 36px;
-	font-weight: bold;
- }
- 
- .content_h1{
-    @include content_h1();
- }
-
- @mixin content_span(){
-    color: #FF7426;
-	font-size: 36px;
-	font-weight: bold;
- }
- 
- .content_span{
-    @include content_span();
- }
-
- @mixin content_p(){
-    color: #585858;
-	font-size: 22px;
-	font-weight: bold;
- }
- 
- .content_p{
-    @include content_p();
- }
-
- 
-// *{
-// 	/* outline: 3px solid red; */
-// }
 /* ------------Swiper_Banner_start------------- */
+.btn_orange{
+    margin: 10px 0 10px 0;
+}
 .banner_container{
-	height: 850px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: bottom;
-    /* margin-top: 70px; */
+
+    background-size: contain;
     background-image: url(../../../image/index/index_banner.png);
-    transition: all .6s;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    height: 850px;
 
     .swiper{
-        width: 100%;
-        max-width: 1320px;
-        margin-left: 150px;
+        width: 23%;
+        margin: 0px;
     }
 
         .index_banner_img{
-            /* outline: 3px solid blue; */
-            min-width: 650px;
             width: 50%;
-            height: 400px;
+            height: 60vh;
             background-repeat: no-repeat;
             background-size: contain;
+            background-position: center;
             background-image: url(../../../image/index/index_banner_icon02.png);
         }
     }
@@ -89,10 +44,10 @@ $breakpoint_428: 428px;
     .index_learning_container{
         position: relative;
         max-width: 1320px;
-        width: auto;
+        width: 100%;
         margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
         &::before {
@@ -111,16 +66,16 @@ $breakpoint_428: 428px;
         .index_learning_img{
             width: auto;
             min-width: 550px;
-            height: 380px;
+            height: 50vh;
             background-image: url(../../../image/index/index_learning_icon01.png);
             background-repeat: no-repeat;
             background-size: contain;
-            background-position: center;
+            background-position: left;
         }
 
         .index_learning_content{
             width: auto;
-            height: 700px;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -174,10 +129,10 @@ $breakpoint_428: 428px;
     .index_travel_container{
         position: relative;
         max-width: 1320px;
-        width: auto;
+        width: 100%;
         margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-wrap: wrap-reverse;
 
@@ -187,7 +142,7 @@ $breakpoint_428: 428px;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            height: 700px;
+            height: 80vh;
             p span{
                 color: #FF7426;
                 font-size: 24px;
@@ -201,13 +156,12 @@ $breakpoint_428: 428px;
 
         .index_travel_img{
             background-image: url(../../../image/index/index_travel_bg.png);
-            margin: 0 auto;
             width: auto;
             min-width: 550px;
-            height: 380px;
+            height: 50vh;
             background-repeat: no-repeat;
             background-size: contain;
-            background-position: center;
+            background-position: right;
         }
 
         .btn_solid_primary{
@@ -354,9 +308,6 @@ $breakpoint_428: 428px;
 
     
 }
-// /* ------------join end------------- */
-
-
 
 
 @media screen and (max-width:810px){
@@ -364,10 +315,282 @@ $breakpoint_428: 428px;
 		display: none;
 	}
 }
+// /* ------------join end------------- */
 
+
+// 字體 
+
+@mixin content_h1($fn_h1){
+    color: #585858;
+	font-size: $fn_h1;
+	font-weight: bold;
+ }
+ 
+ .content_h1{
+    @include content_h1(36px);
+ }
+
+ @mixin content_span($fn_span){
+    color: #FF7426;
+	font-size: $fn_span;
+	font-weight: bold;
+ }
+ 
+ .content_span{
+    @include content_span(36px);
+ }
+
+ @mixin content_p($fn_p){
+    color: #585858;
+	font-size: $fn_p;
+	font-weight: bold;
+ }
+ 
+ .content_p{
+    @include content_p(22px);
+ }
+
+
+//斷點變數
+$breakpoint_1200: 1200px;
+$breakpoint_992: 992px;
+$breakpoint_768: 768px;
+$breakpoint_428: 428px;
+
+// 斷點 @media screen
+@mixin m768(){
+    @media screen and (max-width: $breakpoint_768) {
+      @content;  
+    }
+}
+
+
+
+
+@mixin rwd($breakpoint){
+    @media screen and (max-width: $breakpoint) {
+      @content;  
+      @if $breakpoint == 1200px{
+        // 字體
+        .content_h1{
+            @include content_h1(32px);
+        }
+        
+        .content_span{
+            @include content_span(32px);
+        }
+
+        .content_p{
+            @include content_p(18px);
+        }
+
+        /* ------------learning start------------- */
+        .index_learning{
+
+            .index_learning_container{
+
+                &::before {
+
+                }
+
+                .index_learning_img{
+                    // background-position: center;
+                }
+
+                .index_learning_content{
+                    height: 50vh;
+
+                    h1{
+
+                        &::before {
+
+                        }
+                    }
+
+                    .btn_solid_primary{
+
+                    }
+                }
+            }
+        }
+        /* ------------learning end------------- */
+        // /* ------------travel start------------- */
+        .index_travel{
+
+            &::before{
+
+            }
+
+            .index_travel_container{
+
+
+                .index_travel_content{
+                    height: 50vh;
+
+                    p span{
+
+                    }
+                }
+
+                .index_travel_content h1{
+
+                }
+
+                .index_travel_img{
+                    // background-position: center;
+                    
+                }
+
+                .btn_solid_primary{
+
+                }
+            }
+        }
+        // /* ------------travel end------------- */
+    }
+
+      
+
+      @else if $breakpoint == 992px{
+        // 字體
+        .content_h1{
+            @include content_h1(28px);
+        }
+        
+        .content_span{
+            @include content_span(28px);
+        }
+
+        .content_p{
+            @include content_p(16px);
+        }
+
+        /* ------------Swiper_Banner_start------------- */
+        .banner_container{
+            flex-direction: column;
+            height: auto;
+            padding: 20px;
+
+            .swiper{
+                width: 40%;
+                min-width: auto;
+            }
+        
+                .index_banner_img{
+                    width: 70%;
+                    height: 35vh;
+                }
+            }
+        /* ------------Swiper_Banner_end------------- */
+
+        /* ------------learning start------------- */
+        .index_learning{
+
+            .index_learning_container{
+
+                &::before {
+
+                }
+
+                .index_learning_img{
+                    height: 35vh;
+                    // background-position: center;
+                }
+
+                .index_learning_content{
+                 
+
+                    h1{
+
+                        &::before {
+
+                        }
+                    }
+
+                    .btn_solid_primary{
+
+                    }
+                }
+            }
+        }
+        /* ------------learning end------------- */
+
+        /* ------------travel start------------- */
+        .index_travel{
+
+            &::before{
+
+            }
+
+            .index_travel_container{
+
+
+                .index_travel_content{
+                 
+
+                    p span{
+
+                    }
+                }
+
+                .index_travel_content h1{
+
+                }
+
+                .index_travel_img{
+                    height: 35vh;
+                }
+
+                .btn_solid_primary{
+
+                }
+            }
+        }
+        /* ------------travel end------------- */
+        }
+
+
+      @else if $breakpoint == 768px{
+        // 字體
+        .content_h1{
+            @include content_h1(20px);
+        }
+        
+        .content_span{
+            @include content_span(20px);
+        }
+
+        .content_p{
+            @include content_p(16px);
+        }
+      }
+
+      @else if $breakpoint == 428px{
+        // 字體
+        .content_h1{
+            @include content_h1(32px);
+        }
+        
+        .content_span{
+            @include content_span(32px);
+        }
+
+        .content_p{
+            @include content_p(18px);
+        }
+      }
+
+    }
+}
 
 /* ------------index rwd start------------- */
-@include m768(){
+@include rwd(1200px){}
+
+@include rwd(992px){}
+
+@include rwd(428px){}
+
+@include rwd(768px){
 /* ------------learning stard------------- */
     .index_learning{
         .index_learning_container{
@@ -440,8 +663,6 @@ $breakpoint_428: 428px;
     }
 }
 /* ------------index_banner end------------- */
-
-
 
 
 

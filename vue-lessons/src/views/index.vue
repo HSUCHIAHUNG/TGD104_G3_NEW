@@ -1,9 +1,8 @@
 <template>
-
-
     <div>
         <!-- <VHeader></VHeader> -->
         <!-- banner start-->
+        
         <div class="banner_container">
                   <swiper
             :spaceBetween="30"
@@ -20,31 +19,31 @@
             class="mySwiper"
         >
             <swiper-slide class="swiper-slide">
-                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span><br>陪你讓你不再孤單！</h1>
-                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習<br>成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
+                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span>陪你讓你不再孤單！</h1>
+                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
                 <button class="btn_orange">陪你學習</button>          
             </swiper-slide>
 
             <swiper-slide class="swiper-slide">
-                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span><br>陪你讓你不再孤單！</h1>
-                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習<br>成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
+                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span>陪你讓你不再孤單！</h1>
+                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
                 <button class="btn_orange">陪你學習</button>          
             </swiper-slide>
 
             <swiper-slide class="swiper-slide">
-                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span><br>陪你讓你不再孤單！</h1>
-                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習<br>成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
+                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span>陪你讓你不再孤單！</h1>
+                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
                 <button class="btn_orange">陪你學習</button>          
             </swiper-slide>
 
             <swiper-slide class="swiper-slide">
-                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span><br>陪你讓你不再孤單！</h1>
-                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習<br>成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
+                <h1 class="content_h1">找不到人陪你？<span class="content_span">陪你，</span>陪你讓你不再孤單！</h1>
+                <p class="content_p">像好友一樣的優質老師就在陪你不要讓學習成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
                 <button class="btn_orange">陪你學習</button>          
             </swiper-slide>
 
         </swiper>
-                <div class="index_banner_img"></div>           
+            <div class="index_banner_img"></div>           
         </div>
         <!-- banner end -->
 

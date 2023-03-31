@@ -282,13 +282,13 @@ export default {
         //開啟nav
     open_nav(){
       let center_navopen = document.getElementById('center_nav');
-      console.log('111');
-      center_navopen.classList.toggle("active");
+      // console.log('111');
+      center_navopen.classList.toggle("nav_toggle");
     },
     close_nav(){
       let center_navclose = document.getElementById('center_nav');
-      console.log('111');
-      center_navclose.classList.toggle("active");
+      // console.log('111');
+      center_navclose.classList.toggle("nav_toggle");
     },
     memberLogin() {
       let lightbox = document.getElementById("member_lightbox");
@@ -393,7 +393,7 @@ export default {
 
 <style lang="scss">
 
-.active{
+.nav_toggle{
   width: 100% !important; 
 }
 
