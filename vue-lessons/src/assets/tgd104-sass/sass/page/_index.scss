@@ -174,18 +174,19 @@
 
 // /* ------------join start------------- */
 .index_join{
-	height: 700px;
 	background-image: url(../../../image/index/index_join_bg.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
+    display: flex;
+
     
     .index_join_container{
-        height: 450px;
         display: flex;
         flex-direction: column;
         max-width: 1320px;
         margin: 0 auto;
+        height: 80vh;
 
         h1{
             text-align: center;
@@ -199,8 +200,8 @@
         .index_join_content{
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            height: 100%;
+            align-items: center;
+            height: 80vh;
             /* outline: 3px solid red; */
             width: 100%;
             position: relative;
@@ -297,14 +298,7 @@
         }     
     }
 
-    &::before{
-        content: "";
-        height: 300px;
-        width: 160px;
-        background-image: url(../../../image/index/index_join_people03.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+
 
     
 }
@@ -563,6 +557,90 @@ $breakpoint_428: 428px;
         .content_p{
             @include content_p(16px);
         }
+
+        /* ------------Swiper_Banner_start------------- */
+        .banner_container{
+            flex-direction: column;
+            height: auto;
+            padding: 20px;
+
+            .swiper{
+                width: 40%;
+                min-width: auto;
+            }
+        
+                .index_banner_img{
+                    width: 70%;
+                    height: 35vh;
+                }
+            }
+        /* ------------Swiper_Banner_end------------- */
+
+        /* ------------learning start------------- */
+        .index_learning{
+
+            .index_learning_container{
+
+                &::before {
+
+                }
+
+                .index_learning_img{
+                    height: 35vh;
+                    background-position: center;
+                }
+
+                .index_learning_content{
+                    height: 40vh;
+
+                    h1{
+
+                        &::before {
+
+                        }
+                    }
+
+                    .btn_solid_primary{
+
+                    }
+                }
+            }
+        }
+        /* ------------learning end------------- */
+
+        /* ------------travel start------------- */
+        .index_travel{
+            
+            &::before{
+
+            }
+
+            .index_travel_container{
+
+
+                .index_travel_content{
+                    height: 40vh;
+
+                    p span{
+
+                    }
+                }
+
+                .index_travel_content h1{
+
+                }
+
+                .index_travel_img{
+                    height: 35vh;
+                    background-position: center;
+                }
+
+                .btn_solid_primary{
+
+                }
+            }
+        }
+        /* ------------travel end------------- */
       }
 
       @else if $breakpoint == 428px{
@@ -588,81 +666,10 @@ $breakpoint_428: 428px;
 
 @include rwd(992px){}
 
+@include rwd(768px){}
+
 @include rwd(428px){}
 
-@include rwd(768px){
-/* ------------learning stard------------- */
-    .index_learning{
-        .index_learning_container{
-
-            .index_learning_content{
-                margin: 15px auto;
-                width: 90%;
-                min-width: auto;
-            }	
-
-            .index_learning_img{
-                height: 300px;
-                width: 90%;
-                min-width: auto;
-                margin: 0px auto;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                box-sizing: border-box;
-            }
-        }         
-    }
-/* ------------learning end------------- */
-
-/* ------------travel start------------- */
-
-    .index_travel{
-        .index_travel_container{
-
-            .index_travel_content{
-                margin: 15px auto;
-                width: 90%;
-                min-width: auto;
-            }
-
-            .index_travel_img{
-                height: 300px;
-                width: 90%;
-                min-width: auto;
-                margin: 0px auto;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                box-sizing: border-box;
-            }
-        }
-    }
-/* ------------travel end------------- */
-
-/* ------------index_banner start------------- */
-    .banner_container{
-
-        #swiper{
-            justify-content: center;
-
-            .swiper-wrapper{
-
-                .swiper-slide{
-                    align-items: flex-start;
-                    padding: 0;
-                    margin: 0 auto;
-                    min-width: auto;
-                    width: 100%;
-                }
-            }
-        }
-
-        .index_banner_img{
-            width: 90%;
-            min-width: auto;
-        }
-    }
-}
-/* ------------index_banner end------------- */
 
 
 

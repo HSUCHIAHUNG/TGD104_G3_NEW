@@ -71,7 +71,7 @@
                 <h1 class="content_h1">
                     不孤單的旅行，<br>就從有<span class="content_span">陪你</span>開始。
                 </h1>
-                <p class="content_p">喜歡登山？喜歡單車？喜歡潛水？<br> 就讓<span>陪你</span>成為你的好旅伴，一起來場無限可能的旅行吧！</p>
+                <p class="content_p">喜歡登山？喜歡單車？喜歡潛水？<br> 就讓陪你成為你的好旅伴，一起來場無限可能的旅行吧！</p>
                 <button class="btn_orange">陪你學習</button>
                 </div>
                 <div class="index_travel_img"></div>
