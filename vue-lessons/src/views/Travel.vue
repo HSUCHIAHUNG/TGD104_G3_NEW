@@ -1,8 +1,5 @@
 <template>
-<div>
-    <VHeader></VHeader>
 
-    
     <!-- banner  -->
         <div class="travel_banner">
             <div class="container">
@@ -94,56 +91,6 @@
             </div>
         </section>
 
-        <!-- <section class="travel_member">
-            <div class="container">
-                <h1>陪你旅行的成員</h1>
-                <div class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
-                    </div>
-
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
-                    </div>
-
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
-                    </div>
-
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
-                    </div>
-
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
-                    </div>
-
-                </div>
-            </div>
-        </section> -->
-
-        <!-- travel_member end -->
-
         <!-- travel_star -->
         <section class="travel_star">
             <div class="container">
@@ -229,8 +176,7 @@
         </div>
         <!-- travel_button end -->
 
-    <VFooter></VFooter>
-</div>
+
 </template>
 
 <script>
