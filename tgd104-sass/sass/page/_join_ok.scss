@@ -1,47 +1,45 @@
-/* join_ok */
+// /* join_ok */
 
-// *{
-//     outline: 1px solid red;
-// } 
 
-.join_ok_container{
-    img{
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-        width: 240px;
-        margin-top: 50px;
-    }
-    .join_ok{
-        background-image: url('../../../image/join/join_ok.png');
-        background-repeat: no-repeat;
-        // background-size: contain;
-        background-position: left;
-        background-size: 24%;
-        width: 1000px;
-        height: 280px;
-        margin: 0 auto;
-        margin-bottom: 100px;
-        .join_ok_text{
-            margin: 0 auto;
-            width: 550px;
-            height: 280px;
-            text-align: center;
-            background-color: $dark_blue;
-            border-radius: 15px;
-            display: flex;
-            /* 水平置中 */
-            justify-content: center;    
-            /* 垂直置中 */
-            align-items: center;  
-            p{
-                font-size: $fs22;
-                font-weight: 500;
-                letter-spacing: 8px;
-                text-align: left;
-                line-height: 2.5;
-                color: $text_gray;
-            }
-        }
-    }
-}
+
+// .join_ok_container{
+//     img{
+//         display: block;
+//         margin: 0 auto;
+//         width: 100%;
+//         width: 240px;
+//         margin-top: 50px;
+//     }
+//     .join_ok{
+//         background-image: url('../../../image/join/join_ok.png');
+//         background-repeat: no-repeat;
+//         // background-size: contain;
+//         background-position: left;
+//         background-size: 24%;
+//         width: 1000px;
+//         height: 280px;
+//         margin: 0 auto;
+//         margin-bottom: 100px;
+//         .join_ok_text{
+//             margin: 0 auto;
+//             width: 550px;
+//             height: 280px;
+//             text-align: center;
+//             background-color: $dark_blue;
+//             border-radius: 15px;
+//             display: flex;
+//             /* 水平置中 */
+//             justify-content: center;    
+//             /* 垂直置中 */
+//             align-items: center;  
+//             p{
+//                 font-size: $fs22;
+//                 font-weight: 500;
+//                 letter-spacing: 8px;
+//                 text-align: left;
+//                 line-height: 2.5;
+//                 color: $text_gray;
+//             }
+//         }
+//     }
+// }

@@ -1,6 +1,5 @@
 <template>
-<div>
-    <VHeader></VHeader>
+
 
     <main class="travel_map_wrapper">
         <div class="container">
@@ -24,8 +23,7 @@
         </div>
     </main>
 
-    <VFooter></VFooter>
-</div>
+
 </template>
 
 <script>

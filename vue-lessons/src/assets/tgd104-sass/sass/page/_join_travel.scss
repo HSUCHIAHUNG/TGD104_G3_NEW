@@ -1,5 +1,5 @@
 
-.join_learn{
+.join_travel{
     padding: 50px 0 80px;
     background-color: $bg_gray;
     .container{
@@ -27,19 +27,6 @@
             .learn_label{
                 width: 300px;
                 height: 50px;
-                background-color: $dark_blue;
-                border-radius: 5px;
-                outline: 3px solid $dark_blue;
-                p{
-                    color: $clear_white;
-                    text-align: center;
-                    line-height: 50px;
-                    font-size: $fs20;
-                }
-            }
-            .travel_label{
-                width: 300px;
-                height: 50px;
                 background-color: $clear_white;
                 border-radius: 5px;
                 outline: 3px solid $dark_blue;
@@ -50,8 +37,21 @@
                     font-size: $fs20;
                 }
             }
+            .travel_label{
+                width: 300px;
+                height: 50px;
+                background-color: $dark_blue;
+                border-radius: 5px;
+                outline: 3px solid $dark_blue;
+                p{
+                    color: $clear_white;
+                    text-align: center;
+                    line-height: 50px;
+                    font-size: $fs20;
+                }
+            }
         }
-        .learn_apply{
+        .travel_apply{
             margin: 0 auto;
             width: 78%;
             background-color: $clear_white;
@@ -101,7 +101,7 @@
             
         }
     }
-    .join_learn_btn{
+    .join_travel_btn{
         text-align: center;
         button{
             margin: 60px 50px 0;
