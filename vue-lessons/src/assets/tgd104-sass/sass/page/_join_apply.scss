@@ -5,112 +5,116 @@
 
 .join_apply{
     padding: 50px 0 80px;
-    h1{
-        font-size: $fs28;
-        font-weight: 500;
-        text-align: center;
-        font-weight: 600;
-        letter-spacing: 3px;
-        margin-bottom: 50px;
-        &:after{
-            content: '';
-            width: 150px;
-            display: block;
-            margin: -18px auto;
-            height: 15px;
-            background-color: $dark_blue;
-        }
-    }
-    img{
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-        width: 200px;
-        margin-bottom: 20px;
-    }
-    h2{
-        font-size: $fs22;
-        font-weight: 500;
-        margin-left: 220px;
-        display: inline-block;
-        width: 170px;
-        text-align: center;
-        &::after{
-            content: '';
-                width: 170px;
+    background-color: $bg_gray;
+    .container{
+        h1{
+            font-size: $fs28;
+            font-weight: 500;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            &:after{
+                content: '';
+                width: 150px;
                 display: block;
-                height: 5px;
+                margin: -18px auto;
+                height: 15px;
                 background-color: $dark_blue;
-                margin-top: 5px;
-        }
-    }
-    .personal_information{
-        margin: 0 auto;
-        width: 78%;
-        background-color: $clear_white;
-        border-radius: 5px;
-        padding: 35px 25px;
-        .input_row {
-            width: 90%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            .form_group{
-               width: 48%;
-               label{
-                  text-indent: 2px;
-                  margin-bottom: 5px;
-               }
-               input, select{
-                  width: 100%;
-                  margin-bottom: 5px;
-               }
-               .input_file{
-                font-size: 15px;
-                &::file-selector-button {
-                    font-weight: 500;
-                    color: $clear_white;
-                    background-color: $dark_blue;
-                    width: 150px;
-                    height: 45px;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 15px;
-                }
-               }
-               .input_img{
-                font-size: 15px;
-                &::file-selector-button {
-                    font-weight: 500;
-                    color: $clear_white;
-                    background-color: $dark_blue;
-                    width: 150px;
-                    height: 45px;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 15px;
-                }                
-               }
             }
-            #image_container{
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        h2{
+            font-size: $fs22;
+            font-weight: 500;
+            margin-left: 220px;
+            display: inline-block;
+            width: 170px;
+            text-align: center;
+            &::after{
+                content: '';
+                    width: 170px;
+                    display: block;
+                    height: 5px;
+                    background-color: $dark_blue;
+                    margin-top: 5px;
+            }
+        }
+        .personal_information{
+            margin: 0 auto;
+            width: 78%;
+            background-color: $clear_white;
+            border-radius: 5px;
+            padding: 35px 25px;
+            .input_row {
+                width: 90%;
+                margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
-                .image{
-                    border: 3px solid $dark_blue;
-                    border-radius: 15px;
-                    width: 130px;
-                    height: 130px;
-                    overflow: hidden;
-                    img{
-                        display: block;
-                        width: 100%;
+                margin-bottom: 10px;
+                .form_group{
+                   width: 48%;
+                   label{
+                      text-indent: 2px;
+                      margin-bottom: 5px;
+                   }
+                   input, select{
+                      width: 100%;
+                      margin-bottom: 5px;
+                   }
+                   .input_file{
+                    font-size: 15px;
+                    &::file-selector-button {
+                        font-weight: 500;
+                        color: $clear_white;
+                        background-color: $dark_blue;
+                        width: 150px;
+                        height: 45px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 15px;
+                    }
+                   }
+                   .input_img{
+                    font-size: 15px;
+                    &::file-selector-button {
+                        font-weight: 500;
+                        color: $clear_white;
+                        background-color: $dark_blue;
+                        width: 150px;
+                        height: 45px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 15px;
+                    }                
+                   }
+                }
+                #image_container{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .image{
+                        border: 3px solid $dark_blue;
+                        border-radius: 15px;
+                        width: 130px;
+                        height: 130px;
+                        overflow: hidden;
+                        img{
+                            display: block;
+                            width: 100%;
+                        }
                     }
                 }
-            }
-          }
+              }
+        }
     }
+    
     .join_btn{
         text-align: center;
         button{

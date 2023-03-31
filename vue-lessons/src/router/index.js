@@ -91,9 +91,31 @@ const routes = [
     path: "/Respect",
     name: "Respect",
     component: () => import("../views/Respect.vue"),
+  },
+  {
     path: "/seltravelconsultant",
     name: "seltravelconsultant",
     component: () => import("../views/SelTravelConsultant.vue"),
+  },
+  {
+    path: "/join",
+    name: "join",
+    component: () => import("../views/Join.vue"),
+  },
+  {
+    path: "/joinapply",
+    name: "joinapply",
+    component: () => import("../views/JoinApply.vue"),
+  },
+  {
+    path: "/joinlearn",
+    name: "joinlearn",
+    component: () => import("../views/JoinLearn.vue"),
+  },
+  {
+    path: "/jointravel",
+    name: "jointravel",
+    component: () => import("../views/JoinTravel.vue"),
   },
   {
     path: "/joinok",

@@ -264,6 +264,11 @@
       <button class="btn_blue">
         <router-link to="/Respect">關於我們</router-link>
       </button>    
+
+      <button class="btn_blue">
+        <router-link to="/join">加入陪你</router-link>
+      </button> 
+
       <!-- <router-link to="/learning">陪你學習</router-link> | -->
     </nav>
   </div>
