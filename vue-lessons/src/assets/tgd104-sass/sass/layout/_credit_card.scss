@@ -1,0 +1,67 @@
+.method_credit{
+    width: 300px;
+    border: 2px solid $dark_blue;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 20px;
+    margin: 50px auto;
+    .about_credit{
+        // width: 300px;
+        display: flex;
+        justify-content: space-between;
+        .fa-cc-visa,
+        .fa-cc-mastercard,
+        .fa-cc-jcb{
+            font-size: 28px;
+            color: $dark_blue;
+            margin-left: 5px;
+        }
+        span{
+            font-size: 28px;
+        }
+    }
+    .credit_card{
+        width: 140px;
+        line-height: 40px;
+        font-size: 15px;
+        border: 1px solid $dark_blue;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    .credit_date{
+        width: 60px;
+        line-height: 40px;
+        font-size: 15px;
+        border: 1px solid $dark_blue;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    .notice_credit{
+        font-size: 16px;
+        text-align: center;
+    }
+    hr{
+        margin: 20px auto;
+    }
+    h5{
+        font-size: 16px;
+    }
+    .fa-triangle-exclamation{
+        color: $dark_yellow;
+    }
+
+}
+
+
+
+
+
+input.credit_card:focus,
+input.credit_date:focus{
+background-color: #DCECEE;
+outline: 3px solid $dark_blue;
+transition: all 0.3s ease;
+}
+
+
+

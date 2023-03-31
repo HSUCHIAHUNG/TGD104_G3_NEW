@@ -19,6 +19,31 @@ const routes = [
   //     import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   // },
   {
+    path: "/learninggallery",
+    name: "learninggallery",
+    component: () => import("../views/LearningGallery.vue"),
+  },
+  {
+    path: "/learningordersuccess",
+    name: "learningordersuccess",
+    component: () => import("../views/LearningOrderSuccess.vue"),
+  },
+  {
+    path: "/learningcreditcard",
+    name: "learningcreditcard",
+    component: () => import("../views/LearningCreditCard.vue"),
+  },
+  {
+    path: "/atm",
+    name: "atm",
+    component: () => import("../views/ATM.vue"),
+  },
+  {
+    path: "/learningorderconfirmation",
+    name: "learningorderconfirmation",
+    component: () => import("../views/LearningOrderConfirmation.vue"),
+  },
+  {
     path: "/chart",
     name: "chart",
     component: () => import("../views/Chart.vue"),
