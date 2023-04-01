@@ -278,11 +278,14 @@
   </div>
 
   <router-view />
+  
   <!-- <VFooter></VFooter> -->
 </template>
 
 
 <script>
+
+
     // import VFooter from "../src/components/VFooter.vue";
 
 export default {
@@ -292,6 +295,7 @@ export default {
   },
   components: {
       // VFooter,
+
     },
   methods: {
 

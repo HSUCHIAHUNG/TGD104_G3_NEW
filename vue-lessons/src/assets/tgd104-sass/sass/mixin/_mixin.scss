@@ -1,4 +1,4 @@
-@mixin rwd($breakpoint){
+@mixin rwd ($breakpoint){
     @media screen and (max-width: $breakpoint) {
     @content;  
     @if $breakpoint == 1200px{

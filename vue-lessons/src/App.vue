@@ -231,6 +231,7 @@
     <!-- 會員註冊燈箱 End-->
   </div>
 
+
   <div id="center_nav">
     <div id="close_bar" @click.prevent="close_nav">
       <i class="fa-solid fa-xmark"></i>
@@ -245,7 +246,7 @@
           >會員中心</router-link
         >
       </button>
-
+    
       <button class="btn_yellow" @click.prevent="close_nav">
         <router-link to="/consultant">顧問中心</router-link>
       </button>
@@ -263,7 +264,7 @@
       </button>
 
       <button class="btn_yellow" @click.prevent="close_nav">
-        <router-link to="/index">首頁</router-link>
+        <router-link to="/main">首頁</router-link>
       </button>
 
       <button class="btn_yellow" @click.prevent="close_nav">
@@ -292,7 +293,7 @@
 import VFooter from "../src/components/VFooter.vue";
 
 export default {
-  name: "VHeader",
+  name: "app",
   data() {
     return {};
   },

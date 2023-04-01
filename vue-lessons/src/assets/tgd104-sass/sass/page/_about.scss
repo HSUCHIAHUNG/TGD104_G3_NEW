@@ -280,6 +280,46 @@ $breakpoint_428: 428px;
 /* ------------aboutstory4 end------------- */
 
 
+
+
+@mixin about ($breakpoint){
+    @media screen and (max-width: $breakpoint) {
+    @content;  
+    @if $breakpoint == 1200px{
+
+    }
+
+    @else if $breakpoint == 992px{
+
+
+    }
+
+    @else if $breakpoint == 768px{
+
+
+    } 
+
+    @else if $breakpoint == 576px{
+
+
+    }
+    }
+}
+
+@include about(1200px){}
+
+@include about(992px){}
+
+@include about(768px){}
+
+@include about(576px){}
+
+
+
+
+
+
+
 /* ------------about_rwd start------------- */
 @include m768(){
 /* ------------about_rwd_banner start------------- */

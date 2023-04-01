@@ -337,307 +337,42 @@
     @include content_p(22px);
  }
 
- 
-@mixin rwd($breakpoint){
+// rwd mixin
+@mixin hsu($breakpoint){
     @media screen and (max-width: $breakpoint) {
       @content;  
       @if $breakpoint == 1200px{
         // 字體
         .content_h1{
-            @include content_h1(32px);
+            font-size: 32px;
         }
         
         .content_span{
-            @include content_span(32px);
+            font-size: 32px;
         }
 
         .content_p{
-            @include content_p(18px);
+            font-size: 18px;
         }
 
-        /* ------------learning start------------- */
-        .index_learning{
-
-            .index_learning_container{
-
-                &::before {
-
-                }
-
-                .index_learning_img{
-                    // background-position: center;
-                }
-
-                .index_learning_content{
-                    height: 55vh;
-
-                    h1{
-
-                        &::before {
-
-                        }
-                    }
-
-                    .btn_solid_primary{
-
-                    }
-                }
-            }
-        }
-        /* ------------learning end------------- */
-        // /* ------------travel start------------- */
-        .index_travel{
-   
-
-            &::before{
-
-            }
-
-            .index_travel_container{
-            
-                
-                .index_travel_content{
-                height: 55vh;
-
-                    p span{
-
-                    }
-                }
-
-                .index_travel_content h1{
-
-                }
-
-                .index_travel_img{
-                    // background-position: center;
-                    
-                }
-
-                .btn_solid_primary{
-
-                }
-            }
-        }
-        // /* ------------travel end------------- */
-
-        // /* ------------join start------------- */
-        .index_join{
-           
-            .index_join_container{
-                
-                h1{
-
-                }  
-
-                span{
-
-                }
-
-                .index_join_content{
-                    height: 55vh;
-
-                    &::before{
-
-                    }
-
-                    li{
-
-
-                        &:hover .join_box_text{
-
-                        }
-
-                        &:hover .join_box_text h1{
-      
-                            &:hover{
-
-                            }
-                        }
-
-                        &:hover .join_box_text p{
-
-                        }
-
-                        .join_box_text{
-
-
-                            h1{
-  
-                            }
-
-                            p{
-
-                            }
-                        }    
-
-                        img{
-
-                        }
-                    }
-                }     
-            }
-        }
-        /* ------------join end------------- */
     }
 
       @else if $breakpoint == 992px{
         // 字體
         .content_h1{
-            @include content_h1(28px);
+            font-size: 28px;
         }
         
         .content_span{
-            @include content_span(28px);
+            font-size: 28px;
+
         }
 
         .content_p{
-            @include content_p(16px);
+            font-size: 16px;
         }
 
-        /* ------------Swiper_Banner_start------------- */
-        .banner_container{
-            flex-direction: column;
-            height: auto;
-            padding: 20px;
-
-            .swiper{
-                width: 40%;
-                min-width: auto;
-            }
-        
-                .index_banner_img{
-                    width: 70%;
-                    height: 35vh;
-                }
-            }
-        /* ------------Swiper_Banner_end------------- */
-
-        /* ------------learning start------------- */
-        .index_learning{
-
-            .index_learning_container{
-                flex-direction: column;
-
-                &::before {
-
-                }
-
-                .index_learning_img{
-                    height: 35vh;
-                    background-position: center;
-                }
-
-                .index_learning_content{
-                    height: 45vh;
-
-                    h1{
-
-                        &::before {
-
-                        }
-                    }
-
-                    .btn_solid_primary{
-
-                    }
-                }
-            }
-        }
-        /* ------------learning end------------- */
-
-        /* ------------travel start------------- */
-        .index_travel{
-
-            &::before{
-
-            }
-
-            .index_travel_container{
-                flex-direction: column;
-
-                .index_travel_content{
-                    height: 45vh;
-                  
-                    p span{
-
-                    }
-                }
-
-                .index_travel_content h1{
-
-                }
-
-                .index_travel_img{
-                    height: 35vh;
-                    background-position: center;
-                }
-
-                .btn_solid_primary{
-
-                }
-            }
-        }
-        /* ------------travel end------------- */
-
-        /* ------------join start------------- */
-        .index_join{
-    
-            .index_join_container{
-                
-                h1{
-
-                }  
-
-                span{
-
-                }
-
-                .index_join_content{
-                    height: 42vh;
-
-                    &::before{
-                        display: none;
-                        
-                    }
-
-                    li{
-                        height: 35vh;
-
-                        &:hover .join_box_text{
-
-                        }
-
-                        &:hover .join_box_text h1{
-                            
-                            &:hover{
-
-                            }
-                        }
-
-                        &:hover .join_box_text p{
-
-                        }
-
-                        .join_box_text{
-
-
-                            h1{
-    
-                            }
-
-                            p{
-
-                            }
-                        }    
-
-                        img{
-
-                        }
-                    }
-                }     
-            }
-        }
-        /* ------------join end------------- */
+       
     }
 
 
@@ -648,171 +383,16 @@
         }
         // 字體
         .content_h1{
-            @include content_h1(20px);
+            font-size: 20px;
         }
         
         .content_span{
-            @include content_span(20px);
+            font-size: 20px;
         }
 
         .content_p{
-            @include content_p(16px);
+            font-size: 16px;
         }
-
-        /* ------------Swiper_Banner_start------------- */
-        .banner_container{
-            flex-direction: column;
-            height: auto;
-            padding: 20px;
-
-            .swiper{
-                width: 60%;
-                min-width: auto;
-            }
-        
-            .btn_orange{
-                
-            }
-                .index_banner_img{
-                    width: 70%;
-                    height: 35vh;
-                }
-            }
-        /* ------------Swiper_Banner_end------------- */
-
-        /* ------------learning start------------- */
-        .index_learning{
-
-            .index_learning_container{
-                // justify-content: initial;
-                // align-items: initial;
-                // width: 90%;
-
-                &::before {
-
-                }
-
-                .index_learning_img{
-                    height: 35vh;
-                    background-position: center;
-                }
-
-                .index_learning_content{
-                    // height: initial;
-                    // justify-content: initial;
-                    // align-items: initial;
-                    // margin: 0;
-
-
-                    h1{
-
-                        &::before {
-
-                        }
-                    }
-
-                    .btn_solid_primary{
-
-                    }
-                }
-            }
-        }
-        /* ------------learning end------------- */
-
-        /* ------------travel start------------- */
-        .index_travel{
-            
-            &::before{
-
-            }
-
-            .index_travel_container{
-
-
-                .index_travel_content{
-                    height: 40vh;
-
-                    p span{
-
-                    }
-                }
-
-                .index_travel_content h1{
-
-                }
-
-                .index_travel_img{
-                    height: 35vh;
-                    background-position: center;
-                }
-
-                .btn_solid_primary{
-
-                }
-            }
-        }
-        /* ------------travel end------------- */
-
-        /* ------------join start------------- */
-        .index_join{
-
-            .index_join_container{
-                
-                h1{
-
-                }  
-
-                span{
-
-                }
-
-                .index_join_content{
-                    // height: 42vh;
-
-                    &::before{
-                        display: none;
-                        
-                    }
-
-                    li{
-                        height: 25vh;
-
-                        &:hover .join_box_text{
-
-                        }
-
-                        &:hover .join_box_text h1{
-                         
-                            &:hover{
-
-                            }
-                        }
-
-                        &:hover .join_box_text p{
-
-                        }
-
-                        .join_box_text{
-
-
-                            h1{
-                                font-size: 1.2rem;
-                                top: -8px;
-                            }
-
-                            p{
-
-                            }
-                        }    
-
-                        img{
-
-                        }
-                    }
-                }     
-            }
-        }
-        /* ------------join end------------- */
       }
 
       @else if $breakpoint == 576px{
@@ -823,122 +403,54 @@
         }
         // 字體
         .content_h1{
-            @include content_h1(18px);
+            font-size: 18px;
         }
         
         .content_span{
-            @include content_span(18px);
+            font-size: 18px;
         }
 
         .content_p{
-            @include content_p(14px);
+            font-size: 14px;
         }
+      }
+    }
+}
 
-        /* ------------Swiper_Banner_start------------- */
-        .banner_container{
-            width: 100%;
-            min-width: auto;
-            padding-left: 0;
-            padding-right: 0;
 
-            .swiper{
-                width: 80%;
-                min-width: auto;
+
+
+
+
+
+
+
+
+
+
+/* ------------index rwd start------------- */
+@include hsu(1200px){
+     /* ------------learning start------------- */
+     .index_learning{
+
+        .index_learning_container{
+
+            &::before {
+
             }
-        
-            .btn_orange{
-                
+
+            .index_learning_img{
+                // background-position: center;
             }
-                .index_banner_img{
-                    width: 80%;
-                    height: 25vh;
-                }
-            }
-        /* ------------Swiper_Banner_end------------- */
 
-        /* ------------learning start------------- */
-        .index_learning{
-            min-width: auto;
-            width: 100%;
-            padding-top: 15px;
-            padding-bottom: 15px;
+            .index_learning_content{
+                height: 55vh;
 
-            .index_learning_container{
-                display: initial;
-                width: 90%;
+                h1{
 
-                &::before {
-
-                }
-
-                .index_learning_img{
-                    min-width: auto;
-                    width: 100%;
-                    height: 25vh;
-                    background-position: center;
-                }
-
-                .index_learning_content{
-                    min-width: auto;
-                    width: 100%;
-                    height: initial;
-                    justify-content: initial;
-                    align-items: initial;
-
-                    h1{
-
-                        &::before {
-                            left: 140px;
-                            top: -10px;
-                            width: 10%;
-                        }
-                    }
-
-                    .btn_solid_primary{
+                    &::before {
 
                     }
-                }
-            }
-        }
-        /* ------------learning end------------- */
-
-        /* ------------travel start------------- */
-        .index_travel{
-            min-width: auto;
-            width: 100%;
-            padding-top: 15px;
-            padding-bottom: 15px;
-
-            &::before{
-                width: 10%;
-            }
-
-            .index_travel_container{
-                display: initial;
-                width: 90%;
-
-                .index_travel_content{
-                    min-width: auto;
-                    width: 100%;
-                    height: initial;
-                    justify-content: initial;
-                    align-items: initial;
-                    margin: 0;
-           
-                    p span{
-
-                    }
-                }
-
-                .index_travel_content h1{
-
-                }
-
-                .index_travel_img{
-                    min-width: auto;
-                    width: 100%;
-                    height: 25vh;
-                    background-position: center;
                 }
 
                 .btn_solid_primary{
@@ -946,88 +458,590 @@
                 }
             }
         }
-        /* ------------travel end------------- */
-
-        /* ------------join start------------- */
-        .index_join{
-            background-size: contain;
-            background-repeat: repeat;
+    }
+    /* ------------learning end------------- */
+    // /* ------------travel start------------- */
+    .index_travel{
 
 
-            .index_join_container{
+        &::before{
+
+        }
+
+        .index_travel_container{
+        
+            
+            .index_travel_content{
+            height: 55vh;
+
+                p span{
+
+                }
+            }
+
+            .index_travel_content h1{
+
+            }
+
+            .index_travel_img{
+                // background-position: center;
                 
-                h1{
+            }
 
-                }  
+            .btn_solid_primary{
 
-                span{
+            }
+        }
+    }
+    // /* ------------travel end------------- */
+
+    // /* ------------join start------------- */
+    .index_join{
+       
+        .index_join_container{
+            
+            h1{
+
+            }  
+
+            span{
+
+            }
+
+            .index_join_content{
+                height: 55vh;
+
+                &::before{
 
                 }
 
-                .index_join_content{
-                    height: auto;
-                    flex-direction: column;
-                    
-                    &::before{
-                        display: none;
-                        
+                li{
+
+
+                    &:hover .join_box_text{
+
                     }
 
-                    li{
-                        height: 30vh;
-                        margin: 20px;
-                        min-width: auto;
-                        width: 40%;
-
-                        &:hover .join_box_text{
-
-                        }
-
-                        &:hover .join_box_text h1{
-                         
-                            &:hover{
-
-                            }
-                        }
-
-                        &:hover .join_box_text p{
-
-                        }
-
-                        .join_box_text{
-
-
-                            h1{
-                                font-size: 1.2rem;
-                                top: -8px;
-                            }
-
-                            p{
-
-                            }
-                        }    
-
-                        img{
+                    &:hover .join_box_text h1{
+  
+                        &:hover{
 
                         }
                     }
-                }     
-            }
+
+                    &:hover .join_box_text p{
+
+                    }
+
+                    .join_box_text{
+
+
+                        h1{
+
+                        }
+
+                        p{
+
+                        }
+                    }    
+
+                    img{
+
+                    }
+                }
+            }     
         }
-        /* ------------join end------------- */
-      }
-
     }
+    /* ------------join end------------- */
 }
 
-/* ------------index rwd start------------- */
-@include rwd(1200px){}
+@include hsu(992px){
+     /* ------------Swiper_Banner_start------------- */
+     .banner_container{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
 
-@include rwd(992px){}
+        .swiper{
+            width: 40%;
+            min-width: auto;
+        }
+    
+            .index_banner_img{
+                width: 70%;
+                height: 35vh;
+            }
+        }
+    /* ------------Swiper_Banner_end------------- */
 
-@include rwd(768px){}
+    /* ------------learning start------------- */
+    .index_learning{
 
-@include rwd(576px){}
+        .index_learning_container{
+            flex-direction: column;
+
+            &::before {
+
+            }
+
+            .index_learning_img{
+                height: 35vh;
+                background-position: center;
+            }
+
+            .index_learning_content{
+                height: 45vh;
+
+                h1{
+
+                    &::before {
+
+                    }
+                }
+
+                .btn_solid_primary{
+
+                }
+            }
+        }
+    }
+    /* ------------learning end------------- */
+
+    /* ------------travel start------------- */
+    .index_travel{
+
+        &::before{
+
+        }
+
+        .index_travel_container{
+            flex-direction: column;
+
+            .index_travel_content{
+                height: 45vh;
+              
+                p span{
+
+                }
+            }
+
+            .index_travel_content h1{
+
+            }
+
+            .index_travel_img{
+                height: 35vh;
+                background-position: center;
+            }
+
+            .btn_solid_primary{
+
+            }
+        }
+    }
+    /* ------------travel end------------- */
+
+    /* ------------join start------------- */
+    .index_join{
+
+        .index_join_container{
+            
+            h1{
+
+            }  
+
+            span{
+
+            }
+
+            .index_join_content{
+                height: 42vh;
+
+                &::before{
+                    display: none;
+                    
+                }
+
+                li{
+                    height: 35vh;
+
+                    &:hover .join_box_text{
+
+                    }
+
+                    &:hover .join_box_text h1{
+                        
+                        &:hover{
+
+                        }
+                    }
+
+                    &:hover .join_box_text p{
+
+                    }
+
+                    .join_box_text{
+
+
+                        h1{
+
+                        }
+
+                        p{
+
+                        }
+                    }    
+
+                    img{
+
+                    }
+                }
+            }     
+        }
+    }
+    /* ------------join end------------- */
+}
+
+@include hsu(768px){
+    /* ------------Swiper_Banner_start------------- */
+    .banner_container{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+
+        .swiper{
+            width: 60%;
+            min-width: auto;
+        }
+    
+        .btn_orange{
+            
+        }
+            .index_banner_img{
+                width: 70%;
+                height: 35vh;
+            }
+        }
+    /* ------------Swiper_Banner_end------------- */
+
+    /* ------------learning start------------- */
+    .index_learning{
+
+        .index_learning_container{
+            // justify-content: initial;
+            // align-items: initial;
+            // width: 90%;
+
+            &::before {
+
+            }
+
+            .index_learning_img{
+                height: 35vh;
+                background-position: center;
+            }
+
+            .index_learning_content{
+                // height: initial;
+                // justify-content: initial;
+                // align-items: initial;
+                // margin: 0;
+
+
+                h1{
+
+                    &::before {
+
+                    }
+                }
+
+                .btn_solid_primary{
+
+                }
+            }
+        }
+    }
+    /* ------------learning end------------- */
+
+    /* ------------travel start------------- */
+    .index_travel{
+        
+        &::before{
+
+        }
+
+        .index_travel_container{
+
+
+            .index_travel_content{
+                height: 40vh;
+
+                p span{
+
+                }
+            }
+
+            .index_travel_content h1{
+
+            }
+
+            .index_travel_img{
+                height: 35vh;
+                background-position: center;
+            }
+
+            .btn_solid_primary{
+
+            }
+        }
+    }
+    /* ------------travel end------------- */
+
+    /* ------------join start------------- */
+    .index_join{
+
+        .index_join_container{
+            
+            h1{
+
+            }  
+
+            span{
+
+            }
+
+            .index_join_content{
+                // height: 42vh;
+
+                &::before{
+                    display: none;
+                    
+                }
+
+                li{
+                    height: 25vh;
+
+                    &:hover .join_box_text{
+
+                    }
+
+                    &:hover .join_box_text h1{
+                     
+                        &:hover{
+
+                        }
+                    }
+
+                    &:hover .join_box_text p{
+
+                    }
+
+                    .join_box_text{
+
+
+                        h1{
+                            font-size: 1.2rem;
+                            top: -8px;
+                        }
+
+                        p{
+
+                        }
+                    }    
+
+                    img{
+
+                    }
+                }
+            }     
+        }
+    }
+    /* ------------join end------------- */
+}
+
+@include hsu(576px){
+    /* ------------Swiper_Banner_start------------- */
+    .banner_container{
+        width: 100%;
+        min-width: auto;
+        padding-left: 0;
+        padding-right: 0;
+
+        .swiper{
+            width: 80%;
+            min-width: auto;
+        }
+    
+        .btn_orange{
+            
+        }
+            .index_banner_img{
+                width: 80%;
+                height: 25vh;
+            }
+        }
+    /* ------------Swiper_Banner_end------------- */
+
+    /* ------------learning start------------- */
+    .index_learning{
+        min-width: auto;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .index_learning_container{
+            display: initial;
+            width: 90%;
+
+            &::before {
+
+            }
+
+            .index_learning_img{
+                min-width: auto;
+                width: 100%;
+                height: 25vh;
+                background-position: center;
+            }
+
+            .index_learning_content{
+                min-width: auto;
+                width: 100%;
+                height: initial;
+                justify-content: initial;
+                align-items: initial;
+
+                h1{
+
+                    &::before {
+                        left: 140px;
+                        top: -10px;
+                        width: 10%;
+                    }
+                }
+
+                .btn_solid_primary{
+
+                }
+            }
+        }
+    }
+    /* ------------learning end------------- */
+
+    /* ------------travel start------------- */
+    .index_travel{
+        min-width: auto;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &::before{
+            width: 10%;
+        }
+
+        .index_travel_container{
+            display: initial;
+            width: 90%;
+
+            .index_travel_content{
+                min-width: auto;
+                width: 100%;
+                height: initial;
+                justify-content: initial;
+                align-items: initial;
+                margin: 0;
+       
+                p span{
+
+                }
+            }
+
+            .index_travel_content h1{
+
+            }
+
+            .index_travel_img{
+                min-width: auto;
+                width: 100%;
+                height: 25vh;
+                background-position: center;
+            }
+
+            .btn_solid_primary{
+
+            }
+        }
+    }
+    /* ------------travel end------------- */
+
+    /* ------------join start------------- */
+    .index_join{
+        background-size: contain;
+        background-repeat: repeat;
+
+
+        .index_join_container{
+            
+            h1{
+
+            }  
+
+            span{
+
+            }
+
+            .index_join_content{
+                height: auto;
+                flex-direction: column;
+                
+                &::before{
+                    display: none;
+                    
+                }
+
+                li{
+                    height: 30vh;
+                    margin: 20px;
+                    min-width: auto;
+                    width: 40%;
+
+                    &:hover .join_box_text{
+
+                    }
+
+                    &:hover .join_box_text h1{
+                     
+                        &:hover{
+
+                        }
+                    }
+
+                    &:hover .join_box_text p{
+
+                    }
+
+                    .join_box_text{
+
+
+                        h1{
+                            font-size: 1.2rem;
+                            top: -8px;
+                        }
+
+                        p{
+
+                        }
+                    }    
+
+                    img{
+
+                    }
+                }
+            }     
+        }
+    }
+    /* ------------join end------------- */
+}
 
 
 
