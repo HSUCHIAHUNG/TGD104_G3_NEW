@@ -137,6 +137,21 @@ const routes = [
     component: () => import("../views/SelTravelConsultant.vue"),
   },
   {
+    path: "/travelorderconfirmation",
+    name: "travelorderconfirmation",
+    component: () => import("../views/TravelOrderConfirmation.vue"),
+  },
+  {
+    path: "/travelcheckout",
+    name: "travelcheckout",
+    component: () => import("../views/TravelCheckout.vue"),
+  },
+  {
+    path: "/travelordersuccess",
+    name: "travelordersuccess",
+    component: () => import("../views/TravelOrderSuccess.vue"),
+  },
+  {
     path: "/join",
     name: "join",
     component: () => import("../views/Join.vue"),

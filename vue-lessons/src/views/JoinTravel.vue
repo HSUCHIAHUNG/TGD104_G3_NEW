@@ -14,63 +14,45 @@
                 <form action="">
                 <div class="input_row">
                     <div class="form_group">
-                    <label class="input_label" for="highest_education"
-                        >最高學歷</label
-                    >
-                    <select
-                        name="highest_education"
-                        id="highest_education"
-                        class="input_select"
-                    >
-                        <option value="">--請選擇--</option>
-                        <option value="高中">高中</option>
-                        <option value="大學">大學</option>
-                        <option value="碩士">碩士</option>
-                        <option value="博士">博士</option>
-                    </select>
+                    <label for="" class="input_label">興趣</label>
+                    <input type="text" class="input_text" placeholder="興趣" />
                     </div>
                     <div class="form_group">
-                    <label for="" class="input_label">畢業於</label>
-                    <input type="text" class="input_text" placeholder="畢業於" />
+                    <label for="" class="input_label">經歷</label>
+                    <input type="text" class="input_text" placeholder="經歷" />
                     </div>
                 </div>
 
                 <div class="input_row">
                     <div class="form_group">
-                    <label class="input_label" for="category"
+                    <label for="" class="input_label">職業</label>
+                    <input type="text" class="input_text" placeholder="職業" />
+                    </div>
+                    <div class="form_group">
+                    <label for="" class="input_label">證照</label>
+                    <input type="text" class="input_text" placeholder="證照" />
+                    </div>
+                </div>
+
+                <div class="input_row">
+                    <div class="form_group">
+                    <label class="input_label" for="travelCategory"
                         >選擇您可提供的旅行類別：</label
                     >
-                    <select name="category" id="category" class="input_select">
+                    <select name="category" id="travelCategory" class="input_select">
                         <option value="">--請選擇--</option>
-                        <option value="鋼琴">鋼琴</option>
-                        <option value="吉他">吉他</option>
-                        <option value="烏克麗麗">烏克麗麗</option>
+                        <option value="登山">登山</option>
+                        <option value="單車">單車</option>
+                        <option value="潛水">潛水</option>
 
                     </select>
                     </div>
                     <div class="form_group">
-                    <label class="input_label" for="class"
-                        >選擇您可提供的服務課程：</label
-                    >
-                    <select name="class" id="class" class="input_select">
-                        <option value="">--請選擇--</option>
-                        <option value="鋼琴">鋼琴</option>
-                        <option value="吉他">吉他</option>
-                        <option value="烏克麗麗">烏克麗麗</option>
-                    </select>
+                    <label for="" class="input_label">費用</label>
+                    <input type="text" class="input_text" placeholder="費用" />
                     </div>
                 </div>
 
-                <div class="input_row">
-                    <div class="form_group">
-                    <label for="" class="input_label">教學地址</label>
-                    <input type="text" class="input_text" placeholder="教學地址" />
-                    </div>
-                    <div class="form_group">
-                    <label for="" class="input_label">課程費用</label>
-                    <input type="text" class="input_text" placeholder="課程費用" />
-                    </div>
-                </div>
 
                 <div class="input_row">
                     <div class="form_group">
@@ -86,7 +68,8 @@
                     </div>
                 </div>
 
-                <h1>簡短的介紹一下自己吧(例如：服務課程相關經歷簡述)(100字以內)</h1>
+                <h1>簡短的介紹一下自己吧(例如：旅行相關經歷簡述)(100字以內)</h1>
+                
                 <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
 
                 </form>
@@ -108,7 +91,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default {
   name: "JoinTravel",
-  name: 'app',
     data() {
         return {
             editor: ClassicEditor,

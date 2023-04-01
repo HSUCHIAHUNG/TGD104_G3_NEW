@@ -1,0 +1,16 @@
+.travel_order{
+    width: 70%;
+    margin: 50px auto;
+    text-align: center;
+    .table_bottom{
+        margin: 30px auto;
+        // margin-left:auto; 
+        // margin-right:auto;
+    }
+    .button_choose{
+        margin-top: 50px;
+        button{
+            margin: 10px;
+        }
+    }
+}
