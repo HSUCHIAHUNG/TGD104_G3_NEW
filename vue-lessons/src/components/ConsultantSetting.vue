@@ -102,5 +102,5 @@ export default {
 
 <style lang="scss">
 // consultant_account
-@import "../../../tgd104-sass/new_style.scss";
+@import "../assets/tgd104-sass/new_style.scss";
 </style>
