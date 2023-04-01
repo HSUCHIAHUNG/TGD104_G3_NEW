@@ -25,7 +25,7 @@
             <span>26</span>
           </div>
           <p>$1,500</p>
-          <button type="button" class="btn_blue">查看更多</button>
+          <a href="#" class="btn_blue">查看更多</a>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
 
 <script>
 export default {
-  name: "Order",
+  name: "HistorySum",
   data() {
     return {};
   },
