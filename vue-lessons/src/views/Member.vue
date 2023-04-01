@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="member_body">
       <div class="member_row container">
         <!-------------側邊navbar---------------->
@@ -8,7 +7,10 @@
           <Avatar></Avatar>
           <SideNav></SideNav>
         </div>
+        <!------------ 下拉式選單 ------------>
+        <drop-down :defaultOption="defaultOption"></drop-down>
         <!------------ 主要區塊 ------------>
+
         <div class="main">
           <div class="main_header">
             <h1>帳號設定</h1>
@@ -54,6 +56,7 @@ import VHeader from "@/components/VHeader.vue";
 //  import VFooter from '@/components/VFooter.vue'
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
+import DropDown from "../components/DropDown.vue";
 import MemberSetting from "../components/MemberSetting.vue";
 import PasswordChange from "../components/PasswordChange.vue";
 import VFooter from "../components/VFooter.vue";
@@ -64,6 +67,7 @@ export default {
     return {
       content: "MemberSetting",
       currentTab: "tab1",
+      defaultOption: "帳號設定",
     };
   },
   components: {
@@ -73,6 +77,7 @@ export default {
     SideNav,
     MemberSetting,
     PasswordChange,
+    DropDown,
   },
 };
 </script>

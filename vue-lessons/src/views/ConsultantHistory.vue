@@ -8,10 +8,12 @@
           <c-avatar></c-avatar>
           <c-side-nav></c-side-nav>
         </div>
+        <!------------ 下拉式選單 ------------>
+        <c-drop-down :defaultOption="defaultOption"></c-drop-down>
         <!------------ 主要區塊 ------------>
         <div class="main">
           <div class="main_header">
-            <h1>預約明細</h1>
+            <h1>歷史訂單</h1>
             <ul class="tabs">
               <li>
                 <a
@@ -45,8 +47,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <VFooter></VFooter> -->
   </div>
 </template>
 
@@ -55,13 +55,15 @@
 //  import VFooter from '@/components/VFooter.vue'
 import CAvatar from "@/components/CAvatar.vue";
 import CSideNav from "../components/CSideNav.vue";
+import CDropDown from "@/components/CDropDown.vue";
 import CHistoryOrderSum from "../components/CHistoryOrderSum.vue";
 
 export default {
-  name: "ConsultantBooking",
+  name: "ConsultantHistory",
   data() {
     return {
       currentTab: "tab1",
+      defaultOption: "歷史訂單",
     };
   },
   components: {
@@ -69,6 +71,7 @@ export default {
     // VFooter,
     CAvatar,
     CSideNav,
+    CDropDown,
     CHistoryOrderSum,
   },
 };

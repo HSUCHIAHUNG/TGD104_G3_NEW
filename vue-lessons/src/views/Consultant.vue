@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <VHeader></VHeader> -->
     <div class="consultant_body">
       <div class="consultant_row container">
         <!-------------側邊navbar---------------->
@@ -8,6 +7,8 @@
           <c-avatar></c-avatar>
           <c-side-nav></c-side-nav>
         </div>
+        <!------------ 下拉式選單 ------------>
+        <c-drop-down :defaultOption="defaultOption"></c-drop-down>
         <!------------ 主要區塊 ------------>
         <div class="main">
           <div class="main_header">
@@ -55,15 +56,17 @@ import VHeader from "@/components/VHeader.vue";
 //  import VFooter from '@/components/VFooter.vue'
 import CAvatar from "../components/CAvatar.vue";
 import CSideNav from "@/components/CSideNav.vue";
+import CDropDown from "@/components/CDropDown.vue";
 import ConsultantSetting from "@/components/ConsultantSetting.vue";
 import PasswordChange from "../components/PasswordChange.vue";
 
 export default {
-  name: "Member",
+  name: "Consultant",
   data() {
     return {
       content: "ConsultantSetting",
       currentTab: "tab1",
+      defaultOption: "帳號設定",
     };
   },
   components: {
@@ -71,6 +74,7 @@ export default {
     // VFooter,
     CAvatar,
     CSideNav,
+    CDropDown,
     ConsultantSetting,
     PasswordChange,
   },
@@ -78,5 +82,6 @@ export default {
 </script>
 
 <style lang="scss">
+// layout._consultant.scss
 @import "../assets/tgd104-sass/new_style.scss";
 </style>

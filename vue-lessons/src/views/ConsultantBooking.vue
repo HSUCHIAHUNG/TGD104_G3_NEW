@@ -8,6 +8,8 @@
           <c-avatar></c-avatar>
           <c-side-nav></c-side-nav>
         </div>
+        <!------------ 下拉式選單 ------------>
+        <c-drop-down :defaultOption="defaultOption"></c-drop-down>
         <!------------ 主要區塊 ------------>
         <div class="main">
           <div class="main_header">
@@ -55,6 +57,7 @@
 //  import VFooter from '@/components/VFooter.vue'
 import CAvatar from "@/components/CAvatar.vue";
 import CSideNav from "../components/CSideNav.vue";
+import CDropDown from "@/components/CDropDown.vue";
 import COrderSum from "../components/COrderSum.vue";
 
 export default {
@@ -62,6 +65,7 @@ export default {
   data() {
     return {
       currentTab: "tab1",
+      defaultOption: "預約明細",
     };
   },
   components: {
@@ -69,11 +73,12 @@ export default {
     // VFooter,
     CAvatar,
     CSideNav,
+    CDropDown,
     COrderSum,
   },
 };
 </script>
 
 <style lang="scss">
-// @import "../assets/tgd104-sass/new_style.scss";
+@import "../assets/tgd104-sass/new_style.scss";
 </style>

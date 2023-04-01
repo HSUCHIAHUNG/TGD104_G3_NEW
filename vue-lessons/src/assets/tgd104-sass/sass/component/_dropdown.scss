@@ -1,0 +1,176 @@
+// 會員下拉選單
+.dropdown {
+  display: none;
+}
+@media screen and (max-width: 920px) {
+  .dropdown {
+    display: block;
+    width: 90%;
+    position: relative;
+    margin-left: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    * {
+      box-sizing: border-box;
+    }
+    .select {
+      background-color: $clear_white;
+      color: $gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: backgroud 0.3s;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 700;
+    }
+    .select-clicked {
+      background-color: $dark_blue;
+      color: $clear_white;
+    }
+    /* 三角形 */
+    .caret {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $dark_blue;
+      transition: 0.3s;
+    }
+    /* 三角形旋轉180度 */
+    .caret-rotate {
+      transform: rotate(180deg);
+    }
+    .dropdown_menu {
+      list-style: none;
+      background-color: $clear_white;
+      color: $gray;
+      border-right: 1px solid $light_blue;
+      border-bottom: 1px solid $light_blue;
+      border-left: 1px solid $light_blue;
+      border-radius: 0 0 5px 5px;
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+      opacity: 0;
+      display: none;
+      transition: 0.2s;
+      z-index: 1;
+      &.menu-open {
+        display: block;
+        opacity: 1;
+      }
+      li {
+        padding: 10px;
+        padding-left: 20px;
+        border: 2px;
+        cursor: pointer;
+        a {
+          color: $gray;
+          display: block;
+          cursor: pointer;
+          i {
+            margin-right: 10px;
+          }
+        }
+        &:hover {
+          background-color: $light_blue;
+        }
+        &.active {
+          background-color: $light_blue;
+        }
+      }
+    }
+  }
+}
+
+// 顧問下拉選單
+
+.cdropdown {
+  display: none;
+}
+@media screen and (max-width: 920px) {
+  .cdropdown {
+    display: block;
+    width: 90%;
+    position: relative;
+    margin-left: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    * {
+      box-sizing: border-box;
+    }
+    .select {
+      background-color: $clear_white;
+      color: $gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: backgroud 0.3s;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 700;
+    }
+    .select-clicked {
+      background-color: $dark_blue;
+      color: $clear_white;
+    }
+    /* 三角形 */
+    .caret {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $dark_blue;
+      transition: 0.3s;
+    }
+    /* 三角形旋轉180度 */
+    .caret-rotate {
+      transform: rotate(180deg);
+    }
+    .dropdown_menu {
+      list-style: none;
+      background-color: $clear_white;
+      color: $gray;
+      border-right: 1px solid $light_blue;
+      border-bottom: 1px solid $light_blue;
+      border-left: 1px solid $light_blue;
+      border-radius: 0 0 5px 5px;
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+      opacity: 0;
+      display: none;
+      transition: 0.2s;
+      z-index: 1;
+      &.menu-open {
+        display: block;
+        opacity: 1;
+      }
+      li {
+        padding: 10px;
+        padding-left: 20px;
+        border: 2px;
+        cursor: pointer;
+        a {
+          color: $gray;
+          display: block;
+          cursor: pointer;
+          i {
+            margin-right: 10px;
+          }
+        }
+        &:hover {
+          background-color: $light_blue;
+        }
+        &.active {
+          background-color: $light_blue;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <VHeader></VHeader> -->
     <div class="consultant_body">
       <div class="consultant_row container">
         <!-------------側邊navbar---------------->
@@ -8,10 +7,12 @@
           <c-avatar></c-avatar>
           <c-side-nav></c-side-nav>
         </div>
+        <!------------ 下拉式選單 ------------>
+        <c-drop-down :defaultOption="defaultOption"></c-drop-down>
         <!------------ 主要區塊 ------------>
         <div class="main">
           <div class="main_header">
-            <h1>顧問資料</h1>
+            <h1>顧問資訊</h1>
             <ul class="tabs">
               <li>
                 <a
@@ -55,20 +56,21 @@
 //  import VFooter from '@/components/VFooter.vue'
 import CAvatar from "@/components/CAvatar.vue";
 import CSideNav from "../components/CSideNav.vue";
+import CDropDown from "@/components/CDropDown.vue";
 import ConsultantInfoL from "@/components/ConsultantInfoL.vue";
 
 export default {
-  name: "ConsultantBooking",
+  name: "ConsultantInfo",
   data() {
     return {
       currentTab: "tab1",
+      defaultOption: "顧問資訊",
     };
   },
   components: {
-    // VHeader,
-    // VFooter,
     CAvatar,
     CSideNav,
+    CDropDown,
     ConsultantInfoL,
   },
 };

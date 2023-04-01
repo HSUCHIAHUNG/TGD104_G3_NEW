@@ -16,6 +16,7 @@
 @import "sass/component/passwordchange";
 @import "sass/component/order";
 @import "sass/component/order_message";
+@import "sass/component/dropdown";
 
 //layout
 @import "sass/layout/header";
@@ -53,31 +54,31 @@
 // page
 @import "sass/page/order_details";
 // @import 'sass/page/order_details/index';
-@import 'sass/page/about';
-@import 'sass/page/index';
+@import "sass/page/about";
+@import "sass/page/index";
 // @import 'sass/page/product';
-@import 'sass/page/travel';
-@import 'sass/page/travel_map';
-@import 'sass/page/sel_travel_consultant';
+@import "sass/page/travel";
+@import "sass/page/travel_map";
+@import "sass/page/sel_travel_consultant";
 // @import 'sass/page/travel_game';
-@import 'sass/page/learning';
-@import 'sass/page/learning_choose';
-@import 'sass/page/learning_checkout';
-@import 'sass/page/learning_order_confirmation';
-@import 'sass/page/learning_credit_card';
-@import 'sass/page/learning_order_success';
-@import 'sass/page/learning_gallery';
+@import "sass/page/learning";
+@import "sass/page/learning_choose";
+@import "sass/page/learning_checkout";
+@import "sass/page/learning_order_confirmation";
+@import "sass/page/learning_credit_card";
+@import "sass/page/learning_order_success";
+@import "sass/page/learning_gallery";
 // @import 'sass/page/learning_checkout';
 // @import 'sass/page/join_apply';
 // @import 'sass/page/learning';
 // @import 'sass/page/learning_choose';
-@import 'sass/page/join_travel';
-@import 'sass/page/join_learn';
-@import 'sass/page/join_apply';
-@import 'sass/page/join_ok';
-@import 'sass/page/atm';
+@import "sass/page/join_travel";
+@import "sass/page/join_learn";
+@import "sass/page/join_apply";
+@import "sass/page/join_ok";
+@import "sass/page/atm";
 
-@import 'sass/page/join';
+@import "sass/page/join";
 // plugin
 
 // if else

@@ -1,6 +1,7 @@
 .member_body {
   background-color: $bg_gray;
 }
+
 .member_row {
   display: flex;
   padding-top: 65px;
@@ -13,5 +14,18 @@
   }
   .main {
     width: 75%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .member_row {
+    flex-direction: column;
+    .aside_bar {
+      display: none;
+    }
+    .main {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 }

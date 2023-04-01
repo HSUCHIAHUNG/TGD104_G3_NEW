@@ -15,3 +15,119 @@
     width: 75%;
   }
 }
+
+// RWD ======================================
+@media screen and (max-width: 1200px) {
+  .main {
+    .consultant_content {
+      .input_row {
+        .files {
+          .goodpeople,
+          .id_upload {
+            label {
+              padding: 10px 15px;
+              i {
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .consultant_row {
+    flex-direction: column;
+    .aside_bar {
+      display: none;
+    }
+    .main {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    .consultant_content {
+      .input_row {
+        flex-wrap: wrap;
+        .form_group {
+          width: 100%;
+        }
+        .files {
+          .goodpeople,
+          .id_upload {
+            label {
+              padding: 10px 40px;
+              i {
+                margin-left: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    .consultant_content {
+      .input_row {
+        .form_group {
+        }
+        .files {
+          .goodpeople,
+          .id_upload {
+            label {
+              padding: 10px 10px;
+              i {
+                margin-left: 8px;
+              }
+            }
+          }
+        }
+      }
+      .btns {
+        button {
+          width: 120px;
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main {
+    .consultant_content {
+      .input_row {
+        .form_group {
+        }
+        .files {
+          .goodpeople,
+          .id_upload {
+            label {
+              padding: 10px 5px;
+              i {
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+      .btns {
+        button {
+          width: 100px;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
