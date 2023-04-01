@@ -9,7 +9,7 @@
     height: 345px;
     background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 12%, $text_gray 12%, $text_gray 88%, $dark_blue 88%, $dark_blue 100%);
     border-radius: 15px;
-    // box-shadow: $card_box-shadow;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
     margin-bottom: 30px;
 
     position: relative;
@@ -61,6 +61,7 @@
     position: absolute;
     right: 0;
 }
+
 
 .consultant_card{
     ul{
