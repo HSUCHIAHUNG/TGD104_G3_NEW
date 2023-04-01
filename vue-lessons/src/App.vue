@@ -244,7 +244,7 @@
       </button>   
 
       <button class="btn_yellow" @click.prevent="close_nav">
-        <router-link to="/backend" exact>後台管理</router-link>
+        <router-link to="/BackendCenter" exact>後台管理</router-link>
       </button>   
 
       <button class="btn_yellow" @click.prevent="close_nav">
@@ -256,7 +256,7 @@
       </button>    
 
       <button class="btn_yellow" @click.prevent="close_nav">
-        <router-link to="/Index">首頁</router-link>
+        <router-link to="/index">首頁</router-link>
       </button>   
 
       <button class="btn_yellow" @click.prevent="close_nav">

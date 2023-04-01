@@ -82,11 +82,14 @@
     </div>
 
 </template>
+<script setup></script>
 
 <script>
-    import searchbar from '../../components/BackecdSearch.vue'
+    import searchbar from '../components/BackecdSearch.vue'
     export default {
+        name: 'ConsultantReview',
         data(){ 
+            
             return {
                 items: [
                 { name: '舞動小敏', c_nickname: '敏敏',c_email: 'h0989541162@gmail.com', c_id: 'H124803065',
@@ -119,7 +122,7 @@
                 }
         },
 
-        name: 'MemberManagement',
+        
         components: {
             searchbar,
         }

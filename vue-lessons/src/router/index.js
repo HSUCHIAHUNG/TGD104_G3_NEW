@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import MemberFav from "../views/MemberFav.vue";
 
 
+
+
 const routes = [
   {
     path: "/",
@@ -160,41 +162,41 @@ const routes = [
     component: () => import("../views/JoinOk.vue"),
   },
   {
-    path: "/Backend",
-    name: "Backend",
+    path: "/BackendCenter",
+    name: "BackendCenter",
     component: () => import("../views/BackendCenter.vue"),
-    redirect: "/Backend/SalesManagement",
+    redirect: "/BackendCenter/SalesManagement",
     children: [
       {
         path: "SalesManagement",
         neme: "SalesManagement",
-        component: () => import("../views/backendCenter/SalesManagement.vue"),
+        component: () => import("../views/SalesManagement.vue"),
       },
       {
         path: "MemberManagement",
         neme: "MemberManagement",
-        component: () => import("../views/backendCenter/MemberManagement.vue"),
+        component: () => import("../views/MemberManagement.vue"),
       },
       {
         path: "OrderManagement",
         neme: "OrderManagement",
-        component: () => import("../views/backendCenter/OrderManagement.vue"),
+        component: () => import("../views/OrderManagement.vue"),
       },
       {
         path: "ConsultantReview",
         neme: "ConsultantReview",
-        component: () => import("../views/backendCenter/ConsultantReview.vue"),
+        component: () => import("../views/ConsultantReview.vue"),
       },
       {
         path: "ConsultantManagement",
         neme: "ConsultantManagement",
         component: () =>
-          import("../views/backendCenter/ConsultantManagement.vue"),
+          import("../views/ConsultantManagement.vue"),
       },
       {
         path: "Exit",
         neme: "Exit",
-        component: () => import("../views/backendCenter/Exit.vue"),
+        component: () => import("../views/Exit.vue"),
       },
     ],
   },
