@@ -15,14 +15,9 @@
         ></a>
       </div>
     </div>
-<<<<<<< HEAD
   </header>     
   <!-- header end -->
 
-=======
-  </header>
-  <!-- header end -->
->>>>>>> origin/newdev
 
   <div class="v_header">
     <!-- <a href="" @click.prevent="memberLogin"
