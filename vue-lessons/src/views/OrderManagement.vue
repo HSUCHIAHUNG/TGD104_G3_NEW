@@ -42,9 +42,10 @@
     </div>
 
 </template>
+<script setup></script>
 
 <script>
-    import searchbar from '../../components/BackecdSearch.vue'
+    import searchbar from '../components/BackecdSearch.vue'
     
 
     export default {

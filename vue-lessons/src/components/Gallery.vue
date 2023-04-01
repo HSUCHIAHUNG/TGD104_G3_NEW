@@ -43,6 +43,13 @@ export default {
         <div class="consultant_gallary_main">
           <img :src="mainImage" :alt="mainImageAlt">
         </div>
+        <!-- <div class="consultant_gallary_small">
+          <img v-for="(image, index) in images" 
+              :key="index" 
+              :src="image.small" 
+              :alt="image.alt" 
+              @click="changeMainImage(index)">
+        </div> -->
         <div class="consultant_gallary_small">
           <img v-for="(image, index) in images" 
               :key="index" 
@@ -53,7 +60,7 @@ export default {
       </div>
 
       <div class="detail_introduce">
-        Calvin 托福頂尖菁英培訓 國高中升學救星
+        <h1>Calvin 托福頂尖菁英培訓 國高中升學救星</h1>
         <br>
         服務課程：英文
         <br>
@@ -78,14 +85,25 @@ export default {
   <script>
   export default {
     name: "Gallery",
+    // data() {
+    //   return {
+    //     images: [
+    //       {small: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/la-bi-xiao-xin-tong-yan-tong-yu-pian/tray_large.png', big: "https://s3.getstickerpack.com/storage/uploads/sticker-pack/la-bi-xiao-xin-tong-yan-tong-yu-pian/tray_large.png", alt: "Image 1"},
+    //       {small: "http://img2.eduppt.cn/2ab810a4cce81309bd1cfd1dd5f8a6722f19.png/w260", big: "http://img2.eduppt.cn/2ab810a4cce81309bd1cfd1dd5f8a6722f19.png/w260", alt: "Image 2"},
+    //       {small: "http://img2.eduppt.cn/19290baf7aeadeff213fbc9c098c3ebb2208.png/w260", big: "http://img2.eduppt.cn/19290baf7aeadeff213fbc9c098c3ebb2208.png/w260", alt: "Image 3"},
+    //     ],
+    //     mainImage: "https://s3.getstickerpack.com/storage/uploads/sticker-pack/la-bi-xiao-xin-tong-yan-tong-yu-pian/tray_large.png",
+    //     mainImageAlt: "Image 1",
+    //   };
+    // },
     data() {
       return {
         images: [
-          {small: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/la-bi-xiao-xin-tong-yan-tong-yu-pian/tray_large.png', big: "https://s3.getstickerpack.com/storage/uploads/sticker-pack/la-bi-xiao-xin-tong-yan-tong-yu-pian/tray_large.png", alt: "Image 1"},
-          {small: "http://img2.eduppt.cn/2ab810a4cce81309bd1cfd1dd5f8a6722f19.png/w260", big: "http://img2.eduppt.cn/2ab810a4cce81309bd1cfd1dd5f8a6722f19.png/w260", alt: "Image 2"},
-          {small: "http://img2.eduppt.cn/19290baf7aeadeff213fbc9c098c3ebb2208.png/w260", big: "http://img2.eduppt.cn/19290baf7aeadeff213fbc9c098c3ebb2208.png/w260", alt: "Image 3"},
+          {small: require('../assets/image/consultant01.png'), big: require('../assets/image/consultant01.png'), alt: "Image 1"},
+          {small: require('../assets/image/consultant02.png'), big: require('../assets/image/consultant02.png'), alt: "Image 2"},
+          {small: require('../assets/image/consultant03.png'), big: require('../assets/image/consultant03.png'), alt: "Image 3"},
         ],
-        mainImage: "https://s3.getstickerpack.com/storage/uploads/sticker-pack/la-bi-xiao-xin-tong-yan-tong-yu-pian/tray_large.png",
+        mainImage: require('../assets/image/consultant01.png'),
         mainImageAlt: "Image 1",
       };
     },
@@ -101,6 +119,9 @@ export default {
   <style lang="scss">
     @import "../assets/tgd104-sass/new_style.scss";
   
+    .detail_introduce h1{
+      font-size: $fs28;
+    }
   </style>
 
 

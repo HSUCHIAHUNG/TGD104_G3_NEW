@@ -40,8 +40,10 @@
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
                         <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
+                        <div class="card_img">
+                            <img src="../assets/image/travel/travel_member_1.png" alt="">
+                        </div>
+                        <h2>徐宏宏</h2>
                         <h3>登山</h3>
                     </div>
                 </swiper-slide>
@@ -50,8 +52,34 @@
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
                         <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
+                        <div class="card_img">
+                            <img src="../assets/image/travel/travel_member_2.png" alt="">
+                        </div>
+                        <h2>陳霈霈</h2>
+                        <h3>潛水</h3>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="autoplay">
+                    <div class="card">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.5 (211)</p>
+                        <div class="card_img">
+                            <img src="../assets/image/travel/consultant_c09.png" alt="">
+                        </div>
+                        <h2>陳諭諭</h2>
+                        <h3>單車</h3>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="autoplay">
+                    <div class="card">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.5 (211)</p>
+                        <div class="card_img">
+                            <img src="../assets/image/travel/consultant_c08.png" alt="">
+                        </div>
+                        <h2>徐阿宏</h2>
                         <h3>登山</h3>
                     </div>
                 </swiper-slide>
@@ -60,29 +88,11 @@
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
                         <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
-                        <img src="../assets/image/travel/travel_member_1.png" alt="">
-                        <h2>徐嘉宏</h2>
-                        <h3>登山</h3>
+                        <div class="card_img">
+                            <img src="../assets/image/travel/consultant_c16.png" alt="">
+                        </div>
+                        <h2>孫敏敏</h2>
+                        <h3>單車</h3>
                     </div>
                 </swiper-slide>
                     
@@ -101,14 +111,14 @@
 
                         <div class="travel_comment">
                             <h2>a**********1</h2>
-                            <p>第一次使用陪你找到登山旅伴，體驗非常好! 下次再試試騎單車或潛水:]讚啦~~~~~~ 而且老師好幽默風趣!
+                            <p>第一次使用陪你找到登山旅伴，體驗非常好! 下次再試試騎單車或潛水:]讚啦~~~~~~ 而且顧問好幽默風趣!
                                 讚讚讚讚讚讚讚讚讚*10000 !</p>
                             <h3>2023-02-18 11:58</h3>
                         </div>
                         <div class="travel_consultant_wrapper">
-                            <img src="../assets/image/travel/travel_consultant_1.png" alt="">
+                            <img src="../assets/image/travel/consultant_c01.png" alt="">
                             <div class="travel_consultant">
-                                <h4>徐阿宏</h4>
+                                <h4>徐大宏</h4>
                                 <i class="fa-solid fa-star"></i>
                                 <p>4.3 (158)</p>
                                 <h5>登山</h5>
@@ -118,17 +128,16 @@
 
                     <div class="travel_comments">
                         <div class="travel_comment">
-                            <h2>a**********1</h2>
-                            <p>第一次使用陪你找到登山旅伴，體驗非常好! 下次再試試騎單車或潛水:]讚啦~~~~~~ 而且老師好幽默風趣!
-                                讚讚讚讚讚讚讚讚讚*10000 !</p>
-                            <h3>2023-02-18 11:58</h3>
+                            <h2>b**********1</h2>
+                            <p>常常想登山卻找不到朋友一起，能夠在這找到志同道合的登山旅伴而且又是相當有經驗的顧問，給你500顆星星! </p>
+                            <h3>2023-03-18 17:58</h3>
                         </div>
                         <div class="travel_consultant_wrapper">
-                            <img src="../assets/image/travel/travel_consultant_1.png" alt="">
+                            <img src="../assets/image/travel/consultant_c02.png" alt="">
                             <div class="travel_consultant">
-                                <h4>徐阿宏</h4>
+                                <h4>徐小宏</h4>
                                 <i class="fa-solid fa-star"></i>
-                                <p>4.3 (158)</p>
+                                <p>4.5 (128)</p>
                                 <h5>登山</h5>
                             </div>
                         </div>
@@ -136,18 +145,17 @@
 
                     <div class="travel_comments">
                         <div class="travel_comment">
-                            <h2>a**********1</h2>
-                            <p>第一次使用陪你找到登山旅伴，體驗非常好! 下次再試試騎單車或潛水:]讚啦~~~~~~ 而且老師好幽默風趣!
-                                讚讚讚讚讚讚讚讚讚*10000 !</p>
-                            <h3>2023-02-18 11:58</h3>
+                            <h2>c**********1</h2>
+                            <p>今天使用陪你找到潛水旅伴，我們跑去龍洞某個潛水點一起自由潛水，顧問好專業身材又保養的很好!讚讚~~~~</p>
+                            <h3>2023-03-28 21:00</h3>
                         </div>
                         <div class="travel_consultant_wrapper">
-                            <img src="../assets/image/travel/travel_consultant_1.png" alt="">
+                            <img src="../assets/image/travel/consultant_c08.png" alt="">
                             <div class="travel_consultant">
-                                <h4>徐阿宏</h4>
+                                <h4>徐宏</h4>
                                 <i class="fa-solid fa-star"></i>
-                                <p>4.3 (158)</p>
-                                <h5>登山</h5>
+                                <p>4.2 (100)</p>
+                                <h5>潛水</h5>
                             </div>
                         </div>
                     </div>

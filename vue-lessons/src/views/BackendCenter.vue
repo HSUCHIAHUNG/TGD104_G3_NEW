@@ -1,29 +1,30 @@
 <script setup> 
-import { RouterLink, RouterView } from 'vue-router';
+   import { RouterLink, RouterView } from 'vue-router';
 </script>
+
 <template>
 
    <div class="BackendContainer">      
       <!-- <sales-management></sales-management> -->
       <nav class="BackendNav">
          <h1>Hello, Alden</h1>
-         <router-link to="/backend/SalesManagement">
+         <router-link to="/BackendCenter/SalesManagement">
             <i class="fa-solid fa-tag"></i>
             <span>銷售管理</span>
          </router-link>
-         <router-link to="/backend/MemberManagement">
+         <router-link to="/BackendCenter/MemberManagement">
             <i class="fa-solid fa-address-book"></i>
             <span>會員管理</span>
          </router-link>
-         <router-link to="/backend/ConsultantManagement">
+         <router-link to="/BackendCenter/ConsultantManagement">
             <i class="fa-solid fa-user-tie"></i>
             <span>顧問管理</span>
          </router-link>
-         <router-link to="/backend/OrderManagement">
+         <router-link to="/BackendCenter/OrderManagement">
             <i class="fa-solid fa-chart-line"></i>
             <span>訂單管理</span>
          </router-link>
-         <router-link to="/backend/ConsultantReview">
+         <router-link to="/BackendCenter/ConsultantReview">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>顧問審核</span>
          </router-link>
@@ -37,13 +38,15 @@ import { RouterLink, RouterView } from 'vue-router';
    </div>     
 </template>
 
+<script setup></script>
+
 <script>
 
 // import AccountSetting from '../components/AccountSetting.vue'
-import SalesManagement from './backendCenter/SalesManagement.vue'
-import Index from './index.vue'
+
 
 export default {
+ 
   data() {
     return {
 

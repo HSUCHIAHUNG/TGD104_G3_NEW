@@ -7,14 +7,14 @@
                 <h1 class="color_gray">請選擇地區</h1>
                 <img src="../assets/image/travel/travel_map.png" alt="">
                 <div class="travel_map_radio">
-                    <input type="radio" name="map" id="north" value="北部">
-                    <label for="north" class="north"></label>
-                    <input type="radio" name="map" id="middle" value="中部">
-                    <label for="middle" class="middle" ></label>
-                    <input type="radio" name="map" id="south" value="南部">
-                    <label for="south" class="south" ></label>
-                    <input type="radio" name="map" id="east" value="東部">
-                    <label for="east" class="east" ></label>
+                    <input type="radio" name="map" id="north" value="北部" v-model="selected">
+                    <label for="north" class="north" :class="{ 'selected': selected === '北部' }"></label>
+                    <input type="radio" name="map" id="middle" value="中部" v-model="selected">
+                    <label for="middle" class="middle" :class="{ 'selected': selected === '中部' }"></label>
+                    <input type="radio" name="map" id="south" value="南部" v-model="selected">
+                    <label for="south" class="south" :class="{ 'selected': selected === '南部' }"></label>
+                    <input type="radio" name="map" id="east" value="東部" v-model="selected">
+                    <label for="east" class="east" :class="{ 'selected': selected === '東部' }"></label>
                 </div>
 
                 <a href="/Travel"><button class="travel_map_return outline_btn_orange">回上一頁</button></a>
@@ -27,20 +27,17 @@
 </template>
 
 <script>
-    import VHeader from "../components/VHeader.vue";
-    import VFooter from "../components/VFooter.vue";
-// import Slick from 'slick-carousel'
+
 
 export default {
   name: "TravelMap",
   data() {
     return {
-   
+        selected: '',
     };
   },
   components: {
-      VHeader,
-      VFooter,
+
   },
 
   
@@ -50,5 +47,4 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
-// @import "../../../tgd104-sass/new_style.scss";
 </style>
