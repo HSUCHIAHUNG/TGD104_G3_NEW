@@ -300,6 +300,7 @@ export default {
     VFooter,
   },
   methods: {
+
     // 會員登入燈箱
     //開啟nav
     open_nav() {

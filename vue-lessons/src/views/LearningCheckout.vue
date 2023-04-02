@@ -1,16 +1,33 @@
 <template>
-    <div>
-      <VHeader></VHeader>
+  <div>
+      <!-- <VHeader></VHeader> -->
   
-  
-  
-      <div class="learning_checkout_list">
+
+
+    <div class="learning_checkout_list">
       <h2>選擇付款方式</h2>
-        <Checkout></Checkout>
+
+      <ul class="checkout_card_atm">
+
+        <!-- <li class="checkout_method"> -->
+          <label class="money_card">
+            <input type="radio" v-model="moneymethod" name="moneymethod" value="1"/>
+            信用卡/簽帳金融卡
+          </label>
+
+          <hr>
+
+          <label class="momey_atm">
+            <input type="radio" v-model="moneymethod" name="moneymethod" value="2"/>
+            ATM 轉帳
+          </label>
+        <!-- </li> -->
+
+      </ul>
       <h2 class="checkout_total">金額 : <span>1,500元</span></h2>
       <h2 class="button_choose">
-      <button class="outline_btn_orange">回上一頁</button>
-      <button class="btn_orange">進行付款</button>
+        <a href="/LearningOrderConfirmation"><button class="outline_btn_orange">回上一頁</button></a>
+        <button @click="payment" class="btn_orange">進行付款</button>
       </h2>
       <div class="img_wallet"><img src="image/learning/wallet.png" alt=""></div>
     </div>
@@ -18,29 +35,51 @@
   
   
   
-      <VFooter></VFooter>
-    </div>
-  </template>
+    <VFooter></VFooter>
+  </div>
+</template>
     
     <script>
       import VHeader from "../components/VHeader.vue";
       import VFooter from "../components/VFooter.vue";
-      import Checkout from "../components/Checkout.vue";
+      // import Checkout from "../components/Checkout.vue";
       
       export default {
-          name: "Learning",
+          name: "LearningCheckout",
           data() {
-          return {};
+            return {
+              moneymethod: null
+            };
           },
           components: {
           VHeader,
           VFooter,
-          Checkout
+          // Checkout
           },
+          methods:{
+            payment(){
+              if (this.moneymethod === "1") {
+                this.$router.push('/LearningCreditCard');
+              } else if (this.moneymethod === "2") {
+                this.$router.push('/ATM');
+              }
+            }
+          }
       };
     </script>
     
     
-    <style lang="scss">
+<style lang="scss">
   @import "../assets/tgd104-sass/new_style.scss";
-    </style>
+  .checkout_card_atm{
+    background-color:$dark_blue;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  hr{
+    margin: 20px auto;
+  }
+</style>

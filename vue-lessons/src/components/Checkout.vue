@@ -1,11 +1,11 @@
 <template>
     <ul class="checkout_list">
       <li class="checkout_method">
-        <input type="radio" />
+        <input type="radio" v-model="moneymethod" name="moneymethod" value="1" checked/>
         <span>信用卡/簽帳金融卡</span>
       </li>
       <li class="checkout_method">
-        <input type="radio" />
+        <input type="radio" v-model="moneymethod" name="moneymethod" value="2"/>
         <span>ATM 轉帳</span>
       </li>
     </ul>

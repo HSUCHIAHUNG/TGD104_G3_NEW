@@ -3,22 +3,23 @@
     <div class="learning_choose_wrapper">
       <!-- 左邊 -->
       <div class="learning_choose_side">
-        <a href=""><div class="learning_question">我想學習的不在上面怎麼辦</div></a>
+        <a href="/LearningOption"><div class="learning_question">我想學習的不在上面怎麼辦</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-music"></i> 陪你-音樂</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你-伴讀</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-school"></i> 陪你-科目</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你-繪畫</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-code"></i> 陪你-程式</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你-舞蹈</div></a>
+        
       </div>
       <!-- 左邊end -->
       <!-- 右邊 -->
       <div class="learning_choose_content">
         <div class="learning_second_items">
-          <button>鋼琴</button>
-          <button>吉他</button>
-          <button>烏克麗麗</button>
-          <button>爵士鼓</button>
+          <a href="/LearningChoose"><div>鋼琴</div></a>
+          <a href="#"><div>吉他</div></a>
+          <a href="#"><div>烏克麗麗</div></a>
+          <a href="#"><div>爵士鼓</div></a>
         </div>
         <!-- 顧問卡 -->
         <div class="product-selection">
@@ -39,12 +40,13 @@
         </div>
         <!-- 顧問卡end -->
         <div class="learning_go">
-          <a href="/"><button class="btn_orange">開始預約</button></a>
+          <a href="/LearningOrderConfirmation"><button class="btn_orange">開始預約</button></a>
         </div>
       </div>
       <!-- 右邊end -->
     </div>                
   </div>   
+  
   <VFooter></VFooter>
 </template>
     
