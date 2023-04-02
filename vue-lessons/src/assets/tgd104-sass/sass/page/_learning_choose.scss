@@ -54,22 +54,31 @@
         // }
         .learning_second_items{
             text-align: center;
-            button{
-                width: 120px;
-                height: 50px;
-                line-height: 50px;
-                margin: 10px;
-                background: none;
-                border: none;
-                // background-color: $light_yellow;
-                color: $gray;
-                font-size: 18px;
-                // border: 1px solid $light_yellow;
-                font-weight: 600;
-                border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            a{
+                margin: 15px;
+                div{
+                    width: 100px;
+                    height: 50px;
+                    line-height: 50px;
+                    margin: 10px;
+                    background: none;
+                    // background-color: $light_yellow;
+                    color: $gray;
+                    font-size: 18px;
+                    // border: 1px solid $light_yellow;
+                    font-weight: 600;
+                }
             }
         } 
     }
+
+    .learning_second_items div:hover{
+        border-bottom: 10px solid $dark_blue; 
+    }
+
     .learning_question,
     .learning_items,
     .learning_choose_content,
@@ -78,6 +87,11 @@
         font-size: $fs20;
         font-weight: 600;
     }
+}
+
+.learning_question:hover,
+.learning_items:hover{
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
 // layout_end
 
@@ -161,9 +175,6 @@
 
 /* ----------螢幕小於992px時---------- */
 @media screen and (max-width: 992px){
-    .product-selection .product {
-        width: 250px;
-    }
 
     .learning_second_items button {
         margin: 0;

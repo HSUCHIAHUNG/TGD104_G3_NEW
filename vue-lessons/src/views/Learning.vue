@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VHeader></VHeader>
+
 
 
         <!-- banner -->
@@ -225,7 +225,7 @@
                     </h4>
                 </div>
             </div> -->
-            <h2 class="learning_more"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></h2>
+            <h2 class="learning_more"><a href="/LearningChoose"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></a></h2>
         </div>
 
 
@@ -240,7 +240,7 @@
                 <img class="share01" src="../assets/image/learning/learning_float01.png" alt="">
                 <img class="share02" src="../assets/image/learning/learning_float02.png" alt="">
             </div>
-            <div><button class="btn_orange">提供更多想法!</button></div>
+            <h2 class="learning_more"><a href="/LearningOption"><button class="btn btn_solid_secondary btn_orange">提供更多想法</button></a></h2>
         </div>
         <div class="feelings">
 

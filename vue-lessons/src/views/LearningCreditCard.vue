@@ -8,9 +8,9 @@
   
   
       <h2 class="button_choose">
-      <button class="outline_btn_orange">回上一頁</button>
-      <button class="btn_orange">結帳</button>
-      </h2>
+      <a href="/LearningCheckout"><button class="outline_btn_orange">回上一頁</button></a>
+      <a href="/LearningOrderSuccess"><button class="btn_orange">結帳</button></a>
+    </h2>
   
       <VFooter></VFooter>
     </div>
