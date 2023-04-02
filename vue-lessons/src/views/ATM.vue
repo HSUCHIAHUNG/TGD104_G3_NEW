@@ -56,21 +56,24 @@
           return {
             deadline: new Date(new Date().getTime() + 3 * 24 * 60 * 60 * 1000), // 3天後的日期
             remainingTime: '', // 剩餘時間
-          };
+          }
           },
           components: {
           VHeader,
           VFooter,
-          formattedExpirationDate() {
-        const year = this.deadline.getFullYear() // 年份
-        const month = this.pad(this.deadline.getMonth() + 1) // 月份，要補0
-        const date = this.pad(this.deadline.getDate()) // 日，要補0
-        const hours = this.pad(this.deadline.getHours()) // 小時，要補0
-        const minutes = this.pad(this.deadline.getMinutes()) // 分鐘，要補0
 
-        return `${year}年${month}月${date}日 ${hours}:${minutes}`
-        },
           },
+          computed: {
+                formattedExpirationDate() {
+                const year = this.deadline.getFullYear() // 年份
+                const month = this.pad(this.deadline.getMonth() + 1) // 月份，要補0
+                const date = this.pad(this.deadline.getDate()) // 日，要補0
+                const hours = this.pad(this.deadline.getHours()) // 小時，要補0
+                const minutes = this.pad(this.deadline.getMinutes()) // 分鐘，要補0
+
+                return `${year}年${month}月${date}日 ${hours}:${minutes}`
+                },
+            },
           methods: {
         pad(value) {
         return String(value).padStart(2, '0') // 將數字補成兩位數

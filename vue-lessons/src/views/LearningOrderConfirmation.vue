@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VHeader></VHeader>
+
 
 
 
@@ -8,8 +8,8 @@
       訂單明細
       <OrderConfirmation></OrderConfirmation>
       <h2 class="button_choose">
-      <button class="outline_btn_orange">回上一頁</button>
-      <button class="btn_orange">選擇付款方式</button>
+      <a href="/LearningChoose"><button class="outline_btn_orange">回上一頁</button></a>
+      <a href="/LearningCheckout"><button class="btn_orange">選擇付款方式</button></a>
       </h2>
     </div>
 

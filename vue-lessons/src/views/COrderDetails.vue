@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="member_body">
-      <div class="member_row container">
+    <div class="consultant_body">
+      <div class="consultant_row container">
         <!-------------側邊navbar---------------->
         <div class="aside_bar">
-          <Avatar></Avatar>
-          <SideNav></SideNav>
+          <c-avatar></c-avatar>
+          <c-side-nav></c-side-nav>
         </div>
         <!------------ 主要區塊 ------------>
-        <div class="order_main">
+        <div class="c_order_main">
           <!-- 訂單資訊 -->
           <div class="order_area">
             <div class="order_header">
@@ -17,17 +17,27 @@
             <div class="order_content">
               <order-item-details></order-item-details>
             </div>
-            <div class="consultant_info">
-              <div class="consultant_info_left">
-                <img src="../assets/image/member/consultant_info.jpg" alt="" />
+            <div class="member_info">
+              <img
+                src="../assets/image/member/avatar.jpg"
+                alt="member avatar"
+              />
+              <div class="member_details">
                 <h3>
-                  預約顧問：
-                  <br />
-                  <span>裴大尼</span>｜
-                  <span>5年經驗登山嚮導</span>
+                  預約會員：
+                  <span>倪小裴</span>
                 </h3>
+                <p>
+                  <i class="fa-solid fa-user"></i>
+                  暱稱：
+                  <span> 裴裴 </span>
+                </p>
+                <p>
+                  <i class="fa-solid fa-house"></i>
+                  居住地區：
+                  <span> 北部 </span>
+                </p>
               </div>
-              <a class="btn_blue">查看顧問資料</a>
             </div>
           </div>
           <!-- 訂單訊息 -->
@@ -56,8 +66,8 @@
 <script>
 //  import VHeader from '@/components/VHeader.vue'
 //  import VFooter from '@/components/VFooter.vue'
-import Avatar from "@/components/Avatar.vue";
-import SideNav from "@/components/SideNav.vue";
+import CAvatar from "../components/CAvatar.vue";
+import CSideNav from "@/components/CSideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
 
@@ -69,8 +79,8 @@ export default {
   components: {
     // VHeader,
     // VFooter,
-    Avatar,
-    SideNav,
+    CAvatar,
+    CSideNav,
     OrderItemDetails,
     OrderMessage,
   },

@@ -16,7 +16,7 @@
             <span>26</span>
           </div>
           <p>$1,500</p>
-          <a class="btn_blue" href="#">查看更多</a>
+          <a class="btn_blue" href="/consultantorderdetails">查看更多</a>
         </div>
       </div>
     </div>
