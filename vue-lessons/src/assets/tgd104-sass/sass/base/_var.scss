@@ -10,10 +10,17 @@ body {
   box-sizing: border-box;
 }
 
-.container {
+// 字體 
+
+@mixin container(){
   max-width: 1320px;
   margin: 0 auto;
 }
+
+.container{
+  @include container();
+}
+
 
 a {
   text-decoration: none;

@@ -42,3 +42,58 @@ header {
   
 /* header end */
   
+
+@mixin header ($breakpoint){
+    @media screen and (max-width: $breakpoint) {
+    @content;  
+        @if $breakpoint == 1200px{
+            
+        }
+
+        @else if $breakpoint == 992px{
+
+
+        }
+
+        @else if $breakpoint == 768px{
+
+
+        } 
+
+        @else if $breakpoint == 576px{
+
+
+        }
+    }
+}
+
+@include header(1200px){
+    /* header */
+header {
+    background-color: $ft_yellow;
+
+  .header_container {
+    width: 90%;
+
+        #h_bar {
+            
+        }
+
+        img {
+            
+        }
+
+        .h_icon {
+           
+
+            i {
+                
+            }
+        }
+    }
+}
+}
+@include header(992px){}
+@include header(768px){}
+
+@include header(576px){}

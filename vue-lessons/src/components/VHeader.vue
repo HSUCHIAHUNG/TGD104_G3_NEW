@@ -527,6 +527,5 @@ export default {
 }
 
 
-
 //  @import "../../tgd104-sass/new_style.scss";
 </style>
