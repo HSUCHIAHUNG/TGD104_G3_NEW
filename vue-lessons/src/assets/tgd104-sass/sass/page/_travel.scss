@@ -10,8 +10,10 @@
     background-color: $bg_yellow;
     .container{
         display: flex;
+        justify-content: space-around;
         .left_block{
             flex-grow: 1;
+            margin-left: 20px;
             h1{
                 color: $dark_orange;
                 display: inline-block;
@@ -169,6 +171,7 @@
                 .travel_comment{
                     background-color: $dark_blue;
                     width: 100%;
+                    height: 30vh;
                     padding: 30px;
                     border-radius: 5px;
                     
@@ -197,9 +200,12 @@
                         font-weight: 500;
                     }
                     h3{
-                        font-size: $fs18;
+                        font-size: 18px;
                         color: $text_gray;
-                        text-align: right;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        margin: 0 20px 20px 0;
                     }
                 }
                 .travel_consultant_wrapper{
@@ -291,5 +297,577 @@
 }
 
 
-
 /* travel_button end */
+
+
+/*-------- travel rwd start ---------*/
+
+@mixin swim_rwd($breakpoint){
+    @media screen and (max-width: $breakpoint) {
+    @content;  
+    @if $breakpoint == 1200px{
+    }
+
+    @else if $breakpoint == 992px{
+    }
+
+    @else if $breakpoint == 768px{
+    } 
+
+    @else if $breakpoint == 576px{
+    }
+    }
+}
+
+@include rwd(1200px){
+    
+    .travel_banner{
+        height: 700px;
+        .container{
+            width: 100%;
+            .left_block{
+                margin: 0 70px;
+                h1{
+                    font-size: $fs32;
+                }
+                span{
+                    font-size: $fs32;
+                }
+                h2{
+                    font-size: 16px;
+                    padding-top: 40px;
+                }
+            }
+            .right_block{
+                img{
+                    width: 90%;
+                }
+            }
+        } 
+ 
+    }
+
+    .travel_member{
+        height: 750px;
+        .container{
+            width: 100%;
+            h1 {
+                font-size: $fs28;
+                margin-bottom: 120px;
+                &:after {
+                    width: 215px;
+                    margin: -21px auto;
+                }
+            }
+            .autoplay{
+                .card{
+                    width: 300px;
+                    height: 350px;
+                    background: linear-gradient(180deg, #fafafa 45%, #79cbd4 45%);
+                    i{
+                        font-size: $fs20;
+                    }
+                    p{
+                        font-size: $fs18;
+                    }
+                    .card_img{
+                        width: 55%;
+                    }
+                }
+            }
+        }
+    }
+
+    .travel_star{
+        height: 650px;
+        .container{
+            width: 100%;
+            padding: 0 30px;
+            h1{
+                font-size: $fs28;
+                margin-bottom: 90px;
+                &:after {
+                    width: 215px;
+                    margin: -21px auto;
+                }
+            }
+            .travel_comment_wrapper{
+                .travel_comments{
+                    .travel_comment{
+                        padding: 15px;
+                        h2{
+                            font-size: 16px;
+                        }
+                        p{
+                            margin: 20px 0 20px 0;
+                        }
+                        h3{
+                            font-size: 16px;
+                            margin: 0px 15px 10px 0;
+                        }
+                    }
+                    .travel_consultant_wrapper{
+                        img{
+                            width: 90px;
+                            max-height: 90px;
+                        }
+                        .travel_consultant{
+                            h4{
+                                font-size: $fs20;
+                            }
+                            i{}
+                            p{
+                                font-size: $fs18;
+                            }
+                            h5{
+                                font-size: $fs24;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        } 
+    } 
+    .travel_button{
+        height: 350px;
+        padding-top: 60px;
+        .container{
+            .travel_button_hike{
+                img{
+                    height: 110px;
+                }
+            } 
+            .travel_button_bike{
+                img{
+                    height: 110px;
+                }
+            } 
+            .travel_button_swim{
+                img{
+                    height: 110px;
+                }
+            } 
+        } 
+    }
+
+}
+
+@include rwd(992px){
+    .travel_banner{
+        height: 550px;
+        .container{
+            .left_block{
+                margin: 0 40px;
+                h1{
+                    font-size: $fs28;
+                }
+                span{
+                    font-size: $fs28;
+                }
+                h2{
+                    font-size: 14px;
+                    padding-top: 20px;
+                }
+                img {
+                    margin-top: 55px;
+                }
+            }
+        } 
+ 
+    }
+    .travel_member{
+        padding-top: 50px;
+        height: 600px;
+        .container{
+            h1 {
+                font-size: $fs24;
+                margin-bottom: 90px;
+                &:after {
+                    width: 190px;
+                    margin: -19px auto;
+                }
+            }
+            .autoplay{
+                .card{
+                    width: 250px;
+                    height: 300px;
+                    background: linear-gradient(180deg, #fafafa 40%, #79cbd4 40%);
+                    i{
+                        font-size: $fs18;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                    .card_img{
+                        width: 50%;
+                    }
+                    h2{
+                        font-size: $fs20;
+                    }
+                    h3{
+                        font-size: $fs22;
+                    }
+                }
+            }
+        }
+    }
+    .travel_star{
+        height: 600px;
+        .container{
+            width: 100%;
+            padding: 0 20px;
+            h1{
+                font-size: $fs24;
+                margin-bottom: 80px;
+                &:after {
+                    width: 171px;
+                    margin: -19px auto;
+                }
+            }
+            .travel_comment_wrapper{
+                .travel_comments{
+                    .travel_comment{
+                        padding: 10px;
+                        h2{
+                            font-size: 14px;
+                        }
+                        p{
+                            font-size: 14px;
+                            margin: 15px 0 15px 0;
+                        }
+                        h3{
+                            font-size: 14px;
+                            margin: 0px 10px 5px 0;
+                        }
+                    }
+                    .travel_consultant_wrapper{
+                        img{
+                            width: 80px;
+                            max-height: 80px;
+                        }
+                        .travel_consultant{
+                            margin-left: 20px;
+                            h4{
+                                font-size: $fs18;
+                            }
+                            i{
+                                font-size: $fs18;
+                            }
+                            p{
+                                font-size: 16px;
+                            }
+                            h5{
+                                font-size: $fs22;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        } 
+    } 
+    .travel_button{
+        height: 300px;
+        padding-top: 50px;
+        .container{
+            .travel_button_hike{
+                img{
+                    height: 90px;
+                }
+            } 
+            .travel_button_bike{
+                img{
+                    height: 90px;
+                }
+            } 
+            .travel_button_swim{
+                img{
+                    height: 90px;
+                }
+            } 
+        } 
+    }
+}
+
+@include rwd(768px){
+    .travel_banner{
+        height: 450px;
+        padding-top: 40px;
+        .container{
+            .left_block{
+                margin: 0 40px;
+                h1{
+                    font-size: $fs24;
+                }
+                span{
+                    font-size: $fs24;
+                }
+                h2{
+                    padding-top: 20px;
+                }
+                img {
+                    margin-top: 20px;
+                    width: 80%;
+                }
+            }
+            .right_block{
+                img{
+                    width: 80%;
+                }
+            }
+        } 
+ 
+    }
+    .travel_member{
+        padding-top: 40px;
+        height: 500px;
+        .container{
+            h1 {
+                font-size: $fs20;
+                margin-bottom: 70px;
+                &:after {
+                    width: 162px;
+                    margin: -17px auto;
+                }
+            }
+            .autoplay{
+                .card{
+                    width: 200px;
+                    height: 250px;
+                    i{
+                        font-size: 16px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+
+                    h2{
+                        font-size: $fs18;
+                        margin: 15px 0 5px;
+                    }
+                    h3{
+                        font-size: $fs20;
+                    }
+                }
+            }
+        }
+    }
+    .travel_star{
+        height: 500px;
+        padding-top: 40px;
+        .container{
+            padding: 0 20px;
+            h1{
+                font-size: $fs20;
+                margin-bottom: 70px;
+                &:after {
+                    width: 148px;
+                    margin: -17px auto;
+                }
+            }
+            .travel_comment_wrapper{
+                .travel_comments{
+                    .travel_comment{
+                        padding: 5px;
+                        h3{
+                            font-size: 14px;
+                            margin: 0px 5px 5px 0;
+                        }
+                    }
+                    .travel_consultant_wrapper{
+                        img{
+                            width: 70px;
+                            max-height: 70px;
+                        }
+                        .travel_consultant{
+                            margin-left: 10px;
+                            h4{
+                                font-size: 16px;
+                                display: block;
+                            }
+                            i{
+                                font-size: 16px;
+                                margin: 0;
+                            }
+                            p{
+                                font-size: 14px;
+                            }
+                            h5{
+                                font-size: $fs18;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        } 
+    } 
+    .travel_button{
+        height: 250px;
+        padding-top: 40px;
+        .container{
+            .travel_button_hike{
+                img{
+                    height: 80px;
+                }
+            } 
+            .travel_button_bike{
+                img{
+                    height: 80px;
+                }
+            } 
+            .travel_button_swim{
+                img{
+                    height: 80px;
+                }
+            } 
+        } 
+    }
+}
+
+@include rwd(576px){
+    .travel_banner{
+        height: 550px;
+        padding-top: 40px;
+        text-align: center;
+        .container{
+            flex-direction: column;
+            width: 100%;
+            .left_block{
+                margin: 0 40px;
+                h1{
+                    font-size: $fs20;
+                }
+                span{
+                    font-size: $fs20;
+                }
+                h2{
+                    padding-top: 20px;
+                }
+                img {
+                    margin: 30px auto 0;
+                    width: 80%;
+                }
+            }
+            .right_block{
+                display: none;
+            }
+        } 
+    }
+    .travel_member{
+        padding-top: 40px;
+        height: 500px;
+        .container{
+            h1 {
+                font-size: $fs18;
+                margin-bottom: 70px;
+                &:after {
+                    width: 162px;
+                    margin: -17px auto;
+                }
+            }
+            .autoplay{
+                .card{
+                    width: 180px;
+                    height: 230px;
+                    i{
+                        font-size: 16px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                    h2{
+                        font-size: 16px;
+                        margin: 15px 0 5px;
+                    }
+                    h3{
+                        font-size: $fs18;
+                    }
+                }
+            }
+        }
+    }
+    .travel_star{
+        height: 1200px;
+        padding-top: 40px;
+        .container{
+            padding: 0 20px;
+            h1{
+                font-size: $fs18;
+                margin-bottom: 70px;
+                &:after {
+                    width: 135px;
+                    margin: -16px auto;
+                }
+            }
+            .travel_comment_wrapper{
+                flex-direction: column;
+                .travel_comments{
+                    margin: 0 auto;
+                    width: 70%;
+                    .travel_comment{
+                        padding: 15px;
+                        height: 25vh;
+                        p{
+                            font-size: 14px;
+                            margin: 15px 0 15px 0;
+                        }
+                        h3{
+                            font-size: 14px;
+                            margin: 0px 15px 15px 0;
+                        }
+                    }
+                    .travel_consultant_wrapper{
+                        margin-bottom: 40px;
+                        img{
+                            width: 70px;
+                            max-height: 70px;
+                        }
+                        .travel_consultant{
+                            margin-left: 30px;
+                            h4{
+                                font-size: 16px;
+                                display: inline-block;
+                            }
+                            i{
+                                font-size: 16px;
+                                margin: 5px;
+                            }
+                            p{
+                                font-size: 14px;
+                            }
+                            h5{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        } 
+    } 
+    .travel_button{
+        height: 200px;
+        padding-top: 40px;
+        .container{
+            .travel_button_hike{
+                img{
+                    height: 50px;
+                }
+            } 
+            .travel_button_bike{
+                img{
+                    height: 50px;
+                }
+            } 
+            .travel_button_swim{
+                img{
+                    height: 50px;
+                }
+            } 
+        } 
+    }
+}
+
+/*-------- travel rwd end ---------*/
