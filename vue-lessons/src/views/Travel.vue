@@ -31,10 +31,30 @@
                 delay: 2500,
                 disableOnInteraction: false,
                 }"
+
+                
+                :breakpoints="{
+                '@0.00': {
+                    slidesPerView: 1,
+                    spaceBetween: 5,
+                },
+                '@0.75': {
+                    slidesPerView: 2,
+                    spaceBetween: 5,
+                },
+                '@1.2': {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                '@1.50': {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                }"
             
                 :modules="modules"
                 class="mySwiper"
-            >
+                >
 
                 <swiper-slide class="autoplay">
                     <div class="card">
