@@ -44,6 +44,7 @@
           <keep-alive>
             <component :is="content"></component>
           </keep-alive>
+          <chat-bot-new></chat-bot-new>
         </div>
       </div>
     </div>
@@ -60,6 +61,7 @@ import DropDown from "../components/DropDown.vue";
 import MemberSetting from "../components/MemberSetting.vue";
 import PasswordChange from "../components/PasswordChange.vue";
 import VFooter from "../components/VFooter.vue";
+import ChatBotNew from "../components/ChatBotNew.vue";
 
 export default {
   name: "Member",
@@ -78,6 +80,7 @@ export default {
     MemberSetting,
     PasswordChange,
     DropDown,
+    ChatBotNew,
   },
 };
 </script>
