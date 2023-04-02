@@ -2,9 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import MemberFav from "../views/MemberFav.vue";
 
-
-
-
 const routes = [
   {
     path: "/",
@@ -76,6 +73,11 @@ const routes = [
     component: () => import("../views/OrderDetails.vue"),
   },
   {
+    path: "/historyorderdetail",
+    name: "historyorderdetail",
+    component: () => import("../views/HistoryOrderDetail.vue"),
+  },
+  {
     path: "/consultant",
     name: "consultant",
     component: () => import("../views/Consultant.vue"),
@@ -91,9 +93,19 @@ const routes = [
     component: () => import("../views/ConsultantBooking.vue"),
   },
   {
+    path: "/consultantorderdetails",
+    name: "consultantorderdetails",
+    component: () => import("../views/COrderDetails.vue"),
+  },
+  {
     path: "/consultanthistory",
     name: "consultanthistory",
     component: () => import("../views/ConsultantHistory.vue"),
+  },
+  {
+    path: "/consultanthistoryorderdetail",
+    name: "consultanthistoryorderdetail",
+    component: () => import("../views/CHistoryOrderDetails.vue"),
   },
   {
     path: "/learning",
@@ -110,7 +122,7 @@ const routes = [
     name: "LearningCheckout",
     component: () => import("../views/LearningCheckout.vue"),
   },
-  
+
   {
     path: "/Index",
     name: "Index",
@@ -205,8 +217,7 @@ const routes = [
       {
         path: "ConsultantManagement",
         neme: "ConsultantManagement",
-        component: () =>
-          import("../views/ConsultantManagement.vue"),
+        component: () => import("../views/ConsultantManagement.vue"),
       },
       {
         path: "Exit",

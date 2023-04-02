@@ -1,84 +1,431 @@
-// views/OrderDetails.vue
+// views/OrderDetails.vue-------------------------------
 .member_row {
   .order_main {
     width: 75%;
-
     .order_area {
       width: 98%;
       background-color: $clear_white;
       border-radius: 5px;
       padding: 35px;
       margin-bottom: 35px;
-    }
-  }
-  .order_header {
-    h1 {
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      padding-left: 20px;
-      text-align: left;
-      border-bottom: 1px solid $bg_gray;
-    }
-  }
-  .message_header {
-    display: flex;
-    flex-direction: column;
-    h2 {
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      padding-left: 20px;
-      text-align: left;
-      border-bottom: 1px solid $bg_gray;
-    }
-    textarea {
-      width: 100%;
-      border: 1px solid $dark_blue;
-      margin: 0 auto;
-      border-radius: 5px;
-      padding: 20px;
-      font-size: 16px;
-    }
-    button {
-      align-self: end;
-      margin-top: 20px;
+      .order_header {
+        h1 {
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          text-align: left;
+          border-bottom: 1px solid $bg_gray;
+        }
+      }
+      .consultant_info {
+        border: 3px solid $text_gray;
+        border-radius: 10px;
+        padding: 15px;
+        transition: all 0.3s;
+        width: 98%;
+        margin: 30px auto;
+        display: flex;
+        justify-content: space-between;
+        &:hover {
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s;
+        }
+        .consultant_info_left {
+          display: flex;
+          img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+          h3 {
+            color: $dark_blue;
+            font-weight: 500;
+            margin-left: 20px;
+          }
+        }
+        a {
+          align-self: end;
+          line-height: 50px;
+          text-align: center;
+        }
+      }
+      .message_header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        h2 {
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          text-align: left;
+          border-bottom: 1px solid $bg_gray;
+        }
+        textarea {
+          width: 100%;
+          border: 1px solid $dark_blue;
+          margin: 0 auto;
+          border-radius: 5px;
+          padding: 20px;
+          font-size: 16px;
+        }
+        button {
+          align-self: end;
+          margin-top: 20px;
+        }
+      }
+      .rate_area {
+        margin-bottom: 0;
+      }
+      .rate_content {
+        .consultant_rate {
+          display: flex;
+          li {
+            font-size: 18px;
+            i {
+              font-size: 18px;
+              margin-right: 5px;
+              &:hover {
+                color: $dark_blue;
+              }
+            }
+          }
+        }
+        h3 {
+          font-size: 18px;
+          font-weight: 500;
+          margin-top: 5px;
+        }
+        a {
+          color: $dark_blue;
+          font-weight: 500;
+          margin-top: 20px;
+          display: block;
+        }
+      }
     }
   }
 }
 
-.consultant_info {
+// views/COrderDetails.vue-----------------------------
+.consultant_row {
+  .c_order_main {
+    width: 75%;
+    .order_area {
+      width: 98%;
+      background-color: $clear_white;
+      border-radius: 5px;
+      padding: 35px;
+      margin-bottom: 35px;
+      .order_header {
+        h1 {
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          text-align: left;
+          border-bottom: 1px solid $bg_gray;
+        }
+      }
+      .member_info {
+        border: 3px solid $text_gray;
+        border-radius: 10px;
+        padding: 15px;
+        transition: all 0.3s;
+        width: 98%;
+        margin: 30px auto;
+        display: flex;
+        &:hover {
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s;
+        }
+        img {
+          width: 180px;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 10px;
+          margin-right: 15px;
+        }
+        .member_details {
+          h3 {
+            color: $dark_blue;
+            font-weight: 500;
+          }
+          p {
+            i {
+              width: 30px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .message_header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        h2 {
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          text-align: left;
+          border-bottom: 1px solid $bg_gray;
+        }
+        textarea {
+          width: 100%;
+          border: 1px solid $dark_blue;
+          margin: 0 auto;
+          border-radius: 5px;
+          padding: 20px;
+          font-size: 16px;
+        }
+        button {
+          align-self: end;
+          margin-top: 20px;
+        }
+      }
+      .rate_area {
+        margin-bottom: 0;
+      }
+      .rate_content {
+        .consultant_rate {
+          display: flex;
+          li {
+            font-size: 18px;
+            i {
+              font-size: 18px;
+              margin-right: 5px;
+              &:hover {
+                color: $dark_blue;
+              }
+            }
+          }
+        }
+        h3 {
+          font-size: 18px;
+          font-weight: 500;
+          margin-top: 5px;
+        }
+        a {
+          color: $dark_blue;
+          font-weight: 500;
+          margin-top: 20px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// orderdetails RWD--------------------------------------
+@media screen and (max-width: 920px) {
+  .member_row {
+    .order_main {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .member_row {
+    .order_main {
+      .order_area {
+        .consultant_info {
+          flex-direction: column;
+          .consultant_info_left {
+            flex-direction: column;
+            img {
+              width: 98%;
+              margin: 0 auto;
+            }
+            h3 {
+              margin-top: 10px;
+              margin-left: 0;
+            }
+          }
+          a {
+            width: 120px;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Corderdetails RWD--------------------------------------
+@media screen and (max-width: 920px) {
+  .consultant_row {
+    .c_order_main {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .consultant_row {
+    .c_order_main {
+      .order_area {
+        .member_info {
+          display: flex;
+          flex-direction: column;
+          img {
+            width: 98%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            object-position: center center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// order_item_details-------------------------
+.order_item {
   border: 3px solid $text_gray;
   border-radius: 10px;
   padding: 15px;
   transition: all 0.3s;
   width: 98%;
-  margin: 30px auto;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   &:hover {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
   }
-  .consultant_info_left {
+  .order_content {
     display: flex;
-    img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
+    justify-content: space-between;
+    .order_left {
+      width: 80%;
+      display: flex;
+      .category {
+        background-image: url(../../../image/member/music.png);
+        background-size: cover;
+        background-position: center center;
+        border-radius: 10px;
+        width: 180px;
+        height: 180px;
+        border: 3px solid $text-gray;
+        margin-right: 20px;
+      }
+      .order_summary {
+        h2 {
+          font-weight: 500;
+          color: $dark_blue;
+        }
+        p {
+          i {
+            margin-right: 5px;
+          }
+        }
+        // order_item_details
+        .order_content_details {
+          margin-top: 5px;
+          i {
+            width: 30px;
+            text-align: center;
+          }
+        }
+      }
     }
-    h3 {
-      color: $dark_blue;
-      font-weight: 500;
-      margin-left: 20px;
+    .order_right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .date {
+        background-color: $bg_gray;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        font-weight: 600;
+        color: $dark_blue;
+        border-radius: 5px;
+        align-self: end;
+        font-size: 18px;
+      }
+      p {
+        margin-top: 40px;
+        text-align: right;
+        color: $dark_blue;
+        font-weight: 600;
+      }
+      a {
+        text-align: center;
+        line-height: 50px;
+      }
     }
   }
-  a {
-    align-self: end;
-    line-height: 50px;
-    text-align: center;
+}
+
+// order_item_detail RWD----------------------
+@media screen and (max-width: 768px) {
+  .order_item {
+    .order_content {
+      flex-direction: column;
+      .order_left {
+        width: 98%;
+        margin: 0 auto;
+        .category {
+        }
+        .order_summary {
+          h2 {
+          }
+          p {
+            i {
+            }
+          }
+          // order_item_details
+          .order_content_details {
+            i {
+            }
+          }
+        }
+      }
+      .order_right {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .order_item {
+    .order_content {
+      flex-direction: column;
+      .order_left {
+        flex-direction: column;
+        .category {
+          width: 100%;
+          height: 200px;
+          background-position: center top;
+          margin-bottom: 5px;
+        }
+        .order_summary {
+          width: 100%;
+          // order_item_details
+          .order_content_details {
+            font-size: 15px;
+          }
+        }
+      }
+      .order_right {
+        display: none;
+      }
+    }
   }
 }

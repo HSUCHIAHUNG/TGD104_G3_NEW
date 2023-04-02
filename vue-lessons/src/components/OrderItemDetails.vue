@@ -1,11 +1,14 @@
 <template>
   <div>
-    <div class="order">
+    <div class="order_item">
       <div class="order_content">
         <div class="order_left">
           <div class="category"></div>
           <div class="order_summary">
-            <h2>陪你學習</h2>
+            <h2>
+              陪你學習 |
+              <span>已完成</span>
+            </h2>
             <span>音樂</span> | <span>吉他</span>
             <ul class="order_content_details">
               <li>

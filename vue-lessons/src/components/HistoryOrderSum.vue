@@ -25,7 +25,7 @@
             <span>26</span>
           </div>
           <p>$1,500</p>
-          <a href="#" class="btn_blue">查看更多</a>
+          <a href="/historyorderdetail" class="btn_blue">查看更多</a>
         </div>
       </div>
     </div>
