@@ -135,89 +135,88 @@
                 margin-bottom: 30px;
             
                 position: relative;
-                // input{
-                //     width: 35px;
-                //     height: 35px;
-                //     margin-left: 10px;
-                //     &:hover{
-                //         cursor: pointer;
-                //     }
-                // }
+
+                //radio change style
                 label{
-                    display:block;
-                    line-height:40px;
+                    display: block;
                 }
                 .option-input {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                -ms-appearance: none;
-                -o-appearance: none;
-                appearance: none;
-                position: relative;
-                top: 13.33333px;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                height: 40px;
-                width: 40px;
-                transition: all 0.15s ease-out 0s;
-                background: $white;
-                border: none;
-                color: #fff;
-                cursor: pointer;
-                display: inline-block;
-                margin-right: 0.5rem;
-                outline: none;
-                position: relative;
-                z-index: 1000;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -ms-appearance: none;
+                    -o-appearance: none;
+                    // 分別針對不同瀏覽器（WebKit、Gecko和Opera）的CSS外觀屬性，用於覆蓋元素的原始外觀。
+                    appearance: none;
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: 35px;
+                    width: 35px;
+                    transition: all 0.15s ease-out 0s;
+                    background: $white;
+                    border: none;
+                    color: $clear_white;
+                    cursor: pointer;
+                    display: inline-block;
+                    margin-right: 0.5rem;
+                    outline: none;
+                    position: relative;
+                    z-index: 1000;
+                    border-radius: 10px;
                 }
                 .option-input:hover {
                     background: #9faab7;
                 }
                 .option-input:checked {
-                    background: $dark_blue;
+                    background: $clear_white;
+                    color: $dark_blue;
                 }
                 .option-input:checked::before {
-                width: 40px;
-                height: 40px;
-                display:flex;
-                content: '\f00c';
-                font-size: 25px;
-                font-weight:bold;
-                position: absolute;
-                align-items:center;
-                justify-content:center;
-                font-family:'Font Awesome 5 Free';
+                    width: 35px;
+                    height: 35px;
+                    display:flex;
+                    content: '\f00c';
+                    font-size: 33px;
+                    font-weight: 600;
+                    position: absolute;
+                    align-items:center;
+                    justify-content:center;
+                    font-family:'Font Awesome 5 Free';
                 }
                 .option-input:checked::after {
-                -webkit-animation: click-wave 0.65s;
-                -moz-animation: click-wave 0.65s;
-                animation: click-wave 0.65s;
-                background: $dark_blue;
-                content: '';
-                display: block;
-                position: relative;
-                z-index: 100;
+                    -webkit-animation: click-wave 0.65s;
+                    -moz-animation: click-wave 0.65s;
+                    animation: click-wave 0.65s;
+                    background: $dark_blue;
+                    content: '';
+                    display: block;
+                    position: relative;
+                    z-index: 100;
                 }
+
+                //勾選後背景效果
                 .option-input.radio::after {
-                border-radius: 50%;
+                    border-radius: 50%;
                 }
                 
                 @keyframes click-wave {
-                0% {
-                    height: 40px;
-                    width: 40px;
-                    opacity: 0.35;
-                    position: relative;
+                    0% {
+                        height: 40px;
+                        width: 40px;
+                        opacity: 0.35;
+                        position: relative;
+                    }
+                    100% {
+                        height: 200px;
+                        width: 200px;
+                        margin-left: -80px;
+                        margin-top: -80px;
+                        opacity: 0;
+                    }
                 }
-                100% {
-                    height: 200px;
-                    width: 200px;
-                    margin-left: -80px;
-                    margin-top: -80px;
-                    opacity: 0;
-                }
-                }
+                //radio change style end
 
                 img{
                     display: block;
@@ -243,7 +242,7 @@
                 }
                 i{
                     font-size: $fs28;
-                    color: $text_gray;
+                    color: rgb(220, 105, 105);
                     margin-top: 10px;
                     margin-right: 8px;
                     display: inline-block;

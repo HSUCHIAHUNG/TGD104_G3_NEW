@@ -71,17 +71,9 @@
 
             <ul>
                 <template v-for="(consultant, index) in consultantInfo" :key="index">
-                    <!-- <li  v-if="current === 'all' || current === consultant.gender">
-                    <input type="checkbox" name="" id="button_id">
-                    <a href=""><img :src="consultant.url" alt="consultant.url"></a>
-                    <h1>{{consultant.name}}</h1>
-                    <h2>{{consultant.experience}}</h2>
-                    <i class="fa-regular fa-heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
-                    </li> -->
-
+ 
                     <li  v-if="current === 'all' || current === consultant.gender">
-                    <!-- <input type="radio" name="" id="button_id"> -->
-                      <label><input type="radio" class="option-input radio" name="example" /></label>
+                      <label><input type="radio" class="option-input radio" name="consultant" v-model="selectedConsultant" :value="index" /></label>
                       <a href=""><img :src="consultant.url" alt="consultant.url"></a>
                       <h1>{{consultant.name}}</h1>
                       <h2>{{consultant.experience}}</h2>
@@ -145,6 +137,7 @@ export default {
         ],
         favorites: [],
         currentTab: "tab1",
+        selectedConsultant: null, 
     };
   },
 
