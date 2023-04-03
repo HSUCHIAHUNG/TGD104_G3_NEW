@@ -204,11 +204,10 @@
         </div>
         <!-- travel_button end -->
 
-
+    <VFooter></VFooter>
 </template>
 
 <script>
-    import VHeader from "../components/VHeader.vue";
     import VFooter from "../components/VFooter.vue";
 // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -223,7 +222,6 @@
   export default {
     name: "Travel",
     components: {
-      VHeader,
       VFooter,
       Swiper,
       SwiperSlide,

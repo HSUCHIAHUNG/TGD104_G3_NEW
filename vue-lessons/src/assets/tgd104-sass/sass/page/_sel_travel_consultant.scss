@@ -5,65 +5,74 @@
 // } 
 
 .sel_travel_consultant_banner{
-    background-image: url('../../../image/travel/sel_travel_consultant_bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 750px;
+    background-color: $bg_gray;
+    height: 650px;
     padding-top: 150px;
     .container{
-        h1{
-            font-size: $fs40;
-            font-weight: 600;
-            margin-bottom: 50px;
-            span{
+        display: flex;
+        justify-content: space-between;
+        .left_block{
+            h1{
+                font-size: $fs40;
+                font-weight: 600;
+                margin-bottom: 50px;
+                span{
+                    color: $dark_orange;
+                }
+            }
+            h2{
+                font-size: $fs22;
+                font-weight: 600;
+            }
+            h3{
+                font-size: $fs22;
+                font-weight: 600;
+                margin-bottom: 50px;
+                span{
+                    color: $dark_orange;
+                }
+            }
+            h4{
+                font-size: $fs28;
+                font-weight: 600;
+                display: inline-block;
+                span{
+                    color: $dark_orange;
+                }
+            }
+            i{
+                font-size: $fs32;
+                display: inline-block;
                 color: $dark_orange;
+                margin-left: 15px;
+                animation: bounce 0.8s infinite;
+            }
+            @keyframes bounce {
+                0% {
+                  transform: translateY(0);
+                }
+                50% {
+                  transform: translateY(-10px);
+                }
+                100% {
+                  transform: translateY(0);
+                }
             }
         }
-        h2{
-            font-size: $fs24;
-            font-weight: 500;
-        }
-        h3{
-            font-size: $fs24;
-            font-weight: 500;
-            margin-bottom: 50px;
-            span{
-                color: $dark_orange;
+        .right_block{
+            img{
+                display: block;
+                width: 100%;
             }
         }
-        h4{
-            font-size: $fs32;
-            font-weight: 600;
-            display: inline-block;
-            span{
-                color: $dark_orange;
-            }
-        }
-        i{
-            font-size: $fs36;
-            display: inline-block;
-            color: $dark_orange;
-            margin-left: 15px;
-            animation: bounce 0.8s infinite;
-        }
-        @keyframes bounce {
-            0% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-            100% {
-              transform: translateY(0);
-            }
-        }
+       
     }
     
 }
 
 /* sel_travel_consultant */
 .sel_travel_consultant{
-    background-color: $bg_gray;
+    background-color: $bg_yellow;
     .self_or_random{
         height: 60px;
         background-color: $ft_yellow;
@@ -74,23 +83,29 @@
             display: block;
             line-height: 60px;
             width: 180px;
-            font-size: $fs24;
-            font-weight: 500;
-            background-color: $clear_white;
-            color: $dark_yellow;
+            font-size: $fs20;
+            font-weight: 600;
+            background-color: $light_yellow;
+            color: $gray;
+            i{
+                margin-right: 10px;
+            }
         }
         .random{
             display: block;
             line-height: 60px;
             width: 180px;
-            font-size: $fs24;
-            font-weight: 500;
+            font-size: $fs20;
+            font-weight: 600;
             a{
                 display: block;
                 color: $gray;
                 &:hover{
-                    color: $dark_yellow;
-                    background-color: $clear_white;
+                    color: $gray;
+                    background-color: $light_yellow;
+                }
+                i{
+                    margin-right: 10px;
                 }
             }
         }
@@ -99,24 +114,24 @@
         .tabs{
             display: flex;
             justify-content: center;
+            margin-top: 20px;
             li{
-                width: 140px;
-                font-size: $fs22;
+                width: 120px;
+                font-size: $fs18;
                 font-weight: 600;
                 text-align: center;
                 a{
-                    width: 140px;
-                    height: 60px;
+                    width: 100px;
                     color: $gray;
                     line-height: 60px;
-                    color: #585858;
+                    color: $gray;
                     display: block;
                     text-decoration: none;
                     &:hover{
-                        border-bottom: 5px solid $ft_yellow;
+                        border-bottom: 10px solid $dark_blue;
                     }
                     &.active {
-                        border-bottom: 5px solid $ft_yellow;
+                        border-bottom: 10px solid $dark_blue;
                     }
                 }
             }
@@ -125,16 +140,21 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            margin: 50px auto;
+            margin: 40px auto;
             li{
-                width: 275px;
-                height: 345px;
-                background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 12%, $text_gray 12%, $text_gray 88%, $dark_blue 88%, $dark_blue 100%);
-                border-radius: 15px;
-                box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
-                margin-bottom: 30px;
+                border: 2px solid #79cbd4;
+                background-color: #DCECEE;
+                width: 300px;
+                // text-align: center;
+                padding: 0 20px 40px 20px;
+                border-radius: 10px;
+                transition: .3s;
+                margin: 10px;
             
                 position: relative;
+                &:hover{
+                    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+                }
 
                 //radio change style
                 label{
@@ -148,14 +168,14 @@
                     // 分別針對不同瀏覽器（WebKit、Gecko和Opera）的CSS外觀屬性，用於覆蓋元素的原始外觀。
                     appearance: none;
                     position: relative;
-                    top: 0;
-                    right: 0;
+                    top: 10px;
+                    right: 0px;
                     bottom: 0;
-                    left: 0;
+                    left: -10px;
                     height: 35px;
                     width: 35px;
                     transition: all 0.15s ease-out 0s;
-                    background: $white;
+                    background: $clear_white;
                     border: none;
                     color: $clear_white;
                     cursor: pointer;
@@ -227,24 +247,23 @@
                     margin: 0 auto;
                     margin-top: 10px;
                     margin-bottom: 5px;
-                    border-radius: 15px;
+                    border-radius: 10px;
                 
                 }
                 h1{
                     text-align: center;
                     font-size: $fs18;
-                    font-weight: 500;
+                    font-weight: 600;
                 }
                 h2{
                     text-align: center;
                     font-size: $fs18;
-                    font-weight: 500;
+                    font-weight: 600;
                 }
                 i{
-                    font-size: $fs28;
-                    color: rgb(220, 105, 105);
-                    margin-top: 10px;
-                    margin-right: 8px;
+                    font-size: $fs22;
+                    color: $dark_blue;
+                    margin-right: 22px;
                     display: inline-block;
                 
                     position: absolute;
@@ -284,10 +303,276 @@
 
 .sel_travel_consultant_button{
     text-align: center;
-    background-color: $bg_gray;
+    background-color: $bg_yellow;
     .container{
         button{
             margin: 70px 50px;
         }
     }
 }
+
+/*-------- sel_travel_consultant rwd start ---------*/
+@include rwd(1200px){
+    .sel_travel_consultant_banner{
+        height: 550px;
+        padding-top: 100px;
+        .container{
+            .left_block{
+                margin-left: 40px;
+                h1{
+                    font-size: $fs32;
+                }
+                h2{
+                    font-size: $fs20;
+                }
+                h3{
+                    font-size: $fs20;
+                }
+                h4{
+                    font-size: $fs24;
+                }
+                i{
+                    font-size: $fs28;
+                }
+            }
+            .right_block{
+                img{
+                    width: 80%;
+                }
+            }
+            
+            
+        }
+    }
+    .sel_travel_consultant{
+        .self_or_random{
+            .self{
+                font-size: $fs18;
+            }
+            .random{
+                font-size: $fs18;
+            }
+        }
+        .self_consultant{
+            .tabs{
+                li{
+                    font-size: 16px;
+                    a{
+                        line-height: 50px;
+                    }
+                }
+            }
+            ul{
+                justify-content: space-between;
+                margin: 40px 60px;
+            }
+        }
+    }
+}
+
+@include rwd(992px){
+    .sel_travel_consultant_banner{
+        height: 500px;
+        .container{
+            .left_block{
+                margin-left: 40px;
+                h1{
+                    font-size: $fs28;
+ 
+                }
+                h2{
+                    font-size: $fs18;
+
+                }
+                h3{
+                    font-size: $fs18;
+    
+                }
+                h4{
+                    font-size: $fs22;
+    
+                }
+                i{
+                    font-size: $fs26;
+
+                }
+            }
+           
+        }
+    }
+    .sel_travel_consultant{
+        .self_or_random{
+            height: 50px;
+            .self{
+                line-height: 50px;
+                font-size: 16px;
+            }
+            .random{
+                line-height: 50px;
+                font-size: 16px;
+            }
+        }
+        .self_consultant{
+            .tabs{
+                li{
+                    font-size: 16px;
+                    a{
+                        line-height: 50px;
+                    }
+                }
+            }
+            ul{
+                justify-content: space-around;
+            }
+        }
+    }
+}
+
+@include rwd(768px){
+    .sel_travel_consultant_banner{
+        padding-top: 80px;
+        height: 450px;
+        .container{
+            .left_block{
+                margin-left: 40px;
+                h1{
+                    font-size: $fs24;
+ 
+                }
+                h2{
+                    font-size: 16px;
+
+                }
+                h3{
+                    font-size: 16px;
+    
+                }
+                h4{
+                    font-size: $fs20;
+    
+                }
+                i{
+                    font-size: $fs24;
+
+                }
+            }
+           
+        }
+    }
+    .sel_travel_consultant{
+        .self_or_random{
+            height: 50px;
+            .self{
+                line-height: 50px;
+                font-size: 16px;
+            }
+            .random{
+                line-height: 50px;
+                font-size: 16px;
+            }
+        }
+        .self_consultant{
+            .tabs{
+                li{
+                    font-size: 16px;
+                    a{
+                        line-height: 50px;
+                    }
+                }
+            }
+            ul{
+                justify-content: space-around;
+            }
+        }
+        .page_number{
+            a{
+                font-size: $fs18;
+            }
+        }
+    
+    }
+}
+
+@include rwd(576px){
+    .sel_travel_consultant_banner{
+        padding-top: 60px;
+        height: 600px;
+        text-align: center;
+        .container{
+            flex-direction: column;
+            .left_block{
+                margin-left: 0;
+                h1{
+                    font-size: $fs20;
+                    margin-bottom: 40px;
+ 
+                }
+                h2{
+                    font-size: 14px;
+
+                }
+                h3{
+                    font-size: 14px;
+    
+                }
+                h4{
+                    font-size: $fs18;
+    
+                }
+                i{
+                    font-size: $fs22;
+
+                }
+            }
+            .right_block{
+                img{
+                    width: 50%;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                }
+            }
+           
+        }
+    }
+    .sel_travel_consultant{
+        .self_or_random{
+            height: 45px;
+            .self{
+                line-height: 45px;
+                width: 150px;
+            }
+            .random{
+                line-height: 45px;
+                width: 150px;
+            }
+        }
+        .self_consultant{
+            .tabs{
+                li{
+                    width: 110px;
+                    font-size: 14px;
+                    a{
+                        width: 90px;
+                        line-height: 40px;
+                        &:hover{
+                            border-bottom: 8px solid $dark_blue;
+                        }
+                        &.active {
+                            border-bottom: 8px solid $dark_blue;
+                        }
+                    }
+                }
+            }
+
+        }
+        .page_number{
+            a{
+                font-size: 16px;
+            }
+        }
+    
+    }
+}
+
+
+/*-------- sel_travel_consultant rwd start ---------*/
