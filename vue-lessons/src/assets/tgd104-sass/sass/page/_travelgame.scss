@@ -1,0 +1,81 @@
+.travel_game_wrapper {
+  background-image: url("../assets/image/travel/travel_game_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 590px;
+  width: 100%;
+  .travel_game_container {
+    .travel_game_comment {
+      width: 40%;
+      min-width: 450px;
+      margin: 0 auto;
+      border-radius: 15px 15px 0 15px;
+      background-color: #fff;
+      position: relative;
+      top: 50px;
+      h1 {
+        padding: 50px 20px;
+      }
+      .test {
+        /* width: 80%; */
+        margin: 0 auto;
+        border-radius: 15px 15px 0 15px;
+        font-size: 28px;
+        font-weight: 500;
+        text-align: center;
+        /* 水平置中 */
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        /* 垂直置中 */
+        #pick1,
+        #pick2,
+        #pick3 {
+          display: flex;
+          justify-content: space-between;
+          img {
+            border-radius: 15px;
+            width: 48%;
+            object-fit: cover;
+            cursor: pointer;
+            &.border_picked {
+              border: 10px solid lightblue;
+              border-radius: 15px;
+            }
+          }
+        }
+        #pick3 {
+          align-items: center;
+        }
+        .bottom {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          i {
+            font-size: 30px;
+            cursor: pointer;
+            &:hover {
+              color: lightblue;
+            }
+          }
+          p {
+            flex: 1;
+          }
+          span {
+            flex: 3;
+          }
+        }
+      }
+      .test.explain {
+        border: 15px solid lightblue;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none !important;
+}

@@ -169,6 +169,11 @@ const routes = [
     component: () => import("../views/TravelOrderSuccess.vue"),
   },
   {
+    path: "/travelgame",
+    name: "travelgame",
+    component: () => import("../views/TravelGame.vue"),
+  },
+  {
     path: "/join",
     name: "join",
     component: () => import("../views/Join.vue"),
