@@ -437,7 +437,7 @@ export default {
   left: 0;
   background-image: url("./assets/image/common_nav.png");
   display: flex;
-  overflow: hidden;
+  overflow: auto !important;
   transition: 0.5s;
 
   #close_bar {
@@ -519,4 +519,5 @@ export default {
 }
 
 //  @import "../../tgd104-sass/new_style.scss";
+
 </style>

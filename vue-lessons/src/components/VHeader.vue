@@ -505,8 +505,7 @@ export default {
       }
     }
       
-
-
+      
     a {
       font-weight: bold;
       color: #FDF8EE;
