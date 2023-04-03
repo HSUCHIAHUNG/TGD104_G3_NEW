@@ -48,13 +48,13 @@
       </div>
     </div>
 
-    <!-- <VFooter></VFooter> -->
+    <VFooter></VFooter>
   </div>
 </template>
 
 <script>
 //  import VHeader from '@/components/VHeader.vue'
-//  import VFooter from '@/components/VFooter.vue'
+import VFooter from '@/components/VFooter.vue'
 import CAvatar from "@/components/CAvatar.vue";
 import CSideNav from "../components/CSideNav.vue";
 import CDropDown from "@/components/CDropDown.vue";
@@ -70,7 +70,7 @@ export default {
   },
   components: {
     // VHeader,
-    // VFooter,
+    VFooter,
     CAvatar,
     CSideNav,
     CDropDown,
