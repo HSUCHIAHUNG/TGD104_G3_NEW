@@ -61,7 +61,9 @@
               if (this.moneymethod === "1") {
                 this.$router.push('/LearningCreditCard');
               } else if (this.moneymethod === "2") {
-                this.$router.push('/ATM');
+                this.$router.push('/LearningATM');
+              } else {
+                alert('請選擇付款方式')
               }
             }
           }

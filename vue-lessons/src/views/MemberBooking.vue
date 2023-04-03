@@ -47,13 +47,13 @@
       </div>
     </div>
 
-    <!-- <VFooter></VFooter> -->
+    <VFooter></VFooter>
   </div>
 </template>
 
 <script>
 //  import VHeader from '@/components/VHeader.vue'
-//  import VFooter from '@/components/VFooter.vue'
+import VFooter from '@/components/VFooter.vue'
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
@@ -69,7 +69,7 @@ export default {
   },
   components: {
     // VHeader,
-    // VFooter,
+    VFooter,
     Avatar,
     SideNav,
     DropDown,
