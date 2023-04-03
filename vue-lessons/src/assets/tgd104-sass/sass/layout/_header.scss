@@ -6,7 +6,11 @@ header {
     max-width: 1320px;
     position: relative;
     margin: 0 auto;
-
+    height: 80px;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    
         #h_bar {
             font-size: 35px;
             color: $gray;
@@ -21,6 +25,7 @@ header {
         img {
             display: block;
             margin: 0 auto;
+            height: 65px;
         }
 
         .h_icon {
@@ -69,31 +74,105 @@ header {
 
 @include header(1200px){
     /* header */
-header {
-    background-color: $ft_yellow;
+    header {
+        background-color: $ft_yellow;
 
-  .header_container {
-    width: 90%;
+    .header_container {
+        width: 90%;
 
-        #h_bar {
-            
-        }
-
-        img {
-            
-        }
-
-        .h_icon {
-           
-
-            i {
+            #h_bar {
                 
+            }
+
+            img {
+                
+            }
+
+            .h_icon {
+
+
+                i {
+                    font-size: 30px;
+                }
             }
         }
     }
 }
-}
-@include header(992px){}
-@include header(768px){}
+@include header(992px){
+    /* header */
+    header {
+        background-color: $ft_yellow;
 
-@include header(576px){}
+    .header_container {
+        height: 75px;
+
+            #h_bar {
+                font-size: 25px;
+            }
+
+            img {
+                height: 55px;
+            }
+
+            .h_icon {
+
+
+                i {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+@include header(768px){
+    header {
+
+    .header_container {
+        height: 75px;
+
+            #h_bar {
+                font-size: 25px;
+            }
+
+            img {
+                height: 55px;
+            }
+
+            .h_icon {
+
+
+                i {
+                    
+                }
+            }
+        }
+    }
+}
+
+@include header(576px){
+    
+    header {
+        background-color: $ft_yellow;
+
+    .header_container {
+        height: 75px;
+        
+
+            #h_bar {
+                font-size: 25px;
+            }
+
+            img {
+                height: 55px;
+            }
+
+            .h_icon {
+
+
+                i {
+                    
+                }
+            }
+        }
+    }
+}

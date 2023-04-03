@@ -4,14 +4,19 @@
     <!-- sel_travel_consultant_banner -->
     <div class="sel_travel_consultant_banner">
       <div class="container">
-        <h1>
-          不孤單的旅行，<br>
-          就從有<span>陪你</span>開始。
-        </h1>
-        <h2>喜歡登山？喜歡單車？喜歡潛水？</h2>
-        <h3>就讓<span>陪你</span>成為你的好旅伴，一起來場無限可能的旅行吧！</h3>
-        <h4>開始預約<span>陪你</span>顧問</h4>
-        <i class="fa-regular fa-circle-down"></i>
+        <div class="left_block">
+          <h1>
+            不孤單的旅行，<br>
+            就從有<span>陪你</span>開始。
+          </h1>
+          <h2>喜歡登山？喜歡單車？喜歡潛水？</h2>
+          <h3>就讓<span>陪你</span>成為你的好旅伴，一起來場無限可能的旅行吧！</h3>
+          <h4>開始預約<span>陪你</span>顧問</h4>
+          <i class="fa-regular fa-circle-down"></i>
+        </div>
+        <div class="right_block">
+          <img src="../assets/image/travel/sel_travel_consultant_banner.png" alt="">
+        </div>
       </div>
     </div>
     <!-- sel_travel_consultant_banner end -->
@@ -20,8 +25,8 @@
     <div class="sel_travel_consultant">
 
       <div class="self_or_random">
-        <div class="self">自定義</div>
-        <div class="random"><a href="">隨機</a></div>
+        <div class="self"><i class="fa-solid fa-hand-pointer"></i>自定義</div>
+        <div class="random"><a href=""><i class="fa-solid fa-gamepad"></i>隨機</a></div>
       </div>
 
       <div class="self_consultant container">
@@ -107,13 +112,16 @@
     </div>
 
   
-
+  <VFooter></VFooter>
 </template>
 
 <script>
-
+import VFooter from "../components/VFooter.vue";
 export default {
   name: "SelTravelConsultant",
+  components: {
+      VFooter,
+  },
   data() {
     return {
         current:'all',

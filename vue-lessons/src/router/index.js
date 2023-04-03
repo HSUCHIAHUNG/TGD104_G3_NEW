@@ -18,6 +18,11 @@ const routes = [
   //     import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   // },
   {
+    path: "/LearningATM",
+    name: "LearningATM",
+    component: () => import("../views/LearningATM.vue"),
+  },
+  {
     path: "/learningoption",
     name: "learningoption",
     component: () => import("../views/LearningOption.vue"),
@@ -121,6 +126,39 @@ const routes = [
     path: "/LearningChoose",
     name: "LearningChoose",
     component: () => import("../views/LearningChoose.vue"),
+    redirect: "/LearningChoose/Music",
+    children: [
+      {
+        path: "Music",
+        neme: "Music",
+        component: () => import("../views/Music.vue"),
+      },
+      {
+        path: "Study",
+        neme: "Study",
+        component: () => import("../views/Study.vue"),
+      },
+      {
+        path: "Subject",
+        neme: "Subject",
+        component: () => import("../views/Subject.vue"),
+      },
+      {
+        path: "Draw",
+        neme: "Draw",
+        component: () => import("../views/Draw.vue"),
+      },
+      {
+        path: "Code",
+        neme: "Code",
+        component: () => import("../views/Code.vue"),
+      },
+      {
+        path: "Dance",
+        neme: "Dance",
+        component: () => import("../views/Dance.vue"),
+      },
+    ],
   },
   {
     path: "/LearningCheckout",

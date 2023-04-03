@@ -1,4 +1,8 @@
 // layout
+.learningchooseflex{
+    display: flex;
+}
+
 .learning_choose_wrapper {
     margin:0 auto;
     height: 800px;
@@ -52,7 +56,7 @@
         //         margin: 30px;
         //     }
         // }
-        .learning_second_items{
+        .learning_second_items_tab{
             text-align: center;
             display: flex;
             flex-wrap: wrap;
@@ -75,7 +79,7 @@
         } 
     }
 
-    .learning_second_items div:hover{
+    .learning_second_items_tab div:hover{
         border-bottom: 10px solid $dark_blue; 
     }
 

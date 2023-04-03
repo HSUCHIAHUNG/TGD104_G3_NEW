@@ -7,6 +7,10 @@
      <canvas id="myChart4" class="PieChar"></canvas>
    </div>
 
+   <div class="PieCharcontainer3">
+     <canvas id="myChart5" class="PieChar"></canvas>
+   </div>
+
  </template>
  
  <script>
@@ -16,6 +20,7 @@
    mounted(){
      const ctx = document.getElementById('myChart3');
      const ctx2 = document.getElementById('myChart4'); 
+     const ctx3 = document.getElementById('myChart5'); 
      new Chart(ctx, {
        type: 'doughnut',
        data: {
@@ -42,6 +47,31 @@
      });
 
      new Chart(ctx2, {
+       type: 'doughnut',
+       data: {
+         labels: ['學習', '旅行'],
+         datasets: [{
+           label: '3月份銷售概況(訂單數)',
+           data: [10, 20],
+           backgroundColor: [
+             'rgb(255, 99, 132)',
+             'rgb(54, 162, 235)',
+           ],
+           hoverOffset: 4,
+         }]
+       },
+       options: {
+          plugins: {
+            legend: {
+              labels: {
+                fontSize: 10
+            },
+          },
+        },
+      },
+     });
+
+     new Chart(ctx3, {
        type: 'doughnut',
        data: {
          labels: ['學習', '旅行'],

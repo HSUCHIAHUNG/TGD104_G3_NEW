@@ -2,33 +2,35 @@
 <template>
     <div class="ConsultantManagement">
         <searchbar></searchbar>
-        <table>
-            <tr>
-                <th>身分證字號</th>
-                <th>姓名</th>
-                <th>生日</th>
-                <th>手機</th>
-                <th>信箱</th>
-                <th>狀態</th>
-            </tr>
-            <tr v-for="(item, index) in items" :key="index">
-                <td>{{item.id}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.birth}}</td>
-                <td>{{item.phone}}</td>
-                <td>{{item.mail}}</td>
-                <td><i class="fa-solid fa-ban"></i></td>
-            </tr>
-        </table>
+        <div class="tabl">
+            <table>
+                <tr class="banner_tr">
+                    <th>身分證字號</th>
+                    <th>姓名</th>
+                    <th>生日</th>
+                    <th>手機</th>
+                    <th>信箱</th>
+                    <th>狀態</th>
+                </tr>
+                <tr v-for="(item, index) in items" :key="index">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.birth}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.mail}}</td>
+                    <td><i class="fa-solid fa-ban"></i></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </template>
 <script setup></script>
 
+
 <script>
     import searchbar from '../components/BackecdSearch.vue'
-
+    
     export default {
-        name: 'ConsultantManagement',
         data(){
             
             return {
@@ -75,14 +77,14 @@
        
         },
 
-        
+        name: 'ConsultantManagement',
         components: {
             searchbar,
         }
     }
 </script>
 
-
+    
 <style lang="scss">
     // @import '../../../../tgd104-sass/new_style.scss';
 
@@ -92,35 +94,55 @@
         flex-direction: column;
         align-items: flex-end;
 
-    table{
-        margin: 0 auto 20px auto;
-        border-collapse: collapse;
-        width: 90%;
-        table-layout: auto;
-        font-size: 20px;
-        font-weight: bold;
-        color: #585858;
+        .tabl{
+            
+            margin: 0 auto 20px auto;
+            width: 100%;
+            overflow-y: auto;
+            height: 790px;
 
-        th {
-            border-bottom: 2px solid #ddd;
-            text-align: left;
-            padding: 10px 10px 5px 10px;
-            &:nth-child(5){
-                width: 340px;
+            &::-webkit-scrollbar {
+                display: none;
             }
-            &:last-child{
-                width: 80px;
-            }
-        }
+            
+            table{
 
-        td{
-            padding: 15px 10px 5px 10px;
-            text-align: left;
-            &:nth-child(5){
-                width: 340px;
+                .banner_tr{
+                    position: sticky;
+                    background-color: #FAEECD;
+                    box-shadow: 1px 1px 3px #adadad;
+                    top: 0;
+                }
+
+                margin: 0 auto 20px auto;
+                table-layout: auto;
+                font-size: 20px;
+                font-weight: bold;
+                color: #585858;
+                border-collapse: collapse;
+                width: 90%;
+
+            th {
+                
+                text-align: left;
+                padding: 10px 10px 5px 10px;
+                &:nth-child(5){
+                    width: 340px;
+                }
+                &:last-child{
+                    width: 80px;
+                }
             }
-            &:last-child{
-                width: 80px;
+
+            td{
+                padding: 15px 10px 5px 10px;
+                text-align: left;
+                &:nth-child(5){
+                    width: 340px;
+                }
+                &:last-child{
+                    width: 80px;
+                }
             }
         }
     }
