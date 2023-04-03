@@ -4,7 +4,7 @@
   
   
   
-      <CreditCard></CreditCard>
+      <ATM></ATM>
   
   
       <h2 class="button_choose">
@@ -18,7 +18,7 @@
     
     <script>
       import VFooter from "../components/VFooter.vue";
-      import CreditCard from "../components/CreditCard.vue";
+      import ATM from "../components/ATM.vue";
       
       export default {
           name: "LearningCreditCard",
@@ -27,7 +27,7 @@
           },
           components: {
           VFooter,
-          CreditCard
+          ATM
           },
       };
     </script>

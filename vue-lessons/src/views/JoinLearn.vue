@@ -85,7 +85,7 @@
                         <option value="街舞">街舞</option>
                         <option value="芭蕾舞">芭蕾舞</option>
                         <option value="兒童舞蹈">兒童舞蹈</option>
-                        <option value="爵士鼓">爵士鼓</option>
+                        <option value="爵士舞">爵士舞</option>
                     </select>
                     </div>
                 </div>
