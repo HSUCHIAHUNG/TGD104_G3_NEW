@@ -2,19 +2,19 @@
     <!-- join_benefit -->
     <div class="join_benefit">
         <div class="container">
-            <h1>歡迎<span>加入</span>陪你顧問團!</h1>
-            <div class="benefit_wrapper">
+            <h1 class="animate__animated animate__rubberBand animate__delay-0.5s">歡迎<span>加入</span>陪你顧問團!</h1>
+            <div class="benefit_wrapper animate__animated animate__bounce animate__delay-0.5s">
                 <div class="learn_benefit">
                     <h2>陪你<span>學習</span></h2>
-                    <h3>時間彈性</h3>
-                    <h3>累積教學經驗</h3>
-                    <h3>拓展人脈</h3>
+                    <h3>時間彈性 <i class="fa-regular fa-clock"></i></h3>
+                    <h3>累積教學經驗 <i class="fa-solid fa-chalkboard-user"></i></h3>
+                    <h3>拓展人脈 <i class="fa-solid fa-people-group"></i></h3>
                 </div>
                 <div class="travel_benefit">
                     <h2>陪你<span>旅行</span></h2>
-                    <h3>時間彈性</h3>
-                    <h3>邊賺邊玩</h3>
-                    <h3>集結志同道合的朋友</h3>
+                    <h3>時間彈性 <i class="fa-regular fa-clock"></i></h3>
+                    <h3>邊賺邊玩 <i class="fa-solid fa-hand-holding-dollar"></i></h3>
+                    <h3>集結志同道合的朋友 <i class="fa-solid fa-people-arrows"></i></h3>
                 </div>
             </div>
         </div>
@@ -35,7 +35,8 @@
                 (content = 'LearnCondition'), (currentTab = 'tab1');
             }
             " 
-            >學習
+            ><i class="fa-solid fa-book"></i> 學習
+
             </button>
 
             <button 
@@ -45,7 +46,7 @@
                 (content = 'TravelCondition'), (currentTab = 'tab2');
             }
             " 
-            >旅行
+            ><i class="fa-solid fa-route"></i> 旅行
             </button>
         </div> 
 
@@ -65,11 +66,14 @@
         </div>
     </div>
 
+    <VFooter></VFooter>
 </template>
 
 <script>
 import LearnCondition from "../components/LearnCondition.vue";
 import TravelCondition from "../components/TravelCondition.vue";
+import VFooter from "../components/VFooter.vue";
+import 'animate.css';
 
 export default {
   name: "Join",
@@ -82,6 +86,7 @@ export default {
   components: {
     LearnCondition,
     TravelCondition,
+    VFooter,
   },
 };
 </script>

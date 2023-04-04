@@ -5,7 +5,7 @@
 // } 
 
 .sel_travel_consultant_banner{
-    background-color: $bg_gray;
+    background-color: $bg_yellow;
     height: 650px;
     padding-top: 150px;
     .container{
@@ -260,18 +260,44 @@
                     font-size: $fs18;
                     font-weight: 600;
                 }
-                i{
-                    font-size: $fs22;
+
+                .fa-heart {
+                    font-size: 22px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
                     color: $dark_blue;
                     margin-right: 22px;
                     display: inline-block;
                 
                     position: absolute;
                     right: 0;
-                    &:hover{
-                        cursor: pointer;
+                    &:hover {
+                        transform: scale(1.2);
                     }
                 }
+                  
+                .fa-heart.fa-solid {
+                    color: $dark_blue;
+                    animation: pulse 1s backwards;
+                }
+                
+                @keyframes pulse {
+                    0% {
+                        box-shadow: 0 0 0 0 rgba(121, 203, 212, 0.4);
+                        border-radius: 50%;
+                    }
+                    
+                    70% {
+                        box-shadow: 0 0 0 15px rgba(121, 203, 212, 0);
+                        border-radius: 50%;
+                    }
+                    
+                    100% {
+                        box-shadow: 0 0 0 0 rgba(121, 203, 212, 0);
+                        border-radius: 50%;
+                    }
+                }
+                
                 
             }
         }

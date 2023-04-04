@@ -59,7 +59,7 @@
                 <swiper-slide class="autoplay">
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
+                        <p>4.5</p>
                         <div class="card_img">
                             <img src="../assets/image/travel/travel_member_1.png" alt="">
                         </div>
@@ -71,7 +71,7 @@
                 <swiper-slide class="autoplay">
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
+                        <p>4.5</p>
                         <div class="card_img">
                             <img src="../assets/image/travel/travel_member_2.png" alt="">
                         </div>
@@ -83,7 +83,7 @@
                 <swiper-slide class="autoplay">
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
+                        <p>4.5</p>
                         <div class="card_img">
                             <img src="../assets/image/travel/consultant_c09.png" alt="">
                         </div>
@@ -95,7 +95,7 @@
                 <swiper-slide class="autoplay">
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
+                        <p>4.5</p>
                         <div class="card_img">
                             <img src="../assets/image/travel/consultant_c08.png" alt="">
                         </div>
@@ -107,7 +107,7 @@
                 <swiper-slide class="autoplay">
                     <div class="card">
                         <i class="fa-solid fa-star"></i>
-                        <p>4.5 (211)</p>
+                        <p>4.5</p>
                         <div class="card_img">
                             <img src="../assets/image/travel/consultant_c16.png" alt="">
                         </div>
@@ -129,24 +129,26 @@
 
                     <div class="travel_comments">
 
-                        <div class="travel_comment">
-                            <h2>a**********1</h2>
-                            <p>第一次使用陪你找到登山旅伴，體驗非常好! 下次再試試騎單車或潛水:]讚啦~~~~~~ 而且顧問好幽默風趣!
-                                讚讚讚讚讚讚讚讚讚*10000 !</p>
-                            <h3>2023-02-18 11:58</h3>
-                        </div>
-                        <div class="travel_consultant_wrapper">
-                            <img src="../assets/image/travel/consultant_c01.png" alt="">
-                            <div class="travel_consultant">
-                                <h4>徐大宏</h4>
-                                <i class="fa-solid fa-star"></i>
-                                <p>4.3 (158)</p>
-                                <h5>登山</h5>
+                        <div class="box" v-for="(box, index) in travelComment" :key="index" ref="box">
+                            <div class="travel_comment">
+                                <h2>{{box.id}}</h2>
+                                <p>{{box.comments}}</p>
+                                <h3>{{box.time}}</h3>
+                            </div>
+                            <div class="travel_consultant_wrapper">
+                                <img :src="box.url" alt="">
+                                <div class="travel_consultant">
+                                    <h4>{{box.name}}</h4>
+                                    <i class="fa-solid fa-star"></i>
+                                    <p>{{box.star}}</p>
+                                    <h5>{{box.category}}</h5>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                    <div class="travel_comments">
+                    <!-- <div class="travel_comments">
                         <div class="travel_comment">
                             <h2>b**********1</h2>
                             <p>常常想登山卻找不到朋友一起，能夠在這找到志同道合的登山旅伴而且又是相當有經驗的顧問，給你500顆星星! </p>
@@ -178,7 +180,7 @@
                                 <h5>潛水</h5>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -209,29 +211,108 @@
 
 <script>
     import VFooter from "../components/VFooter.vue";
-// Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+    import gsap from 'gsap'
+    import ScrollTrigger from 'gsap/ScrollTrigger'
+    import { Swiper, SwiperSlide } from 'swiper/vue';
 
-  // Import Swiper styles
-  import 'swiper/css';
+    import 'swiper/css';
+    // import required modules
+    import { Autoplay} from 'swiper';
 
+    export default {
+        name: "Travel",
+        data() {
+            return {
+                travelComment: [
+                    {
+                        id: 'a**********1',
+                        comments: '第一次使用陪你找到登山旅伴，體驗非常好! 下次再試試騎單車或潛水:]讚啦~~~~~~ 而且顧問好幽默風趣!讚讚讚讚讚讚讚讚讚*10000 ! ',
+                        time: '2023-02-18 11:58',
+                        url:require('../assets/image/travel/consultant_c02.png'),
+                        name: '徐大宏',
+                        star: 4.5,
+                        category: '登山',
+                    },
+                    {
+                        id: 'b**********1',
+                        comments: '常常想登山卻找不到朋友一起，能夠在這找到志同道合的登山旅伴而且又是相當有經驗的顧問，給你500顆星星!',
+                        time: '2023-03-18 17:58',
+                        url:require('../assets/image/travel/consultant_c08.png'),
+                        name: '徐小宏',
+                        star: 4.3,
+                        category: '登山',
+                    },
+                    {
+                        id: 'c**********1',
+                        comments: '今天使用陪你找到潛水旅伴，我們跑去龍洞某個潛水點一起自由潛水，顧問好專業身材又保養的很好!讚讚~~',
+                        time: '2023-03-28 21:00',
+                        url:require('../assets/image/travel/consultant_c01.png'),
+                        name: '徐宏',
+                        star: 4.2,
+                        category: '潛水',
+                    },
+                ],
 
-  // import required modules
-  import { Autoplay} from 'swiper';
+            };
+        },
+        components: {
+            VFooter,
+            Swiper,
+            SwiperSlide,
+        },
+        setup() {
+            return {
+            modules: [Autoplay],
+            };
+        },
+        mounted() {
+            gsap.registerPlugin(ScrollTrigger)
 
-  export default {
-    name: "Travel",
-    components: {
-      VFooter,
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-      return {
-        modules: [Autoplay],
-      };
-    },
-  };
+            const boxes = this.$refs.box
+
+            boxes.forEach((box, index) => {
+            const comment = box.querySelector('.travel_comment')
+            const consultant = box.querySelector('.travel_consultant_wrapper')
+
+            gsap.set(comment, { y: 150, opacity: 0 })
+            gsap.set(consultant, { y: -150, opacity: 0 })
+
+            ScrollTrigger.create({
+                trigger: box,
+                start: 'top center+=100',
+                onEnter: () => {
+                gsap.to(comment, {
+                    y: 0,
+                    opacity: 1,
+                    ease: 'elastic.out(1, 0.3)',
+                    duration: 1
+                })
+                gsap.to(consultant, {
+                    y: 0,
+                    opacity: 1,
+                    ease: 'elastic.out(1, 0.3)',
+                    duration: 1,
+                    delay: 0.2
+                })
+                },
+                onLeaveBack: () => {
+                gsap.to(comment, {
+                    y: 150,
+                    opacity: 0,
+                    ease: 'power3.out',
+                    duration: 0.5
+                })
+                gsap.to(consultant, {
+                    y: -150,
+                    opacity: 0,
+                    ease: 'power3.out',
+                    duration: 0.5
+                })
+                }
+            })
+            })
+        },
+    };
 
 </script>
 

@@ -9,8 +9,10 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^36.0.1",
     "@ckeditor/ckeditor5-vue": "^4.0.1",
+    "animate.css": "^4.1.1",
     "chart.js": "^4.2.1",
     "core-js": "^3.8.3",
+    "gsap": "^3.11.5",
     "swiper": "^9.1.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
