@@ -10,6 +10,7 @@
                 <option value="undone">未完成</option>
                 </select>
             </div>
+
             <searchbar></searchbar>
         </div>
 
@@ -105,6 +106,7 @@
         flex-direction: column;
         margin: 0 auto;
         width: 100%;
+        margin-top: 50px;
         
         .MemberManagement_table {
         display: flex;

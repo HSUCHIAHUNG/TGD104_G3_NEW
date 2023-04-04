@@ -116,6 +116,7 @@
         width: 100%;
         flex-direction: column;
         align-items: flex-end;
+        margin-top: 40px;
 
             .tabl_order{
                 margin: 0 auto 20px auto;
