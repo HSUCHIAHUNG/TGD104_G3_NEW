@@ -3,12 +3,12 @@
         <h4>申請條件</h4>
         <div class="travel_condition">
             <ul>
-                <li>上傳良民證</li>
-                <li>上傳身分證</li>
-                <li>提供相關證照</li>
-                <li>旅遊經驗豐富</li>
-                <li>20歲以上</li>
-                <li>男女不拘</li>
+                <li><i class="fa-regular fa-hand-point-right"></i> 上傳良民證</li>
+                <li><i class="fa-regular fa-hand-point-right"></i> 上傳身分證</li>
+                <li><i class="fa-regular fa-hand-point-right"></i> 提供相關證照</li>
+                <li><i class="fa-regular fa-hand-point-right"></i> 旅遊經驗豐富</li>
+                <li><i class="fa-regular fa-hand-point-right"></i> 20歲以上</li>
+                <li><i class="fa-regular fa-hand-point-right"></i> 男女不拘</li>
             </ul>
         </div>
     </div>

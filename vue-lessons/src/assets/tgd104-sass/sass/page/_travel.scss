@@ -56,7 +56,7 @@
     background-image: url("../../../image/travel/travel_banner_bg2.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: $bg_gray;
+    background-color: $bg_yellow;
     height: 800px;
     padding-top: 78px;
     .container{
@@ -163,93 +163,102 @@
             }
         }
         .travel_comment_wrapper{
-            display: flex;
-            justify-content: space-between;
+            // display: flex;
+            // justify-content: space-between;
             .travel_comments{
-                flex-grow: 0;
-                margin: 0 20px;
-                width: 100%;
-                .travel_comment{
-                    background-color: $dark_blue;
+                display: flex;
+                justify-content: space-between;
+                // flex-grow: 0;
+                // margin: 0 20px;
+                // width: 100%;
+                .box{
+                    flex-grow: 0;
+                    margin: 0 20px;
                     width: 100%;
-                    height: 30vh;
-                    padding: 30px;
-                    border-radius: 5px;
-                    
-                    position: relative;
-                    &:after{
-                        content: '';
-                        width: 0;
-                        height: 0;
-                        border-width: 20px;
-                        border-style: solid;
-                        border-top-color: $dark_blue;
-                        border-right-color: transparent;
-                        border-bottom-color: transparent;
-                        border-left-color: transparent;
-                    
-                        position: absolute;
-                        bottom: -40px;
-                        left: 10%;
-                    }
-                    h2{
-                        font-size: $fs18;
-                        color: $dark_orange;
-                    }
-                    p{
-                        margin: 25px 0 50px 0;
-                        font-weight: 600;
-                    }
-                    h3{
-                        font-size: 18px;
-                        color: $text_gray;
-                        position: absolute;
-                        bottom: 0;
-                        right: 0;
-                        margin: 0 20px 20px 0;
-                    }
-                }
-                .travel_consultant_wrapper{
-                    display: flex;
-                    margin-top: 40px;
-                    img{
-                        display: block;
+                    .travel_comment{
+                        background-color: $dark_blue;
                         width: 100%;
-                        width: 100px;
-                        max-height: 100px;
-                        border-radius: 50%;
-                    }
-                    .travel_consultant{
-                        flex-grow: 1;
-                        margin-left: 40px;
-                        align-self: center;
-                        h4{
-                            display: inline-block;
-                            font-size: $fs20;
-                            font-weight: 600;
-                            letter-spacing: 2px;
+                        height: 30vh;
+                        padding: 30px;
+                        border-radius: 5px;
+                        box-shadow: 1px 1px 5px rgba(0,0,0,0.4) ;
+                        
+                        position: relative;
+                        &:after{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            border-width: 20px;
+                            border-style: solid;
+                            border-top-color: $dark_blue;
+                            border-right-color: transparent;
+                            border-bottom-color: transparent;
+                            border-left-color: transparent;
+                        
+                            position: absolute;
+                            bottom: -40px;
+                            left: 10%;
                         }
-                        i{
-                            color: $dark_yellow;
-                            font-size: $fs20;
-                            display: inline-block;
-                            vertical-align: baseline;
-                            margin-left: 10px;
+                        h2{
+                            font-size: $fs18;
+                            color: $dark_orange;
                         }
                         p{
-                            display: inline-block;
-                            margin-left: 5px;
-                            font-size: $fs18;
-                            letter-spacing: 1px;
+                            margin: 25px 0 50px 0;
                             font-weight: 600;
                         }
-                        h5{
-                            color: $dark_orange;
-                            font-size: $fs22;
-                            font-weight: 600;
+                        h3{
+                            font-size: 18px;
+                            color: $text_gray;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            margin: 0 20px 20px 0;
+                        }
+                    }
+                    .travel_consultant_wrapper{
+                        display: flex;
+                        margin-top: 40px;
+                        img{
+                            display: block;
+                            width: 100%;
+                            width: 100px;
+                            max-height: 100px;
+                            border-radius: 50%;
+                        }
+                        .travel_consultant{
+                            flex-grow: 1;
+                            margin-left: 40px;
+                            align-self: center;
+                            h4{
+                                display: inline-block;
+                                font-size: $fs20;
+                                font-weight: 600;
+                                letter-spacing: 2px;
+                            }
+                            i{
+                                color: $dark_yellow;
+                                font-size: $fs20;
+                                display: inline-block;
+                                vertical-align: baseline;
+                                margin-left: 10px;
+                            }
+                            p{
+                                display: inline-block;
+                                margin-left: 5px;
+                                font-size: $fs18;
+                                letter-spacing: 1px;
+                                font-weight: 600;
+                            }
+                            h5{
+                                color: $dark_orange;
+                                font-size: $fs22;
+                                font-weight: 600;
+                            }
                         }
                     }
                 }
+                
             }
         }
     }
@@ -264,6 +273,7 @@
     height: 400px;
     width: 100%;
     padding-top: 100px;
+    background-color: $bg_yellow;
     .container{
         display: flex;
         justify-content: center;
@@ -655,7 +665,7 @@
         }
     }
     .travel_star{
-        height: 500px;
+        height: auto;
         padding-top: 40px;
         .container{
             padding: 0 20px;
@@ -669,36 +679,43 @@
             }
             .travel_comment_wrapper{
                 .travel_comments{
-                    .travel_comment{
-                        padding: 5px;
-                        h3{
-                            font-size: 14px;
-                            margin: 0px 5px 5px 0;
-                        }
-                    }
-                    .travel_consultant_wrapper{
-                        img{
-                            width: 70px;
-                            max-height: 70px;
-                        }
-                        .travel_consultant{
-                            margin-left: 10px;
-                            h4{
-                                font-size: 16px;
-                                display: block;
-                            }
-                            i{
-                                font-size: 16px;
-                                margin: 0;
-                            }
-                            p{
+                    flex-direction: column;
+                    .box{
+                        margin: 0 auto;
+                        width: 70%;
+                        margin-bottom: 30px;
+                        .travel_comment{
+                            padding: 20px;
+                            h3{
                                 font-size: 14px;
+                                margin: 0px 20px 20px 0;
                             }
-                            h5{
-                                font-size: $fs18;
+                        }
+                        .travel_consultant_wrapper{
+                            img{
+                                width: 70px;
+                                max-height: 70px;
+                            }
+                            .travel_consultant{
+                                margin-left: 10px;
+                                h4{
+                                    font-size: 16px;
+                                    display: block;
+                                }
+                                i{
+                                    font-size: 16px;
+                                    margin: 0;
+                                }
+                                p{
+                                    font-size: 14px;
+                                }
+                                h5{
+                                    font-size: $fs18;
+                                }
                             }
                         }
                     }
+                    
                 }
                 
             }
@@ -790,7 +807,7 @@
         }
     }
     .travel_star{
-        height: 1200px;
+        height: auto;
         padding-top: 40px;
         .container{
             padding: 0 20px;
@@ -803,10 +820,10 @@
                 }
             }
             .travel_comment_wrapper{
-                flex-direction: column;
                 .travel_comments{
+                    flex-direction: column;
                     margin: 0 auto;
-                    width: 70%;
+                    width: 100%;
                     .travel_comment{
                         padding: 15px;
                         height: 25vh;

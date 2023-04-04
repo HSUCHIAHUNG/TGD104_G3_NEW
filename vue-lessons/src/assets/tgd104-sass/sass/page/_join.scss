@@ -6,15 +6,16 @@
 .join_benefit{
     background-image: url('../../../image/join/join_benefit_bg.png');
     background-repeat: no-repeat;
-    background-size: cover;
-    // background-size: 100%;
+    background-size: contain;
+    background-position: bottom;
     height: 750px;
+    background-color: $bg_yellow;
     .container{
         h1{
-            font-size: $fs32;
+            font-size: $fs28;
             font-weight: 600;
             text-align: center;
-            margin: 50px 0;
+            padding: 50px 0;
             letter-spacing: 2px;
             span{
                 color: $dark_orange;
@@ -34,8 +35,8 @@
                 flex-grow: 1;
                 margin: 0 50px;
                 h2{
-                    font-size: $fs28;
-                    font-weight: 500;
+                    font-size: $fs26;
+                    font-weight: 600;
                     text-align: center;
                     letter-spacing: 3px;
                     margin-bottom: 80px;
@@ -45,10 +46,11 @@
                 }
                 h3{
                     text-align: center;
-                    font-size: $fs24;
-                    font-weight: 500;
+                    font-size: $fs22;
+                    font-weight: 600;
                     line-height: 3;
                     letter-spacing: 5px;
+                    margin: 15px 0;
                 }
             }
             .travel_benefit{
@@ -61,8 +63,8 @@
                 flex-grow: 1;
                 margin: 0 50px;
                 h2{
-                    font-size: $fs28;
-                    font-weight: 500;
+                    font-size: $fs26;
+                    font-weight: 600;
                     text-align: center;
                     letter-spacing: 3px;
                     margin-bottom: 80px;
@@ -72,10 +74,11 @@
                 }
                 h3{
                     text-align: center;
-                    font-size: $fs24;
-                    font-weight: 500;
+                    font-size: $fs22;
+                    font-weight: 600;
                     line-height: 3;
                     letter-spacing: 5px;
+                    margin: 15px 0;
                 }
             }
         }
@@ -91,7 +94,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
-    background-color: $bg_gray;
+    background-color: $bg_yellow;
         .join_btn{
             background-color: $ft_yellow;
             text-align: center;
@@ -99,18 +102,21 @@
             justify-content: center;
             button{
                 color: $gray;
-                width: 140px;
+                width: 180px;
                 height: 60px;
-                font-size: $fs24;
+                font-size: $fs20;
                 font-weight: 600;
                 border: none;
                 background-color: $ft_yellow;
+                i{
+                    margin-right: 10px;
+                }
                 &:hover {
                     cursor: pointer;
-                    background-color: $bg_yellow;
+                    background-color: $light_yellow;
                 }
                 &.active {
-                    background-color: $bg_yellow;
+                    background-color: $light_yellow;
                 }
             }
             
@@ -124,10 +130,12 @@
                 background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 15%, $clear_white 15%);
                 border: 4px solid $dark_blue;
                 border-radius: 15px;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
                 h4{
-                    font-size: $fs22;
+                    font-size: $fs20;
                     text-align: center;
                     line-height: 65px;
+                    font-weight: 600;
                 }
                 .learn_condition{
                     ul{
@@ -144,7 +152,10 @@
                             background-color: $ft_yellow;
                             margin: 20px;
                             border-radius: 5px;
-                            font-size: $fs20;
+                            font-size: $fs18;
+                            font-weight: 600;
+                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            
                         }
                     }
                 }
@@ -156,10 +167,12 @@
                 background: linear-gradient(180deg, $dark_blue 0%, $dark_blue 15%, $clear_white 15%);
                 border: 4px solid $dark_blue;
                 border-radius: 15px;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
                 h4{
-                    font-size: $fs22;
+                    font-size: $fs20;
                     text-align: center;
                     line-height: 65px;
+                    font-weight: 600;
                 }
                 .travel_condition{
                     ul{
@@ -176,7 +189,10 @@
                             background-color: $ft_yellow;
                             margin: 20px;
                             border-radius: 5px;
-                            font-size: $fs20;
+                            font-size: $fs18;
+                            font-weight: 600;
+                            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            
                         }
                     }
                 }
@@ -187,7 +203,7 @@
 }
 
 .join_button{
-    background-color: $bg_gray;
+    background-color: $bg_yellow;
     text-align: center;
     .container{
         button{
@@ -195,3 +211,102 @@
         }
     }
 }
+
+
+/*-------- join rwd start ---------*/
+
+@include rwd(1200px){
+    .join_benefit{
+        background-image: none;
+        // background-repeat: no-repeat;
+        // background-size: contain;
+        background-position: left;
+        height: auto;
+        padding-bottom: 50px;
+        .container{
+            width: 80%;
+            h1{
+                font-size: $fs24;
+                // font-weight: 600;
+                // text-align: center;
+                // padding: 50px 0;
+                // letter-spacing: 2px;
+                // span{
+                //     color: $dark_orange;
+                // }
+            }
+            .benefit_wrapper{
+                // display: flex;
+                // margin: 0 auto;
+                width: auto;
+                .learn_benefit{
+                    // background-image: url('../../../image/join/join_benefit_board.png');
+                    // background-repeat: no-repeat;
+                    // background-size: 100%;
+                    // background-position: bottom;
+                    width: 60%;
+                    height: auto;
+                    // flex-grow: 1;
+                    // margin: 0 50px;
+                    h2{
+                        font-size: $fs22;
+                        // font-weight: 600;
+                        // text-align: center;
+                        // letter-spacing: 3px;
+                        padding-bottom: 10px;
+                        // span{
+                        //     color: $dark_orange;
+                        // }
+                    }
+                    h3{
+                        // text-align: center;
+                        font-size: $fs20;
+                        // font-weight: 600;
+                        // line-height: 3;
+                        // letter-spacing: 5px;
+                        // margin: 15px 0;
+                    }
+                }
+                .travel_benefit{
+                    // background-image: url('../../../image/join/join_benefit_board.png');
+                    // background-repeat: no-repeat;
+                    // background-size: 100%;
+                    // background-position: bottom;
+                    width: 60%;
+                    height: auto;
+                    // flex-grow: 1;
+                    // margin: 0 50px;
+                    h2{
+                        font-size: $fs22;
+                        // font-weight: 600;
+                        // text-align: center;
+                        // letter-spacing: 3px;
+                        padding-bottom: 10px;
+                        // span{
+                        //     color: $dark_orange;
+                        // }
+                    }
+                    h3{
+                        // text-align: center;
+                        font-size: $fs20;
+                        // font-weight: 600;
+                        // line-height: 3;
+                        // letter-spacing: 5px;
+                        // margin: 15px 0;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@include rwd(992px){}
+
+@include rwd(768px){}
+
+@include rwd(576px){}
+
+
+
+/*-------- join rwd end ---------*/
