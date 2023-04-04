@@ -8,22 +8,22 @@
         
 
         <router-link to="/LearningChoose/Music">
-          <div class="learning_items"><i class="fa-solid fa-music"></i> 陪你-音樂</div>
+          <div class="learning_items"><i class="fa-solid fa-music"></i> 陪你音樂</div>
         </router-link>
         <router-link to="/LearningChoose/Study">
-          <div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你-伴讀</div>
+          <div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你伴讀</div>
         </router-link>
         <router-link to="/LearningChoose/Subject">
-          <div class="learning_items"><i class="fa-solid fa-school"></i> 陪你-科目</div>
+          <div class="learning_items"><i class="fa-solid fa-school"></i> 陪你科目</div>
         </router-link>
         <router-link to="/LearningChoose/Draw">
-          <div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你-繪畫</div>
+          <div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你繪畫</div>
         </router-link>
         <router-link to="/LearningChoose/Code">
-          <div class="learning_items"><i class="fa-solid fa-code"></i> 陪你-程式</div>
+          <div class="learning_items"><i class="fa-solid fa-code"></i> 陪你程式</div>
         </router-link>
         <router-link to="/LearningChoose/Dance">
-          <div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你-舞蹈</div>
+          <div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你舞蹈</div>
         </router-link>
         
         <!-- <a href=""><div class="learning_items"><i class="fa-solid fa-music"></i> 陪你-音樂</div></a>
