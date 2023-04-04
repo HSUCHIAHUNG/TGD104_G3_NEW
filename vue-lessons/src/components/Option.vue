@@ -1,4 +1,5 @@
 <template>
+    
     <div class="option">
         <div class="option_inner">
             <div><img src="../assets/image/learning/student003.png" alt=""></div>

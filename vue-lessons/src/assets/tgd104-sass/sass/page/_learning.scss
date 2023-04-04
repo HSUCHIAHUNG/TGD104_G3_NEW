@@ -1,7 +1,8 @@
 .learning_content{
     max-width: 100%;
-    height: 850px;
+    // height: 850px;
     background-color: $bg_yellow;
+    font-weight: 600;
     .container_learning{
         display: flex;
         flex-wrap: wrap;
@@ -23,6 +24,7 @@
         img{
             width: 80%;
             max-width: 800px;
+            margin-top: 80px;
         }
     }
     .container_learning_bottom{
@@ -31,6 +33,7 @@
         flex-grow: 1;
         justify-content: end;
         align-items: end;
+        margin-top: 100px;
         img{
             width: 40%;
             max-width: 260px;
@@ -59,7 +62,7 @@
         font-size: $fs36;
         font-weight: 600;
         margin-top: 100px;
-        margin-bottom: 40px;
+        margin-bottom: 100px;
         .item h4{
             padding: 10px;
             background-color: $ft_yellow;
@@ -108,6 +111,7 @@
             padding: 10px;
             background-color: #faeecd;
             border-radius: 10px;
+
             img{
                 width: 50%;
                 margin: 0 auto;
@@ -116,6 +120,9 @@
             }
             .content_p{
                 font-size: $fs20;
+            }
+            div{
+                font-weight: 600;
             }
         }
     }
@@ -127,7 +134,7 @@
     font-size: $fs36;
     font-weight: 600;
     margin-top: 40px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
     button{
         cursor: pointer;
     }
@@ -144,17 +151,24 @@
 
 
 
-/* 學員心得 */
+/* 常見問題 */
+.learning_bgc{
+    background-color: $bg_yellow;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+
 .student_share_word {
     text-align: center;
     font-size: $fs36;
     font-weight: 600;
-    margin-top: 100px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 100px;
 }
 .student_share_word:after{
     content: '';
-    width: 216px;
+    width: 150px;
     display: block;
     margin: -18px auto;
     height: 15px;
@@ -162,69 +176,92 @@
 }
 
 
-.student_share{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    .learning_wrapper{
-        position: relative;
-        width: 520px;
-        height: 800px;
-        margin: 0 auto;
-        .box{
-            margin: 50px auto;
-            width: 239px;
-            height: 334px;
-            position: relative;
-        }
-        .box_1{
-            position: absolute;
-            z-index: 3;
-        }
-        
-        .box_2{
-            position: absolute;
-            top: 40px;
-            left: 300px;
-            z-index: 1;
-        }
-        
-        .box_3{
-            position: absolute;
-            top: 300px;
-            left: 130px;
-            z-index: 2;
-        }
-        .card{
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-            background-color: $ft_yellow;
-            background-size: cover;
-            box-shadow: 5px 10px 10px 1px rgba(0,0,0,0.1);
-            text-align: center;
-            padding: 30px;
-            img{
-                width: 100%;
-                border-radius: 5px;
-            }
-            
-            p{
-                margin: 0 auto;
-                font-size: $fs20;
+
+.learning_qa_all{
+    margin: 50px auto;
+    .learning_qa{
+        max-width: 1000px;
+        width: 80%;
+        margin: 20px auto;
+        letter-spacing: 1.2px;
+        font-weight: 600;
+        border-radius: 5px;
+      
+        .learning_q {
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #FFE59D;
+          padding: 15px;
+          margin-bottom: 10px;
+          letter-spacing: 1.2px;
+          font-weight: 600;
+          border-radius: 10px;
+          span {
+              font-size: 24px;
+              color: $gray;
             }
         }
+        .learning_a {
+          background-color: $clear_white;
+          padding: 15px;
+          background-color: $ft_yellow;
+          border-radius: 10px;
+        }
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------螢幕小於992px時---------- */
+@media screen and (max-width: 992px){
+    .learning_content .container_learning{
+        padding-top: 40px;
     }
-}
+    .lesson_tip{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .container_learning_bottom{
+        margin-top: 30px;
+        margin-right: 30px;
+    }
+  }
 
-.student_share_img div{
-    text-align: center;
-    margin-top: 80px;
-}
-
-
-
-/* 學員心得 end */
+  /* ----------螢幕小於768px時---------- */
+@media screen and (max-width: 768px){
+    .learning_content .container_learning_bottom .lesson_tip p,
+    .learning_content .container_learning_bottom .lesson_tip p span{
+        font-size: 24px;
+    }
+    .learning_content .container_learning img{
+        margin-top: 30px;
+    }
+    .learning_content .container_learning_bottom .lesson_tip{
+        margin-top: 30px;
+    }
+    .student_share_img img{
+        width: 50%;
+    }
+    .student_share .learning_wrapper,
+    .student_share .learning_wrapper .box,
+    .student_share .learning_wrapper .box_1,
+    .student_share .learning_wrapper .box_2,
+    .student_share .learning_wrapper .box_3,
+    .student_share .learning_wrapper .card{
+        position: static;
+    }
+    .box_3{
+        display: none;
+    }
+  }
