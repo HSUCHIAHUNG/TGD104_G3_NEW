@@ -19,25 +19,27 @@
         </div>
 
         <div class="MemberWrapper">
-            <table>
-                <tr>
-                    <th>會員ID</th>
-                    <th>旅行類別</th>
-                    <th>顧問姓名</th>
-                    <th>費用</th>
-                    <th>訂購日期</th>
-                    <th>旅行日期</th>
-                </tr>
-                <tr v-for="(item, index) in items" :key="index">
-                    <td>{{item.id}}</td>
-                    <td>{{item.tr_category}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.tr_cost}}</td>
-                    <td>{{item.tro_booking_data}}</td>
-                    <td>{{item.tro_order_data}}</td>
+            <div class="tabl_order">
+                <table>
+                    <tr class="tr_banner_order">
+                        <th>會員ID</th>
+                        <th>旅行類別</th>
+                        <th>顧問姓名</th>
+                        <th>費用</th>
+                        <th>訂購日期</th>
+                        <th>旅行日期</th>
+                    </tr>
+                    <tr v-for="(item, index) in items" :key="index">
+                        <td>{{item.id}}</td>
+                        <td>{{item.tr_category}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.tr_cost}}</td>
+                        <td>{{item.tro_booking_data}}</td>
+                        <td>{{item.tro_order_data}}</td>
 
-                </tr>
-            </table>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -115,8 +117,17 @@
         flex-direction: column;
         align-items: flex-end;
 
+            .tabl_order{
+                margin: 0 auto 20px auto;
+                width: 100%;
+                overflow-y: auto;
+                height: 790px;
 
-            table{
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                table{
                 margin: 20px auto 20px auto;
                 border-collapse: collapse;
                 width: 90%;
@@ -126,6 +137,11 @@
                 color: #585858;
                 box-shadow: 1px 2px 10px  #adadad;
                 
+                .tr_banner_order{
+                    position: sticky;
+                    top: 0;
+                }
+
                 tr{
                     &:first-child{
                         background-color: #FF7426;
@@ -163,6 +179,9 @@
                     }
                 }    
             }
+            }
+
+            
         }
 
 

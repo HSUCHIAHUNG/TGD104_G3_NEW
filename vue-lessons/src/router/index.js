@@ -240,6 +240,7 @@ const routes = [
     path: "/BackendCenter",
     name: "BackendCenter",
     component: () => import("../views/BackendCenter.vue"),
+    meta: { hideRouterView: true },
     redirect: "/BackendCenter/SalesManagement",
     children: [
       {
@@ -282,3 +283,7 @@ const router = createRouter({
 });
 
 export default router;
+
+
+
+

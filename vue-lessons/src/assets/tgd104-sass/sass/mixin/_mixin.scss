@@ -2,23 +2,66 @@
     @media screen and (max-width: $breakpoint) {
     @content;  
     @if $breakpoint == 1200px{
+        // solid btn -----------------------------------------
+            .btn_blue{
+                width: 130px !important;
+                height: 40px !important;
+            }
 
-    }
+            .btn_orange{
+                width: 130px !important;
+                height: 40px !important;
+            }
 
-    @else if $breakpoint == 992px{
+            .btn_yellow{
+               
+            }
+
+            // outline btn -----------------------------------------
+
+            .outline_btn_blue{
+                width: 130px !important;
+                height: 40px !important;
+            }
+            .outline_btn_orange{
+                width: 130px !important;
+                height: 40px !important;
+            }
+        }
+
+        @else if $breakpoint == 992px{
+            // solid btn -----------------------------------------
+            .btn_blue{
+
+            }
+
+            .btn_orange{
+
+            }
+
+            .btn_yellow{
+
+            }
+
+            // outline btn -----------------------------------------
+
+            .outline_btn_blue{
+
+            }
+            .outline_btn_orange{
+
+            }
+        }
+
+        @else if $breakpoint == 768px{
 
 
-    }
+        } 
 
-    @else if $breakpoint == 768px{
+        @else if $breakpoint == 576px{
+           
 
-
-    } 
-
-    @else if $breakpoint == 576px{
-
-
-    }
+        }
     }
 }
 

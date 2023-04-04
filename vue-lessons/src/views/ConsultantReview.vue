@@ -8,7 +8,7 @@
         </div>
 
         <div class="ConsultantReview_table">
-            <table v-for="(item, index) in items" :key="index">
+            <table class="revivw_container" v-for="(item, index) in items" :key="index">
                 <tr>
                     <th>姓名</th>
                     <th>暱稱</th>
@@ -16,7 +16,7 @@
                     <th>身份證字號</th>
                     <th>性別</th>
                     <th></th>
-                    
+                    <th></th>
                 </tr>
                 <tr>
                     <td>{{item.name}}</td>
@@ -26,8 +26,6 @@
                     <td>{{item.c_gender}}</td>
                     <td></td>
                     <td></td>
-
-
                 </tr>
                 <tr>
                     <th>電話號碼</th>
@@ -36,6 +34,8 @@
                     <th>個性</th>
                     <th></th>
                     <th></th>
+                    <th></th>
+
 
                 </tr>
                 <tr>
@@ -43,8 +43,8 @@
                     <td>{{item.c_birth}}</td>
                     <td>{{item.c_area}}</td>
                     <td>{{item.c_personality}}</td>
-                    <button>良名證</button>
-                    <button>身份證</button>
+                    <td><button class="btn_orange">良名證</button></td>
+                    <td><button class="btn_orange">良名證</button></td>
                 </tr>
                 <tr>
                     <th>最高學歷</th>
@@ -53,6 +53,7 @@
                     <th>課程費用</th>
                     <th>學習類別</th>
                     <th>服務課程</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td>{{item.c_phone}}</td>
@@ -63,20 +64,35 @@
                     <td>{{item.c_personality}}</td>
                 </tr>
                 <tr>
-                    <th>相關經歷簡述及自我介紹</th>
-                    <th>學習標題 </th>
+                    <th colspan="3">相關經歷簡述及自我介紹</th>
+                    <th colspan="2">學習標題</th>
                     <th></th>
                     <th></th>
-                    <th></th>
-                    <th></th>
+                 
+                    
                 </tr>
                 <tr>
-                    <td>{{item.c_phone}}</td>
-                    <td>{{item.c_birth}}</td>
-                    <button>良名證</button>
-                    <button>良名證</button>
-                    <button>良名證</button>
+                    <td colspan="3">
+                        大家郝大家郝大家好大家好大家好大家好
+                        大家郝大家郝大家好大家好大家好大家好
+                        大家郝大家郝大家好大家好大家好大家好
+                        大家郝大家郝大家好大家好大家好大家好
+                        大家郝大家郝大家好大家好大家好大家好
+                        大家郝大家郝大家好大家好大家好大家好
+                        大家郝大家郝大家好大家好大家好大家好
+                    </td>
+                    <td colspan="2">
+                        學習標題學習標題學習標題
+                        學習標題學習標題學習標題
+                    </td>
+                   
+                    <td colspan="2">
+                        <button class="btn_orange">良名證</button>
+                        <button class="btn_orange">良名證</button>
+                        <button class="btn_orange">良名證</button>
+                    </td>
                 </tr>
+                
             </table>
         </div>
     </div>
@@ -131,7 +147,6 @@
 
 <style lang="scss">
     // @import '../../../../tgd104-sass/new_style.scss';
-    
 
     .ConsultantReview{
         display: flex;
@@ -140,11 +155,19 @@
         width: 100%;
         
         .ConsultantReview_table {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-end;
+            overflow-y: auto;
+            height: 790px;
 
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            margin: 0 auto 20px auto;
+            width: 100%;          
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-end;
 
             table{
                 margin: 20px auto 20px auto;
@@ -155,6 +178,7 @@
                 font-weight: bold;
                 box-shadow: 1px 2px 10px  #adadad;
                 background-color: #fff;
+                
 
                 
                 tr{

@@ -95,7 +95,6 @@
         align-items: flex-end;
 
         .tabl{
-            
             margin: 0 auto 20px auto;
             width: 100%;
             overflow-y: auto;

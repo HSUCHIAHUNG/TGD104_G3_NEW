@@ -251,9 +251,9 @@
         <router-link to="/consultant">顧問中心</router-link>
       </button>
 
-      <button class="btn_yellow" @click.prevent="close_nav">
+      <!-- <button class="btn_yellow" @click.prevent="close_nav">
         <router-link to="/BackendCenter" exact>後台管理</router-link>
-      </button>
+      </button> -->
 
       <button class="btn_yellow" @click.prevent="close_nav">
         <router-link to="/learning">陪你學習</router-link>
