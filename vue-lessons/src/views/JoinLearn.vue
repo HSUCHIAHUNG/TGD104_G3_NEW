@@ -64,10 +64,7 @@
                         <option value="國中">國中</option>
                         <option value="高中">高中</option>
                         <option value="英文">英文</option>
-                        <option value="數學">數學</option>
                         <option value="國文">國文</option>
-                        <option value="歷史">歷史</option>
-                        <option value="物理">物理</option>
                         <option value="化學">化學</option>
                         <option value="生物">生物</option>
                         <option value="微積分">微積分</option>
@@ -75,7 +72,6 @@
                         <option value="油畫">油畫</option>
                         <option value="水彩">水彩</option>
                         <option value="電腦繪圖">電腦繪圖</option>
-                        <option value="水彩畫">水彩畫</option>
                         <option value="蠟筆繪畫">蠟筆繪畫</option>
                         <option value="Java">Java</option>
                         <option value="C++">C++</option>

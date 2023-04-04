@@ -141,8 +141,8 @@
     <swiper-slide>
         <div class="item">
             <h4>
-                <img src="../assets/image/learning/coding.png" alt="">
-                <div class="content_p">陪你寫JavaScript</div>
+                <img src="../assets/image/learning/code.png" alt="">
+                <div class="content_p">陪你寫Java</div>
                 <div>熱門顧問: 徐嘉紅</div>
             </h4>
         </div>
@@ -176,7 +176,7 @@
     </swiper-slide>
 
   </swiper>
-
+  <h2 class="learning_more"><a href="/LearningChoose"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></a></h2>
 <!-- 輪播2 end -->
 
 
@@ -225,15 +225,16 @@
                     </h4>
                 </div>
             </div> -->
-            <h2 class="learning_more"><a href="/LearningChoose"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></a></h2>
+
         </div>
 
 
 
 
-    <!-- 學員心得 -->
-    <h2 class="student_share_word">學員心得分享</h2>
-    <div class="student_share">
+    <!-- qa -->
+    <div class="learning_bgc">
+    <h2 class="student_share_word">常見問題</h2>
+    <!-- <div class="student_share">
 
         <div class="student_share_img">
             <div>
@@ -274,8 +275,21 @@
                 </div>
             </div>
         </div>
+    </div> -->
+    <div class="learning_qa_all">
+      <div v-for="(qa, index) in qas" :key="index" class="learning_qa">
+        <div class="learning_q" @click="toggleAnswer(index)">
+          <h3>{{ qa.question }}</h3>
+          <span>{{ qa.open ? '▼' : '▲' }}</span>
+        </div>
+        <div v-if="qa.open" class="learning_a">
+          <p>{{ qa.answer }}</p>
+        </div>
+      </div>
     </div>
-    <!-- 學員心得 end -->
+    <h2 class="learning_more"><a href="/LearningOption"><button class="btn btn_solid_secondary btn_orange">提供更多想法</button></a></h2>
+</div>
+    <!-- qa end -->
 
 
 
@@ -305,21 +319,62 @@ import { Autoplay, Navigation } from 'swiper';
     export default {
         name: "Learning",
         data() {
-        return {
-            
-        };
+            return {
+                qas: [
+                    {
+                        question: '我想要的課程陪你沒有怎麼辦?',
+                        answer: '點選下方提供更多想法→提供意見 告訴我們你所想學習的內容和需求，如果你的意見獲得學員們的認同，我們將會為你找尋最適合你的學習方案，提供更進一步的學習諮詢和指導，讓你的學習之路更加順利~~',
+                        open: false,
+                    },
+                    {
+                        question: '我已經成功預約顧問，確切的時間陪你會替我安排嗎?',
+                        answer:
+                        '完成付款後點選查看訂單，就可以發送訊息與顧問協調當天時間囉!',
+                        open: false,
+                    },
+                    {
+                        question: '之前的體驗非常良好，如果我想要再次預約同一個顧問有更方便的方式嗎?',
+                        answer:
+                        '陪你目前沒有提供其他預約方式哦!不過對於大家意見陪你都會列入考量~',
+                        open: false,
+                    },
+                    {
+                        question: '如果臨時想要退款怎麼辦?',
+                        answer:
+                        '陪你只接受7天內申請退款(且要在課程日3天前)，退款需撥打我們的客服唷!',
+                        open: false,
+                    },
+                    {
+                        question: '請問上課地點可以更改嗎?',
+                        answer:
+                        '上課地點是由顧問決定，若有需求可以於下單後發送訊息與顧問協調!',
+                        open: false,
+                    },
+                ],
+            };
         },
         components: {
-        VHeader,
-        VFooter,
-        Swiper,
-    SwiperSlide,
+            VHeader,
+            VFooter,
+            Swiper,
+            SwiperSlide,
         },
         setup() {
-    return {
-        modules: [Autoplay, Navigation],
-    };
-  },
+            return {
+                modules: [Autoplay, Navigation],
+            };
+        },
+        methods: {
+            toggleAnswer(index) {
+                this.qas.forEach((qa, i) => {
+                    if (i === index) {
+                        qa.open = !qa.open;
+                    } else {
+                        qa.open = false;
+                    }
+                });
+            },
+        },
     };
 
 

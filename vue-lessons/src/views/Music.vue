@@ -131,9 +131,9 @@
               id: 2,
               name: '裴小倪',
               description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-              image: require('../assets/image/consultant02.png'),
+              image: require('../assets/image/learning/music001.png'),
               liked: false,
-              lesson: '吉他'
+              lesson: '鋼琴'
             },
             {
               id: 3,
@@ -147,7 +147,7 @@
               id: 4,
               name: '裴小倪',
               description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-              image: require('../assets/image/consultant02.png'),
+              image: require('../assets/image/learning/music001.png'),
               liked: false,
               lesson: '鋼琴'
             },
@@ -155,7 +155,7 @@
               id: 5,
               name: '裴小倪',
               description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-              image: require('../assets/image/consultant02.png'),
+              image: require('../assets/image/learning/music004.png'),
               liked: false,
               lesson: '吉他'
             },
@@ -171,7 +171,7 @@
               id: 7,
               name: '裴小倪',
               description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-              image: require('../assets/image/consultant02.png'),
+              image: require('../assets/image/learning/music001.png'),
               liked: false,
               lesson: '鋼琴'
             },
@@ -187,12 +187,172 @@
               id: 9,
               name: '裴小倪',
               description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-              image: require('../assets/image/consultant02.png'),
+              image: require('../assets/image/learning/music001.png'),
               liked: false,
               lesson: '鋼琴'
             },
             {
               id: 10,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '爵士鼓'
+            },
+            {
+              id: 11,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '烏克麗麗'
+            },
+            {
+              id: 12,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music005.png'),
+              liked: false,
+              lesson: '吉他'
+            },
+            {
+              id: 13,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '爵士鼓'
+            },
+            {
+              id: 14,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music001.png'),
+              liked: false,
+              lesson: '鋼琴'
+            },
+            {
+              id: 15,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music006.png'),
+              liked: false,
+              lesson: '吉他'
+            },
+            {
+              id: 16,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '烏克麗麗'
+            },
+            {
+              id: 17,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music003.png'),
+              liked: false,
+              lesson: '鋼琴'
+            },
+            {
+              id: 18,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '爵士鼓'
+            },
+            {
+              id: 19,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music003.png'),
+              liked: false,
+              lesson: '鋼琴'
+            },
+            {
+              id: 20,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '爵士鼓'
+            },
+            {
+              id: 21,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '烏克麗麗'
+            },
+            {
+              id: 22,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music002.png'),
+              liked: false,
+              lesson: '吉他'
+            },
+            {
+              id: 23,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '爵士鼓'
+            },
+            {
+              id: 24,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music003.png'),
+              liked: false,
+              lesson: '鋼琴'
+            },
+            {
+              id: 25,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music007.png'),
+              liked: false,
+              lesson: '吉他'
+            },
+            {
+              id: 26,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '烏克麗麗'
+            },
+            {
+              id: 27,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music001.png'),
+              liked: false,
+              lesson: '鋼琴'
+            },
+            {
+              id: 28,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/consultant02.png'),
+              liked: false,
+              lesson: '爵士鼓'
+            },
+            {
+              id: 29,
+              name: '裴小倪',
+              description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
+              image: require('../assets/image/learning/music001.png'),
+              liked: false,
+              lesson: '鋼琴'
+            },
+            {
+              id: 30,
               name: '裴小倪',
               description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
               image: require('../assets/image/consultant02.png'),

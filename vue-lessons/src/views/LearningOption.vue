@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="learning_option_inner">
 
   
   
@@ -12,6 +12,7 @@
           </select>
           <button type="button" class="option_box" @click.prevent="showOptionLightBox">提供意見 <i class="fa-solid fa-inbox"></i></button>
       </div>
+
         <Option></Option>
         <Option></Option>
         <Option></Option>
