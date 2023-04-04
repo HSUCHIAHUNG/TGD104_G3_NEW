@@ -138,7 +138,7 @@
               id: 1,
               name: '裴小倪',
               description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-              image: require('../assets/image/consultant02.png'),
+              image: require('../assets/image/learning/music001.png'),
               liked: false,
               lesson: 'JavaScript'
             },
