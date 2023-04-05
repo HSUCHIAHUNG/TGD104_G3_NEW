@@ -3,8 +3,8 @@
   <header>
     <div class="header_container v_header">
       <a href="" id="h_bar" @click.prevent="open_nav"
-        ><i class="fa-solid fa-bars"></i
-      ></a>
+        ><i class="fa-solid fa-bars"></i>
+      </a>
       <img src="./assets/image/logo_header.png" alt="" />
       <div class="h_icon">
         <a href="" @click.prevent="memberLogin"

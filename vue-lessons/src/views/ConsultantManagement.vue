@@ -39,6 +39,17 @@
 
                     </tr>
                 </table>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-angle-left"></i>
+                    </li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -54,16 +65,18 @@
         data(){ 
             return {
                 items: [
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '桃園阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                    { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                    { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                    { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                    { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                    { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                    { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                    { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                    { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                    { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                    { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                    { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                    { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },       
                 ],
             }
         },   
@@ -102,23 +115,56 @@
 
             .ConsultantManagement_table_bg{
                 margin: 0 auto 20px auto;
-                width: 100%;
+                width: 90%;
                 overflow-y: auto;
-                height: 790px;
+                height: auto;
+                background-color: #fff;
+                box-shadow: 1px 2px 10px  #adadad;
 
                 &::-webkit-scrollbar {
                     display: none;
                 }
                 
+                ul{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+
+                    li{
+                            color: #585858;
+                            border: 1px solid #eda77e;
+                            font-size: 20px;
+                            display: inline-block;
+                            width: 30px;
+                            line-height: 30px;
+                            margin: 0 5px;
+                            border-radius: 5px;
+                            text-align: center;
+                            &:hover{
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
+                            &:nth-child(1){
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
+                            &:nth-child(2){
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
+                    }
+                }
+
                 table{
-                    margin: 20px auto 20px auto;
+                    margin: 0px auto 20px auto;
                     border-collapse: collapse;
-                    width: 90%;
+                    width: 100%;
                     table-layout:auto;
                     font-size: 20px;
                     font-weight: bold;
                     color: #585858;
-                    box-shadow: 1px 2px 10px  #adadad;
+                    
                     
                 
                 .ConsultantManagement_tr_bg{
@@ -173,7 +219,7 @@
     .ConsultantManagement_select_form{
         width: 90%;
         display: flex;
-        margin: 0 auto;
+        margin: 25px auto 30px auto;
 
         .ConsultantManagement_btn{
             background-color: #FAEECD;

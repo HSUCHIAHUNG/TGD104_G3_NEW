@@ -27,7 +27,7 @@ import { RouterLink, RouterView } from "vue-router";
         <i class="fa-solid fa-magnifying-glass"></i>
         <span>顧問審核</span>
       </router-link>
-      <a href="#">
+      <a href="/">
         <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
         <span>登出</span>
       </a>
@@ -80,7 +80,7 @@ export default {
       text-align: left;
       font-size: 22px;
       padding: 10px;
-      padding: 10px 0px 10px 30px;
+      padding: 20px 0px 20px 30px;
       width: 100%;
       &:last-child {
         position: absolute;
@@ -98,7 +98,8 @@ export default {
       }
 
       &.router-link-exact-active {
-        color: #42b983;
+        background-color: #fff;
+        color: #f28b4f !important;
       }
     }
   }

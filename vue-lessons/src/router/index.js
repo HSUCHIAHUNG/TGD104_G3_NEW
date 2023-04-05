@@ -166,12 +166,16 @@ const routes = [
     name: "LearningCheckout",
     component: () => import("../views/LearningCheckout.vue"),
   },
-
   {
     path: "/main",
     name: "main",
     component: () => import("../views/main.vue"),
   },
+  // {
+  //   path: "/test",
+  //   name: "test",
+  //   component: () => import("../views/test.vue"),
+  // },
   {
     path: "/travel",
     name: "travel",
