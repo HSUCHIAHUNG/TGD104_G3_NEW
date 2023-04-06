@@ -39,6 +39,7 @@
 
 .consultant_gallary{
     margin-right: 10px;
+    margin-left: 10px;
 }
 .consultant_gallary{
     max-width: 400px;
@@ -58,7 +59,7 @@
     display: flex;
     /* flex-direction: column; */
     justify-content: space-between;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .consultant_gallary_small img{
@@ -72,6 +73,16 @@
 .detail_introduce{
     max-width: 400px;
     width: 80%;
+    font-weight: 600;
+}
+
+.detail_introduce h1{
+    margin-top: 20px;
+}
+
+.detail_introduce{
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 /* consultant_gallary end */
 

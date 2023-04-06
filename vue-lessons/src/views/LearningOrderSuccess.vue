@@ -1,4 +1,5 @@
 <template>
+    <VHeader></VHeader>
     <div>
   
   
@@ -6,13 +7,10 @@
 
         <OrderConfirmation></OrderConfirmation>
         <h2 class="check_order">
-            <a href="/memberbooking"><button class="btn_orange">查看訂單</button></a>
+          <router-link to="/memberbooking"><button class="btn_orange">查看訂單</button></router-link>
         </h2>
 
-  
-  
-  
-  
+
       <VFooter></VFooter>
     </div>
   </template>

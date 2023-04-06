@@ -2,7 +2,7 @@
 
 footer {
     background-color: $ft_yellow;
-    
+    font-weight: 600;
     .footer_inner {
         padding: 60px 100px 70px 100px;
         max-width: 1320px;
@@ -101,6 +101,15 @@ footer {
         padding: 20px;
       }
     }
+  }
 
+  //   /* ----------螢幕小於768px時---------- */
+  @media screen and (max-width: 768px) {
+    footer .footer_inner{
+        padding: 60px 10px 70px 10px;
+    }
+    footer .footer_inner .footer_content .footer_content_word{
+        margin: 20px 0;
+    }
   }
   

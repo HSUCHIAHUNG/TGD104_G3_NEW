@@ -285,6 +285,8 @@
     </nav>
   </div>
 
+
+  
   <router-view />
   <!-- <VFooter></VFooter> -->
 </template>
@@ -517,6 +519,13 @@ export default {
     }
   }
 }
+
+
+
+
+
+
+
 
 //  @import "../../tgd104-sass/new_style.scss";
 
