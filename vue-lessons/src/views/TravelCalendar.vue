@@ -1,5 +1,5 @@
 <template>
-
+    <VHeader></VHeader>
     
 
     <div class="datePicker">
@@ -25,6 +25,7 @@
 </template>
   
 <script>
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import { Calendar, DatePicker } from 'v-calendar';
 
@@ -37,6 +38,7 @@ export default {
     };
     },
     components: {
+        VHeader,
         VFooter,
         Calendar,
         DatePicker,

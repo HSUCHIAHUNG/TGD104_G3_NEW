@@ -20,7 +20,7 @@
                   :class="{ active: currentTab === 'tab1' }"
                   @click.prevent="
                     {
-                      currentTab = 'tab1';
+                      (content = 'ConsultantInfoL'), (currentTab = 'tab1');
                     }
                   "
                   >陪你學習</a
@@ -32,7 +32,7 @@
                   :class="{ active: currentTab === 'tab2' }"
                   @click.prevent="
                     {
-                      currentTab = 'tab2';
+                      (content = 'ConsultantInfoT'), (currentTab = 'tab2');
                     }
                   "
                   >陪你旅行</a
@@ -41,7 +41,9 @@
             </ul>
           </div>
           <div class="order_list">
-            <consultant-info-l></consultant-info-l>
+            <keep-alive>
+              <component :is="content"></component>
+            </keep-alive>
           </div>
         </div>
       </div>
@@ -53,16 +55,18 @@
 
 <script>
 //  import VHeader from '@/components/VHeader.vue'
-import VFooter from '@/components/VFooter.vue'
+import VFooter from "@/components/VFooter.vue";
 import CAvatar from "@/components/CAvatar.vue";
 import CSideNav from "../components/CSideNav.vue";
 import CDropDown from "@/components/CDropDown.vue";
 import ConsultantInfoL from "@/components/ConsultantInfoL.vue";
+import ConsultantInfoT from "@/components/ConsultantInfoT.vue";
 
 export default {
   name: "ConsultantInfo",
   data() {
     return {
+      content: "ConsultantInfoL",
       currentTab: "tab1",
       defaultOption: "顧問資訊",
     };
@@ -72,7 +76,8 @@ export default {
     CSideNav,
     CDropDown,
     ConsultantInfoL,
-    VFooter
+    ConsultantInfoT,
+    VFooter,
   },
 };
 </script>

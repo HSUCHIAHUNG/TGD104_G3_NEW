@@ -1,5 +1,5 @@
 <template>
-
+  <VHeader></VHeader>
 
     <!-- sel_travel_consultant_banner -->
     <div class="sel_travel_consultant_banner">
@@ -119,6 +119,7 @@
 </template>
 
 <script>
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -126,6 +127,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 export default {
   name: "SelTravelConsultant",
   components: {
+      VHeader,
       VFooter,
   },
   data() {

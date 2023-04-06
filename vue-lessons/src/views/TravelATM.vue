@@ -1,4 +1,5 @@
 <template>
+    <VHeader></VHeader>
 
     <ATM></ATM>
   
@@ -15,6 +16,7 @@
 </template>
 
 <script>
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import ATM from "../components/ATM.vue";
 
@@ -26,6 +28,7 @@ export default {
   },
 
   components: {
+    VHeader,
     VFooter,
     ATM,
   },
