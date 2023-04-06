@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- <VHeader></VHeader> -->
+        <VHeader></VHeader>
         <!-- banner start-->
         <div class="banner_container"> 
             
