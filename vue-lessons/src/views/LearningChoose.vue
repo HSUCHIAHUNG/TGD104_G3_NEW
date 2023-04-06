@@ -1,60 +1,73 @@
 <template>
- <div class="learningchooseflex">
-  <div>
-    <div class="learning_choose_wrapper">
-      <!-- 左邊 -->
-      <div class="learning_choose_side">
-        <a href="/LearningOption"><div class="learning_question">我想學習的不在上面怎麼辦</div></a>
-        
+  <div class="learningchooseflex">
+    <div>
+      <div class="learning_choose_wrapper">
+        <!-- 左邊 -->
+        <div class="learning_choose_side">
+          <a href="/LearningOption"
+            ><div class="learning_question">我想學習的不在上面怎麼辦</div></a
+          >
 
-        <router-link to="/LearningChoose/Music">
-          <div class="learning_items"><i class="fa-solid fa-music"></i> 陪你音樂</div>
-        </router-link>
-        <router-link to="/LearningChoose/Study">
-          <div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你伴讀</div>
-        </router-link>
-        <router-link to="/LearningChoose/Subject">
-          <div class="learning_items"><i class="fa-solid fa-school"></i> 陪你科目</div>
-        </router-link>
-        <router-link to="/LearningChoose/Draw">
-          <div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你繪畫</div>
-        </router-link>
-        <router-link to="/LearningChoose/Code">
-          <div class="learning_items"><i class="fa-solid fa-code"></i> 陪你程式</div>
-        </router-link>
-        <router-link to="/LearningChoose/Dance">
-          <div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你舞蹈</div>
-        </router-link>
-        
-        <!-- <a href=""><div class="learning_items"><i class="fa-solid fa-music"></i> 陪你-音樂</div></a>
+          <router-link to="/LearningChoose/Music">
+            <div class="learning_items">
+              <i class="fa-solid fa-music"></i> 陪你音樂
+            </div>
+          </router-link>
+          <router-link to="/LearningChoose/Study">
+            <div class="learning_items">
+              <i class="fa-solid fa-book-open"></i> 陪你伴讀
+            </div>
+          </router-link>
+          <router-link to="/LearningChoose/Subject">
+            <div class="learning_items">
+              <i class="fa-solid fa-school"></i> 陪你科目
+            </div>
+          </router-link>
+          <router-link to="/LearningChoose/Draw">
+            <div class="learning_items">
+              <i class="fa-solid fa-pencil"></i> 陪你繪畫
+            </div>
+          </router-link>
+          <router-link to="/LearningChoose/Code">
+            <div class="learning_items">
+              <i class="fa-solid fa-code"></i> 陪你程式
+            </div>
+          </router-link>
+          <router-link to="/LearningChoose/Dance">
+            <div class="learning_items">
+              <i class="fa-solid fa-child-reaching"></i> 陪你舞蹈
+            </div>
+          </router-link>
+
+          <!-- <a href=""><div class="learning_items"><i class="fa-solid fa-music"></i> 陪你-音樂</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你-伴讀</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-school"></i> 陪你-科目</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你-繪畫</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-code"></i> 陪你-程式</div></a>
         <a href=""><div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你-舞蹈</div></a> -->
-        <!-- <router-view /> -->
-      </div>
-      <!-- 左邊end -->
+          <!-- <router-view /> -->
+        </div>
+        <!-- 左邊end -->
 
         <router-view />
-
-    </div>                
-  </div>   
-
+      </div>
+    </div>
   </div>
   <VFooter></VFooter>
 </template>
-    
+
 <script>
-  import VFooter from "../components/VFooter.vue";
-  export default {
-    components: {
-      VFooter,
-    },
-    data() {
-      return {
+import VHeader from "@/components/VHeader.vue";
+import VFooter from "../components/VFooter.vue";
+export default {
+  components: {
+    VFooter,
+    VHeader,
+  },
+  data() {
+    return {
       //   selectedProductId: null,
-      //   products: [ 
+      //   products: [
       //     {
       //       id: 1,
       //       name: '裴小倪',
@@ -126,19 +139,19 @@
       //       liked: false
       //     },
       //   ]
-      }
+    };
+  },
+  methods: {
+    selectProduct(product) {
+      this.selectedProductId = product.id;
     },
-    methods: {
-      selectProduct(product) {
-        this.selectedProductId = product.id
-      },
-      toggleLike(product) {
-        product.liked = !product.liked
-      }
-    }
-  }
+    toggleLike(product) {
+      product.liked = !product.liked;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-  @import "../assets/tgd104-sass/new_style.scss";
+@import "../assets/tgd104-sass/new_style.scss";
 </style>
