@@ -67,6 +67,7 @@
             padding: 10px;
             background-color: $ft_yellow;
             border-radius: 10px;
+            font-weight: 600;
             img{
                 width: 200px;
                 margin: 0 auto;
@@ -179,6 +180,7 @@
 
 .learning_qa_all{
     margin: 50px auto;
+    font-size: 18px;
     .learning_qa{
         max-width: 1000px;
         width: 80%;
@@ -263,5 +265,17 @@
     }
     .box_3{
         display: none;
+    }
+    .learning_main .hot_learning,
+    .student_share_word {
+        font-size: 28px;
+    }
+    
+    .learning_main .hot_learning:after{
+        width: 175px;
+
+    .student_share_word:after{
+        width: 115px;
+    }
     }
   }

@@ -1,9 +1,7 @@
 <template>
+    <VHeader></VHeader>
     <div class="learning_option_inner">
 
-  
-  
-  
       <div class="option_allcontent">
       <div class="option_top">
           <select name="" id="" class="option_select">
@@ -20,11 +18,11 @@
       </div>
 
       <div class="page_number">
-      <a href=""><i class="fa-solid fa-angle-left"></i></a> 
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+        <router-link to="/"><i class="fa-solid fa-angle-left"></i></router-link>
+        <router-link to="/">1</router-link>
+        <router-link to="/">2</router-link>
+        <router-link to="/">3</router-link>
+        <router-link to="/"><i class="fa-solid fa-angle-right"></i></router-link>
 
       </div>
 
@@ -45,14 +43,10 @@
 
 
 
-
-
-
-
-
   </template>
     
     <script>
+      import VHeader from "../components/VHeader.vue";
       import VFooter from "../components/VFooter.vue";
       import Option from "../components/Option.vue";
       
@@ -63,6 +57,7 @@
           },
           components: {
             VFooter,
+            VHeader,
             Option
           },
           methods: {

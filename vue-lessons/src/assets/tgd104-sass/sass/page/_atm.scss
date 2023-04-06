@@ -4,7 +4,8 @@
 // }
 .atm_container{
     .atm{
-        width: 500px;
+        max-width: 500px;
+        width: 90%;
         margin: 50px auto;
         border: 2px solid $dark_blue;
         border-radius: 15px;
@@ -127,4 +128,51 @@
             }
         }
     }
+}
+
+
+
+
+/* ----------螢幕小於500px時---------- */
+@media screen and (max-width: 500px){
+    .atm_container .atm h1{
+        font-size: 24px;
+    }
+
+    .atm_container .atm .ttl_payment p{
+        font-size: 18px;
+    }
+
+    .atm_container .atm .ttl_payment h2{
+        font-style: 18px;
+    }
+
+    .atm_container .atm .payment_deadline h2{
+        font-size: 18px;
+    }
+
+    .atm_container .atm .payment_deadline .time h3{
+        font-size: 18px;
+    }
+
+    .atm_container .atm .payment_deadline .time p{
+        font-size: 18px;
+    }
+
+    .atm_container .atm .bank .bank_account h4{
+        font-size: 18px;
+    }
+
+    .atm_container .atm .bank .bank_account p{
+        font-size: 18px;
+    }
+
+    .atm_container .atm .bank .bank_no h4{
+        font-size: 18px;
+    }
+
+    .atm_container .atm .bank .bank_no p{
+        font-size: 18px;
+    }
+
 }

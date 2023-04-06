@@ -12,7 +12,7 @@
     </div> -->
 
     <ol class="learning_second_items_tab">
-          <li>
+      <li :class="{ active: currentTab === 'tab1' }">
               <a
               href="#"
               :class="{ active: currentTab === 'tab1' }"
@@ -24,7 +24,7 @@
               ><div>全部</div></a
               >
           </li>
-          <li>
+          <li :class="{ active: currentTab === 'tab2' }">
               <a
               href="#"
               :class="{ active: currentTab === 'tab2' }"
@@ -36,7 +36,7 @@
               ><div>英文</div></a
               >
           </li>
-          <li>
+          <li :class="{ active: currentTab === 'tab3' }">
               <a
               href="#"
               :class="{ active: currentTab === 'tab3' }"
@@ -48,7 +48,7 @@
               ><div>國文</div></a
               >
           </li>
-                          <li>
+          <li :class="{ active: currentTab === 'tab4' }">
               <a
               href="#"
               :class="{ active: currentTab === 'tab4' }"
@@ -60,25 +60,25 @@
               ><div>化學</div></a
               >
           </li>
-          <li>
+          <li :class="{ active: currentTab === 'tab5' }">
               <a
               href="#"
-              :class="{ active: currentTab === 'tab4' }"
+              :class="{ active: currentTab === 'tab5' }"
               @click.prevent="
                   {
-                  (current = '生物'), (currentTab = 'tab4');
+                  (current = '生物'), (currentTab = 'tab5');
                   }
               "
               ><div>生物</div></a
               >
           </li>
-          <li>
+          <li :class="{ active: currentTab === 'tab6' }">
               <a
               href="#"
-              :class="{ active: currentTab === 'tab4' }"
+              :class="{ active: currentTab === 'tab6' }"
               @click.prevent="
                   {
-                  (current = '微積分'), (currentTab = 'tab4');
+                  (current = '微積分'), (currentTab = 'tab6');
                   }
               "
               ><div>微積分</div></a
@@ -91,12 +91,16 @@
       <template v-for="product in products" :key="product.id">
         <div v-if="current ==='all' || current === product.lesson">
           <div class="product">
-        <div class="product-image">
-          <img :src="product.image" :alt="product.name">
-        </div>
+        <router-link to="/LearningGallery" target="_blank">
+          <div class="product-image">
+            <img :src="product.image" :alt="product.name">
+          </div>
+        </router-link>
         <div class="product-details">
+        <router-link to="/LearningGallery" target="_blank">
           <h3>{{ product.name }}</h3>
           <p>{{ product.description }}</p>
+        </router-link>
           <div class="product-actions">
             <button :class="{ 'liked': product.liked }" @click="toggleLike(product)"><i class="fas fa-heart"></i></button>
             <button v-if="selectedProductId === product.id" class="selected">已選擇 <i class="fa-solid fa-basket-shopping"></i></button>

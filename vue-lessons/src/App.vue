@@ -287,6 +287,18 @@
 
   <router-view />
   <!-- <VFooter></VFooter> -->
+
+
+
+
+
+  <!-- 跳至最上方的按鈕 -->
+    <button @click="backToTop" v-show="isShow"  id="BackTop" class="toTop-arrow"></button>
+  <!-- 跳至最上方的按鈕end -->
+
+
+
+
 </template>
 
 <script>
@@ -295,12 +307,30 @@ import VFooter from "../src/components/VFooter.vue";
 export default {
   name: "app",
   data() {
-    return {};
+    return {
+      isShow: false
+    };
   },
   components: {
     VFooter,
   },
   methods: {
+
+    // 滾動事件的監聽方法
+    handleScroll() {
+      if (window.pageYOffset > 30 * window.innerHeight / 100) {
+        this.isShow = true;
+      } else {
+        this.isShow = false;
+      }
+    },
+    // 返回頂部的方法
+    backToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    },
 
     // 會員登入燈箱
     //開啟nav
@@ -412,6 +442,20 @@ export default {
       document.getElementById("signin_lightbox").classList.add("none");
     },
   },
+
+  mounted() {
+    // 添加滾動事件的監聽
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    // 在組件被銷毀前，移除滾動事件的監聽
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+
+
+
+
 };
 </script>
 
@@ -519,5 +563,47 @@ export default {
 }
 
 //  @import "../../tgd104-sass/new_style.scss";
+
+
+
+
+
+
+/* 跳至最上方的按鈕 */
+.toTop-arrow {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 33%;
+	opacity: 0.6;
+	background: #ff7d33;
+	cursor: pointer;
+	position:fixed;
+	right: 1rem;
+	bottom: 1rem;
+	// display: none;
+    z-index: 3;
+}
+.toTop-arrow::before, .toTop-arrow::after {
+	width: 18px;
+	height: 5px;
+	border-radius: 3px;
+	background: #fff;
+	position: absolute;
+	content: "";
+}
+.toTop-arrow::before {
+	transform: rotate(-45deg) translate(0, -50%);
+	left: 0.5rem;
+}
+.toTop-arrow::after {
+	transform: rotate(45deg) translate(0, -50%);
+	right: 0.5rem;
+}
+.toTop-arrow:focus {outline: none;}
+/* 跳至最上方的按鈕end */
+
 
 </style>
