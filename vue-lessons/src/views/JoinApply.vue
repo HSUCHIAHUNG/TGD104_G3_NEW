@@ -127,8 +127,10 @@
         </div>
 
         <div class="join_btn">
-            <a href="/Join"><button class="outline_btn_blue">回上一頁</button></a>
-            <a href="/JoinLearn"><button class="btn_blue">下一步</button></a>
+            <!-- <a href="/Join"><button class="outline_btn_blue">回上一頁</button></a> -->
+            <router-link to="/Join"><button class="outline_btn_blue">回上一頁</button></router-link>
+            <!-- <a href="/JoinLearn"><button class="btn_blue">下一步</button></a> -->
+            <router-link to="/JoinLearn"><button class="btn_blue">下一步</button></router-link>
         </div>
     </div>
 <!-- join_apply end -->

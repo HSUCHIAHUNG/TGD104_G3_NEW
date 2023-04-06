@@ -158,15 +158,18 @@
             <div class="container">
                 <div class="travel_button_hike">
                     <img src="../assets/image/travel/travel_button_hike.png" alt="">
-                    <a href="/TravelMap"><button class="hike btn_orange">陪你登山</button></a> 
+                    <!-- <a href="/TravelMap"><button class="hike btn_orange">陪你登山</button></a>  -->
+                    <router-link to="/TravelMap"><button class="bike btn_orange">陪你登山</button></router-link>
                 </div>
                 <div class="travel_button_bike">
                     <img src="../assets/image/travel/travel_button_bike.png" alt="">
-                    <a href="/TravelMap"><button class="bike btn_orange">陪你單車</button></a>
+                    <!-- <a href="/TravelMap"><button class="bike btn_orange">陪你單車</button></a> -->
+                    <router-link to="/TravelMap"><button class="bike btn_orange">陪你單車</button></router-link>
                 </div>
                 <div class="travel_button_swim">
                     <img src="../assets/image/travel/travel_button_swim.png" alt="">
-                    <a href="/TravelMap"><button class="swim btn_orange">陪你潛水</button></a>
+                    <!-- <a href="/TravelMap"><button class="swim btn_orange">陪你潛水</button></a> -->
+                    <router-link to="/TravelMap"><button class="bike btn_orange">陪你潛水</button></router-link>
                 </div>
             </div>
         </div>

@@ -127,8 +127,10 @@
 
     <div class="join_button">
         <div class="container">
-            <a href="/JoinApply"><button class="btn_orange">加入學習</button></a>
-            <a href="/JoinApply"><button class="btn_orange">加入旅行</button></a>
+            <!-- <a href="/JoinApply"><button class="btn_orange">加入學習</button></a> -->
+            <router-link to="/JoinApply"><button class="btn_orange">加入學習</button></router-link>
+            <!-- <a href="/JoinApply"><button class="btn_orange">加入旅行</button></a> -->
+            <router-link to="/JoinApply"><button class="btn_orange">加入旅行</button></router-link>
         </div>
     </div>
 

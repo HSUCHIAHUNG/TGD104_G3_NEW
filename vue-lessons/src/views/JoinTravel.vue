@@ -78,8 +78,10 @@
         </div>
 
         <div class="join_travel_btn">
-            <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a>
-            <a href="/JoinOk"><button class="btn_blue">送出</button></a>
+            <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
+            <router-link to="/JoinApply"><button class="outline_btn_blue">回上一步</button></router-link>
+            <!-- <a href="/JoinOk"><button class="btn_blue">送出</button></a> -->
+            <router-link to="/JoinOk"><button class="btn_blue">送出</button></router-link>
         </div>
 
     </div>

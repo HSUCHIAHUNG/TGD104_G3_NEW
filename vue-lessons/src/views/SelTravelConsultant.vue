@@ -79,7 +79,8 @@
  
                     <li  v-if="current === 'all' || current === consultant.gender">
                       <label><input type="radio" class="option-input radio" name="consultant" v-model="selectedConsultant" :value="index" /></label>
-                      <a href="/TravelGallery"><img :src="consultant.url" alt=""></a>
+                      <!-- <a href="/TravelGallery"><img :src="consultant.url" alt=""></a> -->
+                      <router-link to="/TravelGallery" target="_blank"><img :src="consultant.url" alt=""></router-link>
                       <h1>{{consultant.name}}</h1>
                       <h2>{{consultant.experience}}</h2>
                       <i class="fa-regular fa-heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
@@ -106,8 +107,10 @@
 
     <div class="sel_travel_consultant_button">
       <div class="container">
-          <a href="/TravelMap"><button class="outline_btn_orange">重新選擇地區</button></a>
-          <a href="/TravelCalendar"><button class="btn_orange">開始預約</button></a>
+          <!-- <a href="/TravelMap"><button class="outline_btn_orange">重新選擇地區</button></a> -->
+          <router-link to="/TravelMap"><button class="outline_btn_orange">重新選擇地區</button></router-link>
+          <!-- <a href="/TravelCalendar"><button class="btn_orange">開始預約</button></a> -->
+          <button @click="startBooking" class="btn_orange">開始預約</button>
       </div>
     </div>
 
@@ -162,6 +165,14 @@ export default {
         this.favorites.splice(favoriteIndex, 1)
         } else {
         this.favorites.push(index)
+        }
+    },
+
+    startBooking(){
+        if (this.selectedConsultant === null) {
+            alert('請選擇陪你顧問');
+        } else {
+            this.$router.push('/TravelCalendar');
         }
     },
   },

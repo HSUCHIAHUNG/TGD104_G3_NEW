@@ -23,7 +23,8 @@
       </ul>
       <h2 class="checkout_total">金額 : <span>1,500元</span></h2>
       <h2 class="button_choose">
-        <a href="/TravelOrderConfirmation"><button class="outline_btn_orange">回上一頁</button></a>
+        <!-- <a href="/TravelOrderConfirmation"><button class="outline_btn_orange">回上一頁</button></a> -->
+        <router-link to="/TravelOrderConfirmation"><button class="outline_btn_orange">回上一頁</button></router-link>
         <button @click="payment" class="btn_orange">進行付款</button>
       </h2>
       <div class="img_wallet"><img src="../assets/image/travel/wallet.png" alt=""></div>
