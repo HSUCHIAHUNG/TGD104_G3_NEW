@@ -27,10 +27,12 @@ import { RouterLink, RouterView } from "vue-router";
         <i class="fa-solid fa-magnifying-glass"></i>
         <span>顧問審核</span>
       </router-link>
-      <a href="/">
+      <router-link to="/">
         <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
         <span>登出</span>
-      </a>
+      </router-link>
+        
+   
     </nav>
     <router-view />
   </div>

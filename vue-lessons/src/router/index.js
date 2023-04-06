@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import MemberFav from "../views/MemberFav.vue";
 
@@ -171,11 +171,11 @@ const routes = [
     name: "main",
     component: () => import("../views/main.vue"),
   },
-  // {
-  //   path: "/test",
-  //   name: "test",
-  //   component: () => import("../views/test.vue"),
-  // },
+  {
+    path: "/test",
+    name: "test",
+    component: () => import("../views/test.vue"),
+  },
   {
     path: "/travel",
     name: "travel",
@@ -283,7 +283,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
 });
 

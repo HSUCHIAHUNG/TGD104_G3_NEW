@@ -30,19 +30,22 @@
                         <p class="content_p">找不到人陪你學習?陪你學習課程包含音樂、語言、寫程式等專業顧問陪伴你學習,讓你學習的旅途上不在一個人,現在就來預約你專屬的學習伴侶吧!
 
                         </p>
-                        <a href="/learning"><button class="btn_orange">陪你學習</button></a>           
+                        <router-link to="/learning"><button class="btn_orange">陪你學習</button></router-link>
+                        <!-- <a href="/learning"><button class="btn_orange">陪你學習</button></a>            -->
                     </swiper-slide>
 
                     <swiper-slide class="swiper-slide">
                         <h1 class="content_h1">陪你<span class="content_span">旅行</span></h1>
                         <p class="content_p">旅行中有時候會感到孤單和無助，但現在有了陪你旅行你可以和我們的旅行嚮導一起探索世界，分享經驗，讓專業的旅遊顧問陪你,讓你的旅行不再孤單！</p>
-                        <a href="/travel"><button class="btn_orange">陪你旅行</button></a>          
+                        <router-link to="/travel"><button class="btn_orange">陪你旅行</button></router-link>
+                        <!-- <a href="/travel"><button class="btn_orange">陪你旅行</button></a>           -->
                     </swiper-slide>
 
                     <swiper-slide class="swiper-slide">
                         <h1 class="content_h1">加入<span class="content_span">陪你</span></h1>
                         <p class="content_p">找不到地方分享你的技能嗎?快來成為我們的專業顧問,與我們的學員共同展開一段有趣的學習之旅吧。</p>
-                        <a href="/join"><button class="btn_orange">加入陪你</button></a>          
+                        <router-link to="/join"><button class="btn_orange">加入陪你</button></router-link>                   
+                        <!-- <a href="/join"><button class="btn_orange">加入陪你</button></a>           -->
                     </swiper-slide>
 
                 </swiper>
@@ -59,7 +62,8 @@
                     <span class="content_span">學習</span>路上的路標，<br><span class="content_span">陪你</span>學習，助你前行！
                 </h1>
                 <p class="content_p">像好友一樣的優質老師就在陪你<br>不要讓學習成為孤獨的旅程，陪你學習，讓你更加快樂！</p>
-                <a href="/learning"><button class="btn_orange">陪你學習</button></a> 
+                <router-link to="/learning"><button class="btn_orange">陪你學習</button></router-link>
+                <!-- <a href="/learning"><button class="btn_orange">陪你學習</button></a>  -->
                 </div>
             </div>
             <div class="index_learning_bg"></div>
@@ -75,7 +79,9 @@
                     不孤單的旅行，<br>就從有<span class="content_span">陪你</span>開始。
                 </h1>
                 <p class="content_p">喜歡登山？喜歡單車？喜歡潛水？<br> 就讓陪你成為你的好旅伴，一起來場無限可能的旅行吧！</p>
-                <a href="/travel"><button class="btn_orange">陪你旅行</button></a> 
+                <router-link to="/travel"><button class="btn_orange">陪你旅行</button></router-link>
+                <!-- <a href="/travel"><button class="btn_orange">陪你旅行</button></a>  -->
+                
                 </div>
                 <div class="index_travel_img"></div>
             </div>
@@ -91,14 +97,14 @@
                     <li>
                         <img src="../assets/image/index/index_join_people02.png" alt="img">
                         <div class="join_box_text">
-                            <a href="/join"><h1>學習</h1></a>                       
+                            <router-link to="/join"><h1>學習</h1></router-link>                       
                             <p>時間彈性<br>累積經驗<br>高預約率</p> 
                         </div>
                     </li>
                     <li>
                         <img src="../../../image/index/index_join_people01.png" alt="img">
                         <div class="join_box_text">
-                            <a href="/join"><h1>旅行</h1></a>    
+                            <router-link to="/join"><h1>旅行</h1></router-link>  
                             <p>時間彈性<br>邊賺邊玩<br>高預約率</p> 
                         </div>
                     </li>
