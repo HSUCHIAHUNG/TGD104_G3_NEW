@@ -1,5 +1,7 @@
 <template>
-<!-- join_apply -->
+    <VHeader></VHeader>
+
+    <!-- join_apply -->
     <div class="join_apply">
         <div class="container">
             <h1>表格申請</h1>
@@ -133,12 +135,13 @@
             <router-link to="/JoinLearn"><button class="btn_blue">下一步</button></router-link>
         </div>
     </div>
-<!-- join_apply end -->
+    <!-- join_apply end -->
 
     <VFooter></VFooter>
 </template>
 
 <script>
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 
 export default {
@@ -148,6 +151,7 @@ export default {
   },
 
   components:{
+    VHeader,
     VFooter,
   },
 

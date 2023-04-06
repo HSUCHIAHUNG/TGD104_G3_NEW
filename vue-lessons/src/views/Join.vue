@@ -1,4 +1,6 @@
 <template>
+    <VHeader></VHeader>
+
     <!-- join_benefit -->
     <div class="join_benefit">
         <div class="container">
@@ -140,6 +142,7 @@
 <script>
 import LearnCondition from "../components/LearnCondition.vue";
 import TravelCondition from "../components/TravelCondition.vue";
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import 'animate.css';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -157,6 +160,7 @@ export default {
   components: {
     LearnCondition,
     TravelCondition,
+    VHeader,
     VFooter,
     Swiper,
     SwiperSlide,

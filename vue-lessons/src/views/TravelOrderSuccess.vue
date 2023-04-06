@@ -1,5 +1,5 @@
 <template>
-
+    <VHeader></VHeader>
 
     <div>
         <OrderSuccess></OrderSuccess>
@@ -11,18 +11,23 @@
 
     </div>
 
+    <VFooter></VFooter>
 </template>
   
 <script>
 import OrderSuccess from "../components/OrderSuccess.vue";
+import VHeader from "@/components/VHeader.vue";
+import VFooter from "../components/VFooter.vue";
 
 export default {
     name: "TravelOrderSuccess",
     data() {
-    return {};
+        return {};
     },
     components: {
-    OrderSuccess,
+        OrderSuccess,
+        VHeader,
+        VFooter,
     },
 };
 </script>

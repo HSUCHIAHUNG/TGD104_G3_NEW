@@ -1,4 +1,6 @@
 <template>
+    <VHeader></VHeader>
+
     <div class="join_ok_container container">
         <img src="../assets/image/join/step3.png" alt="">
         <div class="join_ok">
@@ -21,6 +23,7 @@
 </template>
 
 <script>
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 
 export default {
@@ -29,6 +32,7 @@ export default {
     return {};
   },
   components:{
+    VHeader,
     VFooter,
   },
 };
