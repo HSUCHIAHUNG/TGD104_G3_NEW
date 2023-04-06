@@ -53,6 +53,15 @@
             />
           </div>
         </div>
+        <h1 class="self_intro">
+          簡短的介紹一下自己吧(例如：服務課程相關經歷簡述)(100字以內)
+        </h1>
+        <ckeditor
+          :editor="editor"
+          v-model="editorData"
+          :config="editorConfig"
+          class="ckeditor"
+        ></ckeditor>
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
@@ -64,10 +73,19 @@
 </template>
 
 <script>
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+
 export default {
   name: "ConsultantInfoT",
   data() {
-    return {};
+    return {
+      editor: ClassicEditor,
+      editorData: "",
+      editorConfig: {
+        placeholder: "請輸入內容...",
+        removePlugins: ["Bold", "Italic", "Link", "CKFinder", "Image", "Media"],
+      },
+    };
   },
 };
 </script>

@@ -81,6 +81,42 @@
             </div>
           </div>
         </div>
+        <div class="input_row">
+          <div class="form_group">
+            <label class="input_label" for="theFile"
+              >生活照上傳(圖片寬&高請設定相同且檔案大小不得超過10mb)</label
+            >
+            <input
+              type="file"
+              ref="fileInput"
+              @change="fileChange"
+              class="upload_avatar"
+            />
+            <input
+              type="file"
+              ref="fileInput2"
+              @change="fileChange2"
+              class="upload_avatar"
+            />
+            <input
+              type="file"
+              ref="fileInput3"
+              @change="fileChange3"
+              class="upload_avatar"
+            />
+          </div>
+          <div class="form_group" id="image_container">
+            <div class="image">
+              <img ref="image1" />
+            </div>
+            <div class="image">
+              <img ref="image2" />
+            </div>
+            <div class="image">
+              <img ref="image3" />
+            </div>
+          </div>
+        </div>
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
@@ -97,10 +133,85 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    fileChange() {
+      const file = this.$refs.fileInput.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.addEventListener("load", () => {
+        const image = this.$refs.image1;
+        image.src = reader.result;
+        image.style.objectFit = "cover";
+        image.style.maxWidth = "130px";
+        image.style.maxHeight = "130px";
+        image.parentNode.style.paddingBottom = "0";
+      });
+    },
+    fileChange2() {
+      const file = this.$refs.fileInput2.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.addEventListener("load", () => {
+        const image = this.$refs.image2;
+        image.src = reader.result;
+        image.style.objectFit = "cover";
+        image.style.maxWidth = "130px";
+        image.style.maxHeight = "130px";
+        image.parentNode.style.paddingBottom = "0";
+      });
+    },
+    fileChange3() {
+      const file = this.$refs.fileInput3.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.addEventListener("load", () => {
+        const image = this.$refs.image3;
+        image.src = reader.result;
+        image.style.objectFit = "cover";
+        image.style.maxWidth = "130px";
+        image.style.maxHeight = "130px";
+        image.parentNode.style.paddingBottom = "0";
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 // consultant_account
 @import "../assets/tgd104-sass/new_style.scss";
+
+.upload_avatar {
+  background-color: transparent;
+  border-style: none;
+  padding: 5px;
+  &::file-selector-button {
+    font-weight: 500;
+    color: $clear_white;
+    background-color: $dark_blue;
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+}
+
+#image_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .image {
+    border: 3px solid $dark_blue;
+    border-radius: 15px;
+    width: 33%;
+    padding-bottom: 33%;
+    overflow: hidden;
+    img {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
 </style>
