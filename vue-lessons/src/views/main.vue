@@ -18,13 +18,13 @@
                 :modules="modules"
                 class="mySwiper"
                 >     
-                    <swiper-slide class="swiper-slide">
+                    <!-- <swiper-slide class="swiper-slide">
                         <h1 class="content_h1"><span class="content_span">陪你</span>，專業的旅伴和學習伙伴</h1>
                         <p class="content_p">陪你是一個提供陪你學習和陪你旅行等專業服務的網站。我們的使命是讓學習和旅行更加輕鬆和愉快</p>
                         <br>
-                        <p class="content_p">讓您的生活更加充實和有意義。選擇陪你，選擇專業的伴侶展開一段無憂的旅程吧！</p>
-                                      
-                    </swiper-slide>
+                        <p class="content_p">讓您的生活更加充實和有意義。選擇陪你，選擇專業的伴侶展開一段無憂的旅程吧！</p>         
+                    </swiper-slide> -->
+
                     <swiper-slide class="swiper-slide">
                         <h1 class="content_h1">陪你<span class="content_span">學習</span></h1>
                         <p class="content_p">找不到人陪你學習?陪你學習課程包含音樂、語言、寫程式等專業顧問陪伴你學習,讓你學習的旅途上不在一個人,現在就來預約你專屬的學習伴侶吧!
