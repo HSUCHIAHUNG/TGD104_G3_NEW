@@ -1,0 +1,144 @@
+.datePicker{
+    text-align: center;
+    padding: 50px 0;
+    h1{
+        font-size: 20px;
+        font-weight: 600;
+        color: #585858;
+        margin-bottom: 30px;
+    }
+    button{
+        margin: 50px 10px 0 10px;
+    }
+}
+
+
+.vc-container{
+    width: 580px;
+}
+.vc-header {
+    margin-bottom: 20px;
+}
+
+.vc-header .vc-title{
+    font-size: 16px;
+    color: #585858;
+    span{
+        font-size: 20px;
+    }
+}
+
+.vc-weekday{
+    font-size: 20px;
+    margin: 5px 0;
+    color: #585858;
+}
+
+
+.vc-day-content{
+    font-size: 20px;
+    width: 65px;
+    height: 65px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #79cbd4;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ebc43a;
+      color: #fff;
+    }
+
+    &.vc-disabled {
+      cursor: default;
+    }
+}
+.vc-focus .vc-day-content {
+    background-color: #79cbd4;
+    color: #fff;
+}
+
+
+.vc-header .vc-arrow {
+   width: 35px;
+   height: 35px;
+   &:hover{
+    background-color: #ebc43a;
+    color: #fff;
+   }
+}
+.vc-base-icon {
+    stroke-width: 4px;
+}
+
+
+.vc-day-content.vc-disabled{
+    color: #7f7f7f;
+    background-color: #aeabab;
+}
+.vc-bordered {
+    // border: none;
+    border: 3px solid;
+    border-color: #DCECEE;
+}
+
+.vc-highlight-content-solid{
+    background-color: #ebc43a;
+} 
+
+.vc-focus{
+    color: #fff;
+}
+
+.vc-highlight-bg-solid{
+    background-color: #ebc43a;
+}
+
+
+/*  rwd start */
+@include rwd(768px){
+    .vc-container {
+        width: 500px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 18px;
+        }
+    }
+    .vc-weekday{
+        font-size: 18px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 18px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+@include rwd(576px){
+    .vc-container {
+        width: 350px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 16px;
+        }
+    }
+    .vc-weekday{
+        font-size: 16px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 16px;
+        width: 35px;
+        height: 35px;
+    }
+}

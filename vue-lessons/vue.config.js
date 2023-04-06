@@ -8,4 +8,6 @@ module.exports = {
   css: {
     sourceMap: true,
   },
+  runtimeCompiler: false,
+  // publicPath: './',
 };

@@ -4,7 +4,7 @@
     <section class="about_banner">
         <div class="about_banner_container container">
             <div class="about_banner_left">
-                <h1 class="content_h1"><span class="content_span">陪你</span>的故事緣起於日本,這要從一個退休大叔的,故事開始說起...</h1>
+                <h1  class="content_h1 test_text"><span class="content_span"></span></h1>
             </div>
             <div class="about_banner_right"></div>
         </div>
@@ -12,11 +12,11 @@
     <!-- banner end -->
 
     <!-- story1 start -->
-    <section class="about_story1">
+    <section class="about_story1" ref="target">
         <div class="about_story1_container container">
             <div class="about_story1_left"></div>
             <div class="about_story1_right">
-                <h1 class="content_h1">有一天<span class="content_span">大叔</span>走在人來人往的街道上偶然聽見<span class="content_span">女大學生</span>的談話說道「<span class="content_span">大叔好噁心</span>」! </h1>
+                <h1 class="content_h1 typing" ><span class="content_span"></span><span class="content_span"></span></h1>
                 <div class="about_story1_right_img"></div>
             </div>
         </div>
@@ -68,7 +68,8 @@
 
 <script>
 import VHeader from "@/components/VHeader.vue";
-import VFooter from '@/components/VFooter.vue'
+import VFooter from '@/components/VFooter.vue';
+import Typed from 'typed.js';
 export default {
   name: "Respect",
     components: {
@@ -78,6 +79,49 @@ export default {
   data() {
     return {};
   },
+  
+  methods: {
+    handleScroll() {
+      const targetElement = this.$refs.target; // 取得參考名稱為target的DOM元素
+      const rect = targetElement.getBoundingClientRect(); // 取得物件位置資訊
+      const elementTop = rect.top;
+
+      if (elementTop <= window.innerHeight) {
+        // 當物件頂端位置小於等於視窗高度時，表示已觸碰到頂端
+        console.log(elementTop);
+      }
+    },
+    handleResize() {
+      this.handleScroll(); // 視窗大小改變時重新計算目標物件位置資訊
+    }
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll); // 移除滾動事件監聽
+    window.removeEventListener('resize', this.handleResize); // 移除視窗縮放事件監聽
+  },
+  
+   mounted() {
+    window.addEventListener('scroll', this.handleScroll); // 監聽滾動事件
+    window.addEventListener('resize', this.handleResize); // 監聽視窗縮放事件
+    
+    const options = {
+      strings: ['陪你的故事緣起於日本,這要從一個退休大叔的,故事開始說起...'],
+      typeSpeed: 100,
+      showCursor : false,
+      loop : true
+    };
+
+    const testtx = {
+      strings: ['陪你的故事緣起於日本,這要從一個退休大叔的,故事開始說起...'],
+      typeSpeed: 100,
+      showCursor : false,
+      loop : true
+    };
+
+    new Typed('.typing', options);
+    new Typed('.test_text', testtx);
+  },
+  
 };
 </script>
 

@@ -120,20 +120,25 @@
         </div>
 
         <div class="join_learn_btn">
-            <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a>
-            <a href="/JoinTravel"><button class="btn_blue">送出</button></a>
+            <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
+            <router-link to="/JoinApply"><button class="outline_btn_blue">回上一步</button></router-link>
+            <!-- <a href="/JoinOk"><button class="btn_blue">送出</button></a> -->
+            <router-link to="/JoinOk"><button class="btn_blue">送出</button></router-link>
         </div>
 
     </div>
 <!-- join_learn end -->
+
+    <VFooter></VFooter>
 </template>
 
 <script>
+import VFooter from "../components/VFooter.vue";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 export default {
   name: "JoinLearn",
-  name: 'app',
     data() {
         return {
             editor: ClassicEditor,
@@ -144,8 +149,9 @@ export default {
             }
         };
     },
-    component: {
+    components:{
         ClassicEditor,
+        VFooter,
     },
 
  

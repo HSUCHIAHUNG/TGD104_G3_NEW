@@ -16,13 +16,20 @@
             </div>
         </div>
     </div>
+
+    <VFooter></VFooter>    
 </template>
 
 <script>
+import VFooter from "../components/VFooter.vue";
+
 export default {
   name: "JoinOk",
   data() {
     return {};
+  },
+  components:{
+    VFooter,
   },
 };
 </script>

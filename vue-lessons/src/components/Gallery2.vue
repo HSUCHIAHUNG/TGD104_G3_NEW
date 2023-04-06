@@ -1,0 +1,78 @@
+<template>
+
+    <div class="top_detail_introduce">
+      <div class="consultant_gallary">
+        <div class="consultant_gallary_main">
+          <img :src="mainImage" :alt="mainImageAlt">
+        </div>
+
+        <div class="consultant_gallary_small">
+          <img v-for="(image, index) in images" 
+              :key="index" 
+              :src="image.small" 
+              :alt="image.alt" 
+              @click="changeMainImage(index)">
+        </div>
+      </div>
+
+      <div class="detail_introduce">
+        <h1>{{title}}</h1>
+        <h2>{{name}}</h2>
+        <h3>性別：{{gender}}</h3>
+        <h3>年齡：{{age}}</h3>
+        <h3>個性：{{personality}}</h3>
+        <h3>興趣：{{interest}}</h3>
+        <h3>經歷：{{experience}}</h3>
+        <h3>證照：{{license}}</h3>
+        <h3>費用：{{cost}}</h3>
+        <h4>自我介紹</h4>
+        <p>{{introduce}}</p>
+      </div>
+    </div>
+
+</template>
+
+
+<script>
+
+
+export default {
+  name: "Gallery2",
+  data() {
+    return {
+        images: [
+          {small: require('../assets/image/travel/travel_gallery.png'), big: require('../assets/image/travel/travel_gallery.png'), alt: "Image 1"},
+          {small: require('../assets/image/consultant02.png'), big: require('../assets/image/consultant02.png'), alt: "Image 2"},
+          {small: require('../assets/image/consultant03.png'), big: require('../assets/image/consultant03.png'), alt: "Image 3"},
+        ],
+        mainImage: require('../assets/image/travel/travel_gallery.png'),
+        mainImageAlt: "Image 1",
+
+        title: '台灣百岳征服者',
+        name: '裴大尼',
+        gender: '男性',
+        age: '28歲',
+        personality: '活躍健談、遇事從容不迫',
+        interest: '登山、游泳',
+        experience: '登山嚮導、旅行社業務',
+        license: '登山嚮導證',
+        cost: '＄1,500',
+        introduce:'大家好，作為一經歷豐富的登山嚮導，我曾經帶領遊客遊歷過台灣大大小小的山脈，從玉山、合歡山到雪山等等，不管新手或是經驗者都歡迎跟我一起登山！',
+
+    };
+  },
+  methods: {
+    changeMainImage(index) {
+    this.mainImage = this.images[index].big;
+    this.mainImageAlt = this.images[index].alt;
+    }
+  },
+
+  
+
+};
+</script>
+
+<style lang="scss">
+@import "../assets/tgd104-sass/new_style.scss";
+</style>

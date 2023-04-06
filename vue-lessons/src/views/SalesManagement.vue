@@ -56,7 +56,7 @@ import PieChart from '../components/PieChart.vue'
     text-align: center;
     width: 70%;
     overflow-y: auto;
-    height: 790px;
+    height: 880px;
     &::-webkit-scrollbar {
         display: none;
     }

@@ -4,10 +4,10 @@
       <img src="../assets/image/logo_header.png" alt="">
       <div class="home_btn">
         <div class="home_img1">
-          <a href="/main">前台</a>
+          <router-link to="/main">前台</router-link>
         </div>
         <div class="home_img2">
-          <a href="/BackendCenter">後台</a>
+          <router-link to="/BackendCenter">後台</router-link>
         </div>
       </div>
     </div>

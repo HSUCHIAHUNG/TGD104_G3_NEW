@@ -4,9 +4,9 @@
 
             <div class="footer_content container">
                 <div>
-                    <a href="index.html">
+                    <router-link to="/main">
                     <img src="../assets/image/logo_footer.png" alt="陪你" />
-                    </a>
+                    </router-link>
                 </div>
                 <div class="footer_content_word">
                     <div>

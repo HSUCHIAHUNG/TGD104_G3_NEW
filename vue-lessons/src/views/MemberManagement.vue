@@ -5,11 +5,13 @@
         <div class="MemberManagement_select_form">
             <div class="MemberManagement_form_state">
                 <select name="state" id="state" class="MemberManagement_input_select">
-                <option value="">請選擇</option>
-                <option value="Finish">完成</option>
-                <option value="undone">未完成</option>
+                    <option value="">請選擇</option>
+                    <option value="Finish">完成</option>
+                    <option value="undone">未完成</option>
                 </select>
             </div>
+            <button class="MemberManagement_btn">最新</button>
+            <button class="MemberManagement_btn">最舊</button>
             <searchbar></searchbar>
         </div>
 
@@ -17,12 +19,12 @@
             <div class="MemberManagement_table_bg">
                 <table>
                     <tr class="MemberManagement_tr_bg">
-                        <th>會員ID</th>
-                        <th>旅行類別</th>
-                        <th>顧問姓名</th>
-                        <th>費用</th>
-                        <th>訂購日期</th>
-                        <th>旅行日期</th>
+                        <th>身份證字號</th>
+                        <th>姓名</th>
+                        <th>手機</th>
+                        <th>信箱</th>
+                        <th>註冊日期</th>
+                        <th>狀態</th>
                     </tr>
                     <tr v-for="(item, index) in items" :key="index">
                         <td>{{item.id}}</td>
@@ -30,10 +32,24 @@
                         <td>{{item.name}}</td>
                         <td>{{item.tr_cost}}</td>
                         <td>{{item.tro_booking_data}}</td>
-                        <td>{{item.tro_order_data}}</td>
+                        <td>
+                            {{item.tro_order_data}}
+                            <i class="fa-solid fa-ban"></i>
+                        </td>
 
                     </tr>
                 </table>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-angle-left"></i>
+                    </li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -49,34 +65,20 @@
         data(){ 
             return {
                 items: [
-                { id: 'H124803062', tr_category: '登山',name: '舞動小敏之腳踝90分', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '口頭禪蝦怎麼辦的品諭', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '怕被看腳踝的霈霈', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '炫炫', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '立偉', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '嘉宏', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '小敏', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '品諭', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '娟霈', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '舞動小敏之腳踝90分', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '口頭禪蝦怎麼辦的品諭', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '怕被看腳踝的霈霈', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '炫炫', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '立偉', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '嘉宏', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '小敏', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '品諭', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '娟霈', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '舞動小敏之腳踝90分', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '口頭禪蝦怎麼辦的品諭', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '怕被看腳踝的霈霈', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '炫炫', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '立偉', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '嘉宏', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '小敏', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '品諭', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                { id: 'H124803062', tr_category: '登山',name: '娟霈', tr_cost: '1500元',tro_booking_data: '1995/01/24',tro_order_data: '1993/03/19', },
-                ],
+                { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
+                { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                
+               ],
             }
         },   
         
@@ -99,38 +101,72 @@
 <style lang="scss">
     // @import '../../../../tgd104-sass/new_style.scss';
     
-
     .MemberManagement{
         display: flex;
         flex-direction: column;
         margin: 0 auto;
         width: 100%;
+        margin-top: 50px;
+        height: 100vh;
         
         .MemberManagement_table {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-end;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-end;
 
             .MemberManagement_table_bg{
                 margin: 0 auto 20px auto;
-                width: 100%;
+                width: 90%;
                 overflow-y: auto;
-                height: 790px;
+                height: auto;
+                background-color: #fff;
+                box-shadow: 1px 2px 10px  #adadad;
+               
 
                 &::-webkit-scrollbar {
                     display: none;
                 }
-                
+
+                ul{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+
+                    li{
+                            color: #585858;
+                            border: 1px solid #eda77e;
+                            font-size: 20px;
+                            display: inline-block;
+                            width: 30px;
+                            line-height: 30px;
+                            margin: 0 5px;
+                            border-radius: 5px;
+                            text-align: center;
+                            &:hover{
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
+                            &:nth-child(1){
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
+                            &:nth-child(2){
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
+                    }
+                }
+
                 table{
-                margin: 20px auto 20px auto;
-                border-collapse: collapse;
-                width: 90%;
-                table-layout:auto;
-                font-size: 20px;
-                font-weight: bold;
-                color: #585858;
-                box-shadow: 1px 2px 10px  #adadad;
+                    margin: 0px auto 20px auto;
+                    border-collapse: collapse;
+                    width: 100%;
+                    table-layout:auto;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #585858;
                 
                 .MemberManagement_tr_bg{
                     position: sticky;
@@ -144,6 +180,7 @@
                     }
 
                     th {
+                        width: 10%;
                         border-bottom: 2px solid #ddd;
                         text-align: left;
                         padding: 10px 0px 5px 30px;
@@ -174,25 +211,36 @@
                     }
                 }    
             }
-            }
-
-            
+            }     
         }
 
 
     .MemberManagement_select_form{
-    width: 90%;
-    display: flex;
-    margin: 0 auto;
+        width: 90%;
+        display: flex;
+            margin: 25px auto 30px auto;
+
+        .MemberManagement_btn{
+            background-color: #FAEECD;
+            border: none;
+            font-weight: bold;
+            margin-left: 20px;
+            box-sizing: border-box;
+            width: 13%;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+
         .MemberManagement_form_state{
 
             .MemberManagement_input_select{
                 background-color: #FAEECD;
                 border: none;
+                border-radius: 5px;
                 font-weight: bold;
                 padding: 10px 35px 10px 20px;
                 box-sizing: border-box;
-               
+                
             }
         }
         .SearchBar{

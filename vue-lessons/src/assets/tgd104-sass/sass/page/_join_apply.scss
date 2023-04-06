@@ -13,15 +13,7 @@
             text-align: center;
             font-weight: 600;
             letter-spacing: 3px;
-            margin-bottom: 50px;
-            &:after{
-                content: '';
-                width: 150px;
-                display: block;
-                margin: -18px auto;
-                height: 15px;
-                background-color: $dark_blue;
-            }
+            margin-bottom: 20px;
         }
         img{
             display: block;
@@ -32,7 +24,7 @@
         }
         h2{
             font-size: $fs22;
-            font-weight: 500;
+            font-weight: 600;
             margin-left: 220px;
             display: inline-block;
             width: 170px;
@@ -122,6 +114,58 @@
         }
     }
 }
+
+
+/* rwd start  */
+
+@include rwd(1200px){
+    .join_apply .container .personal_information .input_row #image_container .image{
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+@include rwd(992px){
+    .join_apply{
+        .container{
+            h1{
+                font-size: $fs24;
+            }
+            img{
+                width: 170px;
+            }
+            h2{
+                font-size: $fs18;
+                width: 150px;
+                &::after{
+                    width: 150px;
+                }
+            }
+            .personal_information{
+                .input_row {
+                    #image_container{
+                        .image{
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+@include rwd(768px){}
+
+
+@include rwd(576px){}
+
+
+/* rwd end */
+
 
 
 

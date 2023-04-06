@@ -5,7 +5,8 @@
         <OrderSuccess></OrderSuccess>
 
         <h2 class="check_order">
-            <button class="btn_orange">查看訂單</button>
+            <!-- <button class="btn_orange">查看訂單</button> -->
+            <router-link to="/memberbooking"><button class="btn_orange">查看訂單</button></router-link>
         </h2>
 
     </div>
