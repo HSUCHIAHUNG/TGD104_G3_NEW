@@ -1,5 +1,6 @@
 <template>
   <div>
+    <VHeader></VHeader>
     <div class="consultant_body">
       <div class="consultant_row container">
         <!-------------側邊navbar---------------->
@@ -79,12 +80,13 @@
         </div>
       </div>
     </div>
+    <VFooter></VFooter>
   </div>
 </template>
 
 <script>
-//  import VHeader from '@/components/VHeader.vue'
-//  import VFooter from '@/components/VFooter.vue'
+import VHeader from "@/components/VHeader.vue";
+import VFooter from "@/components/VFooter.vue";
 import CAvatar from "../components/CAvatar.vue";
 import CSideNav from "@/components/CSideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
@@ -96,8 +98,8 @@ export default {
     return {};
   },
   components: {
-    // VHeader,
-    // VFooter,
+    VHeader,
+    VFooter,
     CAvatar,
     CSideNav,
     OrderItemDetails,

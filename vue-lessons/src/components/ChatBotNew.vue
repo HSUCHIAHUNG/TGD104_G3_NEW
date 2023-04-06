@@ -55,13 +55,13 @@ export default {
       responseObj: {
         你好: "你好",
         哈囉: "哈囉！",
-        陪你: "請至<a href='/main'>陪你首頁</a>看更多",
-        關於我們: "請至<a href='/Respect'>關於我們</a>分頁看更多",
-        陪你學習: "請至<a href='/learning'>陪你學習</a>分頁看更多",
-        陪你旅行: "請至<a href='/travel'>陪你旅行</a>分頁看更多",
-        加入陪你: "請至<a href='/join'>加入陪你</a>分頁看更多",
-        會員中心: '請至<a href="/member">會員中心</a>看更多',
-        顧問中心: '請至<a href="/consultant">顧問中心</a>看更多',
+        陪你: "請至<a href='/#/main'>陪你首頁</a>看更多",
+        關於我們: "請至<a href='/#/Respect'>關於我們</a>分頁看更多",
+        陪你學習: "請至<a href='/#/learning'>陪你學習</a>分頁看更多",
+        陪你旅行: "請至<a href='/#/travel'>陪你旅行</a>分頁看更多",
+        加入陪你: "請至<a href='/#/join'>加入陪你</a>分頁看更多",
+        會員中心: '請至<a href="/#/member">會員中心</a>看更多',
+        顧問中心: '請至<a href="/#/consultant">顧問中心</a>看更多',
         愛心愛心: "愛心愛心",
       },
     };
@@ -86,6 +86,15 @@ export default {
       setTimeout(() => {
         this.renderChatbotMessage(userInput);
         this.setScrollPosition();
+        const res = this.getChatbotResponse(userInput);
+        if (/<router-link/.test(res)) {
+          // 使用正則表達式檢查回應是否包含router-link
+          const link = document.createElement("div");
+          link.innerHTML = res;
+          const routerLink = link.querySelector("a");
+          const path = routerLink.getAttribute("href"); // 取得router-link的href屬性
+          this.$router.push(path); // 使用$router.push導航到對應的頁面
+        }
       }, 500);
     },
     // 折疊

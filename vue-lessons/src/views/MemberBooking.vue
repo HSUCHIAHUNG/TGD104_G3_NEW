@@ -1,5 +1,6 @@
 <template>
   <div>
+    <VHeader></VHeader>
     <div class="member_body">
       <div class="member_row container">
         <!-------------側邊navbar---------------->
@@ -52,8 +53,8 @@
 </template>
 
 <script>
-//  import VHeader from '@/components/VHeader.vue'
-import VFooter from '@/components/VFooter.vue'
+import VHeader from "@/components/VHeader.vue";
+import VFooter from "@/components/VFooter.vue";
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
@@ -68,7 +69,7 @@ export default {
     };
   },
   components: {
-    // VHeader,
+    VHeader,
     VFooter,
     Avatar,
     SideNav,

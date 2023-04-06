@@ -1,5 +1,6 @@
 <template>
   <div>
+    <VHeader></VHeader>
     <main class="travel_game_wrapper">
       <div class="container travel_game_container">
         <div class="travel_game_comment main_test">
@@ -154,17 +155,19 @@
       </div>
     </main>
   </div>
+  <VFooter></VFooter>
 </template>
 
 //
 <script>
-// import ChatBot from "@/components/ChatBot.vue";
+import VHeader from "@/components/VHeader.vue";
+import VFooter from "../components/VFooter.vue";
 
 export default {
   name: "TravelGame",
   components: {
-    // ChatBot,
-    // DropDown,
+    VHeader,
+    VFooter,
   },
   data() {
     return {
@@ -172,7 +175,7 @@ export default {
         {
           id: 1,
           name: "王一",
-          img: "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          img: "https://images.unsplash.com/photo-1567784177951-6fa58317e16b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         },
         {
           id: 2,
@@ -182,7 +185,7 @@ export default {
         {
           id: 3,
           name: "王三",
-          img: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+          img: "https://images.unsplash.com/photo-1583864697784-a0efc8379f70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         },
         {
           id: 4,
@@ -213,6 +216,12 @@ export default {
     },
     // 第一輪
     firstRound($event) {
+      const imgs = document.querySelectorAll("#pick1 img");
+      imgs.forEach((img) => {
+        if (img.dataset.img !== $event.target.dataset.img) {
+          img.classList.add("blur");
+        }
+      });
       this.firstRoundPick = parseInt($event.target.dataset.img);
       $event.target.classList.add("border_picked");
       console.log(this.firstRoundPick);
@@ -220,6 +229,12 @@ export default {
     },
     // 第二輪
     secondRound($event) {
+      const imgs = document.querySelectorAll("#pick2 img");
+      imgs.forEach((img) => {
+        if (img.dataset.img !== $event.target.dataset.img) {
+          img.classList.add("blur");
+        }
+      });
       this.secondRoundPick = parseInt($event.target.dataset.img);
       $event.target.classList.add("border_picked");
       console.log(this.secondRoundPick);
@@ -238,7 +253,7 @@ export default {
         this.people[this.finalPick].img
       }" alt="" data-img="${
         this.finalPick
-      }" /><p class="final">恭喜您選出專屬您的理想顧問!</p>`;
+      }" /><div class='final-picked'><p class="final">恭喜您選出專屬您的理想顧問!</p><router-link to="travelgallery">查看更多</router-link></div>`;
     },
   },
   mounted() {
@@ -251,6 +266,10 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.blur {
+  opacity: 0.5;
+  pointer-events: none;
+}
 </style>
 
 <!-- <style lang="css">

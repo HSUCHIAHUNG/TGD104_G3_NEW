@@ -1,5 +1,6 @@
 <template>
   <div>
+    <VHeader></VHeader>
     <div class="member_body">
       <div class="member_row container">
         <!-------------側邊navbar---------------->
@@ -27,7 +28,9 @@
                   <span>5年經驗登山嚮導</span>
                 </h3>
               </div>
-              <a class="btn_blue">查看顧問資料</a>
+              <router-link class="btn_blue" to="/travelgallery"
+                >查看顧問資料</router-link
+              >
             </div>
           </div>
           <!-- 訂單訊息 -->
@@ -55,8 +58,8 @@
 </template>
 
 <script>
-//  import VHeader from '@/components/VHeader.vue'
-import VFooter from '@/components/VFooter.vue'
+import VHeader from "@/components/VHeader.vue";
+import VFooter from "@/components/VFooter.vue";
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
@@ -68,7 +71,7 @@ export default {
     return {};
   },
   components: {
-    // VHeader,
+    VHeader,
     VFooter,
     Avatar,
     SideNav,
