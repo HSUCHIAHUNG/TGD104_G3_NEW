@@ -1,4 +1,5 @@
 <template>
+    <VHeader></VHeader>
 
     <CreditCard></CreditCard>
   
@@ -17,6 +18,7 @@
 
 <script>
 import CreditCard from "../components/CreditCard.vue";
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 
 export default {
@@ -27,6 +29,7 @@ export default {
   },
 
   components: {
+    VHeader,
     VFooter,
     CreditCard,
   },

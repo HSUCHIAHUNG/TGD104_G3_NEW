@@ -1,5 +1,6 @@
 <template>
 
+    <VHeader></VHeader>
     <!-- banner  -->
         <div class="travel_banner">
             <div class="container">
@@ -179,6 +180,7 @@
 </template>
 
 <script>
+    import VHeader from "@/components/VHeader.vue";
     import VFooter from "../components/VFooter.vue";
     import gsap from 'gsap'
     import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -225,6 +227,7 @@
             };
         },
         components: {
+            VHeader,
             VFooter,
             Swiper,
             SwiperSlide,

@@ -1,5 +1,5 @@
 <template>
-
+    <VHeader></VHeader>
 
     <div class="learning_checkout_list">
       <h2>選擇付款方式</h2>
@@ -35,6 +35,7 @@
 </template>
   
 <script>
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 
 export default {
@@ -45,6 +46,7 @@ export default {
       };
     },
     components: {
+      VHeader,
       VFooter,
     },
     methods:{
