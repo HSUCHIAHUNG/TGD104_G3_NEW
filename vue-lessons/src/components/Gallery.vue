@@ -99,11 +99,11 @@ export default {
     data() {
       return {
         images: [
-          {small: require('../assets/image/consultant01.png'), big: require('../assets/image/consultant01.png'), alt: "Image 1"},
-          {small: require('../assets/image/consultant02.png'), big: require('../assets/image/consultant02.png'), alt: "Image 2"},
-          {small: require('../assets/image/consultant03.png'), big: require('../assets/image/consultant03.png'), alt: "Image 3"},
+          {small: require('../assets/image/learning/student003.png'), big: require('../assets/image/learning/student003.png'), alt: "Image 1"},
+          {small: require('../assets/image/learning/student002.png'), big: require('../assets/image/learning/student002.png'), alt: "Image 2"},
+          {small: require('../assets/image/learning/student001.png'), big: require('../assets/image/learning/student001.png'), alt: "Image 3"},
         ],
-        mainImage: require('../assets/image/consultant01.png'),
+        mainImage: require('../assets/image/learning/student003.png'),
         mainImageAlt: "Image 1",
       };
     },

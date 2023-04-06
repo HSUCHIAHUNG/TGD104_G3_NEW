@@ -1,42 +1,45 @@
 <template>
+  <!-- <VHeader></VHeader> -->
  <div class="learningchooseflex">
   <div>
     <div class="learning_choose_wrapper">
-      <!-- 左邊 -->
+
       <div class="learning_choose_side">
-        <a href="/LearningOption"><div class="learning_question">我想學習的不在上面怎麼辦</div></a>
-        
+        <router-link to="/LearningOption"><div class="learning_question">我想學習的不在上面怎麼辦</div></router-link>
 
-        <router-link to="/LearningChoose/Music">
-          <div class="learning_items"><i class="fa-solid fa-music"></i> 陪你音樂</div>
-        </router-link>
-        <router-link to="/LearningChoose/Study">
-          <div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你伴讀</div>
-        </router-link>
-        <router-link to="/LearningChoose/Subject">
-          <div class="learning_items"><i class="fa-solid fa-school"></i> 陪你科目</div>
-        </router-link>
-        <router-link to="/LearningChoose/Draw">
-          <div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你繪畫</div>
-        </router-link>
-        <router-link to="/LearningChoose/Code">
-          <div class="learning_items"><i class="fa-solid fa-code"></i> 陪你程式</div>
-        </router-link>
-        <router-link to="/LearningChoose/Dance">
-          <div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你舞蹈</div>
-        </router-link>
-        
-        <!-- <a href=""><div class="learning_items"><i class="fa-solid fa-music"></i> 陪你-音樂</div></a>
-        <a href=""><div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你-伴讀</div></a>
-        <a href=""><div class="learning_items"><i class="fa-solid fa-school"></i> 陪你-科目</div></a>
-        <a href=""><div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你-繪畫</div></a>
-        <a href=""><div class="learning_items"><i class="fa-solid fa-code"></i> 陪你-程式</div></a>
-        <a href=""><div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你-舞蹈</div></a> -->
-        <!-- <router-view /> -->
+        <div class="choose_items_rwdbefore">
+          <router-link to="/LearningChoose/Music">
+            <div class="learning_items"><i class="fa-solid fa-music"></i> 陪你音樂</div>
+          </router-link>
+          <router-link to="/LearningChoose/Study">
+            <div class="learning_items"><i class="fa-solid fa-book-open"></i> 陪你伴讀</div>
+          </router-link>
+          <router-link to="/LearningChoose/Subject">
+            <div class="learning_items"><i class="fa-solid fa-school"></i> 陪你科目</div>
+          </router-link>
+          <router-link to="/LearningChoose/Draw">
+            <div class="learning_items"><i class="fa-solid fa-pencil"></i> 陪你繪畫</div>
+          </router-link>
+          <router-link to="/LearningChoose/Code">
+            <div class="learning_items"><i class="fa-solid fa-code"></i> 陪你程式</div>
+          </router-link>
+          <router-link to="/LearningChoose/Dance">
+            <div class="learning_items"><i class="fa-solid fa-child-reaching"></i> 陪你舞蹈</div>
+          </router-link>
+        </div>
+
+
+        <div  class="choose_items_rwdafter">
+          <select v-model="selectedOption">
+            <option class="ttt" disabled value="">請選擇一個項目</option>
+            <option class="ttt" v-for="item in items" :key="item.value" :value="item.value">{{ item.label }}</option>
+          </select>
+        </div>
+
       </div>
-      <!-- 左邊end -->
 
-        <router-view />
+
+      <router-view />
 
     </div>                
   </div>   
@@ -47,85 +50,23 @@
     
 <script>
   import VFooter from "../components/VFooter.vue";
+  import VHeader from "../components/VHeader.vue";
   export default {
     components: {
       VFooter,
+      VHeader
     },
     data() {
       return {
-      //   selectedProductId: null,
-      //   products: [ 
-      //     {
-      //       id: 1,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant01.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 2,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant02.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 3,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant03.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 4,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant01.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 5,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant02.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 6,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant03.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 7,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant01.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 8,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant02.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 9,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant03.png'),
-      //       liked: false
-      //     },
-      //     {
-      //       id: 10,
-      //       name: '裴小倪',
-      //       description: 'Calvin 托福頂尖菁英培訓 國高中升學救星',
-      //       image: require('../assets/image/consultant01.png'),
-      //       liked: false
-      //     },
-      //   ]
+        selectedOption: '',
+      items: [
+        { label: '陪你音樂', value: '/LearningChoose/Music' },
+        { label: '陪你伴讀', value: '/LearningChoose/Study' },
+        { label: '陪你科目', value: '/LearningChoose/Subject' },
+        { label: '陪你繪畫', value: '/LearningChoose/Draw' },
+        { label: '陪你程式', value: '/LearningChoose/Code' },
+        { label: '陪你舞蹈', value: '/LearningChoose/Dance' },
+      ]
       }
     },
     methods: {
@@ -135,10 +76,21 @@
       toggleLike(product) {
         product.liked = !product.liked
       }
+    },
+    watch: {
+    selectedOption(newValue) {
+      this.$router.push(newValue);
     }
+  }
   }
 </script>
 
 <style lang="scss">
   @import "../assets/tgd104-sass/new_style.scss";
+  .learning_choose_side{
+    &.router-link-exact-active {
+        color: #42b983;
+      }
+  }
+
 </style>

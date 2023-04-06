@@ -28,10 +28,10 @@
 }
 
 
-//   /* ----------螢幕小於970px時---------- */
+//   /* ----------螢幕小於1200px時---------- */
 @media screen and (max-width: 1200px) {
 
-    table {
+    .table_bottom {
         width: 100%;
         display: block;
         overflow-x: auto;

@@ -1,130 +1,131 @@
-/* ATM */
-// *{
-//     outline: 1px solid red;
+// /* ATM */
+// // *{
+// //     outline: 1px solid red;
+// // }
+// .atm_container{
+//     .atm{
+//         max-width: 500px;
+//         width: 90%;
+//         margin: 50px auto;
+//         border: 2px solid $dark_blue;
+//         border-radius: 15px;
+//         h1{
+//             font-size: $fs26;
+//             font-weight: 500;
+//             text-align: center;
+//             padding: 10px 0;
+//             border-bottom: 1px solid $light_blue;
+//         }
+//         .ttl_payment{
+//             display: flex;
+//             justify-content: space-between;
+//             padding: 10px 20px;
+//             border-bottom: 1px solid $light_blue;
+//             h2{
+//                 font-size: $fs20;
+//                 font-weight: 500;
+//             }
+//             p{
+//                 font-size: $fs20;
+//                 font-weight: 500;
+//                 color: rgb(222, 68, 21);;
+//             }
+//         }
+//         .payment_deadline{
+//             display: flex;
+//             justify-content: space-between;
+//             padding: 10px 20px;
+//             border-bottom: 1px solid $light_blue;
+//             h2{
+//                 font-size: $fs20;
+//                 font-weight: 500;
+//                 align-self: center;
+//             }
+//             .time{
+//                 text-align: right;
+//                 h3{
+//                     font-size: $fs20;
+//                     font-weight: 500;
+//                     color: rgb(222, 68, 21);
+//                 }
+//                 p{
+//                     font-size: $fs20;
+//                     font-weight: 500;
+//                 }
+//             }
+//         }
+//         .bank{
+//             padding: 0 20px;
+//             border-bottom: 1px solid $light_blue;
+//             img{
+//                 display: block;
+//                 width: 100%;
+//                 width: 150px;
+//             }
+//             .bank_account{
+//                 border-top: 1px solid $light_blue;
+//                 padding: 10px 0;                            
+//                 h4{
+//                     font-size: $fs20;
+//                     font-weight: 500;
+//                 }
+//                 p{
+//                     font-size: $fs20;
+//                     font-weight: 500;
+//                     color: rgb(222, 68, 21);
+//                 }
+//             }
+//             .bank_no{
+//                 border-top: 1px solid $light_blue; 
+//                 padding: 10px 0; 
+//                 h4{
+//                     font-size: $fs20;
+//                     font-weight: 500;
+//                 }
+//                 p{
+//                     font-size: $fs20;
+//                     font-weight: 500;
+//                     color: rgb(222, 68, 21);
+//                 }
+//             }
+//         }
+//         .directions{
+//             padding: 10px 20px;
+//             h5{
+//                 font-size: $fs20;
+//                 font-weight: 500;
+//                 padding-bottom: 20px;
+//             }
+//             .direction_1{
+//                 padding-bottom: 20px;
+//                 i{
+//                     display: inline;
+//                 }
+//                 p{
+//                     display: inline;
+//                     padding-left: 10px;
+//                 }
+//             }
+//             .direction_2{
+//                 padding-bottom: 20px;
+//                 i{
+//                     display: inline;
+//                 }
+//                 p{
+//                     display: inline;
+//                     padding-left: 10px;
+//                 }
+//             }
+//             .direction_3{
+//                 padding-bottom: 20px;
+//                 i{
+//                     display: inline;
+//                 }
+//                 p{
+//                     display: inline;
+//                     padding-left: 10px;
+//                 }
+//             }
+//         }
+//     }
 // }
-.atm_container{
-    .atm{
-        width: 500px;
-        margin: 50px auto;
-        border: 2px solid $dark_blue;
-        border-radius: 15px;
-        h1{
-            font-size: $fs26;
-            font-weight: 500;
-            text-align: center;
-            padding: 10px 0;
-            border-bottom: 1px solid $light_blue;
-        }
-        .ttl_payment{
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            border-bottom: 1px solid $light_blue;
-            h2{
-                font-size: $fs20;
-                font-weight: 500;
-            }
-            p{
-                font-size: $fs20;
-                font-weight: 500;
-                color: rgb(222, 68, 21);;
-            }
-        }
-        .payment_deadline{
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            border-bottom: 1px solid $light_blue;
-            h2{
-                font-size: $fs20;
-                font-weight: 500;
-                align-self: center;
-            }
-            .time{
-                text-align: right;
-                h3{
-                    font-size: $fs20;
-                    font-weight: 500;
-                    color: rgb(222, 68, 21);
-                }
-                p{
-                    font-size: $fs20;
-                    font-weight: 500;
-                }
-            }
-        }
-        .bank{
-            padding: 0 20px;
-            border-bottom: 1px solid $light_blue;
-            img{
-                display: block;
-                width: 100%;
-                width: 150px;
-            }
-            .bank_account{
-                border-top: 1px solid $light_blue;
-                padding: 10px 0;                            
-                h4{
-                    font-size: $fs20;
-                    font-weight: 500;
-                }
-                p{
-                    font-size: $fs20;
-                    font-weight: 500;
-                    color: rgb(222, 68, 21);
-                }
-            }
-            .bank_no{
-                border-top: 1px solid $light_blue; 
-                padding: 10px 0; 
-                h4{
-                    font-size: $fs20;
-                    font-weight: 500;
-                }
-                p{
-                    font-size: $fs20;
-                    font-weight: 500;
-                    color: rgb(222, 68, 21);
-                }
-            }
-        }
-        .directions{
-            padding: 10px 20px;
-            h5{
-                font-size: $fs20;
-                font-weight: 500;
-                padding-bottom: 20px;
-            }
-            .direction_1{
-                padding-bottom: 20px;
-                i{
-                    display: inline;
-                }
-                p{
-                    display: inline;
-                    padding-left: 10px;
-                }
-            }
-            .direction_2{
-                padding-bottom: 20px;
-                i{
-                    display: inline;
-                }
-                p{
-                    display: inline;
-                    padding-left: 10px;
-                }
-            }
-            .direction_3{
-                padding-bottom: 20px;
-                i{
-                    display: inline;
-                }
-                p{
-                    display: inline;
-                    padding-left: 10px;
-                }
-            }
-        }
-    }
-}
