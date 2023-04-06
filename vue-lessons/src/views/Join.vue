@@ -3,19 +3,86 @@
     <div class="join_benefit">
         <div class="container">
             <h1 class="animate__animated animate__rubberBand animate__delay-0.5s">歡迎<span>加入</span>陪你顧問團!</h1>
-            <div class="benefit_wrapper animate__animated animate__bounce animate__delay-0.5s">
-                <div class="learn_benefit">
-                    <h2>陪你<span>學習</span></h2>
-                    <h3>時間彈性 <i class="fa-regular fa-clock"></i></h3>
-                    <h3>累積教學經驗 <i class="fa-solid fa-chalkboard-user"></i></h3>
-                    <h3>拓展人脈 <i class="fa-solid fa-people-group"></i></h3>
+            <div class="benefit_wrapper">
+
+                <div class="benefit_img">
+                    <img src="../assets/image/join/join_benefit_person.png" alt="">
                 </div>
-                <div class="travel_benefit">
-                    <h2>陪你<span>旅行</span></h2>
-                    <h3>時間彈性 <i class="fa-regular fa-clock"></i></h3>
-                    <h3>邊賺邊玩 <i class="fa-solid fa-hand-holding-dollar"></i></h3>
-                    <h3>集結志同道合的朋友 <i class="fa-solid fa-people-arrows"></i></h3>
-                </div>
+
+                <swiper
+                :spaceBetween="30"
+                :slidesPerView="3"
+                
+                :autoplay="{
+                delay: 2500,
+                disableOnInteraction: false,
+                }"
+
+                
+                :breakpoints="{
+                '@0.00': {
+                    slidesPerView: 1,
+                    spaceBetween: 5,
+                },
+                '@0.75': {
+                    slidesPerView: 2,
+                    spaceBetween: 5,
+                },
+                '@1.2': {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                '@1.50': {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                }"
+            
+                :modules="modules"
+                class="mySwiper"
+                >
+
+                <swiper-slide class="autoplay">
+                    <div class="card">
+                        <div class="card_img">
+                            <img src="../assets/image/join/time.png" alt="">
+                        </div>
+                        <h2>時間彈性</h2>
+                        
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="autoplay">
+                    <div class="card">
+                        <img src="../assets/image/join/teach.png" alt="">
+                        <h2>累積教學經驗</h2>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="autoplay">
+                    <div class="card">
+                        <img src="../assets/image/join/connect.png" alt="">
+                        <h2>拓展人脈</h2>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="autoplay">
+                    <div class="card">
+                        <img src="../assets/image/join/money.png" alt="">
+                        <h2>邊賺邊玩</h2>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="autoplay">
+                    <div class="card">
+                        <img src="../assets/image/join/friends.png" alt="">
+                        <h2>集結志同道合的朋友</h2>
+                    </div>
+                </swiper-slide>
+
+
+                </swiper>
+
             </div>
         </div>
     </div>
@@ -26,8 +93,7 @@
 
            
         <div class="join_btn">
-            <!-- <button @click="content='learn'" :class="{ 'join_learn_select': content === 'learn', 'join_learn_unselect': content !== 'learn' }">學習</button>
-            <button @click="content='travel'" :class="{ 'join_travel_select': content === 'travel', 'join_travel_unselect': content !== 'travel' }">旅行</button> -->
+            
             <button 
             :class="{ active: currentTab === 'tab1' }"
             @click="
@@ -74,6 +140,9 @@ import LearnCondition from "../components/LearnCondition.vue";
 import TravelCondition from "../components/TravelCondition.vue";
 import VFooter from "../components/VFooter.vue";
 import 'animate.css';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Autoplay} from 'swiper';
 
 export default {
   name: "Join",
@@ -87,6 +156,13 @@ export default {
     LearnCondition,
     TravelCondition,
     VFooter,
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+        return {
+        modules: [Autoplay],
+        };
   },
 };
 </script>

@@ -148,40 +148,6 @@
 
                     </div>
 
-                    <!-- <div class="travel_comments">
-                        <div class="travel_comment">
-                            <h2>b**********1</h2>
-                            <p>常常想登山卻找不到朋友一起，能夠在這找到志同道合的登山旅伴而且又是相當有經驗的顧問，給你500顆星星! </p>
-                            <h3>2023-03-18 17:58</h3>
-                        </div>
-                        <div class="travel_consultant_wrapper">
-                            <img src="../assets/image/travel/consultant_c02.png" alt="">
-                            <div class="travel_consultant">
-                                <h4>徐小宏</h4>
-                                <i class="fa-solid fa-star"></i>
-                                <p>4.5 (128)</p>
-                                <h5>登山</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="travel_comments">
-                        <div class="travel_comment">
-                            <h2>c**********1</h2>
-                            <p>今天使用陪你找到潛水旅伴，我們跑去龍洞某個潛水點一起自由潛水，顧問好專業身材又保養的很好!讚讚~~~~</p>
-                            <h3>2023-03-28 21:00</h3>
-                        </div>
-                        <div class="travel_consultant_wrapper">
-                            <img src="../assets/image/travel/consultant_c08.png" alt="">
-                            <div class="travel_consultant">
-                                <h4>徐宏</h4>
-                                <i class="fa-solid fa-star"></i>
-                                <p>4.2 (100)</p>
-                                <h5>潛水</h5>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </section>
@@ -237,7 +203,7 @@
                         id: 'b**********1',
                         comments: '常常想登山卻找不到朋友一起，能夠在這找到志同道合的登山旅伴而且又是相當有經驗的顧問，給你500顆星星!',
                         time: '2023-03-18 17:58',
-                        url:require('../assets/image/travel/consultant_c08.png'),
+                        url:require('../assets/image/travel/consultant_c01.png'),
                         name: '徐小宏',
                         star: 4.3,
                         category: '登山',
@@ -246,7 +212,7 @@
                         id: 'c**********1',
                         comments: '今天使用陪你找到潛水旅伴，我們跑去龍洞某個潛水點一起自由潛水，顧問好專業身材又保養的很好!讚讚~~',
                         time: '2023-03-28 21:00',
-                        url:require('../assets/image/travel/consultant_c01.png'),
+                        url:require('../assets/image/travel/consultant_c08.png'),
                         name: '徐宏',
                         star: 4.2,
                         category: '潛水',

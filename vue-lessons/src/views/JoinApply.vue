@@ -132,14 +132,23 @@
         </div>
     </div>
 <!-- join_apply end -->
+
+    <VFooter></VFooter>
 </template>
 
 <script>
+import VFooter from "../components/VFooter.vue";
+
 export default {
   name: "JoinApply",
   data() {
     return {};
   },
+
+  components:{
+    VFooter,
+  },
+
   methods: {
     fileChange() {
     const file = this.$refs.fileInput.files[0]

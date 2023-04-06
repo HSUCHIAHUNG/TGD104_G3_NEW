@@ -13,15 +13,7 @@
             text-align: center;
             font-weight: 600;
             letter-spacing: 3px;
-            margin-bottom: 50px;
-            &:after{
-                content: '';
-                width: 150px;
-                display: block;
-                margin: -18px auto;
-                height: 15px;
-                background-color: $dark_blue;
-            }
+            margin-bottom: 20px;
         }
         img{
             display: block;
@@ -32,7 +24,7 @@
         }
         h2{
             font-size: $fs22;
-            font-weight: 500;
+            font-weight: 600;
             margin-left: 220px;
             display: inline-block;
             width: 170px;
