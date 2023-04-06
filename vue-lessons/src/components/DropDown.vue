@@ -7,19 +7,23 @@
       </div>
       <ul class="dropdown_menu">
         <li>
-          <a href="/member"> <i class="fa-solid fa-gear"></i>帳號設定</a>
-        </li>
-        <li>
-          <a href="/memberfav"><i class="fa-solid fa-heart"></i>收藏清單</a>
-        </li>
-        <li>
-          <a href="/memberbooking"
-            ><i class="fa-solid fa-calendar"></i>預約明細</a
+          <router-link to="/member">
+            <i class="fa-solid fa-gear"></i>帳號設定</router-link
           >
         </li>
         <li>
-          <a href="/memberhistory"
-            ><i class="fa-regular fa-clipboard"></i>歷史訂單</a
+          <router-link to="/memberfav"
+            ><i class="fa-solid fa-heart"></i>收藏清單</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/memberbooking"
+            ><i class="fa-solid fa-calendar"></i>預約明細</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/memberhistory"
+            ><i class="fa-regular fa-clipboard"></i>歷史訂單</router-link
           >
         </li>
       </ul>

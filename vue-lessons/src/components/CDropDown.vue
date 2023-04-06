@@ -7,21 +7,23 @@
       </div>
       <ul class="dropdown_menu">
         <li>
-          <a href="/consultant"> <i class="fa-solid fa-gear"></i>帳號設定</a>
-        </li>
-        <li>
-          <a href="/consultantinfo"
-            ><i class="fa-solid fa-heart"></i>顧問資訊</a
+          <router-link to="/consultant">
+            <i class="fa-solid fa-gear"></i>帳號設定</router-link
           >
         </li>
         <li>
-          <a href="/consultantbooking"
-            ><i class="fa-solid fa-calendar"></i>預約明細</a
+          <router-link to="/consultantinfo"
+            ><i class="fa-solid fa-heart"></i>顧問資訊</router-link
           >
         </li>
         <li>
-          <a href="/consultanthistory"
-            ><i class="fa-regular fa-clipboard"></i>歷史訂單</a
+          <router-link to="/consultantbooking"
+            ><i class="fa-solid fa-calendar"></i>預約明細</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/consultanthistory"
+            ><i class="fa-regular fa-clipboard"></i>歷史訂單</router-link
           >
         </li>
       </ul>

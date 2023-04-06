@@ -18,10 +18,10 @@
               <li>
                 <a
                   href="#"
-                  :class="{ active: currentTab === 'tab1' }"
+                  :class="{ active: currentTab === 'learning' }"
                   @click.prevent="
                     {
-                      currentTab = 'tab1';
+                      currentTab = 'learning';
                     }
                   "
                   >陪你學習</a
@@ -30,10 +30,10 @@
               <li>
                 <a
                   href="#"
-                  :class="{ active: currentTab === 'tab2' }"
+                  :class="{ active: currentTab === 'travel' }"
                   @click.prevent="
                     {
-                      currentTab = 'tab2';
+                      currentTab = 'travel';
                     }
                   "
                   >陪你旅行</a
@@ -41,7 +41,31 @@
               </li>
             </ul>
           </div>
-          <div class="main_fav_list"></div>
+          <!-- 下半部 收藏清單內容 -->
+          <div class="main_fav_list">
+            <ul class="fav_list_area">
+              <template
+                v-for="(consultant, index) in consultantInfo"
+                :key="index"
+              >
+                <li
+                  v-if="currentTab === consultant.category"
+                  class="fav_consultant_card"
+                >
+                  <router-link to="/TravelGallery" target="_blank"
+                    ><img :src="consultant.url" alt="consultant image"
+                  /></router-link>
+                  <h1>{{ consultant.name }}</h1>
+                  <h2>{{ consultant.experience }}</h2>
+                  <i
+                    class="fa-solid fa-heart"
+                    @click="removeFav(consultant.id)"
+                  ></i>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <!-- 下半部 收藏清單內容 end-->
         </div>
       </div>
     </div>
@@ -60,7 +84,7 @@ export default {
   name: "MemberFav",
   data() {
     return {
-      currentTab: "tab1",
+      currentTab: "learning",
       defaultOption: "收藏清單",
       consultantInfo: [
         {
@@ -69,6 +93,7 @@ export default {
           name: "裴大尼 ",
           experience: "5年經驗登山嚮導",
           gender: "男",
+          category: "travel",
           favorites: false,
         },
         {
@@ -77,6 +102,7 @@ export default {
           name: "裴中尼 ",
           experience: "台灣百岳征服者",
           gender: "男",
+          category: "travel",
           favorites: false,
         },
         {
@@ -85,6 +111,7 @@ export default {
           name: "裴小尼 ",
           experience: "3年經驗登山嚮導 ",
           gender: "男",
+          category: "travel",
           favorites: false,
         },
         {
@@ -93,6 +120,7 @@ export default {
           name: "裴上尼",
           experience: "4年經驗登山嚮導",
           gender: "男",
+          category: "travel",
           favorites: false,
         },
         {
@@ -101,6 +129,7 @@ export default {
           name: "裴下尼",
           experience: "1年經驗登山嚮導",
           gender: "男",
+          category: "learning",
           favorites: false,
         },
         {
@@ -109,6 +138,7 @@ export default {
           name: "裴左尼",
           experience: "5年經驗登山嚮導",
           gender: "男",
+          category: "learning",
           favorites: false,
         },
         {
@@ -117,6 +147,7 @@ export default {
           name: "裴右尼",
           experience: "5年經驗登山嚮導",
           gender: "男",
+          category: "learning",
           favorites: false,
         },
         {
@@ -125,6 +156,7 @@ export default {
           name: "裴尼",
           experience: "5年經驗登山嚮導",
           gender: "男",
+          category: "learning",
           favorites: false,
         },
         {
@@ -133,6 +165,70 @@ export default {
           name: "倪大裴",
           experience: "1年經驗登山嚮導",
           gender: "女",
+          category: "learning",
+          favorites: false,
+        },
+        {
+          id: "C10",
+          url: require("../assets/image/travel/consultant_c10.png"),
+          name: "倪中裴",
+          experience: "2年經驗登山嚮導",
+          gender: "女",
+          category: "learning",
+          favorites: false,
+        },
+        {
+          id: "C11",
+          url: require("../assets/image/travel/consultant_c11.png"),
+          name: "倪小裴",
+          experience: "3年經驗登山嚮導",
+          gender: "女",
+          category: "learning",
+          favorites: false,
+        },
+        {
+          id: "C12",
+          url: require("../assets/image/travel/consultant_c12.png"),
+          name: "倪上裴",
+          experience: "3年經驗登山嚮導",
+          gender: "女",
+          category: "learning",
+          favorites: false,
+        },
+        {
+          id: "C13",
+          url: require("../assets/image/travel/consultant_c13.png"),
+          name: "倪下裴",
+          experience: "2年經驗登山嚮導",
+          gender: "女",
+          category: "learning",
+          favorites: false,
+        },
+        {
+          id: "C14",
+          url: require("../assets/image/travel/consultant_c14.png"),
+          name: "倪左裴",
+          experience: "1年經驗登山嚮導",
+          gender: "女",
+          category: "learning",
+          favorites: false,
+        },
+        {
+          id: "C15",
+          url: require("../assets/image/travel/consultant_c15.png"),
+          name: "倪右裴",
+          experience: "1年經驗登山嚮導",
+          gender: "女",
+          category: "travel",
+          favorites: false,
+        },
+        {
+          id: "C16",
+          url: require("../assets/image/travel/consultant_c16.png"),
+          name: "倪裴",
+          experience: "1年經驗登山嚮導",
+          gender: "女",
+          category: "travel",
           favorites: false,
         },
       ],
@@ -145,9 +241,93 @@ export default {
     DropDown,
     VHeader,
   },
+  methods: {
+    removeFav(id) {
+      this.consultantInfo.forEach((item, index) => {
+        if (item.id === id) {
+          this.consultantInfo.splice(index, 1);
+        }
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+
+.fav_list_area {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  justify-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .fav_list_area {
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .fav_list_area {
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.fav_consultant_card {
+  max-width: 280px;
+  border: 2px solid #79cbd4;
+  background-color: #dcecee;
+  padding: 20px 40px 40px 40px;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin: 10px;
+  position: relative;
+  img {
+    display: block;
+    width: 185px;
+    height: 185px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .fa-heart {
+    font-size: 22px;
+    cursor: pointer;
+    color: $dark_blue;
+    transition: all 0.3s ease;
+    margin-right: 22px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+}
+@media screen and (max-width: 720px) {
+  .fav_consultant_card {
+    padding: 20px 20px 40px 20px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .fav_consultant_card {
+    padding: 20px 40px 40px 40px;
+  }
+}
 </style>
