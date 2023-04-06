@@ -197,6 +197,11 @@ const routes = [
     component: () => import("../views/SelTravelConsultant.vue"),
   },
   {
+    path: "/travelgallery",
+    name: "travelgallery",
+    component: () => import("../views/TravelGallery.vue"),
+  },
+  {
     path: "/travelorderconfirmation",
     name: "travelorderconfirmation",
     component: () => import("../views/TravelOrderConfirmation.vue"),
@@ -210,6 +215,21 @@ const routes = [
     path: "/travelordersuccess",
     name: "travelordersuccess",
     component: () => import("../views/TravelOrderSuccess.vue"),
+  },
+  {
+    path: "/travelcreditcard",
+    name: "travelcreditcard",
+    component: () => import("../views/TravelCreditCard.vue"),
+  },
+  {
+    path: "/travelatm",
+    name: "travelatm",
+    component: () => import("../views/TravelATM.vue"),
+  },
+  {
+    path: "/travelcalendar",
+    name: "travelcalendar",
+    component: () => import("../views/TravelCalendar.vue"),
   },
   {
     path: "/travelgame",

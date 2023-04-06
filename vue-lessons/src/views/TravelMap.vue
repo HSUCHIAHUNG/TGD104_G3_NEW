@@ -17,8 +17,10 @@
                     <label for="east" class="east" :class="{ 'selected': selected === '東部' }"></label>
                 </div>
 
-                <a href="/Travel"><button class="travel_map_return outline_btn_orange">回上一頁</button></a>
-                <a href="/SelTravelConsultant"><button class="travel_map_next btn_orange">下一步</button></a>
+                <!-- <a href="/Travel"><button class="travel_map_return outline_btn_orange">回上一頁</button></a> -->
+                <router-link to="/Travel"><button class="travel_map_return outline_btn_orange">回上一頁</button></router-link>
+                <!-- <a href="/SelTravelConsultant"><button class="travel_map_next btn_orange">下一步</button></a> -->
+                <router-link to="/SelTravelConsultant"><button class="travel_map_next btn_orange">下一步</button></router-link>
 
                 <transition name="fade">
                     <div class="selected_hint" v-show="showHint">{{ selected }} 已選擇</div>

@@ -14,9 +14,11 @@
     "core-js": "^3.8.3",
     "gsap": "^3.11.5",
     "swiper": "^9.1.1",
+    "v-calendar": "^3.0.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vue-typed-js": "^0.1.2"
+    "vue-typed-js": "^0.1.2",
+    "vuetify": "^3.1.13"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",

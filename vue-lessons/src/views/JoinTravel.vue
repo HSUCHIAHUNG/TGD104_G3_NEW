@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <h1>簡短的介紹一下自己吧(例如：旅行相關經歷簡述)(100字以內)</h1>
+                <h1>簡短的介紹一下自己吧(例如：旅行相關經歷簡述)(50字以內)</h1>
                 
                 <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
 
@@ -78,15 +78,20 @@
         </div>
 
         <div class="join_travel_btn">
-            <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a>
-            <a href="/JoinOk"><button class="btn_blue">送出</button></a>
+            <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
+            <router-link to="/JoinApply"><button class="outline_btn_blue">回上一步</button></router-link>
+            <!-- <a href="/JoinOk"><button class="btn_blue">送出</button></a> -->
+            <router-link to="/JoinOk"><button class="btn_blue">送出</button></router-link>
         </div>
 
     </div>
 <!-- join_travel end -->
+
+    <VFooter></VFooter>
 </template>
 
 <script>
+import VFooter from "../components/VFooter.vue";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default {
@@ -101,8 +106,9 @@ export default {
             }
         };
     },
-    component: {
+    components:{
         ClassicEditor,
+        VFooter,
     },
 
  
