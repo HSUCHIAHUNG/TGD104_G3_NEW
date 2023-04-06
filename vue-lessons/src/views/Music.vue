@@ -114,9 +114,11 @@
       
   <script>
     // import VFooter from "../components/VFooter.vue";
+    import VHeader from "../components/VHeader.vue";
     export default {
       components: {
         // VFooter,
+        VHeader
       },
       data() {
         return {

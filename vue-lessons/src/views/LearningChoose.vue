@@ -1,6 +1,9 @@
+
 <template>
-  <!-- <VHeader></VHeader> -->
+  
+
  <div class="learningchooseflex">
+  <!-- <VHeader></VHeader> -->
   <div>
     <div class="learning_choose_wrapper">
 
@@ -87,10 +90,5 @@
 
 <style lang="scss">
   @import "../assets/tgd104-sass/new_style.scss";
-  .learning_choose_side{
-    &.router-link-exact-active {
-        color: #42b983;
-      }
-  }
 
 </style>

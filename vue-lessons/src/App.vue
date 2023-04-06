@@ -1,6 +1,6 @@
 <template>
 
-  <router-view />
+  
   <!-- <VFooter></VFooter> -->
 
 
@@ -12,7 +12,7 @@
   <!-- 跳至最上方的按鈕end -->
 
 
-
+  <router-view />
 
 </template>
 
