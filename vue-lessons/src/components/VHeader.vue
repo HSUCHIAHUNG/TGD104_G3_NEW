@@ -242,13 +242,11 @@
       <div class="center_nav_logo"></div>
 
       <button class="btn_yellow" @click.prevent="close_nav">
-        <router-link to="/member" class="center_content_btn"
-          >會員中心</router-link
-        >
+        <router-link to="/main">首頁</router-link>
       </button>
-    
+
       <button class="btn_yellow" @click.prevent="close_nav">
-        <router-link to="/consultant">顧問中心</router-link>
+        <router-link to="/Respect">關於我們</router-link>
       </button>
 
       <!-- <button class="btn_yellow" @click.prevent="close_nav">
@@ -264,15 +262,17 @@
       </button>
 
       <button class="btn_yellow" @click.prevent="close_nav">
-        <router-link to="/main">首頁</router-link>
-      </button>
-
-      <button class="btn_yellow" @click.prevent="close_nav">
-        <router-link to="/Respect">關於我們</router-link>
-      </button>
-
-      <button class="btn_yellow" @click.prevent="close_nav">
         <router-link to="/join">加入陪你</router-link>
+      </button>
+
+      <button class="btn_yellow" @click.prevent="close_nav">
+        <router-link to="/member" class="center_content_btn"
+          >會員中心</router-link
+        >
+      </button>
+    
+      <button class="btn_yellow" @click.prevent="close_nav">
+        <router-link to="/consultant">顧問中心</router-link>
       </button>
 
       <div class="center_nav_icon">
