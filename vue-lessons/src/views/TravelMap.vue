@@ -1,5 +1,5 @@
 <template>
-
+    <VHeader></VHeader>
 
     <main class="travel_map_wrapper">
         <div class="container">
@@ -36,6 +36,7 @@
 
 <script>
 import 'animate.css';
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 
 export default {
@@ -55,6 +56,7 @@ export default {
     },
   },
   components: {
+      VHeader,
       VFooter,
   },
 

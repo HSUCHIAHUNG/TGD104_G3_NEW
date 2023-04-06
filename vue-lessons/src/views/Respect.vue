@@ -45,47 +45,51 @@
             </h1>
           </div>
       </div>
-    </section>
-    <!-- story3 end -->
+      <div class="about_banner_right"></div>
+  </section>
+  <!-- banner end -->
 
-    <!-- story4 start -->
-    <section class="about_story4">
-      <div class="about_story4_container container">
-          <div class="about_story4">
-            <h1 class="content_h1">
-              而<span class="content_span">陪你</span>這個網站就此<span class="content_span">誕生</span> !
-            </h1>
-            <h1 class="content_h1">
-              提供陪你回學習、旅遊等服務，希望可以幫助所有孤單需要求助的人，提供專業的顧問服務給予適時的指引，把你的問題都交給陪你吧！
-            </h1>
-          </div>
-          <div class="about_story4_left_img"></div>
+  <!-- story4 start -->
+  <section class="about_story4">
+    <div class="about_story4_container container">
+      <div class="about_story4">
+        <h1 class="content_h1">
+          而<span class="content_span">陪你</span>這個網站就此<span
+            class="content_span"
+            >誕生</span
+          >
+          !
+        </h1>
+        <h1 class="content_h1">
+          提供陪你回學習、旅遊等服務，希望可以幫助所有孤單需要求助的人，提供專業的顧問服務給予適時的指引，把你的問題都交給陪你吧！
+        </h1>
       </div>
-    </section>
-    <!-- story4 end -->
-    <VFooter></VFooter>
+      <div class="about_story4_left_img"></div>
+    </div>
+  </section>
+  <!-- story4 end -->
+  <VFooter></VFooter>
 </template>
 
 <script>
 import VHeader from "@/components/VHeader.vue";
-import VFooter from '@/components/VFooter.vue';
-import Typed from 'typed.js';
+import VFooter from "@/components/VFooter.vue";
+import Typed from "typed.js";
 export default {
   name: "Respect",
-    components: {
-      VHeader,
-      VFooter,
-    },
+  components: {
+    VHeader,
+    VFooter,
+  },
   data() {
     return {};
   },
-  
+
   methods: {
     // handleScroll() {
     //   const targetElement = this.$refs.target; // 取得參考名稱為target的DOM元素
     //   const rect = targetElement.getBoundingClientRect(); // 取得物件位置資訊
     //   const elementTop = rect.top;
-
     //   if (elementTop <= window.innerHeight) {
     //     // 當物件頂端位置小於等於視窗高度時，表示已觸碰到頂端
     //     console.log(elementTop);
@@ -121,11 +125,9 @@ export default {
     // new Typed('.typing', options);
     // new Typed('.test_text', testtx);
   },
-  
 };
 </script>
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
-
 </style>

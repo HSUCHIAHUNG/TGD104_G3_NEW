@@ -1,5 +1,7 @@
 <template>
-<!-- join_learn -->
+
+    <VHeader></VHeader>
+    <!-- join_learn -->
     <div class="join_learn">
         <div class="container">
             <h1>表格申請</h1>
@@ -127,12 +129,13 @@
         </div>
 
     </div>
-<!-- join_learn end -->
+    <!-- join_learn end -->
 
     <VFooter></VFooter>
 </template>
 
 <script>
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
@@ -151,6 +154,7 @@ export default {
     },
     components:{
         ClassicEditor,
+        VHeader,
         VFooter,
     },
 

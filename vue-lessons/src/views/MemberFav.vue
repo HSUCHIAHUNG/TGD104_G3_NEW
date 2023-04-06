@@ -40,6 +40,7 @@
               </li>
             </ul>
           </div>
+          <div class="main_fav_list"></div>
         </div>
       </div>
     </div>
@@ -49,7 +50,7 @@
 
 <script>
 //  import VHeader from '@/components/VHeader.vue'
-import VFooter from '@/components/VFooter.vue'
+import VFooter from "@/components/VFooter.vue";
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
@@ -60,6 +61,80 @@ export default {
     return {
       currentTab: "tab1",
       defaultOption: "收藏清單",
+      consultantInfo: [
+        {
+          id: "C01",
+          url: require("../assets/image/travel/consultant_c01.png"),
+          name: "裴大尼 ",
+          experience: "5年經驗登山嚮導",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C02",
+          url: require("../assets/image/travel/consultant_c02.png"),
+          name: "裴中尼 ",
+          experience: "台灣百岳征服者",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C03",
+          url: require("../assets/image/travel/consultant_c03.png"),
+          name: "裴小尼 ",
+          experience: "3年經驗登山嚮導 ",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C04",
+          url: require("../assets/image/travel/consultant_c04.png"),
+          name: "裴上尼",
+          experience: "4年經驗登山嚮導",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C05",
+          url: require("../assets/image/travel/consultant_c05.png"),
+          name: "裴下尼",
+          experience: "1年經驗登山嚮導",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C06",
+          url: require("../assets/image/travel/consultant_c06.png"),
+          name: "裴左尼",
+          experience: "5年經驗登山嚮導",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C07",
+          url: require("../assets/image/travel/consultant_c07.png"),
+          name: "裴右尼",
+          experience: "5年經驗登山嚮導",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C08",
+          url: require("../assets/image/travel/consultant_c08.png"),
+          name: "裴尼",
+          experience: "5年經驗登山嚮導",
+          gender: "男",
+          favorites: false,
+        },
+        {
+          id: "C09",
+          url: require("../assets/image/travel/consultant_c09.png"),
+          name: "倪大裴",
+          experience: "1年經驗登山嚮導",
+          gender: "女",
+          favorites: false,
+        },
+      ],
     };
   },
   components: {

@@ -1,5 +1,5 @@
 <template>
-
+    <VHeader></VHeader>
 
 
     <div class="travel_order">
@@ -22,6 +22,7 @@
 <script>
 
 import OrderConfirmation from "../components/OrderConfirmation.vue";
+import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 
 export default {
@@ -31,6 +32,7 @@ export default {
     },
     components: {
     OrderConfirmation,
+    VHeader,
     VFooter,
     },
 };
