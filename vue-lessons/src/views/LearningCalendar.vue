@@ -62,28 +62,28 @@ export default {
   
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
-    .calendar_color{
-        font-weight: 600;
-        line-height: 32px;
-        margin-bottom: 15px;
-    }
+    // .calendar_color{
+    //     font-weight: 600;
+    //     line-height: 32px;
+    //     margin-bottom: 15px;
+    // }
 
-    .calendar_color_1,
-    .calendar_color_2,
-    .calendar_color_3{
-        font-size: 32px;
-    }
+    // .calendar_color_1,
+    // .calendar_color_2,
+    // .calendar_color_3{
+    //     font-size: 32px;
+    // }
 
-    .calendar_color_1{
-        color: #aeabab;
-    }
+    // .calendar_color_1{
+    //     color: #aeabab;
+    // }
 
-    .calendar_color_2{
-        color: #79cbd4;
-    }
+    // .calendar_color_2{
+    //     color: #79cbd4;
+    // }
 
-    .calendar_color_3{
-        color: #ebc43a;
-    }
+    // .calendar_color_3{
+    //     color: #ebc43a;
+    // }
 
 </style>
