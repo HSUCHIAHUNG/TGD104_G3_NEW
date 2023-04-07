@@ -5,7 +5,7 @@
       訂單明細
       <OrderConfirmation></OrderConfirmation>
       <h2 class="button_choose">
-        <router-link to="/LearningChoose"><button class="outline_btn_orange">回上一頁</button></router-link>
+        <router-link to="/LearningCalendar"><button class="outline_btn_orange">回上一頁</button></router-link>
         <router-link to="/LearningCheckout"><button class="btn_orange">選擇付款方式</button></router-link>
       </h2>
     </div>

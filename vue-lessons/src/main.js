@@ -10,3 +10,6 @@ import 'vuetify/dist/vuetify.min.css'
 
 
 createApp(App).use(router).use( CKEditor ).use( VCalendar ).use( Vuetify ).use( VueTypedJs ).mount('#app')
+router.afterEach((to, from, next) => {
+	window.scrollTo(0, 0);
+});

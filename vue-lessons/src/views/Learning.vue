@@ -114,7 +114,7 @@
                   <h4>
                       <img src="../assets/image/learning/book.png" alt="">
                       <div class="content_p">陪你讀英文</div>
-                      <div>熱門顧問: 陳品魚</div>
+                      <div class="hot_name">熱門顧問: 陳品魚</div>
                   </h4>
               </div>
           </swiper-slide>
@@ -123,7 +123,7 @@
                   <h4>
                       <img src="../assets/image/learning/calculator.png" alt="">
                       <div class="content_p">陪你微積分</div>
-                      <div>熱門顧問: 陳娟配</div>
+                      <div class="hot_name">熱門顧問: 陳娟配</div>
                   </h4>
               </div>
           </swiper-slide>
@@ -132,7 +132,7 @@
                   <h4>
                       <img src="../assets/image/learning/code.png" alt="">
                       <div class="content_p">陪你寫Java</div>
-                      <div>熱門顧問: 徐嘉紅</div>
+                      <div class="hot_name">熱門顧問: 徐嘉紅</div>
                   </h4>
               </div>
           </swiper-slide>
@@ -141,7 +141,7 @@
                   <h4>
                       <img src="../assets/image/learning/color-palette.png" alt="">
                       <div class="content_p">陪你繪畫</div>
-                      <div>熱門顧問: 孫一敏</div>
+                      <div class="hot_name">熱門顧問: 孫一敏</div>
                   </h4>
               </div>
           </swiper-slide>
@@ -150,7 +150,7 @@
                   <h4>
                       <img src="../assets/image/learning/guitar.png" alt="">
                       <div class="content_p">陪你烏克麗麗</div>
-                      <div>熱門顧問: 裴大尼</div>
+                      <div class="hot_name">熱門顧問: 裴大尼</div>
                   </h4>
               </div>
           </swiper-slide>
@@ -159,7 +159,7 @@
                   <h4>
                       <img src="../assets/image/learning/study.png" alt="">
                       <div class="content_p">陪你讀書</div>
-                      <div>熱門顧問: 倪小培</div>
+                      <div class="hot_name">熱門顧問: 倪小培</div>
                   </h4>
               </div>
           </swiper-slide>

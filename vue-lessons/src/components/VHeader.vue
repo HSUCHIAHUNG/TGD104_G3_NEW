@@ -285,7 +285,7 @@
     </nav>
   </div>
 
-  <router-view />
+  <!-- <router-view /> -->
   <!-- <VFooter></VFooter> -->
 </template>
 

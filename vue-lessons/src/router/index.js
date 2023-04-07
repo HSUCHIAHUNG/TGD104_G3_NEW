@@ -18,10 +18,15 @@ const routes = [
   //     import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   // },
 
+  // {
+  //   path: "/test_yu",
+  //   name: "test_yu",
+  //   component: () => import("../views/test_yu.vue"),
+  // },
   {
-    path: "/test_yu",
-    name: "test_yu",
-    component: () => import("../views/test_yu.vue"),
+    path: "/LearningCalendar",
+    name: "LearningCalendar",
+    component: () => import("../views/LearningCalendar.vue"),
   },
   {
     path: "/LearningATM",
