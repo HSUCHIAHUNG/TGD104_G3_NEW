@@ -4,7 +4,7 @@
     <section class="about_banner">
         <div class="about_banner_container container">
             <div class="about_banner_left">
-                <h1 class="content_h1">陪你的故事緣起於,<span class="content_span">日本</span>這要從一個退休的大叔故事 ,開始說起... </h1>
+                <h1 class="content_h1 typing1"><span class="content_span"></span></h1>
             </div>
             <div class="about_banner_right"></div>
         </div>
@@ -16,7 +16,7 @@
         <div class="about_story1_container container">
             <div class="about_story1_left"></div>
             <div class="about_story1_right">
-                <h1 class="content_h1 typing">有一天<span class="content_span">大叔</span>走在人來人往的街道上偶然聽見<span class="content_span">女大學生</span>談話說道「大叔好噁心」! </h1>
+                <h1 class="content_h1 typing2"><span class="content_span"></span><span class="content_span"></span></h1>
                 <div class="about_story1_right_img"></div>
             </div>
         </div>
@@ -27,7 +27,7 @@
     <section class="about_story2">
         <div class="about_story2_container container">
             <div class="about_story2_left">
-                <h1 class="content_h1">身為一個擁有豐富閱歷經驗的大叔想做些事情來重拾社會對大叔的正面形象決定，<span class="content_span">出租自己</span>以展現大叔被遺忘的魅力 。</h1>
+                <h1 class="content_h1 typing3"><span class="content_span"></span></h1>
                 <div class="about_story2_left_img"></div>
             </div>
             <div class="about_story2_right"></div>
@@ -40,8 +40,8 @@
       <div class="about_story3_container container">
           <div class="about_story3_left_img"></div>
           <div class="about_story3_right">
-            <h1 class="content_h1">
-              而陪你這個網站也以此概念延伸,認為<span class="content_span">出租大叔</span>是出租自己閱歷經驗，而人生中也有許多時刻會需要像出租大叔這樣的的<span class="content_span">人生導師</span>，給予適時的指引與幫助 。
+            <h1 class="content_h1 typing4">
+              <span class="content_span"></span><span class="content_span"></span>
             </h1>
           </div>
       </div>
@@ -54,12 +54,12 @@
     <div class="about_story4_container container">
       <div class="about_story4">
         <h1 class="content_h1">
-          而<span class="content_span">陪你</span>這個網站就此<span
-            class="content_span"
-            >誕生</span>!
+          而
+          <span class="content_span">陪你</span>
+          這個網站就此誕生!
         </h1>
         <h1 class="content_h1">
-          提供陪你回學習、旅遊等服務，希望可以幫助所有孤單需要求助的人，提供專業的顧問服務給予適時的指引，把你的問題都交給陪你吧！
+          提供陪你學習、旅遊等服務，希望可以幫助所有孤單需要求助的人，提供專業的顧問服務給予適時的指引，把你的問題都交給陪你吧！
         </h1>
       </div>
       <div class="about_story4_left_img"></div>
@@ -81,49 +81,71 @@ export default {
     VHeader,
     VFooter,
   },
+
   data() {
     return {};
   },
 
   methods: {
-    handleScroll() {
-      const targetElement = this.$refs.target; // 取得參考名稱為target的DOM元素
-      const rect = targetElement.getBoundingClientRect(); // 取得物件位置資訊
-      const elementTop = rect.top;
-      if (elementTop <= window.innerHeight) {
-        // 當物件頂端位置小於等於視窗高度時，表示已觸碰到頂端
-        console.log(elementTop);
-      }
-    },
-    handleResize() {
-      this.handleScroll(); // 視窗大小改變時重新計算目標物件位置資訊
-    }
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll); // 移除滾動事件監聽
-    window.removeEventListener('resize', this.handleResize); // 移除視窗縮放事件監聽
+   
   },
   
-   mounted() {
-    window.addEventListener('scroll', this.handleScroll); // 監聽滾動事件
-    window.addEventListener('resize', this.handleResize); // 監聽視窗縮放事件
-    
-    const options = {
+  mounted() {
+    const options1 = {
       strings: ['陪你的故事緣起於日本,這要從一個退休大叔的,故事開始說起...'],
       typeSpeed: 100,
       showCursor : false,
-      loop : true
+      loop : false,
+      // startDelay : 1000,
     };
 
-    const testtx = {
-      strings: ['陪你的故事緣起於日本,這要從一個退休大叔的,故事開始說起...'],
+    const options2 = {
+      strings: ['有一天大叔走在人來人往的街道上偶然聽見女大學生談話說道「大叔好噁心」!'],
       typeSpeed: 100,
       showCursor : false,
-      loop : true
+      loop : false,
+      startDelay : 5000,
+
     };
 
-    new Typed('.typing', options);
-    new Typed('.test_text', testtx);
+    const options3 = {
+      strings: ['身為一個擁有豐富閱歷經驗的大叔想做些事情來重拾社會對大叔的正面形象決定，出租自己以展現大叔被遺忘的魅力 。'],
+      typeSpeed: 100,
+      showCursor : false,
+      loop : false,
+      startDelay : 10000,
+    };
+
+    const options4 = {
+      strings: ['而陪你這個網站也以此概念延伸,認為出租大叔是出租自己閱歷經驗，而人生中也有許多時刻會需要像出租大叔這樣的人生導師，給予適時的指引與幫助 。'],
+      typeSpeed: 100,
+      showCursor : false,
+      loop : false,
+      startDelay : 18000,
+    };
+
+    const options5 = {
+      strings: ['而陪你這個網站就此誕生!'],
+      typeSpeed: 100,
+      showCursor : false,
+      loop : false,
+      startDelay : 25000,
+    };
+
+    const options6 = {
+      strings: ['提供陪你學習、旅遊等服務，希望可以幫助所有孤單需要求助的人，提供專業的顧問服務給予適時的指引，把你的問題都交給陪你吧！'],
+      typeSpeed: 100,
+      showCursor : false,
+      loop : false,
+      startDelay : 28000,
+    };
+   
+    new Typed('.typing1', options1);
+    new Typed('.typing2', options2);
+    new Typed('.typing3', options3);
+    new Typed('.typing4', options4);
+    new Typed('.typing5', options5);
+    new Typed('.typing6', options6);
   },
 };
 </script>
