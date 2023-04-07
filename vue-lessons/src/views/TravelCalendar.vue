@@ -5,6 +5,7 @@
     <div class="datePicker">
 
         <h1>請選擇日期</h1>
+        <div class="calendar_color"><span class="calendar_color_1">●</span><span>不可預約 </span><span class="calendar_color_2">●</span><span>可預約 </span><span class="calendar_color_3">●</span><span>已預約</span></div>
 
         <VDatePicker
             v-model="date"
@@ -33,7 +34,7 @@ export default {
     name: "TravelCalendar",
     data() {
     return {
-        disabledDates: [new Date(), '2023-04-01', '2023-04-02', '2023-04-03', '2023-04-04', '2023-04-05', '2023-04-07', '2023-04-08', '2023-04-09', '2023-04-10', '2023-04-11', '2023-04-12', '2023-04-17', '2023-04-18', '2023-04-27', '2023-04-28'],
+        disabledDates: [new Date(), '2023-04-01', '2023-04-02', '2023-04-03', '2023-04-04', '2023-04-05', '2023-04-06', '2023-04-08', '2023-04-09', '2023-04-10', '2023-04-11', '2023-04-12', '2023-04-17', '2023-04-18', '2023-04-27', '2023-04-28'],
         date: new Date(),
     };
     },

@@ -1,7 +1,8 @@
 <template>
     <VHeader></VHeader>
 
-    <div class="join_ok_container container">
+    <div class="join_ok_container">
+      <div class="container">
         <img src="../assets/image/join/step3.png" alt="">
         <div class="join_ok">
             <div class="join_ok_text">
@@ -17,6 +18,7 @@
                 </p>
             </div>
         </div>
+      </div>
     </div>
 
     <VFooter></VFooter>    
