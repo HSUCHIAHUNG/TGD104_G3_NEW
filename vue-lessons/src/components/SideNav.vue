@@ -2,28 +2,28 @@
   <div>
     <ul class="aside_nav">
       <li>
-        <a href="/#/member">
+        <router-link to="/member">
           <i class="fa-solid fa-gear"></i>
           <span>帳號設定</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="/#/memberfav">
+        <router-link to="/memberfav">
           <i class="fa-solid fa-heart"></i>
           <span>收藏清單</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="/#/memberbooking">
+        <router-link to="/memberbooking">
           <i class="fa-solid fa-calendar"></i>
           <span> 預約明細</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="/#/memberhistory">
+        <router-link to="/memberhistory">
           <i class="fa-regular fa-clipboard"></i>
           <span> 歷史訂單</span>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
