@@ -6,8 +6,9 @@
             <div class="container">
                 <div class="left_block">
                     <h1>陪你</h1><span>旅行。</span>
-                    <h2>比起走了多少公里<br>
-                        一路上結交了多少朋友是衡量一趟旅行更好的方式
+                    <h2 class="typing">
+                        <!-- 比起走了多少公里<br>
+                        一路上結交了多少朋友是衡量一趟旅行更好的方式 -->
                     </h2>
                     <img src="../assets/image/travel/travel_banner_people.png" alt="">
                 </div>
@@ -58,63 +59,73 @@
                 >
 
                 <swiper-slide class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5</p>
-                        <div class="card_img">
-                            <img src="../assets/image/travel/travel_member_1.png" alt="">
+                    <router-link to="/TravelGallery" target="_blank">
+                        <div class="card">
+                            <i class="fa-solid fa-star"></i>
+                            <p>4.5</p>
+                            <div class="card_img">
+                                <img src="../assets/image/travel/travel_member_1.png" alt="">
+                            </div>
+                            <h2>徐宏宏</h2>
+                            <h3>登山</h3>
                         </div>
-                        <h2>徐宏宏</h2>
-                        <h3>登山</h3>
-                    </div>
+                    </router-link>
                 </swiper-slide>
 
                 <swiper-slide class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5</p>
-                        <div class="card_img">
-                            <img src="../assets/image/travel/travel_member_2.png" alt="">
+                    <router-link to="/TravelGallery" target="_blank">
+                        <div class="card">
+                            <i class="fa-solid fa-star"></i>
+                            <p>4.5</p>
+                            <div class="card_img">
+                                <img src="../assets/image/travel/travel_member_2.png" alt="">
+                            </div>
+                            <h2>陳霈霈</h2>
+                            <h3>潛水</h3>
                         </div>
-                        <h2>陳霈霈</h2>
-                        <h3>潛水</h3>
-                    </div>
+                    </router-link>
                 </swiper-slide>
 
                 <swiper-slide class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5</p>
-                        <div class="card_img">
-                            <img src="../assets/image/travel/consultant_c09.png" alt="">
+                    <router-link to="/TravelGallery" target="_blank">
+                        <div class="card">
+                            <i class="fa-solid fa-star"></i>
+                            <p>4.5</p>
+                            <div class="card_img">
+                                <img src="../assets/image/travel/consultant_c09.png" alt="">
+                            </div>
+                            <h2>陳諭諭</h2>
+                            <h3>單車</h3>
                         </div>
-                        <h2>陳諭諭</h2>
-                        <h3>單車</h3>
-                    </div>
+                    </router-link>
                 </swiper-slide>
 
                 <swiper-slide class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5</p>
-                        <div class="card_img">
-                            <img src="../assets/image/travel/consultant_c08.png" alt="">
+                    <router-link to="/TravelGallery" target="_blank">
+                        <div class="card">
+                            <i class="fa-solid fa-star"></i>
+                            <p>4.5</p>
+                            <div class="card_img">
+                                <img src="../assets/image/travel/consultant_c08.png" alt="">
+                            </div>
+                            <h2>徐阿宏</h2>
+                            <h3>登山</h3>
                         </div>
-                        <h2>徐阿宏</h2>
-                        <h3>登山</h3>
-                    </div>
+                    </router-link>
                 </swiper-slide>
 
                 <swiper-slide class="autoplay">
-                    <div class="card">
-                        <i class="fa-solid fa-star"></i>
-                        <p>4.5</p>
-                        <div class="card_img">
-                            <img src="../assets/image/travel/consultant_c16.png" alt="">
+                    <router-link to="/TravelGallery" target="_blank">
+                        <div class="card">
+                            <i class="fa-solid fa-star"></i>
+                            <p>4.5</p>
+                            <div class="card_img">
+                                <img src="../assets/image/travel/consultant_c16.png" alt="">
+                            </div>
+                            <h2>孫敏敏</h2>
+                            <h3>單車</h3>
                         </div>
-                        <h2>孫敏敏</h2>
-                        <h3>單車</h3>
-                    </div>
+                    </router-link>
                 </swiper-slide>
                     
 
@@ -190,6 +201,8 @@
     // import required modules
     import { Autoplay} from 'swiper';
 
+    import Typed from 'typed.js';
+
     export default {
         name: "Travel",
         data() {
@@ -231,6 +244,7 @@
             VFooter,
             Swiper,
             SwiperSlide,
+            Typed,
         },
         setup() {
             return {
@@ -281,8 +295,16 @@
                     duration: 0.5
                 })
                 }
-            })
-            })
+             })
+            });
+
+            const options = {
+            strings: ['比起走了多少公里<br>一路上結交了多少朋友是衡量一趟旅行更好的方式'],
+            typeSpeed: 100,
+            showCursor: false,
+            };
+
+            const typed = new Typed('.typing', options);
         },
     };
 

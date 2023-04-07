@@ -31,6 +31,8 @@
                 padding-top: 60px;
                 font-weight: 600;
                 line-height: 3;
+                height: 20vh;
+                //打字機新增高度
             }
             img{
                 display: block;
@@ -101,6 +103,7 @@
                     letter-spacing: 1px;
                     display: inline-block;
                     margin: 15px 0 15px 5px;
+                    color: $gray;
                 }
                 .card_img{
                     width: 55%;
@@ -124,6 +127,7 @@
                     font-weight: 600;
                     letter-spacing: 2px;
                     margin: 20px 0 10px;
+                    color: $gray;
                 }
                 h3{
                     font-size: $fs22;
