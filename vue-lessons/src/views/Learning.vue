@@ -60,21 +60,21 @@
         :modules="modules"
         class="mySwiper"
       >
-        <swiper-slide><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
-        <swiper-slide><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
+        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
       </swiper>
       <!-- 輪播1 end -->
 
@@ -109,7 +109,7 @@
           :modules="modules"
           class="mySwiper"
         >
-          <swiper-slide>
+          <swiper-slide class="learning_swiper">
               <div class="item">
                   <h4>
                       <img src="../assets/image/learning/book.png" alt="">
@@ -118,7 +118,7 @@
                   </h4>
               </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide class="learning_swiper">
               <div class="item">
                   <h4>
                       <img src="../assets/image/learning/calculator.png" alt="">
@@ -127,7 +127,7 @@
                   </h4>
               </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide class="learning_swiper">
               <div class="item">
                   <h4>
                       <img src="../assets/image/learning/code.png" alt="">
@@ -136,7 +136,7 @@
                   </h4>
               </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide class="learning_swiper">
               <div class="item">
                   <h4>
                       <img src="../assets/image/learning/color-palette.png" alt="">
@@ -145,7 +145,7 @@
                   </h4>
               </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide class="learning_swiper">
               <div class="item">
                   <h4>
                       <img src="../assets/image/learning/guitar.png" alt="">
@@ -154,7 +154,7 @@
                   </h4>
               </div>
           </swiper-slide>
-          <swiper-slide>
+          <swiper-slide class="learning_swiper">
               <div class="item">
                   <h4>
                       <img src="../assets/image/learning/study.png" alt="">
@@ -273,7 +273,7 @@
     //   height: 100%;
     }
 
-    .swiper-slide {
+    .learning_swiper{
       text-align: center;
       font-size: 18px;
       background: transparent;
@@ -282,7 +282,7 @@
       align-items: center;
     }
 
-    .swiper-slide img {
+    .learning_swiper img {
       display: block;
       width: 100%;
       height: 100%;
