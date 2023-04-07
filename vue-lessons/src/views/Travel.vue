@@ -6,8 +6,9 @@
             <div class="container">
                 <div class="left_block">
                     <h1>陪你</h1><span>旅行。</span>
-                    <h2>比起走了多少公里<br>
-                        一路上結交了多少朋友是衡量一趟旅行更好的方式
+                    <h2 class="typing">
+                        <!-- 比起走了多少公里<br>
+                        一路上結交了多少朋友是衡量一趟旅行更好的方式 -->
                     </h2>
                     <img src="../assets/image/travel/travel_banner_people.png" alt="">
                 </div>
@@ -190,6 +191,8 @@
     // import required modules
     import { Autoplay} from 'swiper';
 
+    import Typed from 'typed.js';
+
     export default {
         name: "Travel",
         data() {
@@ -231,6 +234,7 @@
             VFooter,
             Swiper,
             SwiperSlide,
+            Typed,
         },
         setup() {
             return {
@@ -281,8 +285,16 @@
                     duration: 0.5
                 })
                 }
-            })
-            })
+             })
+            });
+
+            const options = {
+            strings: ['比起走了多少公里<br>一路上結交了多少朋友是衡量一趟旅行更好的方式'],
+            typeSpeed: 100,
+            showCursor: false,
+            };
+
+            const typed = new Typed('.typing', options);
         },
     };
 
