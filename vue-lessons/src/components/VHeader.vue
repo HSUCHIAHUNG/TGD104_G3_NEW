@@ -285,9 +285,7 @@
     </nav>
   </div>
 
-
-  
-  <router-view />
+  <!-- <router-view /> -->
   <!-- <VFooter></VFooter> -->
 </template>
 
@@ -509,9 +507,6 @@ export default {
       width: 180px;
       line-height: 50px;
       border-radius: 5px;
-      position: relative;
-      right: 6px;
-      top: -1px;
 
       &.router-link-exact-active {
         background-color: #ebc43a;
@@ -519,13 +514,6 @@ export default {
     }
   }
 }
-
-
-
-
-
-
-
 
 //  @import "../../tgd104-sass/new_style.scss";
 

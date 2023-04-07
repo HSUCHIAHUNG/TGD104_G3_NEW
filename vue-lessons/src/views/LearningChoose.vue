@@ -1,6 +1,7 @@
 <template>
+      <VHeader></VHeader>
   <div class="learningchooseflex">
-    <!-- <VHeader></VHeader> -->
+
     <div>
       <div class="learning_choose_wrapper">
         <div class="learning_choose_side">

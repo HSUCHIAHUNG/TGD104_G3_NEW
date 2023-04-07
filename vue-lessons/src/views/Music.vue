@@ -102,7 +102,7 @@
 
           <!-- 顧問卡end -->
           <div class="learning_go">
-            <a href="/LearningOrderConfirmation"><button class="btn_orange">開始預約</button></a>
+            <router-link to="/LearningCalendar"><button class="btn_orange">開始預約</button></router-link>
           </div>
         </div>
         <!-- 右邊end -->

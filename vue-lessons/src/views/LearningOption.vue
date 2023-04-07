@@ -4,7 +4,7 @@
 
       <div class="option_allcontent">
       <div class="option_top">
-          <select name="" id="" class="option_select">
+          <select name="" id="" class="learning_option_select">
                   <option value="option_new">最新</option>
                   <option value="option_hot">熱門</option>
           </select>

@@ -121,14 +121,18 @@
             }
             .content_p{
                 font-size: $fs20;
+                font-weight: 600;
             }
-            div{
+            .hot_name{
                 font-weight: 600;
             }
         }
     }
 }
 
+.hot_name{
+    font-weight: 600;
+}
 
 .learning_more {
     text-align: center;

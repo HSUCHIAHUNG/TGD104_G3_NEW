@@ -1,7 +1,6 @@
 <template>
 <VHeader></VHeader>
 <Gallery></Gallery>
-<h2 class="learning_more"><router-link to="/LearningChoose"><button class="btn btn_solid_secondary btn_blue">回上一頁</button></router-link></h2>
 <MessageBoard></MessageBoard>
 <VFooter></VFooter>
   </template>
