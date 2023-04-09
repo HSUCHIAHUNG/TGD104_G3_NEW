@@ -1,16 +1,8 @@
 <template>
 
-  
-  <!-- <VFooter></VFooter> -->
-
-
-
-
-
   <!-- 跳至最上方的按鈕 -->
-    <button @click="backToTop" v-show="isShow"  id="BackTop" class="toTop-arrow"></button>
+  <button @click="backToTop" v-show="isShow"  id="BackTop" class="toTop-arrow"></button>
   <!-- 跳至最上方的按鈕end -->
-
 
   <router-view />
 
@@ -20,16 +12,15 @@
 
 export default {
   name: "app",
+  // 跳至最上方的按鈕
   data() {
     return {
       isShow: false
     };
   },
   components: {
-
   },
   methods: {
-
     // 滾動事件的監聽方法
     handleScroll() {
       if (window.pageYOffset > 30 * window.innerHeight / 100) {
@@ -45,9 +36,10 @@ export default {
         behavior: "smooth"
       });
     },
+    // 跳至最上方的按鈕end
 
     // 會員登入燈箱
-    //開啟nav
+    // 開啟nav
     open_nav() {
       let center_navopen = document.getElementById("center_nav");
       // console.log('111');
@@ -157,6 +149,7 @@ export default {
     },
   },
 
+  // 跳至最上方的按鈕
   mounted() {
     // 添加滾動事件的監聽
     window.addEventListener("scroll", this.handleScroll);
@@ -165,7 +158,7 @@ export default {
     // 在組件被銷毀前，移除滾動事件的監聽
     window.removeEventListener("scroll", this.handleScroll);
   }
-
+  // 跳至最上方的按鈕 end
 
 
 
@@ -174,47 +167,39 @@ export default {
 </script>
 
 <style lang="scss">
-
-
-
-
-
-
-/* 跳至最上方的按鈕 */
-.toTop-arrow {
-	width: 2.5rem;
-	height: 2.5rem;
-	padding: 0;
-	margin: 0;
-	border: 0;
-	border-radius: 33%;
-	opacity: 0.6;
-	background: #ff7d33;
-	cursor: pointer;
-	position:fixed;
-	right: 1rem;
-	bottom: 1rem;
-	// display: none;
-    z-index: 3;
-}
-.toTop-arrow::before, .toTop-arrow::after {
-	width: 18px;
-	height: 5px;
-	border-radius: 3px;
-	background: #fff;
-	position: absolute;
-	content: "";
-}
-.toTop-arrow::before {
-	transform: rotate(-45deg) translate(0, -50%);
-	left: 0.5rem;
-}
-.toTop-arrow::after {
-	transform: rotate(45deg) translate(0, -50%);
-	right: 0.5rem;
-}
-.toTop-arrow:focus {outline: none;}
-/* 跳至最上方的按鈕end */
-
-
+  /* 跳至最上方的按鈕 */
+  .toTop-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 33%;
+    opacity: 0.6;
+    background: #ff7d33;
+    cursor: pointer;
+    position:fixed;
+    right: 1rem;
+    bottom: 1rem;
+    // display: none;
+      z-index: 3;
+  }
+  .toTop-arrow::before, .toTop-arrow::after {
+    width: 18px;
+    height: 5px;
+    border-radius: 3px;
+    background: #fff;
+    position: absolute;
+    content: "";
+  }
+  .toTop-arrow::before {
+    transform: rotate(-45deg) translate(0, -50%);
+    left: 0.5rem;
+  }
+  .toTop-arrow::after {
+    transform: rotate(45deg) translate(0, -50%);
+    right: 0.5rem;
+  }
+  .toTop-arrow:focus {outline: none;}
+  /* 跳至最上方的按鈕end */
 </style>
