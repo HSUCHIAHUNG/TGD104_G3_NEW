@@ -3,8 +3,22 @@
     <div class="OrderManagement">
 
         <div class="OrderManagement_category_btn">
-        <button class="outline_btn_orange">陪你旅行</button>
-        <button class="outline_btn_orange">陪你學習</button>
+        <button class="outline_btn_orange"
+            :class="{ touchbg: currentTab === 'tab1' }"
+                @click.prevent="
+                {
+                    (current = 'travel'), (currentTab = 'tab1');
+                }
+                "
+        >陪你旅行</button>
+        <button class="outline_btn_orange"
+            :class="{ touchbg: currentTab === 'tab2' }"
+                @click.prevent="
+                {
+                    (current = 'learing'), (currentTab = 'tab2');
+                }
+                "
+        >陪你learing</button>
         </div>
 
         <div class="OrderManagement_select_form">
@@ -31,15 +45,19 @@
                         <th>體驗日期</th>
                         <th>訂單狀態</th>
                     </tr>
-                    <tr v-for="(item, index) in items" :key="index">
-                        <td>{{item.id}}</td>
-                        <td>{{item.tr_category}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.tr_cost}}</td>
-                        <td>{{item.tro_booking_data}}</td>
-                        <td>{{item.tro_order_data}}</td>
-
-                    </tr>
+                        <template v-for="(item, index) in items" :key="index">
+                            <tr v-if="current === item.tr_category">
+                                <td>{{item.id}}</td>
+                                <td>{{item.tr_category}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.tr_cost}}</td>
+                                <td>{{item.tro_booking_data}}</td>
+                                <td>{{item.tro_order_data}}</td>
+                            </tr>
+                        </template >
+                            
+                 
+                    
                 </table>
                 <ul>
                     <li>
@@ -64,21 +82,24 @@
     
 
     export default {
+
         data(){ 
             return {
+                current: "travel",
+                currentTab: "tab1",
                 items: [
-                    { id: '2023022000', tr_category: '登山',name: '舞動小敏之腳踝90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: '登山',name: '怕被看腳踝的霈霈', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: '登山',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: '登山',name: '立偉', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: '登山',name: '嘉宏', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: '登山',name: '小敏', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: '登山',name: '品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: '登山',name: '娟霈', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: '登山',name: '舞動小敏之腳踝90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: '登山',name: '口頭禪蝦怎麼辦的品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: '登山',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: '登山',name: '立偉', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022000', tr_category: 'travel',name: '舞動小敏之腳踝90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'travel',name: '怕被看腳踝的霈霈', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'travel',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'travel',name: '立偉', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'travel',name: '嘉宏', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'travel',name: '小敏', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '娟霈', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '舞動小敏之腳踝90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '口頭禪蝦怎麼辦的品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '立偉', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                 ],
             }
         },   
@@ -102,6 +123,7 @@
 <style lang="scss">
     // @import '../../../../tgd104-sass/new_style.scss';
     
+   
 
     .OrderManagement{
         display: flex;
@@ -253,6 +275,9 @@
             margin-right: 10px;
             margin-left: 10px;
         }
+        .touchbg{
+        background-color: #ffcaab;
+    }
     }
 }
     
