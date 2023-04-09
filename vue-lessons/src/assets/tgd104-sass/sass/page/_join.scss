@@ -5,7 +5,22 @@
 // }
 .join_benefit{
     height: 700px;
-    background-color: $bg_yellow;
+    // background-color: $bg_yellow;
+    background: linear-gradient(-45deg, #FDF8EE, #DCECEE, #FDF8EE, #DCECEE);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	// height: 100vh;
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
     .container{
         h1{
             font-size: $fs28;
@@ -63,8 +78,24 @@
     background-image: url('../../../image/join/join_condition_bg.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 600px;
-    background-color: $bg_yellow;
+    // height: 600px;
+    height: 90vh;
+    // background-color: $bg_yellow;
+    background: linear-gradient(-45deg, #FDF8EE, #DCECEE, #FDF8EE, #DCECEE);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	// height: 100vh;
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
         .join_btn{
             background-color: $ft_yellow;
             text-align: center;
@@ -169,19 +200,18 @@
             }
 
         }
+
+        .join_button{
+            text-align: center;
+                button{
+                    margin: 20px 50px 100px;
+                }
+        }
               
   
 }
 
-.join_button{
-    background-color: $bg_yellow;
-    text-align: center;
-    .container{
-        button{
-            margin: 20px 50px 100px;
-        }
-    }
-}
+
 
 
 /*-------- join rwd start ---------*/

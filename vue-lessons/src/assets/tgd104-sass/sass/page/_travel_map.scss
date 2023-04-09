@@ -34,7 +34,7 @@
 
                 .north{
                     &:hover:after{
-                        background-color: $text_gray;
+                        background-color: $dark_yellow;
                         transition: all .8s;
                     }
                     &:after{
@@ -42,7 +42,7 @@
                         display: block;
                         width: 80px;
                         line-height: 80px;
-                        background-color: $dark_yellow;
+                        background-color: $ft_yellow;
                         border-radius: 50%;
                         font-size: $fs28;
                         font-weight: 600;
@@ -55,7 +55,7 @@
 
                 .middle{
                     &:hover:after{
-                        background-color: $text_gray;
+                        background-color: $dark_yellow;
                         transition: all .8s;
                     }
                     &:after{
@@ -63,7 +63,7 @@
                         display: block;
                         width: 80px;
                         line-height: 80px;
-                        background-color: $dark_yellow;
+                        background-color: $ft_yellow;
                         border-radius: 50%;
                         font-size: $fs28;
                         font-weight: 600;
@@ -77,7 +77,7 @@
 
                 .south{
                     &:hover:after{
-                        background-color: $text_gray;
+                        background-color: $dark_yellow;
                         transition: all .8s;
                     }
                     &:after{
@@ -85,7 +85,7 @@
                         display: block;
                         width: 80px;
                         line-height: 80px;
-                        background-color: $dark_yellow;
+                        background-color: $ft_yellow;
                         border-radius: 50%;
                         font-size: $fs28;
                         font-weight: 600;
@@ -98,7 +98,7 @@
 
                 .east{
                     &:hover:after{
-                        background-color: $text_gray;
+                        background-color: $dark_yellow;
                         transition: all .8s;
                     }
                     &:after{
@@ -106,7 +106,7 @@
                         display: block;
                         width: 80px;
                         line-height: 80px;
-                        background-color: $dark_yellow;
+                        background-color: $ft_yellow;
                         border-radius: 50%;
                         font-size: $fs28;
                         font-weight: 600;
@@ -118,7 +118,7 @@
                 }
                 .selected {
                     &:after{
-                        background-color: $text_gray;
+                        background-color: $dark_yellow;
                     }
 
                 }
