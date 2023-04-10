@@ -1,207 +1,216 @@
 <template>
     <!-- <VHeader></VHeader> -->
     <VHeader></VHeader>
-    <!-- banner -->
-    <div>
+
+    
+    <div class="learning_body">
+        <!-- banner -->
         <div class="learning_content">
-        <div class="container_learning container">
-            <div>
-                <h1><span>陪你</span>學習。</h1>
-                <br>
-                <p>針對各個年齡層為您選擇最適合的陪你<br>提供活到老學到老 終身學習服務</p>
-                <br>
-                <p>我們包含英文.數學.樂器.寫程式<br>想得到的都替你安排!</p>
+
+            <div class="container_learning container">
+                <div>
+                    <h1><span>陪你</span>學習。</h1>
+                    <br>
+                    <p>針對各個年齡層為您選擇最適合的陪你<br>提供活到老學到老 終身學習服務</p>
+                    <br>
+                    <p>我們包含英文.數學.樂器.寫程式<br>想得到的都替你安排!</p>
+                </div>
+                <img src="../assets/image/learning/learning_people.png" alt="">
             </div>
-            <img src="../assets/image/learning/learning_people.png" alt="">
-        </div>
 
-        <div class="container_learning_bottom container">
-            <img src="../assets/image/learning/learning_people2.png" alt="">
-            <div class="lesson_tip">
-                <P><span>01</span> 選擇課程</P>
-                <P><span>02</span> 選擇老師</P>
-                <P><span>03</span> 選擇時間</P>
-                <P><span>04</span> 成功陪你學習</P>
+
+            <div class="container learning_tips">
+                <div><p>01</p><h3>選擇課程</h3></div>
+                <div><p>02</p><h3>選擇老師</h3></div>
+                <div><p>03</p><h3>選擇時間</h3></div>
+                <div><p>04</p><h3>成功陪你學習</h3></div>
             </div>
+
         </div>
-    </div>
-  <!-- banner end -->
+        <!-- banner end -->
 
-  <div class="learning_main">
-      <h2 class="hot_learning">豐富多元課程</h2>
+        <div class="learning_main">
+            <h2 class="hot_learning">豐富多元課程</h2>
 
-      <!-- 輪播1 -->
-      <swiper
-        :slidesPerView="1"
-        :spaceBetween="10"
+            <!-- 輪播 -->
+            <swiper
+                :slidesPerView="1"
+                :spaceBetween="10"
                 :autoplay="{
-                delay: 2500,
-                disableOnInteraction: false,
+                    delay: 2500,
+                    disableOnInteraction: false,
                 }"
 
-        :breakpoints="{
-          '@0.00': {
-            slidesPerView: 2,
-            spaceBetween: 5,
-          },
-          '@0.75': {
-            slidesPerView: 3,
-            spaceBetween: 5,
-          },
-          '@1.2': {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-          '@1.50': {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
-        }"
-        :modules="modules"
-        class="mySwiper"
-      >
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_001.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_002.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_003.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_004.png" alt=""></swiper-slide>
-        <swiper-slide class="learning_swiper"><img src="../assets/image/learning/teacher_005.png" alt=""></swiper-slide>
-      </swiper>
-      <!-- 輪播1 end -->
+                :breakpoints="{
+                    '@0.00': {
+                        slidesPerView: 2,
+                        spaceBetween: 5,
+                    },
+                    '@0.60': {
+                        slidesPerView: 3,
+                        spaceBetween: 5,
+                    },
+                    '@1.2': {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                    },
+                    '@1.50': {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                    },
+                }"
+                :modules="modules"
+                :navigation="true"
+                class="mySwiper"
+            >
 
-      <h2 class="hot_learning">熱門陪你學習</h2>
-      <!-- 輪播2 -->
-      <swiper
-          :slidesPerView="1"
-          :spaceBetween="10"
-                  :autoplay="{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                  }"
+            <swiper-slide class="learning_swiper">
+                <img src="../assets/image/learning/teacher_001.png" alt="">
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <img src="../assets/image/learning/teacher_002.png" alt="">
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <img src="../assets/image/learning/teacher_003.png" alt="">
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <img src="../assets/image/learning/teacher_004.png" alt="">
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <img src="../assets/image/learning/teacher_005.png" alt="">
+            </swiper-slide>
 
-          :breakpoints="{
-            '@0.00': {
-              slidesPerView: 2,
-              spaceBetween: 5,
-            },
-            '@0.75': {
-              slidesPerView: 3,
-              spaceBetween: 5,
-            },
-            '@1.2': {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            '@1.50': {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-          }"
-          :modules="modules"
-          class="mySwiper"
-        >
-          <swiper-slide class="learning_swiper">
-              <div class="item">
-                  <h4>
-                      <img src="../assets/image/learning/book.png" alt="">
-                      <div class="content_p">陪你讀英文</div>
-                      <div class="hot_name">熱門顧問: 陳品魚</div>
-                  </h4>
-              </div>
-          </swiper-slide>
-          <swiper-slide class="learning_swiper">
-              <div class="item">
-                  <h4>
-                      <img src="../assets/image/learning/calculator.png" alt="">
-                      <div class="content_p">陪你微積分</div>
-                      <div class="hot_name">熱門顧問: 陳娟配</div>
-                  </h4>
-              </div>
-          </swiper-slide>
-          <swiper-slide class="learning_swiper">
-              <div class="item">
-                  <h4>
-                      <img src="../assets/image/learning/code.png" alt="">
-                      <div class="content_p">陪你寫Java</div>
-                      <div class="hot_name">熱門顧問: 徐嘉紅</div>
-                  </h4>
-              </div>
-          </swiper-slide>
-          <swiper-slide class="learning_swiper">
-              <div class="item">
-                  <h4>
-                      <img src="../assets/image/learning/color-palette.png" alt="">
-                      <div class="content_p">陪你繪畫</div>
-                      <div class="hot_name">熱門顧問: 孫一敏</div>
-                  </h4>
-              </div>
-          </swiper-slide>
-          <swiper-slide class="learning_swiper">
-              <div class="item">
-                  <h4>
-                      <img src="../assets/image/learning/guitar.png" alt="">
-                      <div class="content_p">陪你烏克麗麗</div>
-                      <div class="hot_name">熱門顧問: 裴大尼</div>
-                  </h4>
-              </div>
-          </swiper-slide>
-          <swiper-slide class="learning_swiper">
-              <div class="item">
-                  <h4>
-                      <img src="../assets/image/learning/study.png" alt="">
-                      <div class="content_p">陪你讀書</div>
-                      <div class="hot_name">熱門顧問: 倪小培</div>
-                  </h4>
-              </div>
-          </swiper-slide>
-      </swiper>
-      <!-- 輪播2 end -->
-      <h2 class="learning_more"><router-link to="/LearningChoose"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></router-link></h2>
-  </div>
+            </swiper>
+            <h2 class="learning_more"><router-link to="/LearningChoose"><button class="btn btn_solid_secondary btn_orange">更多陪你學習</button></router-link></h2>
+            <!-- 輪播end -->
+
+            <h2 class="hot_learning">會員學習心得</h2>
+      
+
+            <!-- card -->
+            <div class="learning_card_all">
+                <div class="learning_card">
+                    <div class="charList-heading">
+                        <h3 class="charList-heading-title">陪你讀英文<br>陳品魚</h3>                           
+                        <div class="charList-heading-img">
+                            <img class="Saly-33" src="../assets/image/learning/Saly-33.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="charList-inner">
+                        <p class="charList-text">
+                            在這門課中，顧問會專注於提高你的書面和口語溝通能力，
+                            以及探討各種寫作風格和技巧，包括說服性寫作、學術寫作和創意寫作。還教我將涵蓋有效的溝通策略、專業電子郵件和人際溝通。
+                            透過這門課程，讓我有效傳達想法的能力，更有助於未來的職業生涯。
+                        </p>              
 
 
+                        <!-- <button class="btn btn_solid_secondary btn_orange">Read More</button> -->
 
-
-    <!-- qa -->
-    <div class="learning_bgc">
-        <h2 class="student_share_word">常見問題</h2>
-        <div class="learning_qa_all">
-            <div v-for="(qa, index) in qas" :key="index" class="learning_qa">
-                <div class="learning_q" @click="toggleAnswer(index)">
-                    <h3>{{ qa.question }}</h3>
-                    <span>{{ qa.open ? '▼' : '▲' }}</span>
+                    </div>
                 </div>
-                <div v-if="qa.open" class="learning_a">
-                    <p>{{ qa.answer }}</p>
+
+
+                <div class="learning_card">
+                    <div class="charList-heading">
+                        <h3 class="charList-heading-title">陪你微積分<br>陳娟配</h3>                           
+                        <div class="charList-heading-img">
+                            <img class="Saly-34" src="../assets/image/learning/Saly-34.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="charList-inner">
+                        <p class="charList-text">
+                            我們將深入探討微積分的基本原理和概念，包括極限、微分和積分。還將涵蓋一些基本的微積分應用，例如尋找極值、曲線的長度和曲面的面積。
+                            理解微積分的核心原理和技巧，將這些技能應用於各種現實世界的問題中，例如工程學和經濟學等領域。
+                        </p>              
+
+
+                        <!-- <button class="btn btn_solid_secondary btn_orange">Read More</button> -->
+
+
+                    </div>
+                </div>
+
+
+                <div class="learning_card">
+                    <div class="charList-heading">
+                        <h3 class="charList-heading-title">陪你繪畫<br>孫一敏</h3>                           
+                        <div class="charList-heading-img">
+                            <img class="Saly-35" src="../assets/image/learning/Saly-35.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="charList-inner">
+                        <p class="charList-text">
+                            這個課程將從材料和工具的介紹開始，包括水彩顏料、畫筆和紙張的選擇。
+                            顧問會探討基本的繪畫技巧，例如濕法、乾法、膠水法等，以及如何使用色彩、形狀和構圖來創作具有視覺效果的作品。
+                        </p>              
+
+                                <!-- <button class="btn btn_solid_secondary btn_orange">Read More</button> -->
+
+                    </div>
+                </div>
+
+
+                <div class="learning_card">
+                    <div class="charList-heading">
+                        <h3 class="charList-heading-title">陪你寫JAVA<br>徐嘉紅</h3>                           
+                        <div class="charList-heading-img">
+                            <img class="Saly-36" src="../assets/image/learning/Saly-36.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="charList-inner">
+                        <p class="charList-text">
+                            本課程將幫助你們學習JAVA程式設計的基礎知識和應用技巧，以及如何使用JAVA開發。
+                            涵蓋JAVA的基本資料型別、流程控制語句、方法、物件和類等基本概念。
+                            學習使用JAVA開發應用程序，例如圖形使用者介面、資料庫程式設計和網路應用程式開發。
+                        </p>              
+
+                                <!-- <button class="btn btn_solid_secondary btn_orange">Read More</button> -->
+
+                    </div>
                 </div>
             </div>
+            <!-- card end -->
+        </div>
+
+
+
+
+        <!-- qa -->
+        <div class="learning_bgc">
+            <h2 class="student_share_word">常見問題</h2>
+            <div class="learning_qa_all">
+                <div v-for="(qa, index) in qas" :key="index" class="learning_qa">
+                    <div class="learning_q" @click="toggleAnswer(index)">
+                        <h3>{{ qa.question }}</h3>
+                        <span>{{ qa.open ? '▼' : '▲' }}</span>
+                    </div>
+                    <div v-if="qa.open" class="learning_a">
+                        <p>{{ qa.answer }}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- qa end -->
+            <h2 class="learning_more"><router-link to="/LearningOption"><button class="btn btn_solid_secondary btn_orange">提供更多想法</button></router-link></h2>
         </div>
         <!-- qa end -->
-        <h2 class="learning_more"><router-link to="/LearningOption"><button class="btn btn_solid_secondary btn_orange">提供更多想法</button></router-link></h2>
+
     </div>
-
-
-
     <VFooter></VFooter>
-  </div>
+  
 </template>
   
-  <script>
+<script>
     import VHeader from "../components/VHeader.vue";
     import VFooter from "../components/VFooter.vue";
     import { Swiper, SwiperSlide } from 'swiper/vue';
     import 'swiper/css';
     import 'swiper/css/pagination';
-    import { Autoplay, Navigation } from 'swiper';
+    import 'swiper/css/navigation';
+    import {Navigation } from 'swiper';
     // import './style.css';
     export default {
         name: "Learning",
@@ -248,7 +257,7 @@
         },
         setup() {
             return {
-                modules: [Autoplay, Navigation],
+                modules: [Navigation],
             };
         },
         methods: {
@@ -263,29 +272,93 @@
             },
         }
     };
-  </script>
+</script>
 
-  <style lang="scss">
-  @import "../assets/tgd104-sass/new_style.scss";
+<style lang="scss">
+    @import "../assets/tgd104-sass/new_style.scss";
     .swiper {
-    max-width: 1200px;
-    width: 100%;
-    //   height: 100%;
+        max-width: 1200px;
+        width: 100%;
+        //   height: 100%;
     }
 
     .learning_swiper{
-      text-align: center;
-      font-size: 18px;
-      background: transparent;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        text-align: center;
+        font-size: 18px;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .learning_swiper img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-  </style>
+
+    .learning_body{
+        background-image: url("../assets/image/bgi001.png");
+        background-repeat: repeat;
+        background-size: cover;
+    }
+
+    .learning_card_all{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1380px;
+        margin: 0 auto;
+        justify-content: space-evenly;
+    }
+    
+    .learning_card{
+        max-width: 500px;
+        width: 95%;
+        margin: 50px 20px;
+    }
+
+    .charList-heading{
+        height: 120px;
+    }
+
+    .charList-heading{
+        background-color: rgba(248, 182, 45, 0.2);
+        border-bottom: 10px solid #FFE59D;
+        padding: 1.7em 0 1.5em 2em;
+        position: relative;
+    }
+
+    .charList-heading-title {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        position: relative;
+        z-index: 9;
+    }
+
+    .charList-heading-img {
+        width: 120px;
+        position: absolute;
+        bottom: 50px;
+        right: 10%;
+        pointer-events: none;
+    }
+
+    .charList-heading-img img {
+        width: 120px;
+        border: 0;
+        vertical-align: bottom;
+        border-radius: 50%;
+    }
+
+    
+    .charList-text{
+        font-size: 18px;
+        line-height: 35px;
+        font-weight: 600;
+        min-height: 180px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+</style>
