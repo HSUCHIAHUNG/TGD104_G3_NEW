@@ -1,8 +1,10 @@
+
 .learning_content{
     max-width: 100%;
     // height: 850px;
-    background-color: $bg_yellow;
+    // background-color: $bg_yellow;
     font-weight: 600;
+    // padding-bottom: 100px;
     .container_learning{
         display: flex;
         flex-wrap: wrap;
@@ -22,9 +24,33 @@
             margin-left: 20px;
         }
         img{
-            width: 80%;
+            width: 95%;
             max-width: 800px;
             margin-top: 80px;
+        }
+    }
+    .learning_tips{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: center;
+        div{
+            text-align: center;
+            width: 200px;
+            height: 150px;
+            background-color: #FDF8EE;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            border-radius: 5px;
+            margin: 10px 20px;
+            padding-top: 20px;
+            p{
+                font-size: $fs36;
+            }
+            h3{
+                font-size: $fs28;
+                color: #585858;
+            }
         }
     }
     .container_learning_bottom{
@@ -55,17 +81,19 @@
 
 
 .learning_main{
-    background-image: url("../assets/image/learning/learning_bgi2.png");
+    // background-color: $ft_yellow;
+    // background-image: url("../assets/image/learning/learning_bgi2.png");
     background-position: top;
     .hot_learning{
         text-align: center;
         font-size: $fs36;
         font-weight: 600;
-        margin-top: 100px;
+        // margin-top: 100px;
         margin-bottom: 100px;
+        margin-top: 80px;
         .item h4{
             padding: 10px;
-            background-color: $ft_yellow;
+            // background-color: $ft_yellow;
             border-radius: 10px;
             font-weight: 600;
             img{
@@ -111,6 +139,7 @@
         .item h4{
             padding: 10px;
             background-color: #faeecd;
+            // background-image: url("../../../../assets/image/bgi001.png");
             border-radius: 10px;
 
             img{
@@ -158,7 +187,7 @@
 
 /* 常見問題 */
 .learning_bgc{
-    background-color: $bg_yellow;
+    // background-color: $bg_yellow;
     padding-bottom: 40px;
     padding-top: 40px;
 }
@@ -169,7 +198,8 @@
     font-size: $fs36;
     font-weight: 600;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    color: #585858;
 }
 .student_share_word:after{
     content: '';
@@ -198,7 +228,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: #FFE59D;
+          background-color: #FAEECD;
           padding: 15px;
           margin-bottom: 10px;
           letter-spacing: 1.2px;
@@ -212,11 +242,108 @@
         .learning_a {
           background-color: $clear_white;
           padding: 15px;
-          background-color: $ft_yellow;
+          background-color: $light_yellow;
           border-radius: 10px;
         }
       }
 }
+
+// 動畫
+.Saly-33,
+.Saly-34{
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 1.5%;
+    animation-name: Saly33_34;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-duration: normal;
+    animation-fill-mode: none;
+}
+
+@keyframes Saly33_34{
+  0%{
+    top: 5px;
+  }
+  10%{
+    top: 10px;
+  }
+  20%{
+    top: 20px;
+  }
+  30%{
+    top: 30px;
+  }
+  40%{
+    top: 40px;
+  }
+  50%{
+    top: 45px;
+  }
+  60%{
+    top: 35px;
+  }
+  75%{
+    top: 25px;
+  }
+  90%{
+    top: 15px;
+  }
+  100%{
+    top: 5px;
+  }
+}
+
+
+.Saly-35,
+.Saly-36{
+    position: relative;
+    // margin-bottom: 30px;
+    // margin-top: 1.5%;
+    animation-name: Saly35_36;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-duration: normal;
+    animation-fill-mode: none;
+}
+
+@keyframes Saly35_36{
+  0%{
+    transform: rotate(10deg);
+  }
+  10%{
+    transform: rotate(20deg);
+  }
+  20%{
+    transform: rotate(30deg);
+  }
+  30%{
+    transform: rotate(20deg);
+  }
+  40%{
+    transform: rotate(10deg);
+  }
+  50%{
+    transform: rotate(-5deg);
+  }
+  60%{
+    transform: rotate(-15deg);
+  }
+  75%{
+    transform: rotate(-25deg);
+  }
+  90%{
+    transform: rotate(-15deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+// 動畫end
 
 
 
@@ -283,3 +410,5 @@
     }
     }
   }
+
+  

@@ -5,7 +5,23 @@
 
 .join_apply{
     padding: 50px 0 80px;
-    background-color: $bg_yellow;
+    // background-color: $bg_yellow;
+    background: linear-gradient(-45deg, #FDF8EE, #DCECEE, #FDF8EE, #DCECEE);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	// height: 100vh;
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
     .container{
         h1{
             font-size: $fs28;
