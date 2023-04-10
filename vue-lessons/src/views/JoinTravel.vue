@@ -17,7 +17,7 @@
                 <div class="input_row">
                     <div class="form_group">
                     <label for="" class="input_label">興趣</label>
-                    <input type="text" class="input_text" placeholder="興趣" />
+                    <input type="text" class="input_text" placeholder="興趣" v-model="Tr_interest"/>
                     </div>
                     <div class="form_group">
                     <label for="" class="input_label">經歷</label>
@@ -83,7 +83,7 @@
             <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
             <router-link to="/JoinApply"><button class="outline_btn_blue">回上一步</button></router-link>
             <!-- <a href="/JoinOk"><button class="btn_blue">送出</button></a> -->
-            <router-link to="/JoinOk"><button class="btn_blue">送出</button></router-link>
+            <router-link to="/JoinOk"><button type="button" class="btn_blue" @click="submitForm">送出</button></router-link>
         </div>
 
     </div>
@@ -96,11 +96,13 @@
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import $ from "jquery";
 
 export default {
   name: "JoinTravel",
     data() {
         return {
+            Tr_interest: '',
             editor: ClassicEditor,
             editorData: '',
             editorConfig: {
@@ -113,7 +115,30 @@ export default {
         ClassicEditor,
         VHeader,
         VFooter,
+        $
     },
+    methods: {
+        submitForm(){
+            console.log(this.Tr_interest);
+            $.ajax({
+                // type: 'POST',
+                method: "POST",
+                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/joinTeavel.php', 
+                //url: '../api/Join_test.php', 
+                data: {
+                    Tr_interest: this.Tr_interest,
+                },
+                success: function(response) {
+                    //更新html內容
+                    $("#result").html(response);
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
+
+        }
+    },   
 
  
 };

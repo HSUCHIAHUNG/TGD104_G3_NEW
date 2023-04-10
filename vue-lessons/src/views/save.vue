@@ -4,7 +4,7 @@
 
         <div class="OrderManagement_category_btn">
         <button class="outline_btn_orange"
-        :class="{ touchbg: currentTab === 'tab1' }"
+            :class="{ touchbg: currentTab === 'tab1' }"
                 @click.prevent="
                 {
                     (current = 'travel'), (currentTab = 'tab1');
@@ -45,9 +45,8 @@
                         <th>體驗日期</th>
                         <th>訂單狀態</th>
                     </tr>
-                                         
-                        <template v-for="(item, index) in items.slice(pageStart, pageEnd)" :key="index">
-                            <tr>
+                        <template v-for="(item, index) in items" :key="index">
+                            <tr v-if="current === item.tr_category">
                                 <td>{{item.id}}</td>
                                 <td>{{item.tr_category}}</td>
                                 <td>{{item.name}}</td>
@@ -60,14 +59,14 @@
                  
                     
                 </table>
-                    <ul >
-                        <li @click.prevent="setPage(currentPage-1)">
+                    <ul>
+                        <li>
                             <i class="fa-solid fa-angle-left"></i>
                         </li>
-                        <li v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
-                            {{ n }}
-                        </li>
-                        <li @click.prevent="setPage(currentPage+1)">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>
                             <i class="fa-solid fa-angle-right"></i>
                         </li>
                     </ul>
@@ -85,12 +84,11 @@
     export default {
 
         data(){ 
-            
             return {
                 current: "travel",
                 currentTab: "tab1",
                 items: [
-                    { id: '2023022000', tr_category: 'travel',name: '舞動小敏之', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: 'travel',name: '舞動小敏之腳踝90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: 'travel',name: '怕被看腳踝的霈霈', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: 'travel',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: 'travel',name: '立偉', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
@@ -98,66 +96,20 @@
                     { id: '2023022000', tr_category: 'travel',name: '小敏', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: 'learing',name: '品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: 'learing',name: '娟霈', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '舞動小敏之分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '口頭禪蝦品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '舞動小敏之腳踝90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022000', tr_category: 'learing',name: '口頭禪蝦怎麼辦的品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'learing',name: '立偉', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '小敏', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '霈霈', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '炫1', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '偉1', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '宏1', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '敏1', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '諭1', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '霈1', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '動小敏踝90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '頭禪蝦怎的品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '偉', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '小敏之90分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '霈霈2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '炫炫2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '立2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '嘉宏2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '小敏2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '品諭2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '娟霈2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '舞動小敏分', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '口怎麼辦的品諭', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '立偉2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                 ],
-                perpage: 10, //一頁的資料數
-                currentPage: 1
             }
         },   
         
         methods: {
-            setPage(page) {
-                if(page <= 0 || page > this.totalPage) {
-                return
-            }
-            this.currentPage = page
-            }
+            
         },
 
         computed: {
-            totalPage() {
-                // const filteredItems = this.items.filter(item => item.tr_category === this.current);
-                // const itemsCount = filteredItems.length;
-                // const pagesCount = Math.ceil(itemsCount / this.perpage);
-                // return pagesCount;
-                return Math.ceil(this.items.length / this.perpage)
-                //Math.ceil()取最小整數
-            },
-            pageStart() {
-              return (this.currentPage - 1) * this.perpage
-              //取得該頁第一個值的index
-            },
-            pageEnd() {
-                return this.currentPage * this.perpage
-                //取得該頁最後一個值的index
-            }
+           
         },
 
         name: 'MemberManagement',
@@ -217,14 +169,14 @@
                                 background-color: #ff995e;
                                 color: #fff;
                             }
-                            // &:nth-child(1){
-                            //     background-color: #ff995e;
-                            //     color: #fff;
-                            // }
-                            // &:nth-child(2){
-                            //     background-color: #ff995e;
-                            //     color: #fff;
-                            // }
+                            &:nth-child(1){
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
+                            &:nth-child(2){
+                                background-color: #ff995e;
+                                color: #fff;
+                            }
                     }
                 }
                 
