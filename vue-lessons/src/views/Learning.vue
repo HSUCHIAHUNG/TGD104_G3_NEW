@@ -3,7 +3,13 @@
     <VHeader></VHeader>
 
     
+    
     <div class="learning_body">
+        <div class="bgsi bgsi_1" id="gear"></div>
+        <div class="bgsi bgsi_2" id="gear2"></div>
+        <div class="bgsi bgsi_3" id="gear3"></div>
+        <div class="bgsi bgsi_4" id="gear4"></div>
+        <div class="bgsi bgsi_5" id="gear5"></div>
         <!-- banner -->
         <div class="learning_content">
 
@@ -43,20 +49,20 @@
 
                 :breakpoints="{
                     '@0.00': {
-                        slidesPerView: 2,
-                        spaceBetween: 5,
+                        slidesPerView: 1,
+                        spaceBetween: 15,
                     },
                     '@0.60': {
-                        slidesPerView: 3,
-                        spaceBetween: 5,
+                        slidesPerView: 2,
+                        spaceBetween: 15,
                     },
-                    '@1.2': {
+                    '@1.0': {
                         slidesPerView: 3,
-                        spaceBetween: 10,
+                        spaceBetween: 20,
                     },
                     '@1.50': {
                     slidesPerView: 3,
-                    spaceBetween: 10,
+                    spaceBetween: 20,
                     },
                 }"
                 :modules="modules"
@@ -64,7 +70,7 @@
                 class="mySwiper"
             >
 
-            <swiper-slide class="learning_swiper">
+            <!-- <swiper-slide class="learning_swiper">
                 <img src="../assets/image/learning/teacher_001.png" alt="">
             </swiper-slide>
             <swiper-slide class="learning_swiper">
@@ -78,6 +84,42 @@
             </swiper-slide>
             <swiper-slide class="learning_swiper">
                 <img src="../assets/image/learning/teacher_005.png" alt="">
+            </swiper-slide> -->
+
+            <swiper-slide class="learning_swiper">
+                <div class="Consultant_learning_card">
+                    <img src="../assets/image/learning/teacher_001.png" alt="">
+                    <h2>公開透明的價格</h2>
+                    <p>課程費用直接告訴你!</p>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <div class="Consultant_learning_card card_even">
+                    <img src="../assets/image/learning/teacher_002.png" alt="">
+                    <h2>會員心得全告訴你</h2>
+                    <p>我們非常歡迎會員交流</p>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <div class="Consultant_learning_card">
+                    <img src="../assets/image/learning/teacher_003.png" alt="">
+                    <h2>顧問品質NO.1</h2>
+                    <p>審核到上架都讓您放心</p>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <div class="Consultant_learning_card card_even">
+                    <img src="../assets/image/learning/teacher_004.png" alt="">
+                    <h2>傾聽你所有的意見</h2>
+                    <p>想要什麼課程陪你來安排</p>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="learning_swiper">
+                <div class="Consultant_learning_card">
+                    <img src="../assets/image/learning/teacher_005.png" alt="">
+                    <h2>最強大的團隊</h2>
+                    <p>用心經營是我們的宗旨</p>
+                </div>
             </swiper-slide>
 
             </swiper>
@@ -99,7 +141,7 @@
 
                     <div class="charList-inner">
                         <p class="charList-text">
-                            在這門課中，顧問會專注於提高你的書面和口語溝通能力，
+                            在這門課中，顧問專注於提高我的書面和口語溝通能力，
                             以及探討各種寫作風格和技巧，包括說服性寫作、學術寫作和創意寫作。還教我將涵蓋有效的溝通策略、專業電子郵件和人際溝通。
                             透過這門課程，讓我有效傳達想法的能力，更有助於未來的職業生涯。
                         </p>              
@@ -121,8 +163,8 @@
 
                     <div class="charList-inner">
                         <p class="charList-text">
-                            我們將深入探討微積分的基本原理和概念，包括極限、微分和積分。還將涵蓋一些基本的微積分應用，例如尋找極值、曲線的長度和曲面的面積。
-                            理解微積分的核心原理和技巧，將這些技能應用於各種現實世界的問題中，例如工程學和經濟學等領域。
+                            顧問深入探討微積分的基本原理和概念，包括極限、微分和積分。還將涵蓋一些基本的微積分應用，例如尋找極值、曲線的長度和曲面的面積。
+                            理解微積分的核心原理和技巧，將這些技能應用於各種現實世界的問題中，例如工程學和經濟學等領域，讓我不再畏懼微積分，超棒的啦。
                         </p>              
 
 
@@ -144,7 +186,7 @@
                     <div class="charList-inner">
                         <p class="charList-text">
                             這個課程將從材料和工具的介紹開始，包括水彩顏料、畫筆和紙張的選擇。
-                            顧問會探討基本的繪畫技巧，例如濕法、乾法、膠水法等，以及如何使用色彩、形狀和構圖來創作具有視覺效果的作品。
+                            顧問會探討基本的繪畫技巧，例如濕法、乾法、膠水法等，以及如何使用色彩、形狀和構圖來創作具有視覺效果的作品，課程精彩又有趣。
                         </p>              
 
                                 <!-- <button class="btn btn_solid_secondary btn_orange">Read More</button> -->
@@ -163,7 +205,7 @@
 
                     <div class="charList-inner">
                         <p class="charList-text">
-                            本課程將幫助你們學習JAVA程式設計的基礎知識和應用技巧，以及如何使用JAVA開發。
+                            陪你幫助我學習JAVA程式設計的基礎知識和應用技巧，以及如何使用JAVA開發。
                             涵蓋JAVA的基本資料型別、流程控制語句、方法、物件和類等基本概念。
                             學習使用JAVA開發應用程序，例如圖形使用者介面、資料庫程式設計和網路應用程式開發。
                         </p>              
@@ -293,8 +335,8 @@
 
     .learning_swiper img {
         display: block;
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
         object-fit: cover;
     }
 
@@ -361,4 +403,57 @@
         margin-bottom: 15px;
         margin-top: 15px;
     }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #585858;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    }
+
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .Consultant_learning_card{
+    max-width: 380px;
+    // height: 350px;
+    text-align: center;
+    background-color: #FAEECD;
+    padding-top: 20px;
+    border-radius: 5px;
+  }
+  .Consultant_learning_card img{
+    max-width: 320px;
+    width: 90%;
+    border-radius: 5px;
+    margin: 0 auto;
+  }
+
+  .Consultant_learning_card h2{
+    color: #585858;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .Consultant_learning_card p{
+    color: #585858;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  
+  .card_even{
+    background-color: #FFE59D;
+  }
 </style>

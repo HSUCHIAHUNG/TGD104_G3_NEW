@@ -1,8 +1,8 @@
 <template>
-    <VHeader></VHeader>
-    <div class="learning_option_inner">
+  <VHeader/>
+  <div class="learning_option_inner">
 
-      <div class="option_allcontent">
+    <div class="option_allcontent">
       <div class="option_top">
           <select name="" id="" class="learning_option_select">
                   <option value="option_new">最新</option>
@@ -10,92 +10,157 @@
           </select>
           <button type="button" class="option_box" @click.prevent="showOptionLightBox">提供意見 <i class="fa-solid fa-inbox"></i></button>
       </div>
-
-        <Option></Option>
-        <Option></Option>
-        <Option></Option>
-        <Option></Option>
-      </div>
-
-      <div class="page_number">
-        <router-link to="/"><i class="fa-solid fa-angle-left"></i></router-link>
-        <router-link to="/">1</router-link>
-        <router-link to="/">2</router-link>
-        <router-link to="/">3</router-link>
-        <router-link to="/"><i class="fa-solid fa-angle-right"></i></router-link>
-
-      </div>
-
-      <VFooter></VFooter>
-    </div>
-
-    <div id="option_lightbox" class="none">
-        <article>
-            <label for="" class="option_input_label">HI! 請提供想要學習的項目，陪你來實現!</label>
-            <br>
-            <textarea name="" id="option_text" maxlength="100" placeholder="最多100字"></textarea>
-            <div class="option_btn">
-                <button type="button" class="option_no">取消</button>
-                <button type="button" class="option_ok">送出</button>
+      <div>      
+        <div v-for="(option, index) in options" :key="index" class="option">
+          <div class="option_inner">
+            <div><img src="../assets/image/learning/student003.png" alt=""></div>
+            <p>{{ option.name }}</p>
+          </div>
+          <div class="option_content">
+            <div class="option_content_inner">
+              {{ option.content }}
             </div>
-        </article>
+            <div>
+              <i class="fa-regular fa-heart"></i>
+              <span>{{ option.likes }}</span>
+            </div>
+          </div>
+          <p class="option_time">{{ option.time }}</p>
+        </div>
+      </div>
     </div>
 
+    <div class="page_number">
+      <router-link to="/"><i class="fa-solid fa-angle-left"></i></router-link>
+      <router-link to="/">1</router-link>
+      <router-link to="/">2</router-link>
+      <router-link to="/">3</router-link>
+      <router-link to="/"><i class="fa-solid fa-angle-right"></i></router-link>
+    </div>
+
+    <VFooter></VFooter>
+  </div>
 
 
-  </template>
-    
-    <script>
-      import VHeader from "../components/VHeader.vue";
-      import VFooter from "../components/VFooter.vue";
-      import Option from "../components/Option.vue";
-      
-      export default {
-          name: "LearningOption",
-          data() {
-            return {};
-          },
-          components: {
-            VFooter,
-            VHeader,
-            Option
-          },
-          methods: {
-            // 學習意見燈箱
-            showOptionLightBox(){
-              let option_lightbox = document.getElementById("option_lightbox");
-              let scrollhide = document.querySelector('body');
 
-              // 頁面上的按鈕
-              let option_box= document.getElementsByClassName("option_box")[0];
-              option_box.addEventListener("click", function(){
-                option_lightbox.classList.remove("none");
-                scrollhide.style.overflow ="hidden";
-              });
+  <!-- 燈箱 -->
+  <div id="option_lightbox" :class="{ none: !showLightbox }">
+      <article>
+          <label for="" class="option_input_label">HI! 請提供想要學習的項目，陪你來實現!</label>
+          <br>
+          <textarea name="" id="option_text" maxlength="100" placeholder="最多100字" v-model="SR_content"></textarea>
+          <div class="option_btn">
+              <button type="button" class="option_no" @click="hideLightboxAndClearTextarea">取消</button>
+              <button type="button" class="option_ok" @click="submitForm">送出</button>
+          </div>
+      </article>
+  </div>
+  <!-- 燈箱end -->
 
+</template>    
+  <script>
+    import VHeader from "../components/VHeader.vue";
+    import VFooter from "../components/VFooter.vue";
+    import Option from "../components/Option.vue";
+    import $ from "jquery";
 
-              let option_no = document.getElementsByClassName("option_no")[0];
-              option_no.addEventListener("click", function(){
-                option_lightbox.classList.add("none");
-                scrollhide.style.overflow ="auto";
-              });
-
-
-              option_lightbox.addEventListener("click", function(){
-                this.classList.add("none");
-                scrollhide.style.overflow ="auto";
-              });
-
-              // 點擊 lightbox 中的白色區域，不會關掉 modal
-              option_lightbox.querySelector("article").addEventListener("click", function(e){
-                e.stopPropagation();
-              });
+    export default {
+      name: "LearningOption",
+      data() {
+        return {
+          showLightbox: false,
+          // 使用者輸入的內容
+          // inputOption: '',
+          SR_content:'',
+          options: [ // 存放option的陣列
+            {
+              id: 1,
+              // name: 'a*******1',
+              content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores  non nisi optio cupiditate, neque soluta consequatur ut, ratione molestiae quas, perspiciatis dolor aut? Ipsa dolorum dolorem iure similique? Quis, hic?',
+              likes: 32,
+              time: '2023/03/07'
             },
-          } 
-      };
-    </script>
+            {
+              id: 2,
+              // name: 'b*******2',
+              content: 'qwqwjeiwe qjeiwoejiwe opvvkw kl;kl. Maiores  non nisi optio cupiditate, neque soluta consequatur ut, ratione molestiae quas, perspiciatis dolor aut? Ipsa dolorum dolorem iure similique? Quis, hic?',
+              likes: 10,
+              time: '2023/04/05'
+            },
+            {
+              id: 3,
+              // name: 'c*******3',
+              content: 'qwqwjeiwe qjeiwoejiwe opvvkw kl;kl. Maiores  non nisi optio cupiditate, neque soluta consequatur ut, ratione molestiae quas, perspiciatis dolor aut? Ipsa dolorum dolorem iure similique? Quis, hic?',
+              likes: 10,
+              time: '2023/04/10'
+            },
+          ]
+        };
+      },
+      components: {
+        VFooter,
+        VHeader,
+        Option,
+        $
+      },
+      methods: {
+        hideLightboxAndClearTextarea() {
+          this.showLightbox = false;
+          this.SR_content = "";
+        },
+        // 學習意見燈箱
+        showOptionLightBox(){
+          let option_lightbox = document.getElementById("option_lightbox");
+          let scrollhide = document.querySelector('body');
+
+          // 頁面上的按鈕
+          let option_box= document.getElementsByClassName("option_box")[0];
+          option_box.addEventListener("click", function(){
+            option_lightbox.classList.remove("none");
+            scrollhide.style.overflow ="hidden";
+          });
+
+
+          let option_no = document.getElementsByClassName("option_no")[0];
+          option_no.addEventListener("click", function(){
+            option_lightbox.classList.add("none");
+            scrollhide.style.overflow ="auto";
+          });
+
+
+          option_lightbox.addEventListener("click", function(){
+            this.classList.add("none");
+            scrollhide.style.overflow ="auto";
+          });
+
+          // 點擊 lightbox 中的白色區域，不會關掉 modal
+          option_lightbox.querySelector("article").addEventListener("click", function(e){
+            e.stopPropagation();
+          });
+        },
+        submitForm(){
+          $.ajax({
+              // type: 'POST',
+              method: "POST",
+              url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/API/LearningOption.php',
+              dataType: 'json', 
+              data: {
+                SR_content: this.SR_content,
+              },
+              success: function(response) {
+                  //更新html內容
+                  $("#result").html(response);
+              },
+              error: function(exception) {
+                  alert("發生錯誤: " + exception.status);
+              }
+          });
+        }
+      } 
+    };
+  </script>
     
     
-    <style lang="scss">
-      @import "../assets/tgd104-sass/new_style.scss";
-    </style>
+  <style lang="scss">
+    @import "../assets/tgd104-sass/new_style.scss";
+  </style>
