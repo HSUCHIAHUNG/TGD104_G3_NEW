@@ -103,14 +103,14 @@ export default {
   name: "JoinTravel",
     data() {
         return {
-            Tr_interest: '',
-            Tr_experience: '',
-            Tr_license: '',
-            Tr_job: '',
-            Tr_cost: '',
-            Tr_title: '',
-            Tr_category: '',
-            Tr_introduction: '',
+            Tr_interest: '123',
+            // Tr_experience: '',
+            // Tr_license: '',
+            // Tr_job: '',
+            // Tr_cost: '',
+            // Tr_title: '',
+            // Tr_category: '',
+            // Tr_introduction: '',
 
             editor: ClassicEditor,
             editorConfig: {
@@ -125,28 +125,31 @@ export default {
         VFooter,
         $
     },
+    mounted() {
+      
+    },
     methods: {
         submitForm(){
             console.log(this.Tr_interest);
             $.ajax({
-                // type: 'POST',
+              
                 method: "POST",
                 url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/joinTeavel.php', 
                 //url: '../api/Join_test.php', 
                 data: {
                     Tr_interest: this.Tr_interest,
-                    Tr_experience: this.Tr_experience,
-                    Tr_license: this.Tr_license,
-                    Tr_job: this.Tr_job,
-                    Tr_cost: this.Tr_cost,
-                    Tr_title: this.Tr_title,
-                    Tr_category: this.Tr_category,
-                    Tr_introduction: this.Tr_introduction,
+                    // Tr_experience: this.Tr_experience,
+                    // Tr_license: this.Tr_license,
+                    // Tr_job: this.Tr_job,
+                    // Tr_cost: this.Tr_cost,
+                    // Tr_title: this.Tr_title,
+                    // Tr_category: this.Tr_category,
+                    // Tr_introduction: this.Tr_introduction,
 
                 },
                 success: function(response) {
                     //更新html內容
-                    $("#result").html(response);
+                    // console.log(response);
                 },
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);

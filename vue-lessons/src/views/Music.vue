@@ -126,12 +126,11 @@
           current:'all',
           products: [ 
             {
-              id: 1,
-              name: '鐵人',
+              id: 1,  //顧問
+              name: '鐵人', //顧問
               description: '學烏克麗麗，輕鬆享受甜美音色！',
               image: require('../assets/image/consultant02.png'),
-              liked: false,
-              lesson: '烏克麗麗'
+              lesson: '烏克麗麗' //顧問
             },
             {
               id: 2,

@@ -23,15 +23,21 @@
 
         <div class="OrderManagement_select_form">
             <div class="OrderManagement_form_state">
-                <select name="state" id="state" class="OrderManagement_select">
+                <select v-model="selectedState" name="state" id="state" class="OrderManagement_select">
                     <option value="">請選擇</option>
                     <option value="Finish">完成</option>
                     <option value="undone">未完成</option>
                 </select>
             </div>
-            <button class="OrderManagement_btn" >最新</button>
-            <button class="OrderManagement_btn" >最舊</button>
-            <searchbar></searchbar>
+            <button class="OrderManagement_btn" @click="toggleSortOrder('asc')">最新</button>
+            <button class="OrderManagement_btn" @click="toggleSortOrder('desc')">最舊</button>
+            <!-- <searchbar></searchbar> -->
+            <div class="MemberContainer">
+                <div class="SearchBar">
+                    <input id="search-input" placeholder="請輸入身分證字號" v-model="searchId">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
         </div>
 
         <div class="OrderManagement_table">
@@ -88,21 +94,23 @@
             
             return {
                
-                
+                selectedState: '',
                 current: "travel",
                 currentTab: "tab1",
+                sortOrder: "asc",
+                searchId: '',
                 items: [
-                    { id: '2023022000', tr_category: 'travel',name: '舞動小敏之', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '怕被看腳踝的霈霈', tr_cost: '2023/03/02',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '炫炫', tr_cost: '2023/03/03',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '立偉', tr_cost: '2023/03/04',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '嘉宏', tr_cost: '2023/03/05',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'travel',name: '小敏', tr_cost: '2023/03/06',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '品諭', tr_cost: '2023/03/07',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022001', tr_category: 'travel',name: '舞動小敏之', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022002', tr_category: 'travel',name: '怕被看腳踝的霈霈', tr_cost: '2023/03/02',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022003', tr_category: 'travel',name: '炫炫', tr_cost: '2023/03/03',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022004', tr_category: 'travel',name: '立偉', tr_cost: '2023/03/04',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022005', tr_category: 'travel',name: '嘉宏', tr_cost: '2023/03/05',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022006', tr_category: 'travel',name: '小敏', tr_cost: '2023/03/06',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022007', tr_category: 'learing',name: '品諭', tr_cost: '2023/03/07',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: 'learing',name: '娟霈', tr_cost: '2023/03/08',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '舞動小敏之分', tr_cost: '2023/03/09',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '口頭禪蝦品諭', tr_cost: '2023/03/10',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/03/11',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022040', tr_category: 'learing',name: '舞動小敏之分', tr_cost: '2023/03/09',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022101', tr_category: 'learing',name: '口頭禪蝦品諭', tr_cost: '2023/03/10',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
+                    { id: '2023022008', tr_category: 'learing',name: '炫炫', tr_cost: '2023/03/11',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'learing',name: '立偉', tr_cost: '2023/03/12',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'travel',name: '小敏', tr_cost: '2023/03/13',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: 'travel',name: '霈霈', tr_cost: '2023/03/14',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
@@ -135,70 +143,77 @@
                     { id: '2023022000', tr_category: 'travel',name: '嘉宏', tr_cost: '2023/08/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                    ],
                 perpage: 10, //一頁的資料數
-                currentPage: 1
+                currentPage: 1,
+                
             }
         },   
         
         mounted() {
-            // console.log(new Date('2022-02-11'))
+           this.selectedState = '';
 
         },
         methods: {
             setPage(page) {
-                if(page <= 0 || page > this.totalPage) {
-                return
-            }
-            this.currentPage = page
+                if (page <= 0 || page > this.totalPage) {
+                return;
+                }
+                this.currentPage = page;
             },
-            toggleSortOrder() {
-                this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+            toggleSortOrder(order) {
+                this.sortOrder = order === 'asc' ? 'asc' : 'desc';
             },
         },
-
         computed: {
-            filtered_list() {
-                const filteredItems = this.items.filter(item => item.tr_category === this.current);
-                const start = (this.currentPage - 1) * this.perpage;
-                const end = this.currentPage * this.perpage;
-                const sortedItems = filteredItems
-                    .map(item => ({...item, tr_cost: new Date(item.tr_cost)})) // 將日期字串轉換為 Date 物件
-                    .sort((a, b) => a.tr_cost - b.tr_cost); // 進行日期排序
-                return sortedItems
-                    .slice(start, end)
-                    .map(item => ({...item, tr_cost: item.tr_cost.toLocaleDateString()})); // 將日期轉換為指定格式的字串
-
-
-                // const filteredItems = this.items.filter(item => item.tr_category === this.current);
-                // const start = (this.currentPage - 1) * this.perpage;
-                // const end = this.currentPage * this.perpage;
-                // return filteredItems.slice(start, end);
-            },
-
-
-            // filtered_list(){
-            // return this.items.slice(this.pageStart, this.pageEnd)
-
-            // },
-            totalPage() {
-                const filteredItems = this.items.filter(item => item.tr_category === this.current);
-                const itemsCount = filteredItems.length;
-                const pagesCount = Math.ceil(itemsCount / this.perpage);
-                return pagesCount;
-
-               
-                // return Math.ceil(this.items.length / this.perpage)
-                
-            },
-            pageStart() {
-              return (this.currentPage - 1) * this.perpage
-              //取得該頁第一個值的index
-            },
-            pageEnd() {
-                return this.currentPage * this.perpage
-                //取得該頁最後一個值的index
+        filtered_list() {
+            let filteredItems = this.items.filter(
+                (item) => item.tr_category === this.current
+            );
+            if (this.searchId) {
+                filteredItems = filteredItems.filter((item) =>
+                    item.id.includes(this.searchId)
+                );
             }
+            const start = (this.currentPage - 1) * this.perpage;
+            const end = this.currentPage * this.perpage;
+            let sortedItems = filteredItems.map((item) => ({
+                    ...item,
+                    tr_cost: new Date(item.tr_cost),
+                }))
+                .filter((item) => {
+                    if (this.selectedState === '') {
+                        return true;
+                    } else if (this.selectedState === 'Finish') {
+                        return item.tro_order_data === '完成';
+                    } else if (this.selectedState === 'undone') {
+                        return item.tro_order_data !== '完成';
+                    }
+                })
+                .sort((a, b) =>
+                    this.sortOrder === 'asc' ?
+                    a.tr_cost - b.tr_cost :
+                    b.tr_cost - a.tr_cost
+                );
+            sortedItems = sortedItems.map((item) => ({
+                ...item,
+                tr_cost: item.tr_cost.toLocaleDateString(),
+            }));
+            return sortedItems.slice(start, end);
         },
-
+        totalPage() {
+            const filteredItems = this.items.filter(
+            (item) => item.tr_category === this.current
+            );
+            const itemsCount = filteredItems.length;
+            const pagesCount = Math.ceil(itemsCount / this.perpage);
+            return pagesCount;
+        },
+        pageStart() {
+            return (this.currentPage - 1) * this.perpage;
+        },
+        pageEnd() {
+            return this.currentPage * this.perpage;
+        },
+        },
         name: 'MemberManagement',
         components: {
             searchbar,
