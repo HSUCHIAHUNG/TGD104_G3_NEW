@@ -31,7 +31,6 @@ $tr_introduction =  $_POST["Tr_introduction"];
 
 
 
-
 $sql = "INSERT INTO about_travel(tr_interest,tr_experience,tr_license,tr_job,tr_cost,tr_title,tr_category,tr_introduction) VALUES ('$tr_interest','$tr_experience','$tr_license','$tr_job','$tr_cost','$tr_title','$tr_category','$tr_introduction')";
 // $sql = "INSERT INTO member(Account = :account, PWD = :pwd, CreateDate) VALUES ('$Account', '$PWD', NOW())";
 
