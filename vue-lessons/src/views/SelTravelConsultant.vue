@@ -151,7 +151,6 @@ export default {
           name: "裴大尼 ",
           experience: "5年經驗登山嚮導",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C02",
@@ -159,7 +158,6 @@ export default {
           name: "裴中尼 ",
           experience: "台灣百岳征服者",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C03",
@@ -167,7 +165,6 @@ export default {
           name: "裴小尼 ",
           experience: "3年經驗登山嚮導 ",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C04",
@@ -175,7 +172,6 @@ export default {
           name: "裴上尼",
           experience: "4年經驗登山嚮導",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C05",
@@ -183,7 +179,6 @@ export default {
           name: "裴下尼",
           experience: "1年經驗登山嚮導",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C06",
@@ -191,7 +186,6 @@ export default {
           name: "裴左尼",
           experience: "5年經驗登山嚮導",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C07",
@@ -199,7 +193,6 @@ export default {
           name: "裴右尼",
           experience: "5年經驗登山嚮導",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C08",
@@ -207,7 +200,6 @@ export default {
           name: "裴尼",
           experience: "5年經驗登山嚮導",
           gender: "男",
-          favorites: false,
         },
         {
           id: "C09",
@@ -215,7 +207,6 @@ export default {
           name: "倪大裴",
           experience: "1年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
         {
           id: "C10",
@@ -223,7 +214,6 @@ export default {
           name: "倪中裴",
           experience: "2年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
         {
           id: "C11",
@@ -231,7 +221,6 @@ export default {
           name: "倪小裴",
           experience: "3年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
         {
           id: "C12",
@@ -239,7 +228,6 @@ export default {
           name: "倪上裴",
           experience: "3年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
         {
           id: "C13",
@@ -247,7 +235,6 @@ export default {
           name: "倪下裴",
           experience: "2年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
         {
           id: "C14",
@@ -255,7 +242,6 @@ export default {
           name: "倪左裴",
           experience: "1年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
         {
           id: "C15",
@@ -263,7 +249,6 @@ export default {
           name: "倪右裴",
           experience: "1年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
         {
           id: "C16",
@@ -271,7 +256,6 @@ export default {
           name: "倪裴",
           experience: "1年經驗登山嚮導",
           gender: "女",
-          favorites: false,
         },
       ],
       favorites: [],
@@ -294,13 +278,30 @@ export default {
     },
 
     startBooking() {
-      if (this.selectedConsultant === null) {
-        alert("請選擇陪你顧問");
+      let id = $cookies.get("member_id")
+      if (id) {
+        if (this.selectedConsultant === null) {
+          alert("請選擇陪你顧問");
+        } else {
+          this.$router.push("/TravelCalendar");
+        }
       } else {
-        this.$router.push("/TravelCalendar");
+          alert('請先登入會員');
       }
+
     },
   },
+
+  mounted() {
+    //cookie
+    // this.$cookies.set("member_id","1")
+    // let id = $cookies.get("member_id")
+    // console.log(id);
+    // this.$cookies.remove("member_id");
+    //insert 完取回他顧問id set 到 cookie
+            
+  },
+
 };
 </script>
 

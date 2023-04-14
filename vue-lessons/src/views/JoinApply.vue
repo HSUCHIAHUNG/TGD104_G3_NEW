@@ -12,40 +12,40 @@
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">姓</label>
-              <input type="text" class="input_text" placeholder="姓" v-model.trim="C_firstname"/>
+              <input type="text" class="input_text" placeholder="姓" v-model.trim="C_firstname" required/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">名</label>
-              <input type="text" class="input_text" placeholder="名" v-model.trim="C_lastname"/>
+              <input type="text" class="input_text" placeholder="名" v-model.trim="C_lastname" required/>
             </div>
           </div>
 
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">信箱(帳號)</label>
-              <input type="email" class="input_text" placeholder="信箱(帳號)" v-model.trim="C_mail"/>
+              <input type="email" class="input_text" placeholder="信箱(帳號)" v-model.trim="C_mail" required/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">暱稱</label>
-              <input type="text" class="input_text" placeholder="暱稱" v-model.trim="C_nickname"/>
+              <input type="text" class="input_text" placeholder="暱稱" v-model.trim="C_nickname" required/>
             </div>
           </div>
 
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">身分證字號</label>
-              <input type="text" class="input_text" placeholder="身分證字號" v-model.trim="C_id"/>
+              <input type="text" class="input_text" placeholder="身分證字號" v-model.trim="C_id" required/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">個性</label>
-              <input type="text" class="input_text" placeholder="個性" v-model.trim="C_personality"/>
+              <input type="text" class="input_text" placeholder="個性" v-model.trim="C_personality" required/>
             </div>
           </div>
 
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">密碼</label>
-              <input type="password" class="input_text" placeholder="密碼" v-model.trim="C_password"/>
+              <input type="password" class="input_text" placeholder="密碼" v-model.trim="C_password" required/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">再次確認密碼</label>
@@ -60,11 +60,11 @@
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">電話號碼</label>
-              <input type="number" class="input_text" placeholder="電話號碼" v-model.trim="C_phone"/>
+              <input type="text" class="input_text" placeholder="電話號碼" v-model.trim="C_phone" required/>
             </div>
             <div class="form_group">
               <label class="input_label" for="area">居住地區</label>
-              <select id="area" class="input_select" v-model="C_area">
+              <select id="area" class="input_select" v-model="C_area" required>
                 <!-- <option value="">--請選擇--</option> -->
                 <option v-for="area in areas">{{area}}</option>
                 <!-- <option value="北部">北部</option>
@@ -78,7 +78,7 @@
           <div class="input_row">
             <div class="form_group">
               <label class="input_label" for="gender">性別</label>
-              <select id="gender" class="input_select" v-model="C_gender">
+              <select id="gender" class="input_select" v-model="C_gender" required>
                 <!-- <option value="">--請選擇--</option> -->
                 <option v-for="gender in genders">{{gender}}</option>
                 <!-- <option value="male">男性</option>
@@ -94,6 +94,7 @@
                 max="2023-12-31"
                 class="input_text"
                 v-model="C_birth"
+                required
               />
             </div>
           </div>
@@ -125,12 +126,7 @@
               <label class="input_label" for="theFile"
                 >生活照上傳(圖片寬&高請設定相同且檔案大小不得超過10mb)</label
               >
-              <input
-                type="file"
-                ref="fileInput"
-                @change="fileChange"
-                class="input_img"
-              />
+              <input type="file" ref="fileInput" @change="fileChange" class="input_img" id="ProductImage" name="profile"/>
               <input
                 type="file"
                 ref="fileInput2"
@@ -171,6 +167,7 @@
         ><button class="btn_blue">下一步</button></router-link
       > -->
       <button class="btn_blue" @click="submitForm">下一步</button>
+      <p id="result" style="height: 100px;"></p>
     </div>
   </div>
   <!-- join_apply end -->
@@ -187,8 +184,10 @@ export default {
   name: "JoinApply",
   data() {
     return {
+      C_firstname:'',
       areas: ["北部","中部","南部","東部"],
       genders: ["男性","女性"],
+      About_class:'',
     };
   },
 
@@ -196,6 +195,13 @@ export default {
     VHeader,
     VFooter,
     $,
+  },
+
+  mounted() {
+    // console.log(this.C_firstname)
+    let x = $cookies.get('toAbout')
+    this.About_class = x
+    // console.log(this.About_class);
   },
 
   methods: {
@@ -208,6 +214,10 @@ export default {
         image.src = reader.result;
         image.style.maxWidth = "130px";
         image.style.maxHeight = "130px";
+
+        console.log(file);
+        // console.log(image);
+        // console.log(image.src);
       });
     },
     fileChange2() {
@@ -234,42 +244,91 @@ export default {
     },
 
     submitForm(){
-        // 格式化日期为 YYYY-MM-DD 格式
-        // const formattedBirthday = this.C_birth ? new Date(this.C_birth).toISOString().slice(0, 10) : null;
-        // let date = new Date(this.C_birth); // 获取当前日期
-        // let year = date.getFullYear(this.C_birth); // 获取年份
-        // let month = ("0" + (date.getMonth(this.C_birth) + 1)).slice(-2); // 获取月份，并在前面添加0
-        // let day = ("0" + date.getDate(this.C_birth)).slice(-2); // 获取日期，并在前面添加0
-        // let formattedDate = year + "-" + month + "-" + day; // 格式化日期为YYYY-MM-DD格式
-        console.log(this.C_birth);
+      
+        // const formData = new FormData();
+        // formData.append("C_firstname", this.C_firstname);
+        // formData.append("C_birth", this.C_birth);
+        // formData.append("C_lastname", this.C_lastname);
+        // formData.append("C_mail", this.C_mail);
+        // formData.append("C_nickname", this.C_nickname);
+        // formData.append("C_id", this.C_id);
+        // formData.append("C_personality", this.C_personality);
+        // formData.append("C_password", this.C_password);
+        // formData.append("C_phone", this.C_phone);
+        // formData.append("C_area", this.C_area);
+        // formData.append("C_gender", this.C_gender);
+      
+
+        // formData.append("C_photo1", this.$refs.fileInput.files[0]);
 
         $.ajax({
             method: "POST",
-            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/Join_test.php', 
+            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply.php', 
             data: {
                 C_firstname: this.C_firstname,
                 C_birth: this.C_birth,
                 C_lastname: this.C_lastname,
-                C_mail:this.C_mail,
-                C_nickname:this.C_nickname,
-                C_id:this.C_id,
-                C_personality:this.C_personality,
-                C_password:this.C_password,
-                C_phone:this.C_phone,
-                C_area:this.C_area,
-                C_gender:this.C_gender,
-                
+                C_mail: this.C_mail,
+                C_nickname: this.C_nickname,
+                C_id: this.C_id,
+                C_personality: this.C_personality,
+                C_password: this.C_password,
+                C_phone: this.C_phone,
+                C_area: this.C_area,
+                C_gender: this.C_gender,
+                // C_photo1: this.$refs.fileInput.files[0],
             },
-            success: function(response) {
-                //更新html內容
+            dataType: "text",
+            // data: formData,
+            // contentType: false,
+            // processData: false,
+            success: response => {
                 // $("#result").html(response);
+                console.log('成功');
+                // console.log(this);
+                this.setCid()
+            
             },
             error: function(exception) {
                 alert("發生錯誤: " + exception.status);
-            }
+            },
 
         });
-    }
+
+        
+    },
+  
+    setCid(){
+      // alert()
+       $.ajax({
+            method: "POST",
+            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
+            data: {
+              C_id: this.C_id,
+               
+            },
+            dataType: "text",
+            success: function(response) {
+              // $("#result").html(response);
+
+              //set cookie
+              $cookies.set("Consultant_id",response)
+
+
+            },
+            error: function(exception) {
+                alert("發生錯誤: " + exception.status);
+            },
+
+        });
+
+      if (this.About_class == "L") {
+          this.$router.push('/JoinLearn');
+        } else{
+            this.$router.push('/JoinTravel');
+        }
+    },
+
   },
 };
 </script>

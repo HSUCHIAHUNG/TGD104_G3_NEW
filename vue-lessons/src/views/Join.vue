@@ -125,9 +125,9 @@
                       
         <div class="join_button">
                 <!-- <a href="/JoinApply"><button class="btn_orange">加入學習</button></a> -->
-                <router-link to="/JoinApply"><button class="btn_orange">加入學習</button></router-link>
+                <router-link to="/JoinApply"><button class="btn_orange" @click="toAbout('L')">加入學習</button></router-link>
                 <!-- <a href="/JoinApply"><button class="btn_orange">加入旅行</button></a> -->
-                <router-link to="/JoinApply"><button class="btn_orange">加入旅行</button></router-link>
+                <router-link to="/JoinApply"><button class="btn_orange" @click="toAbout('T')">加入旅行</button></router-link>
         </div>
 
     </div>
@@ -149,25 +149,36 @@ import { Autoplay} from 'swiper';
 
 export default {
   name: "Join",
-  data() {
-    return {
-        content: "LearnCondition",
-        currentTab: "tab1",
-    };
-  },
-  components: {
+    data() {
+        return {
+            content: "LearnCondition",
+            currentTab: "tab1",
+        };
+    },
+    mounted() {
+        this.$cookies.set("memberID","1")
+        let x = $cookies.get('memberID')   
+    },
+    methods: {
+       toAbout(e){
+        this.$cookies.set("toAbout",e)
+       },
+       
+    },
+
+    components: {
     LearnCondition,
     TravelCondition,
     VHeader,
     VFooter,
     Swiper,
     SwiperSlide,
-  },
-  setup() {
+    },
+    setup() {
         return {
         modules: [Autoplay],
         };
-  },
+    },
 };
 </script>
 
