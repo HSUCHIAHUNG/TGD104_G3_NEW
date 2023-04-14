@@ -53,21 +53,22 @@
                         <th>訂單狀態</th>
                     </tr>
                                          
-                        <template v-for="(item, index) in filtered_list" :key="index">
-                            <tr>
-                                <td>{{item.id}}</td>
-                                <td>{{item.tr_category}}</td>
-                                <td>{{item.name}}</td>
-                                <td>{{item.tr_cost}}</td>
-                                <td>{{item.tro_booking_data}}</td>
-                                <td>{{item.tro_order_data}}</td>
-                            </tr>
-                        </template >
+                    <template v-for="(item, index) in filtered_list" :key="index">
+                        <tr>
+                            <td>{{item.id}}</td>
+                            <td>{{item.tr_category}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.tr_cost}}</td>
+                            <td>{{item.tro_booking_data}}</td>
+                            <td>{{item.tro_order_data}}</td>
+                        </tr>
+                    </template >
                             
                  
                     
                 </table>
-                    <ul >
+
+                    <ul>
                         <li @click.prevent="setPage(currentPage-1)">
                             <i class="fa-solid fa-angle-left"></i>
                         </li>

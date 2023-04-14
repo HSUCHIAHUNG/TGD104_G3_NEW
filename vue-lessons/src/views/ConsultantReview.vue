@@ -54,16 +54,17 @@
                 </table>
 
                 <ul>
-                    <li>
+                    <li @click.prevent="setPage(currentPage-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>
+                    <li v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
+                        {{ n }}
+                    </li>
+                    <li @click.prevent="setPage(currentPage+1)">
                         <i class="fa-solid fa-angle-right"></i>
                     </li>
                 </ul>
+                
             </div>
         </div>
     </div>
