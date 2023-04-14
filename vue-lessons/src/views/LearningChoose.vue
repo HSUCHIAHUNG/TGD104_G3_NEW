@@ -100,6 +100,10 @@ export default {
       this.$router.push(newValue);
     },
   },
+  mounted() {
+    this.$cookies.set("memberID","1")
+    let x = $cookies.get('memberID')   
+  }
 };
 </script>
 

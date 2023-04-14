@@ -99,6 +99,11 @@
               </div>
 
 
+              <!-- <div v-for="order_test in order_m">
+                <h1>{{order_m.tr_experience}}</h1>
+              </div> -->
+
+
             </template>
           </div>
 
@@ -109,8 +114,7 @@
           </div>
         </div>
         <!-- 右邊end -->
-      <!-- </div>                 -->
-    <!-- </div>    -->
+
     
     <!-- <VFooter></VFooter> -->
   </template>
@@ -123,6 +127,7 @@
       },
       data() {
         return {
+          // order_m:[],
           selectedProductId: null,
           current:'all',
           products: [ 
@@ -373,11 +378,15 @@
       methods: {
         selectProduct(product) {
           this.selectedProductId = product.id
+          this.$cookies.set("cid",this.selectedProductId)          
         },
         toggleLike(product) {
           product.liked = !product.liked
         }
-      }
+      },
+      // mounted() {
+      //   $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/Select.php').then(response => this.order_m = response)
+      // },
     }
   </script>
   
