@@ -93,8 +93,8 @@
             </router-link>
             <div class="product-actions">
               <button :class="{ 'liked': product.liked }" @click="toggleLike(product)"><i class="fas fa-heart"></i></button>
-              <button v-if="selectedProductId === product.id" class="selected">已選擇 <i class="fa-solid fa-basket-shopping"></i></button>
-              <button v-else @click="selectProduct(product)">選擇</button>
+              <button v-if="selectedProductId === product.id" class="selected"><i class="fa-regular fa-square-check"></i></button>
+              <button v-else @click="selectProduct(product)"><i class="fa-regular fa-square"></i></button>
             </div>
           </div>
       </div>
@@ -372,6 +372,7 @@
       methods: {
         selectProduct(product) {
           this.selectedProductId = product.id
+          this.$cookies.set("cid",this.selectedProductId)
         },
         toggleLike(product) {
           product.liked = !product.liked
@@ -382,4 +383,8 @@
   
   <style lang="scss">
     @import "../assets/tgd104-sass/new_style.scss";
+    .fa-square-check,
+    .fa-square{
+      font-size: 30px;
+    }
   </style>

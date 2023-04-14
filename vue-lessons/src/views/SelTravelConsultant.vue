@@ -299,13 +299,30 @@ export default {
     },
 
     startBooking() {
-      if (this.selectedConsultant === null) {
-        alert("請選擇陪你顧問");
+      let id = $cookies.get("member_id")
+      if (id) {
+        if (this.selectedConsultant === null) {
+          alert("請選擇陪你顧問");
+        } else {
+          this.$router.push("/TravelCalendar");
+        }
       } else {
-        this.$router.push("/TravelCalendar");
+          alert('請先登入會員');
       }
+
     },
   },
+
+  mounted() {
+    //cookie
+    // this.$cookies.set("member_id","1")
+    // let id = $cookies.get("member_id")
+    // console.log(id);
+    // this.$cookies.remove("member_id");
+    //insert 完取回他顧問id set 到 cookie
+            
+  },
+
 };
 </script>
 

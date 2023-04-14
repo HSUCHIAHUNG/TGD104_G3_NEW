@@ -21,20 +21,17 @@
     //放進變數
     $s_address = $_POST["S_address"];
     $s_school = $_POST["S_school"];
-    $s_cost = $_POST["S_cost"];
-    $s_title = $_POST["S_title"];
-    $s_experience = $_POST["S_experience"];
+    $about_cost = $_POST["About_cost"];
+    $about_title = $_POST["About_title"];
+    $about_introduction = $_POST["About_introduction"];
     $s_grad = $_POST["S_grad"];
     $s_category = $_POST["S_category"];
-    $s_class = $_POST["S_class"];
+    $about_class = $_POST["About_class"];
+    $tr_experience = $_POST["Consultant_id"];
     // echo $s_address;
-    $sql = "INSERT INTO about_study(s_address, s_school, s_cost, s_title, s_experience, s_grad, s_category, s_class) VALUES ('$s_address', '$s_school', '$s_cost', '$s_title', '$s_experience', '$s_grad', '$s_category', '$s_class')";
+    $sql = "INSERT INTO about_consultant(s_address, s_school, about_cost, about_title, about_introduction, s_grad, s_category, about_class, tr_experience) VALUES ('$s_address', '$s_school', '$about_cost', '$about_title', '$about_introduction', '$s_grad', '$s_category', '$about_class', '$tr_experience')";
     // $sql = "INSERT INTO member(Account = :account, PWD = :pwd, CreateDate) VALUES ('$Account', '$PWD', NOW())";
 
     //執行
     $pdo->exec($sql);
-
-
-
-
 ?>
