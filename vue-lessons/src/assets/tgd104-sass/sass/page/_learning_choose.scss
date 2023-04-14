@@ -17,6 +17,10 @@
     ::-webkit-scrollbar {
         display: none;
     }
+    &.router-link-exact-active {
+        background-color: #fff;
+        color: #f28b4f !important;
+    }
     .learning_choose_side {
         height: 800px;
         width:20%;
