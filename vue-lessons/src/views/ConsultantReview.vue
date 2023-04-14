@@ -37,14 +37,14 @@
                         <td>{{item.tr_category}}</td>
                         <td>{{item.name}}</td>
                         <td>
-                            <a href="">查看
+                            <button>查看
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                            </a> 
+                            </button> 
                         </td>
                         <td>
-                            <a href="">查看
+                            <button>查看
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
+                            </button>
                         </td>
                         <td>
                             <i class="fa-solid fa-check"></i>

@@ -79,9 +79,9 @@
             <template v-for="product in products" :key="product.id" >
                 <div v-if="current ==='all' || current === product.lesson"> 
                   <div class="product">
-                    <router-link to="/LearningGallery" target="_blank">
+                    <router-link to="/LearningGallery"   target="_blank" >
                       <div class="product-image">
-                        <img :src="product.image" :alt="product.name">
+                        <img :src="product.image" :alt="product.name" >
                       </div>
                     </router-link>
                       <div class="product-details">
@@ -124,6 +124,7 @@
         return {
           selectedProductId: null,
           current:'all',
+          cid:'',
           products: [ 
             {
               id: 1,  //顧問
@@ -368,14 +369,22 @@
           currentTab: "tab1",
         };
       },
+      
+      mounted() {
+        console.log(this.cid);
+      },
+
       methods: {
         selectProduct(product) {
           this.selectedProductId = product.id
         },
         toggleLike(product) {
           product.liked = !product.liked
+          
         }
-      }
+      },
+
+      
     }
   </script>
   
