@@ -62,6 +62,7 @@ import MemberSetting from "../components/MemberSetting.vue";
 import PasswordChange from "../components/PasswordChange.vue";
 import VFooter from "../components/VFooter.vue";
 import ChatBotNew from "../components/ChatBotNew.vue";
+import $ from "jquery";
 
 export default {
   name: "Member",
@@ -70,6 +71,7 @@ export default {
       content: "MemberSetting",
       currentTab: "tab1",
       defaultOption: "帳號設定",
+      memberInfo: [],
     };
   },
   components: {
@@ -88,6 +90,24 @@ export default {
     if (!m_id) {
       this.$router.back();
       alert("請登入會員");
+    } else {
+      $.ajax({
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/memberInfo.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+          id: m_id,
+        },
+        success: function (response) {
+          this.memberInfo = response;
+          console.log(this.memberInfo);
+          console.log(this.memberInfo[0].id);
+          console.log(this.memberInfo[0].m_id);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
     }
   },
 };
