@@ -82,6 +82,14 @@ export default {
     DropDown,
     ChatBotNew,
   },
+  mounted() {
+    let m_id = $cookies.get("m_id");
+    console.log(m_id);
+    if (!m_id) {
+      this.$router.back();
+      alert("請登入會員");
+    }
+  },
 };
 </script>
 

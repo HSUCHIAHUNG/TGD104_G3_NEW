@@ -34,23 +34,35 @@
         </div>
 
         <div class="inputs">
-          <h1>會員登入</h1>
-          <label for="" class="input_label">帳號(信箱)</label>
-          <input type="text" class="input_text" v-model="mlogin.m_mail" />
-          <br />
-          <label for="" class="input_label">密碼</label>
-          <input type="text" class="input_text" v-model="mlogin.m_password" />
-          <a @click.prevent="forgetPwd">忘記密碼?</a>
-          <div class="btns">
-            <button
-              type="button"
-              class="outline_btn_blue"
-              @click.prevent="signIn"
-            >
-              會員註冊
-            </button>
-            <button type="button" class="btn_blue">登入</button>
-          </div>
+          <form @submit.prevent="mLogin">
+            <h1>會員登入</h1>
+            <label for="" class="input_label">帳號(信箱)</label>
+            <input
+              type="email"
+              class="input_text"
+              v-model="mlogin.m_mail"
+              required
+            />
+            <br />
+            <label for="" class="input_label">密碼</label>
+            <input
+              type="password"
+              class="input_text"
+              v-model="mlogin.m_password"
+              required
+            />
+            <a @click.prevent="forgetPwd">忘記密碼?</a>
+            <div class="btns">
+              <button
+                type="button"
+                class="outline_btn_blue"
+                @click.prevent="signIn"
+              >
+                會員註冊
+              </button>
+              <button type="submit" class="btn_blue">登入</button>
+            </div>
+          </form>
         </div>
       </article>
     </div>
@@ -226,7 +238,7 @@
                   required
                 >
                   <option value="">--請選擇--</option>
-                  <option value="北部">北部</option>
+                  <option value="north">北部</option>
                   <option value="中部">中部</option>
                   <option value="南部">南部</option>
                   <option value="東部">東部</option>
@@ -341,6 +353,7 @@
 
 <script>
 import $ from "jquery";
+import { now } from "lodash";
 
 export default {
   name: "VHeaderTest",
@@ -364,6 +377,7 @@ export default {
         m_mail: "",
         m_password: "",
       },
+      memberInfo: [],
     };
   },
   components: {
@@ -479,7 +493,7 @@ export default {
     closeSignIn() {
       document.getElementById("signin_lightbox").classList.add("none");
     },
-    // 會員註冊送出表單
+    // 送出會員註冊表單
     signUp() {
       console.log("ok");
       $.ajax({
@@ -500,6 +514,29 @@ export default {
         },
         success: function (response) {
           console.log(response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    },
+    // 送出會員登入表單
+    mLogin() {
+      console.log("ok");
+      $.ajax({
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/mLogin.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+          m_mail: this.mlogin.m_mail,
+          m_password: this.mlogin.m_password,
+        },
+        success: (response) => {
+          console.log(response);
+          this.memberInfo = response;
+          this.$cookies.set("m_id", this.memberInfo[0].id);
+          let m_id = $cookies.get("m_id");
+          console.log(m_id);
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
