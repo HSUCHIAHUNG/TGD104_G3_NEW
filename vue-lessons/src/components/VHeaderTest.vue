@@ -534,9 +534,9 @@ export default {
         success: (response) => {
           console.log(response);
           this.memberInfo = response;
-          this.$cookies.set("m_id", this.memberInfo[0].id);
-          let m_id = $cookies.get("m_id");
-          console.log(m_id);
+          this.$cookies.set("M_id", this.memberInfo[0].id);
+          let M_id = $cookies.get("M_id");
+          console.log(M_id);
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);

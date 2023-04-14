@@ -32,7 +32,7 @@ export default {
   methods: {},
   mounted() {
     let vm = this; // 將 Vue instance 存到變數 vm 中
-    let m_id = $cookies.get("m_id");
+    let m_id = $cookies.get("M_id");
     $.ajax({
       url: "http://localhost/NEW_G3/vue-lessons/src/api/memberfav.php",
       dataType: "json",
