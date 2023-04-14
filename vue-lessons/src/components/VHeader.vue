@@ -15,9 +15,8 @@
         ></a>
       </div>
     </div>
-  </header>     
+  </header>
   <!-- header end -->
-
 
   <div class="v_header">
     <!-- <a href="" @click.prevent="memberLogin"
@@ -35,23 +34,35 @@
         </div>
 
         <div class="inputs">
-          <h1>會員登入</h1>
-          <label for="" class="input_label">帳號(信箱)</label>
-          <input type="text" class="input_text" />
-          <br />
-          <label for="" class="input_label">密碼</label>
-          <input type="text" class="input_text" />
-          <a @click.prevent="forgetPwd">忘記密碼?</a>
-          <div class="btns">
-            <button
-              type="button"
-              class="outline_btn_blue"
-              @click.prevent="signIn"
-            >
-              會員註冊
-            </button>
-            <button type="button" class="btn_blue">登入</button>
-          </div>
+          <form @submit.prevent="mLogin">
+            <h1>會員登入</h1>
+            <label for="" class="input_label">帳號(信箱)</label>
+            <input
+              type="email"
+              class="input_text"
+              v-model="mlogin.m_mail"
+              required
+            />
+            <br />
+            <label for="" class="input_label">密碼</label>
+            <input
+              type="password"
+              class="input_text"
+              v-model="mlogin.m_password"
+              required
+            />
+            <a @click.prevent="forgetPwd">忘記密碼?</a>
+            <div class="btns">
+              <button
+                type="button"
+                class="outline_btn_blue"
+                @click.prevent="signIn"
+              >
+                會員註冊
+              </button>
+              <button type="submit" class="btn_blue">登入</button>
+            </div>
+          </form>
         </div>
       </article>
     </div>
@@ -127,15 +138,27 @@
 
         <div class="inputs">
           <h1>會員註冊</h1>
-          <form action="">
+          <form @submit.prevent="signUp">
             <div class="input_row">
               <div class="form_group">
                 <label for="" class="input_label">姓</label>
-                <input type="text" class="input_text" placeholder="姓" />
+                <input
+                  type="text"
+                  class="input_text"
+                  placeholder="姓"
+                  v-model="member.m_firstname"
+                  required
+                />
               </div>
               <div class="form_group">
                 <label for="" class="input_label">名</label>
-                <input type="text" class="input_text" placeholder="名" />
+                <input
+                  type="text"
+                  class="input_text"
+                  placeholder="名"
+                  v-model="member.m_lastname"
+                  required
+                />
               </div>
             </div>
             <div class="input_row">
@@ -145,45 +168,75 @@
                   type="text"
                   class="input_text"
                   placeholder="身分證字號"
+                  v-model="member.m_id"
+                  required
                 />
               </div>
               <div class="form_group">
                 <label for="" class="input_label">暱稱</label>
-                <input type="text" class="input_text" placeholder="暱稱" />
+                <input
+                  type="text"
+                  class="input_text"
+                  placeholder="暱稱"
+                  v-model="member.m_nickname"
+                  required
+                />
               </div>
             </div>
             <div class="input_row">
               <div class="form_group">
                 <label for="" class="input_label">信箱(帳號)</label>
                 <input
-                  type="text"
+                  type="email"
                   class="input_text"
-                  placeholder="身分證字號"
+                  placeholder="信箱(帳號)"
+                  v-model="member.m_mail"
+                  required
                 />
               </div>
               <div class="form_group">
                 <label for="" class="input_label">電話號碼</label>
-                <input type="text" class="input_text" placeholder="電話號碼" />
+                <input
+                  type="number"
+                  class="input_text"
+                  placeholder="電話號碼"
+                  v-model="member.m_phone"
+                  required
+                />
               </div>
             </div>
             <div class="input_row">
               <div class="form_group">
                 <label for="" class="input_label">密碼</label>
-                <input type="text" class="input_text" placeholder="密碼" />
+                <input
+                  type="password"
+                  class="input_text"
+                  placeholder="密碼"
+                  v-model="member.m_password"
+                  required
+                />
               </div>
               <div class="form_group">
                 <label for="" class="input_label">請再次確認密碼</label>
                 <input
-                  type="text"
+                  type="password"
                   class="input_text"
                   placeholder="請再次確認密碼"
+                  v-model="member.check_pwd"
+                  required
                 />
               </div>
             </div>
             <div class="input_row">
               <div class="form_group">
                 <label class="input_label" for="area">居住地區</label>
-                <select name="area" id="area" class="input_select">
+                <select
+                  name="area"
+                  id="area"
+                  class="input_select"
+                  v-model="member.m_area"
+                  required
+                >
                   <option value="">--請選擇--</option>
                   <option value="北部">北部</option>
                   <option value="中部">中部</option>
@@ -193,7 +246,13 @@
               </div>
               <div class="form_group">
                 <label class="input_label" for="gender">性別</label>
-                <select name="gender" id="gender" class="input_select">
+                <select
+                  name="gender"
+                  id="gender"
+                  class="input_select"
+                  v-model="member.m_gender"
+                  required
+                >
                   <option value="">--請選擇--</option>
                   <option value="male">男性</option>
                   <option value="female">女性</option>
@@ -211,26 +270,28 @@
                   min="1900-01-01"
                   max="2023-12-31"
                   class="input_text"
+                  v-model="member.m_birth"
+                  required
                 />
               </div>
             </div>
+
+            <div class="btns">
+              <button
+                type="button"
+                class="btn_modal_close outline_btn_blue"
+                @click.prevent="closeSignIn"
+              >
+                取消
+              </button>
+              <button type="submit" class="btn_blue">註冊會員</button>
+            </div>
           </form>
-          <div class="btns">
-            <button
-              type="button"
-              class="btn_modal_close outline_btn_blue"
-              @click.prevent="closeSignIn"
-            >
-              取消
-            </button>
-            <button type="button" class="btn_blue">註冊會員</button>
-          </div>
         </div>
       </article>
     </div>
     <!-- 會員註冊燈箱 End-->
   </div>
-
 
   <div id="center_nav">
     <div id="close_bar" @click.prevent="close_nav">
@@ -270,7 +331,7 @@
           >會員中心</router-link
         >
       </button>
-    
+
       <button class="btn_yellow" @click.prevent="close_nav">
         <router-link to="/consultant">顧問中心</router-link>
       </button>
@@ -290,18 +351,39 @@
 </template>
 
 <script>
-
+import $ from "jquery";
+import { now } from "lodash";
 
 export default {
-  name: "app",
+  name: "VHeader",
   data() {
-    return {};
+    return {
+      // 會員註冊
+      member: {
+        m_firstname: "",
+        m_lastname: "",
+        m_id: "",
+        m_nickname: "",
+        m_mail: "",
+        m_phone: "",
+        m_password: "",
+        m_area: "",
+        m_gender: "",
+        m_birth: "",
+        check_pwd: "",
+      },
+      // 會員登入
+      mlogin: {
+        m_mail: "",
+        m_password: "",
+      },
+      memberInfo: [],
+    };
   },
   components: {
-  
+    $,
   },
   methods: {
-
     // 會員登入燈箱
     //開啟nav
     open_nav() {
@@ -389,7 +471,7 @@ export default {
     closePwdrReset() {
       document.getElementById("pwd_reset_lightbox").classList.add("none");
     },
-    // 會員註冊
+    // 會員註冊燈箱
     signIn() {
       let member_lightbox = document.getElementById("member_lightbox");
       let lightbox = document.getElementById("signin_lightbox");
@@ -410,6 +492,60 @@ export default {
     // 關閉燈箱
     closeSignIn() {
       document.getElementById("signin_lightbox").classList.add("none");
+    },
+    // 送出會員註冊表單
+    signUp() {
+      console.log("ok");
+      $.ajax({
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/MSignUp.php",
+        dataType: "text",
+        type: "POST",
+        data: {
+          m_firstname: this.member.m_firstname,
+          m_lastname: this.member.m_lastname,
+          m_id: this.member.m_id,
+          m_nickname: this.member.m_nickname,
+          m_mail: this.member.m_mail,
+          m_phone: this.member.m_phone,
+          m_password: this.member.m_password,
+          m_area: this.member.m_area,
+          m_gender: this.member.m_gender,
+          m_birth: this.member.m_birth,
+        },
+        success: (response) => {
+          this.$cookies.set("M_id", response);
+          this.$router.push("/member");
+          alert("註冊成功");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    },
+    // 送出會員登入表單
+    mLogin() {
+      console.log("ok");
+      $.ajax({
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/mLogin.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+          m_mail: this.mlogin.m_mail,
+          m_password: this.mlogin.m_password,
+        },
+        success: (response) => {
+          console.log(response);
+          this.memberInfo = response;
+          this.$cookies.set("M_id", this.memberInfo[0].id);
+          let M_id = $cookies.get("M_id");
+          console.log(M_id);
+          this.$router.push("/member");
+          alert("登入成功");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
     },
   },
 };
@@ -516,5 +652,4 @@ export default {
 }
 
 //  @import "../../tgd104-sass/new_style.scss";
-
 </style>
