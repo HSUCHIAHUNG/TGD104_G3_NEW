@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="order_message_container">
+    <div class="message_container">
       <img src="../assets/image/member/avatar.jpg" alt="" />
       <div class="message_txt">
         <p>
@@ -8,6 +8,7 @@
         </p>
       </div>
     </div>
+
     <div class="reply_message_container">
       <img src="../assets/image/member/consultant_info.jpg" alt="" />
       <div class="message_txt">

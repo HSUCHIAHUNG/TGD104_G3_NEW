@@ -8,6 +8,16 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  {
+    path: "/peitest",
+    name: "peitest",
+    component: () => import("../views/PeiTest.vue"),
+  },
+  {
+    path: "/testsignup",
+    name: "testsignup",
+    component: () => import("../views/TestSignUp.vue"),
+  },
   // {
   //   path: "/about",
   //   name: "about",
@@ -318,7 +328,3 @@ const router = createRouter({
 });
 
 export default router;
-
-
-
-
