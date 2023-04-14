@@ -48,6 +48,11 @@ export default {
             response[0].m_fav &&
             JSON.parse(response[0].m_fav).consultant
           ) {
+            console.log(response);
+            console.log(response[0]);
+            console.log(response[0].m_fav);
+            console.log(JSON.parse(response[0].m_fav));
+            console.log(JSON.parse(response[0].m_fav).consultant);
             vm.favList = JSON.parse(response[0].m_fav).consultant; // 將 vm.favList 設置為取得的陣列
             // 取得顧問資料
             $.ajax({
