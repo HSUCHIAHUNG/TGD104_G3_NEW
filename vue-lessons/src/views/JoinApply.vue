@@ -12,40 +12,40 @@
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">姓</label>
-              <input type="text" class="input_text" placeholder="姓" />
+              <input type="text" class="input_text" placeholder="姓" v-model.trim="C_firstname"/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">名</label>
-              <input type="text" class="input_text" placeholder="名" />
+              <input type="text" class="input_text" placeholder="名" v-model.trim="C_lastname"/>
             </div>
           </div>
 
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">信箱(帳號)</label>
-              <input type="text" class="input_text" placeholder="信箱(帳號)" />
+              <input type="email" class="input_text" placeholder="信箱(帳號)" v-model.trim="C_mail"/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">暱稱</label>
-              <input type="text" class="input_text" placeholder="暱稱" />
+              <input type="text" class="input_text" placeholder="暱稱" v-model.trim="C_nickname"/>
             </div>
           </div>
 
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">身分證字號</label>
-              <input type="text" class="input_text" placeholder="身分證字號" />
+              <input type="text" class="input_text" placeholder="身分證字號" v-model.trim="C_id"/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">個性</label>
-              <input type="text" class="input_text" placeholder="個性" />
+              <input type="text" class="input_text" placeholder="個性" v-model.trim="C_personality"/>
             </div>
           </div>
 
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">密碼</label>
-              <input type="text" class="input_text" placeholder="密碼" />
+              <input type="password" class="input_text" placeholder="密碼" v-model.trim="C_password"/>
             </div>
             <div class="form_group">
               <label for="" class="input_label">再次確認密碼</label>
@@ -60,16 +60,17 @@
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">電話號碼</label>
-              <input type="text" class="input_text" placeholder="電話號碼" />
+              <input type="number" class="input_text" placeholder="電話號碼" v-model.trim="C_phone"/>
             </div>
             <div class="form_group">
               <label class="input_label" for="area">居住地區</label>
-              <select name="area" id="area" class="input_select">
-                <option value="">--請選擇--</option>
-                <option value="北部">北部</option>
+              <select id="area" class="input_select" v-model="C_area">
+                <!-- <option value="">--請選擇--</option> -->
+                <option v-for="area in areas">{{area}}</option>
+                <!-- <option value="北部">北部</option>
                 <option value="中部">中部</option>
                 <option value="南部">南部</option>
-                <option value="東部">東部</option>
+                <option value="東部">東部</option> -->
               </select>
             </div>
           </div>
@@ -77,10 +78,11 @@
           <div class="input_row">
             <div class="form_group">
               <label class="input_label" for="gender">性別</label>
-              <select name="gender" id="gender" class="input_select">
-                <option value="">--請選擇--</option>
-                <option value="male">男性</option>
-                <option value="female">女性</option>
+              <select id="gender" class="input_select" v-model="C_gender">
+                <!-- <option value="">--請選擇--</option> -->
+                <option v-for="gender in genders">{{gender}}</option>
+                <!-- <option value="male">男性</option>
+                <option value="female">女性</option> -->
               </select>
             </div>
             <div class="form_group">
@@ -88,11 +90,10 @@
 
               <input
                 type="date"
-                id="birthday"
-                name="trip-start"
                 min="1900-01-01"
                 max="2023-12-31"
                 class="input_text"
+                v-model="C_birth"
               />
             </div>
           </div>
@@ -165,9 +166,11 @@
         ><button class="outline_btn_blue">回上一頁</button></router-link
       >
       <!-- <a href="/JoinLearn"><button class="btn_blue">下一步</button></a> -->
-      <router-link to="/JoinLearn"
+
+      <!-- <router-link to="/JoinLearn"
         ><button class="btn_blue">下一步</button></router-link
-      >
+      > -->
+      <button class="btn_blue" @click="submitForm">下一步</button>
     </div>
   </div>
   <!-- join_apply end -->
@@ -178,16 +181,21 @@
 <script>
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
+import $ from "jquery";
 
 export default {
   name: "JoinApply",
   data() {
-    return {};
+    return {
+      areas: ["北部","中部","南部","東部"],
+      genders: ["男性","女性"],
+    };
   },
 
   components: {
     VHeader,
     VFooter,
+    $,
   },
 
   methods: {
@@ -224,6 +232,44 @@ export default {
         image.style.maxHeight = "130px";
       });
     },
+
+    submitForm(){
+        // 格式化日期为 YYYY-MM-DD 格式
+        // const formattedBirthday = this.C_birth ? new Date(this.C_birth).toISOString().slice(0, 10) : null;
+        // let date = new Date(this.C_birth); // 获取当前日期
+        // let year = date.getFullYear(this.C_birth); // 获取年份
+        // let month = ("0" + (date.getMonth(this.C_birth) + 1)).slice(-2); // 获取月份，并在前面添加0
+        // let day = ("0" + date.getDate(this.C_birth)).slice(-2); // 获取日期，并在前面添加0
+        // let formattedDate = year + "-" + month + "-" + day; // 格式化日期为YYYY-MM-DD格式
+        console.log(this.C_birth);
+
+        $.ajax({
+            method: "POST",
+            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/Join_test.php', 
+            data: {
+                C_firstname: this.C_firstname,
+                C_birth: this.C_birth,
+                C_lastname: this.C_lastname,
+                C_mail:this.C_mail,
+                C_nickname:this.C_nickname,
+                C_id:this.C_id,
+                C_personality:this.C_personality,
+                C_password:this.C_password,
+                C_phone:this.C_phone,
+                C_area:this.C_area,
+                C_gender:this.C_gender,
+                
+            },
+            success: function(response) {
+                //更新html內容
+                // $("#result").html(response);
+            },
+            error: function(exception) {
+                alert("發生錯誤: " + exception.status);
+            }
+
+        });
+    }
   },
 };
 </script>

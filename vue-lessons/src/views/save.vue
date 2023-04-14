@@ -29,8 +29,8 @@
                     <option value="undone">未完成</option>
                 </select>
             </div>
-            <button class="OrderManagement_btn" >最新</button>
-            <button class="OrderManagement_btn" >最舊</button>
+            <button class="OrderManagement_btn" @click="toggleSortOrder">最新</button>
+            <button class="OrderManagement_btn" @click="toggleSortOrder">最舊</button>
             <searchbar></searchbar>
         </div>
 
@@ -151,7 +151,31 @@
             this.currentPage = page
             },
             toggleSortOrder() {
-                this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+                this.sortOrder = this.sortOrder === "asc" ? "desc" : "asc";
+                this.updateFilteredItems();
+            },
+            sortByDate(items) {
+                let sortedItems = items.map((item) => ({
+                ...item,
+                tr_cost: new Date(item.tr_cost).getTime(), // 獲取時間戳
+                }));
+                sortedItems =
+                this.sortOrder === "asc"
+                    ? sortedItems.sort((a, b) => a.tr_cost - b.tr_cost) // 正序排序
+                    : sortedItems.sort((a, b) => b.tr_cost - a.tr_cost); // 反序排序
+                return sortedItems.map((item) => ({
+                ...item,
+                tr_cost: new Date(item.tr_cost).toLocaleDateString(), // 轉換回字串
+                }));
+            },
+            updateFilteredItems() {
+                const filteredItems = this.items.filter(
+                (item) => item.tr_category === this.current
+                );
+                const sortedItems = this.sortByDate(filteredItems);
+                const start = (this.currentPage - 1) * this.perpage;
+                const end = this.currentPage * this.perpage;
+                this.filtered_list = sortedItems.slice(start, end);
             },
         },
 
@@ -160,43 +184,28 @@
                 const filteredItems = this.items.filter(item => item.tr_category === this.current);
                 const start = (this.currentPage - 1) * this.perpage;
                 const end = this.currentPage * this.perpage;
-                const sortedItems = filteredItems
-                    .map(item => ({...item, tr_cost: new Date(item.tr_cost)})) // 將日期字串轉換為 Date 物件
-                    .sort((a, b) => a.tr_cost - b.tr_cost); // 進行日期排序
+                let sortedItems = filteredItems.map(item => ({...item, tr_cost: new Date(item.tr_cost)})); // 將日期字串轉換為 Date 物件
+                sortedItems = this.sortOrder === 'asc' 
+                ? sortedItems.sort((a, b) => a.tr_cost - b.tr_cost) // 正序排序
+                : sortedItems.sort((a, b) => b.tr_cost - a.tr_cost); // 反序排序
                 return sortedItems
-                    .slice(start, end)
-                    .map(item => ({...item, tr_cost: item.tr_cost.toLocaleDateString()})); // 將日期轉換為指定格式的字串
-
-
-                // const filteredItems = this.items.filter(item => item.tr_category === this.current);
-                // const start = (this.currentPage - 1) * this.perpage;
-                // const end = this.currentPage * this.perpage;
-                // return filteredItems.slice(start, end);
+                .slice(start, end)
+                .map(item => ({...item, tr_cost: item.tr_cost.toLocaleDateString()})); // 將日期轉換為指定格式的字串
             },
-
-
-            // filtered_list(){
-            // return this.items.slice(this.pageStart, this.pageEnd)
-
-            // },
             totalPage() {
                 const filteredItems = this.items.filter(item => item.tr_category === this.current);
                 const itemsCount = filteredItems.length;
                 const pagesCount = Math.ceil(itemsCount / this.perpage);
                 return pagesCount;
-
-               
-                // return Math.ceil(this.items.length / this.perpage)
-                
             },
             pageStart() {
-              return (this.currentPage - 1) * this.perpage
-              //取得該頁第一個值的index
+                return (this.currentPage - 1) * this.perpage;
+                //取得該頁第一個值的index
             },
             pageEnd() {
-                return this.currentPage * this.perpage
+                return this.currentPage * this.perpage;
                 //取得該頁最後一個值的index
-            }
+            },
         },
 
         name: 'MemberManagement',
