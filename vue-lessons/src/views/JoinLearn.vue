@@ -259,7 +259,7 @@ export default {
     }, 
     mounted() {
 
-        this.$cookies.set("Consultant_id","8")
+        // this.$cookies.set("Consultant_id","8")
         let x = $cookies.get('Consultant_id')   
         this.Consultant_id = x;
 
