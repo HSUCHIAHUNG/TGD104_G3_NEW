@@ -281,6 +281,7 @@
       methods: {
         selectProduct(product) {
           this.selectedProductId = product.id
+          this.$cookies.set("cid",this.selectedProductId)
         },
         toggleLike(product) {
           product.liked = !product.liked

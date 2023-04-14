@@ -8,8 +8,17 @@
                   <option value="option_new">最新</option>
                   <option value="option_hot">熱門</option>
           </select>
-          <button type="button" class="option_box" @click.prevent="showOptionLightBox">提供意見 <i class="fa-solid fa-inbox"></i></button>
+          <!-- <button type="button" class="option_box" @click.prevent="showOptionLightBox">提供意見 <i class="fa-solid fa-inbox"></i></button> -->
       </div>
+      <article>
+          <label for="" class="option_input_label">HI! 請提供想要學習的項目，陪你來實現!</label>
+          <br>
+          <textarea name="" id="option_text" maxlength="100" placeholder="最多100字" v-model="SR_content"></textarea>
+          <div class="option_btn">
+              <button type="button" class="option_no" @click="hideLightboxAndClearTextarea">清空</button>
+              <button type="button" class="option_ok" @click="submitForm">送出</button>
+          </div>
+      </article>
       <div>      
         <div v-for="(option, index) in options" :key="index" class="option">
           <div class="option_inner">
@@ -28,6 +37,10 @@
           <p class="option_time">{{ option.time }}</p>
         </div>
       </div>
+
+      <div v-for="answer in study_option">
+        <h1 style="height: 20px;">{{answer.sr_content}}</h1>
+      </div>
     </div>
 
     <div class="page_number">
@@ -44,7 +57,7 @@
 
 
   <!-- 燈箱 -->
-  <div id="option_lightbox" :class="{ none: !showLightbox }">
+  <!-- <div id="option_lightbox" :class="{ none: !showLightbox }">
       <article>
           <label for="" class="option_input_label">HI! 請提供想要學習的項目，陪你來實現!</label>
           <br>
@@ -54,7 +67,7 @@
               <button type="button" class="option_ok" @click="submitForm">送出</button>
           </div>
       </article>
-  </div>
+  </div> -->
   <!-- 燈箱end -->
 
 </template>    
@@ -68,6 +81,7 @@
       name: "LearningOption",
       data() {
         return {
+          study_option:[],
           showLightbox: false,
           // 使用者輸入的內容
           // inputOption: '',
@@ -110,33 +124,33 @@
         },
         // 學習意見燈箱
         showOptionLightBox(){
-          let option_lightbox = document.getElementById("option_lightbox");
-          let scrollhide = document.querySelector('body');
+          // let option_lightbox = document.getElementById("option_lightbox");
+          // let scrollhide = document.querySelector('body');
 
           // 頁面上的按鈕
-          let option_box= document.getElementsByClassName("option_box")[0];
-          option_box.addEventListener("click", function(){
-            option_lightbox.classList.remove("none");
-            scrollhide.style.overflow ="hidden";
-          });
+          // let option_box= document.getElementsByClassName("option_box")[0];
+          // option_box.addEventListener("click", function(){
+          //   option_lightbox.classList.remove("none");
+          //   scrollhide.style.overflow ="hidden";
+          // });
 
 
-          let option_no = document.getElementsByClassName("option_no")[0];
-          option_no.addEventListener("click", function(){
-            option_lightbox.classList.add("none");
-            scrollhide.style.overflow ="auto";
-          });
+          // let option_no = document.getElementsByClassName("option_no")[0];
+          // option_no.addEventListener("click", function(){
+          //   option_lightbox.classList.add("none");
+          //   scrollhide.style.overflow ="auto";
+          // });
 
 
-          option_lightbox.addEventListener("click", function(){
-            this.classList.add("none");
-            scrollhide.style.overflow ="auto";
-          });
+          // option_lightbox.addEventListener("click", function(){
+          //   this.classList.add("none");
+          //   scrollhide.style.overflow ="auto";
+          // });
 
           // 點擊 lightbox 中的白色區域，不會關掉 modal
-          option_lightbox.querySelector("article").addEventListener("click", function(e){
-            e.stopPropagation();
-          });
+          // option_lightbox.querySelector("article").addEventListener("click", function(e){
+          //   e.stopPropagation();
+          // });
         },
         submitForm(){
           $.ajax({
@@ -156,7 +170,10 @@
               }
           });
         }
-      } 
+      },
+      mounted() {
+        $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php').then(response => this.study_option = response)
+      }, 
     };
   </script>
     

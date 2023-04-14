@@ -60,7 +60,7 @@
 
                         <!-- <div class="form_group">
                             <label class="input_label" for="class">選擇您可提供的服務課程：</label>
-                            <select name="class" id="class" class="input_select" v-model="S_class">
+                            <select name="class" id="class" class="input_select" v-model="About_class">
                                 <option value="" disabled selected>--請選擇--</option>
                                 <option value="鋼琴">鋼琴</option>
                                 <option value="吉他">吉他</option>
@@ -93,9 +93,9 @@
 
                         <div class="form_group">
                             <label class="input_label" for="class">選擇您可提供的服務課程：</label>
-                            <select name="class" id="class" class="input_select" v-model="S_class">
+                            <select name="class" id="class" class="input_select" v-model="About_class">
                                 <option value="" disabled selected>--請選擇--</option>
-                                <option v-for="option in S_classOptions" :value="option.value">{{ option.label }}</option>
+                                <option v-for="option in About_classOptions" :value="option.value">{{ option.label }}</option>
                             </select>
                         </div>
                     </div>
@@ -107,19 +107,19 @@
                         </div>
                         <div class="form_group">
                             <label for="" class="input_label">課程費用</label>
-                            <input type="text" class="input_text" placeholder="課程費用" v-model="S_cost"/>
+                            <input type="text" class="input_text" placeholder="課程費用" v-model="About_cost"/>
                         </div>
                     </div>
 
                     <div class="input_row">
                         <div class="form_group">
                             <label for="" class="input_label">請提供網頁上詳細資料標題(20字以內)</label>
-                            <input type="text" class="input_text" placeholder="詳細資料標題" maxlength="20" v-model="S_title"/>
+                            <input type="text" class="input_text" placeholder="詳細資料標題" maxlength="20" v-model="About_title"/>
                         </div>
                     </div>
 
                     <h1>簡短的介紹一下自己吧(例如：服務課程相關經歷簡述)(100字以內)</h1>
-                    <ckeditor :editor="editor" v-model="S_experience" :config="editorConfig"></ckeditor>
+                    <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig"></ckeditor>
                 </form>
             </div>
         </div>
@@ -149,22 +149,24 @@ export default {
         return {
             S_address:'',
             S_school:'',
-            S_cost:'',
-            S_title:'',
-            S_experience:'',
+            About_cost:'',
+            About_title:'',
+            About_introduction:'',
             S_grad:'',
             editor: ClassicEditor,
-            S_experience: '',
+            // S_experience: '',
             S_category:'',
-            S_class:'',
+            About_class:'',
             editorConfig: {
                 placeholder: '請輸入內容...',
                 removePlugins: ['Bold', 'Italic', 'Link', 'CKFinder', 'Image', 'Media' ],
-            }
+            },
+            Member_id:'',
+            Consultant_id:'',
         };
     },
     computed: {
-        S_classOptions() {
+        About_classOptions() {
         // 根據第一層選擇，返回對應的第二層選項
         if (this.S_category === '音樂') {
             return [
@@ -224,7 +226,7 @@ export default {
     methods: {
         updateSecondSelection() {
             // 重置第二層選擇
-            this.S_class = '';
+            this.About_class = '';
         },
         submitForm(){
             $.ajax({
@@ -236,12 +238,14 @@ export default {
                 data: {
                     S_address: this.S_address,
                     S_school: this.S_school,
-                    S_cost: this.S_cost,
-                    S_title: this.S_title,
-                    S_experience: this.S_experience,
+                    About_cost: this.About_cost,
+                    About_title: this.About_title,
+                    About_introduction: this.About_introduction,
                     S_grad: this.S_grad,
                     S_category: this.S_category,
-                    S_class: this.S_class,
+                    About_class: this.About_class,
+                    Consultant_id: this.Consultant_id,
+                    // Member_id: this.Member_id,
                 },
                 success: function(response) {
                     //更新html內容
@@ -253,7 +257,13 @@ export default {
             });
         }
     }, 
+    mounted() {
 
+        // this.$cookies.set("Consultant_id","8")
+        let x = $cookies.get('Consultant_id')   
+        this.Consultant_id = x;
+
+    },
  
 };
 </script>

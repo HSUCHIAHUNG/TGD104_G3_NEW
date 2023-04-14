@@ -41,7 +41,7 @@
                     <label class="input_label" for="travelCategory"
                         >選擇您可提供的旅行類別：</label
                     >
-                    <select name="category" id="travelCategory" class="input_select" v-model="Tr_category">
+                    <select name="category" id="travelCategory" class="input_select" v-model="About_class">
                         <option value="">--請選擇--</option>
                         <option value="登山">登山</option>
                         <option value="單車">單車</option>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form_group">
                     <label for="" class="input_label" >費用</label>
-                    <input type="text" class="input_text" placeholder="費用" v-model="Tr_cost"/>
+                    <input type="text" class="input_text" placeholder="費用" v-model="About_cost"/>
                     </div>
                 </div>
 
@@ -66,14 +66,14 @@
                         class="input_text"
                         placeholder="詳細資料標題"
                         maxlength="20"
-                        v-model= "Tr_title"
+                        v-model= "About_title"
                     />
                     </div>
                 </div>
 
                 <h1>簡短的介紹一下自己吧(例如：旅行相關經歷簡述)(50字以內)</h1>
                 
-                <ckeditor :editor="editor" v-model="Tr_introduction" :config="editorConfig" ></ckeditor>
+                <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig" ></ckeditor>
 
                 </form>
             </div>
@@ -107,11 +107,12 @@ export default {
             Tr_experience: '',
             Tr_license: '',
             Tr_job: '',
-            Tr_cost: '',
-            Tr_title: '',
-            Tr_category: '',
-            Tr_introduction: '',
-
+            About_cost: '',
+            About_title: '',
+            About_class: '',
+            About_introduction: '',
+            Consultant_id:'',
+            Member_id:'',
             editor: ClassicEditor,
             editorConfig: {
                 placeholder: '請輸入內容...',
@@ -125,11 +126,20 @@ export default {
         VFooter,
         $
     },
+    mounted() {
+
+        this.$cookies.set("Consultant_id","8")
+        let x = $cookies.get('Consultant_id')   
+        this.Consultant_id = x;
+
+    },
     methods: {
         submitForm(){
-            console.log(this.Tr_interest);
+        // console.log(this.Consultant_id);
+            
+        
             $.ajax({
-                // type: 'POST',
+              
                 method: "POST",
                 url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/joinTeavel.php', 
                 //url: '../api/Join_test.php', 
@@ -138,15 +148,15 @@ export default {
                     Tr_experience: this.Tr_experience,
                     Tr_license: this.Tr_license,
                     Tr_job: this.Tr_job,
-                    Tr_cost: this.Tr_cost,
-                    Tr_title: this.Tr_title,
-                    Tr_category: this.Tr_category,
-                    Tr_introduction: this.Tr_introduction,
-
+                    About_cost: this.About_cost,
+                    About_title: this.About_title,
+                    About_class: this.About_class,
+                    About_introduction: this.About_introduction,
+                    Consultant_id: this.Consultant_id,
                 },
                 success: function(response) {
                     //更新html內容
-                    $("#result").html(response);
+                    // console.log(response);
                 },
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);
