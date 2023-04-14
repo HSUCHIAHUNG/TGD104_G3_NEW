@@ -138,7 +138,7 @@
 
         <div class="inputs">
           <h1>會員註冊</h1>
-          <form action="">
+          <form @submit.prevent="signUp">
             <div class="input_row">
               <div class="form_group">
                 <label for="" class="input_label">姓</label>
@@ -238,7 +238,7 @@
                   required
                 >
                   <option value="">--請選擇--</option>
-                  <option value="north">北部</option>
+                  <option value="北部">北部</option>
                   <option value="中部">中部</option>
                   <option value="南部">南部</option>
                   <option value="東部">東部</option>
@@ -275,19 +275,18 @@
                 />
               </div>
             </div>
+
+            <div class="btns">
+              <button
+                type="button"
+                class="btn_modal_close outline_btn_blue"
+                @click.prevent="closeSignIn"
+              >
+                取消
+              </button>
+              <button type="submit" class="btn_blue">註冊會員</button>
+            </div>
           </form>
-          <div class="btns">
-            <button
-              type="button"
-              class="btn_modal_close outline_btn_blue"
-              @click.prevent="closeSignIn"
-            >
-              取消
-            </button>
-            <button type="button" class="btn_blue" @click="signUp">
-              註冊會員
-            </button>
-          </div>
         </div>
       </article>
     </div>
@@ -512,8 +511,10 @@ export default {
           m_gender: this.member.m_gender,
           m_birth: this.member.m_birth,
         },
-        success: function (response) {
-          console.log(response);
+        success: (response) => {
+          this.$cookies.set("M_id", response);
+          this.$router.push("/member_test");
+          alert("註冊成功");
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
@@ -537,6 +538,8 @@ export default {
           this.$cookies.set("M_id", this.memberInfo[0].id);
           let M_id = $cookies.get("M_id");
           console.log(M_id);
+          this.$router.push("/member_test");
+          alert("登入成功");
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);

@@ -279,7 +279,7 @@ export default {
     ChatBotNew,
   },
   mounted() {
-    let m_id = $cookies.get("m_id");
+    let m_id = $cookies.get("M_id");
     console.log(m_id);
     if (!m_id) {
       this.$router.back();

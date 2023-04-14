@@ -29,8 +29,12 @@ $statement = $pdo->query($sql);
 //抓出全部且依照順序封裝成一個二維陣列
 $data = $statement->fetchAll();
 
-$new_data = json_encode($data);
-echo $new_data;
+if(count($data)>0){
+  $new_data = json_encode($data);
+  echo $new_data;
+} else {
+  echo '';
+}
 
 
 // $statement = $pdo->prepare($sql);
