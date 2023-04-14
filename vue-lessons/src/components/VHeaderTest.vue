@@ -470,7 +470,7 @@ export default {
     closePwdrReset() {
       document.getElementById("pwd_reset_lightbox").classList.add("none");
     },
-    // 會員註冊
+    // 會員註冊燈箱
     signIn() {
       let member_lightbox = document.getElementById("member_lightbox");
       let lightbox = document.getElementById("signin_lightbox");
