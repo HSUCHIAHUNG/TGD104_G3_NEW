@@ -23,6 +23,7 @@ require_once ("conn.php");
 
 $member_id = $_POST['member_id'];
 
+// 還要補上order_status = 0;
 $sql = "select a.s_cost, o.id, o.so_category, o.so_class,o.so_booking_date  from `order` o 
 join about_consultant a 
 on o.consultant_id = a.about_cid 

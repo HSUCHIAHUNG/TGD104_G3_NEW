@@ -43,38 +43,76 @@
           </div>
           <!------------ 訂單列表 ------------>
           <div class="order_list">
-            <template v-for="(item, index) in orderSum" :key="item.id">
-              <div class="order">
-                <div class="order_content">
-                  <div class="order_left">
-                    <div class="category"></div>
-                    <div class="order_summary">
-                      <h2>陪你學習</h2>
-                      <span>{{ item.so_category }}</span> |
-                      <span>{{ item.so_class }}</span>
-                      <p>
-                        <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                          `AY` + item.id
-                        }}
-                      </p>
+            <!-- 學習訂單 -->
+            <div v-if="currentTab == 'tab1'">
+              <template v-for="(item, index) in orderSum" :key="item.id">
+                <div class="order">
+                  <div class="order_content">
+                    <div class="order_left">
+                      <div class="category"></div>
+                      <div class="order_summary">
+                        <h2>陪你學習</h2>
+                        <span>{{ item.so_category }}</span> |
+                        <span>{{ item.so_class }}</span>
+                        <p>
+                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                            `AY` + item.id
+                          }}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="order_right">
-                    <div class="date">
-                      {{ formattedMonth(item.so_booking_date) }}
-                      <span>{{ formatDate(item.so_booking_date) }}</span>
+                    <div class="order_right">
+                      <div class="date">
+                        {{ formattedMonth(item.so_booking_date) }}
+                        <span>{{ formatDate(item.so_booking_date) }}</span>
+                      </div>
+                      <p>{{ price(item.s_cost) }}</p>
+                      <router-link
+                        to="/orderdetailstest"
+                        class="btn_blue"
+                        @click="setOrderId(item.id)"
+                        >查看更多</router-link
+                      >
                     </div>
-                    <p>{{ price(item.s_cost) }}</p>
-                    <router-link
-                      to="/orderdetailstest"
-                      class="btn_blue"
-                      @click="setOrderId(item.id)"
-                      >查看更多</router-link
-                    >
                   </div>
                 </div>
-              </div>
-            </template>
+              </template>
+            </div>
+            <!-- 旅行訂單 -->
+            <div v-if="currentTab == 'tab2'">
+              <template v-for="(item, index) in orderSum" :key="item.id">
+                <div class="order">
+                  <div class="order_content">
+                    <div class="order_left">
+                      <div class="category"></div>
+                      <div class="order_summary">
+                        <h2>陪你旅行</h2>
+                        <span>{{ item.so_category }}</span> |
+                        <span>{{ item.so_class }}</span>
+                        <p>
+                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                            `AY` + item.id
+                          }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="order_right">
+                      <div class="date">
+                        {{ formattedMonth(item.so_booking_date) }}
+                        <span>{{ formatDate(item.so_booking_date) }}</span>
+                      </div>
+                      <p>{{ price(item.s_cost) }}</p>
+                      <router-link
+                        to="/orderdetailstest"
+                        class="btn_blue"
+                        @click="setOrderId(item.id)"
+                        >查看更多</router-link
+                      >
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
           </div>
         </div>
       </div>
