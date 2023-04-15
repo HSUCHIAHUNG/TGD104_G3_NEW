@@ -41,6 +41,7 @@
               </li>
             </ul>
           </div>
+          <!------------ 訂單列表 ------------>
           <div class="order_list">
             <template v-for="(item, index) in orderSum" :key="item.id">
               <div class="order">
@@ -65,7 +66,7 @@
                     </div>
                     <p>{{ price(item.s_cost) }}</p>
                     <router-link
-                      to="/orderdetails"
+                      to="/orderdetailstest"
                       class="btn_blue"
                       @click="setOrderId(item.id)"
                       >查看更多</router-link
@@ -84,13 +85,16 @@
 </template>
 
 <script>
+// 套件
 import $ from "jquery";
+// 元件
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "@/components/VFooter.vue";
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import OrderSum from "../components/OrderSum.vue";
+// 日期格式
 import { format } from "date-fns";
 import { monthsInQuarter } from "date-fns";
 
@@ -131,7 +135,7 @@ export default {
       };
     },
     // 抓日期
-    formatDate(date) {
+    formatDate(dateStr) {
       return (date) => format(new Date(date), "dd");
     },
   },
@@ -162,4 +166,7 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.order {
+  margin-bottom: 20px;
+}
 </style>
