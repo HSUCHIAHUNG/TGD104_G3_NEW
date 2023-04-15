@@ -9,6 +9,16 @@ const routes = [
     component: HomeView,
   },
   {
+    path: "/memberbookingtest",
+    name: "memberbookingtest",
+    component: () => import("../views/MemberBookingTest.vue"),
+  },
+  {
+    path: "/memberfavtest",
+    name: "memberfavtest",
+    component: () => import("../views/MemberFavTest.vue"),
+  },
+  {
     path: "/member_test",
     name: "member_test",
     component: () => import("../views/Member_test.vue"),

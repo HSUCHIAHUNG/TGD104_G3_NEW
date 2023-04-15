@@ -32,14 +32,14 @@ export default {
   methods: {},
   mounted() {
     let vm = this; // 將 Vue instance 存到變數 vm 中
-    let m_id = $cookies.get("M_id");
-    if (m_id) {
+    let Member_id = $cookies.get("Member_id");
+    if (Member_id) {
       $.ajax({
         url: "http://localhost/NEW_G3/vue-lessons/src/api/memberfav.php",
         dataType: "json",
         type: "POST",
         data: {
-          id: m_id,
+          id: Member_id,
         },
         success: (response) => {
           if (
@@ -52,7 +52,6 @@ export default {
             console.log(response[0]);
             console.log(response[0].m_fav);
             console.log(JSON.parse(response[0].m_fav));
-            console.log(JSON.parse(response[0].m_fav).consultant);
             vm.favList = JSON.parse(response[0].m_fav).consultant; // 將 vm.favList 設置為取得的陣列
             // 取得顧問資料
             $.ajax({
@@ -60,7 +59,7 @@ export default {
               dataType: "json",
               type: "POST",
               data: {
-                id: m_id,
+                id: Member_id,
               },
               success: (response) => {
                 let arr = response;

@@ -513,7 +513,7 @@ export default {
           m_birth: this.member.m_birth,
         },
         success: (response) => {
-          this.$cookies.set("M_id", response);
+          this.$cookies.set("Member_id", response);
           this.$router.push("/member");
           alert("註冊成功");
         },
@@ -536,9 +536,9 @@ export default {
         success: (response) => {
           console.log(response);
           this.memberInfo = response;
-          this.$cookies.set("M_id", this.memberInfo[0].id);
-          let M_id = $cookies.get("M_id");
-          console.log(M_id);
+          this.$cookies.set("Member_id", this.memberInfo[0].id);
+          let Member_id = $cookies.get("Member_id");
+          console.log(Member_id);
           this.$router.push("/member");
           alert("登入成功");
         },

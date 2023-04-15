@@ -290,9 +290,9 @@ export default {
     ChatBotNew,
   },
   mounted() {
-    let m_id = $cookies.get("M_id");
-    console.log(m_id);
-    if (!m_id) {
+    let Member_id = $cookies.get("Member_id");
+    console.log(Member_id);
+    if (!Member_id) {
       this.$router.back();
       alert("請登入會員");
     } else {
@@ -301,7 +301,7 @@ export default {
         dataType: "json",
         type: "POST",
         data: {
-          id: m_id,
+          id: Member_id,
         },
         success: (response) => {
           this.memberInfo = response;
