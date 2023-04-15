@@ -15,75 +15,76 @@
             <div class="order_header">
               <h1>預約明細</h1>
             </div>
-            <div class="order_content">
-              <div>
-                <div class="order_item">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="category"></div>
-                      <div class="order_summary">
-                        <h2>
-                          {{ order_category }} |
-                          <span>已完成</span>
-                        </h2>
-                        <span>{{ order_info.s_category }}</span> |
-                        <span>{{ order_info.s_class }}</span>
-                        <ul class="order_content_details">
-                          <li>
-                            <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                              "AY" + order_info.id
-                            }}
-                          </li>
-                          <li>
-                            <i class="fa-solid fa-dollar-sign"></i>行程價格：{{
-                              order_info.s_cost
-                            }}
-                          </li>
-                          <li>
-                            <i class="fa-regular fa-calendar"></i>行程日期：
-                            {{ order_info.so_booking_date }}
-                          </li>
-                          <li>
-                            <i class="fa-solid fa-cart-shopping"></i
-                            >訂購日期：{{ order_info.so_order_date }}
-                          </li>
-                        </ul>
+            <template v-if="order_category == '陪你學習'">
+              <div class="order_content">
+                <div>
+                  <div class="order_item">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="category"></div>
+                        <div class="order_summary">
+                          <h2>
+                            {{ order_category }} |
+                            <span>已完成</span>
+                          </h2>
+                          <span>{{ order_info.s_category }}</span> |
+                          <span>{{ order_info.s_class }}</span>
+                          <ul class="order_content_details">
+                            <li>
+                              <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                                "AY" + order_info.id
+                              }}
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-dollar-sign"></i
+                              >行程價格：{{ order_info.s_cost }}
+                            </li>
+                            <li>
+                              <i class="fa-regular fa-calendar"></i>行程日期：
+                              {{ order_info.so_booking_date }}
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-cart-shopping"></i
+                              >訂購日期：{{ order_info.so_order_date }}
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ getMonthAbbreviation(order_info.so_booking_date) }}
-                        <span>{{ getDate(order_info.so_booking_date) }}</span>
+                      <div class="order_right">
+                        <div class="date">
+                          {{ getMonthAbbreviation(order_info.so_booking_date) }}
+                          <span>{{ getDate(order_info.so_booking_date) }}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="consultant_info">
-              <div class="consultant_info_left">
-                <img src="" :alt="order_info.c_idphoto" />
-                <h3>
-                  預約顧問：
-                  <br />
-                  <span>{{
-                    order_info.c_firstname + order_info.c_lastname
-                  }}</span
-                  >｜
-                  <span>5年經驗登山嚮導</span>
-                </h3>
+              <div class="consultant_info">
+                <div class="consultant_info_left">
+                  <img src="" :alt="order_info.c_idphoto" />
+                  <h3>
+                    預約顧問：
+                    <br />
+                    <span>{{
+                      order_info.c_firstname + order_info.c_lastname
+                    }}</span
+                    >｜
+                    <span>{{ order_info.s_title }}</span>
+                  </h3>
+                </div>
+                <router-link
+                  class="btn_blue"
+                  :to="
+                    order_category == '陪你學習'
+                      ? '/LearningGallery'
+                      : '/travelGallery'
+                  "
+                  @click="setConsultantId(order_info.about_cid)"
+                  >查看顧問資料</router-link
+                >
               </div>
-              <router-link
-                class="btn_blue"
-                :to="
-                  order_category == '陪你學習'
-                    ? '/LearningGallery'
-                    : '/travelGallery'
-                "
-                @click="setConsultantId(order_info.about_cid)"
-                >查看顧問資料</router-link
-              >
-            </div>
+            </template>
           </div>
           <!-- 訂單訊息 -->
           <div class="order_area">
@@ -99,7 +100,39 @@
               <button type="button" class="btn_blue">發送訊息</button>
             </div>
             <div class="conversation">
-              <order-message></order-message>
+              <template v-for="item in order_message" :key="item.id">
+                <div>
+                  <div
+                    class="message_container"
+                    :class="[
+                      item.message_sender == 'member'
+                        ? 'my_message'
+                        : 'reply_message',
+                    ]"
+                  >
+                    <img
+                      :src="
+                        item.message_sender == 'member'
+                          ? item.m_photo
+                          : item.c_photo1
+                      "
+                      :alt="
+                        item.message_sender == 'member'
+                          ? item.m_photo
+                          : item.c_photo1
+                      "
+                    />
+                    <div class="message_main">
+                      <div class="message_txt">
+                        <p>
+                          {{ item.message }}
+                        </p>
+                      </div>
+                      <p class="message_time">{{ item.message_time }}</p>
+                    </div>
+                  </div>
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -128,6 +161,7 @@ export default {
     return {
       order_category: "陪你學習",
       order_info: [],
+      order_message: [],
     };
   },
   components: {
@@ -140,6 +174,7 @@ export default {
   },
   computed: {},
   methods: {
+    // 月份格式
     getMonthAbbreviation(dateStr) {
       const months = [
         "Jan",
@@ -159,6 +194,7 @@ export default {
       const monthIndex = date.getMonth();
       return months[monthIndex];
     },
+    // 日期
     getDate(dateStr) {
       let date = new Date(dateStr);
       let new_date = date.getDate().toString();
@@ -168,6 +204,7 @@ export default {
         return new_date;
       }
     },
+    // 查看顧問
     setConsultantId(id) {
       this.$cookies.set("Consultant_id", id);
       let c_id = this.$cookies.get("Consultant_id");
@@ -190,6 +227,26 @@ export default {
         this.order_info = response[0];
         console.log(this.order_info);
         console.log(this.order_info.so_order_date);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      },
+    });
+    // 旅行訂單
+
+    // -----------------------------------
+    // 取得訂單訊息
+    $.ajax({
+      url: "http://localhost/NEW_G3/vue-lessons/src/api/orderMessage.php",
+      dataType: "json",
+      type: "POST",
+      data: {
+        order_id: Order_id,
+      },
+      success: (response) => {
+        console.log(response);
+        this.order_message = response;
+        console.log(this.order_message);
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
