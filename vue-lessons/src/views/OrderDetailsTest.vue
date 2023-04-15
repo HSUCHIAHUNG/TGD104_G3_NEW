@@ -85,6 +85,74 @@
                 >
               </div>
             </template>
+            <template v-if="order_category == '陪你旅行'">
+              <div class="order_content">
+                <div>
+                  <div class="order_item">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="category"></div>
+                        <div class="order_summary">
+                          <h2>
+                            {{ order_category }} |
+                            <span>已完成</span>
+                          </h2>
+                          <span>登山</span> |
+                          <span>北部</span>
+                          <ul class="order_content_details">
+                            <li>
+                              <i class="fa-solid fa-hashtag"></i>訂單編號：#AY01
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-dollar-sign"></i
+                              >行程價格：$1,900
+                            </li>
+                            <li>
+                              <i class="fa-regular fa-calendar"></i>行程日期：
+                              2023-05-02
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-cart-shopping"></i
+                              >2023-04-19
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="order_right">
+                        <div class="date">
+                          May
+                          <span>02</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="consultant_info">
+                <div class="consultant_info_left">
+                  <img
+                    src="../assets/image/member/consultant_info.jpg"
+                    alt=""
+                  />
+                  <h3>
+                    預約顧問：
+                    <br />
+                    <span>裴大尼</span>｜
+                    <span>5年經驗登山嚮導</span>
+                  </h3>
+                </div>
+                <router-link
+                  class="btn_blue"
+                  :to="
+                    order_category == '陪你學習'
+                      ? '/LearningGallery'
+                      : '/travelGallery'
+                  "
+                  @click="setConsultantId(order_info.about_cid)"
+                  >查看顧問資料</router-link
+                >
+              </div>
+            </template>
           </div>
           <!-- 訂單訊息 -->
           <div class="order_area">
@@ -96,8 +164,11 @@
                 cols="30"
                 rows="10"
                 placeholder="最高字數200字"
+                v-model="send_message"
               ></textarea>
-              <button type="button" class="btn_blue">發送訊息</button>
+              <button type="button" class="btn_blue" @click="sendMessage">
+                發送訊息
+              </button>
             </div>
             <div class="conversation">
               <template v-for="item in order_message" :key="item.id">
@@ -162,6 +233,7 @@ export default {
       order_category: "陪你學習",
       order_info: [],
       order_message: [],
+      send_message: "",
     };
   },
   components: {
@@ -210,6 +282,34 @@ export default {
       let c_id = this.$cookies.get("Consultant_id");
       console.log(c_id);
     },
+    // 會員發送訊息
+    sendMessage() {
+      let order_id = this.$cookies.get("Order_id");
+      let member_id = this.$cookies.get("Member_id");
+      let consultant_id = this.$cookies.get("Consultant_id");
+      let vm = this;
+
+      $.ajax({
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/memberMessage.php",
+        dataType: "text",
+        type: "POST",
+        data: {
+          message: this.send_message,
+          order_id: order_id,
+          member_id: member_id,
+          consultant_id: consultant_id,
+          message_sender: "member",
+        },
+        success: function (response) {
+          if (window.confirm(response)) {
+            location.reload();
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    },
   },
   mounted() {
     let Order_id = this.$cookies.get("Order_id");
@@ -226,7 +326,8 @@ export default {
       success: (response) => {
         this.order_info = response[0];
         console.log(this.order_info);
-        console.log(this.order_info.so_order_date);
+        console.log(this.order_info.about_cid);
+        this.$cookies.set("Consultant_id", this.order_info.about_cid);
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
