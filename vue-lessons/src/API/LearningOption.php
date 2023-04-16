@@ -20,7 +20,6 @@
 
     //放進變數
     $sr_content = $_POST["SR_content"];
-    // echo $s_address;
     $sql = "INSERT INTO study_require(sr_content) VALUES ('$sr_content')";
     // $sql = "INSERT INTO member(Account = :account, PWD = :pwd, CreateDate) VALUES ('$Account', '$PWD', NOW())";
 
