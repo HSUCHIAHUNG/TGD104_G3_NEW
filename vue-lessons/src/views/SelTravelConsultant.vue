@@ -36,9 +36,6 @@
     </div>
 
     <div class="self_consultant container">
-      <!-- <div @click="current = 'all'" class="tab actives" >全部</div>
-            <div @click="current = '男'" class="tab actives">男性</div>
-            <div @click="current = '女'" class="tab actives">女性</div> -->
       <ol class="tabs">
         <li>
           <a
@@ -117,11 +114,10 @@
 
   <div class="sel_travel_consultant_button">
     <div class="container">
-      <!-- <a href="/TravelMap"><button class="outline_btn_orange">重新選擇地區</button></a> -->
       <router-link to="/TravelMap"
         ><button class="outline_btn_orange">重新選擇地區</button></router-link
       >
-      <!-- <a href="/TravelCalendar"><button class="btn_orange">開始預約</button></a> -->
+
       <button @click="startBooking" class="btn_orange">開始預約</button>
     </div>
   </div>
@@ -134,12 +130,14 @@ import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import $ from "jquery";
 
 export default {
   name: "SelTravelConsultant",
   components: {
     VHeader,
     VFooter,
+    $,
   },
   data() {
     return {
@@ -277,13 +275,11 @@ export default {
       favorites: [],
       currentTab: "tab1",
       selectedConsultant: null,
+      travelArea: '',
+      toTravelClass: '',
     };
   },
 
-  mounted() {
-    
-    
-  },
 
   methods: {
     isFavorite(index) {
@@ -314,12 +310,45 @@ export default {
   },
 
   mounted() {
-    //cookie
-    // this.$cookies.set("member_id","1")
-    // let id = $cookies.get("member_id")
-    // console.log(id);
     // this.$cookies.remove("member_id");
-    //insert 完取回他顧問id set 到 cookie
+    //select 完顧問 當打勾取顧問id set 到 cookie
+
+    //抓cookie 地區
+    this.travelArea = (decodeURIComponent(this.$cookies.get("travelArea")));
+    console.log(this.travelArea);
+
+    //抓cookie 旅行類別
+    let x = this.$cookies.get("toTravelClass")
+    if(x == "H"){
+       x = "登山"
+    }else if(x == "B"){
+      x = "單車"
+    }else{
+      x = "潛水"
+    }
+    this.toTravelClass = x;
+    console.log(this.toTravelClass);
+    //呼叫ajax 撈對應顧問
+
+    // $.ajax({
+    //     method: "POST",
+    //     // url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
+    //     data: {
+    //       About_class: this.toTravelClass,
+    //       C_area: this.travelArea,
+            
+    //     },
+    //     dataType: "json",
+    //     success: function(response) {
+    //       // $("#result").html(response);
+
+
+    //     },
+    //     error: function(exception) {
+    //         alert("發生錯誤: " + exception.status);
+    //     },
+
+    // });
             
   },
 

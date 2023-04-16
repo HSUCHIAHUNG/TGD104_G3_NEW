@@ -19,7 +19,16 @@
        $pdo = new PDO($dsn, $db_user, $db_pass);
 
        //建立SQL語法
-       $sql = "SELECT about_title, about_class FROM about_consultant;";
+       // $sql = "SELECT about_title, about_class FROM about_consultant;"
+
+       $sql = "SELECT 
+	about_title,
+	c_nickname,
+       about_class
+              FROM about_consultant abc
+              join consultant con
+              on abc.about_cid = con.id
+              where c_status = '正常' and c_review_status='通過' and s_category = '音樂';";
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        $statement = $pdo->query($sql);

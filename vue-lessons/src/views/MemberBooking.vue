@@ -14,7 +14,7 @@
         <div class="main">
           <div class="main_header">
             <h1>預約明細</h1>
-            <ul class="tabs">
+            <!-- <ul class="tabs">
               <li>
                 <a
                   href="#"
@@ -39,7 +39,7 @@
                   >陪你旅行</a
                 >
               </li>
-            </ul>
+            </ul> -->
           </div>
           <div class="order_list">
             <order-sum></order-sum>

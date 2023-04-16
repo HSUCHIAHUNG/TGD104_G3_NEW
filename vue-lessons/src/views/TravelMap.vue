@@ -54,6 +54,11 @@ export default {
       setTimeout(() => {
         this.showHint = false;
       }, 2000);
+      console.log(this.selected);
+      //encodeURIComponent() 進行 URL 编码
+      this.$cookies.set("travelArea",encodeURIComponent(this.selected))
+      //decodeURIComponent() 解碼
+      //console.log(decodeURIComponent(this.$cookies.get("travelArea")));
     },
 
     selectArea(){
@@ -62,7 +67,7 @@ export default {
             } else {
                 this.$router.push('/SelTravelConsultant');
             }
-        }
+    },
   },
   components: {
       VHeader,

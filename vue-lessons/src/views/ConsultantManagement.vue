@@ -4,15 +4,21 @@
 
         <div class="ConsultantManagement_select_form">
             <div class="ConsultantManagement_form_state">
-                <select name="state" id="state" class="ConsultantManagement_input_select">
-                    <option value="">請選擇</option>
-                    <option value="Finish">完成</option>
-                    <option value="undone">未完成</option>
+                <select name="state" id="state" class="ConsultantManagement_input_select" v-model="selectedStatus">
+                    <option value="">全部</option>
+                    <option value="Finish">正常</option>
+                    <option value="undone">凍結中</option>
                 </select>
             </div>
-            <button class="ConsultantManagement_btn">最新</button>
-            <button class="ConsultantManagement_btn">最舊</button>
-            <searchbar></searchbar>
+            <button class="ConsultantManagement_btn" @click="toggleSortDate('desc')">最新</button>
+            <button class="ConsultantManagement_btn" @click="toggleSortDate('asc')">最舊</button>
+            <!-- <searchbar></searchbar> -->
+            <div class="MemberContainer">
+                <div class="SearchBar">
+                    <input id="search-input" placeholder="請輸入身分證字號" v-model="searchId">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
         </div>
 
         <div class="ConsultantManagement_table">
@@ -26,27 +32,38 @@
                         <th>註冊日期</th>
                         <th>狀態</th>
                     </tr>
-                    <tr v-for="(item, index) in items" :key="index">
-                        <td>{{item.id}}</td>
-                        <td>{{item.tr_category}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.tr_cost}}</td>
-                        <td>{{item.tro_booking_data}}</td>
+                        <tr v-for="(item, index) in filteredItems.slice(pageStart, pageEnd)" :key="index">
+                        <td>{{item.c_id}}</td>
+                        <td>{{item.c_nickname}}</td>
+                        <td>{{item.c_phone}}</td>
+                        <td>{{item.c_mail}}</td>
+                        <!-- <td>{{item.c_create_date}}</td> -->
+                         <td>{{ formatDate(item.c_create_date) }}</td>
                         <td>
-                            {{item.tro_order_data}}
-                            <i class="fa-solid fa-ban"></i>
+                            <!-- {{item.c_status}} -->
+                            <i class="fa-solid fa-ban"  
+                             :class="{ review_active: item.c_status === '凍結中' }"
+                             @click.prevent="
+                                {   
+                                    c_review(item.id, item.c_status),
+                                    ( item.c_status = item.c_status),
+                                    (update_id = item.c_status);
+                                
+                                }
+                            ">
+                            </i>
                         </td>
 
                     </tr>
                 </table>
                 <ul>
-                    <li>
+                    <li @click.prevent="setPage(currentPage-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>
+                    <li v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
+                        {{ n }}
+                    </li>
+                    <li @click.prevent="setPage(currentPage+1)">
                         <i class="fa-solid fa-angle-right"></i>
                     </li>
                 </ul>
@@ -59,39 +76,133 @@
 
 <script>
     import searchbar from '../components/BackecdSearch.vue'
-    
+    import $ from "jquery";
 
     export default {
         data(){ 
             return {
-                items: [
-                    { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                    { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                    { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                    { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                    { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                    { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                    { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                    { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                    { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                    { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                    { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                    { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },       
-                ],
+                perpage: 10, //一頁的資料數
+                currentPage: 1,
+                SortDate: "asc",
+                searchId: '',
+                selectedStatus: '',
+                c_status: '凍結中',
+
+                // items: [
+                //     { c_id: 'H124803065', c_nickname: '阿宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/19',c_status: '正常', },
+                //     { c_id: 'H123456789', c_nickname: '小敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/17',c_status: '凍結中', },
+                //     { c_id: 'H987654321', c_nickname: '娟霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/15',c_status: '正常', },
+                //     { c_id: 'H123456788', c_nickname: '品諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/13',c_status: '凍結中', },
+                //     { c_id: 'H123456787', c_nickname: '阿宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/11',c_status: '正常', },
+                //     { c_id: 'H123456786', c_nickname: '小敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/09',c_status: '凍結中', },
+                //     { c_id: 'H123456785', c_nickname: '娟霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/04/09',c_status: '正常', },
+                //     { c_id: 'H123456784', c_nickname: '品諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/04/07',c_status: '凍結中', },
+                //     { c_id: 'H123456785', c_nickname: '阿宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/04/05',c_status: '正常', },
+                //     { c_id: 'H123456783', c_nickname: '小敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/05',c_status: '凍結中', },
+                //     { c_id: '1234567871', c_nickname: '娟霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/03',c_status: '正常', },
+                //     { c_id: 'H123456782', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/02',c_status: '凍結中', },       
+                //     { c_id: 'H123456784', c_nickname: '霈霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/01',c_status: '正常', },
+                //     { c_id: 'A124803065', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/02/09',c_status: '凍結中', },
+                //     { c_id: 'B124803065', c_nickname: '宏宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/05',c_status: '正常', },
+                //     { c_id: 'C124803065', c_nickname: '敏敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/02/05',c_status: '凍結中', },
+                //     { c_id: 'D124803065', c_nickname: '霈霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/02/01',c_status: '正常', },
+                //     { c_id: 'E124803065', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/09',c_status: '凍結中', },
+                //     { c_id: 'F124803065', c_nickname: '宏宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/07',c_status: '正常', },
+                //     { c_id: 'G124803065', c_nickname: '敏敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/01',c_status: '凍結中', },
+                //     { c_id: 'H124803065', c_nickname: '霈霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/16',c_status: '正常', },
+                //     { c_id: 'I124803065', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/14',c_status: '凍結中', }, 
+                // ],
+
+                items: [],
             }
         },   
+
+        mounted() {
+            $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantManagement_Select.php').then(response => this.items = response)
+            console.log(this.items);
+        },
         
         methods: {
+            setPage(page) {
+                if(page <= 0 || page > this.totalPage) {
+                    return
+                }
+                this.currentPage = page
+            },
+            toggleSortDate(date) {
+                this.SortDate = date === 'asc' ? 'asc' : 'desc';
+                // 使用 Array.sort() 對 items 數組進行排序
+                this.items.sort((a, b) => {
+                    if (this.SortDate === 'asc') {
+                    return new Date(a.c_create_date) - new Date(b.c_create_date);
+                    } else {
+                    return new Date(b.c_create_date) - new Date(a.c_create_date);
+                    }
+                });
+            },
+            formatDate(dateString) {
+                const dateObj = new Date(dateString);
+                return dateObj.toLocaleDateString();
+            },
             
+
+            c_review(id, status){
+                status = status === '凍結中' ? '正常' : '凍結中';
+                console.log(id);
+            // console.log(id, status);
+                $.ajax({
+            
+                method: "POST",
+                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantManagement_update.php', 
+                //url: '../api/Join_test.php', 
+                data: {
+                    Id: id,
+                    C_status: status,
+                },
+                success: function(response) {
+                    //更新html內容
+                    // console.log(response);
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
+            },
         },
 
         computed: {
-       
+
+            filteredItems() {
+            const searchId = this.searchId.toLowerCase();
+            const filteredItems = this.items.filter((item) =>
+                item.c_id.toLowerCase().includes(searchId)
+            );
+
+            if (this.selectedStatus === "") {
+                return filteredItems;
+            } else if (this.selectedStatus === "Finish") {
+                return filteredItems.filter((item) => item.c_status === "正常");
+            } else if (this.selectedStatus === "undone") {
+                return filteredItems.filter((item) => item.c_status === "凍結中");
+            }
+            },
+
+            totalPage() {
+                return Math.ceil(this.filteredItems.length / this.perpage)
+            },
+            pageStart() {
+                return (this.currentPage - 1) * this.perpage
+            },
+            pageEnd() {
+                return this.currentPage * this.perpage
+            },
+
         },
 
         name: 'MemberManagement',
         components: {
             searchbar,
+            $
         }
     }
 
@@ -209,6 +320,9 @@
                         // }
                         &:last-child{
                             // width: 80px;
+                        }
+                        .review_active{
+                            color: #ff7426;
                         }
                     }
                 }    

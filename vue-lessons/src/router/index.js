@@ -9,6 +9,26 @@ const routes = [
     component: HomeView,
   },
   {
+    path: "/historyorderdetailtest",
+    name: "historyorderdetailtest",
+    component: () => import("../views/HistoryOrderDetailTest.vue"),
+  },
+  {
+    path: "/orderdetailstest",
+    name: "orderdetailstest",
+    component: () => import("../views/OrderDetailsTest.vue"),
+  },
+  {
+    path: "/memberbookingtest",
+    name: "memberbookingtest",
+    component: () => import("../views/MemberBookingTest.vue"),
+  },
+  {
+    path: "/memberfavtest",
+    name: "memberfavtest",
+    component: () => import("../views/MemberFavTest.vue"),
+  },
+  {
     path: "/member_test",
     name: "member_test",
     component: () => import("../views/Member_test.vue"),

@@ -170,15 +170,15 @@
             <div class="container">
                 <div class="travel_button_hike">
                     <img src="../assets/image/travel/travel_button_hike.png" alt="">
-                    <router-link to="/TravelMap"><button class="bike btn_orange">陪你登山</button></router-link>
+                    <router-link to="/TravelMap"><button class="bike btn_orange" @click="toTravelClass('H')">陪你登山</button></router-link>
                 </div>
                 <div class="travel_button_bike">
                     <img src="../assets/image/travel/travel_button_bike.png" alt="">
-                    <router-link to="/TravelMap"><button class="bike btn_orange">陪你單車</button></router-link>
+                    <router-link to="/TravelMap"><button class="bike btn_orange" @click="toTravelClass('B')">陪你單車</button></router-link>
                 </div>
                 <div class="travel_button_swim">
                     <img src="../assets/image/travel/travel_button_swim.png" alt="">
-                    <router-link to="/TravelMap"><button class="bike btn_orange">陪你潛水</button></router-link>
+                    <router-link to="/TravelMap"><button class="bike btn_orange" @click="toTravelClass('S')">陪你潛水</button></router-link>
                 </div>
             </div>
         </div>
@@ -305,6 +305,12 @@
 
             const typed = new Typed('.typing', options);
             
+        },
+
+        methods: {
+            toTravelClass(e){
+                this.$cookies.set("toTravelClass",e)
+            },
         },
 
     };

@@ -1,0 +1,58 @@
+<?php
+  // 建立一個 Express application 物件
+  header("Access-Control-Allow-Origin: *");
+  header("Content-Type: application/json; charset=UTF-8");
+  header("Access-Control-Allow-Methods: GET, POST");
+  header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+// 資料庫-------------------------------------------
+// //MySQL相關資訊
+// $db_host = "127.0.0.1";
+// $db_user = "root";
+// $db_pass = "9090yggep";
+// $db_select = "G3_TEAM";
+
+// //建立資料庫連線物件
+// $dsn = "mysql:host=".$db_host.";dbname=".$db_select.";charset=utf8";
+
+// //建立PDO物件，並放入指定的相關資料
+// $pdo = new PDO($dsn, $db_user, $db_pass);
+
+require_once ("conn.php");
+// -------------------------------------------
+
+$member_id = $_POST['member_id'];
+
+// 還要補上order_status = 0;
+$sql = "select a.s_cost, o.id, o.so_category, o.so_class,o.so_booking_date  from `order` o 
+join about_consultant a 
+on o.consultant_id = a.about_cid 
+where so_category != '' and member_id = ?";
+
+
+$statement = $pdo->prepare($sql);
+$statement->bindValue(1,$member_id);
+$statement->execute();
+
+// 取得資料 
+$data = $statement->fetchAll();
+echo json_encode($data);
+
+
+// $statement = $pdo->prepare($sql);
+// $statement->bindValue(1,$id);
+// $statement->execute();
+
+// // 取得資料 
+// $data = $statement->fetchAll();
+// echo json_encode($data);
+
+// if(count($data)>0){
+   
+// } else {
+  
+// }
+
+// echo $m_firstname.$m_lastname.$m_mail.$m_birth.$m_password;
+
+?>
