@@ -1,18 +1,26 @@
 
 <template>
     <div class="MemberManagement">
+        <div class="MemberManagement_select_form" >
 
-        <div class="MemberManagement_select_form">
             <div class="MemberManagement_form_state">
-                <select name="state" id="state" class="MemberManagement_input_select">
-                    <option value="">請選擇</option>
-                    <option value="Finish">完成</option>
-                    <option value="undone">未完成</option>
+                <select v-model="selectedStatus" name="state" id="state" class="MemberManagement_select">
+                    <option value="">全部</option>
+                    <option value="Finish">正常</option>
+                    <option value="undone">凍結中</option>
                 </select>
             </div>
-            <button class="MemberManagement_btn">最新</button>
-            <button class="MemberManagement_btn">最舊</button>
-            <searchbar></searchbar>
+
+            <button class="MemberManagement_btn" @click="toggleSortDate('desc')">最新</button>
+            <button class="MemberManagement_btn" @click="toggleSortDate('asc')">最舊</button>
+
+            <div class="MemberContainer">
+                <div class="SearchBar">
+                    <input id="search-input" placeholder="請輸入身分證字號" v-model="searchId">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
         </div>
 
         <div class="MemberManagement_table">
@@ -26,77 +34,165 @@
                         <th>註冊日期</th>
                         <th>狀態</th>
                     </tr>
-                    <tr v-for="(item, index) in items" :key="index">
-                        <td>{{item.id}}</td>
-                        <td>{{item.tr_category}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.tr_cost}}</td>
-                        <td>{{item.tro_booking_data}}</td>
+                    
+                    <tr v-for="(item, index) in filteredItems.slice(pageStart, pageEnd)" :key="index">
+                        <td>{{item.m_id}}</td>
+                        <td>{{item.m_nickname}}</td>
+                        <td>{{item.m_phone}}</td>
+                        <td>{{item.m_mail}}</td>
+                        <td>{{ formatDate(item.m_create_date) }}</td>
                         <td>
-                            {{item.tro_order_data}}
-                            <i class="fa-solid fa-ban"></i>
-                        </td>
+   
 
+                            <i class="fa-solid fa-ban"
+                                :class="{ review_active: item.m_status === '凍結中' }"
+                                @click="
+                                {
+                                    c_review(item.id, item.m_status),
+                                    item.m_status = status,
+                                    update_id = item.m_status;
+                                }
+                            "></i>
+                        </td>
                     </tr>
+
                 </table>
                 <ul>
-                    <li>
+                    <li @click.prevent="setPage(currentPage-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>
+                    <li v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
+                        {{ n }}
+                    </li>
+                    <li @click.prevent="setPage(currentPage+1)">
                         <i class="fa-solid fa-angle-right"></i>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-
 </template>
-<script setup></script>
+<!-- <script setup></script> -->
 
 <script>
     import searchbar from '../components/BackecdSearch.vue'
-    
+    import $ from "jquery";
 
     export default {
         data(){ 
             return {
+                // m_status:'',
+                selectedStatus:'',
+                perpage: 10, //一頁的資料數
+                currentPage: 1,
+                SortDate: "asc",
+                searchId: '',
                 items: [
-                { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '阿宏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '小敏',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
-                { id: 'H124803065', tr_category: '娟霈',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '正常', },
-                { id: 'H124803065', tr_category: '品諭',name: '0989541162', tr_cost: 'h0989541162@gmail.com',tro_booking_data: '1995/01/24',tro_order_data: '凍結中', },
+                // { m_id: 'Q124803065', m_nickname: '小宏',m_phone: '0989541162', m_mail: 'h0989541162@gmail.com',m_create_date: '2023/01/02',m_status: '正常', },
+                // { m_id: 'A125803065', m_nickname: '小敏',m_phone: '0989541162', m_mail: 'q0989541162@gmail.com',m_create_date: '2023/01/02',m_status: '凍結中', },
+                ],
+                // isOrange: false,
                 
-               ],
             }
         },   
-        
+
+
+
         methods: {
+            setPage(page) {
+                if(page <= 0 || page > this.totalPage) {
+                    return
+                }
+                this.currentPage = page
+            },
+            toggleSortDate(date) {
+                this.SortDate = date === 'asc' ? 'asc' : 'desc';
+                // 使用 Array.sort() 對 items 數組進行排序
+                this.items.sort((a, b) => {
+                    if (this.SortDate === 'asc') {
+                        return new Date(a.m_create_date) - new Date(b.m_create_date);
+                    } else {
+                        return new Date(b.m_create_date) - new Date(a.m_create_date);
+                    }
+                });
+            },
+            formatDate(dateString) {
+                const dateObj = new Date(dateString);
+                return dateObj.toLocaleDateString();
+            },
+
+            // 按鈕顏色
+            toggleColor(item) {
+                item.isOrange = !item.isOrange;
+            },
+
             
+
+
+
+            c_review(id, status){
+                status = status === '凍結中' ? '正常' : '凍結中';
+                console.log(id);
+            // console.log(id, status);
+                $.ajax({
+            
+                method: "POST",
+                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MemberManagement_update.php', 
+                //url: '../api/Join_test.php', 
+                data: {
+                    Id: id,
+                    M_status: status,
+                },
+                success: function(response) {
+                    //更新html內容
+                    // console.log(response);
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
+            },
+          
         },
 
         computed: {
-       
+            filteredItems() {
+                const searchId = this.searchId.toLowerCase();
+                const filteredItems = this.items.filter((item) =>item.m_id.toLowerCase().includes(searchId));
+                if (this.selectedStatus === "") {
+                    return filteredItems;
+                } else if (this.selectedStatus === "Finish") {
+                    return filteredItems.filter((item) => item.m_status === "正常");
+                } else if (this.selectedStatus === "undone") {
+                    return filteredItems.filter((item) => item.m_status === "凍結中");
+                }
+            },
+
+            totalPage() {
+                return Math.ceil(this.filteredItems.length / this.perpage);
+            },
+            pageStart() {
+                return (this.currentPage - 1) * this.perpage;
+            },
+            pageEnd() {
+                return this.currentPage * this.perpage;
+            },
+        },
+
+        mounted() {
+            $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MemberManagement_Select.php').then(response => this.items = response)
         },
 
         name: 'MemberManagement',
         components: {
             searchbar,
+            $
         }
     }
 
 </script>
+
+
 
 <style lang="scss">
     // @import '../../../../tgd104-sass/new_style.scss';
@@ -208,6 +304,9 @@
                         &:last-child{
                             // width: 80px;
                         }
+                        .review_active{
+                            color: #ff7426;
+                        }
                     }
                 }    
             }
@@ -233,7 +332,7 @@
 
         .MemberManagement_form_state{
 
-            .MemberManagement_input_select{
+            .MemberManagement_select{
                 background-color: #FAEECD;
                 border: none;
                 border-radius: 5px;
@@ -258,6 +357,12 @@
             margin-left: 10px;
         }
     }
+}
+
+
+// 按鈕顏色
+.orange {
+    color: #ff995e;
 }
     
 
