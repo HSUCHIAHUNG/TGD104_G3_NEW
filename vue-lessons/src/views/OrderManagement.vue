@@ -3,24 +3,26 @@
     <div class="OrderManagement">
 
         <div class="OrderManagement_category_btn">
-        <button class="outline_btn_orange"
-        :class="{ touchbg: currentTab === 'tab1' }"
-                @click.prevent="
-                {
-                    current = ['登山', '單車', '潛水'], 
-                    (currentTab = 'tab1');
-                }
-                "
-        >陪你旅行</button>
-        <button class="outline_btn_orange"
-            :class="{ touchbg: currentTab === 'tab2' }"
-                @click.prevent="
-                {
-                    (current = 'learing'), (currentTab = 'tab2');
-                }
-                "
-        >陪你learing</button>
+            <button class="outline_btn_orange"
+            :class="{ touchbg: currentTab === 'tab1' }"
+                    @click.prevent="
+                    {
+                        current = ['登山', '單車', '潛水'], 
+                        (currentTab = 'tab1');
+                    }
+                    "
+            >陪你旅行</button>
+            <button class="outline_btn_orange"
+                :class="{ touchbg: currentTab === 'tab2' }"
+                    @click.prevent="
+                    {
+                        (current = 'learing'), (currentTab = 'tab2');
+                    }
+                    "
+            >陪你learing</button>
         </div>
+
+        
 
         <div class="OrderManagement_select_form">
             <div class="OrderManagement_form_state">
@@ -30,8 +32,8 @@
                     <option value="undone">未完成</option>
                 </select>
             </div>
-            <button class="OrderManagement_btn" @click="toggleSortOrder('asc')">最新</button>
-            <button class="OrderManagement_btn" @click="toggleSortOrder('desc')">最舊</button>
+            <button class="OrderManagement_btn" @click="toggleSortOrder('desc')">最新</button>
+            <button class="OrderManagement_btn" @click="toggleSortOrder('asc')">最舊</button>
             <!-- <searchbar></searchbar> -->
             <div class="MemberContainer">
                 <div class="SearchBar">
@@ -157,7 +159,7 @@
             // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/Select.php').then(response => this.order_m = response)
          
             this.selectedState = '';
-
+            
         },
         methods: {
             setPage(page) {

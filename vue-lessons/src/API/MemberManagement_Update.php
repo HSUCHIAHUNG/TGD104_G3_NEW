@@ -7,8 +7,22 @@
 
        require_once ("conn.php");
 
+
+       // 接收變數
+       $id =  $_POST["Id"];
+       $m_status =  $_POST["M_status"];
+
+
+
        //建立SQL語法
-       $sql = "SELECT * FROM study_require";
+       $sql = 
+       "update
+            member
+        set
+            m_status = '$m_status'
+        where
+            id = '$id';";
+            
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        $statement = $pdo->query($sql);
@@ -17,15 +31,5 @@
        $data = $statement->fetchAll();
 
        echo json_encode($data)
-       //將二維陣列取出顯示其值
-       // foreach($data as $index => $row){
-	//       echo $row["tr_experience"];   //欄位名稱
-	//       echo " / ";
-	//       echo $row["tr_title"];    //欄位名稱
-	//       echo " / ";
-	//       echo $row["tr_license"];    //欄位名稱
-       //  echo "<br>";
-       //  echo "<br>";
-       // }
 
 ?>

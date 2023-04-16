@@ -8,7 +8,14 @@
        require_once ("conn.php");
 
        //建立SQL語法
-       $sql = "SELECT * FROM study_require";
+       $sql = 
+       "SELECT 
+              id,
+            c_id,
+            c_nickname,
+            c_create_date,
+            c_review_status
+        FROM consultant;";
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        $statement = $pdo->query($sql);

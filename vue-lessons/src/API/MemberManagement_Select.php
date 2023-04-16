@@ -19,16 +19,7 @@
        $pdo = new PDO($dsn, $db_user, $db_pass);
 
        //建立SQL語法
-       // $sql = "SELECT about_title, about_class FROM about_consultant;"
-
-       $sql = "SELECT 
-	about_title,
-	c_nickname,
-       about_class
-              FROM about_consultant abc
-              join consultant con
-              on abc.about_cid = con.id
-              where c_status = '正常' and c_review_status='通過' and s_category = '音樂';";
+       $sql = "SELECT * FROM member";
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        $statement = $pdo->query($sql);
@@ -37,4 +28,15 @@
        $data = $statement->fetchAll();
 
        echo json_encode($data)
+       //將二維陣列取出顯示其值
+       // foreach($data as $index => $row){
+	//       echo $row["tr_experience"];   //欄位名稱
+	//       echo " / ";
+	//       echo $row["tr_title"];    //欄位名稱
+	//       echo " / ";
+	//       echo $row["tr_license"];    //欄位名稱
+       //  echo "<br>";
+       //  echo "<br>";
+       // }
+
 ?>
