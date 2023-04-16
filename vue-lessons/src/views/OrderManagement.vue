@@ -141,7 +141,7 @@
                     { id: '2023022000', tr_category: 'learing',name: '口怎麼辦的品諭', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/02/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'learing',name: '立偉2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                     { id: '2023022000', tr_category: '單車',name: '舞動小敏之', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: '單車',name: '舞動小敏之', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: '單車',name: '怕被看腳踝的霈霈', tr_cost: '2023/05/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: '單車',name: '炫炫', tr_cost: '2023/06/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: '單車',name: '立偉', tr_cost: '2023/07/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
