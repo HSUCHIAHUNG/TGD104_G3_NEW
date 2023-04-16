@@ -342,24 +342,38 @@
       label,
       input,
       textarea,
-      .btns {
+      .btns,
+      .star_block {
         width: 80%;
         margin: 0 auto;
-      }
-      ul {
-        display: flex;
-        margin-top: 10px;
-        margin-bottom: 8px;
-        li {
-          padding: 5px;
-          i {
-            font-size: 21px;
-            &:hover {
-              color: $dark_blue;
-            }
-          }
+        display: inline-block;
+        i {
+          font-size: 20px;
+          margin-left: 2px;
         }
       }
+      div.star_block > span.star {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 3px;
+      }
+      div.star_block > span.star.-on {
+        color: yellow;
+      }
+      // ul {
+      //   display: flex;
+      //   margin-top: 10px;
+      //   margin-bottom: 8px;
+      //   li {
+      //     padding: 5px;
+      //     i {
+      //       font-size: 21px;
+      //       &:hover {
+      //         color: $dark_blue;
+      //       }
+      //     }
+      //   }
+      // }
       textarea {
         border: 1px solid $dark_blue;
         border-radius: 5px;
