@@ -7,8 +7,22 @@
 
        require_once ("conn.php");
 
+
+       // 接收變數
+       $id =  $_POST["Id"];
+       $c_review_status =  $_POST["C_review_status"];
+
+
+
        //建立SQL語法
-       $sql = "SELECT * FROM study_require";
+       $sql = 
+       "update
+            consultant
+        set
+            c_review_status = '$c_review_status'
+        where
+            id = '$id';";
+            
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        $statement = $pdo->query($sql);

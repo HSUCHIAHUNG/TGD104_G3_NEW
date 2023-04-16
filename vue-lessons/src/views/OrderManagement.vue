@@ -3,24 +3,26 @@
     <div class="OrderManagement">
 
         <div class="OrderManagement_category_btn">
-        <button class="outline_btn_orange"
-        :class="{ touchbg: currentTab === 'tab1' }"
-                @click.prevent="
-                {
-                    current = ['登山', '單車', '潛水'], 
-                    (currentTab = 'tab1');
-                }
-                "
-        >陪你旅行</button>
-        <button class="outline_btn_orange"
-            :class="{ touchbg: currentTab === 'tab2' }"
-                @click.prevent="
-                {
-                    (current = 'learing'), (currentTab = 'tab2');
-                }
-                "
-        >陪你learing</button>
+            <button class="outline_btn_orange"
+            :class="{ touchbg: currentTab === 'tab1' }"
+                    @click.prevent="
+                    {
+                        current = ['登山', '單車', '潛水'], 
+                        (currentTab = 'tab1');
+                    }
+                    "
+            >陪你旅行</button>
+            <button class="outline_btn_orange"
+                :class="{ touchbg: currentTab === 'tab2' }"
+                    @click.prevent="
+                    {
+                        (current = 'learing'), (currentTab = 'tab2');
+                    }
+                    "
+            >陪你learing</button>
         </div>
+
+        
 
         <div class="OrderManagement_select_form">
             <div class="OrderManagement_form_state">
@@ -30,8 +32,8 @@
                     <option value="undone">未完成</option>
                 </select>
             </div>
-            <button class="OrderManagement_btn" @click="toggleSortOrder('asc')">最新</button>
-            <button class="OrderManagement_btn" @click="toggleSortOrder('desc')">最舊</button>
+            <button class="OrderManagement_btn" @click="toggleSortOrder('desc')">最新</button>
+            <button class="OrderManagement_btn" @click="toggleSortOrder('asc')">最舊</button>
             <!-- <searchbar></searchbar> -->
             <div class="MemberContainer">
                 <div class="SearchBar">
@@ -141,7 +143,7 @@
                     { id: '2023022000', tr_category: 'learing',name: '口怎麼辦的品諭', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/02/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
                     { id: '2023022000', tr_category: 'learing',name: '立偉2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                     { id: '2023022000', tr_category: '單車',name: '舞動小敏之', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
+                    { id: '2023022000', tr_category: '單車',name: '舞動小敏之', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: '單車',name: '怕被看腳踝的霈霈', tr_cost: '2023/05/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: '單車',name: '炫炫', tr_cost: '2023/06/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
                     { id: '2023022000', tr_category: '單車',name: '立偉', tr_cost: '2023/07/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
@@ -157,7 +159,7 @@
             // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/Select.php').then(response => this.order_m = response)
          
             this.selectedState = '';
-
+            
         },
         methods: {
             setPage(page) {
