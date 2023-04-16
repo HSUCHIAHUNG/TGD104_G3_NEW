@@ -1,5 +1,6 @@
 <?php
- //MySQL相關資訊
+
+    //MySQL相關資訊
     $db_host = "127.0.0.1";
     $db_user = "tibamefe_since2021";
     $db_pass = "vwRBSb.j&K#E";

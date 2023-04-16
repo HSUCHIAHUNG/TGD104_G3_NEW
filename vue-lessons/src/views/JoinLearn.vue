@@ -232,7 +232,7 @@ export default {
             $.ajax({
                 // type: 'POST',
                 method: "POST",
-                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/API/JoinLearn.php', 
+                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinLearn.php', 
 
                 dataType: 'json', 
                 data: {
