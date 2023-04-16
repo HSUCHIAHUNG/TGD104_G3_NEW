@@ -142,7 +142,7 @@ export default {
               
                 method: "POST",
                 url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/joinTeavel.php', 
-                //url: '../api/Join_test.php', 
+                // url: 'https://tibamef2e.com/tgd104/g3/joinTeavel.php', 
                 data: {
                     Tr_interest: this.Tr_interest,
                     Tr_experience: this.Tr_experience,

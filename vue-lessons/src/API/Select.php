@@ -1,16 +1,16 @@
 <?php
 
-       header("Access-Control-Allow-Origin: *");
-       header("Content-Type: application/json; charset=UTF-8");
-       header("Access-Control-Allow-Methods: GET, POST");
-       header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+       // header("Access-Control-Allow-Origin: *");
+       // header("Content-Type: application/json; charset=UTF-8");
+       // header("Access-Control-Allow-Methods: GET, POST");
+       // header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
        //資料庫連線
-       // require_once ("pdo_connect.php");
-       $db_host = "127.0.0.1";
-       $db_user = "root";
-       $db_pass = "password";
-       $db_select = "G3_TEAM";
+       require_once ("pdo_connect.php");
+       // $db_host = "127.0.0.1";
+       // $db_user = "root";
+       // $db_pass = "password";
+       // $db_select = "G3_TEAM";
 
        //建立資料庫連線物件
        $dsn = "mysql:host=".$db_host.";dbname=".$db_select.";charset=utf8";
@@ -31,11 +31,11 @@
        //將二維陣列取出顯示其值
        // foreach($data as $index => $row){
 	//       echo $row["tr_experience"];   //欄位名稱
-	//       echo " / ";
-	//       echo $row["tr_title"];    //欄位名稱
-	//       echo " / ";
-	//       echo $row["tr_license"];    //欄位名稱
-       //  echo "<br>";
+	// //       echo " / ";
+	// //       echo $row["tr_title"];    //欄位名稱
+	// //       echo " / ";
+	// //       echo $row["tr_license"];    //欄位名稱
+       // //  echo "<br>";
        //  echo "<br>";
        // }
 

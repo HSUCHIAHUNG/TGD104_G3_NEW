@@ -264,6 +264,8 @@ export default {
         $.ajax({
             method: "POST",
             url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply.php', 
+            // url: 'https://tibamef2e.com/tgd104/g3/JoinApply_id.php', 
+
             data: {
                 C_firstname: this.C_firstname,
                 C_birth: this.C_birth,
@@ -303,6 +305,7 @@ export default {
        $.ajax({
             method: "POST",
             url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
+            // url: 'https://tibamef2e.com/tgd104/g3/JoinApply_id.php',
             data: {
               C_id: this.C_id,
                

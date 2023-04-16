@@ -233,6 +233,7 @@ export default {
                 // type: 'POST',
                 method: "POST",
                 url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinLearn.php', 
+                // url: 'https://tibamef2e.com/tgd104/g3/JoinLearn.php', 
 
                 dataType: 'json', 
                 data: {
