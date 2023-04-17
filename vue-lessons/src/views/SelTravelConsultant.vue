@@ -55,7 +55,7 @@
             :class="{ active: currentTab === 'tab2' }"
             @click.prevent="
               {
-                (current = '男'), (currentTab = 'tab2');
+                (current = '男性'), (currentTab = 'tab2');
               }
             "
             >男性</a
@@ -67,7 +67,7 @@
             :class="{ active: currentTab === 'tab3' }"
             @click.prevent="
               {
-                (current = '女'), (currentTab = 'tab3');
+                (current = '女性'), (currentTab = 'tab3');
               }
             "
             >女性</a
@@ -77,21 +77,28 @@
 
       <ul>
         <template v-for="(consultant, index) in consultantInfo" :key="index">
-          <li v-if="current === 'all' || current === consultant.gender">
+          <li v-if="current === 'all' || current === consultant.c_gender">
             <label
               ><input
+              @change="consultant_select(consultant.id)"
                 type="radio"
                 class="option-input radio"
                 name="consultant"
                 v-model="selectedConsultant"
-                :value="index"
+                :value="consultant.id"
             /></label>
-            <!-- <a href="/TravelGallery"><img :src="consultant.url" alt=""></a> -->
-            <router-link to="/TravelGallery" target="_blank"
+
+            <!-- <router-link to="/TravelGallery" target="_blank"
               ><img :src="consultant.url" alt=""
+            /></router-link> -->
+
+            <!-- 圖片寫屎 -->
+            <router-link to="/TravelGallery" target="_blank"
+              ><img src="../assets/image/travel/consultant_c01.png" alt=""
             /></router-link>
-            <h1>{{ consultant.name }}</h1>
-            <h2>{{ consultant.experience }}</h2>
+
+            <h1>{{ consultant.c_nickname }}</h1>
+            <h2>{{ consultant.tr_experience }}</h2>
             <i
               class="fa-regular fa-heart"
               :class="{ 'fa-solid': isFavorite(index) }"
@@ -142,146 +149,22 @@ export default {
   data() {
     return {
       current: "all",
-      consultantInfo: [
-        {
-          id: "C01",
-          url: require("../assets/image/travel/consultant_c01.png"),
-          name: "裴大尼 ",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
- 
-        },
-        {
-          id: "C02",
-          url: require("../assets/image/travel/consultant_c02.png"),
-          name: "裴中尼 ",
-          experience: "台灣百岳征服者",
-          gender: "男",
-     
-        },
-        {
-          id: "C03",
-          url: require("../assets/image/travel/consultant_c03.png"),
-          name: "裴小尼 ",
-          experience: "3年經驗登山嚮導 ",
-          gender: "男",
-     
-        },
-        {
-          id: "C04",
-          url: require("../assets/image/travel/consultant_c04.png"),
-          name: "裴上尼",
-          experience: "4年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C05",
-          url: require("../assets/image/travel/consultant_c05.png"),
-          name: "裴下尼",
-          experience: "1年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C06",
-          url: require("../assets/image/travel/consultant_c06.png"),
-          name: "裴左尼",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C07",
-          url: require("../assets/image/travel/consultant_c07.png"),
-          name: "裴右尼",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C08",
-          url: require("../assets/image/travel/consultant_c08.png"),
-          name: "裴尼",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C09",
-          url: require("../assets/image/travel/consultant_c09.png"),
-          name: "倪大裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C10",
-          url: require("../assets/image/travel/consultant_c10.png"),
-          name: "倪中裴",
-          experience: "2年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C11",
-          url: require("../assets/image/travel/consultant_c11.png"),
-          name: "倪小裴",
-          experience: "3年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C12",
-          url: require("../assets/image/travel/consultant_c12.png"),
-          name: "倪上裴",
-          experience: "3年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C13",
-          url: require("../assets/image/travel/consultant_c13.png"),
-          name: "倪下裴",
-          experience: "2年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C14",
-          url: require("../assets/image/travel/consultant_c14.png"),
-          name: "倪左裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C15",
-          url: require("../assets/image/travel/consultant_c15.png"),
-          name: "倪右裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C16",
-          url: require("../assets/image/travel/consultant_c16.png"),
-          name: "倪裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-      ],
       favorites: [],
       currentTab: "tab1",
-      selectedConsultant: null,
+      selectedConsultant: '',
       travelArea: '',
       toTravelClass: '',
+      consultantInfo: [],
     };
   },
 
 
+
   methods: {
+    consultant_select(id){
+      this.selectedConsultant = id
+      this.$cookies.set("selectedConsultant",this.selectedConsultant)
+    },
     isFavorite(index) {
       return this.favorites.includes(index);
     },
@@ -295,9 +178,9 @@ export default {
     },
 
     startBooking() {
-      let id = $cookies.get("member_id")
+      let id = $cookies.get("Member_id")
       if (id) {
-        if (this.selectedConsultant === null) {
+        if (this.selectedConsultant === '' && this.toTravelClass === this.consultantInfo.about_class) {
           alert("請選擇陪你顧問");
         } else {
           this.$router.push("/TravelCalendar");
@@ -310,8 +193,12 @@ export default {
   },
 
   mounted() {
+    //先放member_id
+    this.$cookies.set("Member_id","1")
     // this.$cookies.remove("member_id");
-    //select 完顧問 當打勾取顧問id set 到 cookie
+    
+    //抓已選擇顧問id
+    this.selectedConsultant = this.$cookies.get("selectedConsultant");
 
     //抓cookie 地區
     this.travelArea = (decodeURIComponent(this.$cookies.get("travelArea")));
@@ -328,29 +215,30 @@ export default {
     }
     this.toTravelClass = x;
     console.log(this.toTravelClass);
+
     //呼叫ajax 撈對應顧問
-
-    // $.ajax({
-    //     method: "POST",
-    //     // url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
-    //     data: {
-    //       About_class: this.toTravelClass,
-    //       C_area: this.travelArea,
+    $.ajax({
+        method: "POST",
+        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelConsultant_Select.php', 
+        data: {
+          About_class: this.toTravelClass,
+          C_area: this.travelArea,
             
-    //     },
-    //     dataType: "json",
-    //     success: function(response) {
-    //       // $("#result").html(response);
+        },
+        dataType: "json",
+        success: response => {
+          // 将回应数据附加到consultantInfo数组中
+          Array.prototype.push.apply(this.consultantInfo, response);
+          console.log(this.consultantInfo);
+        },
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
 
-
-    //     },
-    //     error: function(exception) {
-    //         alert("發生錯誤: " + exception.status);
-    //     },
-
-    // });
+    });  
             
   },
+
 
 };
 </script>

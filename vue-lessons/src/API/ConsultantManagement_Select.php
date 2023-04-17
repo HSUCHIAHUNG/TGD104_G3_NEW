@@ -6,8 +6,9 @@
        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
        //資料庫連線
+       // require_once ("pdo_connect.php");
        require_once ("conn.php");
-       
+
        //建立SQL語法
        $sql = 
        "SELECT 
@@ -27,7 +28,7 @@
        //抓出全部且依照順序封裝成一個二維陣列
        $data = $statement->fetchAll();
 
-       echo json_encode($data)
+       echo json_encode($data);
        //將二維陣列取出顯示其值
        // foreach($data as $index => $row){
  //       echo $row["tr_experience"];   //欄位名稱

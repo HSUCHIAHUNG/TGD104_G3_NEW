@@ -9,7 +9,7 @@
        // require_once ("pdo_connect.php");
        $db_host = "127.0.0.1";
        $db_user = "root";
-       $db_pass = "password";
+       $db_pass = "sS654123";
        $db_select = "G3_TEAM";
 
        //建立資料庫連線物件
