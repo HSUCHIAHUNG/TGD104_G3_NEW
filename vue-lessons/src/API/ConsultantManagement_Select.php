@@ -7,16 +7,7 @@
 
        //資料庫連線
        // require_once ("pdo_connect.php");
-       $db_host = "127.0.0.1";
-       $db_user = "root";
-       $db_pass = "sS654123";
-       $db_select = "G3_TEAM";
-
-       //建立資料庫連線物件
-       $dsn = "mysql:host=".$db_host.";dbname=".$db_select.";charset=utf8";
-
-       //建立PDO物件，並放入指定的相關資料
-       $pdo = new PDO($dsn, $db_user, $db_pass);
+       require_once ("conn.php");
 
        //建立SQL語法
        $sql = 
@@ -37,7 +28,7 @@
        //抓出全部且依照順序封裝成一個二維陣列
        $data = $statement->fetchAll();
 
-       echo json_encode($data)
+       echo json_encode($data);
        //將二維陣列取出顯示其值
        // foreach($data as $index => $row){
  //       echo $row["tr_experience"];   //欄位名稱
