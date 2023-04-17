@@ -30,11 +30,11 @@
        echo json_encode($data)
        //將二維陣列取出顯示其值
        // foreach($data as $index => $row){
-	//       echo $row["tr_experience"];   //欄位名稱
-	//       echo " / ";
-	//       echo $row["tr_title"];    //欄位名稱
-	//       echo " / ";
-	//       echo $row["tr_license"];    //欄位名稱
+ //       echo $row["tr_experience"];   //欄位名稱
+ //       echo " / ";
+ //       echo $row["tr_title"];    //欄位名稱
+ //       echo " / ";
+ //       echo $row["tr_license"];    //欄位名稱
        //  echo "<br>";
        //  echo "<br>";
        // }

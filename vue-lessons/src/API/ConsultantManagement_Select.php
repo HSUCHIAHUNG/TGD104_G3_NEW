@@ -6,18 +6,8 @@
        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
        //資料庫連線
-       // require_once ("pdo_connect.php");
-       $db_host = "127.0.0.1";
-       $db_user = "root";
-       $db_pass = "sS654123";
-       $db_select = "G3_TEAM";
-
-       //建立資料庫連線物件
-       $dsn = "mysql:host=".$db_host.";dbname=".$db_select.";charset=utf8";
-
-       //建立PDO物件，並放入指定的相關資料
-       $pdo = new PDO($dsn, $db_user, $db_pass);
-
+       require_once ("conn.php");
+       
        //建立SQL語法
        $sql = 
        "SELECT 
