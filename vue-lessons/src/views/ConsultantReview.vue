@@ -32,20 +32,29 @@
 
         <div class="ConsultantReview_select_form">
             <div class="ConsultantReview_form_state">
-                <select v-model="selectedStatus" name="state" id="state" class="ConsultantReview_select">
-                    <option value="">請選擇</option>
+                <select v-model="selectedStatus" name="state" id="state" class="ConsultantReview_select "
+                :class="{ option_active: selectedStatus === 'Finish' || selectedStatus === 'undone' }" 
+                >
+                    <option value="">全部</option>
                     <option value="Finish">通過</option>
                     <option value="undone">未通過</option>
                 </select>
             </div>
-            <button class="ConsultantReview_btn" @click.prevent="toggleSortDate('desc')">最新</button>
-            <button class="ConsultantReview_btn" @click.prevent="toggleSortDate('asc')">最舊</button>
+            <button class="ConsultantReview_btn" @click.prevent="toggleSortDate('desc')"
+            :class="{ option_active: SortDate === 'desc' }" 
+            >最新</button>
+            <button class="ConsultantReview_btn" @click.prevent="toggleSortDate('asc')"
+            :class="{ option_active: SortDate === 'asc' }" 
+            
+            >最舊</button>
             <!-- <button class="ConsultantReview_btn">最新</button>
             <button class="ConsultantReview_btn">最舊</button> -->
             <!-- <searchbar></searchbar> -->
             <div class="MemberContainer">
-                <div class="SearchBar">
-                    <input id="search-input" placeholder="請輸入身分證字號" v-model="searchId">
+                <div  class="SearchBar">
+                    <input id="search-input" placeholder="請輸入身分證字號" v-model="searchId"
+                    :class="{ option_active: searchId }" 
+                    >
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
@@ -106,7 +115,8 @@
                     <li @click.prevent="setPage(currentPage-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </li>
-                    <li v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
+                    <li :class="{'pag_active': (currentPage === (n))}" 
+                    v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
                         {{ n }}
                     </li>
                     <li @click.prevent="setPage(currentPage+1)">
@@ -129,6 +139,7 @@
         data(){ 
             return {
                 selectedStatus: '',
+                option_active:'',
                 searchId: '',
                 c_review_status:'',
                 update_id:'',
@@ -136,7 +147,7 @@
                 items: [],
                 perpage: 10, //一頁的資料數
                 currentPage: 1,
-                SortDate: "asc",
+                SortDate: "",
                 // items: [
                 //         { c_nickname: '宏宏', c_id: 'H124853065',c_create_date: '2023/03/01',c_review_status:'通過' },
                 //         { c_nickname: '宏宏', c_id: 'H121403065',c_create_date: '2023/03/02',c_review_status:'未通過' },
@@ -316,16 +327,21 @@
                             //     color: #fff;
                             // }
                     }
+
+                    .pag_active{
+                        background-color: #ff995e;
+                        color: #fff;
+                    }
                 }
                 
                 table{
-                margin: 0px auto;
-                border-collapse: collapse;
-                width: 100%;
-                table-layout:auto;
-                font-size: 20px;
-                font-weight: bold;
-                color: #585858;
+                    margin: 0px auto;
+                    border-collapse: collapse;
+                    width: 100%;
+                    table-layout:auto;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #585858;
                 
                 .ConsultantReview_tr_bg{
                     position: sticky;
@@ -403,7 +419,16 @@
                 width: 13%;
                 font-size: 15px;
                 border-radius: 5px;
+                font-weight: bold;
+                color: #0e0e0e;
+                
             }
+
+            .option_active{
+                background-color: #ffe396;
+                border: none;
+            }
+
         .ConsultantReview_form_state{
 
             .ConsultantReview_select{
@@ -412,12 +437,22 @@
                 font-weight: bold;
                 padding: 10px 35px 10px 20px;
                 box-sizing: border-box;
-                
-               
+                outline: none;
+                border-radius: 5px;
+                columns: #0e0e0e;
+                    
+            }
+
+            .option_active{
+                background-color: #ffe396;
             }
         }
         .SearchBar{
             margin: 0;
+
+            input{
+                outline: none;
+            }
         }
 
     }

@@ -20,7 +20,8 @@
     $about_class = $_POST["About_class"];
     $tr_experience = $_POST["Consultant_id"];
     // echo $s_address;
-    $sql = "INSERT INTO about_consultant(s_address, s_school, about_cost, about_title, about_introduction, s_grad, s_category, about_class, tr_experience) VALUES ('$s_address', '$s_school', '$about_cost', '$about_title', '$about_introduction', '$s_grad', '$s_category', '$about_class', '$tr_experience')";
+    $sql = "INSERT INTO about_consultant(s_address, s_school, about_cost, about_title, about_introduction, s_grad, s_category, about_class, tr_experience) 
+    VALUES ('$s_address', '$s_school', '$about_cost', '$about_title', '$about_introduction', '$s_grad', '$s_category', '$about_class', '$tr_experience')";
     // $sql = "INSERT INTO member(Account = :account, PWD = :pwd, CreateDate) VALUES ('$Account', '$PWD', NOW())";
 
     //執行

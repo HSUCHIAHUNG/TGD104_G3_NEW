@@ -4,19 +4,27 @@
         <div class="MemberManagement_select_form" >
 
             <div class="MemberManagement_form_state">
-                <select v-model="selectedStatus" name="state" id="state" class="MemberManagement_select">
+                <select v-model="selectedStatus" name="state" id="state" class="MemberManagement_select"
+                :class="{ option_active: selectedStatus === 'Finish' || selectedStatus === 'undone' }"
+                >
                     <option value="">全部</option>
                     <option value="Finish">正常</option>
                     <option value="undone">凍結中</option>
                 </select>
             </div>
 
-            <button class="MemberManagement_btn" @click="toggleSortDate('desc')">最新</button>
-            <button class="MemberManagement_btn" @click="toggleSortDate('asc')">最舊</button>
+            <button class="MemberManagement_btn" @click="toggleSortDate('desc')"
+            :class="{ option_active: SortDate === 'desc' }"
+            >最新</button>
+            <button class="MemberManagement_btn" @click="toggleSortDate('asc')"
+            :class="{ option_active: SortDate === 'asc' }" 
+            >最舊</button>
 
             <div class="MemberContainer">
                 <div class="SearchBar">
-                    <input id="search-input" placeholder="請輸入身分證字號" v-model="searchId">
+                    <input id="search-input" placeholder="請輸入身分證字號" v-model="searchId"
+                    :class="{ option_active: searchId }"
+                    >
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
@@ -61,7 +69,8 @@
                     <li @click.prevent="setPage(currentPage-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </li>
-                    <li v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
+                    <li :class="{'pag_active': (currentPage === (n))}"
+                    v-for="(n, index) in totalPage" :key="index" @click.prevent="setPage(n)">
                         {{ n }}
                     </li>
                     <li @click.prevent="setPage(currentPage+1)">
@@ -146,6 +155,7 @@
                 success: function(response) {
                     //更新html內容
                     // console.log(response);
+                    location.reload()
                 },
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);
@@ -244,14 +254,19 @@
                                 background-color: #ff995e;
                                 color: #fff;
                             }
-                            &:nth-child(1){
-                                background-color: #ff995e;
-                                color: #fff;
-                            }
-                            &:nth-child(2){
-                                background-color: #ff995e;
-                                color: #fff;
-                            }
+                            // &:nth-child(1){
+                            //     background-color: #ff995e;
+                            //     color: #fff;
+                            // }
+                            // &:nth-child(2){
+                            //     background-color: #ff995e;
+                            //     color: #fff;
+                            // }
+                    }
+
+                    .pag_active{
+                        background-color: #ff995e;
+                        color: #fff;
                     }
                 }
 
@@ -328,7 +343,13 @@
             width: 13%;
             font-size: 15px;
             border-radius: 5px;
+            color: #0e0e0e;
         }
+
+            .option_active{
+                background-color: #ffe396;
+                border: none;
+            }
 
         .MemberManagement_form_state{
 
@@ -339,11 +360,21 @@
                 font-weight: bold;
                 padding: 10px 35px 10px 20px;
                 box-sizing: border-box;
-                
+                outline: none;
+            }
+
+            .option_active{
+                background-color: #ffe396;
+                border: none;
             }
         }
         .SearchBar{
             margin: 0;
+            outline: none;
+
+            input{
+                outline: none;
+            }
         }
 
     }
