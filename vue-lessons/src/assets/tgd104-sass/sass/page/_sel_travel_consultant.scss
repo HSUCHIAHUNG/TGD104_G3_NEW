@@ -139,8 +139,9 @@
         ul{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: flex-start;
             margin: 40px auto;
+            margin-left: 20px;
             li{
                 border: 2px solid #79cbd4;
                 background-color: #DCECEE;
@@ -183,7 +184,7 @@
                     margin-right: 0.5rem;
                     outline: none;
                     position: relative;
-                    z-index: 1000;
+                    // z-index: 1000;
                     border-radius: 10px;
                 }
                 .option-input:hover {
@@ -262,7 +263,7 @@
                 }
 
                 .fa-heart {
-                    font-size: 22px;
+                    font-size: 24px;
                     cursor: pointer;
                     transition: all 0.3s ease;
                     color: $dark_blue;

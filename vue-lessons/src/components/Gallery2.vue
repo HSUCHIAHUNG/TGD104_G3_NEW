@@ -15,29 +15,37 @@
         </div>
       </div>
 
-      <div class="detail_introduce">
-        <h1>{{title}}</h1>
-        <h2>{{name}}</h2>
-        <h3>性別：{{gender}}</h3>
-        <h3>年齡：{{age}}</h3>
-        <h3>個性：{{personality}}</h3>
-        <h3>興趣：{{interest}}</h3>
-        <h3>經歷：{{experience}}</h3>
-        <h3>證照：{{license}}</h3>
-        <h3>費用：{{cost}}</h3>
+      <div v-for="(detail, index) in consultantDetail" class="detail_introduce">
+        <h1>{{detail.about_title}}</h1>
+        <h2>{{detail.c_nickname}}</h2>
+        <h3>性別：{{detail.c_gender}}</h3>
+        <h3>生日：{{detail.c_birth}}</h3>
+        <h3>個性：{{detail.c_personality}}</h3>
+        <h3>興趣：{{detail.tr_interest}}</h3>
+        <h3>經歷：{{detail.tr_experience}}</h3>
+        <h3>證照：{{detail.tr_license}}</h3>
+        <h3>費用：{{detail.about_cost}}</h3>
         <h4>自我介紹</h4>
-        <p>{{introduce}}</p>
+        <p>{{detail.about_introduction}}</p>
       </div>
+
+    </div>
+
+    <div class="gallery_btn">
+    <router-link to="/SelTravelConsultant"><button class="btn_orange">回預約頁面</button></router-link>
     </div>
 
 </template>
 
 
 <script>
-
+import $ from "jquery";
 
 export default {
   name: "Gallery2",
+  components: {
+    $,
+  },
   data() {
     return {
         images: [
@@ -48,17 +56,19 @@ export default {
         mainImage: require('../assets/image/travel/travel_gallery.png'),
         mainImageAlt: "Image 1",
 
-        title: '台灣百岳征服者',
-        name: '裴大尼',
-        gender: '男性',
-        age: '28歲',
-        personality: '活躍健談、遇事從容不迫',
-        interest: '登山、游泳',
-        experience: '登山嚮導、旅行社業務',
-        license: '登山嚮導證',
-        cost: '＄1,500',
-        introduce:'大家好，作為一經歷豐富的登山嚮導，我曾經帶領遊客遊歷過台灣大大小小的山脈，從玉山、合歡山到雪山等等，不管新手或是經驗者都歡迎跟我一起登山！',
+        // title: '台灣百岳征服者',
+        // name: '裴大尼',
+        // gender: '男性',
+        // age: '28歲',
+        // personality: '活躍健談、遇事從容不迫',
+        // interest: '登山、游泳',
+        // experience: '登山嚮導、旅行社業務',
+        // license: '登山嚮導證',
+        // cost: '＄1,500',
+        // introduce:'大家好，作為一經歷豐富的登山嚮導，我曾經帶領遊客遊歷過台灣大大小小的山脈，從玉山、合歡山到雪山等等，不管新手或是經驗者都歡迎跟我一起登山！',
 
+        Consultant_id: '',
+        consultantDetail: [],
     };
   },
   methods: {
@@ -68,6 +78,32 @@ export default {
     }
   },
 
+  mounted() {
+    //取得cookie 顧問id
+    this.Consultant_id = this.$cookies.get("Consultant_id");
+    // console.log(this.Consultant_id);
+
+    //呼叫ajax 撈對應顧問
+    $.ajax({
+        method: "POST",
+        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/Gallery2_Select.php', 
+        data: {
+          Id: this.Consultant_id,
+            
+        },
+        dataType: "json",
+        success: response => {
+          Array.prototype.push.apply(this.consultantDetail, response);
+          console.log(this.consultantDetail);
+        },
+
+
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
+
+    });  
+  },
   
 
 };
@@ -75,4 +111,9 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+
+.gallery_btn{
+  text-align: center;
+  margin-top: 20px;
+}
 </style>
