@@ -38,7 +38,7 @@
     <div class="self_consultant container">
       <ol class="tabs">
         <li>
-          <a
+          <!-- <a
             href="#"
             :class="{ active: currentTab === 'tab1' }"
             @click.prevent="
@@ -47,10 +47,16 @@
               }
             "
             >全部</a
-          >
+          > -->
+          <a
+            href="#"
+            :class="{ active: currentTab === 'tab1' }"
+            @click.prevent="setTab('tab1', 'all')"
+            >全部
+          </a>
         </li>
         <li>
-          <a
+          <!-- <a
             href="#"
             :class="{ active: currentTab === 'tab2' }"
             @click.prevent="
@@ -59,10 +65,16 @@
               }
             "
             >男性</a
+          > -->
+          <a
+            href="#"
+            :class="{ active: currentTab === 'tab2' }"
+            @click.prevent="setTab('tab2', '男性')"
+            >男性</a
           >
         </li>
         <li>
-          <a
+          <!-- <a
             href="#"
             :class="{ active: currentTab === 'tab3' }"
             @click.prevent="
@@ -71,12 +83,19 @@
               }
             "
             >女性</a
+          > -->
+          <a
+            href="#"
+            :class="{ active: currentTab === 'tab3' }"
+            @click.prevent="setTab('tab3', '女性')"
+            >女性</a
           >
         </li>
       </ol>
 
       <ul>
-        <template v-for="(consultant, index) in consultantInfo" :key="index">
+        <!-- <template v-for="(consultant, index) in consultantInfo" :key="index"> -->
+        <template v-for="(consultant, index) in paginatedConsultantInfo" :key="index">
           <li v-if="current === 'all' || current === consultant.c_gender">
             <label
               ><input
@@ -93,9 +112,9 @@
             /></router-link> -->
 
             <!-- 圖片寫屎 -->
-            <router-link to="/TravelGallery" target="_blank"
-              ><img src="../assets/image/travel/consultant_c01.png" alt=""
-            /></router-link>
+            <router-link to="/TravelGallery">
+              <img src="../assets/image/travel/consultant_c01.png" alt="" @click="consultantId(consultant.id)"/>
+            </router-link>
 
             <h1>{{ consultant.c_nickname }}</h1>
             <h2>{{ consultant.tr_experience }}</h2>
@@ -105,24 +124,33 @@
               @click="toggleFavorite(index)"
             ></i>
           </li>
+
         </template>
       </ul>
+
     </div>
 
     <div class="page_number">
-      <a href=""><i class="fa-solid fa-angle-left"></i></a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+      <ul>
+          <li @click.prevent="setPage(currentPage - 1)">
+              <i class="fa-solid fa-angle-left"></i>
+          </li>
+          <li v-for="(n, index) in totalPage" :key="index" :class="{ active: n === currentPage }" @click.prevent="setPage(n)">
+              {{ n }}
+          </li>
+          <li @click.prevent="setPage(currentPage + 1)">
+              <i class="fa-solid fa-angle-right"></i>
+          </li>
+      </ul>
     </div>
+    
   </div>
   <!-- sel_travel_consultant end-->
 
   <div class="sel_travel_consultant_button">
     <div class="container">
       <router-link to="/TravelMap"
-        ><button class="outline_btn_orange">重新選擇地區</button></router-link
+        ><button class="outline_btn_orange" @click="removeId">重新選擇地區</button></router-link
       >
 
       <button @click="startBooking" class="btn_orange">開始預約</button>
@@ -155,17 +183,34 @@ export default {
       travelArea: '',
       toTravelClass: '',
       consultantInfo: [],
+      //分頁
+      perpage: 12, //一頁的資料數
+      currentPage: 1,
     };
   },
 
 
 
   methods: {
+    setTab(tab, current) {
+    this.currentTab = tab;
+    this.current = current;
+    this.currentPage = 1;
+    this.selectedConsultant = ''; // 重置 selectedConsultant 的值
+    },
+    //上一頁&下一頁
+    setPage(pageNum) {
+      if (pageNum < 1 || pageNum > this.totalPage) return;
+      this.currentPage = pageNum;
+    },
+
+    //input已選擇顧問id set cookie
     consultant_select(id){
       this.selectedConsultant = id
       this.$cookies.set("selectedConsultant",this.selectedConsultant)
     },
 
+    //點擊愛心收藏
     isFavorite(index) {
       return this.favorites.includes(index);
     },
@@ -179,10 +224,11 @@ export default {
       }
     },
 
+    //判斷是否已登入會員和選擇顧問才進入下一頁
     startBooking() {
-      let id = $cookies.get("Member_id")
-      if (id) {
-        if (this.selectedConsultant === '' && this.toTravelClass === this.consultantInfo.about_class) {
+      let Member_id = $cookies.get("Member_id")
+      if (Member_id) {
+        if (!this.selectedConsultant) {
           alert("請選擇陪你顧問");
         } else {
           this.$router.push("/TravelCalendar");
@@ -190,12 +236,22 @@ export default {
       } else {
           alert('請先登入會員');
       }
-
     },
+
+    //點顧問圖片set 顧問id cookie for顧問詳細頁
+    consultantId(consultantId){
+      this.$cookies.set("Consultant_id",consultantId)
+    },
+
+    //回上一頁時清除cookie selectedConsultant
+    removeId(){
+      this.$cookies.remove("selectedConsultant");
+    },
+
   },
 
   mounted() {
-    //先放member_id
+    //先假放member_id
     this.$cookies.set("Member_id","1")
     // this.$cookies.remove("member_id");
     
@@ -216,7 +272,7 @@ export default {
       x = "潛水"
     }
     this.toTravelClass = x;
-    console.log(this.toTravelClass);
+    // console.log(this.toTravelClass);
 
     //呼叫ajax 撈對應顧問
     $.ajax({
@@ -239,6 +295,38 @@ export default {
 
     });  
             
+  },
+
+  // computed: {
+  //   paginatedConsultantInfo() {
+  //     const startIndex = (this.currentPage - 1) * this.perpage;
+  //     const endIndex = startIndex + this.perpage;
+  //     return this.consultantInfo.slice(startIndex, endIndex);
+  //   },
+  //   totalPage() {
+  //     return Math.ceil(this.consultantInfo.length / this.perpage);
+  //   },
+  // },
+
+  computed: {
+    // 分頁相關
+    totalPage() {
+      let totalData = this.consultantInfo.filter(
+        (consultant) =>
+          this.current === "all" || this.current === consultant.c_gender
+      );
+      return Math.ceil(totalData.length / this.perpage);
+    },
+    paginatedConsultantInfo() {
+      let totalData = this.consultantInfo.filter(
+        (consultant) =>
+          this.current === "all" || this.current === consultant.c_gender
+      );
+      let start = (this.currentPage - 1) * this.perpage;
+      let end = start + this.perpage;
+      return totalData.slice(start, end);
+    },
+    
   },
 
 
