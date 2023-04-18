@@ -173,7 +173,7 @@
     }
   }
     
-  .fa-heart.fa-solid {
+  .product-actions .fa-heart.fa-solid {
     color: $dark_blue;
     animation: pulse 1s backwards;
   }
