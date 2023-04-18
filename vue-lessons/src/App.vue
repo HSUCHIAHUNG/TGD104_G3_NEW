@@ -164,6 +164,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/tgd104-sass/new.scss";
+
+
 /* 跳至最上方的按鈕 */
 .toTop-arrow {
   width: 2.5rem;

@@ -165,9 +165,11 @@ export default {
       this.selectedConsultant = id
       this.$cookies.set("selectedConsultant",this.selectedConsultant)
     },
+
     isFavorite(index) {
       return this.favorites.includes(index);
     },
+    
     toggleFavorite(index) {
       if (this.isFavorite(index)) {
         const favoriteIndex = this.favorites.indexOf(index);

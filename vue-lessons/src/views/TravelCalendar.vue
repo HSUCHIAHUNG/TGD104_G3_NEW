@@ -45,6 +45,11 @@ export default {
         DatePicker,
     },
 
+    mounted() {
+        
+        console.log(this.disabledDates);
+    },
+
     methods: {
         orderCheck(){
 

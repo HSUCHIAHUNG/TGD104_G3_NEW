@@ -9,5 +9,5 @@ module.exports = {
     sourceMap: true,
   },
   runtimeCompiler: false,
-  publicPath: './',
+  publicPath: '/TGD104_G3_NEW/vue-lessons/dist/',
 };

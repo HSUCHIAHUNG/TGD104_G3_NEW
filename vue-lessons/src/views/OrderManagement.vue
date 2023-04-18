@@ -16,6 +16,7 @@
                :class="{ touchbg: currentTab === 'tab2' }"
                     @click.prevent="
                     {
+                        
                         current = [
                         '鋼琴', '吉他', '烏克麗麗','爵士鼓',
                         '國小', '國中', '高中',
@@ -134,7 +135,7 @@
                     { or_number: '2023022006', or_class: '單車',c_nickname: '小敏', or_order_date: '2023/03/06',or_booking_date: '2023/03/19',order_status: '完成', },
                     { or_number: '2023022007', or_class: '鋼琴',c_nickname: '品諭', or_order_date: '2023/03/07',or_booking_date: '2023/03/19',order_status: '完成', },
                     { or_number: '2023022000', or_class: '鋼琴',c_nickname: '娟霈', or_order_date: '2023/03/08',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022040', or_class: '鋼琴',c_nickname: '舞動小敏之分', or_order_date: '2023/03/09',or_booking_date: '2023/03/19',order_status: '未完成', },
+                    { or_number: '2023022040', or_class: '吉他',c_nickname: '舞動小敏之分', or_order_date: '2023/03/09',or_booking_date: '2023/03/19',order_status: '未完成', },
                     { or_number: '2023022101', or_class: '鋼琴',c_nickname: '口頭禪蝦品諭', or_order_date: '2023/03/10',or_booking_date: '2023/03/19',order_status: '未完成', },
                     { or_number: '2023022008', or_class: '鋼琴',c_nickname: '炫炫', or_order_date: '2023/03/11',or_booking_date: '2023/03/19',order_status: '未完成', },
                     { or_number: '2023022000', or_class: '鋼琴',c_nickname: '立偉', or_order_date: '2023/03/12',or_booking_date: '2023/03/19',order_status: '未完成', },
