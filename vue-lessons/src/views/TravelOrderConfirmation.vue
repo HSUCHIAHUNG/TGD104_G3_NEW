@@ -39,6 +39,7 @@
 
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
+import $ from "jquery";
 
 export default {
     name: "TravelOrderConfirmation",
@@ -52,6 +53,7 @@ export default {
     components: {
     VHeader,
     VFooter,
+    $
     },
     mounted() {
       // 1

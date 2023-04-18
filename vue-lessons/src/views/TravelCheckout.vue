@@ -37,6 +37,7 @@
 <script>
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
+import $ from "jquery";
 
 export default {
     name: "TravelCheckout",
