@@ -383,7 +383,6 @@ export default {
     $,
   },
   methods: {
-    // 會員登入燈箱
     //開啟nav
     open_nav() {
       let center_navopen = document.getElementById("center_nav");
@@ -395,19 +394,17 @@ export default {
       // console.log('111');
       center_navclose.classList.toggle("nav_toggle");
     },
+    // 會員登入燈箱
     memberLogin() {
       let lightbox = document.getElementById("member_lightbox");
       lightbox.classList.remove("none");
       // 點擊黑色區域也會關閉
+      // 點擊白色區域不會關閉
+      lightbox.querySelector("article").addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
       lightbox.addEventListener("click", function () {
         lightbox.classList.add("none");
-
-        // 點擊白色區域不會關閉
-        lightbox
-          .querySelector("article")
-          .addEventListener("click", function (e) {
-            e.stopPropagation();
-          });
       });
     },
     // 顧問登入

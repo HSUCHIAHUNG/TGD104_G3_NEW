@@ -82,11 +82,13 @@ export default {
           this.c_list.splice(index, 1);
         }
       });
+      console.log(this.c_list);
       // 整理要update的陣列
       let update_list = [];
       this.c_list.forEach((item) => {
         update_list.push(item.id);
       });
+      console.log(update_list);
 
       let member_id = this.$cookies.get("Member_id");
       // 更新會員收藏清單

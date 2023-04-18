@@ -12,7 +12,6 @@ require_once ("conn.php");
 // -------------------------------------------
 
 // 取得 POST 資料
-// 取得 POST 資料
 $id = $_POST['id'];
 $m_fav = json_encode($_POST['m_fav']); 
 // 傳入時要先包裝成json檔的格式才能再放回資料庫
