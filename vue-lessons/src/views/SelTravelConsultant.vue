@@ -38,7 +38,7 @@
     <div class="self_consultant container">
       <ol class="tabs">
         <li>
-          <a
+          <!-- <a
             href="#"
             :class="{ active: currentTab === 'tab1' }"
             @click.prevent="
@@ -47,75 +47,110 @@
               }
             "
             >全部</a
-          >
+          > -->
+          <a
+            href="#"
+            :class="{ active: currentTab === 'tab1' }"
+            @click.prevent="setTab('tab1', 'all')"
+            >全部
+          </a>
         </li>
         <li>
-          <a
+          <!-- <a
             href="#"
             :class="{ active: currentTab === 'tab2' }"
             @click.prevent="
               {
-                (current = '男'), (currentTab = 'tab2');
+                (current = '男性'), (currentTab = 'tab2');
               }
             "
+            >男性</a
+          > -->
+          <a
+            href="#"
+            :class="{ active: currentTab === 'tab2' }"
+            @click.prevent="setTab('tab2', '男性')"
             >男性</a
           >
         </li>
         <li>
-          <a
+          <!-- <a
             href="#"
             :class="{ active: currentTab === 'tab3' }"
             @click.prevent="
               {
-                (current = '女'), (currentTab = 'tab3');
+                (current = '女性'), (currentTab = 'tab3');
               }
             "
+            >女性</a
+          > -->
+          <a
+            href="#"
+            :class="{ active: currentTab === 'tab3' }"
+            @click.prevent="setTab('tab3', '女性')"
             >女性</a
           >
         </li>
       </ol>
 
       <ul>
-        <template v-for="(consultant, index) in consultantInfo" :key="index">
-          <li v-if="current === 'all' || current === consultant.gender">
+        <!-- <template v-for="(consultant, index) in consultantInfo" :key="index"> -->
+        <template v-for="(consultant, index) in paginatedConsultantInfo" :key="index">
+          <li v-if="current === 'all' || current === consultant.c_gender">
             <label
               ><input
+              @change="consultant_select(consultant.id)"
                 type="radio"
                 class="option-input radio"
                 name="consultant"
                 v-model="selectedConsultant"
-                :value="index"
+                :value="consultant.id"
             /></label>
-            <!-- <a href="/TravelGallery"><img :src="consultant.url" alt=""></a> -->
-            <router-link to="/TravelGallery" target="_blank"
+
+            <!-- <router-link to="/TravelGallery" target="_blank"
               ><img :src="consultant.url" alt=""
-            /></router-link>
-            <h1>{{ consultant.name }}</h1>
-            <h2>{{ consultant.experience }}</h2>
+            /></router-link> -->
+
+            <!-- 圖片寫屎 -->
+            <router-link to="/TravelGallery">
+              <img src="../assets/image/travel/consultant_c01.png" alt="" @click="consultantId(consultant.id)"/>
+            </router-link>
+
+            <h1>{{ consultant.c_nickname }}</h1>
+            <h2>{{ consultant.tr_experience }}</h2>
             <i
               class="fa-regular fa-heart"
               :class="{ 'fa-solid': isFavorite(index) }"
               @click="toggleFavorite(index)"
             ></i>
           </li>
+
         </template>
       </ul>
+
     </div>
 
     <div class="page_number">
-      <a href=""><i class="fa-solid fa-angle-left"></i></a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+      <ul>
+          <li @click.prevent="setPage(currentPage - 1)">
+              <i class="fa-solid fa-angle-left"></i>
+          </li>
+          <li v-for="(n, index) in totalPage" :key="index" :class="{ active: n === currentPage }" @click.prevent="setPage(n)">
+              {{ n }}
+          </li>
+          <li @click.prevent="setPage(currentPage + 1)">
+              <i class="fa-solid fa-angle-right"></i>
+          </li>
+      </ul>
     </div>
+    
   </div>
   <!-- sel_travel_consultant end-->
 
   <div class="sel_travel_consultant_button">
     <div class="container">
       <router-link to="/TravelMap"
-        ><button class="outline_btn_orange">重新選擇地區</button></router-link
+        ><button class="outline_btn_orange" @click="removeId">重新選擇地區</button></router-link
       >
 
       <button @click="startBooking" class="btn_orange">開始預約</button>
@@ -142,149 +177,44 @@ export default {
   data() {
     return {
       current: "all",
-      consultantInfo: [
-        {
-          id: "C01",
-          url: require("../assets/image/travel/consultant_c01.png"),
-          name: "裴大尼 ",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
- 
-        },
-        {
-          id: "C02",
-          url: require("../assets/image/travel/consultant_c02.png"),
-          name: "裴中尼 ",
-          experience: "台灣百岳征服者",
-          gender: "男",
-     
-        },
-        {
-          id: "C03",
-          url: require("../assets/image/travel/consultant_c03.png"),
-          name: "裴小尼 ",
-          experience: "3年經驗登山嚮導 ",
-          gender: "男",
-     
-        },
-        {
-          id: "C04",
-          url: require("../assets/image/travel/consultant_c04.png"),
-          name: "裴上尼",
-          experience: "4年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C05",
-          url: require("../assets/image/travel/consultant_c05.png"),
-          name: "裴下尼",
-          experience: "1年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C06",
-          url: require("../assets/image/travel/consultant_c06.png"),
-          name: "裴左尼",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C07",
-          url: require("../assets/image/travel/consultant_c07.png"),
-          name: "裴右尼",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C08",
-          url: require("../assets/image/travel/consultant_c08.png"),
-          name: "裴尼",
-          experience: "5年經驗登山嚮導",
-          gender: "男",
-     
-        },
-        {
-          id: "C09",
-          url: require("../assets/image/travel/consultant_c09.png"),
-          name: "倪大裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C10",
-          url: require("../assets/image/travel/consultant_c10.png"),
-          name: "倪中裴",
-          experience: "2年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C11",
-          url: require("../assets/image/travel/consultant_c11.png"),
-          name: "倪小裴",
-          experience: "3年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C12",
-          url: require("../assets/image/travel/consultant_c12.png"),
-          name: "倪上裴",
-          experience: "3年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C13",
-          url: require("../assets/image/travel/consultant_c13.png"),
-          name: "倪下裴",
-          experience: "2年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C14",
-          url: require("../assets/image/travel/consultant_c14.png"),
-          name: "倪左裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C15",
-          url: require("../assets/image/travel/consultant_c15.png"),
-          name: "倪右裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-        {
-          id: "C16",
-          url: require("../assets/image/travel/consultant_c16.png"),
-          name: "倪裴",
-          experience: "1年經驗登山嚮導",
-          gender: "女",
-     
-        },
-      ],
       favorites: [],
       currentTab: "tab1",
-      selectedConsultant: null,
+      selectedConsultant: '',
       travelArea: '',
       toTravelClass: '',
+      consultantInfo: [],
+      //分頁
+      perpage: 12, //一頁的資料數
+      currentPage: 1,
     };
   },
 
 
+
   methods: {
+    setTab(tab, current) {
+    this.currentTab = tab;
+    this.current = current;
+    this.currentPage = 1;
+    this.selectedConsultant = ''; // 重置 selectedConsultant 的值
+    },
+    //上一頁&下一頁
+    setPage(pageNum) {
+      if (pageNum < 1 || pageNum > this.totalPage) return;
+      this.currentPage = pageNum;
+    },
+
+    //input已選擇顧問id set cookie
+    consultant_select(id){
+      this.selectedConsultant = id
+      this.$cookies.set("selectedConsultant",this.selectedConsultant)
+    },
+
+    //點擊愛心收藏
     isFavorite(index) {
       return this.favorites.includes(index);
     },
+    
     toggleFavorite(index) {
       if (this.isFavorite(index)) {
         const favoriteIndex = this.favorites.indexOf(index);
@@ -294,10 +224,11 @@ export default {
       }
     },
 
+    //判斷是否已登入會員和選擇顧問才進入下一頁
     startBooking() {
-      let id = $cookies.get("member_id")
-      if (id) {
-        if (this.selectedConsultant === null) {
+      let Member_id = $cookies.get("Member_id")
+      if (Member_id) {
+        if (!this.selectedConsultant) {
           alert("請選擇陪你顧問");
         } else {
           this.$router.push("/TravelCalendar");
@@ -305,13 +236,27 @@ export default {
       } else {
           alert('請先登入會員');
       }
-
     },
+
+    //點顧問圖片set 顧問id cookie for顧問詳細頁
+    consultantId(consultantId){
+      this.$cookies.set("Consultant_id",consultantId)
+    },
+
+    //回上一頁時清除cookie selectedConsultant
+    removeId(){
+      this.$cookies.remove("selectedConsultant");
+    },
+
   },
 
   mounted() {
+    //先假放member_id
+    this.$cookies.set("Member_id","1")
     // this.$cookies.remove("member_id");
-    //select 完顧問 當打勾取顧問id set 到 cookie
+    
+    //抓已選擇顧問id
+    this.selectedConsultant = this.$cookies.get("selectedConsultant");
 
     //抓cookie 地區
     this.travelArea = (decodeURIComponent(this.$cookies.get("travelArea")));
@@ -327,30 +272,63 @@ export default {
       x = "潛水"
     }
     this.toTravelClass = x;
-    console.log(this.toTravelClass);
+    // console.log(this.toTravelClass);
+
     //呼叫ajax 撈對應顧問
-
-    // $.ajax({
-    //     method: "POST",
-    //     // url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
-    //     data: {
-    //       About_class: this.toTravelClass,
-    //       C_area: this.travelArea,
+    $.ajax({
+        method: "POST",
+        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelConsultant_Select.php', 
+        data: {
+          About_class: this.toTravelClass,
+          C_area: this.travelArea,
             
-    //     },
-    //     dataType: "json",
-    //     success: function(response) {
-    //       // $("#result").html(response);
+        },
+        dataType: "json",
+        success: response => {
+          // 将回应数据附加到consultantInfo数组中
+          Array.prototype.push.apply(this.consultantInfo, response);
+          console.log(this.consultantInfo);
+        },
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
 
-
-    //     },
-    //     error: function(exception) {
-    //         alert("發生錯誤: " + exception.status);
-    //     },
-
-    // });
+    });  
             
   },
+
+  // computed: {
+  //   paginatedConsultantInfo() {
+  //     const startIndex = (this.currentPage - 1) * this.perpage;
+  //     const endIndex = startIndex + this.perpage;
+  //     return this.consultantInfo.slice(startIndex, endIndex);
+  //   },
+  //   totalPage() {
+  //     return Math.ceil(this.consultantInfo.length / this.perpage);
+  //   },
+  // },
+
+  computed: {
+    // 分頁相關
+    totalPage() {
+      let totalData = this.consultantInfo.filter(
+        (consultant) =>
+          this.current === "all" || this.current === consultant.c_gender
+      );
+      return Math.ceil(totalData.length / this.perpage);
+    },
+    paginatedConsultantInfo() {
+      let totalData = this.consultantInfo.filter(
+        (consultant) =>
+          this.current === "all" || this.current === consultant.c_gender
+      );
+      let start = (this.currentPage - 1) * this.perpage;
+      let end = start + this.perpage;
+      return totalData.slice(start, end);
+    },
+    
+  },
+
 
 };
 </script>

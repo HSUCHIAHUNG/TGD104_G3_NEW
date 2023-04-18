@@ -29,13 +29,17 @@
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import { Calendar, DatePicker } from 'v-calendar';
+import $ from "jquery";
 
 export default {
     name: "TravelCalendar",
     data() {
     return {
-        disabledDates: [new Date(), '2023-04-01', '2023-04-02', '2023-04-03', '2023-04-04', '2023-04-05', '2023-04-06', '2023-04-08', '2023-04-09', '2023-04-10', '2023-04-11', '2023-04-12', '2023-04-17', '2023-04-18', '2023-04-27', '2023-04-28'],
+        disabledDates: [new Date(), ],
         date: new Date(),
+        attributes: [],
+        id: '',
+        C_date: [],
     };
     },
     components: {
@@ -43,6 +47,12 @@ export default {
         VFooter,
         Calendar,
         DatePicker,
+        $,
+    },
+
+    mounted() {
+        
+        console.log(this.disabledDates);
     },
 
     methods: {
@@ -52,9 +62,58 @@ export default {
                 alert('請選擇日期');
             } else {
                 this.$router.push('/TravelOrderConfirmation');
-                console.log(this.date); //印出所選日期
+                // console.log(this.date); //印出所選日期
+                //所選日期 set cookie
             }
-        }
+        },
+
+    },
+
+    mounted() {
+        // 第一步:　先從cookie當中抓取顧問id的c_date欄位
+        this.id = this.$cookies.get("selectedConsultant")
+        console.log(this.id);
+        console.log(this.disabledDates);
+
+
+        // 第二步: 下Select敘述抓取顧問c_date的資料條件是(Id = 資料庫顧問的id)
+        $.ajax({
+            method: "POST",
+            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelCalendar_Select.php', 
+            data: {
+                Id: this.id,
+                
+            },
+            dataType: "json",
+            // success: response => {
+            // Array.prototype.push.apply(this.disabledDates, response);
+            // console.log(this.disabledDates);
+            // },
+
+            // success: response => {
+            //     console.log(response);
+            //     this.disabledDates.push(...response)
+            //     // Array.prototype.push.apply(this.disabledDates, ...response);
+            //     console.log(this.disabledDates);
+            // },
+
+            success: response => {
+            // 使用Array.map()方法提取c_date的值並轉為日期物件
+                // this.disabledDates.push(...response.map(item => new Date(item.c_date))) 
+                this.disabledDates.push(...response.map(item => item.c_date)) 
+                // console.log(this.disabledDates);
+                // console.log(this.disabledDates.toLocaleDateString());
+            },
+
+            error: function(exception) {
+                alert("發生錯誤: " + exception.status);
+            },
+
+         }); 
+
+        // 第三步: 將使用者選到的日期 
+        // 使用者點擊到的日期{0: Tue Apr 18 2023 11:43:01 GMT+0800 (台北標準時間)}
+        // 從this.date 抓到時間後轉換格式存進cookie 轉換語法toLocaleDateString()
     },
 };
 </script>

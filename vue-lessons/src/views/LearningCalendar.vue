@@ -34,8 +34,9 @@ export default {
     name: "LearningCalendar",
     data() {
     return {
-        disabledDates: [new Date(), '2023-04-01', '2023-04-02', '2023-04-03', '2023-04-04', '2023-04-05', '2023-04-06', '2023-04-08', '2023-04-09', '2023-04-10', '2023-04-11', '2023-04-12', '2023-04-17', '2023-04-18', '2023-04-27', '2023-04-28'],
+        disabledDates: [new Date()],
         date: new Date(),
+        L_consultant_id_calendar: '',
     };
     },
     components: {
@@ -55,6 +56,28 @@ export default {
                 console.log(this.date); //印出所選日期
             }
         }
+    },
+    mounted() {
+        this.L_consultant_id_calendar = this.$cookies.get("L_consultant_id");
+        console.log(this.L_consultant_id_calendar);
+
+
+        // $.ajax({
+        //         method: "POST",
+        //         url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningCalendar_Select.php', 
+        //         data: {
+        //         Id: this.L_consultant_id_detail,         
+        //         },
+        //         dataType: "json",
+        //         success: response => {
+        //             this.disabledDates.push(...response.map(item => item.c_date)) 
+        //         },
+        //         error: function(exception) {
+        //             alert("發生錯誤: " + exception.status);
+        //         },
+
+        // });
+        
     },
 };
 </script>

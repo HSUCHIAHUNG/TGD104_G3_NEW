@@ -7,22 +7,12 @@
 
        require_once ("conn.php");
 
+       $id = $_POST["Id"];
 
-       // 接收變數
-       $id =  $_POST["Id"];
-       $c_status =  $_POST["C_status"];
+       $sql = "SELECT c_date
+              FROM consultant
+              where id = '$id';";
 
-
-
-       //建立SQL語法
-       $sql = 
-       "update
-            consultant
-        set
-            c_status = '$c_status'
-        where
-            id = '$id';";
-            
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        $statement = $pdo->query($sql);
@@ -31,15 +21,4 @@
        $data = $statement->fetchAll();
 
        echo json_encode($data);
-       //將二維陣列取出顯示其值
-       // foreach($data as $index => $row){
- //       echo $row["tr_experience"];   //欄位名稱
- //       echo " / ";
- //       echo $row["tr_title"];    //欄位名稱
- //       echo " / ";
- //       echo $row["tr_license"];    //欄位名稱
-       //  echo "<br>";
-       //  echo "<br>";
-       // }
-
 ?>

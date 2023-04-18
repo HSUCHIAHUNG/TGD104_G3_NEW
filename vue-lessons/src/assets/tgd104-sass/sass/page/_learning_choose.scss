@@ -1,9 +1,9 @@
 // layout
 
-.product-details h3:hover,
-.product-details p:hover{
-    text-decoration: underline;
-}
+// .product-details h3:hover,
+// .product-details p:hover{
+//     text-decoration: underline;
+// }
 
 .learningchooseflex{
     display: flex;
@@ -130,7 +130,7 @@
         width: 300px;
         height: 400px;
         text-align: center;
-        padding: 20px;
+        padding: 10px 20px 0 20px;
         border-radius: 10px;
         transition: .3s;
         margin: 10px;
@@ -163,30 +163,32 @@
     }
 }
 
-.product-actions button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #585858;
-  margin-right: 10px;
-  font-size: 20px;
-  padding: 10px;
-}
+// .product-actions button {
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+//   color: #585858;
+//   margin-right: 10px;
+//   font-size: 20px;
+//   padding: 10px;
+// }
 
-.product-actions button:hover {
-  text-decoration: underline;
-}
+// .product-actions button:hover {
+//   text-decoration: underline;
+// }
 
-.product-actions button.liked {
-  color: #79cbd4;
-}
+// .product-actions button.liked {
+//   color: #79cbd4;
 
-.product-actions button.selected {
-  background-color: #79cbd4;
-  color: #585858;
+  
+// }
 
-  border-radius: 5px;
-}
+// .product-actions button.selected {
+//   background-color: #79cbd4;
+//   color: #585858;
+
+//   border-radius: 5px;
+// }
 
 .product-selection .product:hover{
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
@@ -309,7 +311,7 @@
 @media screen and (max-width: 700px){
     .product-selection .product{
         width: 250px;
-        height: 370px;
+        height: 395px;
         margin: 10px;
         padding: 20px;
     }
@@ -322,6 +324,11 @@
     .product-selection .product img{
         width: 190px;
         height: 190px;
+    }
+
+    .option-input{
+        position: relative;
+        left: -83px;
     }
 
 }
@@ -343,5 +350,8 @@
         width: 200px;
         height: 200px;
     }
-
+    .option-input{
+        position: relative;
+        left: -110px;
+    }
 }

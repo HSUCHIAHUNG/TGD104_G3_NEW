@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <h1>簡短的介紹一下自己吧(例如：旅行相關經歷簡述)(50字以內)</h1>
+                <h1>簡短的介紹一下自己吧(例如：旅行相關經歷簡述)(100字以內)</h1>
                 
                 <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig" ></ckeditor>
 
@@ -128,9 +128,9 @@ export default {
     },
     mounted() {
 
-        this.$cookies.set("Consultant_id","8")
-        let x = $cookies.get('Consultant_id')   
-        this.Consultant_id = x;
+        // this.$cookies.set("Consultant_id","8")
+        // let x = $cookies.get('Consultant_id')   
+        // this.Consultant_id = x;
 
     },
     methods: {

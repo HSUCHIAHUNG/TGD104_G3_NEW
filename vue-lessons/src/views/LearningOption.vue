@@ -169,6 +169,8 @@
                   alert("發生錯誤: " + exception.status);
               }
           });
+
+          location.reload();
         }
       },
       mounted() {
