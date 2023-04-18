@@ -24,6 +24,7 @@
        $sql = "SELECT 
 	about_title,
 	c_nickname,
+       id,
        about_class
               FROM about_consultant abc
               join consultant con

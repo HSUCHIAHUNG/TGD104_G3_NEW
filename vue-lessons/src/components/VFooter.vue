@@ -12,7 +12,7 @@
                     <div>
                     <p class="title">聯絡我們</p>
                     <p>服務專線：(02)2712-0589</p>
-                    <p>服務信箱：accompanyyou@gmail.com</p>
+                    <p>服務信箱：accompanyyou3@gmail.com</p>
                     <p>營業時間：週一 ~ 週五 8：00 ~ 17：00</p>
                     </div>
                     <div>
