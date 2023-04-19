@@ -16,7 +16,6 @@
                :class="{ touchbg: currentTab === 'tab2' }"
                     @click.prevent="
                     {
-                        
                         current = [
                         '鋼琴', '吉他', '烏克麗麗','爵士鼓',
                         '國小', '國中', '高中',
@@ -107,7 +106,7 @@
     </div>
 
 </template>
-<script setup></script>
+
 
 <script>
     import searchbar from '../components/BackecdSearch.vue'
@@ -125,62 +124,24 @@
                 searchId: '',
                 perpage: 10, 
                 currentPage: 1,
-                // items: [],
-                items: [
-                    { or_number: '2023022001', or_class: '登山',c_nickname: '舞動小敏之', or_order_date: '2023/03/01',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022002', or_class: '單車',c_nickname: '怕被看腳踝的霈霈', or_order_date: '2023/03/02',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022003', or_class: '潛水',c_nickname: '炫炫', or_order_date: '2023/03/03',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022004', or_class: '單車',c_nickname: '立偉', or_order_date: '2023/03/04',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022005', or_class: '單車',c_nickname: '嘉宏', or_order_date: '2023/03/05',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022006', or_class: '單車',c_nickname: '小敏', or_order_date: '2023/03/06',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022007', or_class: '鋼琴',c_nickname: '品諭', or_order_date: '2023/03/07',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '娟霈', or_order_date: '2023/03/08',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022040', or_class: '吉他',c_nickname: '舞動小敏之分', or_order_date: '2023/03/09',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022101', or_class: '鋼琴',c_nickname: '口頭禪蝦品諭', or_order_date: '2023/03/10',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022008', or_class: '鋼琴',c_nickname: '炫炫', or_order_date: '2023/03/11',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '立偉', or_order_date: '2023/03/12',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022000', or_class: '單車',c_nickname: '小敏', or_order_date: '2023/03/13',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '單車',c_nickname: '霈霈', or_order_date: '2023/03/14',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '單車',c_nickname: '炫1', or_order_date: '2023/03/15',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '單車',c_nickname: '偉1', or_order_date: '2023/03/16',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '單車',c_nickname: '宏1', or_order_date: '2023/03/17',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '單車',c_nickname: '敏1', or_order_date: '2023/03/18',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '諭1', or_order_date: '2023/03/19',or_booking_date: '2023/03/19',order_status: '完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '霈1', or_order_date: '2023/03/20',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '動小敏踝90分', or_order_date: '2023/03/21',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '頭禪蝦怎的品諭', or_order_date: '2023/03/22',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '炫炫', or_order_date: '2023/03/23',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    { or_number: '2023022000', or_class: '鋼琴',c_nickname: '偉', or_order_date: '2023/03/24',or_booking_date: '2023/03/19',order_status: '未完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '小敏之90分', tr_cost: '2023/03/25',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '霈霈2', tr_cost: '2023/03/26',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '炫炫2', tr_cost: '2023/03/27',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '立2', tr_cost: '2023/03/28',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '嘉宏2', tr_cost: '2023/03/29',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '小敏2', tr_cost: '2023/03/30',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: 'learing',name: '品諭2', tr_cost: '2023/03/31',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: 'learing',name: '娟霈2', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    // { id: '2023022000', tr_category: 'learing',name: '舞動小敏分', tr_cost: '2023/04/02',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    // { id: '2023022000', tr_category: 'learing',name: '口怎麼辦的品諭', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    // { id: '2023022000', tr_category: 'learing',name: '炫炫', tr_cost: '2023/02/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    // { id: '2023022000', tr_category: 'learing',name: '立偉2', tr_cost: '2023/03/01',tro_booking_data: '2023/03/19',tro_order_data: '未完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '舞動小敏之', tr_cost: '2023/04/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '怕被看腳踝的霈霈', tr_cost: '2023/05/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '炫炫', tr_cost: '2023/06/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '立偉', tr_cost: '2023/07/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                    // { id: '2023022000', tr_category: '單車',name: '嘉宏', tr_cost: '2023/08/01',tro_booking_data: '2023/03/19',tro_order_data: '完成', },
-                   ],  
-
+                items: [],
             }
         },   
         
         mounted() {
-            // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderManagement.php').then(response => this.items = response)
-            // console.log(this.items);
-            this.selectedState = '';
-            
-        },
+
+            $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderManagement.php').then(response => this.items = response)
+                .then(response => {
+                    this.items = response;
+                    this.filtered_list = this.items;
+                    this.setPage(1);
+                });
+
+            },
+        
         methods: {
-                calculateTotalPages() {
+            
+            calculateTotalPages() {
             let filteredItems = this.items.filter(
                 (item) => this.current.includes(item.or_class)
             );
@@ -189,15 +150,7 @@
                     item.or_number.includes(this.searchId)
                 );
             }
-            filteredItems = filteredItems.filter((item) => {
-                if (this.selectedState === '') {
-                    return true;
-                } else if (this.selectedState === 'Finish') {
-                    return item.tro_order_data === '完成';
-                } else if (this.selectedState === 'undone') {
-                    return item.tro_order_data !== '完成';
-                }
-            });
+         
 
             const totalItems = filteredItems.length;
             const totalPages = Math.ceil(totalItems / this.perpage);
@@ -238,20 +191,8 @@
 
         computed: {
             filtered_list() {
-                let filteredItems = this.items.filter(
-                (item) => this.current.includes(item.or_class)
-                );
-                if (this.searchId) {
-                filteredItems = filteredItems.filter((item) =>
-                    item.or_number.includes(this.searchId)
-                );
-                }
-                let sortedItems = filteredItems
-                .map((item) => ({
-                    ...item,
-                    or_order_date: new Date(item.or_order_date),
-                }))
-                .filter((item) => {
+                
+                let filteredItems = this.items.filter((item) => {
                     if (this.selectedState === '') {
                     return true;
                     } else if (this.selectedState === 'Finish') {
@@ -259,11 +200,27 @@
                     } else if (this.selectedState === 'undone') {
                     return item.order_status !== '完成';
                     }
-                })
-                .sort((a, b) =>
-                    this.sortOrder === 'asc' ? a.or_order_date - b.or_order_date : b.or_order_date - a.or_order_date
-                )
-                .map((item) => ({
+                    return false; // 如果没有匹配的状态，则返回 false
+                }).filter((item) => {
+                    if (this.current.length === 0) {
+                    return true;
+                    } else {
+                    return this.current.includes(item.or_class);
+                    }
+                }).filter((item) => {
+                    if (this.searchId === '') {
+                    return true;
+                    } else {
+                    return item.or_number.includes(this.searchId);
+                    }
+                });
+
+                let sortedItems = filteredItems.map((item) => ({
+                    ...item,
+                    or_order_date: new Date(item.or_order_date),
+                })).sort((a, b) => {
+                    return this.sortOrder === 'asc' ? a.or_order_date - b.or_order_date : b.or_order_date - a.or_order_date;
+                }).map((item) => ({
                     ...item,
                     or_order_date: item.or_order_date.toLocaleDateString(),
                 }));
@@ -278,16 +235,16 @@
                     );
                     if (this.searchId) {
                         filteredItems = filteredItems.filter((item) =>
-                            item.or_number.includes(this.searchId)
+                        item.or_number.includes(this.searchId)
                         );
                     }
                     filteredItems = filteredItems.filter((item) => {
                         if (this.selectedState === '') {
-                            return true;
+                        return true;
                         } else if (this.selectedState === 'Finish') {
-                            return item.order_status === '完成';
+                        return item.order_status === '完成';
                         } else if (this.selectedState === 'undone') {
-                            return item.order_status !== '完成';
+                        return item.order_status !== '完成';
                         }
                     });
 

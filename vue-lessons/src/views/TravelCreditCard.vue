@@ -74,22 +74,23 @@ export default {
         method: "POST",
         url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelCreditCard.php', 
         data: {
-          Member_id: this.Member_id,
-          Consultant_id: this.Consultant_id,
-          Tro_area: this.Tro_area,
-          Or_booking_date: this.Or_booking_date,
-          Or_class: this.Or_class,
-          Or_number: this.Or_number,   
+        Member_id: this.Member_id,
+        Consultant_id: this.Consultant_id,
+        Tro_area: this.Tro_area,
+        Or_booking_date: this.Or_booking_date,
+        Or_class: this.Or_class,
+        Or_number: this.Or_number,   
         },
         dataType: "json",
           success: response => {
-
+            
           },
           error: function(exception) {
               alert("發生錯誤: " + exception.status);
           },
 
       });  
+
     }
   },
 

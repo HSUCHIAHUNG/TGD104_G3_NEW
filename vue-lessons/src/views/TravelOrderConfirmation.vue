@@ -20,8 +20,8 @@
             <td>{{item.c_nickname}}</td>
             <td>NT ${{item.about_cost}}</td>
             <td>{{c_date}}</td>
-            
         </tr>
+
       </table>
 
       <h2 class="button_choose">
@@ -53,9 +53,9 @@ export default {
     };
     },
     components: {
-    VHeader,
-    VFooter,
-    $
+      VHeader,
+      VFooter,
+      $
     },
     mounted() {
 

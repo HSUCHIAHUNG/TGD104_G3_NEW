@@ -11,14 +11,14 @@
 
         <!-- <li class="checkout_method"> -->
           <label class="money_card">
-            <input type="radio" v-model="moneymethod" name="moneymethod" value="1"/>
+            <input type="radio" v-model="moneymethod" name="moneymethod" value="信用卡"/>
             信用卡/簽帳金融卡
           </label>
 
           <hr>
 
           <label class="momey_atm">
-            <input type="radio" v-model="moneymethod" name="moneymethod" value="2"/>
+            <input type="radio" v-model="moneymethod" name="moneymethod" value="ATM"/>
             ATM 轉帳
           </label>
         <!-- </li> -->
@@ -48,7 +48,7 @@
           name: "LearningCheckout",
           data() {
             return {
-              moneymethod: null
+              moneymethod: '',
             };
           },
           components: {
@@ -58,13 +58,20 @@
           },
           methods:{
             payment(){
-              if (this.moneymethod === "1") {
+              if (this.moneymethod === "信用卡") {
                 this.$router.push('/LearningCreditCard');
-              } else if (this.moneymethod === "2") {
+              } else if (this.moneymethod === "ATM") {
                 this.$router.push('/LearningATM');
               } else {
                 alert('請選擇付款方式')
               }
+
+              // 存取付款方式
+              this.$cookies.set("moneymethod",this.moneymethod)
+              
+              // 測試存取資料
+              this.moneymethod = $cookies.get("moneymethod")
+              console.log(this.moneymethod);
             }
           }
       };

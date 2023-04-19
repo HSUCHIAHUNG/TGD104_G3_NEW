@@ -62,8 +62,8 @@ export default {
           alert('請選擇付款方式')
         }
 
-      // 存取付款方式
-      this.$cookies.set("moneymethod",this.moneymethod)
+        // 存取付款方式
+        this.$cookies.set("moneymethod",this.moneymethod)
 
       // 測試存取資料
       // this.moneymethod = $cookies.get("moneymethod")
