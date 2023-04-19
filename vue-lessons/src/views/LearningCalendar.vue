@@ -29,13 +29,15 @@
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import { Calendar, DatePicker } from 'v-calendar';
+import $ from "jquery";
 
 export default {
     name: "LearningCalendar",
     data() {
     return {
-        disabledDates: [new Date()],
+        disabledDates: [new Date(),],
         date: new Date(),
+        C_date: [],
         L_consultant_id_calendar: '',
     };
     },
@@ -44,6 +46,7 @@ export default {
         VFooter,
         Calendar,
         DatePicker,
+        $
     },
 
     methods: {

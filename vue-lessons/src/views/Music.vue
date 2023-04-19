@@ -146,6 +146,7 @@
       //抓已選擇顧問id
       this.selectedConsultant = this.$cookies.get("L_consultant_id");
 
+
       // 先假放Member_id
       this.$cookies.set("Member_id","1")
     },
