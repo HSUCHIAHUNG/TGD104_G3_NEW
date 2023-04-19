@@ -14,6 +14,7 @@
             mode="date"
         />
 
+
         <div class="datePicker_button">
             <!-- <a href="/SelTravelConsultant"><button class="outline_btn_orange">回上一頁</button></a> -->
             <router-link to="/SelTravelConsultant"><button class="outline_btn_orange">回上一頁</button></router-link>
@@ -35,7 +36,7 @@ export default {
     name: "TravelCalendar",
     data() {
     return {
-        disabledDates: [new Date(), ],
+        disabledDates: [new Date(), '2023/4/20', '2023/4/24'],
         date: new Date(),
         attributes: [],
         id: '',
@@ -50,12 +51,8 @@ export default {
         $,
     },
 
-    mounted() {
-        
-        console.log(this.disabledDates);
-    },
-
     methods: {
+
         orderCheck(){
 
             if (this.date === null || this.date === undefined || this.date.getDate() === new Date().getDate()) {
@@ -73,6 +70,8 @@ export default {
         // 第一步:　先從cookie當中抓取顧問id的c_date欄位
         this.id = this.$cookies.get("selectedConsultant")
         console.log(this.id);
+        // console.log(this.disabledDates);
+        this.disabledDates.push(...this.C_date);
         console.log(this.disabledDates);
 
 
@@ -98,11 +97,13 @@ export default {
             // },
 
             success: response => {
-            // 使用Array.map()方法提取c_date的值並轉為日期物件
+                // 使用Array.map()方法提取c_date的值並轉為日期物件
                 // this.disabledDates.push(...response.map(item => new Date(item.c_date))) 
-                this.disabledDates.push(...response.map(item => item.c_date)) 
-                // console.log(this.disabledDates);
-                // console.log(this.disabledDates.toLocaleDateString());
+                // this.disabledDates.push(...response.map(item => item.c_date)) 
+
+                // this.C_date.push(response.map(item => item.c_date)) 
+                // this.disabledDates.push(...this.C_date);
+
             },
 
             error: function(exception) {
@@ -121,4 +122,172 @@ export default {
   
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+
+.datePicker{
+    text-align: center;
+    padding: 50px 0;
+    h1{
+        font-size: 20px;
+        font-weight: 600;
+        color: #585858;
+        margin-bottom: 30px;
+    }
+    button{
+        margin: 50px 10px 0 10px;
+    }
+    .calendar_color{
+        font-weight: 600;
+        line-height: 32px;
+        margin-bottom: 15px;
+    }
+
+    .calendar_color_1,
+    .calendar_color_2,
+    .calendar_color_3{
+        font-size: 32px;
+    }
+
+    .calendar_color_1{
+        color: #aeabab;
+    }
+
+    .calendar_color_2{
+        color: #79cbd4;
+    }
+
+    .calendar_color_3{
+        color: #ebc43a;
+    }
+}
+
+
+.vc-container{
+    width: 580px;
+}
+.vc-header {
+    margin-bottom: 20px;
+}
+
+.vc-header .vc-title{
+    font-size: 16px;
+    color: #585858;
+    span{
+        font-size: 20px;
+    }
+}
+
+.vc-weekday{
+    font-size: 20px;
+    margin: 5px 0;
+    color: #585858;
+}
+
+
+.vc-day-content{
+    font-size: 20px;
+    width: 65px;
+    height: 65px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #79cbd4;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ebc43a;
+      color: #fff;
+    }
+
+    &.vc-disabled {
+      cursor: default;
+    }
+}
+.vc-focus .vc-day-content {
+    background-color: #79cbd4;
+    color: #fff;
+}
+
+
+.vc-header .vc-arrow {
+   width: 35px;
+   height: 35px;
+   &:hover{
+    background-color: #ebc43a;
+    color: #fff;
+   }
+}
+.vc-base-icon {
+    stroke-width: 4px;
+}
+
+
+.vc-day-content.vc-disabled{
+    color: #7f7f7f;
+    background-color: #aeabab;
+}
+.vc-bordered {
+    // border: none;
+    border: 3px solid;
+    border-color: #DCECEE;
+}
+
+.vc-highlight-content-solid{
+    background-color: #ebc43a;
+} 
+
+.vc-focus{
+    color: #fff;
+}
+
+.vc-highlight-bg-solid{
+    background-color: #ebc43a;
+}
+
+
+/*  rwd start */
+@include rwd(768px){
+    .vc-container {
+        width: 500px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 18px;
+        }
+    }
+    .vc-weekday{
+        font-size: 18px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 18px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+@include rwd(576px){
+    .vc-container {
+        width: 350px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 16px;
+        }
+    }
+    .vc-weekday{
+        font-size: 16px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 16px;
+        width: 35px;
+        height: 35px;
+    }
+}
 </style>
