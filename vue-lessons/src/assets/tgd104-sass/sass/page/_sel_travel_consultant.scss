@@ -52,7 +52,7 @@
                   transform: translateY(0);
                 }
                 50% {
-                  transform: translateY(-10px);
+                  transform: translateY(-8px);
                 }
                 100% {
                   transform: translateY(0);
@@ -190,11 +190,11 @@
                 .option-input:hover {
                     background: #9faab7;
                 }
-                .option-input:checked {
+                .option-input.-checked {
                     background: $clear_white;
                     color: $dark_blue;
                 }
-                .option-input:checked::before {
+                .option-input.-checked::before {
                     width: 35px;
                     height: 35px;
                     display:flex;
@@ -206,7 +206,7 @@
                     justify-content:center;
                     font-family:'Font Awesome 5 Free';
                 }
-                .option-input:checked::after {
+                .option-input.-checked::after {
                     -webkit-animation: click-wave 0.65s;
                     -moz-animation: click-wave 0.65s;
                     animation: click-wave 0.65s;
