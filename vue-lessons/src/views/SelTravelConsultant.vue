@@ -95,14 +95,15 @@
 
       <ul>
         <!-- <template v-for="(consultant, index) in consultantInfo" :key="index"> -->
-        <template v-for="(consultant, index) in paginatedConsultantInfo" :key="index">
-          <li v-if="current === 'all' || current === consultant.c_gender">
+        <template v-for="(consultant, index) in paginatedConsultantInfo">
+          <li v-if="current === 'all' || current === consultant.c_gender"  :key="index">
             <label
               ><input
               @change="consultant_select(consultant.id)"
                 type="radio"
                 class="option-input radio"
                 name="consultant"
+                :class="{'-checked': selectedConsultant === consultant.id}"
                 v-model="selectedConsultant"
                 :value="consultant.id"
             /></label>
@@ -120,8 +121,8 @@
             <h2>{{ consultant.tr_experience }}</h2>
             <i
               class="fa-regular fa-heart"
-              :class="{ 'fa-solid': isFavorite(index) }"
-              @click="toggleFavorite(index)"
+              :class="{ 'fa-solid': isFavorite(consultant.id) }"
+              @click="toggleFavorite(consultant.id)"
             ></i>
           </li>
 
@@ -196,7 +197,6 @@ export default {
     this.currentTab = tab;
     this.current = current;
     this.currentPage = 1;
-    this.selectedConsultant = ''; // 重置 selectedConsultant 的值
     },
     //上一頁&下一頁
     setPage(pageNum) {
@@ -206,7 +206,7 @@ export default {
 
     //input已選擇顧問id set cookie
     consultant_select(id){
-      this.selectedConsultant = id
+      // this.selectedConsultant = id
       this.$cookies.set("selectedConsultant",this.selectedConsultant)
     },
 
@@ -222,6 +222,8 @@ export default {
       } else {
         this.favorites.push(index);
       }
+      console.log(this.favorites);
+      //{0: 4, 1: 10, 2: 14}
     },
 
     //判斷是否已登入會員和選擇顧問才進入下一頁
@@ -259,7 +261,7 @@ export default {
     this.selectedConsultant = this.$cookies.get("selectedConsultant");
 
     //抓cookie 地區
-    this.travelArea = (decodeURIComponent(this.$cookies.get("travelArea")));
+    this.travelArea = this.$cookies.get("travelArea");
     console.log(this.travelArea);
 
     //抓cookie 旅行類別
