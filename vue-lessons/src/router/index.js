@@ -8,11 +8,11 @@ const routes = [
     name: "home",
     component: HomeView,
   },
-  {
-    path: "/historyorderdetailtest",
-    name: "historyorderdetailtest",
-    component: () => import("../views/HistoryOrderDetailTest.vue"),
-  },
+  // {
+  //   path: "/historyorderdetailtest",
+  //   name: "historyorderdetailtest",
+  //   component: () => import("../views/HistoryOrderDetailTest.vue"),
+  // },
   {
     path: "/orderdetailstest",
     name: "orderdetailstest",

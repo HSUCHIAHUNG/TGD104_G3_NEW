@@ -14,12 +14,12 @@
             <td>時間</td>
         </tr>
 
-        <tr class="list_content">
+        <tr v-for="item in ordertable" :key="index" >
             <td><img src="../assets/image/learning/teacher.png" alt=""></td>
-            <td>陪你音樂-吉他</td>
-            <td>王小明</td>
-            <td>NT $1,500</td>
-            <td>2023/03/06(一)</td>
+            <td>{{item.about_class}}</td>
+            <td>{{item.c_nickname}}</td>
+            <td>NT ${{item.about_cost}}</td>
+            <td>{{c_date}}</td>
             
         </tr>
       </table>
@@ -47,7 +47,9 @@ export default {
     return {
       Consultant_id:'',
       Member_id:'',
-
+      ordertable:[],
+      c_date: '',
+      Aboutclass: '',
     };
     },
     components: {
@@ -56,6 +58,7 @@ export default {
     $
     },
     mounted() {
+
       // 1
       this.$cookies.set("selectedConsultant",'5')
       this.$cookies.set("Member_id",'5')
@@ -63,6 +66,7 @@ export default {
       // 2
       this.Consultant_id = $cookies.get("selectedConsultant")
       this.Member_id = $cookies.get("Member_id")
+      this.c_date = $cookies.get("Member_id")
 
       // 測試
       console.log(this.Consultant_id);
@@ -80,8 +84,15 @@ export default {
         dataType: "json",
         success: response => {
           // 将回应数据附加到consultantInfo数组中
-          // Array.prototype.push.apply(this.consultantInfo, response);
-          // console.log(this.consultantInfo);
+          Array.prototype.push.apply(this.ordertable, response);
+           // 直接访问 response 数组的第一个对象的 about_class 值
+          const aboutClass = response[0].about_class;
+
+          // 将 about_class 存储到 Vue 实例的变量中
+          this.Aboutclass = aboutClass;
+          // console.log(this.Aboutclass);
+          this.$cookies.set("Aboutclass",this.Aboutclass)
+
         },
         error: function(exception) {
             alert("發生錯誤: " + exception.status);

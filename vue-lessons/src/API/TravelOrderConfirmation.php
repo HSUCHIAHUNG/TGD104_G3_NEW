@@ -11,8 +11,7 @@
 
 
        // 接收變數
-       $about_class =  $_POST["About_class"];
-       $c_area =  $_POST["C_area"];
+       $consultant_id =  $_POST["Consultant_id"];
 
        //建立SQL語法
        $sql = 
@@ -23,7 +22,8 @@
         from 
             consultant a
             join about_consultant b
-            on a.id = b.about_cid;";
+            on a.id = b.about_cid
+        where id = '$consultant_id' ;";
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        $statement = $pdo->query($sql);
