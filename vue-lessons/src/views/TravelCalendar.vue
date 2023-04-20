@@ -17,7 +17,7 @@
 
         <div class="datePicker_button">
             <!-- <a href="/SelTravelConsultant"><button class="outline_btn_orange">回上一頁</button></a> -->
-            <router-link to="/SelTravelConsultant"><button class="outline_btn_orange">回上一頁</button></router-link>
+            <router-link to="/SelTravelConsultant"><button class="outline_btn_orange" @click="removeId">回上一頁</button></router-link>
             <button @click="orderCheck" class="btn_orange">訂單確認</button>
         </div>
     </div>
@@ -62,6 +62,11 @@ export default {
                 // console.log(this.date); //印出所選日期
                 //所選日期 set cookie
             }
+        },
+
+        //回上一頁時清除cookie selectedConsultant
+        removeId(){
+            this.$cookies.remove("selectedConsultant");
         },
 
     },

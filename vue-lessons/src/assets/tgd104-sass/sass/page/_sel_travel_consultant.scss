@@ -306,21 +306,24 @@
     .page_number{
         text-align: center;
         padding-bottom: 30px;
-        a{
-            color: $gray;
-            background-color: $clear_white;
-            font-size: $fs20;
-            display: inline-block;
-            width: 30px;
-            line-height: 30px;
-            margin: 0 5px;
-            border-radius: 5px;
-            // border: 1px solid $bg_gray;
-            &:nth-child(1),&:nth-child(2){
-                // color: $bg_gray;
-                background-color: $light_blue;
+        ul{
+            display: flex;
+            justify-content: center;
+            li{
+                color: $gray;
+                background-color: $clear_white;
+                font-size: $fs20;
+                display: inline-block;
+                width: 30px;
+                line-height: 30px;
+                margin: 0 5px;
+                border-radius: 5px;
+                &:hover{
+                    background-color: $light_blue;
+                    cursor: pointer;
+                }
             }
-            &:hover{
+            .pag_active{
                 background-color: $light_blue;
             }
         }
@@ -512,7 +515,7 @@
             }
         }
         .page_number{
-            a{
+            li{
                 font-size: $fs18;
             }
         }
@@ -593,7 +596,7 @@
 
         }
         .page_number{
-            a{
+            li{
                 font-size: 16px;
             }
         }
