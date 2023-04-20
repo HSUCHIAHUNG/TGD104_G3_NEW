@@ -51,8 +51,8 @@
           <!-- calender -->
           <div class="calendar">
           <!-- <VCalendar :attributes="attributes"/> -->
-            <p>📆請選擇不可被預約日期</p>
-            <v-calendar :attributes="attributes" @dayclick="onDayClick" />
+            <p>📆 請選擇不可被預約日期</p>
+            <v-calendar :attributes="attributes" :disabled-dates="disabledDates" @dayclick="onDayClick" />
 
             <button type="button" class="btn_blue calendar_btn">確認送出</button>
 
@@ -83,8 +83,11 @@ export default {
       content: "ConsultantInfoL",
       currentTab: "tab1",
       defaultOption: "顧問資訊",
-      //canlender
-      days: [new Date()],
+      //日期陣列
+      days: [],
+      disabledDates: [new Date(), '2023/4/1', '2023/4/2'],
+      // disabledDates: [new Date()],
+
       
     };
   },
@@ -102,6 +105,7 @@ export default {
     dates() {
       return this.days.map(day => day.date);
     },
+
     attributes() {
       return this.dates.map(date => ({
         highlight: true,
@@ -114,15 +118,19 @@ export default {
   },
   methods: {
     onDayClick(day) {
+      // 檢查被點擊的日期是否在 disabledDates 陣列中
+      if (this.disabledDates.includes(day.date)) {
+        // 如果在 disabledDates 中，則不執行後續邏輯
+        console.log(day.date);
+        return;
+      };
+
       const idx = this.days.findIndex(d => d.id === day.id);
       if (idx >= 0) {
         this.days.splice(idx, 1);
       } else {
-        this.days.push({
-          id: day.id,
-          date: day.date,
-        });
-      }
+        this.days.push(day.id);
+      };
       console.log(this.days);
     },
   },
@@ -185,6 +193,9 @@ p{
       // color: #7f7f7f;
       background-color: #aeabab;
     }
+    &.vc-disabled {
+      cursor: default;
+    }
 
 }.vc-focus .vc-day-content {
     background-color: #79cbd4;
@@ -202,6 +213,11 @@ p{
 }
 .vc-base-icon {
     stroke-width: 4px;
+}
+
+.vc-day-content.vc-disabled{
+    color: #7f7f7f;
+    background-color: #aeabab;
 }
 
 .vc-bordered {
