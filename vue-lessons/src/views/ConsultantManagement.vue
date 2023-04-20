@@ -91,7 +91,7 @@
     export default {
         data(){ 
             return {
-                perpage: 10, //一頁的資料數
+                perpage: 15, //一頁的資料數
                 currentPage: 1,
                 SortDate: "asc",
                 searchId: '',
