@@ -30,6 +30,6 @@ $statement->bindValue(2,$comment_title);
 $statement->bindValue(3,$comment_content);
 $statement->execute();
 
-echo '評論成功';
+echo '評論成功'
 
 ?>
