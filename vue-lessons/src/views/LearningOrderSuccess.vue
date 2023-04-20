@@ -1,39 +1,52 @@
 <template>
     <VHeader></VHeader>
-    <div>
-  
-  
-      <OrderSuccess></OrderSuccess>
 
-        <OrderConfirmation></OrderConfirmation>
+    <div>
+        <div class="order_success">
+        <img src="../assets/image/check.png" alt="" />
+        <div class="order_content">
+            <h3>訂單成立!</h3>
+            <p>訂單編號:{{Or_number}}</p>
+        </div>
+        </div>
+
         <h2 class="check_order">
-          <router-link to="/memberbooking"><button class="btn_orange">查看訂單</button></router-link>
+            <!-- <button class="btn_orange">查看訂單</button> -->
+            <router-link to="/memberbooking"><button class="btn_orange">查看訂單</button></router-link>
         </h2>
 
-
-      <VFooter></VFooter>
     </div>
-  </template>
-    
-    <script>
-      import VHeader from "../components/VHeader.vue";
-      import VFooter from "../components/VFooter.vue";
-      import OrderSuccess from "../components/OrderSuccess.vue";
-      
-      export default {
-          name: "LearningOrderSuccess",
-          data() {
-          return {};
-          },
-          components: {
-          VHeader,
-          VFooter,
-          OrderSuccess
-          },
-      };
-    </script>
-    
-    
-    <style lang="scss">
-  @import "../assets/tgd104-sass/new_style.scss";
-    </style>
+
+    <VFooter></VFooter>
+</template>
+  
+<script>
+import OrderSuccess from "../components/OrderSuccess.vue";
+import VHeader from "@/components/VHeader.vue";
+import VFooter from "../components/VFooter.vue";
+
+export default {
+    name: "LearningOrderSuccess",
+    data() {
+        return {
+            Consultant_id: '',
+            Or_number: '',
+        };
+    },
+    components: {
+        OrderSuccess,
+        VHeader,
+        VFooter,
+    },
+    mounted() {
+      this.Consultant_id = $cookies.get("selectedConsultant")
+      this.Or_number = 'ordernum' + this.Consultant_id
+        
+    },
+};
+</script>
+  
+  
+<style lang="scss">
+@import "../assets/tgd104-sass/new_style.scss";
+</style>

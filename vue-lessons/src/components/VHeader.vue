@@ -524,9 +524,9 @@ export default {
     },
     // 送出會員登入表單
     mLogin() {
-      console.log("ok");
+      // console.log("ok");
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/mLogin.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/mLogin.php",
         dataType: "json",
         type: "POST",
         data: {

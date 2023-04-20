@@ -24,7 +24,7 @@
         <!-- </li> -->
 
       </ul>
-      <h2 class="checkout_total">金額 : <span>1,500元</span></h2>
+      <h2 class="checkout_total">金額 : <span>{{About_cost}}元</span></h2>
       <h2 class="button_choose">
         <router-link to="/LearningOrderConfirmation"><button class="outline_btn_orange">回上一頁</button></router-link>
         <button @click="payment" class="btn_orange">進行付款</button>
@@ -49,12 +49,17 @@
           data() {
             return {
               moneymethod: '',
+              About_cost:'',
             };
           },
           components: {
           VHeader,
           VFooter,
           // Checkout
+          },
+          mounted() {
+            this.About_cost = $cookies.get("About_cost")
+            
           },
           methods:{
             payment(){

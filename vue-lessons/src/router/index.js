@@ -18,6 +18,11 @@ const routes = [
     name: "orderdetailstest",
     component: () => import("../views/OrderDetailsTest.vue"),
   },
+  {
+    path: "/backendlogin",
+    name: "backendlogin",
+    component: () => import("../views/backendlogin.vue"),
+  },
   // {
   //   path: "/memberbookingtest",
   //   name: "memberbookingtest",

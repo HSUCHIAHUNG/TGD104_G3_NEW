@@ -7,7 +7,7 @@
           <router-link to="/main">前台</router-link>
         </div>
         <div class="home_img2">
-          <router-link to="/BackendCenter">後台</router-link>
+          <router-link to="/backendlogin">後台</router-link>
         </div>
       </div>
     </div>

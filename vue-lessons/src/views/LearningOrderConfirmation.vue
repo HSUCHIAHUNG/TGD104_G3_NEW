@@ -49,7 +49,8 @@
           Member_id:'',
           c_date: '',
           ordertable:[],
-
+          About_cost:'',
+          Aboutclass:'',
         };
       },
 
@@ -89,11 +90,15 @@
             Array.prototype.push.apply(this.ordertable, response);
             // 直接访问 response 数组的第一个对象的 about_class 值
             const aboutClass = response[0].about_class;
+            const about_cost = response[0].about_cost;
 
             // 将 about_class 存储到 Vue 实例的变量中
             this.Aboutclass = aboutClass;
+            this.About_cost = about_cost;
+
             // console.log(this.Aboutclass);
             this.$cookies.set("Aboutclass",this.Aboutclass)
+            this.$cookies.set("About_cost",this.About_cost)
 
           },
           error: function(exception) {

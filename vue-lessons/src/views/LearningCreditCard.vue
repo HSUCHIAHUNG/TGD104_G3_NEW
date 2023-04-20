@@ -5,9 +5,9 @@
   
       <h2 class="button_choose">
       <!-- <a href="/TravelCheckout"><button class="outline_btn_orange">回上一頁</button></a> -->
-      <router-link to="/TravelCheckout"><button class="outline_btn_orange">回上一頁</button></router-link>
+      <router-link to="/LearningCheckout"><button class="outline_btn_orange">回上一頁</button></router-link>
       <!-- <a href="/TravelOrderSuccess"><button class="btn_orange">送出</button></a> -->
-      <router-link to="/TravelOrderSuccess"><button @click="order_done" class="btn_orange">送出</button></router-link>
+      <router-link to="/LearningOrderSuccess"><button @click="order_done" class="btn_orange">送出</button></router-link>
       </h2>
   
     <VFooter></VFooter>
@@ -72,13 +72,14 @@ export default {
         data: {
         Member_id: this.Member_id,
         Consultant_id: this.Consultant_id,
+        Or_checkout_method : this.Or_checkout_method,
         Or_booking_date: this.Or_booking_date,
         Or_class: this.Or_class,
         Or_number: this.Or_number,   
         },
         dataType: "json",
           success: response => {
-            
+            // console.log(this.Or_checkout_method);
           },
           error: function(exception) {
               alert("發生錯誤: " + exception.status);

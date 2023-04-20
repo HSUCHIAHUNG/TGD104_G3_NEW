@@ -78,6 +78,7 @@ export default {
         Consultant_id: this.Consultant_id,
         Tro_area: this.Tro_area,
         Or_booking_date: this.Or_booking_date,
+        Or_checkout_method: this.Or_checkout_method,
         Or_class: this.Or_class,
         Or_number: this.Or_number,   
         },

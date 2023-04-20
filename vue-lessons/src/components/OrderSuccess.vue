@@ -13,7 +13,9 @@
     export default {
         name: "OrderSuccess",
         data() {
-            return {};
+            return {
+              
+            };
         },
     };
 </script>
