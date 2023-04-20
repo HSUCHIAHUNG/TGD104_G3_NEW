@@ -56,7 +56,7 @@
               <h3>{{ product.c_nickname }}</h3>
               <p>{{ product.about_title }}</p>
               <div class="product-actions">
-                <i class="fa-regular fa-heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
+                <i class="fa-regular fa-heart learning_heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
               </div>
             </div>
             <!-- 顧問名.課程title.收藏 end-->
@@ -158,7 +158,7 @@
 <style lang="scss">
   @import "../assets/tgd104-sass/new_style.scss";
 
-  .fa-heart {
+  .learning_heart {
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -174,7 +174,7 @@
     }
   }
     
-  .product-actions .fa-heart.fa-solid {
+  .product-actions .learning_heart.fa-solid {
     color: $dark_blue;
     animation: pulse 1s backwards;
   }
