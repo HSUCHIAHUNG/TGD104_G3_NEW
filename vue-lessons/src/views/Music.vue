@@ -56,7 +56,9 @@
               <h3>{{ product.c_nickname }}</h3>
               <p>{{ product.about_title }}</p>
               <div class="product-actions">
-                <i class="fa-regular fa-heart learning_heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
+                <!-- old -->
+                <!-- <i class="fa-regular fa-heart learning_heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i> -->
+                <i class="fa-regular fa-heart learning_heart" :class="{ 'fa-solid': isFavorite(consultant.id) || favorites.includes(consultant.id)}" @click="toggleFavorite(consultant.id)"></i>
               </div>
             </div>
             <!-- 顧問名.課程title.收藏 end-->

@@ -543,7 +543,7 @@ export default {
           alert("登入成功");
         },
         error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
+          // console.log(textStatus, errorThrown);
         },
       });
     },

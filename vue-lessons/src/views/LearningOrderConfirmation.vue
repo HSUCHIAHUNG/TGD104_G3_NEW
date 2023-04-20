@@ -63,8 +63,8 @@
       
       mounted() {
         // 1
-        this.$cookies.set("L_consultant_id",'5')
-        this.$cookies.set("Member_id",'5')
+        // this.$cookies.set("L_consultant_id",'5')
+        // this.$cookies.set("Member_id",'5')
         
         // 2
         this.Consultant_id = $cookies.get("L_consultant_id")

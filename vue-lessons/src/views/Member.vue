@@ -255,7 +255,7 @@ export default {
   methods: {
     save() {
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/memberUpdate.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberUpdate.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -297,7 +297,7 @@ export default {
       alert("請登入會員");
     } else {
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/memberInfo.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberInfo.php",
         dataType: "json",
         type: "POST",
         data: {
