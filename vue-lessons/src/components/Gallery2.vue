@@ -16,16 +16,16 @@
       </div>
 
       <div v-for="(detail, index) in consultantDetail" class="detail_introduce">
-        <h1>{{detail.about_title}}</h1>
+        <h1>🌋{{detail.about_title}}</h1>
         <h2>{{detail.c_nickname}}</h2>
-        <h3>性別：{{detail.c_gender}}</h3>
-        <h3>生日：{{detail.c_birth}}</h3>
-        <h3>個性：{{detail.c_personality}}</h3>
-        <h3>興趣：{{detail.tr_interest}}</h3>
-        <h3>經歷：{{detail.tr_experience}}</h3>
-        <h3>證照：{{detail.tr_license}}</h3>
-        <h3>費用：{{detail.about_cost}}</h3>
-        <h4>自我介紹</h4>
+        <h3>👩🏻‍🤝‍🧑🏻 性別：{{detail.c_gender}}</h3>
+        <h3>🎂 生日：{{detail.c_birth}}</h3>
+        <h3>😀 個性：{{detail.c_personality}}</h3>
+        <h3>🧡 興趣：{{detail.tr_interest}}</h3>
+        <h3>🚩 經歷：{{detail.tr_experience}}</h3>
+        <h3>📋 證照：{{detail.tr_license}}</h3>
+        <h3>💰 費用：{{detail.about_cost}}</h3>
+        <h4>💬 自我介紹</h4>
         <p>{{detail.about_introduction}}</p>
       </div>
 

@@ -121,7 +121,7 @@
             <h2>{{ consultant.tr_experience }}</h2>
             <i
               class="fa-regular fa-heart"
-              :class="{ 'fa-solid': isFavorite(consultant.id) }"
+              :class="{ 'fa-solid': isFavorite(consultant.id) || favorites.includes(consultant.id)}"
               @click="toggleFavorite(consultant.id)"
             ></i>
           </li>
@@ -136,7 +136,7 @@
           <li @click.prevent="setPage(currentPage - 1)">
               <i class="fa-solid fa-angle-left"></i>
           </li>
-          <li v-for="(n, index) in totalPage" :key="index" :class="{ active: n === currentPage }" @click.prevent="setPage(n)">
+          <li v-for="(n, index) in totalPage" :key="index" :class="{ pag_active: n === currentPage }" @click.prevent="setPage(n)">
               {{ n }}
           </li>
           <li @click.prevent="setPage(currentPage + 1)">
@@ -187,6 +187,7 @@ export default {
       //分頁
       perpage: 12, //一頁的資料數
       currentPage: 1,
+      Member_id: '',
     };
   },
 
@@ -224,6 +225,27 @@ export default {
       }
       console.log(this.favorites);
       //{0: 4, 1: 10, 2: 14}
+      this.$cookies.set("m_collect",this.favorites);
+      console.log(this.$cookies.get("m_collect"));
+
+      
+      //撈資料庫對應會員id，更新收藏愛心欄位m_collect
+      $.ajax({
+          method: "POST",
+          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelHeartCollect_Update.php', 
+          data: {
+            M_collect: this.favorites,
+            Id: this.Member_id,
+          },
+          dataType: "text",
+          success: function(response) {
+              alert("收藏成功");
+          },
+          error: function(exception) {
+              alert("發生錯誤: " + exception.status);
+          },
+
+      }); 
     },
 
     //判斷是否已登入會員和選擇顧問才進入下一頁
@@ -254,11 +276,17 @@ export default {
 
   mounted() {
     //先假放member_id
-    this.$cookies.set("Member_id","1")
+    this.$cookies.set("Member_id","2")
     // this.$cookies.remove("member_id");
+    this.Member_id = this.$cookies.get("Member_id");
+    console.log(this.Member_id);
     
-    //抓已選擇顧問id
+    //抓cookie已選擇顧問id給selectedConsultan變數
     this.selectedConsultant = this.$cookies.get("selectedConsultant");
+
+    //抓cookie已收藏愛心給favorites陣列
+    this.favorites = this.$cookies.get("m_collect");
+    console.log(this.favorites);
 
     //抓cookie 地區
     this.travelArea = this.$cookies.get("travelArea");
@@ -299,16 +327,6 @@ export default {
             
   },
 
-  // computed: {
-  //   paginatedConsultantInfo() {
-  //     const startIndex = (this.currentPage - 1) * this.perpage;
-  //     const endIndex = startIndex + this.perpage;
-  //     return this.consultantInfo.slice(startIndex, endIndex);
-  //   },
-  //   totalPage() {
-  //     return Math.ceil(this.consultantInfo.length / this.perpage);
-  //   },
-  // },
 
   computed: {
     // 分頁相關

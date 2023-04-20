@@ -168,7 +168,16 @@
 
 /*-------- travel_map rwd start ---------*/
 
-@include rwd(1200px){}
+@include rwd(1200px){
+    .travel_map_wrapper{
+        #sea {
+            width: 100px;
+            height: 200px;
+            top: 80%;
+            right: 10%;
+        }
+    }
+}
 
 @include rwd(992px){
     .travel_map_wrapper{
@@ -227,8 +236,19 @@
                 
             }
         }
+        #shark{
+            width: 200px;
+            height: 130px;
+        }
+        #sea {
+            width: 80px;
+            height: 200px;
+            top: 80%;
+            right: 10%;
+        }
     
     }
+
 }
 
 @include rwd(768px){
@@ -290,8 +310,20 @@
                 
             }
         }
+        #shark{
+            width: 150px;
+            height: 100px;
+        }
+        #sea {
+            width: 60px;
+            height: 180px;
+            top: 65%;
+            right: 10%;
+        }
     
     }
+
+
 }
 
 @include rwd(576px){
@@ -357,9 +389,214 @@
                 
             }
         }
+        #shark{
+            width: 100px;
+            height: 80px;
+        }
+        #sea {
+            width: 40px;
+            height: 160px;
+            top: 50%;
+            right: 10%;
+        }
     
     }
+
 }
 
 
 /*-------- travel_map rwd end ---------*/
+
+
+/*-------- shark ---------*/
+
+
+#shark{
+    position: absolute;
+    top: 20%;
+    left: 0;
+}
+
+.st0{clip-path:url(#SVGID_2_);}
+.st1{fill:#585858;}
+.st2{fill:#585858;}
+.st3{opacity:0.3;fill:#585858;}
+.st4{opacity:0.36;fill:none;stroke:#BCC3CA;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st5{opacity:0.63;fill:none;stroke:#6dadab;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st6{opacity:0.4;fill:none;stroke:#BCC3CA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st7{fill:none;stroke:#6dadab;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st8{opacity:0.35;fill:none;stroke:#BCC3CA;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st9{opacity:0.6;fill:none;stroke:#6dadab;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st10{opacity:0.64;fill:none;stroke:#6dadab;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st11{opacity:0.8;fill:none;stroke:#6dadab;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+@-webkit-keyframes waves {
+    50% {
+      transform: translateX(5px) rotate(0.8deg);
+    }
+  }
+  @keyframes waves {
+    50% {
+      transform: translateX(5px) rotate(0.8deg);
+    }
+  }
+  @-webkit-keyframes sharkback {
+    50% {
+      transform: rotate(-5deg) translateY(-3px);
+    }
+  }
+  @keyframes sharkback {
+    50% {
+      transform: rotate(-5deg) translateY(-3px);
+    }
+  }
+  @-webkit-keyframes shark-rotate {
+    50% {
+      transform: rotate(-5deg) translateY(5px) translateX(-2px);
+    }
+  }
+  @keyframes shark-rotate {
+    50% {
+      transform: rotate(-5deg) translateY(5px) translateX(-2px);
+    }
+  }
+  @-webkit-keyframes shark-reverse {
+    50% {
+      transform: rotate(2deg) translateY(10px) translateX(2px);
+    }
+  }
+  @keyframes shark-reverse {
+    50% {
+      transform: rotate(2deg) translateY(10px) translateX(2px);
+    }
+  }
+  .sharkback {
+    -webkit-animation: sharkback 3s ease-in-out infinite;
+            animation: sharkback 3s ease-in-out infinite;
+    transform-origin: center;
+  }
+  
+  .shark-rotate {
+    -webkit-animation: shark-rotate 6s ease-in-out infinite;
+            animation: shark-rotate 6s ease-in-out infinite;
+    transform-origin: center;
+  }
+  
+  .shark-reverse {
+    -webkit-animation: shark-reverse 4s ease-in-out infinite;
+            animation: shark-reversee 4s ease-in-out infinite;
+    transform-origin: center;
+  }
+  
+  #waves path {
+    -webkit-animation: waves 6s ease-in-out infinite;
+            animation: waves 6s ease-in-out infinite;
+    transform-origin: center;
+  }
+  #waves path:nth-child(1) {
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+  }
+  #waves path:nth-child(2) {
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+  }
+  #waves path:nth-child(3) {
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    -webkit-animation-duration: 7s;
+            animation-duration: 7s;
+  }
+  #waves path:nth-child(4) {
+    -webkit-animation: none;
+            animation: none;
+  }
+  #waves path:nth-child(5) {
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+  }
+  #waves path:nth-child(6) {
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+  }
+  
+
+/*   boat sinking  */
+
+#sea {
+    width: 120px;
+    height: 220px;
+    margin-left: 100px;
+    transform: rotate(39deg);
+    animation: boat 8.3s ease-out 0s alternate infinite;
+
+    position: absolute;
+    top: 80%;
+    right: 18%;
+}
+@keyframes boat {
+    from {transform: rotate(-45deg);}
+    to { transform: rotate(-30deg);}
+}
+#sea-Boat {
+    animation: sea-Boat 1.4s ease-in-out alternate infinite;
+}
+@keyframes sea-Boat {
+    from {transform: translateX(0);}
+    to {transform: translateX(6px);}
+}
+#sea-Head {
+    animation: sea-Head 1.4s ease-in-out alternate infinite;
+}
+@keyframes sea-Head {
+    from {transform: translateY(2px) translateX(-5px) rotate(-22deg);}
+    to {transform: translateY(2px) translateX(0) rotate(-22deg);}
+}
+
+#sea-Shadow { 
+    animation: sea-Shadow 1.4s ease-in-out alternate infinite;
+}
+@keyframes sea-Shadow {
+    from {transform: translateX(0)};
+    to {transform: translateX(-6px)};
+}
+#sea-Top-Deck-Shadow {
+    animation: sea-Top-Deck-Shadow 1.4s ease-in-out alternate infinite;
+}
+
+@keyframes sea-Top-Deck-Shadow {
+    from {transform: translateX(0);}
+    to {transform: translateX(-3px);}
+}
+#sea-Top-Deck-Inside {
+    animation: sea-Top-Deck-Inside 1.4s ease-in-out alternate infinite;
+}
+
+@keyframes sea-Top-Deck-Inside {
+    from {transform: translateX(0);}
+    to {transform: translateX(-3px);}
+}
+
+#sea-Outside-left {
+    animation: sea-Outside-left 1.4s ease-in-out alternate infinite;
+}
+@keyframes sea-Outside-left {
+    from {transform: translateX(0);}
+    to {transform: translateX(-5px);}
+}
+
+#sea-Deck-Shadow-right {
+    animation: sea-Deck-Shadow-right 1.4s ease-in-out alternate infinite;
+}
+@keyframes sea-Deck-Shadow-right {
+    from {transform: translateX(0);}
+    to {transform: translateX(-8px);}
+}
