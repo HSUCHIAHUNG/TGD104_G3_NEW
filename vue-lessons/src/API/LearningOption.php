@@ -20,13 +20,14 @@
 
     //放進變數
     $sr_content = $_POST["SR_content"];
-    $sql = "INSERT INTO study_require(sr_content) VALUES ('$sr_content')";
+    // $people_id = $_POST["People_id"];
+    // $option_id = $_POST["Option_id"];
+    $sql = "INSERT INTO study_require(sr_content, sr_time) VALUES ('$sr_content', now())";
+    // $sql = "INSERT INTO love_like(people_id, option_id) VALUES ('$people_id', '$option_id')";
     // $sql = "INSERT INTO member(Account = :account, PWD = :pwd, CreateDate) VALUES ('$Account', '$PWD', NOW())";
 
     //執行
     $pdo->exec($sql);
-
-
 
 
 ?>

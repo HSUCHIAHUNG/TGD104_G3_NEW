@@ -1,4 +1,5 @@
 <template>
+  <div>
     <VHeader></VHeader>
 
   <div class="learning_option_inner">
@@ -25,19 +26,23 @@
       <div>      
         <div v-for="(answer, index) in study_option" :key="index" class="option">
           <!-- <div class="option_inner"> -->
+          <div class="option_flex">  
             <div><img src="../assets/image/learning/student003.png" alt=""></div>
-            <p>{{ answer.name }}</p>
+            <p>{{ answer.m_nickname }}</p>
+          </div>
           <!-- </div> -->
           <div class="option_content">
             <div class="option_content_inner">
               {{ answer.sr_content }}
             </div>
             <div>
-              <i class="fa-regular fa-heart"></i>
-              <span>{{ answer.likes }}</span>
+              <!-- <i class="fa-regular fa-heart"></i> -->
+              <!-- <i class="fa-solid fa-heart"></i> -->
+              <i class="fa-solid fa-heart" :class="{ 'liked': answer.liked }" @click="toggleLike(answer)"></i>
+              <span>{{ answer.likes_count }}</span>
             </div>
           </div>
-          <p class="option_time">{{ answer.time }}</p>
+          <p class="option_time">{{ answer.sr_time }}</p>
         </div>
       </div>
 
@@ -62,7 +67,7 @@
   </div>
 
 
-
+</div>
 </template>    
   <script>
     import VHeader from "../components/VHeader.vue";
@@ -75,33 +80,13 @@
       data() {
         return {
           study_option:[],
-          showLightbox: false,
+          likes: 0,
+          // showLightbox: false,
           // 使用者輸入的內容
           // inputOption: '',
-          SR_content:'',
-          options: [ // 存放option的陣列
-            // {
-            //   id: 1,
-            //   // name: 'a*******1',
-            //   content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores  non nisi optio cupiditate, neque soluta consequatur ut, ratione molestiae quas, perspiciatis dolor aut? Ipsa dolorum dolorem iure similique? Quis, hic?',
-            //   likes: 32,
-            //   time: '2023/03/07'
-            // },
-            // {
-            //   id: 2,
-            //   // name: 'b*******2',
-            //   content: 'qwqwjeiwe qjeiwoejiwe opvvkw kl;kl. Maiores  non nisi optio cupiditate, neque soluta consequatur ut, ratione molestiae quas, perspiciatis dolor aut? Ipsa dolorum dolorem iure similique? Quis, hic?',
-            //   likes: 10,
-            //   time: '2023/04/05'
-            // },
-            // {
-            //   id: 3,
-            //   // name: 'c*******3',
-            //   content: 'qwqwjeiwe qjeiwoejiwe opvvkw kl;kl. Maiores  non nisi optio cupiditate, neque soluta consequatur ut, ratione molestiae quas, perspiciatis dolor aut? Ipsa dolorum dolorem iure similique? Quis, hic?',
-            //   likes: 10,
-            //   time: '2023/04/10'
-            // },
-          ]
+          // SR_content:'',
+
+          
         };
       },
       components: {
@@ -115,51 +100,12 @@
           this.showLightbox = false;
           this.SR_content = "";
         },
-        // 學習意見燈箱
-        showOptionLightBox(){
-          // let option_lightbox = document.getElementById("option_lightbox");
-          // let scrollhide = document.querySelector('body');
 
-          // 頁面上的按鈕
-          // let option_box= document.getElementsByClassName("option_box")[0];
-          // option_box.addEventListener("click", function(){
-          //   option_lightbox.classList.remove("none");
-          //   scrollhide.style.overflow ="hidden";
-          // });
-
-
-          // let option_no = document.getElementsByClassName("option_no")[0];
-          // option_no.addEventListener("click", function(){
-          //   option_lightbox.classList.add("none");
-          //   scrollhide.style.overflow ="auto";
-          // });
-
-
-          // option_lightbox.addEventListener("click", function(){
-          //   this.classList.add("none");
-          //   scrollhide.style.overflow ="auto";
-          // });
-
-          // 點擊 lightbox 中的白色區域，不會關掉 modal
-          // option_lightbox.querySelector("article").addEventListener("click", function(e){
-          //   e.stopPropagation();
-          // });
-        },
         submitForm(){
           let Option_Member_id = $cookies.get("Option_Member_id")
           
           if (Option_Member_id) {
-            if (!L_consultant_id) {
-              alert("登入才可以留言唷!");
-            } else {
-              this.$router.push("/LearningCalendar");
-            }
-          } else {
-            alert('請先登入會員');
-          }
-
-
-          $.ajax({
+            $.ajax({
               // type: 'POST',
               method: "POST",
               url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/API/LearningOption.php',
@@ -174,15 +120,51 @@
               error: function(exception) {
                   alert("發生錯誤: " + exception.status);
               }
-          });
+            });
 
-          location.reload();
-        }
+            location.reload();
+          } else {
+            alert('請先登入才可以留言唷🤍🤍🤍');
+          }
+
+
+
+        },
+        toggleLike(answer) {
+          let Option_Member_id = $cookies.get("Option_Member_id")
+          
+          if (Option_Member_id) {
+            answer.liked = !answer.liked; // 如果Option_Member_id存在則可以切換 liked 屬性的值
+
+            if (answer.liked) {
+              answer.likes_count++; // 按下按鈕，likes +1
+
+            } else {
+              answer.likes_count--; // 再按一次，likes -1
+              
+            }
+
+            // location.reload();
+          } else {
+            alert('請先登入才可以留言唷🤍🤍🤍');
+          }
+
+
+
+        },
       },
 
 
       mounted() {
-        $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php').then(response => this.study_option = response)
+        // Promise.all([
+        //   $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php'),
+        //   $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select2.php')
+        // ]).then(([response1, response2]) => {
+        //   // 將兩個回傳的資料合併
+        //   this.study_option = [...response1, ...response2];
+        // });
+        $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php').then(response => this.study_option = response),
+        // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select2.php').then(response => this.study_option = response);
 
         // 先假放Option_Member_id
         this.$cookies.set("Option_Member_id","23")
@@ -193,4 +175,41 @@
     
   <style lang="scss">
     @import "../assets/tgd104-sass/new_style.scss";
+    textarea{
+      padding: 5px;
+    }
+
+    .option_flex{
+      display: flex;
+      align-items: center;
+    }
+
+
+
+
+
+
+    .fa-heart.liked {
+      color: $dark_blue;
+      // background-color: $dark_blue;
+      animation: pulse 1s backwards;
+    }
+    
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(121, 203, 212, 0.4);
+      border-radius: 50%;
+    }
+
+    70% {
+      box-shadow: 0 0 0 15px rgba(121, 203, 212, 0);
+      border-radius: 50%;
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(121, 203, 212, 0);
+      border-radius: 50%;
+    }
+  }
+    
   </style>
