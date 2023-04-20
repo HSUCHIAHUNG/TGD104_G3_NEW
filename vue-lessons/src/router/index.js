@@ -9,6 +9,21 @@ const routes = [
     component: HomeView,
   },
   {
+    path: "/imgtest",
+    name: "imgtest",
+    component: () => import("../views/ImgTest.vue"),
+  },
+  {
+    path: "/selectimg",
+    name: "selectimg",
+    component: () => import("../views/SelectImg.vue"),
+  },
+  {
+    path: "/peitest2",
+    name: "peitest2",
+    component: () => import("../views/PeiTest2.vue"),
+  },
+  {
     path: "/historyorderdetailtest",
     name: "historyorderdetailtest",
     component: () => import("../views/HistoryOrderDetailTest.vue"),
