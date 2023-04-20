@@ -38,16 +38,6 @@
     <div class="self_consultant container">
       <ol class="tabs">
         <li>
-          <!-- <a
-            href="#"
-            :class="{ active: currentTab === 'tab1' }"
-            @click.prevent="
-              {
-                (current = 'all'), (currentTab = 'tab1');
-              }
-            "
-            >全部</a
-          > -->
           <a
             href="#"
             :class="{ active: currentTab === 'tab1' }"
@@ -56,16 +46,6 @@
           </a>
         </li>
         <li>
-          <!-- <a
-            href="#"
-            :class="{ active: currentTab === 'tab2' }"
-            @click.prevent="
-              {
-                (current = '男性'), (currentTab = 'tab2');
-              }
-            "
-            >男性</a
-          > -->
           <a
             href="#"
             :class="{ active: currentTab === 'tab2' }"
@@ -74,16 +54,6 @@
           >
         </li>
         <li>
-          <!-- <a
-            href="#"
-            :class="{ active: currentTab === 'tab3' }"
-            @click.prevent="
-              {
-                (current = '女性'), (currentTab = 'tab3');
-              }
-            "
-            >女性</a
-          > -->
           <a
             href="#"
             :class="{ active: currentTab === 'tab3' }"
@@ -209,6 +179,7 @@ export default {
     consultant_select(id){
       // this.selectedConsultant = id
       this.$cookies.set("selectedConsultant",this.selectedConsultant)
+      this.$router.push({path:'/SelTravelConsultant', query:{'id': id}})
     },
 
     //點擊愛心收藏
@@ -264,7 +235,8 @@ export default {
 
     //點顧問圖片set 顧問id cookie for顧問詳細頁
     consultantId(consultantId){
-      this.$cookies.set("Consultant_id",consultantId)
+      // this.$cookies.set("Consultant_id",consultantId)
+      this.$router.push({path:'/TravelGallery', query:{'id': consultantId}})
     },
 
     //回上一頁時清除cookie selectedConsultant
@@ -286,7 +258,7 @@ export default {
 
     //抓cookie已收藏愛心給favorites陣列
     this.favorites = this.$cookies.get("m_collect");
-    console.log(this.favorites);
+    // console.log(this.favorites);
 
     //抓cookie 地區
     this.travelArea = this.$cookies.get("travelArea");

@@ -1,6 +1,6 @@
 <template>
-
-    <div class="top_detail_introduce">
+<div>
+ <div class="top_detail_introduce">
       <div class="consultant_gallary">
         <div class="consultant_gallary_main">
           <img :src="mainImage" :alt="mainImageAlt">
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <div v-for="(detail, index) in consultantDetail" class="detail_introduce">
+      <div v-for="(detail, index) in consultantDetail" class="detail_introduce" :key="index">
         <h1>🌋{{detail.about_title}}</h1>
         <h2>{{detail.c_nickname}}</h2>
         <h3>👩🏻‍🤝‍🧑🏻 性別：{{detail.c_gender}}</h3>
@@ -32,9 +32,9 @@
     </div>
 
     <div class="gallery_btn">
-    <router-link to="/SelTravelConsultant"><button class="btn_orange">回預約頁面</button></router-link>
+    <router-link to="/SelTravelConsultant"><button class="btn_orange" @click="backToSel">回預約頁面</button></router-link>
     </div>
-
+</div>
 </template>
 
 
@@ -56,32 +56,35 @@ export default {
         mainImage: require('../assets/image/travel/travel_gallery.png'),
         mainImageAlt: "Image 1",
 
-        // title: '台灣百岳征服者',
-        // name: '裴大尼',
-        // gender: '男性',
-        // age: '28歲',
-        // personality: '活躍健談、遇事從容不迫',
-        // interest: '登山、游泳',
-        // experience: '登山嚮導、旅行社業務',
-        // license: '登山嚮導證',
-        // cost: '＄1,500',
-        // introduce:'大家好，作為一經歷豐富的登山嚮導，我曾經帶領遊客遊歷過台灣大大小小的山脈，從玉山、合歡山到雪山等等，不管新手或是經驗者都歡迎跟我一起登山！',
-
         Consultant_id: '',
         consultantDetail: [],
+        id: '',
     };
   },
   methods: {
     changeMainImage(index) {
     this.mainImage = this.images[index].big;
     this.mainImageAlt = this.images[index].alt;
+    },
+
+    backToSel(){
+      this.id = this.$cookies.get("selectedConsultant")
+      this.$router.push({path:'/SelTravelConsultant', query:{id: this.id}})
     }
   },
 
   mounted() {
     //取得cookie 顧問id
-    this.Consultant_id = this.$cookies.get("Consultant_id");
-    // console.log(this.Consultant_id);
+    // this.Consultant_id = this.$cookies.get("Consultant_id");
+    console.log( this.$route);
+    const id = this.$route && this.$route.query && this.$route.query.id
+    if(id){
+     this.Consultant_id= this.$route.query.id
+
+    }else{
+      this.Consultant_id=1
+    }
+    console.log(this.Consultant_id);
 
     //呼叫ajax 撈對應顧問
     $.ajax({
