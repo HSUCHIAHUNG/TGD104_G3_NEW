@@ -67,7 +67,7 @@
                         <th>身份證字號</th>
                         <th>姓名</th>
                         <th>申請日期</th>
-                        <th>證件審核</th>
+                
                         <th>預覽審核</th>
                         <th>審核結果</th>
                     </tr>
@@ -76,11 +76,7 @@
                         <td>{{item.c_id}}</td>
                         <td>{{item.c_nickname}}</td>
                         <td>{{formatDate(item.c_create_date)}}</td>
-                        <td>
-                            <button>查看
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button> 
-                        </td>
+                   
                         <td>
                             <button>查看
                                 <i class="fa-solid fa-magnifying-glass"></i>

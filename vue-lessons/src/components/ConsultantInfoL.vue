@@ -149,9 +149,13 @@
 
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
+import $ from "jquery";
 export default {
   name: "ConsultantInfoL",
+  components: {
+    $,
+  },
+
   data() {
     return {
       editor: ClassicEditor,
