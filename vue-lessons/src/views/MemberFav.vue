@@ -51,6 +51,7 @@
                 <li class="fav_consultant_card">
                   <router-link
                     :to="!item.tr_job ? '/LearningGallery' : '/travelGallery'"
+                    @click="consultantGallery(item.id)"
                     target="_blank"
                     ><img :src="item.c_photo1" :alt="item.c_photo1"
                   /></router-link>
@@ -276,6 +277,11 @@ export default {
           console.log(textStatus, errorThrown);
         },
       });
+    },
+    consultantGallery(id) {
+      let new_id = id.toString();
+      this.$cookies.set("Consultant_id", new_id);
+      this.$cookies.set("L_about_consultant", new_id);
     },
   },
   mounted() {
