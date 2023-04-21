@@ -1,20 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div class="top_detail_introduce">
-    <div class="consultant_gallary">
-      <div class="consultant_gallary_main">
-        <img :src="mainImage" :alt="mainImageAlt" />
-      </div>
-
-      <div class="consultant_gallary_small">
-        <img
-          v-for="(image, index) in images"
-          :key="index"
-          :src="image.small"
-          :alt="image.alt"
-          @click="changeMainImage(index)"
-        />
-=======
 <div>
  <div class="top_detail_introduce">
       <div class="consultant_gallary">
@@ -43,7 +27,6 @@
         <h3>💰 費用：{{detail.about_cost}}</h3>
         <h4>💬 自我介紹</h4>
         <p>{{detail.about_introduction}}</p>
->>>>>>> bc258ca1bfbf85c49d957778aeeada829d65a752
       </div>
     </div>
 
@@ -60,7 +43,6 @@
       <h4>💬 自我介紹</h4>
       <p>{{ detail.about_introduction }}</p>
     </div>
-<<<<<<< HEAD
   </div>
 
   <div class="gallery_btn">
@@ -68,9 +50,6 @@
       ><button class="btn_orange">回預約頁面</button></router-link
     >
   </div>
-=======
-</div>
->>>>>>> bc258ca1bfbf85c49d957778aeeada829d65a752
 </template>
 
 <script>
