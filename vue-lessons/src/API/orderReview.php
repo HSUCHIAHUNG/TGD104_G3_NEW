@@ -16,7 +16,7 @@ require_once ("conn.php");
 $order_id = $_POST['order_id'];
 
 
-$sql = "select star, comment_title,comment_content 
+$sql = "select or_star, or_comment_title,or_comment 
 from `order` where id = ?";
 
 

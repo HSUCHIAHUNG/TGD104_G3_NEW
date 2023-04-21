@@ -319,7 +319,7 @@ export default {
     let Order_id = this.$cookies.get("Order_id");
     // 判斷旅行還是學習
 
-    // 學習訂單
+    // 取得訂單資訊
     $.ajax({
       url: "http://localhost/NEW_G3/vue-lessons/src/api/orderDetails.php",
       dataType: "json",
