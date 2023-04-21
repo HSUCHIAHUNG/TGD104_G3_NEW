@@ -145,7 +145,7 @@ export default {
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
 
-//calendar
+/* calendar */
 .calendar{
   margin: 50px 0;
   text-align: center;
@@ -242,4 +242,55 @@ p{
   display: block;
   margin: 30px auto 0;
 }
+/* calendar end */
+
+/* calendar rwd start */
+@include rwd(768px){
+  .calendar{
+    .vc-container {
+        width: 500px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 18px;
+        }
+    }
+    .vc-weekday{
+        font-size: 18px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 18px;
+        width: 50px;
+        height: 50px;
+    }
+  }
+    
+}
+
+
+@include rwd(576px){
+  .calendar{
+    .vc-container {
+        width: 300px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 16px;
+        }
+    }
+    .vc-weekday{
+        font-size: 16px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+    }
+  }
+}
+/* calendar rwd end */
 </style>
