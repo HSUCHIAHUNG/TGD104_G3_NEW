@@ -61,13 +61,13 @@ export default {
     mounted() {
 
       // 1
-      this.$cookies.set("selectedConsultant",'5')
-      this.$cookies.set("Member_id",'5')
+      // this.$cookies.set("selectedConsultant",'5')
+      // this.$cookies.set("Member_id",'5')
       
       // 2
       this.Consultant_id = $cookies.get("selectedConsultant")
       this.Member_id = $cookies.get("Member_id")
-      this.c_date = $cookies.get("Member_id")
+      this.c_date = $cookies.get("Or_booking_date")
 
       // 測試
       console.log(this.Consultant_id);

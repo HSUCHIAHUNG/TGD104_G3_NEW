@@ -85,7 +85,7 @@ export default {
       defaultOption: "顧問資訊",
       //日期陣列
       days: [],
-      disabledDates: [new Date(), '2023/4/1', '2023/4/2'],
+      disabledDates: [{end: new Date()},],
       // disabledDates: [new Date()],
 
       
@@ -101,37 +101,33 @@ export default {
     VFooter,
   },
 
-  computed: {
+    computed: {
     dates() {
       return this.days.map(day => day.date);
     },
-
     attributes() {
       return this.dates.map(date => ({
         highlight: true,
         dates: date,
-        popover:{
-          label: '已選擇不可被預約日期',
-        },
       }));
     },
   },
   methods: {
     onDayClick(day) {
-      // 檢查被點擊的日期是否在 disabledDates 陣列中
-      if (this.disabledDates.includes(day.date)) {
-        // 如果在 disabledDates 中，則不執行後續邏輯
-        console.log(day.date);
-        return;
-      };
-
       const idx = this.days.findIndex(d => d.id === day.id);
       if (idx >= 0) {
         this.days.splice(idx, 1);
       } else {
-        this.days.push(day.id);
-      };
-      console.log(this.days);
+        this.days.push({
+          id: day.id,
+          date: day.date,
+        });
+      }
+      this.days.forEach(day => {
+      const id = day.id;
+      console.log(id);
+      // 在這裡進行您想要的操作
+    });
     },
   },
 
