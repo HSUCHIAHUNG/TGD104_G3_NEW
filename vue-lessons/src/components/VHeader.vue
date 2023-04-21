@@ -69,6 +69,9 @@
     <!-- 會員登入燈箱 End-->
 
     <!-- 顧問登入燈箱 -->
+
+
+
     <div id="consultant_lightbox" class="none">
       <article>
         <div class="title_img">
@@ -76,20 +79,38 @@
         </div>
 
         <div class="inputs">
-          <h1>顧問登入</h1>
-          <label for="" class="input_label">帳號(信箱)</label>
-          <input type="text" class="input_text" />
-          <br />
-          <label for="" class="input_label">密碼</label>
-          <input type="text" class="input_text" />
-          <a @click.prevent="forgetPwd">忘記密碼?</a>
-          <div class="btns">
-            <button type="button" class="outline_btn_blue">加入陪你</button>
-            <button type="button" class="btn_blue">登入</button>
-          </div>
+
+          <form @submit.prevent="cLogin">
+            <h1>顧問登入</h1>
+            <label for="" class="input_label">帳號(信箱)</label>
+            <input
+              type="email"
+              class="input_text"
+              v-model="clogin.c_mail"
+              required
+            />
+            <br />
+            <label for="" class="input_label">密碼</label>
+            <input
+              type="password"
+              class="input_text"
+              v-model="clogin.c_password"
+              required
+            />
+            <br>
+            <a @click.prevent="forgetPwd">忘記密碼?</a>
+            <div class="btns">
+              <router-link to="/Join"><button type="button" class="outline_btn_blue">加入陪你</button></router-link>
+              <button type="submit" class="btn_blue">登入</button>
+            </div>
+          </form>
+
         </div>
       </article>
     </div>
+
+
+
     <!-- 顧問登入燈箱 End-->
 
     <!-- 忘記密碼燈箱 -->
@@ -377,7 +398,14 @@ export default {
         m_mail: "",
         m_password: "",
       },
+      // 顧問登入
+      clogin: {
+        c_mail: "",
+        c_password: "",
+      },
       memberInfo: [],
+
+      consultantInfo: [],
     };
   },
   components: {
@@ -547,6 +575,35 @@ export default {
         },
       });
     },
+
+    // 送出顧問登入表單
+    cLogin() {
+      // console.log("ok");
+      $.ajax({
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/cLogin.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+          c_mail: this.clogin.c_mail,
+          c_password: this.clogin.c_password,
+        },
+        success: (response) => {
+          console.log(response);
+          this.consultantInfo = response;
+          this.$cookies.set("Consultant_id", this.consultantInfo[0].id);
+          let Consultant_id = $cookies.get("Consultant_id");
+          console.log(Consultant_id);
+          this.$router.push("/consultant");
+          alert("登入成功");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          // console.log(textStatus, errorThrown);
+          console.log("aaa")
+        },
+      });
+    },
+
+
   },
 };
 </script>

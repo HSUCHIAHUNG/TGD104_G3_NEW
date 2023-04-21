@@ -242,9 +242,9 @@ export default {
   text-align: center;
   border-top: 1px solid #eee;
 }
-p{
-  margin: 30px 0;
-}
+// p{
+//   margin: 30px 0;
+// }
 .vc-container{
     width: 580px;
 }

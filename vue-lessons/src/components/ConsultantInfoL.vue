@@ -10,6 +10,7 @@
               name="highest_education"
               id="highest_education"
               class="input_select"
+              v-model="consultantInfoL[0].s_grad"
             >
               <option value="">--請選擇--</option>
               <option value="高中">高中</option>
@@ -20,11 +21,11 @@
           </div>
           <div class="form_group">
             <label for="" class="input_label">畢業於</label>
-            <input type="text" class="input_text" placeholder="畢業於" />
+            <input v-model="consultantInfoL[0].s_school" type="text" class="input_text" placeholder="畢業於" />
           </div>
         </div>
         <div class="input_row">
-          <div class="form_group">
+          <!-- <div class="form_group">
             <label class="input_label" for="category"
               >選擇您可提供的教學類別：</label
             >
@@ -37,8 +38,8 @@
               <option value="程式">程式</option>
               <option value="舞蹈">舞蹈</option>
             </select>
-          </div>
-          <div class="form_group">
+          </div> -->
+          <!-- <div class="form_group">
             <label class="input_label" for="class"
               >選擇您可提供的服務課程：</label
             >
@@ -75,16 +76,42 @@
               <option value="兒童舞蹈">兒童舞蹈</option>
               <option value="爵士鼓">爵士鼓</option>
             </select>
+          </div> -->
+
+          <div class="form_group">
+              <label class="input_label" for="category">選擇您可提供的教學類別：</label>
+              <select v-model="consultantInfoL[0].s_category" name="category" id="category" class="input_select" @change="updateSecondSelection">
+                  <option value="" disabled selected>--請選擇--</option>
+                  <option value="音樂">音樂</option>
+                  <option value="伴讀">伴讀</option>
+                  <option value="科目">科目</option>
+                  <option value="繪畫">繪畫</option>
+                  <option value="程式">程式</option>
+                  <option value="舞蹈">舞蹈</option>
+              </select>
           </div>
+
+          <div class="form_group">
+              <label class="input_label" for="class">選擇您可提供的服務課程：</label>
+              <select name="class" id="class" class="input_select" v-model="consultantInfoL[0].about_class">
+                  <option value="" disabled selected>--請選擇--</option>
+                  <option v-for="option in About_classOptions" :value="option.value">{{ option.label }}</option>
+              </select>
+          </div>
+
+
+
+
+
         </div>
         <div class="input_row">
           <div class="form_group">
             <label for="" class="input_label">教學地址</label>
-            <input type="text" class="input_text" placeholder="教學地址" />
+            <input v-model="consultantInfoL[0].s_address" type="text" class="input_text" placeholder="教學地址" />
           </div>
           <div class="form_group">
             <label for="" class="input_label">課程費用</label>
-            <input type="text" class="input_text" placeholder="課程費用" />
+            <input v-model="consultantInfoL[0].about_cost" type="text" class="input_text" placeholder="課程費用" />
           </div>
         </div>
         <div class="input_row">
@@ -97,6 +124,7 @@
               class="input_text"
               placeholder="詳細資料標題"
               maxlength="20"
+              v-model="consultantInfoL[0].about_title"
             />
           </div>
         </div>
@@ -112,7 +140,7 @@
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
-        <button type="button" class="btn_blue">送出審核</button>
+        <button type="button" class="btn_blue" @click="save">送出審核</button>
       </div>
     </div>
     <!-- main_content end-->
@@ -128,12 +156,139 @@ export default {
     return {
       editor: ClassicEditor,
       editorData: "",
+      s_category:'',
+      about_class:'',
       editorConfig: {
         placeholder: "請輸入內容...",
         removePlugins: ["Bold", "Italic", "Link", "CKFinder", "Image", "Media"],
       },
+      consultantInfoL:[
+        {
+          about_cost: "",
+          s_grad: "",
+          s_address: "",
+          s_school: "",
+          about_title: "",
+          about_cid: "",
+        }
+        ],
+        
+      
     };
   },
+  computed: {
+      About_classOptions() {
+        // 根據第一層選擇，返回對應的第二層選項
+        if (this.s_category === '音樂') {
+            return [
+            { value: '鋼琴', label: '鋼琴' },
+            { value: '吉他', label: '吉他' },
+            { value: '烏克麗麗', label: '烏克麗麗' },
+            { value: '爵士鼓', label: '爵士鼓' },
+            ];
+        } else if (this.s_category === '伴讀') {
+            return [
+            { value: '國小', label: '國小' },
+            { value: '國中', label: '國中' },
+            { value: '高中', label: '高中' },
+            ];
+        } else if (this.s_category === '科目') {
+            return [
+            { value: '英文', label: '英文' },
+            { value: '國文', label: '國文' },
+            { value: '化學', label: '化學' },
+            { value: '生物', label: '生物' },
+            { value: '微積分', label: '微積分' },
+            ];
+        } else if (this.s_category === '繪畫') {
+            return [
+            { value: '素描', label: '素描' },
+            { value: '油畫', label: '油畫' },
+            { value: '水彩', label: '水彩' },
+            { value: '電腦繪圖', label: '電腦繪圖' },
+            { value: '蠟筆繪畫', label: '蠟筆繪畫' },
+            ];
+        } else if (this.s_category === '程式') {
+            return [
+            { value: 'Java', label: 'Java' },
+            { value: 'C++', label: 'C++' },
+            { value: 'JavaScript', label: 'JavaScript' },
+            { value: 'Python', label: 'Python' },
+            { value: 'MySQL', label: 'MySQL' },
+            ];
+        } else if (this.s_category === '舞蹈') {
+            return [
+            { value: '街舞', label: '街舞' },
+            { value: '芭雷舞', label: '芭雷舞' },
+            { value: '兒童舞蹈', label: '兒童舞蹈' },
+            { value: '爵士舞', label: '爵士舞' },
+            ];
+        } else {
+            return [];
+        }
+    },
+  },
+  methods: {
+    save() {
+      $.ajax({
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantinfoL_update.php",
+        dataType: "text",
+        type: "POST",
+        data: {
+          about_cost: this.ConsultantInfoL[0].about_cost,
+          about_introduction: this.ConsultantInfoL[0].about_introduction,
+          s_grad: this.ConsultantInfoL[0].s_grad,
+          s_address: this.ConsultantInfoL[0].s_address,
+          s_school: this.ConsultantInfoL[0].s_school,
+          about_title: this.ConsultantInfoL[0].about_title,
+          about_class: this.ConsultantInfoL[0].about_class,
+          about_cid: this.ConsultantInfoL[0].about_cid,
+          s_category: this.ConsultantInfoL[0].s_category,
+        },
+        success: (response) => {
+          alert(response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    },
+  },
+
+
+
+
+  mounted() {
+    // let Member_id = $cookies.get("Member_id");
+    let Consultant_id = $cookies.get("Consultant_id");
+    console.log(Consultant_id);
+    if (!Consultant_id) {
+      this.$router.back();
+      alert("請登入顧問");
+    } else {
+      $.ajax({
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantinfoL_select.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+          about_cid: Consultant_id,
+        },
+        success: (response) => {
+          this.consultantInfoL = response;
+          // console.log(this.memberInfo);
+          // console.log(this.memberInfo[0].id);
+          // console.log(this.memberInfo[0].m_id);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    }
+  },
+  
+
+  
+
 };
 </script>
 

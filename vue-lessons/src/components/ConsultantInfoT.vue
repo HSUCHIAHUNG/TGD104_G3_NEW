@@ -65,7 +65,7 @@
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
-        <button type="button" class="btn_blue">送出審核</button>
+        <button type="button" class="btn_blue">更新</button>
       </div>
     </div>
     <!-- main_content end-->
