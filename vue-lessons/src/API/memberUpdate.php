@@ -6,6 +6,7 @@
   header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // 資料庫-------------------------------------------
+require_once ("conn.php");
 //MySQL相關資訊
 require_once ("conn.php");
 // -------------------------------------------

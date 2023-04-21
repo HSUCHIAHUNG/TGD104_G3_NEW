@@ -97,4 +97,12 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.button_choose{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    button{
+        margin: 10px;
+    }
+}
 </style>

@@ -38,16 +38,6 @@
     <div class="self_consultant container">
       <ol class="tabs">
         <li>
-          <!-- <a
-            href="#"
-            :class="{ active: currentTab === 'tab1' }"
-            @click.prevent="
-              {
-                (current = 'all'), (currentTab = 'tab1');
-              }
-            "
-            >全部</a
-          > -->
           <a
             href="#"
             :class="{ active: currentTab === 'tab1' }"
@@ -56,16 +46,6 @@
           </a>
         </li>
         <li>
-          <!-- <a
-            href="#"
-            :class="{ active: currentTab === 'tab2' }"
-            @click.prevent="
-              {
-                (current = '男性'), (currentTab = 'tab2');
-              }
-            "
-            >男性</a
-          > -->
           <a
             href="#"
             :class="{ active: currentTab === 'tab2' }"
@@ -74,16 +54,6 @@
           >
         </li>
         <li>
-          <!-- <a
-            href="#"
-            :class="{ active: currentTab === 'tab3' }"
-            @click.prevent="
-              {
-                (current = '女性'), (currentTab = 'tab3');
-              }
-            "
-            >女性</a
-          > -->
           <a
             href="#"
             :class="{ active: currentTab === 'tab3' }"
@@ -121,7 +91,7 @@
             <h2>{{ consultant.tr_experience }}</h2>
             <i
               class="fa-regular fa-heart"
-              :class="{ 'fa-solid': isFavorite(consultant.id) || favorites.includes(consultant.id)}"
+              :class="{ 'fa-solid': isFavorite(consultant.id)}"
               @click="toggleFavorite(consultant.id)"
             ></i>
           </li>
@@ -164,8 +134,6 @@
 <script>
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import $ from "jquery";
 
 export default {
@@ -209,27 +177,30 @@ export default {
     consultant_select(id){
       // this.selectedConsultant = id
       this.$cookies.set("selectedConsultant",this.selectedConsultant)
+      // this.$router.push({path:'/SelTravelConsultant', query:{'id': id}})
     },
 
     //點擊愛心收藏
     isFavorite(index) {
-      return this.favorites.includes(index);
+      let id = index.toString()
+      return this.favorites.includes(id);
     },
     
     toggleFavorite(index) {
+
+      let id = index.toString()
       if (this.isFavorite(index)) {
-        const favoriteIndex = this.favorites.indexOf(index);
+        const favoriteIndex = this.favorites.indexOf(id);
         this.favorites.splice(favoriteIndex, 1);
       } else {
-        this.favorites.push(index);
+        this.favorites.push(id);
       }
       console.log(this.favorites);
-      //{0: 4, 1: 10, 2: 14}
-      this.$cookies.set("m_collect",this.favorites);
-      console.log(this.$cookies.get("m_collect"));
+
 
       
       //撈資料庫對應會員id，更新收藏愛心欄位m_collect
+      if (this.favorites && this.favorites.length > 0) {
       $.ajax({
           method: "POST",
           url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelHeartCollect_Update.php', 
@@ -246,6 +217,23 @@ export default {
           },
 
       }); 
+      }else{
+        //讓m_collect值不為null
+        $.ajax({
+          method: "POST",
+          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelHeartCollect_Update2.php', 
+          data: {
+            Id: this.Member_id,
+          },
+          dataType: "text",
+          success: function(response) {
+          },
+          error: function(exception) {
+              alert("發生錯誤: " + exception.status);
+          },
+
+      }); 
+      }
     },
 
     //判斷是否已登入會員和選擇顧問才進入下一頁
@@ -265,6 +253,7 @@ export default {
     //點顧問圖片set 顧問id cookie for顧問詳細頁
     consultantId(consultantId){
       this.$cookies.set("Consultant_id",consultantId)
+      // this.$router.push({path:'/TravelGallery', query:{'Datail': consultantId}})
     },
 
     //回上一頁時清除cookie selectedConsultant
@@ -275,18 +264,11 @@ export default {
   },
 
   mounted() {
-    //先假放member_id
-    this.$cookies.set("Member_id","2")
-    // this.$cookies.remove("member_id");
     this.Member_id = this.$cookies.get("Member_id");
-    console.log(this.Member_id);
+    // console.log(this.Member_id);
     
     //抓cookie已選擇顧問id給selectedConsultan變數
     this.selectedConsultant = this.$cookies.get("selectedConsultant");
-
-    //抓cookie已收藏愛心給favorites陣列
-    this.favorites = this.$cookies.get("m_collect");
-    console.log(this.favorites);
 
     //抓cookie 地區
     this.travelArea = this.$cookies.get("travelArea");
@@ -315,7 +297,7 @@ export default {
         },
         dataType: "json",
         success: response => {
-          // 将回应数据附加到consultantInfo数组中
+          // 将回应数据附加到consultantInfo数组中    
           Array.prototype.push.apply(this.consultantInfo, response);
           console.log(this.consultantInfo);
         },
@@ -324,6 +306,32 @@ export default {
         },
 
     });  
+
+    //撈已收藏愛心，畫面重整時收藏愛心還會存在
+    $.ajax({
+        method: "POST",
+        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelMember_Select.php', 
+        data: {
+          Id: this.Member_id,
+            
+        },
+        dataType: "json",
+        success: response => {
+          console.log(response,'res');
+            if (response !== null && typeof response !== 'undefined' && response.length > 0) { // 修改判空处理
+            let array = response[0].m_collect;
+            array = JSON.parse(array);
+            for (let index = 0; index < array.length; index++) {
+              const collect = array[index];
+              this.favorites.push(collect);
+            }
+          }
+        },
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
+
+    }); 
             
   },
 

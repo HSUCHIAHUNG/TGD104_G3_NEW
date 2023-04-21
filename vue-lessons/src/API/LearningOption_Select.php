@@ -30,14 +30,16 @@
        // JOIN member m ON s.member_id = m.id;";
 
 
-       $sql = "SELECT s.*, l.likes_count, m_nickname
-       FROM study_require s
-       LEFT JOIN (
-         SELECT option_id, COUNT(*) AS likes_count
-         FROM love_like
-         GROUP BY option_id
-       ) l ON s.id = l.option_id
-       JOIN member m ON s.member_id = m.id;";
+       $sql = "
+       SELECT
+              b.m_nickname,
+              a.sr_time,
+              a.id,
+              a.sr_content,
+              a.love
+              
+              FROM study_require a
+              join member b on a.member_id = b.id;";
 
        
 

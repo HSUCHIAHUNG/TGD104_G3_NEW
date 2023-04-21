@@ -12,9 +12,14 @@ require_once ("conn.php");
 $member_id = $_POST['member_id'];
 
 // 還要補上order_status = 0;
+<<<<<<< HEAD
 $sql = "select o.id, o.member_id, o.or_booking_date, o.order_status,
 a.about_cost, a.about_class, a.s_category
 from `order` o
+=======
+$sql = "select a.s_cost, o.id, o.so_category, o.so_class,o.so_booking_date  
+from `order` o 
+>>>>>>> bc258ca1bfbf85c49d957778aeeada829d65a752
 join about_consultant a 
 on o.consultant_id = a.about_cid 
 where o.member_id = ? and o.order_status = '未完成' and a.tr_job is null";

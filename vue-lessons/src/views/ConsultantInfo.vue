@@ -51,10 +51,10 @@
           <!-- calender -->
           <div class="calendar">
           <!-- <VCalendar :attributes="attributes"/> -->
-            <p>📆請選擇不可被預約日期</p>
-            <v-calendar :attributes="attributes" @dayclick="onDayClick" />
+            <p>📆 請選擇不可被預約日期</p>
+            <v-calendar :attributes="attributes" :disabled-dates="disabledDates" @dayclick="onDayClick" />
 
-            <button type="button" class="btn_blue calendar_btn">確認送出</button>
+            <button type="button" class="btn_blue calendar_btn" @click="toCdate">確認送出</button>
 
           </div>
           <!-- calender end-->
@@ -75,6 +75,7 @@ import CSideNav from "../components/CSideNav.vue";
 import CDropDown from "@/components/CDropDown.vue";
 import ConsultantInfoL from "@/components/ConsultantInfoL.vue";
 import ConsultantInfoT from "@/components/ConsultantInfoT.vue";
+import $ from "jquery";
 
 export default {
   name: "ConsultantInfo",
@@ -83,9 +84,11 @@ export default {
       content: "ConsultantInfoL",
       currentTab: "tab1",
       defaultOption: "顧問資訊",
-      //canlender
-      days: [new Date()],
-      
+      //日期陣列
+      days: [],
+      disabledDates: [{end: new Date()},],
+      Test_consultant_id: '',
+      c_date: [],
     };
   },
   components: {
@@ -96,8 +99,42 @@ export default {
     ConsultantInfoL,
     ConsultantInfoT,
     VFooter,
+    $,
   },
 
+  // computed: {
+  //   dates() {
+  //     return this.days.map(day => day.date);
+  //   },
+
+  //   attributes() {
+  //     return this.dates.map(date => ({
+  //       highlight: true,
+  //       dates: date,
+  //       popover:{
+  //         label: '已選擇不可被預約日期',
+  //       },
+  //     }));
+  //   },
+  // },
+  // methods: {
+  //   onDayClick(day) {
+  //     // 檢查被點擊的日期是否在 disabledDates 陣列中
+  //     if (this.disabledDates.includes(day.id)) {
+  //       // 如果在 disabledDates 中，則不執行後續邏輯
+  //       return;
+  //     };
+  //     console.log(day.id);
+
+  //     const idx = this.days.findIndex(d => d.id === day.id);
+  //     if (idx >= 0) {
+  //       this.days.splice(idx, 1);
+  //     } else {
+  //       this.days.push(day.id);
+  //     };
+  //     console.log(this.days);
+  //   },
+  // },
   computed: {
     dates() {
       return this.days.map(day => day.date);
@@ -106,9 +143,6 @@ export default {
       return this.dates.map(date => ({
         highlight: true,
         dates: date,
-        popover:{
-          label: '已選擇不可被預約日期',
-        },
       }));
     },
   },
@@ -123,11 +157,76 @@ export default {
           date: day.date,
         });
       }
-      console.log(this.days);
-    },
+
+      // console.log(this.days);
+      this.days.forEach(day => {
+        this.c_date.push(day.id)
+        });
+        console.log(this.c_date);
+      },
+
+    // toCdate(){
+    //   //按送出 days 放資料庫 c_date
+    //   $.ajax({
+    //     method: "POST",
+    //     url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Update.php', 
+    //     data: {
+    //         Id: this.Test_consultant_id,
+    //         c_date
+    //     },
+    //     dataType: "json",
+    //     success: response => {
+    //         console.log(response,'res');
+    //         let array = response[0].c_date
+    //         array = JSON.parse(array)
+    //         for (let index = 0; index < array.length; index++) {
+    //             const date = array[index];
+    //             this.disabledDates.push(date)
+                
+    //         }
+
+    //     },
+
+    //     error: function(exception) {
+    //         alert("發生錯誤: " + exception.status);
+    //     },
+
+    //   }); 
+    // }
   },
 
+  mounted() {
+    //假設顧問登入的id
+    this.$cookies.set("Test_consultant_id",'1');
+    this.Test_consultant_id = this.$cookies.get("Test_consultant_id");
+    
+    //select c_date push to disabledDates
+    $.ajax({
+      method: "POST",
+      url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Select.php', 
+      data: {
+          Id: this.Test_consultant_id,
+          
+      },
+      dataType: "json",
+      success: response => {
+          console.log(response,'res');
+          let array = response[0].c_date
+          array = JSON.parse(array)
+          for (let index = 0; index < array.length; index++) {
+              const date = array[index];
+              this.disabledDates.push(date)
+              
+          }
 
+      },
+
+      error: function(exception) {
+          alert("發生錯誤: " + exception.status);
+      },
+
+    }); 
+  },
 
 
 
@@ -137,15 +236,15 @@ export default {
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
 
-//calendar
+/* calendar */
 .calendar{
   margin: 50px 0;
   text-align: center;
   border-top: 1px solid #eee;
 }
-p{
-  margin: 30px 0;
-}
+// p{
+//   margin: 30px 0;
+// }
 .vc-container{
     width: 580px;
 }
@@ -185,6 +284,9 @@ p{
       // color: #7f7f7f;
       background-color: #aeabab;
     }
+    &.vc-disabled {
+      cursor: default;
+    }
 
 }.vc-focus .vc-day-content {
     background-color: #79cbd4;
@@ -202,6 +304,11 @@ p{
 }
 .vc-base-icon {
     stroke-width: 4px;
+}
+
+.vc-day-content.vc-disabled{
+    color: #7f7f7f;
+    background-color: #aeabab;
 }
 
 .vc-bordered {
@@ -226,4 +333,55 @@ p{
   display: block;
   margin: 30px auto 0;
 }
+/* calendar end */
+
+/* calendar rwd start */
+@include rwd(768px){
+  .calendar{
+    .vc-container {
+        width: 500px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 18px;
+        }
+    }
+    .vc-weekday{
+        font-size: 18px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 18px;
+        width: 50px;
+        height: 50px;
+    }
+  }
+    
+}
+
+
+@include rwd(576px){
+  .calendar{
+    .vc-container {
+        width: 300px;
+    }
+    .vc-header .vc-title{
+        span{
+            font-size: 16px;
+        }
+    }
+    .vc-weekday{
+        font-size: 16px;
+        margin: 5px 0;
+        color: #585858;
+    }
+    .vc-day-content{
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+    }
+  }
+}
+/* calendar rwd end */
 </style>

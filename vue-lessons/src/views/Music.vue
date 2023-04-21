@@ -1,8 +1,12 @@
 <template>
-
+    
+  
+        
+  <!-- 右邊 -->
   <div class="learning_choose_content">
-    <!-- 右邊 -->
-      <ol class="learning_second_items_tab">
+
+
+    <ol class="learning_second_items_tab">
         <li :class="{ active: currentTab === 'tab1' }">
           <a href="#" :class="{ active: currentTab === 'tab1' }" @click.prevent="{(current = 'all'), (currentTab = 'tab1');}">
             <div>全部</div>
@@ -28,10 +32,9 @@
           </a>
         </li>
       </ol>
-    <!-- 右邊 end -->
 
-    <!-- 顧問卡 -->
-    <div class="product-selection">
+<!-- 顧問卡 -->
+<div class="product-selection">
       <template v-for="(product, index) in products" :key="index" >
         <div v-if="current ==='all' || current === product.about_class"> 
           <div class="product">
@@ -56,7 +59,7 @@
               <h3>{{ product.c_nickname }}</h3>
               <p>{{ product.about_title }}</p>
               <div class="product-actions">
-                <i class="fa-regular fa-heart learning_heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
+                <i class="fa-regular fa-heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
               </div>
             </div>
             <!-- 顧問名.課程title.收藏 end-->
@@ -66,15 +69,13 @@
       </template>
     </div>
     <!-- 顧問卡end -->
-
     <div class="learning_go">
       <button class="btn_orange" @click="startBooking">開始預約</button>
     </div>
   </div>
 
 </template>
-
-
+      
 <script>
   import $ from "jquery";
   export default {
@@ -146,7 +147,6 @@
       //抓已選擇顧問id
       this.selectedConsultant = this.$cookies.get("L_consultant_id");
 
-
       // 先假放Member_id
       this.$cookies.set("Member_id","1")
     },
@@ -158,7 +158,7 @@
 <style lang="scss">
   @import "../assets/tgd104-sass/new_style.scss";
 
-  .learning_heart {
+  .product-actions .fa-heart {
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -174,7 +174,7 @@
     }
   }
     
-  .product-actions .learning_heart.fa-solid {
+  .product-actions .fa-heart.fa-solid {
     color: $dark_blue;
     animation: pulse 1s backwards;
   }
