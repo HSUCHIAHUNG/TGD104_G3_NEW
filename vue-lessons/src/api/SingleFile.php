@@ -13,6 +13,7 @@ require_once ("conn.php");
 
     //判斷是否上傳成功
     if($_FILES["profile"]["error"] > 0){
+        print_r($_FILES["profile"]["error"]);
         echo "上傳失敗: 錯誤代碼".$_FILES["profile"]["error"];
     }else{
         //取得上傳的檔案資訊=======================================
@@ -27,7 +28,8 @@ require_once ("conn.php");
         $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
         
         //檔案最終存放位置
-        $filePath = $ServerRoot."/NEW_G3/vue-lessons/public/upload/".$fileName;
+        // $filePath = $ServerRoot."/NEW_G3/vue-lessons/public/upload/".$fileName;
+        $filePath = $ServerRoot."/img/".$fileName;
   
         //將暫存檔搬移到正確位置
         move_uploaded_file($filePath_Temp, $filePath);
@@ -64,8 +66,8 @@ require_once ("conn.php");
     }
 
     // 取得檔案副檔名
-    function getExtensionName($filePath){
-        $path_parts = pathinfo($filePath);
-        return $path_parts["extension"];
-    }
+    // function getExtensionName($filePath){
+    //     $path_parts = pathinfo($filePath);
+    //     return $path_parts["extension"];
+    // }
 ?>

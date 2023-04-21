@@ -6,6 +6,7 @@
         enctype="multipart/form-data"
         @submit.prevent="uploadFile($event)"
       >
+        <i class="fa fa-camera"></i>
         <input type="file" name="profile" id="file-input" />
         &nbsp;
         <!-- <input type="button" value="上傳檔案" @click.prevent="uploadFile" /> -->
@@ -16,7 +17,7 @@
     <!------------avatar----------->
     <div>
       <section class="top_box">
-        <img class="avatar" :src="imgUrl" style="border: 3px solid red" />
+        <img class="avatar" :src="filename" style="border: 3px solid red" />
         <br />
       </section>
     </div>
@@ -50,26 +51,26 @@ export default {
         contentType: false,
         success: (response) => {
           console.log(response);
-          this.filename = `/tgd104/g3/dist/img/${response}`;
+          this.filename = `http://localhost/img/${response}`;
           console.log(this.filename);
 
-          $.ajax({
-            url: "http://localhost/NEW_G3/vue-lessons/src/api/selectImg.php",
-            dataType: "json",
-            type: "POST",
-            data: {},
-            success: (response) => {
-              console.log(response[0].m_photo);
-              this.imgUrl = `http://localhost/NEW_G3/vue-lessons/public/upload/${response[0].m_photo}`;
-              console.log(this.imgUrl);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-              console.log(textStatus, errorThrown);
-            },
-          });
+          // $.ajax({
+          //   url: "http://localhost/NEW_G3/vue-lessons/src/api/selectImg.php",
+          //   dataType: "json",
+          //   type: "POST",
+          //   data: {},
+          //   success: (response) => {
+          //     console.log(response[0].m_photo);
+          //     this.imgUrl = `http://localhost/NEW_G3/vue-lessons/public/upload/${response[0].m_photo}`;
+          //     console.log(this.imgUrl);
+          //   },
+          //   error: function (jqXHR, textStatus, errorThrown) {
+          //     console.log(textStatus, errorThrown);
+          //   },
+          // });
         },
         error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
+          console.log(jqXHR, textStatus, errorThrown);
         },
       });
 

@@ -32,38 +32,35 @@
         <div class="title_img">
           <img src="../assets/image/member/login_logo.png" alt="logo" />
         </div>
-
-        <div class="inputs">
-          <form @submit.prevent="mLogin">
-            <h1>會員登入</h1>
-            <label for="" class="input_label">帳號(信箱)</label>
-            <input
-              type="email"
-              class="input_text"
-              v-model="mlogin.m_mail"
-              required
-            />
-            <br />
-            <label for="" class="input_label">密碼</label>
-            <input
-              type="password"
-              class="input_text"
-              v-model="mlogin.m_password"
-              required
-            />
-            <a @click.prevent="forgetPwd">忘記密碼?</a>
-            <div class="btns">
-              <button
-                type="button"
-                class="outline_btn_blue"
-                @click.prevent="signIn"
-              >
-                會員註冊
-              </button>
-              <button type="submit" class="btn_blue">登入</button>
-            </div>
-          </form>
-        </div>
+        <form @submit.prevent="mLogin" class="inputs">
+          <h1>會員登入</h1>
+          <label for="" class="input_label">帳號(信箱)</label>
+          <input
+            type="email"
+            class="input_text"
+            v-model="mlogin.m_mail"
+            required
+          />
+          <br />
+          <label for="" class="input_label">密碼</label>
+          <input
+            type="password"
+            class="input_text"
+            v-model="mlogin.m_password"
+            required
+          />
+          <a @click.prevent="forgetPwd">忘記密碼?</a>
+          <div class="btns">
+            <button
+              type="button"
+              class="outline_btn_blue"
+              @click.prevent="signIn"
+            >
+              會員註冊
+            </button>
+            <button type="submit" class="btn_blue">登入</button>
+          </div>
+        </form>
       </article>
     </div>
     <!-- 會員登入燈箱 End-->
@@ -384,7 +381,6 @@ export default {
     $,
   },
   methods: {
-    // 會員登入燈箱
     //開啟nav
     open_nav() {
       let center_navopen = document.getElementById("center_nav");
@@ -396,36 +392,35 @@ export default {
       // console.log('111');
       center_navclose.classList.toggle("nav_toggle");
     },
+    // 開關燈箱---------------------------------
+    // 會員登入燈箱
     memberLogin() {
       let lightbox = document.getElementById("member_lightbox");
       lightbox.classList.remove("none");
+
+      // 點擊白色區域不會關閉
+      lightbox.querySelector("article").addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+
       // 點擊黑色區域也會關閉
       lightbox.addEventListener("click", function () {
         lightbox.classList.add("none");
-
-        // 點擊白色區域不會關閉
-        lightbox
-          .querySelector("article")
-          .addEventListener("click", function (e) {
-            e.stopPropagation();
-          });
       });
     },
-    // 顧問登入
+    // 顧問登入燈箱
     consultantLogin() {
       let lightbox = document.getElementById("consultant_lightbox");
       lightbox.classList.remove("none");
 
+      // 點擊白色區域不會關閉
+      lightbox.querySelector("article").addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+
       // 點擊黑色區域也會關閉
       lightbox.addEventListener("click", function () {
         lightbox.classList.add("none");
-
-        // 點擊白色區域不會關閉
-        lightbox
-          .querySelector("article")
-          .addEventListener("click", function (e) {
-            e.stopPropagation();
-          });
       });
     },
     // 忘記密碼
@@ -437,15 +432,13 @@ export default {
       consultant_lightbox.classList.add("none");
       lightbox.classList.remove("none");
 
+      // 點擊白色區域不會關閉
+      lightbox.querySelector("article").addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+
       lightbox.addEventListener("click", function () {
         lightbox.classList.add("none");
-
-        // 點擊白色區域不會關閉
-        lightbox
-          .querySelector("article")
-          .addEventListener("click", function (e) {
-            e.stopPropagation();
-          });
       });
     },
     // 密碼重置
@@ -455,16 +448,14 @@ export default {
       lightbox.classList.remove("none");
       forgetpwd_lightbox.classList.add("none");
 
+      // 點擊白色區域不會關閉
+      lightbox.querySelector("article").addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+
       // 點擊黑色區域也會關閉
       lightbox.addEventListener("click", function () {
         lightbox.classList.add("none");
-
-        // 點擊白色區域不會關閉
-        lightbox
-          .querySelector("article")
-          .addEventListener("click", function (e) {
-            e.stopPropagation();
-          });
       });
     },
     // 關閉燈箱
@@ -478,26 +469,25 @@ export default {
       member_lightbox.classList.add("none");
       lightbox.classList.remove("none");
 
+      // 點擊白色區域不會關閉
+      lightbox.querySelector("article").addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+
       lightbox.addEventListener("click", function () {
         lightbox.classList.add("none");
-
-        // 點擊白色區域不會關閉
-        lightbox
-          .querySelector("article")
-          .addEventListener("click", function (e) {
-            e.stopPropagation();
-          });
       });
     },
     // 關閉燈箱
     closeSignIn() {
       document.getElementById("signin_lightbox").classList.add("none");
     },
+    // AJAX --------------------------------------
     // 送出會員註冊表單
     signUp() {
       console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MSignUp.php",
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/MSignUp.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -526,7 +516,7 @@ export default {
     mLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/mLogin.php",
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/mLogin.php",
         dataType: "json",
         type: "POST",
         data: {
