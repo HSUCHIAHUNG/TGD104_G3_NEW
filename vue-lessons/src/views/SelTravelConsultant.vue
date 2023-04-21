@@ -134,8 +134,6 @@
 <script>
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import $ from "jquery";
 
 export default {
@@ -184,22 +182,25 @@ export default {
 
     //點擊愛心收藏
     isFavorite(index) {
-      return this.favorites.includes(index);
+      let id = index.toString()
+      return this.favorites.includes(id);
     },
     
     toggleFavorite(index) {
 
+      let id = index.toString()
       if (this.isFavorite(index)) {
-        const favoriteIndex = this.favorites.indexOf(index);
+        const favoriteIndex = this.favorites.indexOf(id);
         this.favorites.splice(favoriteIndex, 1);
       } else {
-        this.favorites.push(index);
+        this.favorites.push(id);
       }
       console.log(this.favorites);
-      this.$cookies.set("m_collect",this.favorites);
+
 
       
       //撈資料庫對應會員id，更新收藏愛心欄位m_collect
+      if (this.favorites && this.favorites.length > 0) {
       $.ajax({
           method: "POST",
           url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelHeartCollect_Update.php', 
@@ -216,6 +217,23 @@ export default {
           },
 
       }); 
+      }else{
+        //讓m_collect值不為null
+        $.ajax({
+          method: "POST",
+          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelHeartCollect_Update2.php', 
+          data: {
+            Id: this.Member_id,
+          },
+          dataType: "text",
+          success: function(response) {
+          },
+          error: function(exception) {
+              alert("發生錯誤: " + exception.status);
+          },
+
+      }); 
+      }
     },
 
     //判斷是否已登入會員和選擇顧問才進入下一頁
@@ -246,19 +264,11 @@ export default {
   },
 
   mounted() {
-    
-    //先假放member_id
-    // this.$cookies.set("Member_id","2")
-    // this.$cookies.remove("member_id");
     this.Member_id = this.$cookies.get("Member_id");
-    console.log(this.Member_id);
+    // console.log(this.Member_id);
     
     //抓cookie已選擇顧問id給selectedConsultan變數
     this.selectedConsultant = this.$cookies.get("selectedConsultant");
-
-    //抓cookie已收藏愛心給favorites陣列
-    // this.favorites = this.$cookies.get("m_collect");
-    // console.log(this.favorites);
 
     //抓cookie 地區
     this.travelArea = this.$cookies.get("travelArea");
@@ -296,6 +306,32 @@ export default {
         },
 
     });  
+
+    //撈已收藏愛心，畫面重整時收藏愛心還會存在
+    $.ajax({
+        method: "POST",
+        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelMember_Select.php', 
+        data: {
+          Id: this.Member_id,
+            
+        },
+        dataType: "json",
+        success: response => {
+          console.log(response,'res');
+            if (response !== null && typeof response !== 'undefined' && response.length > 0) { // 修改判空处理
+            let array = response[0].m_collect;
+            array = JSON.parse(array);
+            for (let index = 0; index < array.length; index++) {
+              const collect = array[index];
+              this.favorites.push(collect);
+            }
+          }
+        },
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
+
+    }); 
             
   },
 

@@ -32,7 +32,7 @@
     </div>
 
     <div class="gallery_btn">
-    <router-link to="/SelTravelConsultant"><button class="btn_orange" @click="backToSel">回預約頁面</button></router-link>
+    <router-link to="/SelTravelConsultant"><button class="btn_orange">回預約頁面</button></router-link>
     </div>
 </div>
 </template>
@@ -67,23 +67,19 @@ export default {
     this.mainImageAlt = this.images[index].alt;
     },
 
-    backToSel(){
-      this.id = this.$cookies.get("selectedConsultant")
-      this.$router.push({path:'/SelTravelConsultant', query:{id: this.id}})
-    }
   },
 
   mounted() {
     //取得cookie 顧問id
-    // this.Consultant_id = this.$cookies.get("Consultant_id");
-    console.log( this.$route);
-    const id = this.$route && this.$route.query && this.$route.query.id
-    if(id){
-     this.Consultant_id= this.$route.query.id
+    this.Consultant_id = this.$cookies.get("Consultant_id");
+    // console.log( this.$route);
+    // const id = this.$route && this.$route.query && this.$route.query.id
+    // if(id){
+    //  this.Consultant_id= this.$route.query.id
 
-    }else{
-      this.Consultant_id=1
-    }
+    // }else{
+    //   this.Consultant_id=1
+    // }
     console.log(this.Consultant_id);
 
     //呼叫ajax 撈對應顧問

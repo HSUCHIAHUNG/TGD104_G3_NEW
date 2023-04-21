@@ -40,7 +40,6 @@ export default {
         date: new Date(),
         attributes: [],
         id: '',
-        // C_date: [],
     };
     },
     components: {
@@ -92,9 +91,6 @@ export default {
             },
             dataType: "json",
             success: response => {
-                // 使用Array.map()方法提取c_date的值並轉為日期物件
-                // this.disabledDates.push(...response.map(item => new Date(item.c_date))) 
-                // this.disabledDates= [this.disabledDates,...response.map(item => item.c_date)]
                 console.log(response,'res');
                 let array = response[0].c_date
                 array = JSON.parse(array)
