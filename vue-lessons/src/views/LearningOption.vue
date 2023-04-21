@@ -160,9 +160,11 @@ export default {
 
       if (this.Member_id) {
         if (this.click_like.includes(index)) {
+          this.Member_id = $cookies.get("Member_id");
           this.click_like.splice(this.click_like.indexOf(index), 1);
           this.Like_status = "-";
         } else {
+          this.Member_id = $cookies.get("Member_id");
           this.click_like.push(index);
           this.Like_status = "+";
           
@@ -177,7 +179,6 @@ export default {
               Like_status: this.Like_status,
             },
             success: function (response) {
-              //更新html內容
               $("#result").html(response);
               if(self.Like_status === '+'){
               answer.love = answer.love + 1;
@@ -198,20 +199,13 @@ export default {
   },
 
   mounted() {
-    // Promise.all([
-    //   $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php'),
-    //   $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select2.php')
-    // ]).then(([response1, response2]) => {
-    //   // 將兩個回傳的資料合併
-    //   this.study_option = [...response1, ...response2];
-    // });
     $.getJSON(
       "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php"
-    ).then((response) => (this.study_option = response)),
+    ).then((response) => (this.study_option = response));
       // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select2.php').then(response => this.study_option = response);
 
       // 先假放Option_Member_id
-      this.$cookies.set("Option_Member_id", "23");
+      // this.$cookies.set("Option_Member_id", "23");
   },
 };
 </script>

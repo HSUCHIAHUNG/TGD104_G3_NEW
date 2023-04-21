@@ -163,7 +163,7 @@
 <style lang="scss">
   @import "../assets/tgd104-sass/new_style.scss";
 
-  .fa-heart {
+  .product-actions .fa-heart {
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
