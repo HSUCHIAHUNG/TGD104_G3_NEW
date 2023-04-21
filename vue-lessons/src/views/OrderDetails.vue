@@ -26,7 +26,7 @@
                         <div class="order_summary">
                           <h2>
                             {{ order_category }} |
-                            <span>已完成</span>
+                            <span>進行中</span>
                           </h2>
                           <span>{{ order_info.s_category }}</span> |
                           <span>{{ order_info.about_class }}</span>
@@ -63,7 +63,7 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img src="" :alt="order_info.c_photo1" />
+                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
                   <h3>
                     預約顧問：
                     <br />
@@ -134,10 +134,7 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img
-                    src="../assets/image/member/consultant_info.jpg"
-                    alt=""
-                  />
+                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
                   <h3>
                     預約顧問：
                     <br />

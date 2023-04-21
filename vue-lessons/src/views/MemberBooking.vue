@@ -68,7 +68,7 @@
                       </div>
                       <p>{{ price(item.about_cost) }}</p>
                       <router-link
-                        to="/orderdetailstest"
+                        to="/orderdetails"
                         class="btn_blue"
                         @click="setOrderId(item.id)"
                         >查看更多</router-link
@@ -103,7 +103,7 @@
                       </div>
                       <p>{{ price(item.about_cost) }}</p>
                       <router-link
-                        to="/orderdetailstest"
+                        to="/orderdetails"
                         class="btn_blue"
                         @click="setOrderId(item.id)"
                         >查看更多</router-link
