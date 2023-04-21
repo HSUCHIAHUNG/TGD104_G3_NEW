@@ -247,6 +247,7 @@ export default {
   },
 
   mounted() {
+    
     //先假放member_id
     this.$cookies.set("Member_id","2")
     // this.$cookies.remove("member_id");
@@ -287,7 +288,7 @@ export default {
         },
         dataType: "json",
         success: response => {
-          // 将回应数据附加到consultantInfo数组中
+          // 将回应数据附加到consultantInfo数组中    
           Array.prototype.push.apply(this.consultantInfo, response);
           console.log(this.consultantInfo);
         },

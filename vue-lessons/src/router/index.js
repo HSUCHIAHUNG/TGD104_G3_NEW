@@ -38,11 +38,11 @@ const routes = [
     name: "backendlogin",
     component: () => import("../views/backendlogin.vue"),
   },
-  // {
-  //   path: "/memberbookingtest",
-  //   name: "memberbookingtest",
-  //   component: () => import("../views/MemberBookingTest.vue"),
-  // },
+  {
+    path: "/memberbookingtest",
+    name: "memberbookingtest",
+    component: () => import("../views/MemberBookingTest.vue"),
+  },
   {
     path: "/memberfavtest",
     name: "memberfavtest",
