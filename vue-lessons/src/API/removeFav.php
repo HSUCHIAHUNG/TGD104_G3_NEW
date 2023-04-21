@@ -13,12 +13,12 @@ require_once ("conn.php");
 
 // 取得 POST 資料
 $id = $_POST['id'];
-$m_fav = json_encode($_POST['m_fav']); 
+$m_collect = json_encode($_POST['m_collect']); 
 // 傳入時要先包裝成json檔的格式才能再放回資料庫
 
-$sql = "UPDATE member SET m_fav = :m_fav WHERE id = :id";
+$sql = "UPDATE member SET m_collect = :m_collect WHERE id = :id";
 $statement = $pdo->prepare($sql);
-$statement->bindParam(':m_fav', $m_fav);
+$statement->bindParam(':m_collect', $m_collect);
 $statement->bindParam(':id', $id);
 $statement->execute();
 

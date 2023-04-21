@@ -164,28 +164,34 @@
           <div v-if="content == 'PasswordChange'">
             <!-- main_content -->
             <div class="main_content">
-              <form action="" class="pwd_change">
+              <form class="pwd_change" @submit.prevent="changePwd">
                 <div class="form_group">
                   <label for="" class="input_label">原密碼</label>
                   <input
                     type="password"
                     class="input_text"
                     placeholder="原密碼"
+                    v-model="pwd.old"
+                    required
                   />
                   <label for="" class="input_label">新密碼</label>
                   <input
                     type="password"
                     class="input_text"
                     placeholder="新密碼"
+                    v-model="pwd.new"
+                    required
                   />
                   <label for="" class="input_label">請重新確認密碼</label>
                   <input
                     type="password"
                     class="input_text"
                     placeholder="請重新確認密碼"
+                    v-model="pwd.check_new"
+                    required
                   />
                 </div>
-                <button class="btn_blue" @click.prevent="pwdReset">確認</button>
+                <button class="btn_blue" type="submit">確認</button>
               </form>
 
               <!-- 已發送密碼重置信燈箱-->
@@ -250,9 +256,15 @@ export default {
           m_birth: "",
         },
       ],
+      pwd: {
+        old: "",
+        new: "",
+        check_new: "",
+      },
     };
   },
   methods: {
+    // 修改資料
     save() {
       $.ajax({
         url: "http://localhost/NEW_G3/vue-lessons/src/api/memberUpdate.php",
@@ -277,6 +289,33 @@ export default {
           console.log(textStatus, errorThrown);
         },
       });
+    },
+    // 修改密碼
+    changePwd() {
+      let id = this.$cookies.get("Member_id");
+      if (this.pwd.new !== this.pwd.check_new) {
+        alert("輸入的密碼不一致，請重新確認");
+      } else {
+        $.ajax({
+          url: "http://localhost/NEW_G3/vue-lessons/src/api/changePwd.php",
+          dataType: "text",
+          type: "POST",
+          data: {
+            id: id,
+            m_password: this.pwd.old,
+            new_pwd: this.pwd.new,
+          },
+          success: (response) => {
+            alert(response);
+            this.pwd.new = "";
+            this.pwd.old = "";
+            this.pwd.check_new = "";
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+          },
+        });
+      }
     },
   },
   components: {

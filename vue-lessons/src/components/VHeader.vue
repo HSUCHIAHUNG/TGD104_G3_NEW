@@ -485,32 +485,35 @@ export default {
     // AJAX --------------------------------------
     // 送出會員註冊表單
     signUp() {
-      console.log("ok");
-      $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/MSignUp.php",
-        dataType: "text",
-        type: "POST",
-        data: {
-          m_firstname: this.member.m_firstname,
-          m_lastname: this.member.m_lastname,
-          m_id: this.member.m_id,
-          m_nickname: this.member.m_nickname,
-          m_mail: this.member.m_mail,
-          m_phone: this.member.m_phone,
-          m_password: this.member.m_password,
-          m_area: this.member.m_area,
-          m_gender: this.member.m_gender,
-          m_birth: this.member.m_birth,
-        },
-        success: (response) => {
-          this.$cookies.set("Member_id", response);
-          this.$router.push("/member");
-          alert("註冊成功");
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-        },
-      });
+      if (this.member.m_password !== this.member.check_pwd) {
+        alert("請重新確認密碼");
+      } else {
+        $.ajax({
+          url: "http://localhost/NEW_G3/vue-lessons/src/api/MSignUp.php",
+          dataType: "text",
+          type: "POST",
+          data: {
+            m_firstname: this.member.m_firstname,
+            m_lastname: this.member.m_lastname,
+            m_id: this.member.m_id,
+            m_nickname: this.member.m_nickname,
+            m_mail: this.member.m_mail,
+            m_phone: this.member.m_phone,
+            m_password: this.member.m_password,
+            m_area: this.member.m_area,
+            m_gender: this.member.m_gender,
+            m_birth: this.member.m_birth,
+          },
+          success: (response) => {
+            this.$cookies.set("Member_id", response);
+            this.$router.push("/member");
+            alert("註冊成功");
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          },
+        });
+      }
     },
     // 送出會員登入表單
     mLogin() {
@@ -534,7 +537,7 @@ export default {
               console.log(Member_id);
               this.$router.push("/member");
               alert("登入成功");
-            } else if (response[0].m_status == "凍結") {
+            } else {
               alert("請確認帳號權限");
             }
           }

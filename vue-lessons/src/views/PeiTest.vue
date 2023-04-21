@@ -2,11 +2,10 @@
   <div>
     <VHeaderTest></VHeaderTest>
     <UpLoadImg></UpLoadImg>
-    <div v-for="(item, index) in c_list">
+    <div v-for="(item, index) in c_list" :key="index">
       <p>{{ item.c_firstname + item.c_lastname }}</p>
       <img src="" :alt="item.c_photo1" />
-      <p v-if="item.s_title">{{ item.s_title }}</p>
-      <p v-else>{{ item.tr_title }}</p>
+      <p>{{ item.about_title }}</p>
     </div>
 
     <div class="member_body">
@@ -25,15 +24,20 @@
           </div>
           <!-- 下半部 收藏清單內容 -->
           <div class="main_fav_list">
+            <div v-if="favList == null">
+              <h1 class="no_fav">無收藏顧問</h1>
+            </div>
             <ul class="fav_list_area">
               <template v-for="(item, index) in c_list" :key="item.id">
                 <li class="fav_consultant_card">
-                  <router-link to="/TravelGallery" target="_blank"
+                  <router-link
+                    :to="!item.tr_job ? '/LearningGallery' : '/travelGallery'"
+                    target="_blank"
                     ><img :src="item.c_photo1" :alt="item.c_photo1"
                   /></router-link>
                   <h1>{{ item.c_firstname + item.c_lastname }}</h1>
                   <h2>
-                    {{ item.tr_title ? item.tr_title : item.s_title }}
+                    {{ item.about_title }}
                   </h2>
                   <i class="fa-solid fa-heart" @click="removeFav(item.id)"></i>
                 </li>
@@ -98,7 +102,7 @@ export default {
         type: "POST",
         data: {
           id: member_id,
-          m_fav: update_list,
+          m_collect: update_list,
         },
         success: (response) => {
           console.log(response);
@@ -122,30 +126,32 @@ export default {
         },
         success: (response) => {
           console.log(response);
-          this.favList = response[0].m_fav;
+          this.favList = response[0].m_collect;
           console.log(this.favList);
-          $.ajax({
-            url: "http://localhost/NEW_G3/vue-lessons/src/api/memberfavS.php",
-            dataType: "json",
-            type: "POST",
-            data: {
-              id: Member_id,
-            },
-            success: (response) => {
-              let arr = response;
-              console.log(arr);
-              arr.filter((item) => {
-                if (this.favList.includes(item.id)) {
-                  this.c_list.push(item);
-                  console.log(this.c_list);
-                }
-              });
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-              console.log(textStatus, errorThrown);
-            },
-          });
-
+          if (this.favList == null) {
+          } else {
+            $.ajax({
+              url: "http://localhost/NEW_G3/vue-lessons/src/api/memberfavS.php",
+              dataType: "json",
+              type: "POST",
+              data: {
+                id: Member_id,
+              },
+              success: (response) => {
+                let arr = response;
+                console.log(arr);
+                arr.filter((item) => {
+                  if (this.favList.includes(item.id)) {
+                    this.c_list.push(item);
+                    console.log(this.c_list);
+                  }
+                });
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+              },
+            });
+          }
           // if (
           //   response &&
           //   response[0] &&
@@ -181,7 +187,6 @@ export default {
           //   });
           // }
         },
-
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
         },
@@ -191,4 +196,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.no_fav {
+  font-size: 21px;
+}
+</style>
