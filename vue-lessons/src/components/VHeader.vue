@@ -524,13 +524,20 @@ export default {
           m_password: this.mlogin.m_password,
         },
         success: (response) => {
-          console.log(response);
-          this.memberInfo = response;
-          this.$cookies.set("Member_id", this.memberInfo[0].id);
-          let Member_id = $cookies.get("Member_id");
-          console.log(Member_id);
-          this.$router.push("/member");
-          alert("登入成功");
+          if (!response.length) {
+            alert("帳號或密碼不正確");
+          } else {
+            if (response[0].m_status == "正常") {
+              this.memberInfo = response;
+              this.$cookies.set("Member_id", this.memberInfo[0].id);
+              let Member_id = $cookies.get("Member_id");
+              console.log(Member_id);
+              this.$router.push("/member");
+              alert("登入成功");
+            } else if (response[0].m_status == "凍結") {
+              alert("請確認帳號權限");
+            }
+          }
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
