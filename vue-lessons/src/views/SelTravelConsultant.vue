@@ -91,7 +91,7 @@
             <h2>{{ consultant.tr_experience }}</h2>
             <i
               class="fa-regular fa-heart"
-              :class="{ 'fa-solid': isFavorite(consultant.id) || favorites.includes(consultant.id)}"
+              :class="{ 'fa-solid': isFavorite(consultant.id)}"
               @click="toggleFavorite(consultant.id)"
             ></i>
           </li>
@@ -179,7 +179,7 @@ export default {
     consultant_select(id){
       // this.selectedConsultant = id
       this.$cookies.set("selectedConsultant",this.selectedConsultant)
-      this.$router.push({path:'/SelTravelConsultant', query:{'id': id}})
+      // this.$router.push({path:'/SelTravelConsultant', query:{'id': id}})
     },
 
     //點擊愛心收藏
@@ -188,6 +188,7 @@ export default {
     },
     
     toggleFavorite(index) {
+
       if (this.isFavorite(index)) {
         const favoriteIndex = this.favorites.indexOf(index);
         this.favorites.splice(favoriteIndex, 1);
@@ -195,9 +196,7 @@ export default {
         this.favorites.push(index);
       }
       console.log(this.favorites);
-      //{0: 4, 1: 10, 2: 14}
       this.$cookies.set("m_collect",this.favorites);
-      console.log(this.$cookies.get("m_collect"));
 
       
       //撈資料庫對應會員id，更新收藏愛心欄位m_collect
@@ -235,8 +234,8 @@ export default {
 
     //點顧問圖片set 顧問id cookie for顧問詳細頁
     consultantId(consultantId){
-      // this.$cookies.set("Consultant_id",consultantId)
-      this.$router.push({path:'/TravelGallery', query:{'id': consultantId}})
+      this.$cookies.set("Consultant_id",consultantId)
+      // this.$router.push({path:'/TravelGallery', query:{'Datail': consultantId}})
     },
 
     //回上一頁時清除cookie selectedConsultant
@@ -249,7 +248,7 @@ export default {
   mounted() {
     
     //先假放member_id
-    this.$cookies.set("Member_id","2")
+    // this.$cookies.set("Member_id","2")
     // this.$cookies.remove("member_id");
     this.Member_id = this.$cookies.get("Member_id");
     console.log(this.Member_id);
@@ -258,7 +257,7 @@ export default {
     this.selectedConsultant = this.$cookies.get("selectedConsultant");
 
     //抓cookie已收藏愛心給favorites陣列
-    this.favorites = this.$cookies.get("m_collect");
+    // this.favorites = this.$cookies.get("m_collect");
     // console.log(this.favorites);
 
     //抓cookie 地區
