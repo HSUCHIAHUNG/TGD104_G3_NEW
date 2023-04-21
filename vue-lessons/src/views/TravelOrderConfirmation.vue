@@ -61,8 +61,8 @@ export default {
     mounted() {
 
       // 1
-      this.$cookies.set("selectedConsultant",'5')
-      this.$cookies.set("Member_id",'5')
+      // this.$cookies.set("selectedConsultant",'5')
+      // this.$cookies.set("Member_id",'5')
       
       // 2
       this.Consultant_id = $cookies.get("selectedConsultant")

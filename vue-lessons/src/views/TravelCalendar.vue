@@ -36,11 +36,10 @@ export default {
     name: "TravelCalendar",
     data() {
     return {
-        disabledDates: [new Date()],
+        disabledDates: [{end: new Date()}, ],
         date: new Date(),
         attributes: [],
         id: '',
-        // C_date: [],
     };
     },
     components: {
@@ -61,6 +60,7 @@ export default {
                 this.$router.push('/TravelOrderConfirmation');
                 // console.log(this.date); //印出所選日期
                 //所選日期 set cookie
+                this.$cookies.set("Or_booking_date",this.date.toLocaleDateString())
             }
         },
 
@@ -72,6 +72,7 @@ export default {
     },
 
     mounted() {
+        console.log(this.$cookies.get("Or_booking_date"));
         // 第一步:　先從cookie當中抓取顧問id的c_date欄位
         this.id = this.$cookies.get("selectedConsultant")
         console.log(this.id);
@@ -90,9 +91,6 @@ export default {
             },
             dataType: "json",
             success: response => {
-                // 使用Array.map()方法提取c_date的值並轉為日期物件
-                // this.disabledDates.push(...response.map(item => new Date(item.c_date))) 
-                // this.disabledDates= [this.disabledDates,...response.map(item => item.c_date)]
                 console.log(response,'res');
                 let array = response[0].c_date
                 array = JSON.parse(array)

@@ -54,7 +54,7 @@
             <p>📆 請選擇不可被預約日期</p>
             <v-calendar :attributes="attributes" :disabled-dates="disabledDates" @dayclick="onDayClick" />
 
-            <button type="button" class="btn_blue calendar_btn">確認送出</button>
+            <button type="button" class="btn_blue calendar_btn" @click="toCdate">確認送出</button>
 
           </div>
           <!-- calender end-->
@@ -75,6 +75,7 @@ import CSideNav from "../components/CSideNav.vue";
 import CDropDown from "@/components/CDropDown.vue";
 import ConsultantInfoL from "@/components/ConsultantInfoL.vue";
 import ConsultantInfoT from "@/components/ConsultantInfoT.vue";
+import $ from "jquery";
 
 export default {
   name: "ConsultantInfo",
@@ -85,10 +86,9 @@ export default {
       defaultOption: "顧問資訊",
       //日期陣列
       days: [],
-      disabledDates: [new Date(), '2023/4/1', '2023/4/2'],
-      // disabledDates: [new Date()],
-
-      
+      disabledDates: [{end: new Date()},],
+      Test_consultant_id: '',
+      c_date: [],
     };
   },
   components: {
@@ -99,43 +99,134 @@ export default {
     ConsultantInfoL,
     ConsultantInfoT,
     VFooter,
+    $,
   },
 
+  // computed: {
+  //   dates() {
+  //     return this.days.map(day => day.date);
+  //   },
+
+  //   attributes() {
+  //     return this.dates.map(date => ({
+  //       highlight: true,
+  //       dates: date,
+  //       popover:{
+  //         label: '已選擇不可被預約日期',
+  //       },
+  //     }));
+  //   },
+  // },
+  // methods: {
+  //   onDayClick(day) {
+  //     // 檢查被點擊的日期是否在 disabledDates 陣列中
+  //     if (this.disabledDates.includes(day.id)) {
+  //       // 如果在 disabledDates 中，則不執行後續邏輯
+  //       return;
+  //     };
+  //     console.log(day.id);
+
+  //     const idx = this.days.findIndex(d => d.id === day.id);
+  //     if (idx >= 0) {
+  //       this.days.splice(idx, 1);
+  //     } else {
+  //       this.days.push(day.id);
+  //     };
+  //     console.log(this.days);
+  //   },
+  // },
   computed: {
     dates() {
       return this.days.map(day => day.date);
     },
-
     attributes() {
       return this.dates.map(date => ({
         highlight: true,
         dates: date,
-        popover:{
-          label: '已選擇不可被預約日期',
-        },
       }));
     },
   },
   methods: {
     onDayClick(day) {
-      // 檢查被點擊的日期是否在 disabledDates 陣列中
-      if (this.disabledDates.includes(day.date)) {
-        // 如果在 disabledDates 中，則不執行後續邏輯
-        console.log(day.date);
-        return;
-      };
-
       const idx = this.days.findIndex(d => d.id === day.id);
       if (idx >= 0) {
         this.days.splice(idx, 1);
       } else {
-        this.days.push(day.id);
-      };
-      console.log(this.days);
-    },
+        this.days.push({
+          id: day.id,
+          date: day.date,
+        });
+      }
+
+      // console.log(this.days);
+      this.days.forEach(day => {
+        this.c_date.push(day.id)
+        });
+        console.log(this.c_date);
+      },
+
+    // toCdate(){
+    //   //按送出 days 放資料庫 c_date
+    //   $.ajax({
+    //     method: "POST",
+    //     url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Update.php', 
+    //     data: {
+    //         Id: this.Test_consultant_id,
+    //         c_date
+    //     },
+    //     dataType: "json",
+    //     success: response => {
+    //         console.log(response,'res');
+    //         let array = response[0].c_date
+    //         array = JSON.parse(array)
+    //         for (let index = 0; index < array.length; index++) {
+    //             const date = array[index];
+    //             this.disabledDates.push(date)
+                
+    //         }
+
+    //     },
+
+    //     error: function(exception) {
+    //         alert("發生錯誤: " + exception.status);
+    //     },
+
+    //   }); 
+    // }
   },
 
+  mounted() {
+    //假設顧問登入的id
+    this.$cookies.set("Test_consultant_id",'1');
+    this.Test_consultant_id = this.$cookies.get("Test_consultant_id");
+    
+    //select c_date push to disabledDates
+    $.ajax({
+      method: "POST",
+      url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Select.php', 
+      data: {
+          Id: this.Test_consultant_id,
+          
+      },
+      dataType: "json",
+      success: response => {
+          console.log(response,'res');
+          let array = response[0].c_date
+          array = JSON.parse(array)
+          for (let index = 0; index < array.length; index++) {
+              const date = array[index];
+              this.disabledDates.push(date)
+              
+          }
 
+      },
+
+      error: function(exception) {
+          alert("發生錯誤: " + exception.status);
+      },
+
+    }); 
+  },
 
 
 
