@@ -1,49 +1,38 @@
 <template>
-<<<<<<< HEAD
-  <div class="top_detail_introduce">
-    <div class="consultant_gallary">
-      <div class="consultant_gallary_main">
-        <img :src="mainImage" :alt="mainImageAlt" />
-      </div>
-
-      <div class="consultant_gallary_small">
-        <img
-          v-for="(image, index) in images"
-          :key="index"
-          :src="image.small"
-          :alt="image.alt"
-          @click="changeMainImage(index)"
-        />
-=======
-<div>
- <div class="top_detail_introduce">
+  <div>
+    <div class="top_detail_introduce">
       <div class="consultant_gallary">
         <div class="consultant_gallary_main">
-          <img :src="mainImage" :alt="mainImageAlt">
+          <img :src="mainImage" :alt="mainImageAlt" />
         </div>
 
         <div class="consultant_gallary_small">
-          <img v-for="(image, index) in images" 
-              :key="index" 
-              :src="image.small" 
-              :alt="image.alt" 
-              @click="changeMainImage(index)">
+          <img
+            v-for="(image, index) in images"
+            :key="index"
+            :src="image.small"
+            :alt="image.alt"
+            @click="changeMainImage(index)"
+          />
         </div>
       </div>
 
-      <div v-for="(detail, index) in consultantDetail" class="detail_introduce" :key="index">
-        <h1>🌋{{detail.about_title}}</h1>
-        <h2>{{detail.c_nickname}}</h2>
-        <h3>👩🏻‍🤝‍🧑🏻 性別：{{detail.c_gender}}</h3>
-        <h3>🎂 生日：{{detail.c_birth}}</h3>
-        <h3>😀 個性：{{detail.c_personality}}</h3>
-        <h3>🧡 興趣：{{detail.tr_interest}}</h3>
-        <h3>🚩 經歷：{{detail.tr_experience}}</h3>
-        <h3>📋 證照：{{detail.tr_license}}</h3>
-        <h3>💰 費用：{{detail.about_cost}}</h3>
+      <div
+        v-for="(detail, index) in consultantDetail"
+        class="detail_introduce"
+        :key="index"
+      >
+        <h1>🌋{{ detail.about_title }}</h1>
+        <h2>{{ detail.c_nickname }}</h2>
+        <h3>👩🏻‍🤝‍🧑🏻 性別：{{ detail.c_gender }}</h3>
+        <h3>🎂 生日：{{ detail.c_birth }}</h3>
+        <h3>😀 個性：{{ detail.c_personality }}</h3>
+        <h3>🧡 興趣：{{ detail.tr_interest }}</h3>
+        <h3>🚩 經歷：{{ detail.tr_experience }}</h3>
+        <h3>📋 證照：{{ detail.tr_license }}</h3>
+        <h3>💰 費用：{{ detail.about_cost }}</h3>
         <h4>💬 自我介紹</h4>
-        <p>{{detail.about_introduction}}</p>
->>>>>>> bc258ca1bfbf85c49d957778aeeada829d65a752
+        <p>{{ detail.about_introduction }}</p>
       </div>
     </div>
 
@@ -60,7 +49,6 @@
       <h4>💬 自我介紹</h4>
       <p>{{ detail.about_introduction }}</p>
     </div>
-<<<<<<< HEAD
   </div>
 
   <div class="gallery_btn">
@@ -68,9 +56,6 @@
       ><button class="btn_orange">回預約頁面</button></router-link
     >
   </div>
-=======
-</div>
->>>>>>> bc258ca1bfbf85c49d957778aeeada829d65a752
 </template>
 
 <script>
@@ -113,7 +98,7 @@ export default {
       // license: '登山嚮導證',
       // cost: '＄1,500',
       // introduce:'大家好，作為一經歷豐富的登山嚮導，我曾經帶領遊客遊歷過台灣大大小小的山脈，從玉山、合歡山到雪山等等，不管新手或是經驗者都歡迎跟我一起登山！',
-      id:'',
+      id: "",
       Consultant_id: "",
       consultantDetail: [],
     };
