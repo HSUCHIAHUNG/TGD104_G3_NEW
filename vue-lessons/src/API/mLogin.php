@@ -6,13 +6,7 @@
   header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // 資料庫-------------------------------------------
-<<<<<<< HEAD
 require_once ("conn.php");
-=======
-//MySQL相關資訊
-require_once ("conn.php");
-
->>>>>>> bc258ca1bfbf85c49d957778aeeada829d65a752
 // -------------------------------------------
 
 // 取得表單資料
