@@ -33,42 +33,47 @@
         </li>
       </ol>
 
-<!-- 顧問卡 -->
-<div class="product-selection">
-      <template v-for="(product, index) in products" :key="index" >
-        <div v-if="current ==='all' || current === product.about_class"> 
-          <div class="product">
 
-            <!-- 打勾 -->
-            <label>
-              <input  @change=" consultant_select(product.id)"  type="radio" class="option-input radio" name="product" v-model="selectedConsultant" :value="product.id"/>
-            </label>
-            <!-- 打勾 end-->
 
-            <!-- 顧問圖片 -->
-            <router-link to="/LearningGallery" target="_blank" >
-              <div class="product-image">
-                <!-- <img :src="product.image" :alt="product.c_nickname"> -->
-                <img src="../assets/image/consultant02.png" @click="L_consultant_detail(product.id)">
-              </div>
-            </router-link>
-            <!-- 顧問圖片 end -->
+  <!-- 顧問卡 -->
+  <div class="product-selection">
+    <template v-for="(product, index) in products"  >
+      <div v-if="current ==='all' || current === product.about_class" :key="index"> 
+        <div class="product">
+          <!-- 打勾 -->
+          <label>
+            <input  @change=" consultant_select(product.id)"  type="radio" class="option-input radio" name="product" v-model="selectedConsultant" :value="product.id"/>
+          </label>
+          <!-- 打勾 end-->
 
-            <!-- 顧問名.課程title.收藏 -->
-            <div class="product-details">
-              <h3>{{ product.c_nickname }}</h3>
-              <p>{{ product.about_title }}</p>
-              <div class="product-actions">
-                <i class="fa-regular fa-heart" :class="{ 'fa-solid': isFavorite(index) }" @click="toggleFavorite(index)"></i>
-              </div>
+          <!-- 顧問圖片 -->
+          <router-link to="/LearningGallery">
+            <div class="product-image">
+              <!-- <img :src="product.image" :alt="product.c_nickname"> -->
+              <img src="../assets/image/consultant02.png" @click="L_consultant_detail(product.id)">
             </div>
-            <!-- 顧問名.課程title.收藏 end-->
+          </router-link>
+          <!-- 顧問圖片 end -->
 
+          <!-- 顧問名.課程title.愛心 -->
+          <div class="product-details">
+            <h3>{{ product.c_nickname }}</h3>
+            <p>{{ product.about_title }}</p>
+            <div class="product-actions">
+              <i 
+                class="fa-regular fa-heart" 
+                :class="{ 'fa-solid': isFavorite(product.id) }" 
+                @click="toggleFavorite(product.id)">
+              </i>
+            </div>
           </div>
+          <!-- 顧問名.課程title.收藏 end-->
+
         </div>
-      </template>
-    </div>
-    <!-- 顧問卡end -->
+      </div>
+    </template>
+  </div>
+  <!-- 顧問卡end -->
     <div class="learning_go">
       <button class="btn_orange" @click="startBooking">開始預約</button>
     </div>
@@ -79,7 +84,9 @@
 <script>
   import $ from "jquery";
   export default {
-    components: {},
+    components: {
+      $
+    },
     data() {
       return {
         current:'all',
@@ -87,6 +94,7 @@
         favorites: [],
         selectedConsultant: '',
         products: [],
+        Member_id: '',
       };
     },
 
@@ -127,18 +135,77 @@
       },
 
       // 點擊愛心收藏
+      // isFavorite(index) {
+        
+      //   return this.favorites.includes(index);
+      // },
+      // toggleFavorite(index) {
+      //   if (this.isFavorite(index)) {
+      //     const favoriteIndex = this.favorites.indexOf(index);
+      //     this.favorites.splice(favoriteIndex, 1);
+      //   } else {
+      //     this.favorites.push(index);
+      //   }
+      // },
       isFavorite(index) {
-        return this.favorites.includes(index);
-      },
-      toggleFavorite(index) {
-        if (this.isFavorite(index)) {
-          const favoriteIndex = this.favorites.indexOf(index);
-          this.favorites.splice(favoriteIndex, 1);
-        } else {
-          this.favorites.push(index);
-        }
-      },
+      let id = index.toString()
+      return this.favorites.includes(id);
     },
+    
+    toggleFavorite(index) {
+
+      let id = index.toString()
+      if (this.isFavorite(index)) {
+        const favoriteIndex = this.favorites.indexOf(id);
+        this.favorites.splice(favoriteIndex, 1);
+      } else {
+        this.favorites.push(id);
+      }
+      console.log(this.favorites);
+
+
+      
+      //撈資料庫對應會員id，更新收藏愛心欄位m_collect
+      if (this.favorites && this.favorites.length > 0) {
+      $.ajax({
+          method: "POST",
+          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update.php', 
+          data: {
+            M_collect: this.favorites,
+            Id: this.Member_id,
+          },
+          dataType: "text",
+          success: function(response) {
+              alert("收藏成功");
+          },
+          error: function(exception) {
+              alert("發生錯誤: " + exception.status);
+          },
+
+      }); 
+      }else{
+        //讓m_collect值不為null
+        $.ajax({
+          method: "POST",
+          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update2.php', 
+          data: {
+            Id: this.Member_id,
+          },
+          dataType: "text",
+          success: function(response) {
+          },
+          error: function(exception) {
+              alert("發生錯誤: " + exception.status);
+          },
+
+      }); 
+      }
+    },
+
+
+
+
+  },
 
 
     mounted() {
@@ -148,7 +215,37 @@
       this.selectedConsultant = this.$cookies.get("L_consultant_id");
 
       // 先假放Member_id
-      this.$cookies.set("Member_id","1")
+      // this.$cookies.set("Member_id","1")
+      this.Member_id = this.$cookies.get("Member_id");
+
+
+          //撈已收藏愛心，畫面重整時收藏愛心還會存在
+      $.ajax({
+          method: "POST",
+          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningChoose_Select.php', 
+          data: {
+            Id: this.Member_id,
+              
+          },
+          dataType: "json",
+          success: response => {
+            console.log(response,'res');
+              if (response !== null && typeof response !== 'undefined' && response.length > 0) { // 修改判空处理
+              let array = response[0].m_collect;
+              array = JSON.parse(array);
+              for (let index = 0; index < array.length; index++) {
+                const collect = array[index];
+                this.favorites.push(collect);
+              }
+            }
+          },
+          error: function(exception) {
+              alert("發生錯誤: " + exception.status);
+          },
+
+      }); 
+
+
     },
   }
 </script>
