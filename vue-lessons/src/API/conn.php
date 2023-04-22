@@ -3,13 +3,9 @@
  //MySQL相關資訊
     $db_host = "127.0.0.1";
     $db_user = "root";
-<<<<<<< HEAD
 
     $db_pass = "password";
 
-=======
-    $db_pass = "9090yggep";
->>>>>>> ca03d1bf83b02caa331b8db57fd760735a1f16e7
     $db_select = "G3_TEAM";
 
 
