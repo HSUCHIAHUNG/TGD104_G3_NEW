@@ -252,7 +252,7 @@ export default {
 
     //點顧問圖片set 顧問id cookie for顧問詳細頁
     consultantId(consultantId){
-      this.$cookies.set("Consultant_id",consultantId)
+      this.$cookies.set("T_about_consultant",consultantId)
       // this.$router.push({path:'/TravelGallery', query:{'Datail': consultantId}})
     },
 
