@@ -29,6 +29,11 @@ const routes = [
     component: () => import("../views/PeiTest2.vue"),
   },
   {
+    path: "/peitest3",
+    name: "peitest3",
+    component: () => import("../views/PeiTest3.vue"),
+  },
+  {
     path: "/historyorderdetailtest",
     name: "historyorderdetailtest",
     component: () => import("../views/HistoryOrderDetailTest.vue"),
