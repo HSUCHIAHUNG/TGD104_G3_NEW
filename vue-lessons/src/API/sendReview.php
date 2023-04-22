@@ -17,10 +17,10 @@ $comment_title = $_POST['comment_title'];
 $comment_content = $_POST['comment_content'];
 
 $sql = "UPDATE `order` SET 
-        star = ?,
-        comment_title = ?,
-        comment_content = ?,
-        comment_time = NOW()
+        or_star = ?,
+        or_comment_title = ?,
+        or_comment = ?,
+        or_comment_date = NOW()
         WHERE id = '$order_id'";
 
 

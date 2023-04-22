@@ -297,7 +297,7 @@ export default {
         alert("輸入的密碼不一致，請重新確認");
       } else {
         $.ajax({
-          url: "http://localhost/NEW_G3/vue-lessons/src/api/changePwd.php",
+          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/changePwd.php",
           dataType: "text",
           type: "POST",
           data: {

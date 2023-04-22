@@ -67,8 +67,6 @@
 
     <!-- 顧問登入燈箱 -->
 
-
-
     <div id="consultant_lightbox" class="none">
       <article>
         <div class="title_img">
@@ -76,7 +74,6 @@
         </div>
 
         <div class="inputs">
-
           <form @submit.prevent="cLogin">
             <h1>顧問登入</h1>
             <label for="" class="input_label">帳號(信箱)</label>
@@ -94,19 +91,20 @@
               v-model="clogin.c_password"
               required
             />
-            <br>
+            <br />
             <a @click.prevent="forgetPwd">忘記密碼?</a>
             <div class="btns">
-              <router-link to="/Join"><button type="button" class="outline_btn_blue">加入陪你</button></router-link>
+              <router-link to="/Join"
+                ><button type="button" class="outline_btn_blue">
+                  加入陪你
+                </button></router-link
+              >
               <button type="submit" class="btn_blue">登入</button>
             </div>
           </form>
-
         </div>
       </article>
     </div>
-
-
 
     <!-- 顧問登入燈箱 End-->
 
@@ -588,22 +586,37 @@ export default {
           c_password: this.clogin.c_password,
         },
         success: (response) => {
-          console.log(response);
-          this.consultantInfo = response;
-          this.$cookies.set("Consultant_id", this.consultantInfo[0].id);
-          let Consultant_id = $cookies.get("Consultant_id");
-          console.log(Consultant_id);
-          this.$router.push("/consultant");
-          alert("登入成功");
+          // console.log(response);
+          // this.consultantInfo = response;
+          // this.$cookies.set("Consultant_id", this.consultantInfo[0].id);
+          // let Consultant_id = $cookies.get("Consultant_id");
+          // console.log(Consultant_id);
+          // this.$router.push("/consultant");
+          // alert("登入成功");
+          if (!response.length) {
+            alert("帳號或密碼不正確");
+          } else {
+            if (
+              response[0].c_status == "正常" &&
+              response[0].c_review_status == "通過"
+            ) {
+              this.consultantInfo = response;
+              this.$cookies.set("Consultant_id", this.consultantInfo[0].id);
+              let Consultant_id = $cookies.get("Consultant_id");
+              // console.log(Member_id);
+              this.$router.push("/consultant");
+              alert("登入成功");
+            } else {
+              alert("請確認帳號權限");
+            }
+          }
         },
         error: function (jqXHR, textStatus, errorThrown) {
           // console.log(textStatus, errorThrown);
-          console.log("aaa")
+          console.log("aaa");
         },
       });
     },
-
-
   },
 };
 </script>

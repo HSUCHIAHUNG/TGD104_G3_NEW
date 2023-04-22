@@ -9,6 +9,11 @@ const routes = [
     component: HomeView,
   },
   {
+    path: "/travelgame2",
+    name: "travelgame2",
+    component: () => import("../views/TravelGame2.vue"),
+  },
+  {
     path: "/memberhistorytest",
     name: "memberhistorytest",
     component: () => import("../views/MemberHistoryTest.vue"),
@@ -27,6 +32,11 @@ const routes = [
     path: "/peitest2",
     name: "peitest2",
     component: () => import("../views/PeiTest2.vue"),
+  },
+  {
+    path: "/peitest3",
+    name: "peitest3",
+    component: () => import("../views/PeiTest3.vue"),
   },
   {
     path: "/historyorderdetailtest",

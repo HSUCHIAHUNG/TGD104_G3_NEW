@@ -16,9 +16,9 @@ require_once ("conn.php");
 $order_id = $_POST['order_id'];
 
 
-$sql = "select c.id, c.c_firstname, c.c_lastname, c.c_idphoto,
-a.s_title, a.s_category, a.s_class, a.s_cost,a.about_cid,
-o.id, o.so_order_date, o.so_booking_date
+$sql = "select c.id, c.c_firstname, c.c_lastname, c.c_photo1,c.c_area,
+a.about_title, a.s_category, a.about_class, a.about_cost,a.about_cid,
+o.id, o.or_booking_date, o.or_order_date
 from ( (about_consultant a
 Join consultant c on a.about_cid = c.id)
 Join `order` o on a.about_cid = o.consultant_id) where o.id = ?";

@@ -6,8 +6,13 @@
         enctype="multipart/form-data"
         @submit.prevent="uploadFile($event)"
       >
-        <i class="fa fa-camera"></i>
-        <input type="file" name="profile" id="file-input" />
+        <label for="file-input"><i class="fa fa-camera"></i></label>
+        <input
+          type="file"
+          name="profile"
+          id="file-input"
+          style="display: none"
+        />
         &nbsp;
         <!-- <input type="button" value="上傳檔案" @click.prevent="uploadFile" /> -->
         <button type="submit" value="">上傳檔案</button>
@@ -17,7 +22,7 @@
     <!------------avatar----------->
     <div>
       <section class="top_box">
-        <img class="avatar" :src="filename" style="border: 3px solid red" />
+        <img class="avatar" :src="imgUrl" style="border: 3px solid red" />
         <br />
       </section>
     </div>
@@ -43,7 +48,7 @@ export default {
       console.log(formData);
 
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/SingleFile.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/SingleFile.php",
         type: "POST",
         data: formData,
         dataType: "text",
@@ -54,20 +59,20 @@ export default {
           this.filename = `http://localhost/img/${response}`;
           console.log(this.filename);
 
-          // $.ajax({
-          //   url: "http://localhost/NEW_G3/vue-lessons/src/api/selectImg.php",
-          //   dataType: "json",
-          //   type: "POST",
-          //   data: {},
-          //   success: (response) => {
-          //     console.log(response[0].m_photo);
-          //     this.imgUrl = `http://localhost/NEW_G3/vue-lessons/public/upload/${response[0].m_photo}`;
-          //     console.log(this.imgUrl);
-          //   },
-          //   error: function (jqXHR, textStatus, errorThrown) {
-          //     console.log(textStatus, errorThrown);
-          //   },
-          // });
+          $.ajax({
+            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+            dataType: "json",
+            type: "POST",
+            data: {},
+            success: (response) => {
+              console.log(response[0].m_photo);
+              // this.imgUrl = `http://localhost/TGD104_G3_NEW/vue-lessons/public/upload/${response[0].m_photo}`;
+              // console.log(this.imgUrl);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+            },
+          });
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(jqXHR, textStatus, errorThrown);
@@ -75,23 +80,23 @@ export default {
       });
 
       // select 圖片
-      /*
-      $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/selectImg.php",
-        dataType: "json",
-        type: "POST",
-        data: {},
-        success: (response) => {
-          console.log(response[0].m_photo);
-          this.imgUrl = `http://localhost/NEW_G3/vue-lessons/public/upload/${response[0].m_photo}`;
-          console.log(this.imgUrl);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-        },
-      });
-      */
     },
+  },
+  mounted() {
+    $.ajax({
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+      dataType: "json",
+      type: "POST",
+      data: {},
+      success: (response) => {
+        console.log(response[0].m_photo);
+        this.imgUrl = `http://localhost/img/${response[0].m_photo}`;
+        console.log(this.imgUrl);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      },
+    });
   },
 };
 </script>

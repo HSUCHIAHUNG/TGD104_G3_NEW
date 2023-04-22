@@ -10,11 +10,12 @@
         </div>
         <!------------ 主要區塊 ------------>
         <div class="order_main">
-          <!-- 訂單資訊 -->
+          <!------------- 訂單資訊 ------------->
           <div class="order_area">
             <div class="order_header">
               <h1>預約明細</h1>
             </div>
+            <!-- 學習訂單 -->
             <template v-if="order_category == '陪你學習'">
               <div class="order_content">
                 <div>
@@ -28,32 +29,32 @@
                             <span>已完成</span>
                           </h2>
                           <span>{{ order_info.s_category }}</span> |
-                          <span>{{ order_info.s_class }}</span>
+                          <span>{{ order_info.about_class }}</span>
                           <ul class="order_content_details">
                             <li>
                               <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                                "AY" + order_info.id
+                                "ordernum" + order_info.id
                               }}
                             </li>
                             <li>
                               <i class="fa-solid fa-dollar-sign"></i
-                              >行程價格：{{ order_info.s_cost }}
+                              >行程價格：{{ price(order_info.about_cost) }}
                             </li>
                             <li>
                               <i class="fa-regular fa-calendar"></i>行程日期：
-                              {{ order_info.so_booking_date }}
+                              {{ order_info.or_booking_date }}
                             </li>
                             <li>
                               <i class="fa-solid fa-cart-shopping"></i
-                              >訂購日期：{{ order_info.so_order_date }}
+                              >訂購日期：{{ order_info.or_order_date }}
                             </li>
                           </ul>
                         </div>
                       </div>
                       <div class="order_right">
                         <div class="date">
-                          {{ getMonthAbbreviation(order_info.so_booking_date) }}
-                          <span>{{ getDate(order_info.so_booking_date) }}</span>
+                          {{ getMonthAbbreviation(order_info.or_booking_date) }}
+                          <span>{{ getDate(order_info.or_booking_date) }}</span>
                         </div>
                       </div>
                     </div>
@@ -62,7 +63,7 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img src="" :alt="order_info.c_idphoto" />
+                  <img src="" :alt="order_info.c_photo1" />
                   <h3>
                     預約顧問：
                     <br />
@@ -70,7 +71,7 @@
                       order_info.c_firstname + order_info.c_lastname
                     }}</span
                     >｜
-                    <span>{{ order_info.s_title }}</span>
+                    <span>{{ order_info.about_title }}</span>
                   </h3>
                 </div>
                 <router-link
@@ -85,6 +86,7 @@
                 >
               </div>
             </template>
+            <!-- 旅行訂單 -->
             <template v-if="order_category == '陪你旅行'">
               <div class="order_content">
                 <div>
@@ -154,7 +156,7 @@
               </div>
             </template>
           </div>
-          <!-- 訂單訊息 -->
+          <!-----------訂單訊息 ------------->
           <div class="order_area">
             <div class="message_header">
               <h2>訂單訊息</h2>
@@ -230,7 +232,7 @@ export default {
   name: "OrderDetails",
   data() {
     return {
-      order_category: "陪你學習",
+      order_category: "",
       order_info: [],
       order_message: [],
       send_message: "",
@@ -279,8 +281,7 @@ export default {
     // 查看顧問
     setConsultantId(id) {
       this.$cookies.set("Consultant_id", id);
-      let c_id = this.$cookies.get("Consultant_id");
-      console.log(c_id);
+      this.$cookies.set("L_about_consultant", id);
     },
     // 會員發送訊息
     sendMessage() {
@@ -290,7 +291,7 @@ export default {
       let vm = this;
 
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/memberMessage.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberMessage.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -310,6 +311,10 @@ export default {
         },
       });
     },
+    // 加上$符號/千分位
+    price(price) {
+      return `$${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    },
   },
   mounted() {
     let Order_id = this.$cookies.get("Order_id");
@@ -317,7 +322,7 @@ export default {
 
     // 學習訂單
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/orderDetails.php",
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderDetails.php",
       dataType: "json",
       type: "POST",
       data: {
@@ -326,8 +331,12 @@ export default {
       success: (response) => {
         this.order_info = response[0];
         console.log(this.order_info);
+        console.log(this.order_info.s_category);
         console.log(this.order_info.about_cid);
         this.$cookies.set("Consultant_id", this.order_info.about_cid);
+        if (this.order_info.s_category) {
+          this.order_category = "陪你學習";
+        }
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
@@ -338,7 +347,7 @@ export default {
     // -----------------------------------
     // 取得訂單訊息
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/orderMessage.php",
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderMessage.php",
       dataType: "json",
       type: "POST",
       data: {

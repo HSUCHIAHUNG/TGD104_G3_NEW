@@ -263,7 +263,7 @@ export default {
       let member_id = this.$cookies.get("Member_id");
       // 更新會員收藏清單
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/removeFav.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/removeFav.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -289,7 +289,7 @@ export default {
     let Member_id = $cookies.get("Member_id");
     if (Member_id) {
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/memberfav.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberfav.php",
         dataType: "json",
         type: "POST",
         data: {
@@ -302,7 +302,7 @@ export default {
           if (this.favList == null) {
           } else {
             $.ajax({
-              url: "http://localhost/NEW_G3/vue-lessons/src/api/memberfavS.php",
+              url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberfavS.php",
               dataType: "json",
               type: "POST",
               data: {
