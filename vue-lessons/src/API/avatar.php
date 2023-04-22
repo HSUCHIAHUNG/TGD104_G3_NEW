@@ -13,15 +13,15 @@
 require_once ("conn.php");
 // -------------------------------------
 
-$order_id = $_POST['order_id'];
+$member_id = $_POST['member_id'];
 
 
-$sql = "select or_star, or_comment_title,or_comment 
-from `order` where id = ?";
+$sql = "select m_firstname,m_lastname
+from member where id = ?";
 
 
 $statement = $pdo->prepare($sql);
-$statement->bindValue(1,$order_id);
+$statement->bindValue(1,$member_id);
 $statement->execute();
 
 // 取得資料 

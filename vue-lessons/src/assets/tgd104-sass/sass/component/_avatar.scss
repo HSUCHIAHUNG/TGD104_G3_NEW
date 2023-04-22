@@ -3,32 +3,33 @@
   background-color: $clear_white;
   border-radius: 5px;
   border: 1px solid $bg_gray;
-  .avatar {
-    border-radius: 50%;
-    // background-image: url("../../image/member/avatar.jpg");
-    background-position: -50px -20px;
-    background-repeat: no-repeat;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
-    vertical-align: middle;
-    margin-top: 25px;
+  #upload-form {
+    margin-top: 20px;
     position: relative;
-    a {
-      color: $gray;
+    .avatar {
+      display: block;
+      border: 0;
+      outline: 0;
+      background-image: url(../../image/member/avatar.jpg);
+      border-radius: 50%;
+      background-position: -50px -20px;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
     }
     i {
-      position: absolute;
-      bottom: 10px;
-      right: 0px;
       background-color: $clear_white;
       border-radius: 50%;
       padding: 5px;
+      position: absolute;
+      top: 75px;
+      right: 60px;
       &:hover {
         color: $dark_blue;
       }
     }
   }
+
   .avatar.c-avatar {
     background-image: url("../../image/member/consultant_info.jpg");
     background-position: center center;
@@ -38,5 +39,22 @@
     text-align: center;
     font-weight: 500;
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    #upload-form {
+      i {
+        top: 75px;
+        right: 50px;
+      }
+    }
+  }
+  @media screen and (max-width: 1125px) {
+    #upload-form {
+      i {
+        top: 75px;
+        right: 40px;
+      }
+    }
   }
 }

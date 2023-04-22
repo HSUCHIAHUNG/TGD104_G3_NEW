@@ -67,8 +67,6 @@
 
     <!-- 顧問登入燈箱 -->
 
-
-
     <div id="consultant_lightbox" class="none">
       <article>
         <div class="title_img">
@@ -76,7 +74,6 @@
         </div>
 
         <div class="inputs">
-
           <form @submit.prevent="cLogin">
             <h1>顧問登入</h1>
             <label for="" class="input_label">帳號(信箱)</label>
@@ -94,19 +91,20 @@
               v-model="clogin.c_password"
               required
             />
-            <br>
+            <br />
             <a @click.prevent="forgetPwd">忘記密碼?</a>
             <div class="btns">
-              <router-link to="/Join"><button type="button" class="outline_btn_blue">加入陪你</button></router-link>
+              <router-link to="/Join"
+                ><button type="button" class="outline_btn_blue">
+                  加入陪你
+                </button></router-link
+              >
               <button type="submit" class="btn_blue">登入</button>
             </div>
           </form>
-
         </div>
       </article>
     </div>
-
-
 
     <!-- 顧問登入燈箱 End-->
 
@@ -580,7 +578,7 @@ export default {
     cLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/cLogin.php",
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/cLogin.php",
         dataType: "json",
         type: "POST",
         data: {
@@ -598,12 +596,10 @@ export default {
         },
         error: function (jqXHR, textStatus, errorThrown) {
           // console.log(textStatus, errorThrown);
-          console.log("aaa")
+          console.log("aaa");
         },
       });
     },
-
-
   },
 };
 </script>

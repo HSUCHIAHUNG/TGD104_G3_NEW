@@ -6,8 +6,13 @@
         enctype="multipart/form-data"
         @submit.prevent="uploadFile($event)"
       >
-        <i class="fa fa-camera"></i>
-        <input type="file" name="profile" id="file-input" />
+        <label for="file-input"><i class="fa fa-camera"></i></label>
+        <input
+          type="file"
+          name="profile"
+          id="file-input"
+          style="display: none"
+        />
         &nbsp;
         <!-- <input type="button" value="上傳檔案" @click.prevent="uploadFile" /> -->
         <button type="submit" value="">上傳檔案</button>

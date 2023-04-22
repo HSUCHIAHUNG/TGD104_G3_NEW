@@ -27,7 +27,7 @@ $m_birth = $_POST['m_birth'];
 // 將日期轉換為資料庫可以識別的格式
 $formatted_date  = date('Y-m-d', strtotime($m_birth)); 
 
-$sql = "INSERT INTO member(m_firstname, m_lastname, m_id, m_nickname, m_mail, m_phone, m_password, m_area, m_gender, m_birth, m_create_date,m_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(),'正常')";
+$sql = "INSERT INTO member(m_firstname, m_lastname, m_id, m_nickname, m_mail, m_phone, m_password, m_area, m_gender, m_birth, m_create_date, m_status, m_collect) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(), '正常', JSON_ARRAY())";
 
 $statement = $pdo->prepare($sql);
 $statement->bindValue(1,$m_firstname);
