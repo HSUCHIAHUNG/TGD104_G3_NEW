@@ -8,25 +8,28 @@
 // 資料庫-------------------------------------------
 //MySQL相關資訊
 require_once ("conn.php");
-
 // -------------------------------------------
 
-// 取得表單資料
-$m_mail = htmlspecialchars($_POST['m_mail']);
-$m_password = htmlspecialchars($_POST['m_password']);
- 
+// 取得cookies 資料
+$id = $_POST['id'];
 
-$sql = "SELECT * FROM member WHERE m_mail = ? and m_password = ?";
+$sql = "SELECT * FROM consultant WHERE id = ?";
 
 
 $statement = $pdo->prepare($sql);
-$statement->bindValue(1,$m_mail);
-$statement->bindValue(2,$m_password);
+$statement->bindValue(1,$id);
 $statement->execute();
 
 // 取得資料 
 $data = $statement->fetchAll();
 echo json_encode($data);
 
+// if(count($data)>0){
+   
+// } else {
+  
+// }
+
+// echo $m_firstname.$m_lastname.$m_mail.$m_birth.$m_password;
 
 ?>

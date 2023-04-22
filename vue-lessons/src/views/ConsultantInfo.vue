@@ -87,7 +87,7 @@ export default {
       //日期陣列
       days: [],
       disabledDates: [{end: new Date()},],
-      Test_consultant_id: '',
+      Consultant_id: '',
       c_date: [],
     };
   },
@@ -102,39 +102,6 @@ export default {
     $,
   },
 
-  // computed: {
-  //   dates() {
-  //     return this.days.map(day => day.date);
-  //   },
-
-  //   attributes() {
-  //     return this.dates.map(date => ({
-  //       highlight: true,
-  //       dates: date,
-  //       popover:{
-  //         label: '已選擇不可被預約日期',
-  //       },
-  //     }));
-  //   },
-  // },
-  // methods: {
-  //   onDayClick(day) {
-  //     // 檢查被點擊的日期是否在 disabledDates 陣列中
-  //     if (this.disabledDates.includes(day.id)) {
-  //       // 如果在 disabledDates 中，則不執行後續邏輯
-  //       return;
-  //     };
-  //     console.log(day.id);
-
-  //     const idx = this.days.findIndex(d => d.id === day.id);
-  //     if (idx >= 0) {
-  //       this.days.splice(idx, 1);
-  //     } else {
-  //       this.days.push(day.id);
-  //     };
-  //     console.log(this.days);
-  //   },
-  // },
   computed: {
     dates() {
       return this.days.map(day => day.date);
@@ -143,6 +110,9 @@ export default {
       return this.dates.map(date => ({
         highlight: true,
         dates: date,
+        popover:{
+          label: '已選擇不可被預約日期',
+        },
       }));
     },
   },
@@ -158,54 +128,45 @@ export default {
         });
       }
 
-      // console.log(this.days);
+
+    },
+
+    toCdate(){
+      //按送出 days 更新放資料庫 c_date
       this.days.forEach(day => {
         this.c_date.push(day.id)
-        });
-        console.log(this.c_date);
-      },
+      });
+      console.log(this.c_date);
+      $.ajax({
+        method: "POST",
+        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Update.php', 
+        data: {
+            Id: this.Consultant_id,
+            C_date: this.c_date,
+        },
+        dataType: "text",
+        success: response => {
+          alert("送出成功");
+        },
 
-    // toCdate(){
-    //   //按送出 days 放資料庫 c_date
-    //   $.ajax({
-    //     method: "POST",
-    //     url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Update.php', 
-    //     data: {
-    //         Id: this.Test_consultant_id,
-    //         c_date
-    //     },
-    //     dataType: "json",
-    //     success: response => {
-    //         console.log(response,'res');
-    //         let array = response[0].c_date
-    //         array = JSON.parse(array)
-    //         for (let index = 0; index < array.length; index++) {
-    //             const date = array[index];
-    //             this.disabledDates.push(date)
-                
-    //         }
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
 
-    //     },
-
-    //     error: function(exception) {
-    //         alert("發生錯誤: " + exception.status);
-    //     },
-
-    //   }); 
-    // }
+      }); 
+    }
   },
 
   mounted() {
-    //假設顧問登入的id
-    this.$cookies.set("Test_consultant_id",'1');
-    this.Test_consultant_id = this.$cookies.get("Test_consultant_id");
+    //抓cookie顧問登入id
+    this.Consultant_id = this.$cookies.get("Consultant_id");
     
-    //select c_date push to disabledDates
+    // select c_date push to disabledDates
     $.ajax({
       method: "POST",
       url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Select.php', 
       data: {
-          Id: this.Test_consultant_id,
+          Id: this.Consultant_id,
           
       },
       dataType: "json",
