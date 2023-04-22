@@ -128,7 +128,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import OrderSum from "../components/OrderSum.vue";
-
+import $ from "jquery";
 export default {
   name: "MemberFav",
   data() {
@@ -144,6 +144,7 @@ export default {
     SideNav,
     DropDown,
     OrderSum,
+    $
   },
   methods: {
     // 加上$符號/千分位
