@@ -18,7 +18,7 @@ export default {
     uploadFile() {
       let formData = new FormData($("#upload-form")[0]);
       $.ajax({
-        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/SingleFile.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/SingleFile.php",
         type: "POST",
         data: formData,
         dataType: "text",

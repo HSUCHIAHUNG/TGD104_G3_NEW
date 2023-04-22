@@ -22,7 +22,7 @@
     <!------------avatar----------->
     <div>
       <section class="top_box">
-        <img class="avatar" :src="filename" style="border: 3px solid red" />
+        <img class="avatar" :src="imgUrl" style="border: 3px solid red" />
         <br />
       </section>
     </div>
@@ -48,7 +48,7 @@ export default {
       console.log(formData);
 
       $.ajax({
-        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/SingleFile.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/SingleFile.php",
         type: "POST",
         data: formData,
         dataType: "text",
@@ -59,20 +59,20 @@ export default {
           this.filename = `http://localhost/img/${response}`;
           console.log(this.filename);
 
-          // $.ajax({
-          //   url: "http://localhost/TGD_104_G3/vue-lessons/src/api/selectImg.php",
-          //   dataType: "json",
-          //   type: "POST",
-          //   data: {},
-          //   success: (response) => {
-          //     console.log(response[0].m_photo);
-          //     this.imgUrl = `http://localhost/TGD_104_G3/vue-lessons/public/upload/${response[0].m_photo}`;
-          //     console.log(this.imgUrl);
-          //   },
-          //   error: function (jqXHR, textStatus, errorThrown) {
-          //     console.log(textStatus, errorThrown);
-          //   },
-          // });
+          $.ajax({
+            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+            dataType: "json",
+            type: "POST",
+            data: {},
+            success: (response) => {
+              console.log(response[0].m_photo);
+              // this.imgUrl = `http://localhost/TGD104_G3_NEW/vue-lessons/public/upload/${response[0].m_photo}`;
+              // console.log(this.imgUrl);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+            },
+          });
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(jqXHR, textStatus, errorThrown);
@@ -80,23 +80,23 @@ export default {
       });
 
       // select 圖片
-      /*
-      $.ajax({
-        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/selectImg.php",
-        dataType: "json",
-        type: "POST",
-        data: {},
-        success: (response) => {
-          console.log(response[0].m_photo);
-          this.imgUrl = `http://localhost/TGD_104_G3/vue-lessons/public/upload/${response[0].m_photo}`;
-          console.log(this.imgUrl);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-        },
-      });
-      */
     },
+  },
+  mounted() {
+    $.ajax({
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+      dataType: "json",
+      type: "POST",
+      data: {},
+      success: (response) => {
+        console.log(response[0].m_photo);
+        this.imgUrl = `http://localhost/img/${response[0].m_photo}`;
+        console.log(this.imgUrl);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      },
+    });
   },
 };
 </script>

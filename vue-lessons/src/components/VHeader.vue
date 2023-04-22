@@ -578,7 +578,7 @@ export default {
     cLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/cLogin.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/cLogin.php",
         dataType: "json",
         type: "POST",
         data: {

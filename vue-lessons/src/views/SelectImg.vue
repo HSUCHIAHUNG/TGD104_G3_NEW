@@ -29,7 +29,7 @@ export default {
   methods: {
     selectImg() {
       $.ajax({
-        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/selectImg.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
         dataType: "json",
         type: "POST",
         data: {},
@@ -46,13 +46,13 @@ export default {
   },
   mounted() {
     $.ajax({
-      url: "http://localhost/TGD_104_G3/vue-lessons/src/api/selectImg.php",
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
       dataType: "json",
       type: "POST",
       data: {},
       success: (response) => {
         console.log(response[0].m_photo);
-        this.imgUrl = `http://localhost/TGD_104_G3/vue-lessons/public/upload/${response[0].m_photo}`;
+        this.imgUrl = `http://localhost/TGD104_G3_NEW/vue-lessons/public/upload/${response[0].m_photo}`;
         console.log(this.imgUrl);
       },
       error: function (jqXHR, textStatus, errorThrown) {

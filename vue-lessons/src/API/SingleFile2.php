@@ -26,7 +26,7 @@ require_once ("conn.php");
         $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
         
         //檔案最終存放位置
-        $filePath = $ServerRoot."/TGD_104_G3/vue-lessons/public/upload/".$fileName;
+        $filePath = $ServerRoot."/TGD104_G3_NEW/vue-lessons/public/upload/".$fileName;
   
         //將暫存檔搬移到正確位置
         move_uploaded_file($filePath_Temp, $filePath);
@@ -49,8 +49,8 @@ require_once ("conn.php");
         // echo "<br/>";
         // echo "副檔名：".getExtensionName($filePath);
         // echo "<br/>";
-        // echo '<img src="http://localhost/TGD_104_G3/vue-lessons/public/upload/'.$fileName.'"/>';
-        // echo "http://localhost/TGD_104_G3/vue-lessons/public/upload/'.$fileName.'";
+        // echo '<img src="http://localhost/TGD104_G3_NEW/vue-lessons/public/upload/'.$fileName.'"/>';
+        // echo "http://localhost/TGD104_G3_NEW/vue-lessons/public/upload/'.$fileName.'";
         // echo '上傳成功';
 
         // $sql = "select m.m_photo from member
