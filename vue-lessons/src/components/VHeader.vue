@@ -517,7 +517,7 @@ export default {
         alert("請重新確認密碼");
       } else {
         $.ajax({
-          url: "http://localhost/NEW_G3/vue-lessons/src/api/MSignUp.php",
+          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MSignUp.php",
           dataType: "text",
           type: "POST",
           data: {
@@ -547,7 +547,7 @@ export default {
     mLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/mLogin.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/mLogin.php",
         dataType: "json",
         type: "POST",
         data: {
@@ -588,13 +588,27 @@ export default {
           c_password: this.clogin.c_password,
         },
         success: (response) => {
-          console.log(response);
-          this.consultantInfo = response;
-          this.$cookies.set("Consultant_id", this.consultantInfo[0].id);
-          let Consultant_id = $cookies.get("Consultant_id");
-          console.log(Consultant_id);
-          this.$router.push("/consultant");
-          alert("登入成功");
+          // console.log(response);
+          // this.consultantInfo = response;
+          // this.$cookies.set("Consultant_id", this.consultantInfo[0].id);
+          // let Consultant_id = $cookies.get("Consultant_id");
+          // console.log(Consultant_id);
+          // this.$router.push("/consultant");
+          // alert("登入成功");
+          if (!response.length) {
+            alert("帳號或密碼不正確");
+          } else {
+            if (response[0].c_status == "正常" && response[0].c_review_status =="通過") {
+              this.consultantInfo = response;
+              this.$cookies.set("Consultant_id", this.consultantInfo[0].id);
+              let Consultant_id = $cookies.get("Consultant_id");
+              // console.log(Member_id);
+              this.$router.push("/consultant");
+              alert("登入成功");
+            } else {
+              alert("請確認帳號權限");
+            }
+          }
         },
         error: function (jqXHR, textStatus, errorThrown) {
           // console.log(textStatus, errorThrown);
@@ -707,6 +721,8 @@ export default {
     }
   }
 }
+
+
 
 //  @import "../../tgd104-sass/new_style.scss";
 </style>

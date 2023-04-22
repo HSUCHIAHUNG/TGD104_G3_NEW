@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div v-for="(detail, index) in consultantDetail" class="detail_introduce">
+    <!-- <div v-for="(detail, index) in consultantDetail" class="detail_introduce">
       <h1>🌋{{ detail.about_title }}</h1>
       <h2>{{ detail.c_nickname }}</h2>
       <h3>👩🏻‍🤝‍🧑🏻 性別：{{ detail.c_gender }}</h3>
@@ -42,7 +42,7 @@
       <h3>💰 費用：{{ detail.about_cost }}</h3>
       <h4>💬 自我介紹</h4>
       <p>{{ detail.about_introduction }}</p>
-    </div>
+    </div> -->
   </div>
 
   <div class="gallery_btn">

@@ -69,7 +69,7 @@
         // 2
         this.Consultant_id = $cookies.get("L_consultant_id")
         this.Member_id = $cookies.get("Member_id")
-        this.c_date = $cookies.get("Member_id")
+        this.c_date = $cookies.get("Or_booking_date")
 
         // 測試
         // console.log(this.Consultant_id);

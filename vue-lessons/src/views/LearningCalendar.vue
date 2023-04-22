@@ -13,7 +13,6 @@
             :attributes="attributes"
             mode="date"
         />
-
         <div class="datePicker_button">
             <!-- <a href="/SelTravelConsultant"><button class="outline_btn_orange">回上一頁</button></a> -->
             <router-link to="/LearningChoose"><button class="outline_btn_orange">回上一頁</button></router-link>
@@ -35,10 +34,11 @@ export default {
     name: "LearningCalendar",
     data() {
     return {
-        disabledDates: [new Date(),],
+        disabledDates: [{end: new Date()}, ],
         date: new Date(),
         C_date: [],
-        L_consultant_id_calendar: '',
+        // L_consultant_id_calendar: '',
+        id: '',
     };
     },
     components: {
@@ -46,7 +46,7 @@ export default {
         VFooter,
         Calendar,
         DatePicker,
-        $
+        $,
     },
 
     methods: {
@@ -56,30 +56,51 @@ export default {
                 alert('請選擇日期');
             } else {
                 this.$router.push('/LearningOrderConfirmation');
-                console.log(this.date); //印出所選日期
+                // console.log(this.date); //印出所選日期
+
+                this.$cookies.set("Or_booking_date",this.date.toLocaleDateString())
             }
-        }
+        },
+            //回上一頁時清除cookie L_consultant_id
+        removeId(){
+            this.$cookies.remove("L_consultant_id");
+        },
     },
     mounted() {
-        this.L_consultant_id_calendar = this.$cookies.get("L_consultant_id");
-        console.log(this.L_consultant_id_calendar);
+        // this.L_consultant_id_calendar = this.$cookies.get("L_consultant_id");
+        // console.log(this.L_consultant_id_calendar);
+        console.log(this.$cookies.get("Or_booking_date"));
+
+        // 先從cookies當中抓取顧問id的c_date欄位
+        this.id = this.$cookies.get("L_consultant_id")
+        console.log(this.id);
+        console.log(this.disabledDates);
 
 
-        // $.ajax({
-        //         method: "POST",
-        //         url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningCalendar_Select.php', 
-        //         data: {
-        //         Id: this.L_consultant_id_detail,         
-        //         },
-        //         dataType: "json",
-        //         success: response => {
-        //             this.disabledDates.push(...response.map(item => item.c_date)) 
-        //         },
-        //         error: function(exception) {
-        //             alert("發生錯誤: " + exception.status);
-        //         },
+        $.ajax({
+                method: "POST",
+                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningCalendar_Select.php', 
+                data: {
+                    Id: this.id,         
+                },
+                dataType: "json",
+                success: response => {
+                    console.log(response,'res');
+                    let array = response[0].c_date
+                    array = JSON.parse(array)
+                    for (let index = 0; index < array.length; index++) {
+                        const date = array[index];
+                        this.disabledDates.push(date)
+                    }
+                },
 
-        // });
+
+
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+
+        });
         
     },
 };
