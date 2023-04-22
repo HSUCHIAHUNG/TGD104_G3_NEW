@@ -50,7 +50,7 @@
                     <div class="order_left">
                       <div class="order_title">
                         <div class="category"></div>
-                        <a href="" @click.prevent="review"
+                        <a href="" @click.prevent="review(item.id)"
                           ><i class="fa-regular fa-pen-to-square"></i
                           >撰寫評論</a
                         >
@@ -88,21 +88,32 @@
                 <!-- 評論燈箱 -->
                 <div id="review_lightbox" class="none">
                   <article>
-                    <div class="inputs">
+                    <form class="inputs" @submit.prevent="sendReview">
                       <h1>請給這次體驗打個分數吧！</h1>
                       <p>最高5顆星</p>
-                      <ul>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                      </ul>
+                      <div class="star_block" @click="star_rating($event)">
+                        <span class="star" data-star="1"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="2"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="3"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="4"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="5"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                      </div>
                       <label for="" class="input_label">評論標題</label>
                       <input
                         type="text"
                         class="input_text"
                         placeholder="請輸入評論標題"
+                        v-model="comment_title"
                       />
                       <br />
                       <label for="" class="input_label"
@@ -114,6 +125,7 @@
                         cols="30"
                         rows="10"
                         placeholder="最高字數200字"
+                        v-model="comment_content"
                       ></textarea>
                       <div class="btns">
                         <button
@@ -123,9 +135,9 @@
                         >
                           取消
                         </button>
-                        <button type="button" class="btn_blue">送出</button>
+                        <button type="submit" class="btn_blue">送出</button>
                       </div>
-                    </div>
+                    </form>
                   </article>
                 </div>
                 <!-- 評論燈箱 End-->
@@ -139,7 +151,7 @@
                     <div class="order_left">
                       <div class="order_title">
                         <div class="category"></div>
-                        <a href="" @click.prevent="review"
+                        <a href="" @click.prevent="review(item.id)"
                           ><i class="fa-regular fa-pen-to-square"></i
                           >撰寫評論</a
                         >
@@ -177,21 +189,32 @@
                 <!-- 評論燈箱 -->
                 <div id="review_lightbox" class="none">
                   <article>
-                    <div class="inputs">
+                    <form class="inputs" @submit.prevent="sendReview">
                       <h1>請給這次體驗打個分數吧！</h1>
                       <p>最高5顆星</p>
-                      <ul>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                        <li><i class="fa-solid fa-star"></i></li>
-                      </ul>
+                      <div class="star_block" @click="star_rating($event)">
+                        <span class="star" data-star="1"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="2"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="3"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="4"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                        <span class="star" data-star="5"
+                          ><i class="fas fa-star"></i
+                        ></span>
+                      </div>
                       <label for="" class="input_label">評論標題</label>
                       <input
                         type="text"
                         class="input_text"
                         placeholder="請輸入評論標題"
+                        v-model="comment_title"
                       />
                       <br />
                       <label for="" class="input_label"
@@ -203,6 +226,7 @@
                         cols="30"
                         rows="10"
                         placeholder="最高字數200字"
+                        v-model="comment_content"
                       ></textarea>
                       <div class="btns">
                         <button
@@ -212,9 +236,9 @@
                         >
                           取消
                         </button>
-                        <button type="button" class="btn_blue">送出</button>
+                        <button type="submit" class="btn_blue">送出</button>
                       </div>
-                    </div>
+                    </form>
                   </article>
                 </div>
                 <!-- 評論燈箱 End-->
@@ -251,6 +275,10 @@ export default {
       defaultOption: "歷史訂單",
       studyOrder: [],
       travelOrder: [],
+      getComment: [],
+      star_num: "",
+      comment_title: "",
+      comment_content: "",
     };
   },
   components: {
@@ -271,7 +299,9 @@ export default {
       let orderId = this.$cookies.get("Order_id");
       console.log(orderId);
     },
-    review() {
+    // 開啟評論燈箱
+    review(id) {
+      this.$cookies.set("Order_id", id);
       let lightbox = document.getElementById("review_lightbox");
       lightbox.classList.remove("none");
 
@@ -287,6 +317,50 @@ export default {
     },
     CloseReview() {
       document.getElementById("review_lightbox").classList.add("none");
+    },
+    //評分
+    star_rating($event) {
+      if ($event.target.closest("span")) {
+        let span_el = $event.target.closest("span");
+        let star_span = span_el
+          .closest("div.star_block")
+          .querySelectorAll(".star");
+        this.star_num = span_el.getAttribute("data-star");
+        console.log(this.star_num);
+        // 讓星星亮
+        star_span.forEach((item, i) => {
+          if (this.star_num >= item.dataset.star) {
+            star_span[i].classList.add("-on");
+          } else {
+            star_span[i].classList.remove("-on");
+          }
+        });
+      }
+    },
+    sendReview() {
+      let order_id = this.$cookies.get("Order_id");
+      console.log(order_id);
+      console.log(this.comment_content);
+      console.log(this.comment_title);
+      console.log(this.star_num);
+      $.ajax({
+        url: "http://localhost/NEW_G3/vue-lessons/src/api/sendReview.php",
+        dataType: "text",
+        type: "POST",
+        data: {
+          order_id: order_id,
+          star: this.star_num,
+          comment_title: this.comment_title,
+          comment_content: this.comment_content,
+        },
+        success: function (response) {
+          alert(response);
+          location.reload();
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
     },
   },
   computed: {

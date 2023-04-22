@@ -22,8 +22,8 @@
       border-radius: 50%;
       padding: 5px;
       position: absolute;
-      top: 70px;
-      right: 65px;
+      top: 75px;
+      right: 60px;
       &:hover {
         color: $dark_blue;
       }
@@ -39,5 +39,22 @@
     text-align: center;
     font-weight: 500;
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    #upload-form {
+      i {
+        top: 75px;
+        right: 50px;
+      }
+    }
+  }
+  @media screen and (max-width: 1125px) {
+    #upload-form {
+      i {
+        top: 75px;
+        right: 40px;
+      }
+    }
   }
 }
