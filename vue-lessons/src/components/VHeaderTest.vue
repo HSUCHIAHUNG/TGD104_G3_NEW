@@ -493,7 +493,7 @@ export default {
     signUp() {
       console.log("ok");
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/MSignUp.php",
+        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/MSignUp.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -522,7 +522,7 @@ export default {
     mLogin() {
       console.log("ok");
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/mLogin.php",
+        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/mLogin.php",
         dataType: "json",
         type: "POST",
         data: {

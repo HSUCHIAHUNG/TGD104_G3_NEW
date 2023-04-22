@@ -56,7 +56,7 @@ export default {
       console.log(this.m_birth);
       console.log(this.m_gender);
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/MSignUp.php",
+        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/MSignUp.php",
         dataType: "text",
         type: "POST",
         data: {

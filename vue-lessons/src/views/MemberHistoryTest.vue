@@ -309,7 +309,7 @@ export default {
 
     // 陪你旅行
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/memberBookingTravel.php",
+      url: "http://localhost/TGD_104_G3/vue-lessons/src/api/memberBookingTravel.php",
       dataType: "json",
       type: "POST",
       data: {
@@ -335,7 +335,7 @@ export default {
     });
     // 陪你學習
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/memberBookingMusic.php",
+      url: "http://localhost/TGD_104_G3/vue-lessons/src/api/memberBookingMusic.php",
       dataType: "json",
       type: "POST",
       data: {

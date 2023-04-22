@@ -20,7 +20,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
         $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
         
         //檔案最終存放位置
-        $filePath = $ServerRoot."/NEW_G3/vue-lessons/src/upload/".$fileName;
+        $filePath = $ServerRoot."/TGD_104_G3/vue-lessons/src/upload/".$fileName;
   
         //將暫存檔搬移到正確位置
         move_uploaded_file($filePath_Temp, $filePath);

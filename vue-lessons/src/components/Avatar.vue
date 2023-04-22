@@ -36,7 +36,7 @@ export default {
       console.log(formData);
 
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/SingleFile.php",
+        url: "http://localhost/TGD_104_G3/vue-lessons/src/api/SingleFile.php",
         type: "POST",
         data: formData,
         dataType: "text",
@@ -57,7 +57,7 @@ export default {
   mounted() {
     let member_id = this.$cookies.get("Member_id");
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/avatar.php",
+      url: "http://localhost/TGD_104_G3/vue-lessons/src/api/avatar.php",
       dataType: "json",
       type: "POST",
       data: {
