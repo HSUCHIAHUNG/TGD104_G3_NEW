@@ -140,7 +140,7 @@
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
-        <button type="button" class="btn_blue" @click="save">送出審核</button>
+        <button type="button" class="btn_blue" @click="save">確定儲存</button>
       </div>
     </div>
     <!-- main_content end-->
@@ -149,13 +149,17 @@
 
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import $ from "jquery";
 
 export default {
   name: "ConsultantInfoL",
+  components: {
+    $,
+  },
   data() {
     return {
       editor: ClassicEditor,
-      editorData: "",
+      editorData:'',
       s_category:'',
       about_class:'',
       editorConfig: {
@@ -246,7 +250,8 @@ export default {
           s_category: this.ConsultantInfoL[0].s_category,
         },
         success: (response) => {
-          alert(response);
+         
+          // this.editorData = <p>'123'</p>
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
@@ -274,6 +279,8 @@ export default {
           about_cid: Consultant_id,
         },
         success: (response) => {
+          // this.editorData = 'this.ConsultantInfoL[0].about_introduction'
+          // this.editorData = about_introduction;
           this.consultantInfoL = response;
           // console.log(this.memberInfo);
           // console.log(this.memberInfo[0].id);
