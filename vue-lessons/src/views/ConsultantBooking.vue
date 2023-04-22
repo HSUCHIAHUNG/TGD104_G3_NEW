@@ -12,110 +12,39 @@
         <c-drop-down :defaultOption="defaultOption"></c-drop-down>
         <!------------ 主要區塊 ------------>
         <div class="main">
-          <div class="main_header">
-            <h1>預約明細</h1>
-            <ul class="tabs">
-              <li>
-                <a
-                  href="#"
-                  :class="{ active: currentTab === 'tab1' }"
-                  @click.prevent="
-                    {
-                      currentTab = 'tab1';
-                    }
-                  "
-                  >陪你學習</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  :class="{ active: currentTab === 'tab2' }"
-                  @click.prevent="
-                    {
-                      currentTab = 'tab2';
-                    }
-                  "
-                  >陪你旅行</a
-                >
-              </li>
-            </ul>
-          </div>
-          <!------------ 訂單列表 ------------>
-          <div class="order_list">
-            <!-- <c-order-sum></c-order-sum> -->
-            <!-- 學習訂單 -->
-            <div v-if="currentTab == 'tab1'">
-              <template v-for="(item, index) in studyOrder" :key="item.id">
-                <div class="order">
-                  <div class="order_content">
+            <div class="main_header">
+              <h1>預約明細</h1>
+            </div>
+            <!------------ 訂單列表 ------------>
+            <div class="order_list">
+              <!-- <c-order-sum></c-order-sum> -->
+              <div>
+                <div class="order" v-for="(item, index) in Order_table" :key="item.id">
+                  <div class="c_order_content">
                     <div class="order_left">
                       <div class="category"></div>
                       <div class="order_summary">
-                        <h2>陪你學習</h2>
-                        <span>{{ item.s_category }}</span> |
+                        <h2>預約課程</h2>
                         <span>{{ item.about_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
+                        <p><i class="fa-solid fa-hashtag"></i>訂單編號：
+                        {{ `ordernum` + item.id }}</p>
                       </div>
                     </div>
                     <div class="order_right">
                       <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
+                        {{formatMonth(item.or_booking_date)}}
+  
+                        <span>{{formatDate(item.or_booking_date)}}</span>
                       </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/orderdetailstest"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
+                      <p>{{item.about_cost}}</p>
+                      <router-link class="btn_blue" @click="order_id(item.id)" to="/consultantorderdetails"
+                        >查看更多</router-link>
                     </div>
                   </div>
                 </div>
-              </template>
-            </div>
-            <!-- 旅行訂單 -->
-            <div v-if="currentTab == 'tab2'">
-              <template v-for="(item, index) in travelOrder" :key="item.id">
-                <div class="order">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="category"></div>
-                      <div class="order_summary">
-                        <h2>陪你旅行</h2>
-                        <span>{{ item.tro_area }}</span> |
-                        <span>{{ item.about_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
-                      </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
-                      </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/orderdetailstest"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
-                    </div>
-                  </div>
-                </div>
-              </template>
+              </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
@@ -138,8 +67,15 @@ export default {
     return {
       currentTab: "tab1",
       defaultOption: "預約明細",
-      studyOrder: [],
-      travelOrder: [],
+      Consultant_id: '',
+      Order_table: [],
+      or_booking_date: '',
+      or_number: '',
+      or_order_date: '',
+      order_status: '',
+      about_cost: '',
+      about_class: '',
+
     };
   },
   components: {
@@ -149,89 +85,56 @@ export default {
     CSideNav,
     CDropDown,
     COrderSum,
-    $
   },
   methods: {
-    // 加上$符號/千分位
-    price(price) {
-      return `$${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-    },
-    setOrderId(id) {
-      this.$cookies.set("Order_id", id);
-      let orderId = this.$cookies.get("Order_id");
-      console.log(orderId);
+    order_id(order_id){
+      this.$cookies.set('order_id',order_id)
+      console.log($cookies.get('order_id'));
     },
   },
   computed: {
     // 改月份格式
-    formatMonth(datestr) {
+     formatMonth() {
       return (datestr) => {
-        const d = new Date(datestr);
-        return format(d, "MMM");
+        const options = { month: 'short' };
+        const month = new Date(datestr).toLocaleString('en-US', options);
+        return month;
       };
     },
     // 抓日期
-    formatDate(dateStr) {
-      return (date) => format(new Date(date), "dd");
+    formatDate() {
+      return (datestr) => {
+        const day = new Date(datestr).getDate();
+        return day;
+      };
     },
   },
   mounted() {
-    let Member_id = $cookies.get("Member_id");
-    console.log(Member_id);
+    
+    this.$cookies.set("Consultant_id","1")
+    this.Consultant_id = $cookies.get("Consultant_id");
+    console.log(this.or_booking_date);
 
-    // 陪你旅行
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberBookingTravel.php",
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantBooking.php",
       dataType: "json",
       type: "POST",
       data: {
-        member_id: Member_id,
+        Consultant_id: this.Consultant_id,
       },
       success: (response) => {
-        console.log(response);
+        console.log('成功');
         response.forEach((item) => {
-          console.log(item.or_booking_date);
-          console.log(new Date(item.or_booking_date));
-          console.log(new Date());
-          if (new Date(item.or_booking_date) > new Date()) {
-            this.travelOrder.push(item);
+          if (new Date(item.or_booking_date) < new Date()) {
+            this.Order_table.push(item);
           }
-          console.log(this.travelOrder);
         });
-        // this.travelOrder = response;
-        // console.log(this.travelOrder);
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
       },
     });
-    // 陪你學習
-    $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberBookingMusic.php",
-      dataType: "json",
-      type: "POST",
-      data: {
-        member_id: Member_id,
-      },
-      success: (response) => {
-        console.log(response);
-        response.forEach((item) => {
-          console.log(item.or_booking_date);
-          console.log(new Date(item.or_booking_date));
-          console.log(new Date());
-          if (new Date(item.or_booking_date) > new Date()) {
-            this.studyOrder.push(item);
-          }
-          console.log(this.studyOrder);
-        });
-        // this.studyOrder = response;
-        // console.log(this.studyOrder);
-        // document.getElementById("tab1").click();
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      },
-    });
+
   },
 };
 </script>
