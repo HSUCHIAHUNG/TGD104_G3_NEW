@@ -11,13 +11,13 @@
                 <div class="learn_label"><p>學習</p></div>
                 <div class="travel_label"><p>旅行</p></div>
             </div>
-
+        <form @submit.prevent="submitForm">
             <div class="learn_apply">
-                <form action="">
+                
                     <div class="input_row">
                         <div class="form_group">
                             <label class="input_label" for="highest_education">最高學歷</label>
-                            <select name="highest_education" id="highest_education" class="input_select" v-model="S_grad">
+                            <select name="highest_education" id="highest_education" class="input_select" v-model="S_grad" required>
                                 <option value="" disabled selected>--請選擇--</option>
                                 <option value="高中">高中</option>
                                 <option value="大學">大學</option>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="form_group">
                             <label for="" class="input_label">畢業於</label>
-                            <input type="text" class="input_text" placeholder="畢業於" v-model="S_school"/>
+                            <input type="text" class="input_text" placeholder="畢業於" v-model="S_school" required/>
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@
 
                         <div class="form_group">
                             <label class="input_label" for="category">選擇您可提供的教學類別：</label>
-                            <select name="category" id="category" class="input_select" v-model="S_category" @change="updateSecondSelection">
+                            <select name="category" id="category" class="input_select" v-model="S_category" @change="updateSecondSelection" required>
                                 <option value="" disabled selected>--請選擇--</option>
                                 <option value="音樂">音樂</option>
                                 <option value="伴讀">伴讀</option>
@@ -93,7 +93,7 @@
 
                         <div class="form_group">
                             <label class="input_label" for="class">選擇您可提供的服務課程：</label>
-                            <select name="class" id="class" class="input_select" v-model="About_class">
+                            <select name="class" id="class" class="input_select" v-model="About_class" required>
                                 <option value="" disabled selected>--請選擇--</option>
                                 <option v-for="option in About_classOptions" :value="option.value">{{ option.label }}</option>
                             </select>
@@ -103,33 +103,36 @@
                     <div class="input_row">
                         <div class="form_group">
                             <label for="" class="input_label">教學地址</label>
-                            <input type="text" class="input_text" placeholder="教學地址" v-model="S_address"/>
+                            <input type="text" class="input_text" placeholder="教學地址" v-model="S_address" required/>
                         </div>
                         <div class="form_group">
                             <label for="" class="input_label">課程費用</label>
-                            <input type="text" class="input_text" placeholder="課程費用" v-model="About_cost"/>
+                            <input type="text" class="input_text" placeholder="課程費用" v-model="About_cost" required/>
                         </div>
                     </div>
 
                     <div class="input_row">
                         <div class="form_group">
                             <label for="" class="input_label">請提供網頁上詳細資料標題(20字以內)</label>
-                            <input type="text" class="input_text" placeholder="詳細資料標題" maxlength="20" v-model="About_title"/>
+                            <input type="text" class="input_text" placeholder="詳細資料標題" maxlength="20" v-model="About_title" required/>
                         </div>
                     </div>
 
                     <h1>簡短的介紹一下自己吧(例如：服務課程相關經歷簡述)(100字以內)</h1>
-                    <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig"></ckeditor>
-                </form>
+                    <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig" required></ckeditor>
+
+                    <div class="join_learn_btn">
+                        <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
+                        <router-link to="/JoinApply"><button class="outline_btn_blue">回上一步</button></router-link>
+                        <!-- <a href="/JoinOk"><button class="btn_blue">送出</button></a> -->
+                       <button class="btn_blue" type="submit">送出</button>
+                    </div>
             </div>
+        </form>
+
         </div>
 
-        <div class="join_learn_btn">
-            <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
-            <router-link to="/JoinApply"><button class="outline_btn_blue">回上一步</button></router-link>
-            <!-- <a href="/JoinOk"><button class="btn_blue">送出</button></a> -->
-            <router-link to="/JoinOk"><button class="btn_blue" @click="submitForm">送出</button></router-link>
-        </div>
+        
 
     </div>
     <!-- join_learn end -->
@@ -141,6 +144,7 @@
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 import $ from "jquery";
 
 export default {
@@ -250,20 +254,24 @@ export default {
                 },
                 success: function(response) {
                     //更新html內容
+                    
                     $("#result").html(response);
+                    
                 },
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);
                 }
             });
+            this.$router.push('/JoinOk');
         }
     }, 
     mounted() {
 
         // this.$cookies.set("Consultant_id","8")
-        let x = $cookies.get('Consultant_id')   
-        this.Consultant_id = x;
-
+      
+        this.Consultant_id = $cookies.get('Consultant_id');
+        // this.$cookies.set("Consultant_id",this.Consultant_id)
+        // console.log(this.Consultant_id );
     },
  
 };

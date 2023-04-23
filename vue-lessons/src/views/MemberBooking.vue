@@ -56,7 +56,7 @@
                         <span>{{ item.about_class }}</span>
                         <p>
                           <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            ordernum + item.id
+                            `ordernum` + item.id
                           }}
                         </p>
                       </div>
@@ -91,7 +91,7 @@
                         <span>{{ item.about_class }}</span>
                         <p>
                           <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            ordernum + item.id
+                            `ordernum` + item.id
                           }}
                         </p>
                       </div>

@@ -91,7 +91,7 @@ import CAvatar from "../components/CAvatar.vue";
 import CSideNav from "@/components/CSideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
-
+    import {API_URL} from "@/config";
 export default {
   name: "OrderDetails",
   data() {

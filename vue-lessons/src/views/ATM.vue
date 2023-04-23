@@ -4,7 +4,7 @@
             <h1>款項</h1>
             <div class="ttl_payment">
                 <h2>Total Payment</h2>
-                <p>$1500</p>
+                <p>${{}}</p>
             </div>
             <div class="payment_deadline">
                 <h2>付款期限</h2>
@@ -45,22 +45,25 @@
   </template>
     
     <script>
+      import {API_URL} from "@/config";
       import VHeader from "../components/VHeader.vue";
       import VFooter from "../components/VFooter.vue";
     //   import Checkout from "../components/Checkout.vue";
-      
+      import $ from "jquery";
+
       export default {
           name: "ATM",
           data() {
-            
           return {
             deadline: new Date(new Date().getTime() + 3 * 24 * 60 * 60 * 1000), // 3天後的日期
             remainingTime: '', // 剩餘時間
+            About_cost: '',
           }
           },
           components: {
           VHeader,
           VFooter,
+          $
 
           },
           computed: {
@@ -93,6 +96,11 @@
         setInterval(() => {
         this.updateRemainingTime()
         }, 1000)
+
+       
+     
+
+        
     },
       };
 

@@ -41,7 +41,7 @@
 
 <script>
 import $ from "jquery";
-
+import {API_URL} from "@/config";
 export default {
     name: "backendlogin",
   data() {

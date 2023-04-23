@@ -57,7 +57,7 @@ export default {
       this.Or_checkout_method = $cookies.get("moneymethod")
       this.Or_booking_date = $cookies.get("Or_booking_date")
       this.Or_class = $cookies.get("Aboutclass")
-      this.Or_number = 'ordernum' + this.Consultant_id
+      // this.Or_number = 'ordernum' + this.Consultant_id
 
 
       console.log(
@@ -80,19 +80,17 @@ export default {
         Or_booking_date: this.Or_booking_date,
         Or_checkout_method: this.Or_checkout_method,
         Or_class: this.Or_class,
-        Or_number: this.Or_number,   
+        // Or_number: this.Or_number,   
         },
         dataType: "json",
           success: response => {
-            
+        
           },
           error: function(exception) {
               alert("發生錯誤: " + exception.status);
           },
-
       });  
-
-    }
+    }, 
   },
 
   

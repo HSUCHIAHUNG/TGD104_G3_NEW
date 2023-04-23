@@ -346,6 +346,12 @@ const routes = [
     component: () => import("../views/JoinOk.vue"),
   },
   {
+    path: "/backendGallery",
+    name: "backendGallery",
+    component: () => import("../views/backendGallery.vue"),
+  },
+
+  {
     path: "/BackendCenter",
     name: "BackendCenter",
     component: () => import("../views/BackendCenter.vue"),

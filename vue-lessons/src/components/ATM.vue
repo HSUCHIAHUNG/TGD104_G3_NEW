@@ -4,7 +4,7 @@
             <h1>款項</h1>
             <div class="ttl_payment">
                 <h2>Total Payment</h2>
-                <p>$1500</p>
+                <p>${{About_cost}}</p>
             </div>
             <div class="payment_deadline">
                 <h2>付款期限</h2>
@@ -56,11 +56,14 @@
           return {
             deadline: new Date(new Date().getTime() + 3 * 24 * 60 * 60 * 1000), // 3天後的日期
             remainingTime: '', // 剩餘時間
+
+            About_cost:'',
           }
           },
           components: {
           VHeader,
           VFooter,
+          
 
           },
           computed: {
@@ -93,6 +96,8 @@
         setInterval(() => {
         this.updateRemainingTime()
         }, 1000)
+
+        this.About_cost = $cookies.get('About_cost')
     },
       };
 
