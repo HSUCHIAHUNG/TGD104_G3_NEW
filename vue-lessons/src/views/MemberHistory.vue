@@ -61,7 +61,7 @@
                           <span>已完成</span>
                         </h2>
                         <span>{{ item.s_category }}</span> |
-                        <span>{{ item.about_class }}</span>
+                        <span>{{ item.or_class }}</span>
                         <p>
                           <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
                             `ordernum` + item.id
@@ -162,7 +162,7 @@
                           <span>已完成</span>
                         </h2>
                         <span>{{ item.tro_area }}</span> |
-                        <span>{{ item.about_class }}</span>
+                        <span>{{ item.or_class }}</span>
                         <p>
                           <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
                             `ordernum` + item.id
