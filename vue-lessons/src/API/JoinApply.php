@@ -27,7 +27,7 @@ $c_phone = htmlspecialchars($_POST["C_phone"]);
 $c_personality = htmlspecialchars($_POST["C_personality"]);
 
 
-$sql = "INSERT INTO consultant(c_id, c_birth, c_firstname, c_lastname, c_mail, c_nickname, c_gender, c_password, c_area, c_phone, c_personality, c_create_date, c_review_status) VALUES ('$c_id', '$c_birth', '$c_firstname', '$c_lastname', '$c_mail', '$c_nickname', '$c_gender', '$c_password', '$c_area', '$c_phone', '$c_personality', NOW() ,'')";
+$sql = "INSERT INTO consultant(c_id, c_birth, c_firstname, c_lastname, c_mail, c_nickname, c_gender, c_password, c_area, c_phone, c_personality, c_create_date, c_status, c_date) VALUES ('$c_id', '$c_birth', '$c_firstname', '$c_lastname', '$c_mail', '$c_nickname', '$c_gender', '$c_password', '$c_area', '$c_phone', '$c_personality', NOW() ,'正常', '0')";
 // $sql = "INSERT INTO consultant(c_id, c_birth, c_firstname, c_lastname, c_mail, c_nickname, c_gender, c_password, c_area, c_phone, c_personality, c_create_date) VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW())";
 
 //執行

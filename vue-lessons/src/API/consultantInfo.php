@@ -6,37 +6,23 @@
   header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // 資料庫-------------------------------------------
+//MySQL相關資訊
 require_once ("conn.php");
 // -------------------------------------------
 
-$member_id = $_POST['member_id'];
+// 取得cookies 資料
+$id = $_POST['id'];
 
-// 還要補上order_status = 0;
-$sql = 
-"select o.id, o.member_id, o.or_booking_date, 
-a.about_cost, a.about_class, a.s_category
-from `order` o
-join about_consultant a 
-on o.consultant_id = a.about_cid 
-where o.member_id = ? and a.tr_job is null";
+$sql = "SELECT * FROM consultant WHERE id = ?";
 
 
 $statement = $pdo->prepare($sql);
-$statement->bindValue(1,$member_id);
+$statement->bindValue(1,$id);
 $statement->execute();
 
 // 取得資料 
 $data = $statement->fetchAll();
 echo json_encode($data);
-
-
-// $statement = $pdo->prepare($sql);
-// $statement->bindValue(1,$id);
-// $statement->execute();
-
-// // 取得資料 
-// $data = $statement->fetchAll();
-// echo json_encode($data);
 
 // if(count($data)>0){
    
