@@ -10,7 +10,11 @@
        $c_id = $_POST["C_id"];
        //建立SQL語法
         //    $sql = "SELECT id FROM consultant where c_id like ?";
-        $sql = "SELECT id FROM consultant where c_id = '$c_id' ;";
+        $sql = "
+        select 
+        id
+        from `order` 
+        where or_order_date = '2023-04-23 19:47:20' && consultant_id = '448' ;";
 
     //    $statement = $pdo->prepare($sql);
     //    $statement->bindValue(1,"%$c_id%");

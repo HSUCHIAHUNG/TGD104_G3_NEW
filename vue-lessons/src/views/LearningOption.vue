@@ -75,7 +75,7 @@
       </div> -->
       </div>
 
-      <div class="page_number">
+      <!-- <div class="page_number">
         <router-link to="/"><i class="fa-solid fa-angle-left"></i></router-link>
         <router-link to="/">1</router-link>
         <router-link to="/">2</router-link>
@@ -83,7 +83,7 @@
         <router-link to="/"
           ><i class="fa-solid fa-angle-right"></i
         ></router-link>
-      </div>
+      </div> -->
 
       <VFooter></VFooter>
     </div>
@@ -109,6 +109,11 @@ export default {
       // 使用者輸入的內容
       // inputOption: '',
       // SR_content:'',
+
+      //分頁
+      perpage: 10, //一頁的資料數
+      currentPage: 1,
+
     };
   },
   components: {

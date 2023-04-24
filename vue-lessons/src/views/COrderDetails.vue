@@ -26,14 +26,14 @@
                       <div class="order_summary">
                         <h2>
                           預約課程 |
-                          <span>已完成</span>
+                          <span>未完成</span>
                         </h2>
                         <span>{{ item.about_class }}</span>
                         <ul class="order_content_details">
                           <li>
                             <i class="fa-solid fa-hashtag"></i>訂單編號：#{{ `ordernum` + item.id }}
                           </li>
-                          <li><i class="fa-solid fa-dollar-sign"></i>行程價格：{{item.about_cost}}</li>
+                          <li><i class="fa-solid fa-dollar-sign"></i>行程價格：${{item.about_cost}}</li>
                           <li>
                             <i class="fa-regular fa-calendar"></i>行程日期：{{item.or_booking_date}}
                           </li>
@@ -77,7 +77,7 @@
               </div>
             </div>
           </div>
-          <!-- 訂單訊息 -->
+          <!-----------訂單訊息 ------------->
           <div class="order_area">
             <div class="message_header">
               <h2>訂單訊息</h2>
@@ -87,11 +87,46 @@
                 cols="30"
                 rows="10"
                 placeholder="最高字數200字"
+                v-model="send_message"
               ></textarea>
-              <button type="button" class="btn_blue">發送訊息</button>
+              <button type="button" class="btn_blue" @click="sendMessage">
+                發送訊息
+              </button>
             </div>
             <div class="conversation">
-              <order-message></order-message>
+              <template v-for="item in order_message" :key="item.id">
+                <div>
+                  <div
+                    class="message_container"
+                    :class="[
+                      item.message_sender == 'consultant'
+                        ? 'my_message'
+                        : 'reply_message',
+                    ]"
+                  >
+                    <img
+                      :src="
+                        item.message_sender == 'consultant'
+                          ? item.m_photo
+                          : item.c_photo1
+                      "
+                      :alt="
+                        item.message_sender == 'consultant'
+                          ? item.m_photo
+                          : item.c_photo1
+                      "
+                    />
+                    <div class="message_main">
+                      <div class="message_txt">
+                        <p>
+                          {{ item.message }}
+                        </p>
+                      </div>
+                      <p class="message_time">{{ item.message_time }}</p>
+                    </div>
+                  </div>
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -118,6 +153,15 @@ export default {
       Orderid: '',
       Oderdetails: [],
       or_order_date: '',
+
+      Order_id:'',
+      Member_id:'',
+      Consultant_id:'',
+
+      order_category: "",
+      order_info: [],
+      order_message: [],
+      send_message: "",
     };
   },
   components: {
@@ -155,7 +199,40 @@ export default {
       };
     },
   },
+  methods: {
+    // 會員發送訊息
+    sendMessage() {
+      this.Order_id = this.$cookies.get("order_id");
+      this.Member_id = this.$cookies.get("Member_id");
+      this.Consultant_id = this.$cookies.get("Consultant_id");
+      // let vm = this;
+      console.log(this.Order_id,this.Member_id,this.Consultant_id);
+
+      $.ajax({
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantMessage.php",
+        dataType: "text",
+        type: "POST",
+        data: {
+          Message: this.send_message,
+          Order_id: this.Order_id,
+          Member_id: this.Member_id,
+          Consultant_id: this.Consultant_id,
+          Message_sender: "consultant",
+        },
+        success: function (response) {
+          if (window.confirm(response)) {
+            location.reload();
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    },
+  },
   mounted() {
+
+    // SELECT 會員&顧問資料
     // this.$cookies.set("Consultant_id","1")
     this.Orderid = $cookies.get("order_id");
     console.log(this.Orderid);
@@ -168,7 +245,7 @@ export default {
         Orderid: this.Orderid,
       },
       success: (response) => {
-        console.log('成功');
+        // console.log('成功');
         response.forEach((item) => {
           if (new Date(item.or_booking_date) < new Date()) {
             this.Oderdetails.push(item);
@@ -179,8 +256,30 @@ export default {
         console.log(textStatus, errorThrown);
       },
     });
+
+    // 取得訂單訊息
+    $.ajax({
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantorderMessage.php",
+      dataType: "json",
+      type: "POST",
+      data: {
+        Order_id: this.Orderid,
+      },
+      success: (response) => {
+        console.log(response);
+        this.order_message = response;
+        // console.log(this.order_message);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      },
+    });
   },
 };
+
+
+
+
 </script>
 
 <style lang="scss">

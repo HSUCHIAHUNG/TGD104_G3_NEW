@@ -5,18 +5,6 @@
 // require_once ("pdo_connect.php");
 require_once ("conn.php");
 
-//MySQL相關資訊
-$db_host = "127.0.0.1";
-$db_user = "root";
-$db_pass = "password";
-$db_select = "G3_TEAM";
-
-//建立資料庫連線物件
-// $dsn = "mysql:host=".$db_host.";dbname=".$db_select.";charset=utf8";
-
-// //建立PDO物件，並放入指定的相關資料
-// $pdo = new PDO($dsn, $db_user, $db_pass);
-
 
 //方法二: 放進變數
 $tr_interest =  $_POST["Tr_interest"];
@@ -27,10 +15,11 @@ $about_cost =  $_POST["About_cost"];
 $about_title =  $_POST["About_title"];
 $about_class =  $_POST["About_class"];
 $about_introduction =  $_POST["About_introduction"];
-$s_category =  $_POST["Consultant_id"];
+$about_cid =  $_POST["Consultant_id"];
 
 
-$sql = "INSERT INTO about_consultant(tr_interest,tr_experience,tr_license,tr_job,about_cost,about_title,about_introduction,about_class,s_category) VALUES ('$tr_interest','$tr_experience','$tr_license','$tr_job','$about_cost','$about_title','$about_class','$about_introduction','$s_category')";
+$sql = "INSERT INTO about_consultant(tr_interest,tr_experience,tr_license,tr_job,about_cost,about_title,about_class,about_introduction,about_cid)
+ VALUES ('$tr_interest','$tr_experience','$tr_license','$tr_job','$about_cost','$about_title','$about_class','$about_introduction','$about_cid')";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

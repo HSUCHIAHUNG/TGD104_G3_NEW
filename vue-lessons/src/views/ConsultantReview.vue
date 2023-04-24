@@ -67,7 +67,7 @@
                         <th>身份證字號</th>
                         <th>姓名</th>
                         <th>申請日期</th>
-                        <th>證件審核</th>
+                        <!-- <th>證件審核</th> -->
                         <th>預覽審核</th>
                         <th>審核結果</th>
                     </tr>
@@ -76,13 +76,14 @@
                         <td>{{item.c_id}}</td>
                         <td>{{item.c_nickname}}</td>
                         <td>{{formatDate(item.c_create_date)}}</td>
-                        <td>
+                        <!-- <td>
                             <button>查看
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button> 
-                        </td>
+                        </td> -->
                         <td>
-                            <button>查看
+                            <button @click="setbacked_cid(item.id)"  >
+                                查看
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </td>
@@ -145,7 +146,7 @@
                 update_id:'',
                 currentTab: "tab1",
                 items: [],
-                perpage: 10, //一頁的資料數
+                perpage: 20, //一頁的資料數
                 currentPage: 1,
                 SortDate: "",
                 // items: [
@@ -186,6 +187,12 @@
         },
         
         methods: {
+            setbacked_cid(cid){
+            this.$cookies.set("backed_cid",cid)
+            // this.$router.push('/backendGallery');
+            window.open('/backendGallery', '_blank');
+                
+            },
             setPage(page) {
                 if(page <= 0 || page > this.totalPage) {
                     return
@@ -278,7 +285,7 @@
         margin: 0 auto;
         margin-top: 50px;
         width: 100%;
-        height: 100vh;
+        height: auto;
         
         .ConsultantReview_table {
             display: flex;
@@ -293,6 +300,7 @@
                 height: auto;
                 background-color: #fff;
                 box-shadow: 1px 2px 10px  #adadad;
+                height: 100vh;
 
                 &::-webkit-scrollbar {
                     display: none;
@@ -397,6 +405,11 @@
                             margin-right: 10px;
                             font-size: 20px;
 
+                        }
+                        button{
+                            &:hover{
+                                color: #FF7426;
+                            }
                         }
                     }
                 }    

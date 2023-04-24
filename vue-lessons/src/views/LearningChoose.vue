@@ -101,8 +101,8 @@ export default {
     },
   },
   mounted() {
-    this.$cookies.set("memberID","1")
-    let x = $cookies.get('memberID')   
+    // this.$cookies.set("memberID","1")
+    // let x = $cookies.get('memberID')   
   }
 };
 </script>

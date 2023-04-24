@@ -5,7 +5,11 @@
       <a href="" id="h_bar" @click.prevent="open_nav"
         ><i class="fa-solid fa-bars"></i>
       </a>
-      <img src="../assets/image/logo_header.png" alt="" />
+
+      <router-link to="/main" class="logo_header">
+        <img src="../assets/image/logo_footer.png" alt="陪你" />
+      </router-link>
+
       <div class="h_icon">
         <a href="" @click.prevent="memberLogin"
           ><i class="fa-solid fa-user"></i
@@ -652,6 +656,10 @@ export default {
     top: 20px;
     left: 45px;
     font-size: 50px;
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   .center_content {
@@ -720,6 +728,12 @@ export default {
     }
   }
 }
+
+
+.logo_header{
+  margin: 0 auto;
+}
+
 
 //  @import "../../tgd104-sass/new_style.scss";
 </style>

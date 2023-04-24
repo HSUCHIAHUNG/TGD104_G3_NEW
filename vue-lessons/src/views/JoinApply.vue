@@ -1,14 +1,14 @@
 <template>
   <VHeader></VHeader>
 
-  <!-- join_apply -->
+    <!-- join_apply -->
   <div class="join_apply">
     <div class="container">
       <h1>表格申請</h1>
       <img src="../assets/image/join/step1.png" alt="" />
       <h2>基本資料</h2>
       <div class="personal_information" id="app">
-        <form action="">
+        <form @submit.prevent="submitForm">
           <div class="input_row">
             <div class="form_group">
               <label for="" class="input_label">姓</label>
@@ -152,10 +152,6 @@
               </div>
             </div>
           </div>
-        </form>
-      </div>
-    </div>
-
     <div class="join_btn">
       <!-- <a href="/Join"><button class="outline_btn_blue">回上一頁</button></a> -->
       <router-link to="/Join"
@@ -169,6 +165,10 @@
       <button class="btn_blue" @click="submitForm">下一步</button>
       <p id="result" style="height: 100px;"></p>
     </div>
+        </form>
+      </div>
+    </div>
+
   </div>
   <!-- join_apply end -->
 
@@ -188,6 +188,7 @@ export default {
       areas: ["北部","中部","南部","東部"],
       genders: ["男性","女性"],
       About_class:'',
+      Consultant_id: ''
     };
   },
 
@@ -202,6 +203,8 @@ export default {
     let x = $cookies.get('toAbout')
     this.About_class = x
     // console.log(this.About_class);
+    
+    console.log($cookies.get('Consultant_id'));
   },
 
   methods: {
@@ -264,8 +267,6 @@ export default {
         $.ajax({
             method: "POST",
             url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply.php', 
-            // url: 'https://tibamef2e.com/tgd104/g3/JoinApply_id.php', 
-
             data: {
                 C_firstname: this.C_firstname,
                 C_birth: this.C_birth,
@@ -278,6 +279,7 @@ export default {
                 C_phone: this.C_phone,
                 C_area: this.C_area,
                 C_gender: this.C_gender,
+                
                 // C_photo1: this.$refs.fileInput.files[0],
             },
             dataType: "text",
@@ -305,19 +307,17 @@ export default {
        $.ajax({
             method: "POST",
             url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
-            // url: 'https://tibamef2e.com/tgd104/g3/JoinApply_id.php',
             data: {
               C_id: this.C_id,
                
             },
-            dataType: "text",
+            dataType: "json",
             success: function(response) {
               // $("#result").html(response);
 
               //set cookie
-              $cookies.set("Consultant_id",response)
-
-
+              console.log( response[0].id);
+              $cookies.set("Consultant_id",response[0].id)
             },
             error: function(exception) {
                 alert("發生錯誤: " + exception.status);

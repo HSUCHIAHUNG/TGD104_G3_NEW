@@ -84,7 +84,7 @@
 
             <!-- 圖片寫屎 -->
             <router-link to="/TravelGallery">
-              <img src="../assets/image/travel/consultant_c01.png" alt="" @click="consultantId(consultant.id)"/>
+              <img :src="`${img_src}${consultant.c_photo1}`" alt="" @click="consultantId(consultant.id)"/>
             </router-link>
 
             <h1>{{ consultant.c_nickname }}</h1>
@@ -134,6 +134,8 @@
 <script>
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "../components/VFooter.vue";
+import {API_URL} from "@/config";
+import {API_ARC} from "@/config";
 import $ from "jquery";
 
 export default {
@@ -156,10 +158,9 @@ export default {
       perpage: 12, //一頁的資料數
       currentPage: 1,
       Member_id: '',
+      img_src: '',
     };
   },
-
-
 
   methods: {
     setTab(tab, current) {
@@ -264,6 +265,9 @@ export default {
   },
 
   mounted() {
+    this.img_src = `${API_ARC}`;
+    
+
     this.Member_id = this.$cookies.get("Member_id");
     // console.log(this.Member_id);
     

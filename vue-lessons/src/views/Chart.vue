@@ -11,7 +11,7 @@
 import BarChart from '../components/BarChart.vue'
 import LineChart from '../components/LineChart.vue'
 import PieChart from '../components/PieChart.vue'
-
+    import {API_URL} from "@/config";
 // @ is an alias to /src
 
 

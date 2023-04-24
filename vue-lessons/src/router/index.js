@@ -8,16 +8,16 @@ const routes = [
     name: "home",
     component: HomeView,
   },
-  {
-    path: "/travelgame2",
-    name: "travelgame2",
-    component: () => import("../views/TravelGame2.vue"),
-  },
-  {
-    path: "/memberhistorytest",
-    name: "memberhistorytest",
-    component: () => import("../views/MemberHistoryTest.vue"),
-  },
+  // {
+  //   path: "/travelgame2",
+  //   name: "travelgame2",
+  //   component: () => import("../views/TravelGame2.vue"),
+  // },
+  // {
+  //   path: "/memberhistorytest",
+  //   name: "memberhistorytest",
+  //   component: () => import("../views/MemberHistoryTest.vue"),
+  // },
   {
     path: "/imgtest",
     name: "imgtest",
@@ -92,11 +92,11 @@ const routes = [
     name: "test0416",
     component: () => import("../views/test0416.vue"),
   },
-  {
-    path: "/test_yu",
-    name: "test_yu",
-    component: () => import("../views/test_yu.vue"),
-  },
+  // {
+  //   path: "/test_yu",
+  //   name: "test_yu",
+  //   component: () => import("../views/test_yu.vue"),
+  // },
   {
     path: "/learningCalendar",
     name: "learningCalendar",
@@ -345,6 +345,12 @@ const routes = [
     name: "joinok",
     component: () => import("../views/JoinOk.vue"),
   },
+  {
+    path: "/backendGallery",
+    name: "backendGallery",
+    component: () => import("../views/backendGallery.vue"),
+  },
+
   {
     path: "/BackendCenter",
     name: "BackendCenter",

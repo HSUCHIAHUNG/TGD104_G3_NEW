@@ -42,7 +42,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <script>
 // import AccountSetting from '../components/AccountSetting.vue'
-
+import {API_URL} from "@/config";
 export default {
   data() {
     return {};

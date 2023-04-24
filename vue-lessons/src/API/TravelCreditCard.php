@@ -16,7 +16,7 @@ $or_number =  $_POST["Or_number"];
 
 
 
-$sql = "INSERT INTO `order`(member_id, consultant_id, tro_area, or_checkout_method, or_booking_date, or_order_date, or_class, order_status, or_number)
+$sql = "INSERT INTO `order`(member_id, consultant_id, tro_area, or_checkout_method, or_booking_date, or_order_date, or_class, order_status)
 VALUES ('$member_id','$consultant_id','$tro_area','$or_checkout_method','$or_booking_date',NOW(),'$or_class','完成','$or_number')";
 
 header("Access-Control-Allow-Origin: *");

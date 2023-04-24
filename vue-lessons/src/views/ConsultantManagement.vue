@@ -86,11 +86,12 @@
 
 <script>
     import $ from "jquery";
+    import {API_URL} from "@/config";
 
     export default {
         data(){ 
             return {
-                perpage: 15, //一頁的資料數
+                perpage: 20, //一頁的資料數
                 currentPage: 1,
                 SortDate: "asc",
                 searchId: '',
@@ -101,7 +102,9 @@
         },   
 
         mounted() {
-            $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantManagement_Select.php').then(response => this.items = response)
+            // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantManagement_Select.php').then(response => this.items = response)
+            $.getJSON(`${API_URL}ConsultantManagement_Select.php`).then(response => this.items = response)
+
             console.log(this.items);
         },
         
@@ -193,20 +196,62 @@
 
 <style lang="scss">
     // @import '../../../../tgd104-sass/new_style.scss';
-    
+     .MemberContainer {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .SearchBar {
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+                width: fit-content;
+                margin: 20px 70px 20px 0px;
+                
+            input {
+                border-radius: 5px;
+                border: none;
+                background-color: #FAEECD;
+                padding: 10px 0px 10px 35px; // 预留图标位置的空间
+                box-sizing: border-box;
+                &::placeholder{
+                    color: #9E9E9E;
+                    text-align: center;
+                    line-height: 35.33px;
+                    font-weight: 500;
+                    font-size: 13px;
+                    padding-right: 35px;
+                }
+            }
+
+            i {
+                position: absolute;
+                top: 50%;
+                left: 7px;
+                transform: translateY(-50%);
+                color: #FF7426;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+
     .ConsultantManagement{
         display: flex;
         flex-direction: column;
         margin: 0 auto;
         width: 100%;
         margin-top: 50px;
-        height: 100vh;
+        height: auto;
         
         .ConsultantManagement_table {
             display: flex;
             width: 100%;
             flex-direction: column;
             align-items: flex-end;
+            
+            
 
             .ConsultantManagement_table_bg{
                 margin: 0 auto 20px auto;
@@ -215,6 +260,7 @@
                 height: auto;
                 background-color: #fff;
                 box-shadow: 1px 2px 10px  #adadad;
+                height: 100vh;
 
                 &::-webkit-scrollbar {
                     display: none;
@@ -323,6 +369,9 @@
         width: 90%;
         display: flex;
         margin: 25px auto 30px auto;
+        
+        
+
 
         .ConsultantManagement_btn{
             background-color: #FAEECD;
@@ -369,6 +418,8 @@
             background-color: #ff995e;
             color: #fff;
         }
+
+        
 
     }
     

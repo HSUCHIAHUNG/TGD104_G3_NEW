@@ -11,7 +11,8 @@
 	about_title,
 	c_nickname,
        id,
-       about_class
+       about_class,
+       c_photo1
               FROM about_consultant abc
               join consultant con
               on abc.about_cid = con.id

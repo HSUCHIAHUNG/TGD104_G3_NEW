@@ -183,6 +183,7 @@
     import gsap from 'gsap'
     import ScrollTrigger from 'gsap/ScrollTrigger'
     import { Swiper, SwiperSlide } from 'swiper/vue';
+    import {API_URL} from "@/config";
 
     import 'swiper/css';
     // import required modules

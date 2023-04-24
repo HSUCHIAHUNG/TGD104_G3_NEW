@@ -36,7 +36,7 @@
   
                         <span>{{formatDate(item.or_booking_date)}}</span>
                       </div>
-                      <p>{{item.about_cost}}</p>
+                      <p>${{item.about_cost}}</p>
                       <router-link class="btn_blue" @click="order_id(item.id)" to="/consultantorderdetails"
                         >查看更多</router-link>
                     </div>
@@ -111,9 +111,10 @@ export default {
   },
   mounted() {
     
-    this.$cookies.set("Consultant_id","1")
+    // this.$cookies.set("Consultant_id","1")
     this.Consultant_id = $cookies.get("Consultant_id");
-    console.log(this.or_booking_date);
+    console.log(this.Consultant_id);
+    // console.log(this.or_booking_date);
 
     $.ajax({
       url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantBooking.php",
@@ -125,7 +126,7 @@ export default {
       success: (response) => {
         console.log('成功');
         response.forEach((item) => {
-          if (new Date(item.or_booking_date) < new Date()) {
+          if (new Date(item.or_booking_date) > new Date()) {
             this.Order_table.push(item);
           }
         });
