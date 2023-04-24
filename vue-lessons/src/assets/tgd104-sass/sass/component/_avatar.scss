@@ -10,9 +10,9 @@
       display: block;
       border: 0;
       outline: 0;
-      background-image: url(../../image/member/avatar.jpg);
+      background-image: url("http://localhost/TGD104_G3_NEW/vue-lessons/src/assets/image/member/fake_avatar.jpeg");
+      background-size: cover;
       border-radius: 50%;
-      background-position: -50px -20px;
       width: 120px;
       height: 120px;
       margin: 0 auto;
