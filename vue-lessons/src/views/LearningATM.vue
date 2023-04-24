@@ -47,7 +47,7 @@ export default {
       this.$cookies.set("Or_booking_date",'2023/04/25')
       
 
-      this.Member_id = $cookies.get("Member_id")
+      this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
       this.Consultant_id = $cookies.get("selectedConsultant")
       this.Or_checkout_method = $cookies.get("moneymethod")
       this.Or_booking_date = $cookies.get("Or_booking_date")

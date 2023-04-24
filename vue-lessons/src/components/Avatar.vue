@@ -19,6 +19,7 @@
 
 <script>
 import $ from "jquery";
+import {API_ARC} from "@/config";
 export default {
   name: "Avatar",
   data() {
@@ -44,7 +45,7 @@ export default {
         contentType: false,
         success: (response) => {
           console.log(response);
-          this.filename = `http://localhost/img/${response}`;
+          this.filename = `${API_ARC}${response}`;
           console.log(this.filename);
           document.querySelector(".avatar").style.backgroundImage = "";
         },
@@ -55,6 +56,7 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let member_id = this.$cookies.get("Member_id");
 
     if (member_id) {

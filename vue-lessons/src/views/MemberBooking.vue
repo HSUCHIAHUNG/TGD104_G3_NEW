@@ -132,6 +132,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import OrderSum from "../components/OrderSum.vue";
+import {API_ARC} from "@/config";
 
 // 日期格式
 import { format } from "date-fns";
@@ -145,6 +146,7 @@ export default {
       defaultOption: "預約明細",
       studyOrder: [],
       travelOrder: [],
+      img_src: '',
     };
   },
   components: {
@@ -180,6 +182,7 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let Member_id = $cookies.get("Member_id");
     console.log(Member_id);
 
@@ -197,7 +200,7 @@ export default {
           console.log(item.or_booking_date);
           console.log(new Date(item.or_booking_date));
           console.log(new Date());
-          if (new Date(item.or_booking_date) > new Date()) {
+          if (new Date(item.or_booking_date) < new Date()) {
             this.travelOrder.push(item);
           }
           console.log(this.travelOrder);
@@ -223,7 +226,7 @@ export default {
           console.log(item.or_booking_date);
           console.log(new Date(item.or_booking_date));
           console.log(new Date());
-          if (new Date(item.or_booking_date) > new Date()) {
+          if (new Date(item.or_booking_date) < new Date()) {
             this.studyOrder.push(item);
           }
           console.log(this.studyOrder);

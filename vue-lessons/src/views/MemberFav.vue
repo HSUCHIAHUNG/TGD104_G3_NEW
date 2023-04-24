@@ -53,7 +53,7 @@
                     :to="!item.tr_job ? '/LearningGallery' : '/travelGallery'"
                     @click="consultantGallery(item.id)"
                     target="_blank"
-                    ><img :src="item.c_photo1" :alt="item.c_photo1"
+                    ><img :src="`${img_src}${item.c_photo1}`" :alt="item.c_photo1"
                   /></router-link>
                   <h1>{{ item.c_firstname + item.c_lastname }}</h1>
                   <h2>
@@ -79,6 +79,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import VHeader from "@/components/VHeader.vue";
+import {API_ARC} from "@/config";
 
 export default {
   name: "MemberFav",
@@ -88,6 +89,7 @@ export default {
       c_list: [],
       currentTab: "learning",
       defaultOption: "收藏清單",
+      img_src: '',
       // consultantInfo: [
       //   {
       //     id: "C01",
@@ -285,6 +287,7 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let vm = this; // 將 Vue instance 存到變數 vm 中
     let Member_id = $cookies.get("Member_id");
     if (Member_id) {

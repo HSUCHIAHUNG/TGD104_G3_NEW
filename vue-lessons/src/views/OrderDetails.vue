@@ -63,7 +63,7 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
+                  <img :src="`${img_src}${order_info.c_photo1}`" :alt="order_info.c_photo1" />
                   <h3>
                     預約顧問：
                     <br />
@@ -134,7 +134,7 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
+                  <img :src="`${img_src}${order_info.c_photo1}`" :alt="order_info.c_photo1" />
                   <h3>
                     預約顧問：
                     <br />
@@ -188,8 +188,8 @@
                     <img
                       :src="
                         item.message_sender == 'member'
-                          ? item.m_photo
-                          : item.c_photo1
+                          ? `${img_src}${item.m_photo}`
+                          : `${img_src}${item.c_photo1}`
                       "
                       :alt="
                         item.message_sender == 'member'
@@ -227,6 +227,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
+import {API_ARC} from "@/config";
 
 export default {
   name: "OrderDetails",
@@ -316,6 +317,7 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let Order_id = this.$cookies.get("Order_id");
     // 判斷旅行還是學習
 

@@ -168,11 +168,14 @@ export default {
       consultantInfoL:[
         {
           about_cost: "",
+          about_introduction: "",
           s_grad: "",
           s_address: "",
           s_school: "",
           about_title: "",
+          about_class: "",
           about_cid: "",
+          s_category: "",
         }
         ],
         
@@ -234,7 +237,7 @@ export default {
   methods: {
     save() {
       $.ajax({
-        url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoL_update.php`,
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantinfoL_update.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -271,7 +274,7 @@ export default {
       alert("請登入顧問");
     } else {
       $.ajax({
-        url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoL_select.php`,
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantinfoL_select.php",
         dataType: "json",
         type: "POST",
         data: {

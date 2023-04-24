@@ -134,8 +134,7 @@ export default {
     toCdate(){
       //按送出 days 更新放資料庫 c_date
       this.days.forEach(day => {
-        this.c_date.push(day.id)
-      });
+        this.c_date.push(day.id)});
       console.log(this.c_date);
       $.ajax({
         method: "POST",

@@ -11,7 +11,7 @@ module.exports = {
   runtimeCompiler: false,
   // publicPath: '/TGD104_G3_NEW/vue-lessons/dist/',
 
-  // publicPath: '/tgd104/g3/dist/',
+  publicPath: '/tgd104/g3/dist/',
 
   
 };
