@@ -10,21 +10,30 @@ require_once ("conn.php");
 // -------------------------------------------
 
 // 取得表單資料
-$m_mail = htmlspecialchars($_POST['m_mail']);
-$m_password = htmlspecialchars($_POST['m_password']);
+$id = htmlspecialchars($_POST['id']);
+$c_password = htmlspecialchars($_POST['c_password']);
+$new_pwd = htmlspecialchars($_POST['new_pwd']);
  
-
-$sql = "SELECT * FROM member WHERE m_mail = ? and m_password = ?";
-
+$sql = "SELECT c_password FROM consultant WHERE id = ? and c_password = ?";
 
 $statement = $pdo->prepare($sql);
-$statement->bindValue(1,$m_mail);
-$statement->bindValue(2,$m_password);
+$statement->bindValue(1,$id);
+$statement->bindValue(2,$c_password);
 $statement->execute();
 
 // 取得資料 
 $data = $statement->fetchAll();
-echo json_encode($data);
+
+if (count($data) > 0) {
+  $sql = "UPDATE consultant SET c_password = ? WHERE id = ?";
+  $statement = $pdo->prepare($sql);
+  $statement->bindValue(1, $new_pwd);
+  $statement->bindValue(2, $id);
+  $statement->execute();
+  echo '變更成功';
+} else {
+  echo '密碼不正確，請重新確認';
+}
 
 
 ?>

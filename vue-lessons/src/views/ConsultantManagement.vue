@@ -85,7 +85,6 @@
 <script setup></script>
 
 <script>
-    import searchbar from '../components/BackecdSearch.vue'
     import $ from "jquery";
 
     export default {
@@ -97,32 +96,6 @@
                 searchId: '',
                 selectedStatus: '',
                 c_status: '凍結中',
-
-                // items: [
-                //     { c_id: 'H124803065', c_nickname: '阿宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/19',c_status: '正常', },
-                //     { c_id: 'H123456789', c_nickname: '小敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/17',c_status: '凍結中', },
-                //     { c_id: 'H987654321', c_nickname: '娟霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/15',c_status: '正常', },
-                //     { c_id: 'H123456788', c_nickname: '品諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/13',c_status: '凍結中', },
-                //     { c_id: 'H123456787', c_nickname: '阿宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/11',c_status: '正常', },
-                //     { c_id: 'H123456786', c_nickname: '小敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/09',c_status: '凍結中', },
-                //     { c_id: 'H123456785', c_nickname: '娟霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/04/09',c_status: '正常', },
-                //     { c_id: 'H123456784', c_nickname: '品諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/04/07',c_status: '凍結中', },
-                //     { c_id: 'H123456785', c_nickname: '阿宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/04/05',c_status: '正常', },
-                //     { c_id: 'H123456783', c_nickname: '小敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/05',c_status: '凍結中', },
-                //     { c_id: '1234567871', c_nickname: '娟霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/03',c_status: '正常', },
-                //     { c_id: 'H123456782', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/02',c_status: '凍結中', },       
-                //     { c_id: 'H123456784', c_nickname: '霈霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/01',c_status: '正常', },
-                //     { c_id: 'A124803065', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/02/09',c_status: '凍結中', },
-                //     { c_id: 'B124803065', c_nickname: '宏宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/05',c_status: '正常', },
-                //     { c_id: 'C124803065', c_nickname: '敏敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/02/05',c_status: '凍結中', },
-                //     { c_id: 'D124803065', c_nickname: '霈霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/02/01',c_status: '正常', },
-                //     { c_id: 'E124803065', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/09',c_status: '凍結中', },
-                //     { c_id: 'F124803065', c_nickname: '宏宏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/07',c_status: '正常', },
-                //     { c_id: 'G124803065', c_nickname: '敏敏', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/01/01',c_status: '凍結中', },
-                //     { c_id: 'H124803065', c_nickname: '霈霈', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/16',c_status: '正常', },
-                //     { c_id: 'I124803065', c_nickname: '諭諭', c_phone: '0989541162', c_mail: 'h0989541162@gmail.com',c_create_date: '2023/03/14',c_status: '凍結中', }, 
-                // ],
-
                 items: [],
             }
         },   
@@ -212,8 +185,7 @@
 
         name: 'MemberManagement',
         components: {
-            searchbar,
-            $
+            $,
         }
     }
 
