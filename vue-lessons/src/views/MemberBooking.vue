@@ -45,73 +45,79 @@
           <div class="order_list">
             <!-- 學習訂單 -->
             <div v-if="currentTab == 'tab1'">
-              <template v-for="(item, index) in studyOrder" :key="item.id">
-                <div class="order">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="category"></div>
-                      <div class="order_summary">
-                        <h2>陪你學習</h2>
-                        <span>{{ item.s_category }}</span> |
-                        <span>{{ item.or_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
+              <div v-if="studyOrder.length == 0">無訂單明細</div>
+              <div v-else>
+                <template v-for="(item, index) in studyOrder" :key="item.id">
+                  <div class="order">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="category"></div>
+                        <div class="order_summary">
+                          <h2>陪你學習</h2>
+                          <span>{{ item.s_category }}</span> |
+                          <span>{{ item.or_class }}</span>
+                          <p>
+                            <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                              `ordernum` + item.id
+                            }}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
+                      <div class="order_right">
+                        <div class="date">
+                          {{ formatMonth(item.or_booking_date) }}
+                          <span>{{ formatDate(item.or_booking_date) }}</span>
+                        </div>
+                        <p>{{ price(item.about_cost) }}</p>
+                        <router-link
+                          to="/orderdetails"
+                          class="btn_blue"
+                          @click="setOrderId(item.id)"
+                          >查看更多</router-link
+                        >
                       </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/orderdetails"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
                     </div>
                   </div>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
             <!-- 旅行訂單 -->
             <div v-if="currentTab == 'tab2'">
-              <template v-for="(item, index) in travelOrder" :key="item.id">
-                <div class="order">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="category"></div>
-                      <div class="order_summary">
-                        <h2>陪你旅行</h2>
-                        <span>{{ item.tro_area }}</span> |
-                        <span>{{ item.or_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
+              <div v-if="travelOrder.length == 0">無訂單明細</div>
+              <div v-else>
+                <template v-for="(item, index) in travelOrder" :key="item.id">
+                  <div class="order">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="category"></div>
+                        <div class="order_summary">
+                          <h2>陪你旅行</h2>
+                          <span>{{ item.tro_area }}</span> |
+                          <span>{{ item.or_class }}</span>
+                          <p>
+                            <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                              `ordernum` + item.id
+                            }}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
+                      <div class="order_right">
+                        <div class="date">
+                          {{ formatMonth(item.or_booking_date) }}
+                          <span>{{ formatDate(item.or_booking_date) }}</span>
+                        </div>
+                        <p>{{ price(item.about_cost) }}</p>
+                        <router-link
+                          to="/orderdetails"
+                          class="btn_blue"
+                          @click="setOrderId(item.id)"
+                          >查看更多</router-link
+                        >
                       </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/orderdetails"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
                     </div>
                   </div>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
           </div>
         </div>
@@ -200,8 +206,8 @@ export default {
           if (new Date(item.or_booking_date) > new Date()) {
             this.travelOrder.push(item);
           }
-          console.log(this.travelOrder);
         });
+        console.log(this.travelOrder);
         // this.travelOrder = response;
         // console.log(this.travelOrder);
       },

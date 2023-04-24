@@ -531,11 +531,24 @@ export default {
             m_birth: this.member.m_birth,
           },
           success: (response) => {
-            console.log(response);
-            console.log(typeof response);
-            this.$cookies.set("Member_id", response);
-            this.$router.push("/member");
-            alert("註冊成功");
+            console.log(this.member.m_id);
+            $.ajax({
+              url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/member_id.php",
+              dataType: "json",
+              type: "POST",
+              data: {
+                member_id: this.member.m_id,
+              },
+              success: (response) => {
+                console.log(response);
+                this.$cookies.set("Member_id", response);
+                this.$router.push("/member");
+                alert("註冊成功");
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+              },
+            });
           },
           error: function (jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
