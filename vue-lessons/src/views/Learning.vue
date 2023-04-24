@@ -5,11 +5,11 @@
     
     
     <div class="learning_body">
-        <div class="bgsi bgsi_1" id="gear"></div>
+        <!-- <div class="bgsi bgsi_1" id="gear"></div>
         <div class="bgsi bgsi_2" id="gear2"></div>
         <div class="bgsi bgsi_3" id="gear3"></div>
         <div class="bgsi bgsi_4" id="gear4"></div>
-        <div class="bgsi bgsi_5" id="gear5"></div>
+        <div class="bgsi bgsi_5" id="gear5"></div> -->
         <!-- banner -->
         <div class="learning_content">
 

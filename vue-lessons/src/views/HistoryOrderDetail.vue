@@ -368,7 +368,7 @@ export default {
       let vm = this;
 
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/memberMessage.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberMessage.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -437,7 +437,7 @@ export default {
       console.log(this.comment_title);
       console.log(this.star_num);
       $.ajax({
-        url: "http://localhost/NEW_G3/vue-lessons/src/api/sendReview.php",
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/sendReview.php",
         dataType: "text",
         type: "POST",
         data: {
@@ -460,7 +460,7 @@ export default {
     let order_id = this.$cookies.get("Order_id");
     // 取得訂單資訊
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/orderDetails.php",
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderDetails.php",
       dataType: "json",
       type: "POST",
       data: {
@@ -484,7 +484,7 @@ export default {
     });
     // 取得訂單訊息
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/orderMessage.php",
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderMessage.php",
       dataType: "json",
       type: "POST",
       data: {
@@ -501,7 +501,7 @@ export default {
     });
     // 取得訂單評價
     $.ajax({
-      url: "http://localhost/NEW_G3/vue-lessons/src/api/orderReview.php",
+      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderReview.php",
       dataType: "json",
       type: "POST",
       data: {

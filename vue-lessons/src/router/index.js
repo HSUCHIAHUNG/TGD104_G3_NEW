@@ -92,11 +92,11 @@ const routes = [
     name: "test0416",
     component: () => import("../views/test0416.vue"),
   },
-  {
-    path: "/test_yu",
-    name: "test_yu",
-    component: () => import("../views/test_yu.vue"),
-  },
+  // {
+  //   path: "/test_yu",
+  //   name: "test_yu",
+  //   component: () => import("../views/test_yu.vue"),
+  // },
   {
     path: "/learningCalendar",
     name: "learningCalendar",

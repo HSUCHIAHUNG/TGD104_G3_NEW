@@ -13,11 +13,11 @@ $member_id = $_POST['member_id'];
 
 // 還要補上order_status = 0;
 $sql = "select o.id, o.member_id, o.or_booking_date, 
-a.about_cost, a.about_class, a.s_category
+a.about_cost, o.or_class, a.s_category
 from `order` o
 join about_consultant a 
 on o.consultant_id = a.about_cid 
-where o.member_id = ? and a.tr_job is null";
+where o.member_id = ? and o.tro_area is null order by o.or_booking_date";
 
 
 $statement = $pdo->prepare($sql);

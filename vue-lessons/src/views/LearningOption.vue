@@ -109,6 +109,11 @@ export default {
       // 使用者輸入的內容
       // inputOption: '',
       // SR_content:'',
+
+      //分頁
+      perpage: 10, //一頁的資料數
+      currentPage: 1,
+
     };
   },
   components: {
