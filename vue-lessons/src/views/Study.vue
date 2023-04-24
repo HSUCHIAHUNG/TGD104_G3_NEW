@@ -41,7 +41,7 @@
             <!-- 打勾 end-->
 
             <!-- 顧問圖片 -->
-            <router-link to="/LearningGallery" target="_blank" >
+            <router-link to="/LearningGallery">
               <div class="product-image">
                 <!-- <img :src="product.image" :alt="product.c_nickname"> -->
                 <img :src="`${img_src}${product.c_photo1}`" @click="L_consultant_detail(product.id)">
