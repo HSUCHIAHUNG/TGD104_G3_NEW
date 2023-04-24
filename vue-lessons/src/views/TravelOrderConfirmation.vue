@@ -76,7 +76,7 @@ export default {
       // 向資料庫抓取資料
       $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelOrderConfirmation.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}TravelOrderConfirmation.php`, 
         data: {
           Consultant_id: this.Consultant_id,
           Member_id: this.Member_id,

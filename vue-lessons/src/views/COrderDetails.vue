@@ -209,7 +209,7 @@ export default {
       console.log(this.Order_id,this.Member_id,this.Consultant_id);
 
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantMessage.php",
+        url: `${process.env.VUE_APP_AJAX_URL}consultantMessage.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -238,7 +238,7 @@ export default {
     console.log(this.Orderid);
 
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/COrderDetails.php",
+      url: `${process.env.VUE_APP_AJAX_URL}COrderDetails.php`,
       dataType: "json",
       type: "POST",
       data: {
@@ -259,7 +259,7 @@ export default {
 
     // 取得訂單訊息
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantorderMessage.php",
+      url: `${process.env.VUE_APP_AJAX_URL}consultantorderMessage.php`,
       dataType: "json",
       type: "POST",
       data: {

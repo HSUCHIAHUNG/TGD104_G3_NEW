@@ -351,7 +351,7 @@ export default {
      console.log(this.comment_title);
      console.log(this.star_num);
      $.ajax({
-       url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/sendReview.php",
+       url: `${process.env.VUE_APP_AJAX_URL}sendReview.php`,
        dataType: "text",
        type: "POST",
        data: {
@@ -390,7 +390,7 @@ export default {
 
    // 陪你旅行
    $.ajax({
-     url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberBookingTravel.php",
+     url: `${process.env.VUE_APP_AJAX_URL}memberBookingTravel.php`,
      dataType: "json",
      type: "POST",
      data: {
@@ -416,7 +416,7 @@ export default {
    });
    // 陪你學習
    $.ajax({
-     url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberBookingMusic.php",
+     url: `${process.env.VUE_APP_AJAX_URL}memberBookingMusic.php`,
      dataType: "json",
      type: "POST",
      data: {

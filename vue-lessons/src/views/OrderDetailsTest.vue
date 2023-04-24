@@ -291,7 +291,7 @@ export default {
       let vm = this;
 
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberMessage.php",
+        url: `${process.env.VUE_APP_AJAX_URL}memberMessage.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -322,7 +322,7 @@ export default {
 
     // 學習訂單
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderDetails.php",
+      url: `${process.env.VUE_APP_AJAX_URL}orderDetails.php`,
       dataType: "json",
       type: "POST",
       data: {
@@ -347,7 +347,7 @@ export default {
     // -----------------------------------
     // 取得訂單訊息
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderMessage.php",
+      url: `${process.env.VUE_APP_AJAX_URL}orderMessage.php`,
       dataType: "json",
       type: "POST",
       data: {

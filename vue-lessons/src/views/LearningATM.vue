@@ -66,7 +66,7 @@ export default {
 
       $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningCreditCard.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}LearningCreditCard.php`, 
         data: {
         Member_id: this.Member_id,
         Consultant_id: this.Consultant_id,

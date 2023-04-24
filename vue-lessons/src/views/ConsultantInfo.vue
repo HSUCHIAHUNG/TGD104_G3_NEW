@@ -139,7 +139,7 @@ export default {
       console.log(this.c_date);
       $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Update.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}ConsultantCalendar_Update.php`, 
         data: {
             Id: this.Consultant_id,
             C_date: this.c_date,
@@ -147,6 +147,7 @@ export default {
         dataType: "text",
         success: response => {
           alert("送出成功");
+
         },
 
         error: function(exception) {
@@ -164,7 +165,7 @@ export default {
     // select c_date push to disabledDates
     $.ajax({
       method: "POST",
-      url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantCalendar_Select.php', 
+      url: `${process.env.VUE_APP_AJAX_URL}ConsultantCalendar_Select.php`, 
       data: {
           Id: this.Consultant_id,
           

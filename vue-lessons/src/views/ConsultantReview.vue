@@ -181,7 +181,7 @@
         },   
 
         mounted() {
-            $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantReview.php').then(response => this.items = response)
+            $.getJSON(`${process.env.VUE_APP_AJAX_URL}ConsultantReview.php`).then(response => this.items = response)
             // console.log(this.items);
            
         },
@@ -221,8 +221,8 @@
                     $.ajax({
                 
                     method: "POST",
-                    url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantReview_update.php', 
-                    //url: '../api/Join_test.php', 
+                    url: `${process.env.VUE_APP_AJAX_URL}ConsultantReview_update.php`, 
+                    //url: '../api/Join_test.php`, 
                     data: {
                         Id: id,
                         C_review_status: status,

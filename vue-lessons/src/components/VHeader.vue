@@ -515,7 +515,7 @@ export default {
         alert("請重新確認密碼");
       } else {
         $.ajax({
-          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MSignUp.php",
+          url: `${process.env.VUE_APP_AJAX_URL}MSignUp.php`,
           dataType: "text",
           type: "POST",
           data: {
@@ -545,7 +545,7 @@ export default {
     mLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/mLogin.php",
+        url: `${process.env.VUE_APP_AJAX_URL}mLogin.php`,
         dataType: "json",
         type: "POST",
         data: {
@@ -578,7 +578,7 @@ export default {
     cLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/cLogin.php",
+        url: `${process.env.VUE_APP_AJAX_URL}cLogin.php`,
         dataType: "json",
         type: "POST",
         data: {

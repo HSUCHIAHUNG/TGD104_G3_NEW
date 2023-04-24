@@ -202,9 +202,10 @@ export default {
     // console.log(this.C_firstname)
     let x = $cookies.get('toAbout')
     this.About_class = x
+    console.log(this.About_class);
     // console.log(this.About_class);
     
-    console.log($cookies.get('Consultant_id'));
+    // console.log($cookies.get('Consultant_id'));
   },
 
   methods: {
@@ -266,7 +267,7 @@ export default {
 
         $.ajax({
             method: "POST",
-            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply.php', 
+            url: `${process.env.VUE_APP_AJAX_URL}JoinApply.php`, 
             data: {
                 C_firstname: this.C_firstname,
                 C_birth: this.C_birth,
@@ -306,7 +307,7 @@ export default {
       // alert()
        $.ajax({
             method: "POST",
-            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
+            url: `${process.env.VUE_APP_AJAX_URL}JoinApply_id.php`, 
             data: {
               C_id: this.C_id,
                
