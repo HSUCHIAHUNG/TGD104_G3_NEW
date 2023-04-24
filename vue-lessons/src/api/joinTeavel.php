@@ -18,7 +18,8 @@ $about_introduction =  $_POST["About_introduction"];
 $about_cid =  $_POST["Consultant_id"];
 
 
-$sql = "INSERT INTO about_consultant(tr_interest,tr_experience,tr_license,tr_job,about_cost,about_title,about_introduction,about_class,about_cid) VALUES ('$tr_interest','$tr_experience','$tr_license','$tr_job','$about_cost','$about_title','$about_class','$about_introduction','$about_cid')";
+$sql = "INSERT INTO about_consultant(tr_interest,tr_experience,tr_license,tr_job,about_cost,about_title,about_class,about_introduction,about_cid)
+ VALUES ('$tr_interest','$tr_experience','$tr_license','$tr_job','$about_cost','$about_title','$about_class','$about_introduction','$about_cid')";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

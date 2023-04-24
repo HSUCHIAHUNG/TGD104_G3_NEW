@@ -73,8 +73,8 @@
                     </div>
 
                     <h1>簡短的介紹一下自己吧(例如：旅行相關經歷簡述)(100字以內)</h1>
-                    
-                    <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig" ></ckeditor>
+                    <textarea type="text" cols="110" rows="10" v-model="About_introduction" required></textarea>
+                    <!-- <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig" ></ckeditor> -->
 
                     <div class="join_travel_btn">
                         <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
@@ -112,7 +112,7 @@ export default {
             About_cost: '',
             About_title: '',
             About_class: '',
-            About_introduction: '',
+            About_introduction: 'asdada',
             Consultant_id:'',
             Member_id:'',
             editor: ClassicEditor,
