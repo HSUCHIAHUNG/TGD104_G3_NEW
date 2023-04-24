@@ -233,7 +233,7 @@ import MemberSetting from "../components/MemberSetting.vue";
 import PasswordChange from "../components/PasswordChange.vue";
 import VFooter from "../components/VFooter.vue";
 import ChatBotNew from "../components/ChatBotNew.vue";
-
+import $ from "jquery";
 
 export default {
   name: "Member",
