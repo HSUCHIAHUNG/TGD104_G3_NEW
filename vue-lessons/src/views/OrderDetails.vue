@@ -63,7 +63,10 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
+                  <img
+                    :src="`${img_src}${order_info.c_photo1}`"
+                    :alt="order_info.c_photo1"
+                  />
                   <h3>
                     預約顧問：
                     <br />
@@ -134,7 +137,10 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
+                  <img
+                    :src="`${img_src}${order_info.c_photo1}`"
+                    :alt="order_info.c_photo1"
+                  />
                   <h3>
                     預約顧問：
                     <br />
@@ -188,8 +194,8 @@
                     <img
                       :src="
                         item.message_sender == 'member'
-                          ? item.m_photo
-                          : item.c_photo1
+                          ? `${img_src}${item.m_photo}`
+                          : `${img_src}${item.c_photo1}`
                       "
                       :alt="
                         item.message_sender == 'member'
@@ -220,6 +226,8 @@
 <script>
 // 套件
 import $ from "jquery";
+import { API_URL } from "@/config";
+import { API_ARC } from "@/config";
 // 元件
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "@/components/VFooter.vue";
@@ -236,6 +244,7 @@ export default {
       order_info: [],
       order_message: [],
       send_message: "",
+      img_src: "",
     };
   },
   components: {
@@ -316,6 +325,7 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let Order_id = this.$cookies.get("Order_id");
     // 判斷旅行還是學習
 

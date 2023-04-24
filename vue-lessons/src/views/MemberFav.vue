@@ -53,7 +53,9 @@
                     :to="!item.tr_job ? '/LearningGallery' : '/travelGallery'"
                     @click="consultantGallery(item.id)"
                     target="_blank"
-                    ><img :src="item.c_photo1" :alt="item.c_photo1"
+                    ><img
+                      :src="`${img_src}${item.c_photo1}`"
+                      :alt="item.c_photo1"
                   /></router-link>
                   <h1>{{ item.c_firstname + item.c_lastname }}</h1>
                   <h2>
@@ -74,6 +76,8 @@
 
 <script>
 import $ from "jquery";
+import { API_URL } from "@/config";
+import { API_ARC } from "@/config";
 import VFooter from "@/components/VFooter.vue";
 import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
@@ -88,152 +92,7 @@ export default {
       c_list: [],
       currentTab: "learning",
       defaultOption: "收藏清單",
-      // consultantInfo: [
-      //   {
-      //     id: "C01",
-      //     url: require("../assets/image/travel/consultant_c01.png"),
-      //     name: "裴大尼 ",
-      //     experience: "5年經驗登山嚮導",
-      //     gender: "男",
-      //     category: "travel",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C02",
-      //     url: require("../assets/image/travel/consultant_c02.png"),
-      //     name: "裴中尼 ",
-      //     experience: "台灣百岳征服者",
-      //     gender: "男",
-      //     category: "travel",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C03",
-      //     url: require("../assets/image/travel/consultant_c03.png"),
-      //     name: "裴小尼 ",
-      //     experience: "3年經驗登山嚮導 ",
-      //     gender: "男",
-      //     category: "travel",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C04",
-      //     url: require("../assets/image/travel/consultant_c04.png"),
-      //     name: "裴上尼",
-      //     experience: "4年經驗登山嚮導",
-      //     gender: "男",
-      //     category: "travel",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C05",
-      //     url: require("../assets/image/travel/consultant_c05.png"),
-      //     name: "裴下尼",
-      //     experience: "學烏克麗麗，輕鬆享受甜美音色！",
-      //     gender: "男",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C06",
-      //     url: require("../assets/image/travel/consultant_c06.png"),
-      //     name: "裴左尼",
-      //     experience: "學烏克麗麗，輕鬆享受甜美音色！",
-      //     gender: "男",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C07",
-      //     url: require("../assets/image/travel/consultant_c07.png"),
-      //     name: "裴右尼",
-      //     experience: "優秀老師帶你成就鋼琴夢想",
-      //     gender: "男",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C08",
-      //     url: require("../assets/image/travel/consultant_c08.png"),
-      //     name: "裴尼",
-      //     experience: "優秀老師帶你成就鋼琴夢想",
-      //     gender: "男",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C09",
-      //     url: require("../assets/image/travel/consultant_c09.png"),
-      //     name: "倪大裴",
-      //     experience: "讓老師教你，如何把爵士鼓融入生活！",
-      //     gender: "女",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C10",
-      //     url: require("../assets/image/travel/consultant_c10.png"),
-      //     name: "倪中裴",
-      //     experience: "讓老師教你，如何把爵士鼓融入生活！",
-      //     gender: "女",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C11",
-      //     url: require("../assets/image/travel/consultant_c11.png"),
-      //     name: "倪小裴",
-      //     experience: "學吉他，彈出屬於你的音樂風格！",
-      //     gender: "女",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C12",
-      //     url: require("../assets/image/travel/consultant_c12.png"),
-      //     name: "倪上裴",
-      //     experience: "學吉他，彈出屬於你的音樂風格！",
-      //     gender: "女",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C13",
-      //     url: require("../assets/image/travel/consultant_c13.png"),
-      //     name: "倪下裴",
-      //     experience: "學烏克麗麗，輕鬆享受甜美音色！",
-      //     gender: "女",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C14",
-      //     url: require("../assets/image/travel/consultant_c14.png"),
-      //     name: "倪左裴",
-      //     experience: "優秀老師帶你成就鋼琴夢想",
-      //     gender: "女",
-      //     category: "learning",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C15",
-      //     url: require("../assets/image/travel/consultant_c15.png"),
-      //     name: "倪右裴",
-      //     experience: "1年經驗登山嚮導",
-      //     gender: "女",
-      //     category: "travel",
-      //     favorites: false,
-      //   },
-      //   {
-      //     id: "C16",
-      //     url: require("../assets/image/travel/consultant_c16.png"),
-      //     name: "倪裴",
-      //     experience: "1年經驗登山嚮導",
-      //     gender: "女",
-      //     category: "travel",
-      //     favorites: false,
-      //   },
-      // ],
+      img_src: "",
     };
   },
   components: {
@@ -285,6 +144,7 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let vm = this; // 將 Vue instance 存到變數 vm 中
     let Member_id = $cookies.get("Member_id");
     if (Member_id) {

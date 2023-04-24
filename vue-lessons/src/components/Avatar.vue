@@ -10,7 +10,7 @@
           style="display: none"
           @change="uploadFile($event)"
         />
-        <img class="avatar" :src="filename" />
+        <img class="avatar" :src="`${img_src}${filename}`" />
       </form>
       <p>{{ memberName }}</p>
     </section>
@@ -19,6 +19,8 @@
 
 <script>
 import $ from "jquery";
+import { API_URL } from "@/config";
+import { API_ARC } from "@/config";
 export default {
   name: "Avatar",
   data() {
@@ -26,6 +28,7 @@ export default {
       filename: "",
       imgUrl: "",
       memberName: "",
+      img_src: "",
     };
   },
   methods: {
@@ -55,6 +58,7 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let member_id = this.$cookies.get("Member_id");
 
     if (member_id) {
