@@ -8,16 +8,16 @@ const routes = [
     name: "home",
     component: HomeView,
   },
-  {
-    path: "/travelgame2",
-    name: "travelgame2",
-    component: () => import("../views/TravelGame2.vue"),
-  },
-  {
-    path: "/memberhistorytest",
-    name: "memberhistorytest",
-    component: () => import("../views/MemberHistoryTest.vue"),
-  },
+  // {
+  //   path: "/travelgame2",
+  //   name: "travelgame2",
+  //   component: () => import("../views/TravelGame2.vue"),
+  // },
+  // {
+  //   path: "/memberhistorytest",
+  //   name: "memberhistorytest",
+  //   component: () => import("../views/MemberHistoryTest.vue"),
+  // },
   {
     path: "/imgtest",
     name: "imgtest",
