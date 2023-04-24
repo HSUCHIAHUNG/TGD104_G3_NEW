@@ -154,7 +154,7 @@
 
         <div class="inputs">
           <h1>會員註冊</h1>
-          <form @submit.prevent="signUp">
+          <form @submit.prevent="signUp" v-if="member">
             <div class="input_row">
               <div class="form_group">
                 <label for="" class="input_label">姓</label>

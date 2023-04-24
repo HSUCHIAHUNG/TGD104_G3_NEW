@@ -332,8 +332,8 @@ export default {
     let Member_id = $cookies.get("Member_id");
     console.log(Member_id);
     if (!Member_id) {
-      this.$router.back();
-      alert("請登入會員");
+      // this.$router.back();
+      // alert("請登入會員");
     } else {
       $.ajax({
         url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberInfo.php",
