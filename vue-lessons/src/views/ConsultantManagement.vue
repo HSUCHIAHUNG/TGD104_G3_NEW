@@ -86,7 +86,7 @@
 
 <script>
     import $ from "jquery";
-    import {API_URL} from "@/config";
+    // import {API_URL} from "@/config";
 
     export default {
         data(){ 
@@ -103,7 +103,7 @@
 
         mounted() {
             // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantManagement_Select.php').then(response => this.items = response)
-            $.getJSON(`${API_URL}ConsultantManagement_Select.php`).then(response => this.items = response)
+            $.getJSON(`${process.env.VUE_APP_AJAX_URL}ConsultantManagement_Select.php`).then(response => this.items = response)
 
             console.log(this.items);
         },
