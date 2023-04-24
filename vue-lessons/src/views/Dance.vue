@@ -47,7 +47,7 @@
             <router-link to="/LearningGallery" target="_blank" >
               <div class="product-image">
                 <!-- <img :src="product.image" :alt="product.c_nickname"> -->
-                <img src="../assets/image/consultant02.png" @click="L_consultant_detail(product.id)">
+                <img :src="`${img_src}${product.c_photo1}`" @click="L_consultant_detail(product.id)">
               </div>
             </router-link>
             <!-- 顧問圖片 end -->
@@ -84,6 +84,8 @@
 
   <script>
   import $ from "jquery";
+  import {API_URL} from "@/config";
+  import {API_ARC} from "@/config";
   export default {
     components: {},
     data() {
@@ -93,6 +95,7 @@
         favorites: [],
         selectedConsultant: '',
         products: [],
+        img_src: '',
       };
     },
 
@@ -148,6 +151,7 @@
 
 
     mounted() {
+      this.img_src = `${API_ARC}`;
       $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/dance_Select.php').then(response => this.products = response)
 
       //抓已選擇顧問id

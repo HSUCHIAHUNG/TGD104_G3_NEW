@@ -128,7 +128,7 @@
             <router-link to="/LearningGallery" target="_blank" >
               <div class="product-image">
                 <!-- <img :src="product.image" :alt="product.c_nickname"> -->
-                <img src="../assets/image/consultant02.png" @click="L_consultant_detail(product.id)">
+                <img :src="`${img_src}${product.c_photo1}`" @click="L_consultant_detail(product.id)">
               </div>
             </router-link>
             <!-- 顧問圖片 end -->
@@ -157,6 +157,8 @@
 </template>
       
 <script>
+import {API_URL} from "@/config";
+import {API_ARC} from "@/config";
 import $ from "jquery";
 export default {
   components: {},
@@ -167,6 +169,7 @@ export default {
       favorites: [],
       selectedConsultant: '',
       products: [],
+      img_src: '',
     };
   },
 
@@ -222,13 +225,14 @@ export default {
 
 
   mounted() {
+    this.img_src = `${API_ARC}`;
     $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/draw_Select.php').then(response => this.products = response)
 
     //抓已選擇顧問id
     this.selectedConsultant = this.$cookies.get("L_consultant_id");
 
     // 先假放Member_id
-    this.$cookies.set("Member_id","1")
+    // this.$cookies.set("Member_id","1")
   },
 }
 </script>
