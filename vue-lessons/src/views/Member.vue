@@ -237,7 +237,6 @@ import $ from "jquery";
 
 export default {
   name: "Member",
-
   data() {
     return {
       content: "MemberSetting",
