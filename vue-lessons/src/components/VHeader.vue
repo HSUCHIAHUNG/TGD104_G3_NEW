@@ -561,7 +561,7 @@ export default {
               this.$cookies.set("Member_id", this.memberInfo[0].id);
               let Member_id = $cookies.get("Member_id");
               console.log(Member_id);
-              this.$router.push("/member");
+
               alert("登入成功");
             } else {
               alert("請確認帳號權限");
