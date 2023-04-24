@@ -47,7 +47,7 @@ export default {
         contentType: false,
         success: (response) => {
           console.log(response);
-          this.filename = `http://localhost/img/${response}`;
+          this.filename = response;
           console.log(this.filename);
           document.querySelector(".avatar").style.backgroundImage = "";
         },
@@ -99,7 +99,7 @@ export default {
             alert("請登入會員");
           } else {
             console.log(response[0].m_photo);
-            this.filename = `http://localhost/img/${response[0].m_photo}`;
+            this.filename = response[0].m_photo;
             console.log(this.filename);
           }
         },

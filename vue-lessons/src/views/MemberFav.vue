@@ -43,7 +43,7 @@
           </div>
           <!-- 下半部 收藏清單內容 -->
           <div class="main_fav_list">
-            <div v-if="favList == null">
+            <div v-if="(favList == null) | (favList.length == 0)">
               <h1 class="no_fav">無收藏顧問</h1>
             </div>
             <ul class="fav_list_area">
@@ -139,7 +139,7 @@ export default {
     },
     consultantGallery(id) {
       let new_id = id.toString();
-      this.$cookies.set("Consultant_id", new_id);
+      this.$cookies.set("T_about_consultant", new_id);
       this.$cookies.set("L_about_consultant", new_id);
     },
   },
