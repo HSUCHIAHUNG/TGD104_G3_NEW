@@ -297,7 +297,7 @@ export default {
         },
         success: (response) => {
           console.log(response);
-          this.favList = response[0].m_collect;
+          this.favList = JSON.parse(response[0].m_collect);
           console.log(this.favList);
           if (this.favList == null) {
           } else {
@@ -309,14 +309,16 @@ export default {
                 id: Member_id,
               },
               success: (response) => {
-                let arr = response;
-                console.log(arr);
-                arr.filter((item) => {
-                  if (this.favList.includes(item.id)) {
-                    this.c_list.push(item);
-                    console.log(this.c_list);
+                console.log(response);
+                console.dir(this.favList);
+                response.forEach((item) => {
+                  for (let i = 0; i < this.favList.length; i++) {
+                    if (item.id == this.favList[i]) {
+                      this.c_list.push(item);
+                    }
                   }
                 });
+                console.log(this.c_list);
               },
               error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);

@@ -14,7 +14,7 @@
         <div class="main">
           <div class="main_header">
             <h1>預約明細</h1>
-            <!-- <ul class="tabs">
+            <ul class="tabs">
               <li>
                 <a
                   href="#"
@@ -39,8 +39,9 @@
                   >陪你旅行</a
                 >
               </li>
-            </ul> -->
+            </ul>
           </div>
+          <!------------ 訂單列表 ------------>
           <div class="order_list">
             <!-- 學習訂單 -->
             <div v-if="currentTab == 'tab1'">
@@ -52,7 +53,7 @@
                       <div class="order_summary">
                         <h2>陪你學習</h2>
                         <span>{{ item.s_category }}</span> |
-                        <span>{{ item.about_class }}</span>
+                        <span>{{ item.or_class }}</span>
                         <p>
                           <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
                             `ordernum` + item.id
@@ -87,7 +88,7 @@
                       <div class="order_summary">
                         <h2>陪你旅行</h2>
                         <span>{{ item.tro_area }}</span> |
-                        <span>{{ item.about_class }}</span>
+                        <span>{{ item.or_class }}</span>
                         <p>
                           <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
                             `ordernum` + item.id
@@ -122,6 +123,9 @@
 </template>
 
 <script>
+// 套件
+import $ from "jquery";
+// 元件
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "@/components/VFooter.vue";
 import Avatar from "@/components/Avatar.vue";
@@ -129,12 +133,18 @@ import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import OrderSum from "../components/OrderSum.vue";
 
+// 日期格式
+import { format } from "date-fns";
+import { monthsInQuarter } from "date-fns";
+
 export default {
-  name: "MemberFav",
+  name: "MemberBookingTest",
   data() {
     return {
       currentTab: "tab1",
       defaultOption: "預約明細",
+      studyOrder: [],
+      travelOrder: [],
     };
   },
   components: {
@@ -232,4 +242,7 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.order {
+  margin-bottom: 20px;
+}
 </style>

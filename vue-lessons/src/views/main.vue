@@ -12,9 +12,6 @@
                 delay: 6500,
                 disableOnInteraction: false,
                 }"
-                :pagination="{
-                clickable: true,
-                }"
                 :modules="modules"
                 class="mySwiper"
                 >     
@@ -131,7 +128,7 @@ import 'swiper/css';
 
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper';
+import { Autoplay, Navigation } from 'swiper';
 
 export default {
     name: "Index",
@@ -143,7 +140,7 @@ export default {
     },
     setup() {
       return {
-        modules: [Autoplay, Pagination, Navigation],
+        modules: [Autoplay, Navigation],
       };
     },
   };

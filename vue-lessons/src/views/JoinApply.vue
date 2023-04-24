@@ -152,10 +152,6 @@
               </div>
             </div>
           </div>
-        </form>
-      </div>
-    </div>
-
     <div class="join_btn">
       <!-- <a href="/Join"><button class="outline_btn_blue">回上一頁</button></a> -->
       <router-link to="/Join"
@@ -169,6 +165,10 @@
       <button class="btn_blue" @click="submitForm">下一步</button>
       <p id="result" style="height: 100px;"></p>
     </div>
+        </form>
+      </div>
+    </div>
+
   </div>
   <!-- join_apply end -->
 
@@ -316,6 +316,7 @@ export default {
 
               //set cookie
               $cookies.set("Consultant_id",response)
+              console.log($cookies.get("Consultant_id"));
 
 
             },

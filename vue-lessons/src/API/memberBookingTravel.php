@@ -11,13 +11,12 @@ require_once ("conn.php");
 
 $member_id = $_POST['member_id'];
 
-// 還要補上order_status = 0;
 $sql = "select o.id, o.member_id, o.or_booking_date,
-o.tro_area, a.about_cost, a.about_class 
+o.tro_area, a.about_cost, o.or_class 
 from `order` o
 join about_consultant a 
 on o.consultant_id = a.about_cid 
-where o.member_id = ? and a.tr_job is not null;";
+where o.member_id = ? and o.tro_area is not null order by o.or_booking_date";
 
 
 $statement = $pdo->prepare($sql);

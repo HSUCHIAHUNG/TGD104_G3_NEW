@@ -652,6 +652,10 @@ export default {
     top: 20px;
     left: 45px;
     font-size: 50px;
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   .center_content {
