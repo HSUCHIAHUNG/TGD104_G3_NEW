@@ -531,6 +531,8 @@ export default {
             m_birth: this.member.m_birth,
           },
           success: (response) => {
+            console.log(response);
+            console.log(typeof response);
             this.$cookies.set("Member_id", response);
             this.$router.push("/member");
             alert("註冊成功");
