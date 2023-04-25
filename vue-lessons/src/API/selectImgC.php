@@ -10,8 +10,9 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 require_once ("conn.php");
 // -------------------------------------------
+$consultant_id =  $_POST["Consultant_id"];
 
-$sql = "select c_photo1 from consultant where id = 1";
+$sql = "select c_photo1 from consultant where id = '$consultant_id'";
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $data = $statement->fetchAll();

@@ -34,7 +34,7 @@ require_once ("conn.php");
         //將暫存檔搬移到正確位置
         move_uploaded_file($filePath_Temp, $filePath);
         //=======================================================
-
+        
         $sql = "UPDATE consultant SET 
         c_photo1 = ?
         WHERE id = 1";

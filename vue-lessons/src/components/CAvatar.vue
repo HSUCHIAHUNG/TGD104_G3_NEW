@@ -27,6 +27,7 @@ export default {
       filename: "",
       imgUrl: "",
       ConsultantName: "",
+      Consultant_id: '',
     };
   },
   methods: {
@@ -34,8 +35,8 @@ export default {
       //$event.preventDefault();
       let formData = new FormData($("#upload-form")[0]);
       // 上傳圖片
-      console.log(formData);
-
+      
+      let Consultant_id = this.$cookies.get("Consultant_id");
       $.ajax({
         url: `${process.env.VUE_APP_AJAX_URL}SingleFile_C.php`,
         type: "POST",
@@ -45,9 +46,27 @@ export default {
         contentType: false,
         success: (response) => {
           console.log(response);
-          this.filename = `${API_ARC}${response}`;
-          console.log(this.filename);
+          this.filename = response;
+          alert(this.filename);
           document.querySelector(".avatar").style.backgroundImage = "";
+
+            $.ajax({
+            url: `${process.env.VUE_APP_AJAX_URL}FlieUpload_C.php`,
+            dataType: "text",
+            type: "POST",
+            data: {
+              Consultant_id: Consultant_id,
+              C_photo1: this.filename,
+              
+            },
+            success: function (response) {
+              console.log(response);
+              // alert(this.filename);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+            },
+          });
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(jqXHR, textStatus, errorThrown);
@@ -78,7 +97,9 @@ export default {
       url: `${process.env.VUE_APP_AJAX_URL}selectImgC.php`,
       dataType: "json",
       type: "POST",
-      data: {},
+      data: {
+        Consultant_id: Consultant_id,
+      },
       success: (response) => {
         console.log(response[0].c_photo1);
         this.filename = `${API_ARC}${response[0].c_photo1}`;

@@ -48,7 +48,7 @@ export default {
 
   methods: {
     order_done(){
-      this.$cookies.set("Or_booking_date",'2023/04/25')
+      
       
 
       this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
