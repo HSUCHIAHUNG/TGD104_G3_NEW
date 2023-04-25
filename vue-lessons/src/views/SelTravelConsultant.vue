@@ -204,7 +204,7 @@ export default {
       if (this.favorites && this.favorites.length > 0) {
       $.ajax({
           method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelHeartCollect_Update.php', 
+          url: `${process.env.VUE_APP_AJAX_URL}TravelHeartCollect_Update.php`, 
           data: {
             M_collect: this.favorites,
             Id: this.Member_id,
@@ -222,7 +222,7 @@ export default {
         //讓m_collect值不為null
         $.ajax({
           method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelHeartCollect_Update2.php', 
+          url: `${process.env.VUE_APP_AJAX_URL}TravelHeartCollect_Update2.php`, 
           data: {
             Id: this.Member_id,
           },
@@ -293,7 +293,7 @@ export default {
     //呼叫ajax 撈對應顧問
     $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelConsultant_Select.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}TravelConsultant_Select.php`, 
         data: {
           About_class: this.toTravelClass,
           C_area: this.travelArea,
@@ -314,7 +314,7 @@ export default {
     //撈已收藏愛心，畫面重整時收藏愛心還會存在
     $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelMember_Select.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}TravelMember_Select.php`, 
         data: {
           Id: this.Member_id,
             

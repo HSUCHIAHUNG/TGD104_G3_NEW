@@ -48,7 +48,7 @@ export default {
       console.log(formData);
 
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/SingleFile.php",
+        url: `${process.env.VUE_APP_AJAX_URL}SingleFile.php`,
         type: "POST",
         data: formData,
         dataType: "text",
@@ -60,7 +60,7 @@ export default {
           console.log(this.filename);
 
           $.ajax({
-            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+            url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
             dataType: "json",
             type: "POST",
             data: {},
@@ -84,7 +84,7 @@ export default {
   },
   mounted() {
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+      url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
       dataType: "json",
       type: "POST",
       data: {},

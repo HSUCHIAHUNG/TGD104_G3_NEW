@@ -135,7 +135,7 @@ export default {
         $.ajax({
           // type: 'POST',
           method: "POST",
-          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/API/LearningOption.php",
+          url: `${process.env.VUE_APP_AJAX_URL}LearningOption.php`,
           dataType: "json",
           data: {
             SR_content: this.SR_content,
@@ -177,7 +177,7 @@ export default {
         $.ajax({
             // type: 'POST',
             method: "POST",
-            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/API/LearningOption_update.php",
+            url: `${process.env.VUE_APP_AJAX_URL}LearningOption_update.php`,
             dataType: "json",
             data: {
               Require_id: this.Require_id,
@@ -205,9 +205,9 @@ export default {
 
   mounted() {
     $.getJSON(
-      "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php"
+      `${process.env.VUE_APP_AJAX_URL}LearningOption_Select.php`
     ).then((response) => (this.study_option = response));
-      // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select2.php').then(response => this.study_option = response);
+      // $.getJSON(`${process.env.VUE_APP_AJAX_URL}LearningOption_Select2.php`).then(response => this.study_option = response);
 
       // 先假放Option_Member_id
       // this.$cookies.set("Option_Member_id", "23");

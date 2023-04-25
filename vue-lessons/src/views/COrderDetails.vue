@@ -56,7 +56,7 @@
             
             <div class="member_info">
               <img
-                src="../assets/image/member/avatar.jpg"
+                :src="`${img_src}${item.m_photo}`"
                 alt="member avatar"
               />
               <div class="member_details">
@@ -107,8 +107,8 @@
                     <img
                       :src="
                         item.message_sender == 'consultant'
-                          ? item.m_photo
-                          : item.c_photo1
+                          ? `${img_src}${item.m_photo}`
+                          : `${img_src}${item.c_photo1}`
                       "
                       :alt="
                         item.message_sender == 'consultant'
@@ -144,6 +144,7 @@ import CSideNav from "@/components/CSideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
 import $ from "jquery";
+import {API_ARC} from "@/config";
 
 
 export default {
@@ -209,7 +210,7 @@ export default {
       console.log(this.Order_id,this.Member_id,this.Consultant_id);
 
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantMessage.php",
+        url: `${process.env.VUE_APP_AJAX_URL}consultantMessage.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -231,14 +232,14 @@ export default {
     },
   },
   mounted() {
-
+    this.img_src = `${API_ARC}`;
     // SELECT 會員&顧問資料
     // this.$cookies.set("Consultant_id","1")
     this.Orderid = $cookies.get("order_id");
     console.log(this.Orderid);
 
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/COrderDetails.php",
+      url: `${process.env.VUE_APP_AJAX_URL}COrderDetails.php`,
       dataType: "json",
       type: "POST",
       data: {
@@ -259,7 +260,7 @@ export default {
 
     // 取得訂單訊息
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantorderMessage.php",
+      url: `${process.env.VUE_APP_AJAX_URL}consultantorderMessage.php`,
       dataType: "json",
       type: "POST",
       data: {

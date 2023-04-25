@@ -103,10 +103,10 @@ export default {
     this.L_consultant_id_detail = this.$cookies.get("L_about_consultant");
     console.log(this.L_consultant_id_detail);
 
-    // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningGallery_Select.php').then(response => this.learning_details = response)
+    // $.getJSON(`${process.env.VUE_APP_AJAX_URL}LearningGallery_Select.php`).then(response => this.learning_details = response)
     $.ajax({
       method: "POST",
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningGallery_Select.php",
+      url: `${process.env.VUE_APP_AJAX_URL}LearningGallery_Select.php`,
       data: {
         Id: this.L_consultant_id_detail,
       },

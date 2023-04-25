@@ -58,32 +58,37 @@
 
 @include rwd(768px){
     .join_ok_container{
-        img{
-            width: 25%;
-        }
-        .join_ok{
-            width: 650px;
-            .join_ok_text{
-                width: 400px;
-                p{
-                    font-size: $fs18;
+        .container{
+            img{
+                width: 25%;
+            }
+            .join_ok{
+                width: 650px;
+                .join_ok_text{
+                    width: 400px;
+                    p{
+                        font-size: $fs18;
+                    }
                 }
             }
         }
+
     }
 }
 
 @include rwd(576px){
     .join_ok_container{
-        .join_ok{
-            background-image: none;
-            width: auto;
-            height: auto;
-            .join_ok_text{
-                width: 80%;
-                padding: 10px;
-                p{
-                    font-size: 15px;
+        .container{
+            .join_ok{
+                background-image: none;
+                width: auto;
+                height: auto;
+                .join_ok_text{
+                    width: 80%;
+                    padding: 10px;
+                    p{
+                        font-size: 15px;
+                    }
                 }
             }
         }

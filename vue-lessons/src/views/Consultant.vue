@@ -318,7 +318,7 @@ export default {
     // 修改資料
     save() {
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantUpdate.php",
+        url: `${process.env.VUE_APP_AJAX_URL}consultantUpdate.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -348,7 +348,7 @@ export default {
         alert("輸入的密碼不一致，請重新確認");
       } else {
         $.ajax({
-          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/changePwdConsultant.php",
+          url: `${process.env.VUE_APP_AJAX_URL}changePwdConsultant.php`,
           dataType: "text",
           type: "POST",
           data: {
@@ -387,7 +387,7 @@ export default {
       alert("請登入顧問");
     } else {
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantInfo.php",
+        url: `${process.env.VUE_APP_AJAX_URL}consultantInfo.php`,
         dataType: "json",
         type: "POST",
         data: {
