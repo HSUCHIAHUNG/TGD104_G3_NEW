@@ -52,7 +52,7 @@
             </div>
             <!-- </div> -->
             <div class="option_content">
-              <div class="option_content_inner">
+              <div style="word-break:break-all" class="option_content_inner">
                 {{ answer.sr_content }}
               </div>
               <div>

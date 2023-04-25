@@ -1,11 +1,13 @@
 <template>
   <!-- header -->
   <header>
-    <div class="header_container v_header">
+    <div style="justify-content: space-evenly" class="header_container v_header">
       <a href="" id="h_bar" @click.prevent="open_nav"
         ><i class="fa-solid fa-bars"></i>
       </a>
-      <img src="../assets/image/logo_header.png" alt="" />
+      <router-link to="/main" class="logo_header">
+        <img src="../assets/image/logo_header.png" alt="" />
+      </router-link>
       <div class="h_icon">
         <a href="" @click.prevent="memberLogin"
           ><i class="fa-solid fa-user"></i
