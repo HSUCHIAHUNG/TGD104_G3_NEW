@@ -19,11 +19,11 @@ $consultant_id = $_POST['Consultant_id'];
 $sql = "select 
 c_firstname,
 c_lastname
-from consultant where id = ?";
+from consultant where id = $consultant_id";
 
 
 $statement = $pdo->prepare($sql);
-$statement->bindValue(1,$consultant_id);
+// $statement->bindValue(1,$consultant_id);
 $statement->execute();
 
 // 取得資料 

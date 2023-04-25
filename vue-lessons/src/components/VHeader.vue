@@ -533,7 +533,7 @@ export default {
           success: (response) => {
             console.log(this.member.m_id);
             $.ajax({
-              url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/member_id.php",
+              url: `${process.env.VUE_APP_AJAX_URL}member_id.php`,
               dataType: "json",
               type: "POST",
               data: {

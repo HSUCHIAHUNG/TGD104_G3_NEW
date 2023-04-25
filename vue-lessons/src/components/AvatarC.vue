@@ -87,7 +87,7 @@ export default {
       });
       //
       $.ajax({
-        url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
+        url: `${process.env.VUE_APP_AJAX_URL}selectImgC.php`,
         dataType: "json",
         type: "POST",
         data: {},
