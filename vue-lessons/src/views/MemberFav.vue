@@ -84,6 +84,7 @@ import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import VHeader from "@/components/VHeader.vue";
 
+
 export default {
   name: "MemberFav",
   data() {
@@ -122,7 +123,7 @@ export default {
       let member_id = this.$cookies.get("Member_id");
       // 更新會員收藏清單
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/removeFav.php",
+        url: `${process.env.VUE_APP_AJAX_URL}removeFav.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -149,7 +150,7 @@ export default {
     let Member_id = $cookies.get("Member_id");
     if (Member_id) {
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberfav.php",
+        url: `${process.env.VUE_APP_AJAX_URL}memberfav.php`,
         dataType: "json",
         type: "POST",
         data: {
@@ -162,7 +163,7 @@ export default {
           if (this.favList == null) {
           } else {
             $.ajax({
-              url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberfavS.php",
+              url: `${process.env.VUE_APP_AJAX_URL}memberfavS.php`,
               dataType: "json",
               type: "POST",
               data: {

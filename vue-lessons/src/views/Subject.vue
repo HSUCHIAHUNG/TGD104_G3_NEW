@@ -150,7 +150,7 @@
 
     mounted() {
       this.img_src = `${API_ARC}`;
-      $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/subject_Select.php').then(response => this.products = response)
+      $.getJSON(`${process.env.VUE_APP_AJAX_URL}subject_Select.php`).then(response => this.products = response)
 
       //抓已選擇顧問id
       this.selectedConsultant = this.$cookies.get("L_consultant_id");

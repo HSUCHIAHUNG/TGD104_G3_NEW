@@ -105,7 +105,7 @@ export default {
     //呼叫ajax 撈對應顧問
     $.ajax({
       method: "POST",
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/Gallery2_Select.php",
+      url: `${process.env.VUE_APP_AJAX_URL}Gallery2_Select.php`,
       data: {
         Id: this.T_about_consultant,
       },

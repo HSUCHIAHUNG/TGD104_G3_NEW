@@ -162,7 +162,7 @@
       <!-- <router-link to="/JoinLearn"
         ><button class="btn_blue">下一步</button></router-link
       > -->
-      <button class="btn_blue" @click="submitForm">下一步</button>
+      <button class="btn_blue" type="submit">下一步</button>
       <p id="result" style="height: 100px;"></p>
     </div>
         </form>
@@ -188,7 +188,9 @@ export default {
       areas: ["北部","中部","南部","東部"],
       genders: ["男性","女性"],
       About_class:'',
-      Consultant_id: ''
+      Consultant_id: '',
+      C_photo1: 'b10.png',
+      
     };
   },
 
@@ -202,9 +204,10 @@ export default {
     // console.log(this.C_firstname)
     let x = $cookies.get('toAbout')
     this.About_class = x
+    console.log(this.About_class);
     // console.log(this.About_class);
     
-    console.log($cookies.get('Consultant_id'));
+    // console.log($cookies.get('Consultant_id'));
   },
 
   methods: {
@@ -247,26 +250,9 @@ export default {
     },
 
     submitForm(){
-      
-        // const formData = new FormData();
-        // formData.append("C_firstname", this.C_firstname);
-        // formData.append("C_birth", this.C_birth);
-        // formData.append("C_lastname", this.C_lastname);
-        // formData.append("C_mail", this.C_mail);
-        // formData.append("C_nickname", this.C_nickname);
-        // formData.append("C_id", this.C_id);
-        // formData.append("C_personality", this.C_personality);
-        // formData.append("C_password", this.C_password);
-        // formData.append("C_phone", this.C_phone);
-        // formData.append("C_area", this.C_area);
-        // formData.append("C_gender", this.C_gender);
-      
-
-        // formData.append("C_photo1", this.$refs.fileInput.files[0]);
-
         $.ajax({
             method: "POST",
-            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply.php', 
+            url: `${process.env.VUE_APP_AJAX_URL}JoinApply.php`, 
             data: {
                 C_firstname: this.C_firstname,
                 C_birth: this.C_birth,
@@ -279,6 +265,7 @@ export default {
                 C_phone: this.C_phone,
                 C_area: this.C_area,
                 C_gender: this.C_gender,
+                C_photo1: this.C_photo1,
                 
                 // C_photo1: this.$refs.fileInput.files[0],
             },
@@ -306,7 +293,7 @@ export default {
       // alert()
        $.ajax({
             method: "POST",
-            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/JoinApply_id.php', 
+            url: `${process.env.VUE_APP_AJAX_URL}JoinApply_id.php`, 
             data: {
               C_id: this.C_id,
                

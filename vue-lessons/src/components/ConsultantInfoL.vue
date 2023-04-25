@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  v-if="consultantInfoL">
     <!-- main_content -->
     <div class="consultant_content">
       <form action="">
@@ -168,11 +168,14 @@ export default {
       consultantInfoL:[
         {
           about_cost: "",
+          about_introduction: "",
           s_grad: "",
           s_address: "",
           s_school: "",
           about_title: "",
+          about_class: "",
           about_cid: "",
+          s_category: "",
         }
         ],
         
@@ -233,8 +236,9 @@ export default {
   },
   methods: {
     save() {
-      $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantinfoL_update.php",
+      if(this.ConsultantInfoL && this.ConsultantInfoL[0]){
+        $.ajax({
+        url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoL_update.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -256,6 +260,8 @@ export default {
           console.log(textStatus, errorThrown);
         },
       });
+      }
+ 
     },
   },
 
@@ -271,7 +277,7 @@ export default {
       alert("請登入顧問");
     } else {
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/ConsultantinfoL_select.php",
+        url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoL_select.php`,
         dataType: "json",
         type: "POST",
         data: {

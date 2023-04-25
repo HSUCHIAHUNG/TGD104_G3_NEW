@@ -7,10 +7,10 @@ import { RouterLink, RouterView } from "vue-router";
     <!-- <sales-management></sales-management> -->
     <nav class="BackendNav">
       <h1>Hello, Alden</h1>
-      <router-link to="/BackendCenter/SalesManagement">
+      <!-- <router-link to="/BackendCenter/SalesManagement">
         <i class="fa-solid fa-tag"></i>
         <span>銷售管理</span>
-      </router-link>
+      </router-link> -->
       <router-link to="/BackendCenter/MemberManagement">
         <i class="fa-solid fa-address-book"></i>
         <span>會員管理</span>
