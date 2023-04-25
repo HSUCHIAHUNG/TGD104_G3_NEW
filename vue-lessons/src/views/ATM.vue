@@ -4,7 +4,7 @@
             <h1>款項</h1>
             <div class="ttl_payment">
                 <h2>Total Payment</h2>
-                <p>${{}}</p>
+                <p>${{About_cost}}</p>
             </div>
             <div class="payment_deadline">
                 <h2>付款期限</h2>
@@ -41,29 +41,29 @@
             </div>
         </div>
     </div>
-    <VFooter></VFooter>
+
   </template>
     
     <script>
-      import {API_URL} from "@/config";
       import VHeader from "../components/VHeader.vue";
       import VFooter from "../components/VFooter.vue";
     //   import Checkout from "../components/Checkout.vue";
-      import $ from "jquery";
-
+      
       export default {
           name: "ATM",
           data() {
+            
           return {
             deadline: new Date(new Date().getTime() + 3 * 24 * 60 * 60 * 1000), // 3天後的日期
             remainingTime: '', // 剩餘時間
-            About_cost: '',
+
+            About_cost:'',
           }
           },
           components: {
           VHeader,
           VFooter,
-          $
+          
 
           },
           computed: {
@@ -97,58 +97,11 @@
         this.updateRemainingTime()
         }, 1000)
 
-       
-     
-
-        
+        this.About_cost = $cookies.get('About_cost')
     },
       };
 
 
-// const App = Vue.createApp({
-//     data() {
-//         return {
-//             deadline: new Date(new Date().getTime() + 3 * 24 * 60 * 60 * 1000), // 3天後的日期
-//             remainingTime: '', // 剩餘時間
-//         }
-//     },
-//     computed: {
-//         formattedExpirationDate() {
-//         const year = this.deadline.getFullYear() // 年份
-//         const month = this.pad(this.deadline.getMonth() + 1) // 月份，要補0
-//         const date = this.pad(this.deadline.getDate()) // 日，要補0
-//         const hours = this.pad(this.deadline.getHours()) // 小時，要補0
-//         const minutes = this.pad(this.deadline.getMinutes()) // 分鐘，要補0
-
-//         return `${year}年${month}月${date}日 ${hours}:${minutes}`
-//         },
-//     },
-//     methods: {
-//         pad(value) {
-//         return String(value).padStart(2, '0') // 將數字補成兩位數
-//         },
-//         updateRemainingTime() {
-//         const diff = this.deadline - new Date() // 剩餘時間
-//         const days = Math.floor(diff / (24 * 60 * 60 * 1000)) // 剩餘天數
-//         const hours = Math.floor((diff / (60 * 60 * 1000)) % 24) // 剩餘小時數
-//         const minutes = Math.floor((diff / (60 * 1000)) % 60) // 剩餘分鐘數
-//         const seconds = Math.floor((diff / 1000) % 60) // 剩餘秒數
-
-//         this.remainingTime = `${days}天${hours}小時${minutes}分鐘${seconds}秒`
-//         },
-//     },
-//     mounted() {
-//         // 每秒更新剩餘時間
-//         setInterval(() => {
-//         this.updateRemainingTime()
-//         }, 1000)
-//     },
-    
-
-// })
-
-
-// App.mount('#app')
 
 </script>
     
