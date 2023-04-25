@@ -37,7 +37,7 @@
                         <span>{{formatDate(item.or_booking_date)}}</span>
                       </div>
                       <p>${{item.about_cost}}</p>
-                      <router-link class="btn_blue" @click="order_id(item.id)" to="/ConsultantHistory"
+                      <router-link class="btn_blue" @click="order_id(item.id)" to="/consultantorderdetails"
                         >查看更多</router-link>
                     </div>
                   </div>
