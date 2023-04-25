@@ -45,73 +45,79 @@
           <div class="order_list">
             <!-- 學習訂單 -->
             <div v-if="currentTab == 'tab1'">
-              <template v-for="(item, index) in studyOrder" :key="item.id">
-                <div class="order">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="category"></div>
-                      <div class="order_summary">
-                        <h2>陪你學習</h2>
-                        <span>{{ item.s_category }}</span> |
-                        <span>{{ item.or_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
+              <div v-if="studyOrder.length == 0">無訂單明細</div>
+              <div v-else>
+                <template v-for="(item, index) in studyOrder" :key="item.id">
+                  <div class="order">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="category"></div>
+                        <div class="order_summary">
+                          <h2>陪你學習</h2>
+                          <span>{{ item.s_category }}</span> |
+                          <span>{{ item.or_class }}</span>
+                          <p>
+                            <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                              `ordernum` + item.id
+                            }}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
+                      <div class="order_right">
+                        <div class="date">
+                          {{ formatMonth(item.or_booking_date) }}
+                          <span>{{ formatDate(item.or_booking_date) }}</span>
+                        </div>
+                        <p>{{ price(item.about_cost) }}</p>
+                        <router-link
+                          to="/orderdetails"
+                          class="btn_blue"
+                          @click="setOrderId(item.id)"
+                          >查看更多</router-link
+                        >
                       </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/orderdetails"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
                     </div>
                   </div>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
             <!-- 旅行訂單 -->
             <div v-if="currentTab == 'tab2'">
-              <template v-for="(item, index) in travelOrder" :key="item.id">
-                <div class="order">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="category"></div>
-                      <div class="order_summary">
-                        <h2>陪你旅行</h2>
-                        <span>{{ item.tro_area }}</span> |
-                        <span>{{ item.or_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
+              <div v-if="travelOrder.length == 0">無訂單明細</div>
+              <div v-else>
+                <template v-for="(item, index) in travelOrder" :key="item.id">
+                  <div class="order">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="category"></div>
+                        <div class="order_summary">
+                          <h2>陪你旅行</h2>
+                          <span>{{ item.tro_area }}</span> |
+                          <span>{{ item.or_class }}</span>
+                          <p>
+                            <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                              `ordernum` + item.id
+                            }}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
+                      <div class="order_right">
+                        <div class="date">
+                          {{ formatMonth(item.or_booking_date) }}
+                          <span>{{ formatDate(item.or_booking_date) }}</span>
+                        </div>
+                        <p>{{ price(item.about_cost) }}</p>
+                        <router-link
+                          to="/orderdetails"
+                          class="btn_blue"
+                          @click="setOrderId(item.id)"
+                          >查看更多</router-link
+                        >
                       </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/orderdetails"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
                     </div>
                   </div>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
           </div>
         </div>
@@ -132,6 +138,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import OrderSum from "../components/OrderSum.vue";
+import {API_ARC} from "@/config";
 
 // 日期格式
 import { format } from "date-fns";
@@ -145,6 +152,7 @@ export default {
       defaultOption: "預約明細",
       studyOrder: [],
       travelOrder: [],
+      img_src: '',
     };
   },
   components: {
@@ -180,12 +188,13 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let Member_id = $cookies.get("Member_id");
     console.log(Member_id);
 
     // 陪你旅行
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberBookingTravel.php",
+      url: `${process.env.VUE_APP_AJAX_URL}memberBookingTravel.php`,
       dataType: "json",
       type: "POST",
       data: {
@@ -197,11 +206,11 @@ export default {
           console.log(item.or_booking_date);
           console.log(new Date(item.or_booking_date));
           console.log(new Date());
-          if (new Date(item.or_booking_date) > new Date()) {
+          if (new Date(item.or_booking_date) < new Date()) {
             this.travelOrder.push(item);
           }
-          console.log(this.travelOrder);
         });
+        console.log(this.travelOrder);
         // this.travelOrder = response;
         // console.log(this.travelOrder);
       },
@@ -211,7 +220,7 @@ export default {
     });
     // 陪你學習
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberBookingMusic.php",
+      url: `${process.env.VUE_APP_AJAX_URL}memberBookingMusic.php`,
       dataType: "json",
       type: "POST",
       data: {
@@ -223,7 +232,7 @@ export default {
           console.log(item.or_booking_date);
           console.log(new Date(item.or_booking_date));
           console.log(new Date());
-          if (new Date(item.or_booking_date) > new Date()) {
+          if (new Date(item.or_booking_date) < new Date()) {
             this.studyOrder.push(item);
           }
           console.log(this.studyOrder);

@@ -10,12 +10,14 @@
       display: block;
       border: 0;
       outline: 0;
-      background-image: url(../../image/member/avatar.jpg);
+      background-image: url("http://localhost/TGD104_G3_NEW/vue-lessons/src/assets/image/member/fake_avatar.jpeg");
+      background-size: cover;
       border-radius: 50%;
-      background-position: -50px -20px;
       width: 120px;
       height: 120px;
       margin: 0 auto;
+      object-fit: cover;
+      object-position: center center;
     }
     i {
       background-color: $clear_white;
@@ -33,6 +35,25 @@
   .avatar.c-avatar {
     background-image: url("../../image/member/consultant_info.jpg");
     background-position: center center;
+    display: block;
+    border: 0;
+    outline: 0;
+    background-size: cover;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+
+    
+        i{
+          background-color: #fff;
+          border-radius: 50%;
+          padding: 5px;
+          position: absolute;
+          top: 75px;
+          right: 60px;
+        }
+    
   }
   p {
     margin: 10px auto;

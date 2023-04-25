@@ -63,7 +63,10 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
+                  <img
+                    :src="`${img_src}${order_info.c_photo1}`"
+                    :alt="order_info.c_photo1"
+                  />
                   <h3>
                     預約顧問：
                     <br />
@@ -134,7 +137,10 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="order_info.c_photo1" :alt="order_info.c_photo1" />
+                  <img
+                    :src="`${img_src}${order_info.c_photo1}`"
+                    :alt="order_info.c_photo1"
+                  />
                   <h3>
                     預約顧問：
                     <br />
@@ -188,8 +194,8 @@
                     <img
                       :src="
                         item.message_sender == 'member'
-                          ? item.m_photo
-                          : item.c_photo1
+                          ? `${img_src}${item.m_photo}`
+                          : `${img_src}${item.c_photo1}`
                       "
                       :alt="
                         item.message_sender == 'member'
@@ -220,6 +226,8 @@
 <script>
 // 套件
 import $ from "jquery";
+import { API_URL } from "@/config";
+
 // 元件
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "@/components/VFooter.vue";
@@ -227,6 +235,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
+import {API_ARC} from "@/config";
 
 export default {
   name: "OrderDetails",
@@ -236,6 +245,7 @@ export default {
       order_info: [],
       order_message: [],
       send_message: "",
+      img_src: "",
     };
   },
   components: {
@@ -290,7 +300,7 @@ export default {
       let vm = this;
 
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberMessage.php",
+        url: `${process.env.VUE_APP_AJAX_URL}memberMessage.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -316,12 +326,13 @@ export default {
     },
   },
   mounted() {
+    this.img_src = `${API_ARC}`;
     let Order_id = this.$cookies.get("Order_id");
     // 判斷旅行還是學習
 
     // 取得訂單資訊
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderDetails.php",
+      url: `${process.env.VUE_APP_AJAX_URL}orderDetails.php`,
       dataType: "json",
       type: "POST",
       data: {
@@ -348,7 +359,7 @@ export default {
     // -----------------------------------
     // 取得訂單訊息
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderMessage.php",
+      url: `${process.env.VUE_APP_AJAX_URL}orderMessage.php`,
       dataType: "json",
       type: "POST",
       data: {

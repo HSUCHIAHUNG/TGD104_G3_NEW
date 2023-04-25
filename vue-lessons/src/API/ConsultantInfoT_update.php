@@ -36,7 +36,7 @@ $sql = "UPDATE about_consultant
         about_cost = '$about_cost', 
         about_introduction = '$about_introduction', 
         about_title = '$about_title', 
-        -- about_cid = '$about_cid', 
+        about_cid = '$about_cid', 
         about_class = '$about_class' 
         WHERE about_cid = '$about_cid';";
 

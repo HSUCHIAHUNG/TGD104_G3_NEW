@@ -29,7 +29,7 @@ export default {
   methods: {
     selectImg() {
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+        url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
         dataType: "json",
         type: "POST",
         data: {},
@@ -46,7 +46,7 @@ export default {
   },
   mounted() {
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+      url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
       dataType: "json",
       type: "POST",
       data: {},

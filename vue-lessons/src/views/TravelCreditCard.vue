@@ -51,13 +51,13 @@ export default {
       this.$cookies.set("Or_booking_date",'2023/04/25')
       
 
-      this.Member_id = $cookies.get("Member_id")
+      this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
       this.Consultant_id = $cookies.get("selectedConsultant")
       this.Tro_area = $cookies.get("travelArea")
       this.Or_checkout_method = $cookies.get("moneymethod")
       this.Or_booking_date = $cookies.get("Or_booking_date")
       this.Or_class = $cookies.get("Aboutclass")
-      // this.Or_number = 'ordernum' + this.Consultant_id
+      this.Or_number = 'ordernum' + this.Consultant_id
 
 
       console.log(
@@ -72,7 +72,7 @@ export default {
 
       $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelCreditCard.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}TravelCreditCard.php`, 
         data: {
         Member_id: this.Member_id,
         Consultant_id: this.Consultant_id,
@@ -80,7 +80,7 @@ export default {
         Or_booking_date: this.Or_booking_date,
         Or_checkout_method: this.Or_checkout_method,
         Or_class: this.Or_class,
-        // Or_number: this.Or_number,   
+        Or_number: this.Or_number,   
         },
         dataType: "json",
           success: response => {

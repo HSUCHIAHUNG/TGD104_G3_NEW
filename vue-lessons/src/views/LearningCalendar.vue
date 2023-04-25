@@ -79,7 +79,7 @@ export default {
 
         $.ajax({
                 method: "POST",
-                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningCalendar_Select.php', 
+                url: `${process.env.VUE_APP_AJAX_URL}LearningCalendar_Select.php`, 
                 data: {
                     Id: this.id,         
                 },

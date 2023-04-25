@@ -49,8 +49,10 @@ export default {
       this.$cookies.set("Or_booking_date",'2023/04/25')
       
 
-      this.Member_id = $cookies.get("Member_id")
-      this.Consultant_id = $cookies.get("selectedConsultant")
+      // this.Member_id = $cookies.get("Member_id")
+      this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
+     
+      this.Consultant_id = $cookies.get("L_consultant_id")
       this.Or_checkout_method = $cookies.get("moneymethod")
       this.Or_booking_date = $cookies.get("Or_booking_date")
       this.Or_class = $cookies.get("Aboutclass")
@@ -68,7 +70,7 @@ export default {
 
       $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningCreditCard.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}LearningCreditCard.php`, 
         data: {
         Member_id: this.Member_id,
         Consultant_id: this.Consultant_id,
