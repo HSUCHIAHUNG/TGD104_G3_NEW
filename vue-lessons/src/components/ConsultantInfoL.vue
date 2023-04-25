@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  v-if="consultantInfoL">
     <!-- main_content -->
     <div class="consultant_content">
       <form action="">
@@ -236,20 +236,21 @@ export default {
   },
   methods: {
     save() {
-      $.ajax({
+      if(this.ConsultantInfoL && this.ConsultantInfoL[0]){
+        $.ajax({
         url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoL_update.php`,
         dataType: "text",
         type: "POST",
         data: {
-          about_cost: this.ConsultantInfoL[0].about_cost,
-          about_introduction: this.ConsultantInfoL[0].about_introduction,
-          s_grad: this.ConsultantInfoL[0].s_grad,
-          s_address: this.ConsultantInfoL[0].s_address,
-          s_school: this.ConsultantInfoL[0].s_school,
-          about_title: this.ConsultantInfoL[0].about_title,
-          about_class: this.ConsultantInfoL[0].about_class,
-          about_cid: this.ConsultantInfoL[0].about_cid,
-          s_category: this.ConsultantInfoL[0].s_category,
+          about_cost: this.consultantInfoL[0].about_cost,
+          about_introduction: this.consultantInfoL[0].about_introduction,
+          s_grad: this.consultantInfoL[0].s_grad,
+          s_address: this.consultantInfoL[0].s_address,
+          s_school: this.consultantInfoL[0].s_school,
+          about_title: this.consultantInfoL[0].about_title,
+          about_class: this.consultantInfoL[0].about_class,
+          about_cid: this.consultantInfoL[0].about_cid,
+          s_category: this.consultantInfoL[0].s_category,
         },
         success: (response) => {
          
@@ -259,6 +260,8 @@ export default {
           console.log(textStatus, errorThrown);
         },
       });
+      }
+ 
     },
   },
 
@@ -266,6 +269,7 @@ export default {
 
 
   mounted() {
+    
     // let Member_id = $cookies.get("Member_id");
     let Consultant_id = $cookies.get("Consultant_id");
     console.log(Consultant_id);
@@ -284,6 +288,8 @@ export default {
           // this.editorData = 'this.ConsultantInfoL[0].about_introduction'
           // this.editorData = about_introduction;
           this.consultantInfoL = response;
+          
+
           // console.log(this.memberInfo);
           // console.log(this.memberInfo[0].id);
           // console.log(this.memberInfo[0].m_id);

@@ -1,6 +1,6 @@
 <template>
     <VHeader></VHeader>
-
+    <div class="process6">
     <ATM></ATM>
   
   
@@ -10,7 +10,7 @@
         <!-- <a href="/TravelOrderSuccess"><button class="btn_orange">送出</button></a> -->
         <router-link to="/TravelOrderSuccess"><button @click="order_done" class="btn_orange">送出</button></router-link>
         </h2>
-  
+      </div> 
     <VFooter></VFooter>
 
 </template>
@@ -98,4 +98,8 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.process6{
+background-color: #f8f4eb;
+padding-top: 50px;
+}
 </style>

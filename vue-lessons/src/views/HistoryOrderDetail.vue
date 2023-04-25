@@ -301,7 +301,6 @@
 import $ from "jquery";
 import { API_URL } from "@/config";
 
-
 // 元件
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "@/components/VFooter.vue";
@@ -309,7 +308,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
-import {API_ARC} from "@/config";
+import { API_ARC } from "@/config";
 export default {
   name: "HistoryOrder",
   data() {
@@ -366,7 +365,7 @@ export default {
     },
     // 查看顧問
     setConsultantId(id) {
-      this.$cookies.set("Consultant_id", id);
+      this.$cookies.set("T_about_consultant", id);
       this.$cookies.set("L_about_consultant", id);
     },
     // 會員發送訊息

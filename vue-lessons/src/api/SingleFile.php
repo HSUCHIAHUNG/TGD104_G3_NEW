@@ -11,6 +11,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 require_once ("conn.php");
 // -------------------------------------------
 
+
     //判斷是否上傳成功
     if($_FILES["profile"]["error"] > 0){
         print_r($_FILES["profile"]["error"]);
@@ -35,14 +36,16 @@ require_once ("conn.php");
         move_uploaded_file($filePath_Temp, $filePath);
         //=======================================================
 
-        $sql = "UPDATE member SET 
-        m_photo = ?
-        WHERE id = 1";
+        // $sql = "UPDATE member SET 
+        // m_photo = ?
+        // WHERE id = ?";
 
-        $statement = $pdo->prepare($sql);
-        $statement->bindValue(1,$fileName);
-        $statement->execute();
+        // $statement = $pdo->prepare($sql);
+        // $statement->bindValue(1,$fileName);
+        // $statement->bindValue(2,$member_id);
+        // $statement->execute();
         echo $fileName;
+
         //顯示檔案資訊
         // echo "檔案存放位置：".$filePath;
         // echo "<br/>";
@@ -65,9 +68,5 @@ require_once ("conn.php");
         // echo json_encode($data);
     }
 
-    // 取得檔案副檔名
-    // function getExtensionName($filePath){
-    //     $path_parts = pathinfo($filePath);
-    //     return $path_parts["extension"];
-    // }
+ 
 ?>

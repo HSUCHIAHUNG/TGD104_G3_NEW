@@ -36,7 +36,7 @@
 
 
   <!-- 顧問卡 -->
-  <div class="product-selection">
+  <div class="product-selection" :class="{'-loading' : loading}">
     <template v-for="(product, index) in products"  >
       <div v-if="current ==='all' || current === product.about_class" :key="index"> 
         <div class="product">
@@ -93,6 +93,7 @@
       return {
         current:'all',
         currentTab: "tab1",
+        loading:true,
         favorites: [],
         selectedConsultant: '',
         products: [],
@@ -235,13 +236,31 @@
           dataType: "json",
           success: response => {
             console.log(response,'res');
+            console.log(response)
               if (response !== null && typeof response !== 'undefined' && response.length > 0) { // 修改判空处理
               let array = response[0].m_collect;
+              console.log(array)
+
+              if(array){
               array = JSON.parse(array);
-              for (let index = 0; index < array.length; index++) {
+              if(typeof array === 'Array'){
+                for (let index = 0; index < array.length; index++) {
                 const collect = array[index];
                 this.favorites.push(collect);
               }
+              }
+             
+              }
+
+              this.$nextTick(()=>{
+                setTimeout(()=>{
+                  this.loading = false
+
+                },1000)
+
+              })
+              
+            
             }
           },
           error: function(exception) {
@@ -401,5 +420,11 @@
       left: -110px;
     }
   }
+  .product-selection{
+    transition: opacity .4s;
+  }
 
+.product-selection.-loading{
+  opacity: 0;
+}
 </style>

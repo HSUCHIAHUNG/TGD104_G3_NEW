@@ -1,12 +1,15 @@
 <template>
     <VHeader></VHeader>
-
+    <div class="process3">
     <div>
         <div class="order_success">
-        <img src="../assets/image/check.png" alt="" />
+        <!-- <img src="../assets/image/check.png" alt="" /> -->
         <div class="order_content">
-            <h3>訂單成立!</h3>
-            <p>訂單編號:{{Or_number}}</p>
+            <i class="fa-regular fa-circle-check"></i>
+            <div>
+                <h3>訂單成立!</h3>
+                <p>訂單編號:{{Or_number}}</p>
+            </div>
         </div>
         </div>
 
@@ -16,7 +19,7 @@
         </h2>
 
     </div>
-
+</div>
     <VFooter></VFooter>
 </template>
   
@@ -49,4 +52,8 @@ export default {
   
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.process3{
+    background-color: #f8f4eb;
+    padding-top: 100px;
+}
 </style>

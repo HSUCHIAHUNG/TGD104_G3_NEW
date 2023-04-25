@@ -37,6 +37,7 @@ export default {
       let formData = new FormData($("#upload-form")[0]);
       // 上傳圖片
       console.log(formData);
+      let member_id = this.$cookies.get("Member_id");
 
       $.ajax({
         url: `${process.env.VUE_APP_AJAX_URL}SingleFile.php`,
@@ -50,6 +51,25 @@ export default {
           this.filename = response;
           console.log(this.filename);
           document.querySelector(".avatar").style.backgroundImage = "";
+
+          console.log(member_id);
+
+          $.ajax({
+            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/FlieUpload.php",
+            dataType: "text",
+            type: "POST",
+            data: {
+              member_id: member_id,
+              m_photo: this.filename,
+            },
+            success: function (response) {
+              console.log(response);
+              alert("上傳成功");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+            },
+          });
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(jqXHR, textStatus, errorThrown);
@@ -62,6 +82,7 @@ export default {
     let member_id = this.$cookies.get("Member_id");
 
     if (member_id) {
+      // 名字
       $.ajax({
         url: `${process.env.VUE_APP_AJAX_URL}avatar.php`,
         dataType: "json",
@@ -76,8 +97,8 @@ export default {
             !response[0].m_firstname |
             !response[0].m_lastname
           ) {
-            this.$router.back();
-            alert("請登入會員");
+            // this.$router.back();
+            // alert("請登入會員");
             this.memberName = "";
           } else {
             this.memberName = response[0].m_firstname + response[0].m_lastname;
@@ -87,16 +108,18 @@ export default {
           console.log(textStatus, errorThrown);
         },
       });
-      //
+      // 照片
       $.ajax({
         url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
         dataType: "json",
         type: "POST",
-        data: {},
+        data: {
+          member_id: member_id,
+        },
         success: (response) => {
           if (!response[0].m_photo) {
-            this.$router.back();
-            alert("請登入會員");
+            // this.$router.back();
+            // alert("請登入會員");
           } else {
             console.log(response[0].m_photo);
             this.filename = response[0].m_photo;
@@ -108,8 +131,8 @@ export default {
         },
       });
     } else {
-      this.$router.back();
-      alert("請登入會員");
+      // this.$router.back();
+      // alert("請登入會員");
     }
   },
 };

@@ -9,7 +9,7 @@
     background: linear-gradient(-45deg, #FDF8EE, #DCECEE, #FDF8EE, #DCECEE);
 	background-size: 400% 400%;
 	animation: gradient 5s ease infinite;
-	// height: 100vh;
+	text-align: center;
     @keyframes gradient {
         0% {
             background-position: 0% 50%;
@@ -41,18 +41,10 @@
         h2{
             font-size: $fs22;
             font-weight: 600;
-            margin-left: 220px;
             display: inline-block;
-            width: 170px;
-            text-align: center;
-            &::after{
-                content: '';
-                    width: 170px;
-                    display: block;
-                    height: 5px;
-                    background-color: $dark_blue;
-                    margin-top: 5px;
-            }
+            // width: 170px;
+            // text-align: center;
+            margin-bottom: 20px;
         }
         .personal_information{
             margin: 0 auto;
@@ -136,8 +128,8 @@
 
 @include rwd(1200px){
     .join_apply .container .personal_information .input_row #image_container .image{
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
     }
 }
 
@@ -153,10 +145,6 @@
             }
             h2{
                 font-size: $fs18;
-                width: 150px;
-                &::after{
-                    width: 150px;
-                }
             }
             .personal_information{
                 .input_row {
@@ -177,7 +165,36 @@
 @include rwd(768px){}
 
 
-@include rwd(576px){}
+@include rwd(576px){
+    .join_apply 
+        .container{
+            h1{
+                font-size: $fs20;
+            }
+            img{
+                width: 120px;
+            }
+            h2{
+                font-size: 16px;
+            }
+            .personal_information {
+                .input_row {
+                    align-items: center;
+                    flex-direction: column;
+                    width: 100%;
+                    #image_container {
+                        flex-direction: column;
+                        .image{
+                            width: 130px;  
+                            height: 130px;
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+        } 
+
+}
 
 
 /* rwd end */

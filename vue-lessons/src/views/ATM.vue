@@ -4,7 +4,7 @@
       <h1>款項</h1>
       <div class="ttl_payment">
         <h2>Total Payment</h2>
-        <p>${{}}</p>
+        <p>${{About_cost}}</p>
       </div>
       <div class="payment_deadline">
         <h2>付款期限</h2>
@@ -80,10 +80,13 @@ export default {
 
       return `${year}年${month}月${date}日 ${hours}:${minutes}`;
     },
-  },
-  methods: {
-    pad(value) {
-      return String(value).padStart(2, "0"); // 將數字補成兩位數
+    mounted() {
+        // 每秒更新剩餘時間
+        setInterval(() => {
+        this.updateRemainingTime()
+        }, 1000)
+
+        this.About_cost = $cookies.get('About_cost')
     },
     updateRemainingTime() {
       const diff = this.deadline - new Date(); // 剩餘時間

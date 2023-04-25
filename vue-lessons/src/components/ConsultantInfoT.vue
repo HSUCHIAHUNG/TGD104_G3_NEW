@@ -153,6 +153,7 @@ export default {
           // this.editorData = 'this.ConsultantInfoL[0].about_introduction'
           // this.editorData = about_introduction;
           this.consultantInfoT = response;
+          console.log(this.consultantInfoT);
           // console.log(this.memberInfo);
           // console.log(this.memberInfo[0].id);
           // console.log(this.memberInfo[0].m_id);

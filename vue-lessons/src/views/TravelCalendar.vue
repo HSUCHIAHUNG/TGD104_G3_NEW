@@ -1,7 +1,7 @@
 <template>
     <VHeader></VHeader>
     
-
+<div class="process">
     <div class="datePicker">
 
         <h1>請選擇日期</h1>
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-
+</div>
     <VFooter></VFooter>
 </template>
   
@@ -240,6 +240,10 @@ export default {
 
 .vc-highlight-bg-solid{
     background-color: #ebc43a;
+}
+
+.process{
+    background-color: #c7dde8;
 }
 
 
