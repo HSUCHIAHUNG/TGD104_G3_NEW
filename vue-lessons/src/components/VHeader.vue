@@ -78,7 +78,7 @@
         </div>
 
         <div class="inputs">
-          <form @submit.prevent="cLogin">
+          <form class="inputs" @submit.prevent="cLogin">
             <h1>顧問登入</h1>
             <label for="" class="input_label">帳號(信箱)</label>
             <input
@@ -95,7 +95,7 @@
               v-model="clogin.c_password"
               required
             />
-            <br />
+            <!-- <br /> -->
             <a @click.prevent="forgetPwd">忘記密碼?</a>
             <div class="btns">
               <router-link to="/Join"
