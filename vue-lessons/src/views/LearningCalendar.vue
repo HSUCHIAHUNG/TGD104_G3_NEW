@@ -1,7 +1,7 @@
 <template>
     <VHeader></VHeader>
     
-
+<div class="process">
     <div class="datePicker">
 
         <h1>請選擇日期</h1>
@@ -19,7 +19,7 @@
             <button @click="orderCheck" class="btn_orange">訂單確認</button>
         </div>
     </div>
-
+</div>
 
     <VFooter></VFooter>
 </template>
@@ -79,7 +79,7 @@ export default {
 
         $.ajax({
                 method: "POST",
-                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningCalendar_Select.php', 
+                url: `${process.env.VUE_APP_AJAX_URL}LearningCalendar_Select.php`, 
                 data: {
                     Id: this.id,         
                 },
@@ -242,9 +242,18 @@ export default {
 }
 .vc-bordered {
     // border: none;
+    // border: 3px solid;
+    // border-color: #DCECEE;
+    // transition-duration:2s; 
     border: 3px solid;
     border-color: #DCECEE;
 }
+
+// .vc-bordered:hover {
+//     // border: none;
+//     box-shadow: 0 0 0 0 rgba(121, 203, 212, 0.4);
+
+// }
 
 .vc-highlight-content-solid{
     background-color: #ebc43a;
@@ -256,6 +265,10 @@ export default {
 
 .vc-highlight-bg-solid{
     background-color: #ebc43a;
+}
+
+.process{
+    background-color: #c7dde8;
 }
 
 

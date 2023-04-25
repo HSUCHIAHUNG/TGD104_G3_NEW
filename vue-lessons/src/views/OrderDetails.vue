@@ -227,7 +227,7 @@
 // 套件
 import $ from "jquery";
 import { API_URL } from "@/config";
-import { API_ARC } from "@/config";
+
 // 元件
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "@/components/VFooter.vue";
@@ -235,6 +235,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
+import {API_ARC} from "@/config";
 
 export default {
   name: "OrderDetails",
@@ -299,7 +300,7 @@ export default {
       let vm = this;
 
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberMessage.php",
+        url: `${process.env.VUE_APP_AJAX_URL}memberMessage.php`,
         dataType: "text",
         type: "POST",
         data: {
@@ -331,7 +332,7 @@ export default {
 
     // 取得訂單資訊
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderDetails.php",
+      url: `${process.env.VUE_APP_AJAX_URL}orderDetails.php`,
       dataType: "json",
       type: "POST",
       data: {
@@ -358,7 +359,7 @@ export default {
     // -----------------------------------
     // 取得訂單訊息
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderMessage.php",
+      url: `${process.env.VUE_APP_AJAX_URL}orderMessage.php`,
       dataType: "json",
       type: "POST",
       data: {

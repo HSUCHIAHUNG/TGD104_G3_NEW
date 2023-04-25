@@ -146,8 +146,8 @@
                 $.ajax({
             
                 method: "POST",
-                url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MemberManagement_update.php', 
-                //url: '../api/Join_test.php', 
+                url: `${process.env.VUE_APP_AJAX_URL}MemberManagement_update.php`, 
+                //url: '../api/Join_test.php`, 
                 data: {
                     Id: id,
                     M_status: status,
@@ -190,7 +190,7 @@
         },
 
         mounted() {
-            $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MemberManagement_Select.php').then(response => this.items = response)
+            $.getJSON(`${process.env.VUE_APP_AJAX_URL}MemberManagement_Select.php`).then(response => this.items = response)
         },
 
         name: 'MemberManagement',

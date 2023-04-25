@@ -1,11 +1,14 @@
 <template>
   <!-- header -->
   <header>
-    <div class="header_container v_header">
+    <div style="justify-content: space-around" class="header_container v_header">
+      
       <a href="" id="h_bar" @click.prevent="open_nav"
         ><i class="fa-solid fa-bars"></i>
       </a>
-      <img src="../assets/image/logo_header.png" alt="" />
+      <router-link to="/main">
+        <img src="../assets/image/logo_header.png" alt="" />
+      </router-link>
       <div class="h_icon">
         <a href="" @click.prevent="memberLogin"
           ><i class="fa-solid fa-user"></i
@@ -74,7 +77,7 @@
         </div>
 
         <div class="inputs">
-          <form @submit.prevent="cLogin">
+          <form class="inputs" @submit.prevent="cLogin">
             <h1>顧問登入</h1>
             <label for="" class="input_label">帳號(信箱)</label>
             <input
@@ -91,7 +94,7 @@
               v-model="clogin.c_password"
               required
             />
-            <br />
+            <!-- <br /> -->
             <a @click.prevent="forgetPwd">忘記密碼?</a>
             <div class="btns">
               <router-link to="/Join"
@@ -515,7 +518,7 @@ export default {
         alert("請重新確認密碼");
       } else {
         $.ajax({
-          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/MSignUp.php",
+          url: `${process.env.VUE_APP_AJAX_URL}MSignUp.php`,
           dataType: "text",
           type: "POST",
           data: {
@@ -533,7 +536,7 @@ export default {
           success: (response) => {
             console.log(this.member.m_id);
             $.ajax({
-              url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/member_id.php",
+              url: `${process.env.VUE_APP_AJAX_URL}member_id.php`,
               dataType: "json",
               type: "POST",
               data: {
@@ -560,7 +563,7 @@ export default {
     mLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/mLogin.php",
+        url: `${process.env.VUE_APP_AJAX_URL}mLogin.php`,
         dataType: "json",
         type: "POST",
         data: {
@@ -593,7 +596,7 @@ export default {
     cLogin() {
       // console.log("ok");
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/cLogin.php",
+        url: `${process.env.VUE_APP_AJAX_URL}cLogin.php`,
         dataType: "json",
         type: "POST",
         data: {

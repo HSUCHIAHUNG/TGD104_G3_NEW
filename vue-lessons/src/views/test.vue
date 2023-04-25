@@ -176,7 +176,7 @@
         mounted() {
             this.selectedState = '';
 
-            // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/orderManagement.php').then(response => this.items = response)
+            // $.getJSON(`${process.env.VUE_APP_AJAX_URL}orderManagement.php`).then(response => this.items = response)
             // console.log(this.items);
         },
         methods: {

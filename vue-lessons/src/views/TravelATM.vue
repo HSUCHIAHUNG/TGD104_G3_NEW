@@ -1,6 +1,6 @@
 <template>
     <VHeader></VHeader>
-
+    <div class="process6">
     <ATM></ATM>
   
   
@@ -10,7 +10,7 @@
         <!-- <a href="/TravelOrderSuccess"><button class="btn_orange">送出</button></a> -->
         <router-link to="/TravelOrderSuccess"><button @click="order_done" class="btn_orange">送出</button></router-link>
         </h2>
-  
+      </div> 
     <VFooter></VFooter>
 
 </template>
@@ -48,7 +48,7 @@ export default {
       this.$cookies.set("Or_booking_date",'2023/04/25')
       
 
-      this.Member_id = $cookies.get("Member_id")
+      this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
       this.Consultant_id = $cookies.get("selectedConsultant")
       this.Tro_area = $cookies.get("travelArea")
       this.Or_checkout_method = $cookies.get("moneymethod")
@@ -69,7 +69,7 @@ export default {
 
       $.ajax({
         method: "POST",
-        url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelCreditCard.php', 
+        url: `${process.env.VUE_APP_AJAX_URL}TravelCreditCard.php`, 
         data: {
         Member_id: this.Member_id,
         Consultant_id: this.Consultant_id,
@@ -98,4 +98,8 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.process6{
+background-color: #f8f4eb;
+padding-top: 50px;
+}
 </style>

@@ -1,19 +1,19 @@
 <template>
   <div>
     <VHeader></VHeader>
-
+<div class="process7">
     <div class="learning_option_inner">
       <div class="option_allcontent">
-        <div class="option_top">
+        <!-- <div class="option_top">
           <select name="" id="" class="learning_option_select">
             <option value="option_new">最 新</option>
             <option value="option_hot">熱 門</option>
           </select>
-        </div>
+        </div> -->
 
         <article>
           <label for="" class="option_input_label"
-            >HI! 請提供想要學習的項目，陪你來實現!</label
+            >HI! 請提供想要學習的項目，陪你來實現! <i class="fa-regular fa-pen-to-square"></i></label
           >
           <br />
           <textarea
@@ -52,7 +52,7 @@
             </div>
             <!-- </div> -->
             <div class="option_content">
-              <div class="option_content_inner">
+              <div style="word-break:break-all" class="option_content_inner">
                 {{ answer.sr_content }}
               </div>
               <div>
@@ -84,7 +84,7 @@
           ><i class="fa-solid fa-angle-right"></i
         ></router-link>
       </div> -->
-
+    </div>
       <VFooter></VFooter>
     </div>
   </div>
@@ -108,7 +108,7 @@ export default {
       // showLightbox: false,
       // 使用者輸入的內容
       // inputOption: '',
-      // SR_content:'',
+      SR_content:'',
 
       //分頁
       perpage: 10, //一頁的資料數
@@ -124,9 +124,9 @@ export default {
   },
   methods: {
     hideLightboxAndClearTextarea() {
-      this.showLightbox = false;
-      this.SR_content = "";
-    },
+          this.showLightbox = false;
+          this.SR_content = "";
+        },
 
     submitForm() {
       this.Member_id = $cookies.get("Member_id");
@@ -135,7 +135,7 @@ export default {
         $.ajax({
           // type: 'POST',
           method: "POST",
-          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/API/LearningOption.php",
+          url: `${process.env.VUE_APP_AJAX_URL}LearningOption.php`,
           dataType: "json",
           data: {
             SR_content: this.SR_content,
@@ -177,7 +177,7 @@ export default {
         $.ajax({
             // type: 'POST',
             method: "POST",
-            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/API/LearningOption_update.php",
+            url: `${process.env.VUE_APP_AJAX_URL}LearningOption_update.php`,
             dataType: "json",
             data: {
               Require_id: this.Require_id,
@@ -205,9 +205,9 @@ export default {
 
   mounted() {
     $.getJSON(
-      "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select.php"
+      `${process.env.VUE_APP_AJAX_URL}LearningOption_Select.php`
     ).then((response) => (this.study_option = response));
-      // $.getJSON('http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningOption_Select2.php').then(response => this.study_option = response);
+      // $.getJSON(`${process.env.VUE_APP_AJAX_URL}LearningOption_Select2.php`).then(response => this.study_option = response);
 
       // 先假放Option_Member_id
       // this.$cookies.set("Option_Member_id", "23");
@@ -248,5 +248,9 @@ textarea {
     box-shadow: 0 0 0 0 rgba(121, 203, 212, 0);
     border-radius: 50%;
   }
+}
+
+.process7{
+  background-color: #f8f4eb;
 }
 </style>

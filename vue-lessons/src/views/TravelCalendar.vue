@@ -1,7 +1,7 @@
 <template>
     <VHeader></VHeader>
     
-
+<div class="process">
     <div class="datePicker">
 
         <h1>請選擇日期</h1>
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-
+</div>
     <VFooter></VFooter>
 </template>
   
@@ -84,7 +84,7 @@ export default {
         // 第二步: 下Select抓取顧問c_date的資料條件是(Id = 資料庫顧問的id)
         $.ajax({
             method: "POST",
-            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/TravelCalendar_Select.php', 
+            url: `${process.env.VUE_APP_AJAX_URL}TravelCalendar_Select.php`, 
             data: {
                 Id: this.id,
                 
@@ -240,6 +240,10 @@ export default {
 
 .vc-highlight-bg-solid{
     background-color: #ebc43a;
+}
+
+.process{
+    background-color: #c7dde8;
 }
 
 

@@ -2,23 +2,23 @@
   <div>
       <VHeader></VHeader>
   
-
+<div class="process4">
 
     <div class="learning_checkout_list">
-      <h2>選擇付款方式</h2>
+      <h2>選擇付款方式 <i class="fa-solid fa-comment-dollar"></i> : </h2>
 
       <ul class="checkout_card_atm">
 
         <!-- <li class="checkout_method"> -->
           <label class="money_card">
-            <input type="radio" v-model="moneymethod" name="moneymethod" value="信用卡"/>
+            <input class="option-input_checkout radio" type="radio" v-model="moneymethod" name="moneymethod" value="信用卡"/>
             信用卡/簽帳金融卡
           </label>
 
           <hr>
 
           <label class="momey_atm">
-            <input type="radio" v-model="moneymethod" name="moneymethod" value="ATM"/>
+            <input class="option-input_checkout radio" type="radio" v-model="moneymethod" name="moneymethod" value="ATM"/>
             ATM 轉帳
           </label>
         <!-- </li> -->
@@ -33,7 +33,7 @@
     </div>
   
   
-  
+  </div>
   
     <VFooter></VFooter>
   </div>
@@ -85,15 +85,113 @@
     
 <style lang="scss">
   @import "../assets/tgd104-sass/new_style.scss";
+
+  .process4{
+    background-color: #f8f4eb;
+  }
+
   .checkout_card_atm{
-    background-color:$dark_blue;
+    background-color: #DCECEE;
     width: 70%;
     margin: 0 auto;
     border-radius: 15px;
-    padding: 20px;
+    padding: 35px;
+    line-height: 3;
   }
 
   hr{
     margin: 20px auto;
   }
+
+
+  .option-input_checkout {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #fff;
+  border: none;
+  color: #79cbd4;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.option-input_checkout:hover {
+  background: #9faab7;
+}
+.option-input_checkout:checked {
+  background: #ffffff;
+}
+.option-input_checkout:checked::before {
+  width: 40px;
+  height: 40px;
+  display:flex;
+  content: '\f00c';
+  font-size: 25px;
+  font-weight:bold;
+  position: absolute;
+  align-items:center;
+  justify-content:center;
+  font-family:'Font Awesome 5 Free';
+}
+.option-input_checkout:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #DCECEE;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.option-input_checkout.radio {
+  border-radius: 50%;
+}
+.option-input_checkout.radio::after {
+  border-radius: 50%;
+}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.learning_checkout_list h2,
+.money_card,
+.momey_atm,
+.learning_checkout_list .checkout_total{
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #585858;
+}
+
+.learning_checkout_list h2,
+.learning_checkout_list .checkout_total{
+  font-size: 22px;
+}
+
 </style>

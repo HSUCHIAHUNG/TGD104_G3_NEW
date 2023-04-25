@@ -356,13 +356,13 @@ const routes = [
     name: "BackendCenter",
     component: () => import("../views/BackendCenter.vue"),
     meta: { hideRouterView: true },
-    redirect: "/BackendCenter/SalesManagement",
+    redirect: "/BackendCenter/MemberManagement",
     children: [
-      {
-        path: "SalesManagement",
-        neme: "SalesManagement",
-        component: () => import("../views/SalesManagement.vue"),
-      },
+      // {
+      //   path: "SalesManagement",
+      //   neme: "SalesManagement",
+      //   component: () => import("../views/SalesManagement.vue"),
+      // },
       {
         path: "MemberManagement",
         neme: "MemberManagement",

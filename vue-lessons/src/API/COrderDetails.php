@@ -24,13 +24,18 @@ a.about_class,
 m.m_nickname,
 m.m_area,
 m.m_firstname,
-m.m_lastname
+m.m_lastname,
+m.m_photo,
+c.c_photo1
+
 
 from `order` o
 join about_consultant a 
 on o.consultant_id = a.about_cid
 join member m
 on o. member_id = m.id
+join consultant c
+on o. consultant_id = c.id
 where o.id = '$order_id';";
 
 

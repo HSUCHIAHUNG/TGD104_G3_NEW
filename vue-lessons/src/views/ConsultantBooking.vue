@@ -117,7 +117,7 @@ export default {
     // console.log(this.or_booking_date);
 
     $.ajax({
-      url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/consultantBooking.php",
+      url: `${process.env.VUE_APP_AJAX_URL}consultantBooking.php`,
       dataType: "json",
       type: "POST",
       data: {

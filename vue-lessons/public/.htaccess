@@ -1,8 +1,9 @@
+
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /tgd104/g3/dist/
-RewriteRule ^/tgd104/g3/dist/index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /tgd104/g3/dist/index.html [L]
+    RewriteEngine On
+    RewriteBase /tgd104/g3/dist/
+    RewriteRule ^/tgd104/g3/dist/index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /tgd104/g3/dist/index.html [L]
 </IfModule>

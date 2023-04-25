@@ -40,7 +40,7 @@ export default {
       let member_id = this.$cookies.get("Member_id");
 
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/SingleFile.php",
+        url: `${process.env.VUE_APP_AJAX_URL}SingleFile.php`,
         type: "POST",
         data: formData,
         dataType: "text",
@@ -84,7 +84,7 @@ export default {
     if (member_id) {
       // 名字
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/avatar.php",
+        url: `${process.env.VUE_APP_AJAX_URL}avatar.php`,
         dataType: "json",
         type: "POST",
         data: {
@@ -110,7 +110,7 @@ export default {
       });
       // 照片
       $.ajax({
-        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
+        url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
         dataType: "json",
         type: "POST",
         data: {
