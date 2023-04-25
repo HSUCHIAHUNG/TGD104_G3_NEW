@@ -37,6 +37,7 @@ export default {
       let formData = new FormData($("#upload-form")[0]);
       // 上傳圖片
       console.log(formData);
+      let member_id = this.$cookies.get("Member_id");
 
       $.ajax({
         url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/SingleFile.php",
@@ -50,6 +51,25 @@ export default {
           this.filename = response;
           console.log(this.filename);
           document.querySelector(".avatar").style.backgroundImage = "";
+
+          console.log(member_id);
+
+          $.ajax({
+            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/FlieUpload.php",
+            dataType: "text",
+            type: "POST",
+            data: {
+              member_id: member_id,
+              m_photo: this.filename,
+            },
+            success: function (response) {
+              console.log(response);
+              alert("上傳成功");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+            },
+          });
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(jqXHR, textStatus, errorThrown);
@@ -62,6 +82,7 @@ export default {
     let member_id = this.$cookies.get("Member_id");
 
     if (member_id) {
+      // 名字
       $.ajax({
         url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/avatar.php",
         dataType: "json",
@@ -87,7 +108,7 @@ export default {
           console.log(textStatus, errorThrown);
         },
       });
-      //
+      // 照片
       $.ajax({
         url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
         dataType: "json",

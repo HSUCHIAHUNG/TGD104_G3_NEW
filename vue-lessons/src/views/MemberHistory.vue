@@ -44,205 +44,211 @@
           <div class="order_list">
             <!-- 學習訂單 -->
             <div v-if="currentTab == 'tab1'">
-              <template v-for="(item, index) in studyOrder" :key="item.id">
-                <div class="history_order">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="order_title">
-                        <div class="category"></div>
-                        <a href="" @click.prevent="review(item.id)"
-                          ><i class="fa-regular fa-pen-to-square"></i
-                          >撰寫評論</a
+              <div v-if="studyOrder.length == 0">無訂單明細</div>
+              <div v-else>
+                <template v-for="(item, index) in studyOrder" :key="item.id">
+                  <div class="history_order">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="order_title">
+                          <div class="category"></div>
+                          <a href="" @click.prevent="review(item.id)"
+                            ><i class="fa-regular fa-pen-to-square"></i
+                            >撰寫評論</a
+                          >
+                        </div>
+                        <div class="order_summary">
+                          <h2>
+                            陪你學習 |
+                            <span>已完成</span>
+                          </h2>
+                          <span>{{ item.s_category }}</span> |
+                          <span>{{ item.or_class }}</span>
+                          <p>
+                            <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                              `ordernum` + item.id
+                            }}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="order_right">
+                        <div class="date">
+                          {{ formatMonth(item.or_booking_date) }}
+                          <span>{{ formatDate(item.or_booking_date) }}</span>
+                        </div>
+                        <p>{{ price(item.about_cost) }}</p>
+                        <router-link
+                          to="/historyorderdetail"
+                          class="btn_blue"
+                          @click="setOrderId(item.id)"
+                          >查看更多</router-link
                         >
                       </div>
-                      <div class="order_summary">
-                        <h2>
-                          陪你學習 |
-                          <span>已完成</span>
-                        </h2>
-                        <span>{{ item.s_category }}</span> |
-                        <span>{{ item.or_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
-                      </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
-                      </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/historyorderdetail"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
                     </div>
                   </div>
-                </div>
 
-                <!-- 評論燈箱 -->
-                <div id="review_lightbox" class="none">
-                  <article>
-                    <form class="inputs" @submit.prevent="sendReview">
-                      <h1>請給這次體驗打個分數吧！</h1>
-                      <p>最高5顆星</p>
-                      <div class="star_block" @click="star_rating($event)">
-                        <span class="star" data-star="1"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="2"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="3"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="4"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="5"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                      </div>
-                      <label for="" class="input_label">評論標題</label>
-                      <input
-                        type="text"
-                        class="input_text"
-                        placeholder="請輸入評論標題"
-                        v-model="comment_title"
-                      />
-                      <br />
-                      <label for="" class="input_label"
-                        >請告訴我們你的想法</label
-                      >
-                      <textarea
-                        name=""
-                        id=""
-                        cols="30"
-                        rows="10"
-                        placeholder="最高字數200字"
-                        v-model="comment_content"
-                      ></textarea>
-                      <div class="btns">
-                        <button
-                          type="button"
-                          class="outline_btn_blue"
-                          @click="CloseReview"
+                  <!-- 評論燈箱 -->
+                  <div id="review_lightbox" class="none">
+                    <article>
+                      <form class="inputs" @submit.prevent="sendReview">
+                        <h1>請給這次體驗打個分數吧！</h1>
+                        <p>最高5顆星</p>
+                        <div class="star_block" @click="star_rating($event)">
+                          <span class="star" data-star="1"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="2"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="3"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="4"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="5"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                        </div>
+                        <label for="" class="input_label">評論標題</label>
+                        <input
+                          type="text"
+                          class="input_text"
+                          placeholder="請輸入評論標題"
+                          v-model="comment_title"
+                        />
+                        <br />
+                        <label for="" class="input_label"
+                          >請告訴我們你的想法</label
                         >
-                          取消
-                        </button>
-                        <button type="submit" class="btn_blue">送出</button>
-                      </div>
-                    </form>
-                  </article>
-                </div>
-                <!-- 評論燈箱 End-->
-              </template>
+                        <textarea
+                          name=""
+                          id=""
+                          cols="30"
+                          rows="10"
+                          placeholder="最高字數200字"
+                          v-model="comment_content"
+                        ></textarea>
+                        <div class="btns">
+                          <button
+                            type="button"
+                            class="outline_btn_blue"
+                            @click="CloseReview"
+                          >
+                            取消
+                          </button>
+                          <button type="submit" class="btn_blue">送出</button>
+                        </div>
+                      </form>
+                    </article>
+                  </div>
+                  <!-- 評論燈箱 End-->
+                </template>
+              </div>
             </div>
             <!-- 旅行訂單 -->
             <div v-if="currentTab == 'tab2'">
-              <template v-for="(item, index) in travelOrder" :key="item.id">
-                <div class="history_order">
-                  <div class="order_content">
-                    <div class="order_left">
-                      <div class="order_title">
-                        <div class="category"></div>
-                        <a href="" @click.prevent="review(item.id)"
-                          ><i class="fa-regular fa-pen-to-square"></i
-                          >撰寫評論</a
+              <div v-if="travelOrder.length == 0">無訂單明細</div>
+              <div v-else>
+                <template v-for="(item, index) in travelOrder" :key="item.id">
+                  <div class="history_order">
+                    <div class="order_content">
+                      <div class="order_left">
+                        <div class="order_title">
+                          <div class="category"></div>
+                          <a href="" @click.prevent="review(item.id)"
+                            ><i class="fa-regular fa-pen-to-square"></i
+                            >撰寫評論</a
+                          >
+                        </div>
+                        <div class="order_summary">
+                          <h2>
+                            陪你旅行 |
+                            <span>已完成</span>
+                          </h2>
+                          <span>{{ item.tro_area }}</span> |
+                          <span>{{ item.or_class }}</span>
+                          <p>
+                            <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
+                              `ordernum` + item.id
+                            }}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="order_right">
+                        <div class="date">
+                          {{ formatMonth(item.or_booking_date) }}
+                          <span>{{ formatDate(item.or_booking_date) }}</span>
+                        </div>
+                        <p>{{ price(item.about_cost) }}</p>
+                        <router-link
+                          to="/historyorderdetail"
+                          class="btn_blue"
+                          @click="setOrderId(item.id)"
+                          >查看更多</router-link
                         >
                       </div>
-                      <div class="order_summary">
-                        <h2>
-                          陪你旅行 |
-                          <span>已完成</span>
-                        </h2>
-                        <span>{{ item.tro_area }}</span> |
-                        <span>{{ item.or_class }}</span>
-                        <p>
-                          <i class="fa-solid fa-hashtag"></i>訂單編號：#{{
-                            `ordernum` + item.id
-                          }}
-                        </p>
-                      </div>
-                    </div>
-                    <div class="order_right">
-                      <div class="date">
-                        {{ formatMonth(item.or_booking_date) }}
-                        <span>{{ formatDate(item.or_booking_date) }}</span>
-                      </div>
-                      <p>{{ price(item.about_cost) }}</p>
-                      <router-link
-                        to="/historyorderdetail"
-                        class="btn_blue"
-                        @click="setOrderId(item.id)"
-                        >查看更多</router-link
-                      >
                     </div>
                   </div>
-                </div>
 
-                <!-- 評論燈箱 -->
-                <div id="review_lightbox" class="none">
-                  <article>
-                    <form class="inputs" @submit.prevent="sendReview">
-                      <h1>請給這次體驗打個分數吧！</h1>
-                      <p>最高5顆星</p>
-                      <div class="star_block" @click="star_rating($event)">
-                        <span class="star" data-star="1"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="2"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="3"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="4"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                        <span class="star" data-star="5"
-                          ><i class="fas fa-star"></i
-                        ></span>
-                      </div>
-                      <label for="" class="input_label">評論標題</label>
-                      <input
-                        type="text"
-                        class="input_text"
-                        placeholder="請輸入評論標題"
-                        v-model="comment_title"
-                      />
-                      <br />
-                      <label for="" class="input_label"
-                        >請告訴我們你的想法</label
-                      >
-                      <textarea
-                        name=""
-                        id=""
-                        cols="30"
-                        rows="10"
-                        placeholder="最高字數200字"
-                        v-model="comment_content"
-                      ></textarea>
-                      <div class="btns">
-                        <button
-                          type="button"
-                          class="outline_btn_blue"
-                          @click="CloseReview"
+                  <!-- 評論燈箱 -->
+                  <div id="review_lightbox" class="none">
+                    <article>
+                      <form class="inputs" @submit.prevent="sendReview">
+                        <h1>請給這次體驗打個分數吧！</h1>
+                        <p>最高5顆星</p>
+                        <div class="star_block" @click="star_rating($event)">
+                          <span class="star" data-star="1"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="2"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="3"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="4"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                          <span class="star" data-star="5"
+                            ><i class="fas fa-star"></i
+                          ></span>
+                        </div>
+                        <label for="" class="input_label">評論標題</label>
+                        <input
+                          type="text"
+                          class="input_text"
+                          placeholder="請輸入評論標題"
+                          v-model="comment_title"
+                        />
+                        <br />
+                        <label for="" class="input_label"
+                          >請告訴我們你的想法</label
                         >
-                          取消
-                        </button>
-                        <button type="submit" class="btn_blue">送出</button>
-                      </div>
-                    </form>
-                  </article>
-                </div>
-                <!-- 評論燈箱 End-->
-              </template>
+                        <textarea
+                          name=""
+                          id=""
+                          cols="30"
+                          rows="10"
+                          placeholder="最高字數200字"
+                          v-model="comment_content"
+                        ></textarea>
+                        <div class="btns">
+                          <button
+                            type="button"
+                            class="outline_btn_blue"
+                            @click="CloseReview"
+                          >
+                            取消
+                          </button>
+                          <button type="submit" class="btn_blue">送出</button>
+                        </div>
+                      </form>
+                    </article>
+                  </div>
+                  <!-- 評論燈箱 End-->
+                </template>
+              </div>
             </div>
           </div>
         </div>
