@@ -56,60 +56,7 @@ export default {
     },
   },
   mounted() {
-    this.img_src = `${API_ARC}`;
     let member_id = this.$cookies.get("Member_id");
-
-    if (member_id) {
-      $.ajax({
-        url: `${process.env.VUE_APP_AJAX_URL}avatar.php`,
-        dataType: "json",
-        type: "POST",
-        data: {
-          member_id: member_id,
-        },
-        success: (response) => {
-          if (
-            (response[0].m_firstname == undefined) |
-            (response[0].m_lastname == undefined) |
-            !response[0].m_firstname |
-            !response[0].m_lastname
-          ) {
-            this.$router.back();
-            alert("請登入會員");
-            this.memberName = "";
-          } else {
-            this.memberName = response[0].m_firstname + response[0].m_lastname;
-          }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-        },
-      });
-      //
-      $.ajax({
-        url: `${process.env.VUE_APP_AJAX_URL}selectImg.php`,
-        dataType: "json",
-        type: "POST",
-        data: {},
-        success: (response) => {
-          if (!response[0].m_photo) {
-            this.$router.back();
-            alert("請登入會員");
-          } else {
-            console.log(response[0].m_photo);
-            this.filename = `http://localhost/img/${response[0].m_photo}`;
-            console.log(this.filename);
-          }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-        },
-      });
-    } else {
-      this.$router.back();
-      alert("請登入會員");
-    }
-    
     // 名字
     $.ajax({
       url: `${process.env.VUE_APP_AJAX_URL}avatar.php`,
@@ -134,7 +81,7 @@ export default {
       data: {},
       success: (response) => {
         console.log(response[0].m_photo);
-        this.filename = `http://localhost/img/${response[0].m_photo}`;
+        this.filename = `${API_ARC}${response[0].m_photo}`;
         console.log(this.filename);
       },
       error: function (jqXHR, textStatus, errorThrown) {
