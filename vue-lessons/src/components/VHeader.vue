@@ -5,11 +5,7 @@
       <a href="" id="h_bar" @click.prevent="open_nav"
         ><i class="fa-solid fa-bars"></i>
       </a>
-
-      <router-link to="/main" class="logo_header">
-        <img src="../assets/image/logo_footer.png" alt="陪你" />
-      </router-link>
-
+      <img src="../assets/image/logo_header.png" alt="" />
       <div class="h_icon">
         <a href="" @click.prevent="memberLogin"
           ><i class="fa-solid fa-user"></i
@@ -535,9 +531,24 @@ export default {
             m_birth: this.member.m_birth,
           },
           success: (response) => {
-            this.$cookies.set("Member_id", response);
-            this.$router.push("/member");
-            alert("註冊成功");
+            console.log(this.member.m_id);
+            $.ajax({
+              url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/member_id.php",
+              dataType: "json",
+              type: "POST",
+              data: {
+                member_id: this.member.m_id,
+              },
+              success: (response) => {
+                console.log(response);
+                this.$cookies.set("Member_id", response);
+                this.$router.push("/member");
+                alert("註冊成功");
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+              },
+            });
           },
           error: function (jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
@@ -565,7 +576,7 @@ export default {
               this.$cookies.set("Member_id", this.memberInfo[0].id);
               let Member_id = $cookies.get("Member_id");
               console.log(Member_id);
-              this.$router.push("/member");
+
               alert("登入成功");
             } else {
               alert("請確認帳號權限");
@@ -656,10 +667,6 @@ export default {
     top: 20px;
     left: 45px;
     font-size: 50px;
-
-    &:hover{
-      cursor: pointer;
-    }
   }
 
   .center_content {
@@ -728,12 +735,6 @@ export default {
     }
   }
 }
-
-
-.logo_header{
-  margin: 0 auto;
-}
-
 
 //  @import "../../tgd104-sass/new_style.scss";
 </style>

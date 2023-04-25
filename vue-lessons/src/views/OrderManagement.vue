@@ -27,7 +27,7 @@
                         (currentTab = 'tab2');
                     }
                     "
-            >陪你learing</button>
+            >陪你學習</button>
         </div>
 
         

@@ -236,124 +236,124 @@ import ChatBotNew from "../components/ChatBotNew.vue";
 import $ from "jquery";
 
 export default {
- name: "Member",
- data() {
-   return {
-     content: "MemberSetting",
-     currentTab: "tab1",
-     defaultOption: "帳號設定",
-     memberInfo: [
-       {
-         id: "",
-         m_firstname: "",
-         m_lastname: "",
-         m_mail: "",
-         m_nickname: "",
-         m_id: "",
-         m_phone: "",
-         m_area: "",
-         m_gender: "",
-         m_birth: "",
-       },
-     ],
-     pwd: {
-       old: "",
-       new: "",
-       check_new: "",
-     },
-   };
- },
- methods: {
-   // 修改資料
-   save() {
-     $.ajax({
-       url: `${process.env.VUE_APP_AJAX_URL}memberUpdate.php`,
-       dataType: "text",
-       type: "POST",
-       data: {
-         id: this.memberInfo[0].id,
-         m_firstname: this.memberInfo[0].m_firstname,
-         m_lastname: this.memberInfo[0].m_lastname,
-         m_mail: this.memberInfo[0].m_mail,
-         m_nickname: this.memberInfo[0].m_nickname,
-         m_id: this.memberInfo[0].m_id,
-         m_phone: this.memberInfo[0].m_phone,
-         m_area: this.memberInfo[0].m_area,
-         m_gender: this.memberInfo[0].m_gender,
-         m_birth: this.memberInfo[0].m_birth,
-       },
-       success: (response) => {
-         alert(response);
-       },
-       error: function (jqXHR, textStatus, errorThrown) {
-         console.log(textStatus, errorThrown);
-       },
-     });
-   },
-   // 修改密碼
-   changePwd() {
-     let id = this.$cookies.get("Member_id");
-     if (this.pwd.new !== this.pwd.check_new) {
-       alert("輸入的密碼不一致，請重新確認");
-     } else {
-       $.ajax({
-         url: `${process.env.VUE_APP_AJAX_URL}changePwd.php`,
-         dataType: "text",
-         type: "POST",
-         data: {
-           id: id,
-           m_password: this.pwd.old,
-           new_pwd: this.pwd.new,
-         },
-         success: (response) => {
-           alert(response);
-           this.pwd.new = "";
-           this.pwd.old = "";
-           this.pwd.check_new = "";
-         },
-         error: function (jqXHR, textStatus, errorThrown) {
-           console.log(jqXHR, textStatus, errorThrown);
-         },
-       });
-     }
-   },
- },
- components: {
-   VHeader,
-   VFooter,
-   Avatar,
-   SideNav,
-   MemberSetting,
-   PasswordChange,
-   DropDown,
-   ChatBotNew,
- },
- mounted() {
-   let Member_id = $cookies.get("Member_id");
-   console.log(Member_id);
-   if (!Member_id) {
-     this.$router.back();
-     alert("請登入會員");
-   } else {
-     $.ajax({
-       url: `${process.env.VUE_APP_AJAX_URL}memberInfo.php`,
-       dataType: "json",
-       type: "POST",
-       data: {
-         id: Member_id,
-       },
-       success: (response) => {
-         this.memberInfo = response;
-         console.log(this.memberInfo);
-         console.log(this.memberInfo[0].id);
-         console.log(this.memberInfo[0].m_id);
-       },
-       error: function (jqXHR, textStatus, errorThrown) {
-         console.log(textStatus, errorThrown);
-       },
-     });
-   }
- },
+  name: "Member",
+  data() {
+    return {
+      content: "MemberSetting",
+      currentTab: "tab1",
+      defaultOption: "帳號設定",
+      memberInfo: [
+        {
+          id: "",
+          m_firstname: "",
+          m_lastname: "",
+          m_mail: "",
+          m_nickname: "",
+          m_id: "",
+          m_phone: "",
+          m_area: "",
+          m_gender: "",
+          m_birth: "",
+        },
+      ],
+      pwd: {
+        old: "",
+        new: "",
+        check_new: "",
+      },
+    };
+  },
+  methods: {
+    // 修改資料
+    save() {
+      $.ajax({
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberUpdate.php",
+        dataType: "text",
+        type: "POST",
+        data: {
+          id: this.memberInfo[0].id,
+          m_firstname: this.memberInfo[0].m_firstname,
+          m_lastname: this.memberInfo[0].m_lastname,
+          m_mail: this.memberInfo[0].m_mail,
+          m_nickname: this.memberInfo[0].m_nickname,
+          m_id: this.memberInfo[0].m_id,
+          m_phone: this.memberInfo[0].m_phone,
+          m_area: this.memberInfo[0].m_area,
+          m_gender: this.memberInfo[0].m_gender,
+          m_birth: this.memberInfo[0].m_birth,
+        },
+        success: (response) => {
+          alert(response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    },
+    // 修改密碼
+    changePwd() {
+      let id = this.$cookies.get("Member_id");
+      if (this.pwd.new !== this.pwd.check_new) {
+        alert("輸入的密碼不一致，請重新確認");
+      } else {
+        $.ajax({
+          url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/changePwd.php",
+          dataType: "text",
+          type: "POST",
+          data: {
+            id: id,
+            m_password: this.pwd.old,
+            new_pwd: this.pwd.new,
+          },
+          success: (response) => {
+            alert(response);
+            this.pwd.new = "";
+            this.pwd.old = "";
+            this.pwd.check_new = "";
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+          },
+        });
+      }
+    },
+  },
+  components: {
+    VHeader,
+    VFooter,
+    Avatar,
+    SideNav,
+    MemberSetting,
+    PasswordChange,
+    DropDown,
+    ChatBotNew,
+  },
+  mounted() {
+    let Member_id = $cookies.get("Member_id");
+    console.log(Member_id);
+    if (!Member_id) {
+      // this.$router.back();
+      // alert("請登入會員");
+    } else {
+      $.ajax({
+        url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/memberInfo.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+          id: Member_id,
+        },
+        success: (response) => {
+          this.memberInfo = response;
+          console.log(this.memberInfo);
+          console.log(this.memberInfo[0].id);
+          console.log(this.memberInfo[0].m_id);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        },
+      });
+    }
+  },
 };
 </script>
 

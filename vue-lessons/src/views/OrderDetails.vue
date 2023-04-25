@@ -63,7 +63,10 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="`${img_src}${order_info.c_photo1}`" :alt="order_info.c_photo1" />
+                  <img
+                    :src="`${img_src}${order_info.c_photo1}`"
+                    :alt="order_info.c_photo1"
+                  />
                   <h3>
                     預約顧問：
                     <br />
@@ -134,7 +137,10 @@
               </div>
               <div class="consultant_info">
                 <div class="consultant_info_left">
-                  <img :src="`${img_src}${order_info.c_photo1}`" :alt="order_info.c_photo1" />
+                  <img
+                    :src="`${img_src}${order_info.c_photo1}`"
+                    :alt="order_info.c_photo1"
+                  />
                   <h3>
                     預約顧問：
                     <br />
@@ -220,6 +226,8 @@
 <script>
 // 套件
 import $ from "jquery";
+import { API_URL } from "@/config";
+
 // 元件
 import VHeader from "@/components/VHeader.vue";
 import VFooter from "@/components/VFooter.vue";
@@ -237,6 +245,7 @@ export default {
       order_info: [],
       order_message: [],
       send_message: "",
+      img_src: "",
     };
   },
   components: {
