@@ -235,7 +235,7 @@ import Avatar from "@/components/Avatar.vue";
 import SideNav from "@/components/SideNav.vue";
 import OrderItemDetails from "../components/OrderItemDetails.vue";
 import OrderMessage from "../components/OrderMessage.vue";
-import {API_ARC} from "@/config";
+import { API_ARC } from "@/config";
 
 export default {
   name: "OrderDetails",
@@ -289,7 +289,7 @@ export default {
     },
     // 查看顧問
     setConsultantId(id) {
-      this.$cookies.set("Consultant_id", id);
+      this.$cookies.set("T_about_consultant", id);
       this.$cookies.set("L_about_consultant", id);
     },
     // 會員發送訊息
