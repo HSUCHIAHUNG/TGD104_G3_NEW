@@ -11,11 +11,13 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 require_once ("conn.php");
 // -------------------------------------------
 
-$sql = "select m_photo from member where id = 1";
+$member_id = $_POST['member_id'];
+
+$sql = "select m_photo from member where id = ?";
 $statement = $pdo->prepare($sql);
+$statement->bindValue(1,$member_id);
 $statement->execute();
 $data = $statement->fetchAll();
 echo json_encode($data);
-
 
 ?>

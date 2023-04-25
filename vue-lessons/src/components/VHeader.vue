@@ -542,8 +542,8 @@ export default {
               success: (response) => {
                 console.log(response);
                 this.$cookies.set("Member_id", response);
-                this.$router.push("/member");
                 alert("註冊成功");
+                this.$router.push("/member");
               },
               error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);

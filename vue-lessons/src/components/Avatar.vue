@@ -76,8 +76,8 @@ export default {
             !response[0].m_firstname |
             !response[0].m_lastname
           ) {
-            this.$router.back();
-            alert("請登入會員");
+            // this.$router.back();
+            // alert("請登入會員");
             this.memberName = "";
           } else {
             this.memberName = response[0].m_firstname + response[0].m_lastname;
@@ -92,11 +92,13 @@ export default {
         url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/selectImg.php",
         dataType: "json",
         type: "POST",
-        data: {},
+        data: {
+          member_id: member_id,
+        },
         success: (response) => {
           if (!response[0].m_photo) {
-            this.$router.back();
-            alert("請登入會員");
+            // this.$router.back();
+            // alert("請登入會員");
           } else {
             console.log(response[0].m_photo);
             this.filename = response[0].m_photo;
@@ -108,10 +110,9 @@ export default {
         },
       });
     } else {
-      this.$router.back();
-      alert("請登入會員");
+      // this.$router.back();
+      // alert("請登入會員");
     }
-    // 名字
   },
 };
 </script>
