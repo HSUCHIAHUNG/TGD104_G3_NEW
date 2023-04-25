@@ -1,16 +1,58 @@
+// .travel_order{
+//     width: 70%;
+//     margin: 50px auto;
+//     text-align: center;
+//     .table_bottom{
+//         margin: 30px auto;
+//         // margin-left:auto; 
+//         // margin-right:auto;
+//     }
+//     .button_choose{
+//         margin-top: 50px;
+//         button{
+//             margin: 10px;
+//         }
+//     }
+// }
+
+
+
 .travel_order{
-    width: 70%;
-    margin: 50px auto;
-    text-align: center;
+    // width: 70%;
+    // margin: 50px auto;
+    // text-align: center;
+    .order_list{
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 100px;
+        font-size: 22px;
+        letter-spacing: 2px;
+        font-weight: 600;
+
+    }
+    .list_title{
+        background-color: #DCECEE;
+        border-bottom: 2px solid #fff;
+    }
     .table_bottom{
-        margin: 30px auto;
+
+        width: 60%;
+        // margin: 50px auto;
+        margin: 25px auto;
         // margin-left:auto; 
         // margin-right:auto;
+        text-align: left;
     }
     .button_choose{
         margin-top: 50px;
         button{
             margin: 10px;
         }
+    }
+
+    .table_bottom{
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 2px;
     }
 }

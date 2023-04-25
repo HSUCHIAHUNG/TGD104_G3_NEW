@@ -32,14 +32,14 @@
 
        $sql = "
        SELECT
-              b.m_nickname,
-              a.sr_time,
-              a.id,
-              a.sr_content,
-              a.love
-              
-              FROM study_require a
-              join member b on a.member_id = b.id;";
+       b.m_nickname,
+       a.sr_time,
+       a.id,
+       a.sr_content,
+       a.love
+   FROM study_require a
+   JOIN member b ON a.member_id = b.id
+   ORDER BY a.sr_time desc;";
 
        
 

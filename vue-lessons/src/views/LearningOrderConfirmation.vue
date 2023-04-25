@@ -1,10 +1,11 @@
 <template>
   <VHeader></VHeader>
 
-
+<div class="process2">
 
     <div class="learning_order">
-      訂單明細
+      <h2 class="order_list">訂單明細 <i class="fa-solid fa-clipboard-list"></i> : </h2>
+      
 
       <table class="table_bottom">
         <tr class="list_title">
@@ -30,7 +31,7 @@
         <router-link to="/LearningCheckout"><button class="btn_orange">選擇付款方式</button></router-link>
       </h2>
     </div>
-
+  </div>
     <VFooter></VFooter>
 
 </template>
@@ -113,4 +114,7 @@
   
   <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.process2{
+  background-color: #f8f4eb;
+}
   </style>

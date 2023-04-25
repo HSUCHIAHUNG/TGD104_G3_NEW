@@ -4,7 +4,7 @@
     border-radius: 15px;
     padding: 15px;
     font-size: 20px;
-    margin: 50px auto;
+    margin: 0 auto 50px auto;
     .about_credit{
         // width: 300px;
         display: flex;
@@ -24,7 +24,7 @@
         width: 140px;
         line-height: 40px;
         font-size: 15px;
-        border: 1px solid $dark_blue;
+        border: .5px solid $dark_blue;
         border-radius: 5px;
         margin-top: 20px;
     }
@@ -59,9 +59,13 @@
 input.credit_card:focus,
 input.credit_date:focus{
 background-color: #DCECEE;
-outline: 3px solid $dark_blue;
+outline: 1px solid $dark_blue;
 transition: all 0.3s ease;
 }
 
 
 
+.method_credit .credit_card,
+.method_credit .credit_date{
+    padding-left: 5px;
+}

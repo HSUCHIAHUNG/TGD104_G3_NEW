@@ -1,5 +1,7 @@
 .table_bottom{
     border-collapse: collapse;
+    background-color: #DCECEE;
+    border-radius: 5px;
     tr{
         border-radius: 5px;
         td:first-child{
@@ -11,6 +13,7 @@
             text-align: center;
             padding: 20px 50px;
             vertical-align: middle;
+
             img{
                 width: 139px;
                 display: block;
@@ -20,10 +23,11 @@
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
             vertical-align: center;
+
         }
     }
     tr:last-child{
-        background-color: #79cbd4;
+        margin-top: 10px;
     }
 }
 
