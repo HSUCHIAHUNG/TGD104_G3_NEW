@@ -1,19 +1,23 @@
 <template>
   <VHeader></VHeader>
-<div class="process5">
-  <CreditCard></CreditCard>
+  <div class="process5">
+    <CreditCard></CreditCard>
 
     <h2 class="button_choose">
-    <!-- <a href="/TravelCheckout"><button class="outline_btn_orange">回上一頁</button></a> -->
-    <router-link to="/LearningCheckout"><button class="outline_btn_orange">回上一頁</button></router-link>
-    <!-- <a href="/TravelOrderSuccess"><button class="btn_orange">送出</button></a> -->
-    <router-link to="/LearningOrderSuccess"><button @click="order_done" class="btn_orange">送出</button></router-link>
+      <!-- <a href="/TravelCheckout"><button class="outline_btn_orange">回上一頁</button></a> -->
+      <router-link to="/LearningCheckout"
+        ><button class="outline_btn_orange">回上一頁</button></router-link
+      >
+      <!-- <a href="/TravelOrderSuccess"><button class="btn_orange">送出</button></a> -->
+      <router-link to="/LearningOrderSuccess"
+        ><button @click="order_done" class="btn_orange">
+          送出
+        </button></router-link
+      >
     </h2>
   </div>
   <VFooter></VFooter>
-
 </template>
-
 
 <script>
 import CreditCard from "../components/CreditCard.vue";
@@ -22,94 +26,85 @@ import VFooter from "../components/VFooter.vue";
 import $ from "jquery";
 
 export default {
-name: "LearningCreditCard",
-data() {
-  return {
+  name: "LearningCreditCard",
+  data() {
+    return {
+      // 要存入order的資料
+      Member_id: "",
+      Consultant_id: "",
+      Or_checkout_method: "",
+      Or_booking_date: "",
+      Or_class: "",
+      Or_number: "",
+    };
+  },
 
-    // 要存入order的資料
-    Member_id: '',
-    Consultant_id: '',
-    Or_checkout_method: '',
-    Or_booking_date: '',
-    Or_class: '',
-    Or_number: '',
+  components: {
+    VHeader,
+    VFooter,
+    CreditCard,
+    $,
+  },
 
-  };
-},
-
-components: {
-  VHeader,
-  VFooter,
-  CreditCard,
-  $
-},
-
-methods: {
-  order_done(){
-    this.$cookies.set("Or_booking_date",'2023/04/25')
-    
-
+  methods: {
+    order_done() {
       // this.Member_id = $cookies.get("Member_id")
-      this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
-     
-      this.Consultant_id = $cookies.get("L_consultant_id")
-      this.Or_checkout_method = $cookies.get("moneymethod")
-      this.Or_booking_date = $cookies.get("Or_booking_date")
-      this.Or_class = $cookies.get("Aboutclass")
-      this.Or_number = 'ordernum' + this.Consultant_id
+      this.Member_id = parseInt(
+        decodeURIComponent((this.Member_id = $cookies.get("Member_id")))
+      );
 
+      this.Consultant_id = $cookies.get("L_consultant_id");
+      this.Or_checkout_method = $cookies.get("moneymethod");
+      this.Or_booking_date = $cookies.get("Or_booking_date");
+      this.Or_class = $cookies.get("Aboutclass");
+      this.Or_number = "ordernum" + this.Consultant_id;
 
-    console.log(
-      this.Member_id, 
-      this.Consultant_id, 
-      this.Or_checkout_method, 
-      this.Or_booking_date,
-      this.Or_class,
-      this.Or_number,
-    );
+      console.log(
+        this.Member_id,
+        this.Consultant_id,
+        this.Or_checkout_method,
+        this.Or_booking_date,
+        this.Or_class,
+        this.Or_number
+      );
 
-    $.ajax({
-      method: "POST",
-      url: `${process.env.VUE_APP_AJAX_URL}LearningCreditCard.php`, 
-      data: {
-      Member_id: this.Member_id,
-      Consultant_id: this.Consultant_id,
-      Or_checkout_method : this.Or_checkout_method,
-      Or_booking_date: this.Or_booking_date,
-      Or_class: this.Or_class,
-      Or_number: this.Or_number,   
-      },
-      dataType: "json",
-        success: response => {
+      $.ajax({
+        method: "POST",
+        url: `${process.env.VUE_APP_AJAX_URL}LearningCreditCard.php`,
+        data: {
+          Member_id: this.Member_id,
+          Consultant_id: this.Consultant_id,
+          Or_checkout_method: this.Or_checkout_method,
+          Or_booking_date: this.Or_booking_date,
+          Or_class: this.Or_class,
+          Or_number: this.Or_number,
+        },
+        dataType: "json",
+        success: (response) => {
           // console.log(this.Or_checkout_method);
         },
-        error: function(exception) {
-            alert("發生錯誤: " + exception.status);
+        error: function (exception) {
+          alert("發生錯誤: " + exception.status);
         },
-
-    });  
-
-  }
-},
-
-
-
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
-.button_choose{
+.button_choose {
   margin-top: 50px;
   // margin-bottom: 50px;
   text-align: center;
-  button{
-      margin: 10px;
+  button {
+    margin: 10px;
   }
 }
 
-.process5{
-background-color: #f8f4eb;
-padding-top: 50px;
+.process5 {
+  background-color: #f8f4eb;
+  padding-top: 50px;
 }
 </style>
