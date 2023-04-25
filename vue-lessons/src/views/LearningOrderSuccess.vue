@@ -39,7 +39,7 @@ export default {
         VFooter,
     },
     mounted() {
-      this.Consultant_id = $cookies.get("selectedConsultant")
+      this.Consultant_id = $cookies.get("L_consultant_id")
       this.Or_number = 'ordernum' + this.Consultant_id
         
     },

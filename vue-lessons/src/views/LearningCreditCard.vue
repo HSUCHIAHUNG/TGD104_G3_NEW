@@ -52,7 +52,7 @@ export default {
       // this.Member_id = $cookies.get("Member_id")
       this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
      
-      this.Consultant_id = $cookies.get("selectedConsultant")
+      this.Consultant_id = $cookies.get("L_consultant_id")
       this.Or_checkout_method = $cookies.get("moneymethod")
       this.Or_booking_date = $cookies.get("Or_booking_date")
       this.Or_class = $cookies.get("Aboutclass")

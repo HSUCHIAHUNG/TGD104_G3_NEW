@@ -25,10 +25,11 @@ $c_birth = $_POST["C_birth"];
 $c_area = $_POST["C_area"];
 $c_phone = htmlspecialchars($_POST["C_phone"]);
 $c_personality = htmlspecialchars($_POST["C_personality"]);
+$c_photo1 = htmlspecialchars($_POST["C_photo1"]);
 
 
-$sql = "INSERT INTO consultant(c_id, c_birth, c_firstname, c_lastname, c_mail, c_nickname, c_gender, c_password, c_area, c_phone, c_personality, c_create_date, c_status, c_date) VALUES ('$c_id', '$c_birth', '$c_firstname', '$c_lastname', '$c_mail', '$c_nickname', '$c_gender', '$c_password', '$c_area', '$c_phone', '$c_personality', NOW() ,'正常', '0')";
-// $sql = "INSERT INTO consultant(c_id, c_birth, c_firstname, c_lastname, c_mail, c_nickname, c_gender, c_password, c_area, c_phone, c_personality, c_create_date) VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW())";
+$sql = "INSERT INTO consultant(c_id, c_birth, c_firstname, c_lastname, c_mail, c_nickname, c_gender, c_password, c_area, c_phone, c_personality, c_create_date, c_status, c_date, c_photo1) 
+VALUES ('$c_id', '$c_birth', '$c_firstname', '$c_lastname', '$c_mail', '$c_nickname', '$c_gender', '$c_password', '$c_area', '$c_phone', '$c_personality', NOW() ,'正常', '0','$c_photo1')";
 
 //執行
 $pdo->exec($sql);

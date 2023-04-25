@@ -189,8 +189,8 @@
         methods: {
             setbacked_cid(cid){
             this.$cookies.set("backed_cid",cid)
-            // this.$router.push('/backendGallery');
-            window.open('/backendGallery', '_blank');
+            this.$router.push('/backendGallery');
+            // window.open('/backendGallery', '_blank');
                 
             },
             setPage(page) {
