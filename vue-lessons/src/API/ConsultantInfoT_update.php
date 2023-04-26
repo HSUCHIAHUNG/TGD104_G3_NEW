@@ -6,39 +6,31 @@
   header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // 資料庫-------------------------------------------
-
 //MySQL相關資訊
 require_once ("conn.php");
 // -------------------------------------------
 
 // 取得cookies 資料
-$tr_experience = $_POST['id'];
-$about_cost = $_POST['about_cost'];
-$about_introduction = $_POST['about_introduction'];
-$s_grad = $_POST['s_grad'];
-$s_address = $_POST['s_address'];
-$s_school = $_POST['s_school'];
-$about_title = $_POST['about_title'];
-$about_class = $_POST['about_class'];
 $about_cid = $_POST['about_cid'];
-$s_category = $_POST['s_category'];
+$tr_interest = $_POST['tr_interest'];
+$tr_job = $_POST['tr_job'];
+$tr_experience = $_POST['tr_experience'];
+$about_class = $_POST['about_class'];
+$tr_license = $_POST['tr_license'];
+$about_cost = $_POST['about_cost'];
+$about_title = $_POST['about_title'];
+$about_introduction = $_POST['about_introduction'];
 
-
-
-
-$sql = "UPDATE about_consultant 
-
-        SET 
-        tr_experience = '$tr_experience', 
+$sql = "UPDATE about_consultant SET 
         tr_interest = '$tr_interest', 
-        tr_license = '$tr_license', 
         tr_job = '$tr_job', 
+        tr_experience = '$tr_experience', 
+        about_class = '$about_class', 
+        tr_license = '$tr_license', 
         about_cost = '$about_cost', 
-        about_introduction = '$about_introduction', 
         about_title = '$about_title', 
-        about_cid = '$about_cid', 
-        about_class = '$about_class' 
-        WHERE about_cid = '$about_cid';";
+        about_introduction = '$about_introduction' 
+        WHERE id = '$id'";
 
 
 $pdo->exec($sql);

@@ -663,6 +663,7 @@ export default {
   display: flex;
   overflow: auto !important;
   transition: 0.5s;
+  background-size: cover;
 
   #close_bar {
     color: #ff7426;
