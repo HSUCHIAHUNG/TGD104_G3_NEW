@@ -47,7 +47,7 @@ export default {
         success: (response) => {
           console.log(response);
           this.filename = response;
-          alert(this.filename);
+          // alert(this.filename);
           document.querySelector(".avatar").style.backgroundImage = "";
 
             $.ajax({

@@ -232,7 +232,7 @@ export default {
           console.log(item.or_booking_date);
           console.log(new Date(item.or_booking_date));
           console.log(new Date());
-          if (new Date(item.or_booking_date) < new Date()) {
+          if (new Date(item.or_booking_date) > new Date()) {
             this.studyOrder.push(item);
           }
           console.log(this.studyOrder);

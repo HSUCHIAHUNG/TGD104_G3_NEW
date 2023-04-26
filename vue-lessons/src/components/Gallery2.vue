@@ -2,8 +2,8 @@
   <div>
     <div class="top_detail_introduce">
       <div class="consultant_gallary">
-        <div class="consultant_gallary_main">
-          <img :src="mainImage" :alt="mainImageAlt" />
+        <div v-for="(item, index) in consultantDetail" class="consultant_gallary_main">
+          <img :src="`${img_src}${item.c_photo1}`" :alt="mainImageAlt" />
         </div>
 
         <div class="consultant_gallary_small">
@@ -43,6 +43,7 @@
 
 <script>
 import $ from "jquery";
+import {API_ARC} from "@/config";
 
 export default {
   name: "Gallery2",
@@ -72,6 +73,7 @@ export default {
       mainImageAlt: "Image 1",
 
       id:'',
+      img_src: '',
       T_about_consultant: "",
       consultantDetail: [],
     };
@@ -84,6 +86,7 @@ export default {
   },
 
   mounted() {
+    this.img_src = `${API_ARC}`;
     //取得cookie 顧問id
     this.T_about_consultant = this.$cookies.get("T_about_consultant");
     // console.log( this.$route);

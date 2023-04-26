@@ -3,8 +3,8 @@
   <!-- <Gallery></Gallery> -->
   <div class="top_detail_introduce">
     <div class="consultant_gallary">
-      <div class="consultant_gallary_main">
-        <img :src="mainImage" :alt="mainImageAlt" />
+      <div v-for="(item, index) in Learning_consultantDetail"  class="consultant_gallary_main">
+        <img :src="`${img_src}${item.c_photo1}`" :alt="mainImageAlt" />
       </div>
       <div class="consultant_gallary_small">
         <img
@@ -49,6 +49,7 @@ import VFooter from "../components/VFooter.vue";
 // import Gallery from "../components/Gallery.vue";
 import MessageBoard from "../components/MessageBoard.vue";
 import $ from "jquery";
+import {API_ARC} from "@/config";
 
 export default {
   name: "LearningGallery",
@@ -75,6 +76,7 @@ export default {
       mainImageAlt: "Image 1",
       L_consultant_id_detail: "",
       Learning_consultantDetail: [],
+      img_src: '',
       // learning_details: [],
       // about_title: "Calvin 托福頂尖菁英培訓 國高中升學救星",
       // about_class: "英文",
@@ -100,6 +102,7 @@ export default {
   },
 
   mounted() {
+    this.img_src = `${API_ARC}`;
     this.L_consultant_id_detail = this.$cookies.get("L_about_consultant");
     console.log(this.L_consultant_id_detail);
 

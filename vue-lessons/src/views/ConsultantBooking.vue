@@ -13,7 +13,7 @@
         <!------------ 主要區塊 ------------>
         <div class="main">
             <div class="main_header">
-              <h1>預約明細</h1>
+              <h1>預約訂單</h1>
             </div>
             <!------------ 訂單列表 ------------>
             <div class="order_list">
@@ -62,7 +62,7 @@ import COrderSum from "../components/COrderSum.vue";
 import $ from "jquery";
 
 export default {
-  name: "ConsultantBooking",
+  name: "consultanthistoryorderdetail",
   data() {
     return {
       currentTab: "tab1",
@@ -113,7 +113,6 @@ export default {
     
     // this.$cookies.set("Consultant_id","1")
     this.Consultant_id = $cookies.get("Consultant_id");
-    console.log(this.Consultant_id);
     // console.log(this.or_booking_date);
 
     $.ajax({

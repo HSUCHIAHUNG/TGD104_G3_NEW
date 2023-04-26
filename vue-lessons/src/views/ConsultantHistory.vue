@@ -13,7 +13,7 @@
         <!------------ 主要區塊 ------------>
         <div class="main">
             <div class="main_header">
-              <h1>預約明細</h1>
+              <h1>歷史訂單</h1>
             </div>
             <!------------ 訂單列表 ------------>
             <div class="order_list">
@@ -37,7 +37,7 @@
                         <span>{{formatDate(item.or_booking_date)}}</span>
                       </div>
                       <p>${{item.about_cost}}</p>
-                      <router-link class="btn_blue" @click="order_id(item.id)" to="/consultantorderdetails"
+                      <router-link class="btn_blue" @click="order_id(item.id)" to="/consultanthistoryorderdetail"
                         >查看更多</router-link>
                     </div>
                   </div>
