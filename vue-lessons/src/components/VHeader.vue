@@ -12,12 +12,20 @@
         <img src="../assets/image/logo_header.png" alt="" />
       </router-link>
       <div class="h_icon">
-        <a href="" @click.prevent="memberLogin"
+        <!-- <a href="" id="member_icon" @click.prevent="memberLogin"
           ><i class="fa-solid fa-user"></i
-        ></a>
-        <a href="" @click.prevent="consultantLogin"
+        ></a> -->
+        <a href="" id="member_icon" @click.prevent="memberLogin">
+          <img src="../assets/image/m_icon.png" alt="">
+          <p>會員</p>
+        </a>
+        <!-- <a href="" id="consultant_icon" @click.prevent="consultantLogin"
           ><i class="fa-solid fa-user-tie"></i
-        ></a>
+        ></a> -->
+        <a href="" id="consultant_icon" @click.prevent="consultantLogin">
+          <img src="../assets/image/c_icon.png" alt="">
+          <p>顧問</p>
+        </a>
       </div>
     </div>
   </header>

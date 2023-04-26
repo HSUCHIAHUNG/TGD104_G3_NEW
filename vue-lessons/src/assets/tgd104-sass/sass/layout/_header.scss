@@ -20,6 +20,9 @@ header {
             bottom: 0;
             line-height: 80px;
             margin-left: 0px !important;
+            &:hover{
+                color: #ff7d33;
+            }
         }
 
         img {
@@ -33,14 +36,69 @@ header {
             right: 0;
             top: 0;
             bottom: 0;
+            display: flex;
+            width: 10%;
+            justify-content: space-evenly;
 
-            i {
-                color: $gray;
-                font-size: 35px;
-                line-height: 80px;
-                padding-right: 10px;
-                padding-left: 10px;
+            #member_icon{
+                color: #585858;
+                font-weight: 600;
+                align-self: center;
+                img{
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                }
+                p{
+                    text-align: center;
+                }
+                &:hover{
+                    color: #ff7d33;
+                    animation: logo 0.5s ease forwards;
+                    @keyframes logo {
+                        0% {
+                            transform: translateY(0); /* 設定起始位置 */
+                        }
+                        100% {
+                            transform: translateY(-3px); /* 設定漂浮的最高點位置 */
+                        }
+
+                    }
+                }
             }
+            #consultant_icon{
+                color: #585858;
+                font-weight: 600;
+                align-self: center;
+                img{
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                }
+                p{
+                    text-align: center;
+                }
+                &:hover{
+                    color: #ff7d33;
+                    animation: logo 0.5s ease forwards;
+                    @keyframes logo {
+                        0% {
+                            transform: translateY(0); /* 設定起始位置 */
+                        }
+                        100% {
+                            transform: translateY(-3px); /* 設定漂浮的最高點位置 */
+                        }
+                    }
+                }
+            }
+
+            // i {
+            //     color: $gray;
+            //     font-size: 35px;
+            //     line-height: 80px;
+            //     padding-right: 10px;
+            //     padding-left: 10px;
+            // }
         }
     }
 }
@@ -89,6 +147,26 @@ header {
             }
 
             .h_icon {
+                #member_icon{
+                    img{
+                        display: block;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                }
+                #consultant_icon{
+                    img{
+                        display: block;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                }
 
 
                 i {

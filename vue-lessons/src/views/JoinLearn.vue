@@ -119,7 +119,8 @@
                     </div>
 
                     <h1>簡短的介紹一下自己吧(例如：服務課程相關經歷簡述)(100字以內)</h1>
-                    <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig" required></ckeditor>
+                    <!-- <ckeditor :editor="editor" v-model="About_introduction" :config="editorConfig" required></ckeditor> -->
+                    <textarea type="text" cols="110" rows="10" v-model="About_introduction" placeholder="最高字數100字" required></textarea>
 
                     <div class="join_learn_btn">
                         <!-- <a href="/JoinApply"><button class="outline_btn_blue">回上一步</button></a> -->
@@ -255,7 +256,7 @@ export default {
                 success: function(response) {
                     //更新html內容
                     
-                    $("#result").html(response);
+                    // $("#result").html(response);
                     
                 },
                 error: function(exception) {
