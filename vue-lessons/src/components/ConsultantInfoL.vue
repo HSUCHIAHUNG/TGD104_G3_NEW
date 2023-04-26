@@ -131,12 +131,20 @@
         <h1 class="self_intro">
           簡短的介紹一下自己吧(例如：服務課程相關經歷簡述)(100字以內)
         </h1>
-        <ckeditor
+        <!-- <ckeditor
           :editor="editor"
           v-model="editorData"
           :config="editorConfig"
           class="ckeditor"
-        ></ckeditor>
+        ></ckeditor> -->
+        <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="最高字數200字"
+        v-model="consultantInfoL[0].about_introduction"
+        ></textarea>
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
@@ -236,24 +244,25 @@ export default {
   },
   methods: {
     save() {
-      if(this.ConsultantInfoL && this.ConsultantInfoL[0]){
+      if(this.consultantInfoL && this.consultantInfoL[0]){
         $.ajax({
         url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoL_update.php`,
         dataType: "text",
         type: "POST",
         data: {
-          about_cost: this.ConsultantInfoL[0].about_cost,
-          about_introduction: this.ConsultantInfoL[0].about_introduction,
-          s_grad: this.ConsultantInfoL[0].s_grad,
-          s_address: this.ConsultantInfoL[0].s_address,
-          s_school: this.ConsultantInfoL[0].s_school,
-          about_title: this.ConsultantInfoL[0].about_title,
-          about_class: this.ConsultantInfoL[0].about_class,
-          about_cid: this.ConsultantInfoL[0].about_cid,
-          s_category: this.ConsultantInfoL[0].s_category,
+          about_cost: this.consultantInfoL[0].about_cost,
+          about_introduction: this.consultantInfoL[0].about_introduction,
+          s_grad: this.consultantInfoL[0].s_grad,
+          s_address: this.consultantInfoL[0].s_address,
+          s_school: this.consultantInfoL[0].s_school,
+          about_title: this.consultantInfoL[0].about_title,
+          about_class: this.consultantInfoL[0].about_class,
+          about_cid: this.consultantInfoL[0].about_cid,
+          s_category: this.consultantInfoL[0].s_category,
         },
         success: (response) => {
-         
+          alert(response);
+          console.log(response)
           // this.editorData = <p>'123'</p>
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -323,4 +332,16 @@ export default {
 .ck .ck-content {
   height: 200px;
 }
+
+
+.consultant_content textarea{
+  width: 90%;
+  border: 1px solid $dark_blue;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 16px;
+  display: block;
+}
+
 </style>
