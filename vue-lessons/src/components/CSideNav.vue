@@ -25,6 +25,12 @@
           <span> 歷史訂單</span>
         </router-link>
       </li>
+      <li @click="logout">
+        <router-link to="/main">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span> 登出 </span>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -34,6 +40,11 @@ export default {
   name: "CSideNav.vue",
   data() {
     return {};
+  },
+  methods: {
+    logout() {
+      this.$cookies.remove("Consultant_id");
+    },
   },
 };
 </script>

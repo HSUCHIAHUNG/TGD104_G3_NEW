@@ -93,7 +93,6 @@
       return {
         current:'all',
         currentTab: "tab1",
-        loading:true,
         favorites: [],
         selectedConsultant: '',
         products: [],
@@ -236,31 +235,13 @@
           dataType: "json",
           success: response => {
             console.log(response,'res');
-            console.log(response)
               if (response !== null && typeof response !== 'undefined' && response.length > 0) { // 修改判空处理
               let array = response[0].m_collect;
-              console.log(array)
-
-              if(array){
               array = JSON.parse(array);
-              if(typeof array === 'Array'){
-                for (let index = 0; index < array.length; index++) {
+              for (let index = 0; index < array.length; index++) {
                 const collect = array[index];
                 this.favorites.push(collect);
               }
-              }
-             
-              }
-
-              this.$nextTick(()=>{
-                setTimeout(()=>{
-                  this.loading = false
-
-                },1000)
-
-              })
-              
-            
             }
           },
           error: function(exception) {
