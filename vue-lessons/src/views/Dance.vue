@@ -178,7 +178,7 @@
       if (this.favorites && this.favorites.length > 0) {
       $.ajax({
           method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update.php', 
+          url: `${process.env.VUE_APP_AJAX_URL}LearningHeartCollect_Update.php`,  
           data: {
             M_collect: this.favorites,
             Id: this.Member_id,
@@ -196,7 +196,7 @@
         //讓m_collect值不為null
         $.ajax({
           method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update2.php', 
+          url: `${process.env.VUE_APP_AJAX_URL}LearningHeartCollect_Update2.php`, 
           data: {
             Id: this.Member_id,
           },
