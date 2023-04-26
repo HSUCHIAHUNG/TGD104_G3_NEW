@@ -1,8 +1,10 @@
 <template>
   <!-- header -->
   <header>
-    <div style="justify-content: space-around" class="header_container v_header">
-      
+    <div
+      style="justify-content: space-around"
+      class="header_container v_header"
+    >
       <a href="" id="h_bar" @click.prevent="open_nav"
         ><i class="fa-solid fa-bars"></i>
       </a>
@@ -579,8 +581,8 @@ export default {
               this.$cookies.set("Member_id", this.memberInfo[0].id);
               let Member_id = $cookies.get("Member_id");
               console.log(Member_id);
-
               alert("登入成功");
+              location.reload();
             } else {
               alert("請確認帳號權限");
             }
