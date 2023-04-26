@@ -84,7 +84,6 @@ import SideNav from "@/components/SideNav.vue";
 import DropDown from "../components/DropDown.vue";
 import VHeader from "@/components/VHeader.vue";
 
-
 export default {
   name: "MemberFav",
   data() {
@@ -131,7 +130,7 @@ export default {
           m_collect: update_list,
         },
         success: (response) => {
-          console.log(response);
+          alert(response);
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);

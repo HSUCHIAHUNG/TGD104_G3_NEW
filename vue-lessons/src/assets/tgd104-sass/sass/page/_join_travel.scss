@@ -93,6 +93,21 @@
                     transition: all 0.3s ease;
                 }
             }
+            textarea{
+                display: block;
+                width: 90%;
+                border: 1px solid #79cbd4;
+                margin: 0 auto;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 16px;
+                &:focus{
+                    background-color:$light_blue;
+                    border: 3px solid $dark_blue;
+                    outline: 0;
+                    transition: all 0.3s ease;
+                }
+            }     
             
         }
     }
@@ -100,6 +115,70 @@
         text-align: center;
         button{
             margin: 60px 50px 0;
+        }
+    }
+}
+
+@include rwd(992px){
+    .join_travel{
+        .container{
+            h1{
+                font-size: $fs24;
+            }
+            img{
+                width: 170px;
+            }
+            .labels{
+                width: 70%;
+                .learn_label{
+                    width: 40%;
+                    height: 40px;
+                    p{
+                        line-height: 40px;
+                        font-size: $fs18;
+                    }
+                }
+                .travel_label{
+                    width: 40%;
+                    height: 40px;
+                    p{
+                        line-height: 40px;
+                        font-size: $fs18;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include rwd(768px){
+    .join_travel{
+        .container{
+            h1{
+                font-size: $fs22;
+            }
+            img{
+                width: 130px;
+            }
+            .labels{
+                width: 60%;
+                .learn_label{
+                    width: 40%;
+                    height: 30px;
+                    p{
+                        line-height: 30px;
+                        font-size: 16px;
+                    }
+                }
+                .travel_label{
+                    width: 40%;
+                    height: 30px;
+                    p{
+                        line-height: 30px;
+                        font-size: 16px;
+                    }
+                }
+            }
         }
     }
 }

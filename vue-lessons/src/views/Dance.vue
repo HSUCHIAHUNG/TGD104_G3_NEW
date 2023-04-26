@@ -32,7 +32,7 @@
 
 
 
-          <div class="product-selection">
+          <div class="product-selection" :class="{'-loading' : loading}">
       <template v-for="(product, index) in products">
         <div v-if="current ==='all' || current === product.about_class" :key="index"> 
           <div class="product">
@@ -86,177 +86,178 @@
 
 </template>
 
-  <script>
-  import $ from "jquery";
-  import {API_URL} from "@/config";
-  import {API_ARC} from "@/config";
-  export default {
-    components: {
-      $
-    },
-    data() {
-      return {
-        current:'all',
-        currentTab: "tab1",
-        favorites: [],
-        selectedConsultant: '',
-        products: [],
-        Member_id: '',
-        img_src: '',
-      };
+<script>
+import $ from "jquery";
+import {API_URL} from "@/config";
+import {API_ARC} from "@/config";
+export default {
+  components: {
+    $
+  },
+  data() {
+    return {
+      current:'all',
+      currentTab: "tab1",
+      favorites: [],
+      selectedConsultant: '',
+      products: [],
+      Member_id: '',
+      img_src: '',
+    };
+  },
+
+  // mounted() {
+  //   console.log(this.cid);
+  // },
+
+
+  methods: {
+    consultant_select(id){
+      this.$cookies.set("L_consultant_id",id)
     },
 
-    // mounted() {
-    //   console.log(this.cid);
+    L_consultant_detail(id){
+      this.$cookies.set("L_about_consultant",id)
+    },
+
+    // selectProduct(product) {
+    //   // console.log(product)
+    //   this.selectedProductId = product.id
+    //   // console.log(this.selectedProductId)
+    //   this.$cookies.set("L_consultant_id",this.selectedProductId)
     // },
 
-
-    methods: {
-      consultant_select(id){
-        this.$cookies.set("L_consultant_id",id)
-      },
-
-      L_consultant_detail(id){
-        this.$cookies.set("L_about_consultant",id)
-      },
-
-      // selectProduct(product) {
-      //   // console.log(product)
-      //   this.selectedProductId = product.id
-      //   // console.log(this.selectedProductId)
-      //   this.$cookies.set("L_consultant_id",this.selectedProductId)
-      // },
-
-      // 判斷是否已登入會員和選擇顧問才進入下一頁
-      startBooking() {
-        let Member_id = $cookies.get("Member_id")
-        let L_consultant_id = $cookies.get("L_consultant_id")
-        if (Member_id) {
-          if (!L_consultant_id) {
-            alert("請選擇陪你顧問");
-          } else {
-            this.$router.push("/LearningCalendar");
-          }
+    // 判斷是否已登入會員和選擇顧問才進入下一頁
+    startBooking() {
+      let Member_id = $cookies.get("Member_id")
+      let L_consultant_id = $cookies.get("L_consultant_id")
+      if (Member_id) {
+        if (!L_consultant_id) {
+          alert("請選擇陪你顧問");
         } else {
-          alert('請先登入會員');
+          this.$router.push("/LearningCalendar");
         }
-      },
-
-      // 點擊愛心收藏
-      // isFavorite(index) {
-        
-      //   return this.favorites.includes(index);
-      // },
-      // toggleFavorite(index) {
-      //   if (this.isFavorite(index)) {
-      //     const favoriteIndex = this.favorites.indexOf(index);
-      //     this.favorites.splice(favoriteIndex, 1);
-      //   } else {
-      //     this.favorites.push(index);
-      //   }
-      // },
-      isFavorite(index) {
-      let id = index.toString()
-      return this.favorites.includes(id);
-    },
-    
-    toggleFavorite(index) {
-
-      let id = index.toString()
-      if (this.isFavorite(index)) {
-        const favoriteIndex = this.favorites.indexOf(id);
-        this.favorites.splice(favoriteIndex, 1);
       } else {
-        this.favorites.push(id);
-      }
-      console.log(this.favorites);
-
-
-      
-      //撈資料庫對應會員id，更新收藏愛心欄位m_collect
-      if (this.favorites && this.favorites.length > 0) {
-      $.ajax({
-          method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update.php', 
-          data: {
-            M_collect: this.favorites,
-            Id: this.Member_id,
-          },
-          dataType: "text",
-          success: function(response) {
-              alert("收藏成功");
-          },
-          error: function(exception) {
-              alert("發生錯誤: " + exception.status);
-          },
-
-      }); 
-      }else{
-        //讓m_collect值不為null
-        $.ajax({
-          method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update2.php', 
-          data: {
-            Id: this.Member_id,
-          },
-          dataType: "text",
-          success: function(response) {
-          },
-          error: function(exception) {
-              alert("發生錯誤: " + exception.status);
-          },
-
-      }); 
+        alert('請先登入會員');
       }
     },
 
+    // 點擊愛心收藏
+    // isFavorite(index) {
+      
+    //   return this.favorites.includes(index);
+    // },
+    // toggleFavorite(index) {
+    //   if (this.isFavorite(index)) {
+    //     const favoriteIndex = this.favorites.indexOf(index);
+    //     this.favorites.splice(favoriteIndex, 1);
+    //   } else {
+    //     this.favorites.push(index);
+    //   }
+    // },
+    isFavorite(index) {
+    let id = index.toString()
+    return this.favorites.includes(id);
+  },
+  
+  toggleFavorite(index) {
+
+    let id = index.toString()
+    if (this.isFavorite(index)) {
+      const favoriteIndex = this.favorites.indexOf(id);
+      this.favorites.splice(favoriteIndex, 1);
+    } else {
+      this.favorites.push(id);
+    }
+    console.log(this.favorites);
 
 
+    
+    //撈資料庫對應會員id，更新收藏愛心欄位m_collect
+    if (this.favorites && this.favorites.length > 0) {
+    $.ajax({
+        method: "POST",
+        url: `${process.env.VUE_APP_AJAX_URL}LearningHeartCollect_Update.php`, 
+        data: {
+          M_collect: this.favorites,
+          Id: this.Member_id,
+        },
+        dataType: "text",
+        success: function(response) {
+            alert("收藏成功");
+        },
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
 
+    }); 
+    }else{
+      //讓m_collect值不為null
+      $.ajax({
+        method: "POST",
+        url: `${process.env.VUE_APP_AJAX_URL}LearningHeartCollect_Update2.php`, 
+        data: {
+          Id: this.Member_id,
+        },
+        dataType: "text",
+        success: function(response) {
+        },
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
+
+    }); 
+    }
   },
 
 
-    mounted() {
-      this.img_src = `${API_ARC}`;
-      $.getJSON(`${process.env.VUE_APP_AJAX_URL}dance_Select.php`).then(response => this.products = response)
-
-      //抓已選擇顧問id
-      this.selectedConsultant = this.$cookies.get("L_consultant_id");
-
-      // 先假放Member_id
-      // this.$cookies.set("Member_id","1")
-      this.Member_id = this.$cookies.get("Member_id");
 
 
-          //撈已收藏愛心，畫面重整時收藏愛心還會存在
-      $.ajax({
-          method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningChoose_Select.php', 
-          data: {
-            Id: this.Member_id,
-              
-          },
-          dataType: "json",
-          success: response => {
-            console.log(response,'res');
-              if (response !== null && typeof response !== 'undefined' && response.length > 0) { // 修改判空处理
-              let array = response[0].m_collect;
-              array = JSON.parse(array);
-              for (let index = 0; index < array.length; index++) {
-                const collect = array[index];
-                this.favorites.push(collect);
-              }
+},
+
+
+  mounted() {
+    this.img_src = `${API_ARC}`;
+    // console.log(this.img_src);
+    $.getJSON(`${process.env.VUE_APP_AJAX_URL}dance_Select.php`).then(response => this.products = response)
+
+    //抓已選擇顧問id
+    this.selectedConsultant = this.$cookies.get("L_consultant_id");
+
+    // 先假放Member_id
+    // this.$cookies.set("Member_id","1")
+    this.Member_id = this.$cookies.get("Member_id");
+
+
+        //撈已收藏愛心，畫面重整時收藏愛心還會存在
+    $.ajax({
+        method: "POST",
+        url: `${process.env.VUE_APP_AJAX_URL}LearningChoose_Select.php`, 
+        data: {
+          Id: this.Member_id,
+            
+        },
+        dataType: "json",
+        success: response => {
+          console.log(response,'res');
+            if (response !== null && typeof response !== 'undefined' && response.length > 0) { // 修改判空处理
+            let array = response[0].m_collect;
+            array = JSON.parse(array);
+            for (let index = 0; index < array.length; index++) {
+              const collect = array[index];
+              this.favorites.push(collect);
             }
-          },
-          error: function(exception) {
-              alert("發生錯誤: " + exception.status);
-          },
+          }
+        },
+        error: function(exception) {
+            alert("發生錯誤: " + exception.status);
+        },
 
-      }); 
+    }); 
 
 
-    },
-  }
+  },
+}
 </script>
 
   

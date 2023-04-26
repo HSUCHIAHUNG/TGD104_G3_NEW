@@ -50,7 +50,7 @@
             <div class="form_group">
               <label for="" class="input_label">再次確認密碼</label>
               <input
-                type="text"
+                type="password"
                 class="input_text"
                 placeholder="再次確認密碼"
               />
@@ -152,19 +152,19 @@
               </div>
             </div>
           </div>
-    <div class="join_btn">
-      <!-- <a href="/Join"><button class="outline_btn_blue">回上一頁</button></a> -->
-      <router-link to="/Join"
-        ><button class="outline_btn_blue">回上一頁</button></router-link
-      >
-      <!-- <a href="/JoinLearn"><button class="btn_blue">下一步</button></a> -->
+          <div class="join_btn">
+            <!-- <a href="/Join"><button class="outline_btn_blue">回上一頁</button></a> -->
+            <router-link to="/Join"
+              ><button class="outline_btn_blue">回上一頁</button></router-link
+            >
+            <!-- <a href="/JoinLearn"><button class="btn_blue">下一步</button></a> -->
 
-      <!-- <router-link to="/JoinLearn"
-        ><button class="btn_blue">下一步</button></router-link
-      > -->
-      <button class="btn_blue" type="submit">下一步</button>
-      <p id="result" style="height: 100px;"></p>
-    </div>
+            <!-- <router-link to="/JoinLearn"
+              ><button class="btn_blue">下一步</button></router-link
+            > -->
+            <button class="btn_blue" type="submit">下一步</button>
+              <p id="result" style="height: 100px;"></p>
+          </div>
         </form>
       </div>
     </div>

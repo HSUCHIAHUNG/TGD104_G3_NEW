@@ -112,7 +112,7 @@ export default {
             About_cost: '',
             About_title: '',
             About_class: '',
-            About_introduction: 'asdada',
+            About_introduction: '',
             Consultant_id:'',
             Member_id:'',
             editor: ClassicEditor,

@@ -1,6 +1,6 @@
 <template>
   <VHeader></VHeader>
-
+  <div class="process6">
   <ATM></ATM>
 
 
@@ -10,7 +10,7 @@
       <!-- <a href="/TravelOrderSuccess"><button class="btn_orange">送出</button></a> -->
       <router-link to="/LearningOrderSuccess"><button @click="order_done" class="btn_orange">送出</button></router-link>
       </h2>
-
+</div>
   <VFooter></VFooter>
 
 </template>
@@ -44,7 +44,7 @@ components: {
 methods: {
   order_done(){
   
-    this.$cookies.set("Or_booking_date",'2023/04/25')
+   
     
 
     this.Member_id = parseInt(decodeURIComponent(this.Member_id = $cookies.get("Member_id")));
@@ -94,4 +94,8 @@ methods: {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+.process6{
+background-color: #f8f4eb;
+padding-top: 50px;
+}
 </style>

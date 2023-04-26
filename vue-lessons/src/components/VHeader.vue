@@ -1,8 +1,10 @@
 <template>
   <!-- header -->
   <header>
-    <div style="justify-content: space-around" class="header_container v_header">
-      
+    <div
+      style="justify-content: space-around"
+      class="header_container v_header"
+    >
       <a href="" id="h_bar" @click.prevent="open_nav"
         ><i class="fa-solid fa-bars"></i>
       </a>
@@ -10,12 +12,20 @@
         <img src="../assets/image/logo_header.png" alt="" />
       </router-link>
       <div class="h_icon">
-        <a href="" @click.prevent="memberLogin"
+        <!-- <a href="" id="member_icon" @click.prevent="memberLogin"
           ><i class="fa-solid fa-user"></i
-        ></a>
-        <a href="" @click.prevent="consultantLogin"
+        ></a> -->
+        <a href="" id="member_icon" @click.prevent="memberLogin">
+          <img src="../assets/image/m_icon.png" alt="">
+          <p>會員</p>
+        </a>
+        <!-- <a href="" id="consultant_icon" @click.prevent="consultantLogin"
           ><i class="fa-solid fa-user-tie"></i
-        ></a>
+        ></a> -->
+        <a href="" id="consultant_icon" @click.prevent="consultantLogin">
+          <img src="../assets/image/c_icon.png" alt="">
+          <p>顧問</p>
+        </a>
       </div>
     </div>
   </header>
@@ -579,8 +589,8 @@ export default {
               this.$cookies.set("Member_id", this.memberInfo[0].id);
               let Member_id = $cookies.get("Member_id");
               console.log(Member_id);
-
               alert("登入成功");
+              location.reload();
             } else {
               alert("請確認帳號權限");
             }

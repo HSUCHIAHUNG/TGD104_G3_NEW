@@ -29,7 +29,7 @@
       </ol>
 
 <!-- 顧問卡 -->
-<div class="product-selection">
+<div class="product-selection" :class="{'-loading' : loading}">
       <template v-for="(product, index) in products">
         <div v-if="current ==='all' || current === product.about_class" :key="index"> 
           <div class="product">
@@ -167,7 +167,7 @@
       if (this.favorites && this.favorites.length > 0) {
       $.ajax({
           method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update.php', 
+          url: `${process.env.VUE_APP_AJAX_URL}LearningHeartCollect_Update.php`, 
           data: {
             M_collect: this.favorites,
             Id: this.Member_id,
@@ -185,7 +185,7 @@
         //讓m_collect值不為null
         $.ajax({
           method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningHeartCollect_Update2.php', 
+          url: `${process.env.VUE_APP_AJAX_URL}LearningHeartCollect_Update2.php`, 
           data: {
             Id: this.Member_id,
           },
@@ -208,6 +208,7 @@
 
     mounted() {
       this.img_src = `${API_ARC}`;
+      // console.log(this.img_src);
       $.getJSON(`${process.env.VUE_APP_AJAX_URL}study_Select.php`).then(response => this.products = response)
 
       //抓已選擇顧問id
@@ -221,7 +222,7 @@
           //撈已收藏愛心，畫面重整時收藏愛心還會存在
       $.ajax({
           method: "POST",
-          url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/LearningChoose_Select.php', 
+          url: `${process.env.VUE_APP_AJAX_URL}LearningChoose_Select.php`, 
           data: {
             Id: this.Member_id,
               

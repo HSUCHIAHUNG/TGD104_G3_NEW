@@ -251,6 +251,9 @@ textarea {
 }
 
 .process7{
-  background-color: #f8f4eb;
+  // background-color: #f8f4eb;
+    background-image: url("../assets/image/bgi001.png");
+    background-repeat: repeat;
+    background-size: cover;
 }
 </style>

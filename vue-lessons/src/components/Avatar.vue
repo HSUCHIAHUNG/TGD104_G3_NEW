@@ -10,7 +10,7 @@
           style="display: none"
           @change="uploadFile($event)"
         />
-        <img class="avatar" :src="`${img_src}${filename}`" />
+        <img class="avatar" :src="`${imglocation}`" />
       </form>
       <p>{{ memberName }}</p>
     </section>
@@ -29,6 +29,7 @@ export default {
       imgUrl: "",
       memberName: "",
       img_src: "",
+      imglocation: "",
     };
   },
   methods: {
@@ -50,12 +51,14 @@ export default {
           console.log(response);
           this.filename = response;
           console.log(this.filename);
+          this.imglocation = `${this.img_src}${this.filename}`;
+          console.log(this.imglocation);
           document.querySelector(".avatar").style.backgroundImage = "";
 
           console.log(member_id);
 
           $.ajax({
-            url: "http://localhost/TGD104_G3_NEW/vue-lessons/src/api/FlieUpload.php",
+            url: `${process.env.VUE_APP_AJAX_URL}FlieUpload.php`,
             dataType: "text",
             type: "POST",
             data: {
@@ -123,7 +126,7 @@ export default {
           } else {
             console.log(response[0].m_photo);
             this.filename = response[0].m_photo;
-            console.log(this.filename);
+            this.imglocation = `${this.img_src}${this.filename}`;
           }
         },
         error: function (jqXHR, textStatus, errorThrown) {

@@ -55,7 +55,7 @@ export default {
       responseObj: {
         你好: "你好",
         哈囉: "哈囉！",
-        陪你: "請至<a href='#/main'>陪你首頁</a>看更多",
+        陪你: "請至<a href='/main'>陪你首頁</a>看更多",
         關於我們: "請至<a href='/Respect'>關於我們</a>分頁看更多",
         陪你學習: "請至<a href='/learning'>陪你學習</a>分頁看更多",
         陪你旅行: "請至<a href='/travel'>陪你旅行</a>分頁看更多",

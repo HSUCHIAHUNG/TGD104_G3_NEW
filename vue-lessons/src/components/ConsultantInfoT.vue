@@ -57,16 +57,18 @@
         <h1 class="self_intro">
           簡短的介紹一下自己吧(例如：服務課程相關經歷簡述)(100字以內)
         </h1>
-        <ckeditor
+        <!-- <ckeditor
           :editor="editor"
           v-model="editorData"
           :config="editorConfig"
           class="ckeditor"
-        ></ckeditor>
+        ></ckeditor> -->
+
+        <textarea name="" id="" cols="30" rows="10" placeholder="最高字數200字" v-model="consultantInfoT[0].about_introduction"></textarea>
       </form>
       <div class="btns">
         <button type="button" class="outline_btn_blue">取消</button>
-        <button type="button" class="btn_blue" @click="save">更新</button>
+        <button type="button" class="btn_blue" @click="save">確定儲存</button>
       </div>
     </div>
     <!-- main_content end-->
@@ -74,22 +76,22 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+// import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import $ from "jquery";
 
 export default {
-  name: "ConsultantInfoT",
-  components: {
-    $,
-  },
+  name: "consultantInfoT",
+  // components: {
+  //   $,
+  // },
   data() {
     return {
-      editor: ClassicEditor,
-      editorData: "",
-      editorConfig: {
-        placeholder: "請輸入內容...",
-        removePlugins: ["Bold", "Italic", "Link", "CKFinder", "Image", "Media"],
-      },
+      // editor: ClassicEditor,
+      // editorData: "",
+      // editorConfig: {
+      //   placeholder: "請輸入內容...",
+      //   removePlugins: ["Bold", "Italic", "Link", "CKFinder", "Image", "Media"],
+      // },
       consultantInfoT:[
         {
           tr_interest: "",
@@ -100,34 +102,39 @@ export default {
           about_class: "",
           about_cost: "",
           about_cid: "",
+          about_introduction: "",
         }
         ],
     };
   },
   methods: {
     save() {
-      $.ajax({
-        url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoL_update.php`,
+      console.log(this.consultantInfoT)
+      console.log(this.consultantInfoT[0])
+      if(this.consultantInfoT && this.consultantInfoT[0]){
+        $.ajax({
+        url: `${process.env.VUE_APP_AJAX_URL}consultantinfoT_update.php`,
         dataType: "text",
         type: "POST",
         data: {
-          tr_interest: this.ConsultantInfoT[0].tr_interest,
-          tr_experience: this.ConsultantInfoT[0].tr_experience,
-          tr_job: this.ConsultantInfoT[0].tr_job,
-          tr_license: this.ConsultantInfoT[0].tr_license,
-          about_class: this.ConsultantInfoT[0].about_class,
-          about_cost: this.ConsultantInfoT[0].about_cost,
-          about_title: this.ConsultantInfoT[0].about_title,
-          about_cid: this.ConsultantInfoT[0].about_cid,
+          tr_interest: this.consultantInfoT[0].tr_interest,
+          tr_experience: this.consultantInfoT[0].tr_experience,
+          tr_job: this.consultantInfoT[0].tr_job,
+          tr_license: this.consultantInfoT[0].tr_license,
+          about_class: this.consultantInfoT[0].about_class,
+          about_cost: this.consultantInfoT[0].about_cost,
+          about_title: this.consultantInfoT[0].about_title,
+          about_cid: this.consultantInfoT[0].about_cid,
         },
         success: (response) => {
-         
+          alert(response);
           // this.editorData = <p>'123'</p>
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
         },
-      });
+      });}
+
     },
   },
 
@@ -143,7 +150,7 @@ export default {
       alert("請登入顧問");
     } else {
       $.ajax({
-        url: `${process.env.VUE_APP_AJAX_URL}ConsultantinfoT_select.php`,
+        url: `${process.env.VUE_APP_AJAX_URL}consultantinfoT_select.php`,
         dataType: "json",
         type: "POST",
         data: {
@@ -152,6 +159,7 @@ export default {
         success: (response) => {
           // this.editorData = 'this.ConsultantInfoL[0].about_introduction'
           // this.editorData = about_introduction;
+          console.log(response,'sss');
           this.consultantInfoT = response;
           console.log(this.consultantInfoT);
           // console.log(this.memberInfo);
@@ -170,4 +178,14 @@ export default {
 <style lang="scss">
 // consultant_account
 @import "../assets/tgd104-sass/new_style.scss";
+
+.consultant_content textarea{
+  width: 90%;
+  border: 1px solid $dark_blue;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 16px;
+  display: block;
+}
 </style>
