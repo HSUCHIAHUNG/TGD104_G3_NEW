@@ -50,7 +50,7 @@
             <div class="form_group">
               <label for="" class="input_label">再次確認密碼</label>
               <input
-                type="text"
+                type="password"
                 class="input_text"
                 placeholder="再次確認密碼"
               />

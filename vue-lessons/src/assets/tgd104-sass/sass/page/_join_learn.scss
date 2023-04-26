@@ -93,9 +93,21 @@
                     transition: all 0.3s ease;
                 }
             }
-            .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
-                // border-color: $dark_blue;
-            }
+            textarea{
+                display: block;
+                width: 90%;
+                border: 1px solid #79cbd4;
+                margin: 0 auto;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 16px;
+                &:focus{
+                    background-color:$light_blue;
+                    border: 3px solid $dark_blue;
+                    outline: 0;
+                    transition: all 0.3s ease;
+                }
+            }  
 
 
             
@@ -134,6 +146,37 @@
                     p{
                         line-height: 40px;
                         font-size: $fs18;
+                    }
+                }
+            }
+        }
+    }
+}
+@include rwd(768px){
+    .join_learn{
+        .container{
+            h1{
+                font-size: $fs22;
+            }
+            img{
+                width: 130px;
+            }
+            .labels{
+                width: 60%;
+                .learn_label{
+                    width: 40%;
+                    height: 30px;
+                    p{
+                        line-height: 30px;
+                        font-size: 16px;
+                    }
+                }
+                .travel_label{
+                    width: 40%;
+                    height: 30px;
+                    p{
+                        line-height: 30px;
+                        font-size: 16px;
                     }
                 }
             }
