@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+    function chenge(){
+        $.ajax({
+            method: "POST",
+            url: 'http://localhost/TGD104_G3_NEW/vue-lessons/src/api/',
+            data: {
+                
+            },
+            dataType: "json",
+            success: response => {
+            alert("送出成功");
+            },
+
+            error: function(exception) {
+                alert("發生錯誤: " + exception.status);
+            },
+
+        }); 
+    }
+</script>
+
+</head>
+<body>
+
+
+
+    <button onclick="chenge()">調整資料庫資料</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</html>

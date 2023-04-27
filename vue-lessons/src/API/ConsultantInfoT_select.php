@@ -13,11 +13,11 @@ require_once ("conn.php");
 // 取得cookies 資料
 $about_cid = $_POST['about_cid'];
 
-$sql = "SELECT * FROM about_consultant WHERE about_cid = ?";
+$sql = "SELECT * FROM about_consultant WHERE about_cid = $about_cid";
 
 
 $statement = $pdo->prepare($sql);
-$statement->bindValue(1,$about_cid);
+// $statement->bindValue(1,$about_cid);
 $statement->execute();
 
 // 取得資料 

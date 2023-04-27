@@ -186,10 +186,10 @@ export default {
             success: function (response) {
               $("#result").html(response);
               if(self.Like_status === '+'){
-              answer.love = answer.love + 1;
+              answer.love = Number(answer.love + 1);
 
               }else{
-              answer.love = answer.love - 1;
+              answer.love = Number(answer.love - 1);
 
               }
             },
@@ -198,7 +198,7 @@ export default {
             },
           });
       } else {
-        alert("請先登入才可以留言唷🤍🤍🤍");
+        alert("請先登入才可以按愛心唷🤍🤍🤍");
       }
     },
   },

@@ -46,6 +46,7 @@
             <div class="form_group">
               <label for="" class="input_label">密碼</label>
               <input type="password" class="input_text" placeholder="密碼" v-model.trim="C_password" required/>
+              <p class="password_error password_style"></p>
             </div>
             <div class="form_group">
               <label for="" class="input_label">再次確認密碼</label>
@@ -127,6 +128,7 @@
                 >生活照上傳(圖片寬&高請設定相同且檔案大小不得超過10mb)</label
               >
               <input type="file" ref="fileInput" @change="fileChange" class="input_img" id="ProductImage" name="profile"/>
+              
               <input
                 type="file"
                 ref="fileInput2"
@@ -190,8 +192,9 @@ export default {
       About_class:'',
       Consultant_id: '',
       C_photo1: 'b10.png',
-      
+      check: true,
     };
+  
   },
 
   components: {
@@ -250,7 +253,19 @@ export default {
     },
 
     submitForm(){
-        $.ajax({
+      // 檢查密碼是否為8-12英數字
+      const isValidPaaword = this.C_password && /^[A-Za-z0-9]{8,12}$/.test(this.C_password);
+      
+      
+      if (!isValidPaaword) {
+        this.check = false
+        // 如果不是10個數字，則顯示提示訊息
+        const errorPas = document.querySelector('.password_error');
+        errorPas.innerText = '密碼需8-12位英數字';
+        // errorPas.style.color = 'red';
+        return; // 停止送出表單
+      }        
+         $.ajax({
             method: "POST",
             url: `${process.env.VUE_APP_AJAX_URL}JoinApply.php`, 
             data: {
@@ -285,8 +300,6 @@ export default {
             },
 
         });
-
-        
     },
   
     setCid(){
@@ -325,4 +338,13 @@ export default {
 
 <style lang="scss">
 @import "../assets/tgd104-sass/new_style.scss";
+
+.password_style {
+  font-size: 14px;
+  color: red;
+  text-align: left;
+}
+
+
+
 </style>

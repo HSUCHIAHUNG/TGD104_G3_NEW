@@ -1,9 +1,9 @@
 
 <IfModule mod_rewrite.c>
-    <!-- RewriteEngine On
+    RewriteEngine On
     RewriteBase /tgd104/g3/
     RewriteRule ^/tgd104/g3/index\.html$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /tgd104/g3/index.html [L] -->
+    RewriteRule . /tgd104/g3/index.html [L]
 </IfModule>

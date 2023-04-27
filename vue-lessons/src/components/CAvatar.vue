@@ -85,14 +85,26 @@ export default {
         Consultant_id: Consultant_id,
       },
       success: (response) => {
-        console.log(response[0].c_firstname);
-        this.ConsultantName = response[0].c_firstname + response[0].c_lastname;
+        if (
+            (response[0].c_firstname == undefined) |
+            (response[0].c_lastname == undefined) |
+            !response[0].c_firstname |
+            !response[0].c_lastname
+          ) {
+            // this.$router.back();
+            // alert("請登入會員");
+            this.ConsultantName = "";
+          } else {
+            this.ConsultantName = response[0].c_firstname + response[0].c_lastname;
+          }
+        
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
       },
     });
     //
+   
     $.ajax({
       url: `${process.env.VUE_APP_AJAX_URL}selectImgC.php`,
       dataType: "json",
@@ -101,9 +113,9 @@ export default {
         Consultant_id: Consultant_id,
       },
       success: (response) => {
-        console.log(response[0].c_photo1);
-        this.filename = `${API_ARC}${response[0].c_photo1}`;
-        console.log(this.filename);
+        if (response[0]?.c_photo1) {
+          this.filename = `${API_ARC}${response[0].c_photo1}` 
+        }
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
