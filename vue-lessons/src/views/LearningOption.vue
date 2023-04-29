@@ -58,8 +58,13 @@
               <div>
                 <!-- <i class="fa-regular fa-heart"></i> -->
                 <!-- <i class="fa-solid fa-heart"></i> -->
-                <i
+                <!-- <i
                   class="fa-solid fa-heart"
+                  :class="{ liked: click_like.includes(index) }"
+                  @click="toggleLike(index, answer.id, answer)"
+                ></i> -->
+                <i
+                  class="fa-regular fa-thumbs-up"
                   :class="{ liked: click_like.includes(index) }"
                   @click="toggleLike(index, answer.id, answer)"
                 ></i>
@@ -146,7 +151,7 @@ export default {
             $("#result").html(response);
           },
           error: function (exception) {
-            alert("發生錯誤: " + exception.status);
+            // alert("發生錯誤: " + exception.status);
           },
         });
 
@@ -194,7 +199,7 @@ export default {
               }
             },
             error: function (exception) {
-              alert("發生錯誤: " + exception.status);
+              // alert("發生錯誤: " + exception.status);
             },
           });
       } else {
@@ -227,7 +232,13 @@ textarea {
   align-items: center;
 }
 
-.fa-heart.liked {
+// .fa-heart.liked {
+//   color: $dark_blue;
+//   // background-color: $dark_blue;
+//   animation: pulse 1s backwards;
+// }
+
+.fa-thumbs-up.liked {
   color: $dark_blue;
   // background-color: $dark_blue;
   animation: pulse 1s backwards;

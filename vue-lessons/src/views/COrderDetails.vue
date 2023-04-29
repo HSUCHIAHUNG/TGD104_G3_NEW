@@ -107,8 +107,9 @@
                     <img
                       :src="
                         item.message_sender == 'consultant'
-                          ? `${img_src}${item.m_photo}`
-                          : `${img_src}${item.c_photo1}`
+                          ? `${img_src}${item.c_photo1}`
+                          : `${img_src}${item.m_photo}`
+                          
                       "
                       :alt="
                         item.message_sender == 'consultant'

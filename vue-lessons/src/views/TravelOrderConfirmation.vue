@@ -8,14 +8,14 @@
       <table class="table_bottom">
         <tr class="list_title">
             <td></td>
-            <td>課程名稱</td>
+            <td>旅行類別</td>
             <td>顧問</td>
             <td>費用</td>
             <td>時間</td>
         </tr>
 
         <tr v-for="item in ordertable" :key="index" >
-            <td><img src="../assets/image/learning/teacher.png" alt=""></td>
+            <td><img src="../assets/image/travel/travel_gallery.png" alt="" style="border-radius: 15px"></td>
             <td>{{item.about_class}}</td>
             <td>{{item.c_nickname}}</td>
             <td>NT ${{item.about_cost}}</td>
@@ -100,7 +100,7 @@ export default {
 
         },
         error: function(exception) {
-            alert("發生錯誤: " + exception.status);
+            // alert("發生錯誤: " + exception.status);
         },
 
       });  

@@ -469,8 +469,10 @@
       if (this.isFavorite(index)) {
         const favoriteIndex = this.favorites.indexOf(id);
         this.favorites.splice(favoriteIndex, 1);
+        alert("收藏取消");
       } else {
         this.favorites.push(id);
+        alert("收藏成功");
       }
       console.log(this.favorites);
 
@@ -487,10 +489,10 @@
           },
           dataType: "text",
           success: function(response) {
-              alert("收藏成功");
+              // alert("收藏成功");
           },
           error: function(exception) {
-              alert("發生錯誤: " + exception.status);
+              // alert("發生錯誤: " + exception.status);
           },
 
       }); 
@@ -506,7 +508,7 @@
           success: function(response) {
           },
           error: function(exception) {
-              alert("發生錯誤: " + exception.status);
+              // alert("發生錯誤: " + exception.status);
           },
 
       }); 
@@ -553,7 +555,7 @@
             }
           },
           error: function(exception) {
-              alert("發生錯誤: " + exception.status);
+              // alert("發生錯誤: " + exception.status);
           },
 
       }); 

@@ -130,7 +130,7 @@ export default {
           m_collect: update_list,
         },
         success: (response) => {
-          alert(response);
+          // alert(response);
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);

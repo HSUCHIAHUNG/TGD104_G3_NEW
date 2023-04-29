@@ -598,7 +598,7 @@ export default {
                 .main_img{
                     .dialogue_box {
                         top: 37%;
-                        z-index: 10;
+                        // z-index: 10;
                     }
                 }
             }

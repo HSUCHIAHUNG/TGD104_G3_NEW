@@ -199,6 +199,7 @@
                   placeholder="身分證字號"
                   v-model="member.m_id"
                   required
+                  @change="checkID"
                 />
               </div>
               <div class="form_group">
@@ -226,12 +227,14 @@
               <div class="form_group">
                 <label for="" class="input_label">電話號碼</label>
                 <input
-                  type="number"
+                  type="text"
                   class="input_text"
                   placeholder="電話號碼"
                   v-model="member.m_phone"
                   required
+                  @change="numberCheck"
                 />
+                <p class="phone_error error_msg"></p>
               </div>
             </div>
             <div class="input_row">
@@ -240,10 +243,12 @@
                 <input
                   type="password"
                   class="input_text"
-                  placeholder="密碼"
+                  placeholder="請輸入8-12位英數字密碼"
                   v-model="member.m_password"
                   required
+                  @change="pwdCheck"
                 />
+                <p class="password_error password_style"></p>
               </div>
               <div class="form_group">
                 <label for="" class="input_label">請再次確認密碼</label>
@@ -297,11 +302,12 @@
                   id="birthday"
                   name="trip-start"
                   min="1900-01-01"
-                  max="2023-12-31"
+                  max="2004-12-31"
                   class="input_text"
                   v-model="member.m_birth"
                   required
                 />
+                <p class="birthday_style">會員需年滿18歲</p>
               </div>
             </div>
 
@@ -388,6 +394,9 @@ export default {
   data() {
     return {
       // 會員註冊
+      m_id_ok: false,
+      m_phone_ok: false,
+      m_pwd_ok: false,
       member: {
         m_firstname: "",
         m_lastname: "",
@@ -420,6 +429,163 @@ export default {
     $,
   },
   methods: {
+    checkID() {
+      let letters = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+      ];
+
+      let areaCodeAll = [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "34",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "35",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+      ];
+      let myId = this.member.m_id;
+      let firstLetter = false;
+      myId = myId.toUpperCase();
+      for (let i = 0; i < letters.length; i++) {
+        if (myId.charAt(0) == letters[i]) {
+          firstLetter = true;
+          break;
+        } else {
+          firstLetter = false;
+          continue;
+        }
+      }
+
+      // 檢查後面九個字是否都是數字
+      let num9 = myId.substring(1, myId.length);
+      num9 = parseInt(num9);
+      num9 = num9.toString().length;
+
+      // 1. 檢查輸入的長度
+      if (myId.length != 10) {
+        alert(`輸入資料的長度要有 10 位`);
+        // 2. 檢查首字字母
+      } else if (firstLetter == false) {
+        alert(`首字須為字母 A ~ Z`);
+        // 3. 後面9個字都要是數字 不是就會是NaN
+      } else if (num9 != 9) {
+        alert(`後面九個字都要是數字`);
+        // 檢查第二個字是否是 1 或 2
+      } else if (myId.charAt(1) != 1 && myId.charAt(1) != 2) {
+        alert(`第二個字要是 1 或 2`);
+      } else {
+        let checkCode = 0;
+        // step 3 印出 letters 陣列對應 areaCodeAll 陣列的值
+        let letter = myId[0];
+        let index = letters.indexOf(letter);
+        console.log(index); // 找出對應的區域代碼要做加權
+
+        // step 4 並計算第一個英文字母的加權
+        let areaCode = areaCodeAll[index];
+
+        checkCode += areaCode[0] * 1 + areaCode[1] * 9;
+        console.log(checkCode);
+
+        // 檢查碼
+        // let checkCode = 0  // step 1
+        // step 2
+        for (let i = 1; i <= 8; i++) {
+          checkCode += parseInt(myId.charAt(i)) * (9 - i);
+        }
+        // console.log(checkCode);
+
+        checkCode %= 10;
+        if (checkCode == 0) {
+          checkCode = 0;
+        } else {
+          checkCode = 10 - checkCode;
+        }
+        if (checkCode != myId.charAt(9)) {
+          alert(`不是合法的身分證字號`);
+        } else {
+          this.m_id_ok = true;
+        }
+      }
+    },
+    numberCheck() {
+      // 驗證電話號碼：初始化驗證結果為true
+      let isValid = true; //---- 檢查電話號碼
+      const isValidPhoneNumber = /^09\d{8}$/.test(this.member.m_phone);
+      const errorElm = document.querySelector(".phone_error");
+
+      if (!isValidPhoneNumber) {
+        //如果不是10個數字，則顯示提示訊息
+        isValid = false;
+        errorElm.innerText = "請輸入09開頭有效的電話號碼";
+      } else {
+        errorElm.innerText = "";
+        this.m_phone_ok = true;
+      }
+    },
+    pwdCheck() {
+      // 初始化驗證結果為true
+      let isValid = true;
+
+      // 檢查密碼是否為8-12英數字
+      let isValidPassword =
+        this.member.m_password &&
+        /^[A-Za-z0-9]{8,12}$/.test(this.member.m_password);
+      let errorPas = document.querySelector(".password_error");
+
+      if (!isValidPassword) {
+        isValid = false;
+        // 如果不是10個數字，則顯示提示訊息
+
+        errorPas.innerText = "密碼需8-12位英數字";
+      } else {
+        errorPas.innerText = "";
+        this.m_pwd_ok = true;
+      }
+    },
     //開啟nav
     open_nav() {
       let center_navopen = document.getElementById("center_nav");
@@ -526,6 +692,14 @@ export default {
     signUp() {
       if (this.member.m_password !== this.member.check_pwd) {
         alert("請重新確認密碼");
+      } else if (this.m_id_ok == false) {
+        alert("請輸入合法的身分證字號");
+      } else if (this.m_phone_ok == false) {
+        alert("請輸入有效的電話號碼");
+        return;
+      } else if (this.m_pwd_ok == false) {
+        alert("密碼需8-12位英數字,請重新確認");
+        return;
       } else {
         $.ajax({
           url: `${process.env.VUE_APP_AJAX_URL}MSignUp.php`,
@@ -673,7 +847,6 @@ export default {
   display: flex;
   overflow: auto !important;
   transition: 0.5s;
-  background-size: cover;
 
   #close_bar {
     color: #ff7426;
@@ -748,6 +921,23 @@ export default {
       }
     }
   }
+}
+
+.birthday_style {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.error_msg {
+  font-size: 14px;
+  color: red;
+  text-align: left;
+}
+
+.password_error {
+  font-size: 14px;
+  color: red;
+  text-align: left;
 }
 
 //  @import "../../tgd104-sass/new_style.scss";

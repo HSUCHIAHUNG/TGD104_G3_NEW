@@ -26,6 +26,11 @@
             ><i class="fa-regular fa-clipboard"></i>歷史訂單</router-link
           >
         </li>
+        <li @click="logout">
+          <router-link to="/main">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>登出
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -53,6 +58,9 @@ export default {
       caret.classList.toggle("caret-rotate");
       // 打開menu
       dropdown_menu.classList.toggle("menu-open");
+    },
+    logout() {
+      this.$cookies.remove("Member_id");
     },
   },
   mounted() {

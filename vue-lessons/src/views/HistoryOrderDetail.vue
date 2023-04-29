@@ -372,7 +372,7 @@ export default {
     sendMessage() {
       let order_id = this.$cookies.get("Order_id");
       let member_id = this.$cookies.get("Member_id");
-      let consultant_id = this.$cookies.get("Consultant_id");
+      let consultant_id = this.$cookies.get("History_Consultant_id");
       let vm = this;
 
       $.ajax({
@@ -480,7 +480,7 @@ export default {
         console.log(this.order_info);
         console.log(this.order_info.s_category);
         console.log(this.order_info.about_cid);
-        this.$cookies.set("Consultant_id", this.order_info.about_cid);
+        this.$cookies.set("History_Consultant_id", this.order_info.about_cid);
         if (this.order_info.s_category) {
           this.order_category = "陪你學習";
         } else {

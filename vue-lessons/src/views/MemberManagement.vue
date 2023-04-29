@@ -158,7 +158,7 @@
                     location.reload()
                 },
                 error: function(exception) {
-                    alert("發生錯誤: " + exception.status);
+                    // alert("發生錯誤: " + exception.status);
                 }
             });
             },

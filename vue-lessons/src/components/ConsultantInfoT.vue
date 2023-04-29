@@ -111,7 +111,7 @@ export default {
     save() {
       console.log(this.consultantInfoT)
       console.log(this.consultantInfoT[0])
-      if(this.consultantInfoT && this.consultantInfoT[0]){
+      // if(this.consultantInfoT && this.consultantInfoT[0]){
         $.ajax({
         url: `${process.env.VUE_APP_AJAX_URL}consultantinfoT_update.php`,
         dataType: "text",
@@ -127,13 +127,14 @@ export default {
           about_cid: this.consultantInfoT[0].about_cid,
         },
         success: (response) => {
-          alert(response);
+          // alert(response);
           // this.editorData = <p>'123'</p>
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
         },
-      });}
+      });
+      // }
 
     },
   },
