@@ -1,111 +1,110 @@
 <template>
     <div>
-    <VHeader></VHeader>
-    <!-- main_banner -->
-    <div class="main_banner">
-        <div class="main_container">
-            <div class="main_title animate__animated animate__bounceIn animate__delay-1s">
-                不再孤單旅行、不再獨自學習，<br><span>「陪你」</span>陪您走過每個旅程與學習。
-            </div>
-            <!-- 雲 -->
-            <div class="clouds">
-                <div class="cloud cloud1"></div> <!-- 第一朵雲 -->
-                <div class="cloud cloud2"></div> <!-- 第二朵雲 -->
-                <div class="cloud cloud3"></div> <!-- 第三朵雲 -->
-            </div>
-            <!-- 雲 結束-->
-            <!-- 太陽 -->
-            <div class="container-sun">
-                <svg class="svg-sun" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
-                <circle cx="50" cy="50" r="35" id="sun"></circle>
-                </svg>
-            </div>
-            <!-- 太陽 結束-->
-            <!-- 城市 人物 對話框-->
-            <div class="main_img">
-                <div><img src="../assets/image/city.png" alt="" class="floating-img"></div>
-                <div class="falling-object-container">
-                    <router-link to="/Travel">
-                        <img src="../assets/image/people1.png" alt="" class="falling-object">
-                    </router-link>
-                    <div class="dialogue_box animate__animated animate__bounceIn animate__delay-2s">
-                        <div class="dialogue_content">
-                            {{ dialogue1 }}
+        <VHeader></VHeader>
+        <!-- main_banner -->
+        <div class="main_banner">
+            <div class="main_container">
+                <div class="main_title animate__animated animate__bounceIn animate__delay-1s">
+                    不再孤單旅行、不再獨自學習，<br><span>「陪你」</span>陪您走過每個旅程與學習。
+                </div>
+                <!-- 雲 -->
+                <div class="clouds">
+                    <div class="cloud cloud1"></div> <!-- 第一朵雲 -->
+                    <div class="cloud cloud2"></div> <!-- 第二朵雲 -->
+                    <div class="cloud cloud3"></div> <!-- 第三朵雲 -->
+                </div>
+                <!-- 雲 結束-->
+                <!-- 太陽 -->
+                <div class="container-sun">
+                    <svg class="svg-sun" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                    <circle cx="50" cy="50" r="35" id="sun"></circle>
+                    </svg>
+                </div>
+                <!-- 太陽 結束-->
+                <!-- 城市 人物 對話框-->
+                <div class="main_img">
+                    <div><img src="../assets/image/city.png" alt="" class="floating-img"></div>
+                    <div class="falling-object-container">
+                        <router-link to="/Travel">
+                            <img src="../assets/image/people1.png" alt="" class="falling-object">
+                        </router-link>
+                        <div class="dialogue_box animate__animated animate__bounceIn animate__delay-2s">
+                            <div class="dialogue_content">
+                                {{ dialogue1 }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="falling-object-container">
+                        <router-link to="/Join">
+                            <img src="../assets/image/people2.png" alt="" class="falling-object2">
+                        </router-link>
+                        <div class="dialogue_box2 animate__animated animate__bounceIn animate__delay-3s">
+                            <div class="dialogue_content">
+                                {{ dialogue2 }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="falling-object-container">
+                        <router-link to="/Learning">
+                            <img src="../assets/image/people3.png" alt="" class="falling-object3">
+                        </router-link>
+                        <div class="dialogue_box3 animate__animated animate__bounceIn animate__delay-4s">
+                            <div class="dialogue_content">
+                                {{ dialogue3 }}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="falling-object-container">
-                    <router-link to="/Join">
-                        <img src="../assets/image/people2.png" alt="" class="falling-object2">
-                    </router-link>
-                    <div class="dialogue_box2 animate__animated animate__bounceIn animate__delay-3s">
-                        <div class="dialogue_content">
-                            {{ dialogue2 }}
-                        </div>
-                    </div>
-                </div>
-                <div class="falling-object-container">
-                    <router-link to="/Learning">
-                        <img src="../assets/image/people3.png" alt="" class="falling-object3">
-                    </router-link>
-                    <div class="dialogue_box3 animate__animated animate__bounceIn animate__delay-4s">
-                        <div class="dialogue_content">
-                            {{ dialogue3 }}
-                        </div>
-                    </div>
-                </div>
+                <!-- 城市 人物 對話框 結束-->
             </div>
-            <!-- 城市 人物 對話框 結束-->
         </div>
-    </div>
-    <!-- main_banner end-->
+        <!-- main_banner end-->
 
-    <!-- main_section -->
-    <div class="main_section">
-        <ul>
-            <li>
-                <div class="main_section_left">
-                    <h1>學習路上的路標<br>陪你學習，助你前行！</h1>
-                    <router-link to="/learning"><button class="btn_blue">陪你學習</button></router-link>
-                </div>
-                <div class="main_section_right">
-                    <img src="../assets/image/index/main_section_01.png" alt="">
-                </div>
-            </li>
-            <li>
-                <div class="main_section_left">
-                    <h1>不孤單的旅行<br>就從有陪你開始。</h1>
-                    <router-link to="/travel"><button class="btn_blue">陪你旅行</button></router-link>
-                </div>
-                <div class="main_section_right">
-                    <img src="../assets/image/index/main_section_02.png" alt="">
-                </div>
-            </li>
-            <li>
-                <div class="main_section_left">
-                    <h1>成為陪你顧問</h1>
-                    <router-link to="/join"><button class="btn_blue">加入陪你</button></router-link>
-                </div>
-                <div class="main_section_right">
-                    <img src="../assets/image/index/main_section_03.png" alt="">
-                </div>
-            </li>
-            <li>
-                <div class="main_section_left">
-                    <h1>「陪你」如何誕生?</h1>
-                    <router-link to="/Respect"><button class="btn_blue">關於陪你</button></router-link>
-                </div>
-                <div class="main_section_right">
-                    <img src="../assets/image/index/main_section_04.png" alt="">
-                </div>
-            </li>
-        </ul>
+        <!-- main_section -->
+        <div class="main_section">
+            <ul>
+                <li>
+                    <div class="main_section_left">
+                        <h1>學習路上的路標<br>陪你學習，助你前行！</h1>
+                        <router-link to="/learning"><button class="btn_blue">陪你學習</button></router-link>
+                    </div>
+                    <div class="main_section_right">
+                        <img src="../assets/image/index/main_section_01.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="main_section_left">
+                        <h1>不孤單的旅行<br>就從有陪你開始。</h1>
+                        <router-link to="/travel"><button class="btn_blue">陪你旅行</button></router-link>
+                    </div>
+                    <div class="main_section_right">
+                        <img src="../assets/image/index/main_section_02.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="main_section_left">
+                        <h1>成為陪你顧問</h1>
+                        <router-link to="/join"><button class="btn_blue">加入陪你</button></router-link>
+                    </div>
+                    <div class="main_section_right">
+                        <img src="../assets/image/index/main_section_03.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="main_section_left">
+                        <h1>「陪你」如何誕生?</h1>
+                        <router-link to="/Respect"><button class="btn_blue">關於陪你</button></router-link>
+                    </div>
+                    <div class="main_section_right">
+                        <img src="../assets/image/index/main_section_04.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-    </div>
+        <!-- main_section end-->
 
-    <!-- main_section end-->
-
-    <VFooter></VFooter>
+        <VFooter></VFooter>
     </div>
 </template>
 
@@ -123,24 +122,24 @@ export default {
     },
     data() {
         return {
-            showDialog1: false, // 控制第一個對話框的顯示/隱藏
-            showDialog2: false, // 控制第二個對話框的顯示/隱藏
-            showDialog3: false, // 控制第三個對話框的顯示/隱藏
+            // showDialog1: false, // 控制第一個對話框的顯示/隱藏
+            // showDialog2: false, // 控制第二個對話框的顯示/隱藏
+            // showDialog3: false, // 控制第三個對話框的顯示/隱藏
             dialogue1: "好想旅行，沒人陪...😟", // 第一個對話框的內容
             dialogue2: "讓我來陪你😉", // 第二個對話框的內容
             dialogue3: "想學習JavaScript嗎? 我可以分享🧐", // 第三個對話框的內容
         };
     },
     methods: {
-        showDialogue(dialogue) {
-            if (dialogue === '旅行') {
-                this.showDialog1 = true;
-            } else if (dialogue === '顧問') {
-                this.showDialog2 = true;
-            }  else{
-                this.showDialog3 = true;
-            }
-        }
+        // showDialogue(dialogue) {
+        //     if (dialogue === '旅行') {
+        //         this.showDialog1 = true;
+        //     } else if (dialogue === '顧問') {
+        //         this.showDialog2 = true;
+        //     }  else{
+        //         this.showDialog3 = true;
+        //     }
+        // }
     },
 
 
@@ -149,7 +148,10 @@ export default {
 
 <style lang="scss" scope>
     @import "../assets/tgd104-sass/new_style.scss";
-    
+    // *{
+    //     outline: 3px solid red;
+    // }
+
     .main_banner {
         padding: 20px 0;
         background-color: #fdf8ee;

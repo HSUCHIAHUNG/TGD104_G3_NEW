@@ -113,6 +113,7 @@
                 if(page <= 0 || page > this.totalPage) {
                     return
                 }
+
                 this.currentPage = page
             },
             toggleSortDate(date) {
